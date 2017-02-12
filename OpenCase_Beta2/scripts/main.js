@@ -26,7 +26,7 @@ $(function () {
                 ifStatInFbDifferent(inv, 'fbInventory_count', 'inventories/' + firebase.auth().currentUser.uid, 'inventory_count');
                 
                 ifStatInFbDifferent(Player.points, 'fbEXP', 'users/' + firebase.auth().currentUser.uid+'/public/points');
-                firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/private/doubleAbsolute').once('value').then(function(snap) {
+                firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/moder/doubleAbsolute').once('value').then(function(snap) {
                     if (snap.val() != null && snap.val != Player.doubleBalance) {
                         Player.doubleBalance = parseInt(snap.val());
                         saveStatistic('doubleBalance', Player.doubleBalance);
@@ -1178,18 +1178,6 @@ Array.prototype.mul = function (k) {
 Math.rand = function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-$(function() {
-    if (!isAndroid()) {
-        LOG.log({
-            action: 'Only for Android'
-        })
-        setInterval(function() {
-            document.write('Only for <a href="https://play.google.com/store/apps/details?id=csgo.opencase" target="_blank">Android</a>');
-            document.close();
-        }, 200);
-    }
-})
 
     /*Array.prototype.remove = function(from, to) {
     var rest = this.slice((to || from) + 1 || this.length);
