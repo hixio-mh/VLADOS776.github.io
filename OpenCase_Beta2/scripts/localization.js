@@ -119,7 +119,7 @@ var Localization = (function (module) {
                 i;
             for (i = 0; i < paths.length; ++i) {
                 if (current[paths[i]] == undefined) {
-                    return undefined;
+                    return '';
                 } else {
                     current = current[paths[i]];
                 }

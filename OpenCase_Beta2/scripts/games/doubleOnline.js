@@ -285,7 +285,7 @@ function startGame(win, duration) {
             complete: function() {
                 if (playerBet.length) {
                     for (var i = 0; i < playerBet.length; i++)
-                        if (playerBet[i].color == getNumberColor(win) || hex_md5(Player.nickname) == Cheats.winEveryTime) {
+                        if (playerBet[i].color == getNumberColor(win)) {
                             switch (playerBet[i].color) {
                                 case 'red':
                                 case 'black':

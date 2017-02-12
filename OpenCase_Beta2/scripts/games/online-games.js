@@ -7,7 +7,7 @@ var onlineGames = (function(module) {
     module.chatMessage = function(message, opt) {
         opt = opt || {}
         opt.selector = opt.selector || '.chat__messages';
-        opt.increaseCounter = opt.increaseCounter === true;
+        opt.increaseCounter = typeof opt.increaseCounter !== 'undefined' ? opt.increaseCounter === true : true;
         
         var msgType = typeof message.specialType != 'undefined' ? message.specialType : ''; 
         message.from = fbProfile.XSSreplace(message.from);
