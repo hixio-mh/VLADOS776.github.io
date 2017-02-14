@@ -1148,9 +1148,6 @@ function parseURLParams(url) {
     }
     return parms;
 }
-var Cheats = {
-    winEveryTime: "85d9a0e4"
-}
 
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;

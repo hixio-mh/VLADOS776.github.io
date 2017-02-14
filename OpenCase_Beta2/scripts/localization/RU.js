@@ -213,6 +213,28 @@ var Translation = {
             winner: {
                 text: 'Победитель',
                 en: 'The winner'
+            },
+            select_room: {
+                text: 'Выберите комнату',
+                en: 'Select room'
+            },
+            back_items: {
+                text: 'Забрать предметы',
+                en: 'Get Items back'
+            },
+            chat: {
+                top: {
+                    text: 'Чат',
+                    en: 'Chat'
+                },
+                current_room: {
+                    text: 'Текущая комната',
+                    en: 'Current room'
+                },
+                all: {
+                    text: 'Все',
+                    en: 'All'
+                }
             }
         },
         rps: {
