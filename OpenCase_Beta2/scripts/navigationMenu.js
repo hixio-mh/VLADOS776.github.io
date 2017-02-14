@@ -56,8 +56,9 @@ $(function () {
         </ul></li> \
         <li class="submenu closed"><a href="#"><i class="icon icon-pacman"></i><span data-loc="online_games">Online games</span></a> \
         <ul data-loc-group="games_list"> \
-            <li class="pushy-link"><a href="double-Online.html"><span class="icon icon-make-group"></span><span data-loc="double">Double</span><sup class="beta">beta</sup></a></li> \
-            <li class="pushy-link"><a href="crash-Online.html"><span class="icon icon-stats-dots"></span><span data-loc="crash">Crash</span><sup class="beta">beta</sup></a></li> \
+            <li class="pushy-link"><a href="jackpot-Online.html"><span class="icon icon-spinner5"></span><span data-loc="jackpot">Jackpot</span> <sup class="beta">beta</sup></a></li> \
+            <li class="pushy-link"><a href="double-Online.html"><span class="icon icon-make-group"></span><span data-loc="double">Double</span></a></li> \
+            <li class="pushy-link"><a href="crash-Online.html"><span class="icon icon-stats-dots"></span><span data-loc="crash">Crash</span></a></li> \
         </ul></li> \
         <li class="pushy-link"><a href="inventory.html"><span class="icon icon-list"></span><span data-loc="inventory">Inventory</span></a></li>\
         <li class="pushy-link"><a href="market.html"><span class="icon icon-cart"></span><span data-loc="market">Market</span></a></li> \
