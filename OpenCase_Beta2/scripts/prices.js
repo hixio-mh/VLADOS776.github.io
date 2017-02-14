@@ -39711,7 +39711,7 @@ var Prices = {
     "prices": {
       "default": {
         "4": {
-          "market": 20000
+          "market": 4314
         },
       },
       "stattrak": {},
