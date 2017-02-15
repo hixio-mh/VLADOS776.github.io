@@ -417,9 +417,7 @@ function newMsg(key, message, edit) {
         </div></li>";
     
     if (edit) {
-        var $old = $("li[data-msgkey='" + key + "']");
-        $($old).after(msg);
-        $old.remove();
+        $("li[data-msgkey='" + key + "']").replaceWith(msg);
     } else {
         $(".chat__messages").append(msg);
     }
