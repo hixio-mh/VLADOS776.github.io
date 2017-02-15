@@ -196,6 +196,16 @@ li.chat__message a img[data-userid] {
 }
 
 .message__moderator {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #B10909;
+}
+.message__moderator i {
+    padding: 4px 6px;
+}
+/*
+.message__moderator {
     display: -webkit-box;
     display: -webkit-flex;
     display: flex;
@@ -211,7 +221,7 @@ li.chat__message a img[data-userid] {
     align-content: center;
     color: #B10909;
 }
-
+*/
 .chat__write {
     position: fixed;
     bottom: 0;
@@ -271,7 +281,7 @@ li.chat__message a img[data-userid] {
 }
 
 /* === VIP === */
-.vip a:nth-child(1)::before {
+.vip > a:first-child::before {
     display: block;
     content: '';
     background: url(../images/chat/crown.png);
@@ -310,7 +320,7 @@ li.chat__message a img[data-userid] {
     color: #515151;
 }
 .vip .message__info .message__info__from-time .message__moderator {
-    background: #202020;
+    /*background: #202020;*/
     color: #fff;
 }
 .vip .message__info .message__text {
