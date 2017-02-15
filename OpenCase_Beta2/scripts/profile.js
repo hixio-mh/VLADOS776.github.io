@@ -394,6 +394,9 @@ var fbProfile = (function (module) {
     module.XSSreplace = function (text) {
         var allowedTags = ["<br>", "<i>", "<b>", "<s>"];
         //allowed html tags
+        
+        if (typeof text !== 'string') return text;
+        
         text = text.replace(/&lt;/g, '<');
         text = text.replace(/&gt;/g, '>');
         text = text.replace(/&amp;/g, '&');

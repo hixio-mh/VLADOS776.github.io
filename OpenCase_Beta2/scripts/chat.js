@@ -73,29 +73,59 @@ $(function () {
     })
     
     $(document).on('click', '.delete-message', function() {
+        
+    })
+    $(document).on('click', '.message__moderator li a', function() {
         var msgKey = $(this).closest('.chat__message').data('msgkey');
+        var msgAuthor = $(this).closest('.message__info').find('.message__from').text();
         var msgText = $(this).closest('.message__info').children('.message__text').text();
-        var msgAuthor = $(this).closest('.message__info').find('.message__from').text()
-        Lobibox.confirm({
-            iconSource : 'fontAwesome',
-            title : Localization.getString('chat.moderator.delete_msg.title'),
-            msg : Localization.getString('chat.moderator.delete_msg.message'),
-            callback : function ($this, type, ev) {
-                if (type == 'yes') {
-                    fbChat.deleteMsg(msgKey);
-                    if (isAndroid()) {
-                        client.sendToAnalytics('Chat', 'Модератор', "Модератор удалил сообщение.", msgText+' | '+Player.nickname);
-                    }
-                    LOG.log({
-                        action: 'Moderator delete message',
-                        msg: {
-                            author: msgAuthor,
-                            text: msgText
-                        }
-                    })
-                }
+        
+        var action = $(this).data('action');
+        switch (action) {
+            case 'delete-message':
+                deleteMessage();
+                break;
+            case 'fake-vip':
+                fbChat.extraClasses(msgKey, 'vip');
+                break;
+            case 'blur':
+                fbChat.extraClasses(msgKey, 'vip-blur');
+                break;
+        }
+        if (isAndroid()) {
+            client.sendToAnalytics('Chat', 'Extra Classes', action, 'From ' + Player.nickname + ' to ' + msgAuthor);
+        }
+        LOG.log({
+            action: 'Extra Classes',
+            msg: {
+                type: action,
+                to: msgAuthor,
+                from: Player.nickname 
             }
-        });
+        })
+        
+        function deleteMessage(msgKey, msgText, msgAuthor) {
+            Lobibox.confirm({
+                iconSource : 'fontAwesome',
+                title : Localization.getString('chat.moderator.delete_msg.title'),
+                msg : Localization.getString('chat.moderator.delete_msg.message'),
+                callback : function ($this, type, ev) {
+                    if (type == 'yes') {
+                        fbChat.deleteMsg(msgKey);
+                        if (isAndroid()) {
+                            client.sendToAnalytics('Chat', 'Модератор', "Модератор удалил сообщение.", msgText+' | '+Player.nickname);
+                        }
+                        LOG.log({
+                            action: 'Moderator delete message',
+                            msg: {
+                                author: msgAuthor,
+                                text: msgText
+                            }
+                        })
+                    }
+                }
+            }); 
+        }
     })
     
     $(document).on('click', '.chat__rooms__room', function () {
@@ -256,6 +286,20 @@ var fbChat = (function (module) {
             }, 500);*/
         });
     }
+    module.extraClasses = function(key, classes) {
+        module.chatRef.child(key).child('extra').once('value').then(function (data) {
+            var regTest = new RegExp('( ' + classes + '|' + classes + ' )', 'g');
+            if (data.val() == null) {
+                module.chatRef.child(key).child('extra').set(classes);
+            } else if (data.val().trim() === classes) {
+                module.chatRef.child(key).child('extra').remove();
+            } else if (data.val().match(regTest)) {
+                module.chatRef.child(key).child('extra').set(data.val().replace(classes, ''));
+            } else {
+                module.chatRef.child(key).child('extra').set(data.val() + ' ' + classes);
+            }
+        })
+    }
     module.initChat = function (selector) {
         var newItems = false;
         $(selector + " li").remove();
@@ -287,18 +331,33 @@ var fbChat = (function (module) {
         chatRef.limitToLast(40).on('child_removed', function (data) {
             removeMsg(data.key);
         });
+        
+        chatRef.limitToLast(40).on('child_changed', function (data) {
+            var $parent = $("li[data-msgkey='" + data.key + "']");
+            if ($parent.length !== 0) {
+                newMsg(data.key, data.val(), true);
+            } else {
+                newMsg(data.key, data.val());
+                if ($('#container').scrollTop() + $('#container').height() > $('#chat').height() - 250)
+                    $("#container").animate({
+                        scrollTop: $('#chat').height()
+                    }, 200);
+            }
+        });
     }
     return module;
 }(fbChat || {}));
 
-function newMsg(key, message) {
+function newMsg(key, message, edit) {
      var uid = message.uid,
         img = message.img,
         username = message.username,
         time = message.timestamp,
         text = message.text,
         group = message.group || "",
-        country = message.country || "";
+        country = message.country || "",
+        extraClasses = message.extra || '';
+    edit = edit || false;
     
     var imgRegExp = /(https?:\/\/.*\.(?:png|jpg|jpeg|gif))/igm,
         youtubeRegExp = /(?:https?\:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.?be)\/(?:watch\?v=|embed\/)?([a-zA-Z0-9?=-]+)/igm;
@@ -318,7 +377,6 @@ function newMsg(key, message) {
     
     text = uid == "TrgkhCFTfVWdgOhZVUEAwxKyIo33" ? text : fbProfile.XSSreplace(text);
     
-    //text = text.replace(vkRegExp, '<a href="$1" target="_blank">$2</a>');    
     text = text.replace(imgRegExp, '<img src="$1" style="width: 400px; max-width:100%; display: block;">');
     if (/vip/.test(group)) {
         text = text.replace(youtubeRegExp, '<iframe width="100%" height="auto" src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>');
@@ -330,12 +388,44 @@ function newMsg(key, message) {
     
     var moderBlock = "";
     
-    if (fbChat.isModerator || (fbChat.isVip && myMessage)) {
-        moderBlock = "<div class='message__moderator'><i aria-hidden='true' class='fa fa-times delete-message'></i></div>";
+    if (fbChat.isModerator || (fbChat.isVip)) {
+        var allow = {
+            delete: fbChat.isModerator ? '' : fbChat.isVip ? myMessage ? '' : 'display: none;' : 'display: none;',
+            fake_vip: fbChat.isVip ? '' : 'display: none;',
+            blur: fbChat.isVip ? '' : 'display: none;'
+        }
+        moderBlock = "<div class='message__moderator' data-loc-group='message-menu'><div class='dropup'>\
+                        <i aria-hidden='true' class='fa fa-bars dropdown-toggle' type='button' data-toggle='dropdown'></i>\
+                        <ul class='dropdown-menu'>\
+                            <li style='" + allow.delete + "'><a href='#' data-action='delete-message' data-loc='delete'>Delete</a></li>\
+                            <li style='" + allow.fake_vip + "'><a href='#' data-action='fake-vip' data-loc='fake_vip'>Fake VIP</a></li>\
+                            <li style='" + allow.blur + "'><a href='#' data-action='blur' data-loc='Blur'>Blur</a></li>\
+                        </ul>\
+                     </div>\
+                    </div>";
     }
     
-    var msg = "<li class='animated bounceIn chat__message" + (myMessage ? " my_message" : "") + (toMe ? " msgToMe" : "") + " " + group + "' data-msgkey='" + key + "'>" + "<a href='profile.html?uid="+uid+"'><img src='" + img + "' data-userID='" + uid + "'></a>" + "<div class='message__info'><div class='message__info__from-time'>" + "<span class='message__from'>" + username + "</span>" + flag + (group != "" ? "<span class='group'>"+group+"</span>" : "") + "<span class='message__time'>" + time + "</span>" + moderBlock + "</div>" + "<span class='message__text'>" + text + "</span>" + "</div></li>";
-    $(".chat__messages").append(msg);
+    var msg = "<li class='" + (!edit ? "animated bounceIn" : "") + " chat__message" + (myMessage ? " my_message" : "") + (toMe ? " msgToMe" : "") + " " + group + " " + extraClasses + "' data-msgkey='" + key + "'>\
+        <a href='profile.html?uid="+uid+"'>\
+            <img src='" + img + "' data-userID='" + uid + "'>\
+        </a>\
+        <div class='message__info'>\
+            <div class='message__info__from-time'>\
+                <span class='message__from'>" + username + "</span>\
+                " + flag + (group != "" ? "<span class='group'>"+group+"</span>" : "") + "\
+                <span class='message__time'>" + time + "</span>\
+                " + moderBlock + "\
+            </div>\
+        <span class='message__text'>" + text + "</span>\
+        </div></li>";
+    
+    if (edit) {
+        var $old = $("li[data-msgkey='" + key + "']");
+        $($old).after(msg);
+        $old.remove();
+    } else {
+        $(".chat__messages").append(msg);
+    }
 }
 
 function removeMsg(key) {
