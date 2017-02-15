@@ -72,9 +72,6 @@ $(function () {
             $('#chat__new-message').append('@'+nickname+', ');
     })
     
-    $(document).on('click', '.delete-message', function() {
-        
-    })
     $(document).on('click', '.message__moderator li a', function() {
         var msgKey = $(this).closest('.chat__message').data('msgkey');
         var msgAuthor = $(this).closest('.message__info').find('.message__from').text();
@@ -83,7 +80,7 @@ $(function () {
         var action = $(this).data('action');
         switch (action) {
             case 'delete-message':
-                deleteMessage();
+                deleteMessage(msgKey, msgText, msgAuthor);
                 break;
             case 'fake-vip':
                 fbChat.extraClasses(msgKey, 'vip');
