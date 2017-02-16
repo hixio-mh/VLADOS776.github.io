@@ -1,526 +1,440 @@
 <html>
+
 <head>
-<title>Настройки</title>
+    <title>Настройки</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
-<link rel="stylesheet" type="text/css" href="../css/inventory.css">
-<link rel="stylesheet" type="text/css" href="../css/main.css">
-<link rel="stylesheet" type="text/css" href="../css/fonts.css">
-<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="../css/animate.css">
-<link rel="stylesheet" type="text/css" href="../css/lobibox.min.css"/>
-<link rel="stylesheet" type="text/css" href="../css/iconselect/iconselect.css">
-<link rel="stylesheet" type="text/css" href="../css/winter.css">
-    
-<script src="../scripts/build/libs.js"></script>
-<script src="../scripts/main.js"></script>
-<script src="../scripts/settings.js"></script>
-<script src="../scripts/jackpotBots.js"></script>
-
-<script src="../scripts/navigationMenu.js"></script>
-<link rel="stylesheet" href="../css/navigationMenu.css">
-
-<script src="../scripts/localization.js"></script>
-
-<!--IconSelect-->
-<script src="../scripts/iconselect/iconselect.js"></script>
-<script src="../scripts/iconselect/iscroll.js"></script>
-
-<style>
-body {
-    color: #fff;
-	font-family: LatoRegular;
-	background: #19212b;
-	margin: 0;
-}
-.settings {
-    padding: 1px;
-}
-.box {
-	z-index:5;
-}
-.option-block {
-    font-size: 1em;
-}
-.option-block__name {
-    color: #f1ff8a;
-	margin: 15px 0 5px 15px;
-    display: block;
-}
-.option {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 15px 0;
-}
-.option > * {
-    display: block;
-    margin-left: 15px;
-    margin-top: 10px;
-	margin-right: 15px;
-}
-.option > *:nth-child(1) {
-    margin-top: 0;
-}
-.inline > * {
-	display: inline-block;
-}
-div#avatar {
-    margin-top: 10px;
-}
-.Button {
-   border: 1px solid #ffffff;
-   background: #589c3e;
-   background: -webkit-gradient(linear, left top, left bottom, from(#65d68c), to(#589c3e));
-   background: -webkit-linear-gradient(top, #65d68c, #589c3e);
-   background: -moz-linear-gradient(top, #65d68c, #589c3e);
-   background: -ms-linear-gradient(top, #65d68c, #589c3e);
-   background: -o-linear-gradient(top, #65d68c, #589c3e);
-   padding: 8px 16px;
-   -webkit-border-radius: 6px;
-   -moz-border-radius: 6px;
-   border-radius: 6px;
-   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   text-shadow: #000000 0 1px 0;
-   color: #ffffff;
-   font-size: 14px;
-   font-family: helvetica, serif;
-   text-decoration: none;
-   vertical-align: middle;
-   margin: 0 auto;
-	display: block;
-}
-.Button:hover {
-   border: 1px solid #ffffff;
-   text-shadow: #000000 0 1px 0;
-   background: #589c3e;
-   background: -webkit-gradient(linear, left top, left bottom, from(#93f0b2), to(#589c3e));
-   background: -webkit-linear-gradient(top, #93f0b2, #589c3e);
-   background: -moz-linear-gradient(top, #93f0b2, #589c3e);
-   background: -ms-linear-gradient(top, #93f0b2, #589c3e);
-   background: -o-linear-gradient(top, #93f0b2, #589c3e);
-   color: #fff;
-}
-.Button:active {
-   text-shadow: #000000 0 1px 0;
-   border: 1px solid #ffffff;
-   background: #65d68c;
-   background: -webkit-gradient(linear, left top, left bottom, from(#589c3e), to(#589c3e));
-   background: -webkit-linear-gradient(top, #589c3e, #65d68c);
-   background: -moz-linear-gradient(top, #589c3e, #65d68c);
-   background: -ms-linear-gradient(top, #589c3e, #65d68c);
-   background: -o-linear-gradient(top, #589c3e, #65d68c);
-   color: #fff;
-}
-#reset {
-   background: -webkit-gradient(linear, left top, left bottom, from(#65a2d6), to(#3e5d9c));
-   background: -webkit-linear-gradient(top, #65a2d6, #3e5d9c);
-   background: -moz-linear-gradient(top, #65a2d6, #3e5d9c);
-   background: -ms-linear-gradient(top, #65a2d6, #3e5d9c);
-   background: -o-linear-gradient(top, #65a2d6, #3e5d9c);
-}
-#reset:hover, reset:active {
-   background: -webkit-gradient(linear, left top, left bottom, from(#92c5f0), to(#50699e));
-   background: -webkit-linear-gradient(top, #92c5f0, #50699e);
-   background: -moz-linear-gradient(top, #92c5f0, #50699e);
-   background: -ms-linear-gradient(top, #92c5f0, #50699e);
-   background: -o-linear-gradient(top, #92c5f0, #50699e);
-}
-.switch {
-    width: 2.67em;
-    height: 1.35em;
-    background: #e5e5e5;
-    z-index: 0;
-    margin: 0;
-    padding: 0;
-    appearance: none;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    border-radius: 16px;
-    -moz-border-radius: 16px;
-    -webkit-border-radius: 16px;
-}
-.switch:before {
-    content: ' ';
-    position: absolute;
-    left: 1px;
-    top: 1px;
-    width: 2.59em;
-    height: 1.31em;
-    background: #fff;
-    z-index: 1;
-    border-radius: 16px;
-    -moz-border-radius: 16px;
-    -webkit-border-radius: 16px;
-}
-.switch:after {
-    content: ' ';
-    height: 1.24em;
-    width: 1.24em;
-    border-radius: 28px;
-    background: #fff;
-    position: absolute;
-    z-index: 2;
-    top: 1px;
-    left: 1px;
-    -webkit-transition-duration: 300ms;
-    transition-duration: 300ms;
-    -webkit-box-shadow: 0 2px 5px #999999;
-    box-shadow: 0 2px 5px #999999;
-}
-.switchOn, .switchOn:before {
-	background: #4cd964 !important;
-}
-.switchOn:after {
-    left: 1.36em !important;
-}
-.switch-label {
-	float: right;
-	margin-top: 0;
-}
-.lobibox-body-text {
-	color: #000;
-}
-#code {
-    display: none;
-}
-#code-input {
-    max-width: 100%;
-    height: 30px;
-    padding: 0 10px;
-    background: #2D3035;
-    color: #b6b6b6;
-    margin: 3px 5px;
-    width: calc(100% - 10px);
-    font-family: Lato;
-    font-weight: 900;
-    border: 1px solid RGBA(0, 0, 0, 0.4);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    box-shadow: 1px 1px 3px RGBA(0, 0, 0, 0.53) inset;
-    border-radius: 5px;
-	margin-right: 0;
-}
-#code-confirm {
-    background: #c5e1ef;
-    border: 1px solid RGBA(0, 0, 0, 0.4);
-    height: 30px;
-    font-family: Lato;
-    font-weight: Bolder;
-    color: #1a8198;
-    border-radius: 0 5px 5px 0;
-    position: absolute;
-    right: 8px;
-    top: 44px;
-}
-</style>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/lobibox.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/winter.css">
+    <!--<link rel="stylesheet" type="text/css" href="../css/slick.css">-->
+    <script src="../scripts/build/libs.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/jackpotBots.js"></script>
+    <script src="../scripts/navigationMenu.js"></script>
+    <link rel="stylesheet" href="../css/navigationMenu.css">
+    <script src="../scripts/localization.js"></script>
+    <style>
+        body {
+            color: #fff;
+            font-family: LatoRegular;
+            background: #19212b;
+            margin: 0;
+        }
+        
+        .option-block {
+            font-size: 1em;
+        }
+        
+        .option-block__name {
+            color: #f1ff8a;
+            margin-top: 15px;
+            display: block;
+        }
+        
+        .option {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 0;
+        }
+        
+        .option > *:nth-child(1) {
+            margin-top: 0;
+        }
+        
+        .inline > * {
+            display: inline-block;
+        }
+        
+        div#avatar {
+            margin-top: 10px;
+        }
+        
+        #avatar img {
+            width: 90px;
+            height: 90px;
+        }
+        
+        .switch {
+            width: 2.67em;
+            height: 1.35em;
+            background: #e5e5e5;
+            z-index: 0;
+            margin: 0;
+            padding: 0;
+            appearance: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            border-radius: 16px;
+            -moz-border-radius: 16px;
+            -webkit-border-radius: 16px;
+        }
+        
+        .switch:before {
+            content: ' ';
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            width: 2.59em;
+            height: 1.31em;
+            background: #fff;
+            z-index: 1;
+            border-radius: 16px;
+            -moz-border-radius: 16px;
+            -webkit-border-radius: 16px;
+        }
+        
+        .switch:after {
+            content: ' ';
+            height: 1.24em;
+            width: 1.24em;
+            border-radius: 28px;
+            background: #fff;
+            position: absolute;
+            z-index: 2;
+            top: 1px;
+            left: 1px;
+            -webkit-transition-duration: 300ms;
+            transition-duration: 300ms;
+            -webkit-box-shadow: 0 2px 5px #999999;
+            box-shadow: 0 2px 5px #999999;
+        }
+        
+        .switchOn,
+        .switchOn:before {
+            background: #4cd964 !important;
+        }
+        
+        .switchOn:after {
+            left: 1.36em !important;
+        }
+        
+        .switch-label {
+            float: right;
+            margin-top: 0;
+        }
+        
+        .lobibox-body-text {
+            color: #000;
+        }
+        
+        .film_roll_child.active > img {
+            border: 5px solid #F0E50E;
+        }
+    </style>
 </head>
+
 <body data-localization='settings'>
-  <div class="site-overlay"></div>
-  <div id="container">
-<div class="navigationBar"></div>
-<div class='settings'>
-<div id='code'>
-	<input type='text' id='code-input' placeholder='Code...'><button id='code-confirm'>Activate</button>
-</div>
-<div class='option-block' data-loc-group="profile">
-	<span class='option-block__name' data-loc="group_title">Profile</span>
-	<div class='option'><span data-loc="nick">Your name</span>
-		<input type="text" id="nickname" class="input-text" size="20" />
-	</div>
-	<div class='option'><span data-loc="avatar">Avatar</span>
-		<div id="avatar">
-		</div >
-	</div>
-</div>
-<div class='option-block' data-loc-group="beta">
-	<span class='option-block__name' id='local-beta' data-loc="group_title">Beta</span>
-	<div class='option inline'><span data-loc="exchange">Exchange</span>
-		<label class='switch-label'>
-			<input type="checkbox" name='trades' class='hide' />
-			<div class='switch' data-target='switch-trades'></div>
-		</label>
-	</div>
-</div>
-<div class='option-block' data-loc-group="interface">
-	<span class='option-block__name' data-loc="group_title">Interface</span>
-	<div class='option'>
-		<span data-loc="language">Language</span>
-		<div class="dropdown">
-			<select class="dropdown-select" id="language">
-			</select>
-		</div>
-	</div>
-	<div class='option inline'>
-		<span data-loc="sound">Sound</span>
-		<label class='switch-label'>
-			<input type="checkbox" name='sounds' class='hide' />
-			<div class='switch' data-target='switch-sound'></div>
-		</label>
-	</div>
-	<div class='option inline'>
-		<span data-loc='fast_drop'>Fast drop (x2)</span>
-		<label class='switch-label'>
-			<input type="checkbox" name='drop' class='hide' />
-			<div class='switch' data-target='switch-drop'></div>
-		</label>
-	</div>
-</div>
-<p>
-<button id='reset' class='Button' value='Reset' data-loc="reset">Full reset</button>
-<hr>
-<button id="submit" class="Button" value="Сохранить" data-loc="save">Save</button>
-</p>
-</div>
-</div>
-<script>
-var iconSelect;
-
-$(function() {
-    /* Languages */
-    for (var i = 0; i < Localization.supportedLanguages.names.full.length; i++) {
-        $('#language').append('<option value="' + Localization.supportedLanguages.names.short[i]+'">'+Localization.supportedLanguages.names.full[i] + '</option>')
-    }
-	/*Ava*/
-	iconSelect = new IconSelect("avatar", {
-		"selectedIconWidth":80,
-		"selectedIconHeight":80,
-		"iconsWidth": 50,
-		"iconsHeight": 50,
-	});
-	var icons = [];
-
-	var i = Bot.images.length;
-	while (i--) {
-		icons.push({"iconFilePath":"../images/ava/"+Bot.images[i], "iconValue": Bot.images[i]});
-	}
-	iconSelect.refresh(icons);
-
-	$("#avatar").on("changed", function() {
-		
-	})
-
-	$("#nickname").val(Player.nickname);
-	iconSelect.setSelectedIndex(Bot.images.length-parseInt(Player.avatar)-1);
-
-	$('select option[value='+Settings.language+']').attr('selected', 'true');
-
-	if (Settings.sounds == true) {
-		$('input[name="sounds"]').prop('checked', true);
-		$('.switch[data-target="switch-sound"]').addClass('switchOn');
-	}
-	if (Settings.drop == true) {
-		$('input[name="drop"]').prop('checked', true);
-		$('.switch[data-target="switch-drop"]').addClass('switchOn');
-	}
-    
-    firebase.auth().onAuthStateChanged(function (user) {
-        // Once authenticated, instantiate Firechat with the logged in user
-        if (firebase.auth().currentUser != null) {
-            var uid = firebase.auth().currentUser.uid;
-            firebase.database().ref('users/'+uid+'/public').once('value', function(data) {
-                try{
-                    if (data.val().betaTrade) {
-                        $('input[name="trades"]').prop('checked', true);
-                        $('.switch[data-target="switch-trades"]').addClass('switchOn');
-                    } else {
-                        $('input[name="trades"]').prop('checked', false);
+    <div class="site-overlay"></div>
+    <div id="container">
+        <div class="navigationBar"></div>
+        <div class='container'>
+            <div id='code' class='input-group' style='display: none;'>
+                <input type='text' class='form-control' id='code-input' placeholder='Code...'>
+                <div class='input-group-btn'>
+                    <button id='code-confirm' class='btn btn-default'>Activate</button>
+                </div>
+            </div>
+            <div class='option-block' data-loc-group="profile"> <span class='option-block__name' data-loc="group_title">Profile</span>
+                <div class='option'><span data-loc="nick">Your name</span>
+                    <input type="text" id="nickname" class="form-control input-sm" size="20" /> </div>
+                <div class='option'><span data-loc="avatar">Avatar</span>
+                    <div id="avatar"> </div>
+                </div>
+            </div>
+            <div class='option-block' data-loc-group="beta"> <span class='option-block__name' id='local-beta' data-loc="group_title">Beta</span>
+                <div class='option inline'><span data-loc="exchange">Exchange</span>
+                    <label class='switch-label'>
+                        <input type="checkbox" name='trades' class='hide' />
+                        <div class='switch' data-target='switch-trades'></div>
+                    </label>
+                </div>
+            </div>
+            <div class='option-block' data-loc-group="interface"> <span class='option-block__name' data-loc="group_title">Interface</span>
+                <div class='option'> <span data-loc="language">Language</span>
+                    <div class="dropdown">
+                        <select class="form-control input-sm" id="language"></select>
+                    </div>
+                </div>
+                <div class='option inline'> <span data-loc="sound">Sound</span>
+                    <label class='switch-label'>
+                        <input type="checkbox" name='sounds' class='hide' />
+                        <div class='switch' data-target='switch-sound'></div>
+                    </label>
+                </div>
+                <div class='option inline'> <span data-loc='fast_drop'>Fast drop (x2)</span>
+                    <label class='switch-label'>
+                        <input type="checkbox" name='drop' class='hide' />
+                        <div class='switch' data-target='switch-drop'></div>
+                    </label>
+                </div>
+            </div>
+            <div style='margin: 10px 0; text-align:center'>
+                <button id='submit' class='btn btn-success' data-loc='save'>Save</button>
+                <button id='reset' class='btn btn-danger' data-loc='reset'>Full reset</button>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                /* Languages */
+                for (var i = 0; i < Localization.supportedLanguages.names.full.length; i++) {
+                    $('#language').append('<option value="' + Localization.supportedLanguages.names.short[i] + '">' + Localization.supportedLanguages.names.full[i] + '</option>')
+                }
+                /*Ava*/
+                var i = Bot.images.length;
+                var html = "";
+                while (i--) {
+                    html += "<div data-img='" + Bot.images[i] + "'><img src='" + avatarUrl(Bot.images[i]) + "'></div>"
+                }
+                $("#avatar").html(html);
+                fn = new FilmRoll({
+                    container: '#avatar'
+                    , pager: false
+                    , scroll: false
+                    , start_index: $("#avatar div[data-img='" + Player.avatar + "']").index()
+                });
+                $("#nickname").val(Player.nickname);
+                $('select option[value=' + Settings.language + ']').attr('selected', 'true');
+                if (Settings.sounds == true) {
+                    $('input[name="sounds"]').prop('checked', true);
+                    $('.switch[data-target="switch-sound"]').addClass('switchOn');
+                }
+                if (Settings.drop == true) {
+                    $('input[name="drop"]').prop('checked', true);
+                    $('.switch[data-target="switch-drop"]').addClass('switchOn');
+                }
+                firebase.auth().onAuthStateChanged(function (user) {
+                    if (firebase.auth().currentUser != null) {
+                        var uid = firebase.auth().currentUser.uid;
+                        firebase.database().ref('users/' + uid + '/public').once('value', function (data) {
+                            try {
+                                if (data.val().betaTrade) {
+                                    $('input[name="trades"]').prop('checked', true);
+                                    $('.switch[data-target="switch-trades"]').addClass('switchOn');
+                                }
+                                else {
+                                    $('input[name="trades"]').prop('checked', false);
+                                }
+                            }
+                            catch (e) {}
+                        })
                     }
-                } catch(e) {}
+                })
+            });
+            $(document).on('localizationloaded', function () {
+                $('#translator').text(Translation.info.author);
+                $('#translation_date').text(Translation.info.date);
             })
-        }
-    })
-});
-
-$("#submit").on("click", function() {
-	var nick = $("#nickname").val();
-	var validation = /^[a-zA-Zа-яёА-ЯЁ0-9_-]+$/;
-    var illicitNick = /((a|а|о|o)(d|д)(m|м)(i|\||и|n)(n|и|н)|(VL(A|а)D(O|о)(S|c|с)(?:776)?))/ig;
-	if (nick != "" && validation.test(nick) && !illicitNick.test(nick)) {
-		saveStatistic("playerNickname", nick)
-	} else {
-		Lobibox.notify('error', {
-			pauseDelayOnHover: false,
-			continueDelayOnInactiveTab: false,
-			width: $(window).width(),
-			position: 'top center',
-			icon: false,
-			title: Localization.getString('settings.notification.invalid_nick_title'),
-			delay: 4000,
-			size: 'mini',
-			showClass: 'fadeInDown',
-			hideClass: 'fadeOutUp',
-			msg: Localization.getString('settings.notification.invalid_nick')
-		});
-		return false;
-	}
-	var lang = $('#language option:selected').val();
-    saveStatistic('settings_language', lang);
-    
-    if (Settings.language != lang)
-        Localization.changeLanguage(lang);
-	saveStatistic('settings_sounds', $('input[name="sounds"]').prop('checked'));
-	saveStatistic('settings_drop', $('input[name="drop"]').prop('checked'));
-    
-    try {
-	   firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/public/betaTrade').set( $('input[name="trades"]').prop('checked'));
-	   firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/public/betaTrade').set( $('input[name="trades"]').prop('checked'));
-    } catch(e) {}
-    
-    saveStatistic("playerAvatar", iconSelect.getSelectedValue());
-    try {
-        if (firebase.auth().currentUser != "") {
-            firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/public/avatar')
-                .set('../images/ava/'+iconSelect.getSelectedValue());
-            firebase.auth().currentUser.updateProfile({
-                photoURL: '../images/ava/'+iconSelect.getSelectedValue()
+            $("#submit").on("click", function () {
+                var nick = $("#nickname").val();
+                var validation = /^[a-zA-Zа-яёА-ЯЁ0-9_-]+$/;
+                var illicitNick = /((a|а|о|o)(d|д)(m|м)(i|\||и|n)(n|и|н)|(VL(A|а)D(O|о)(S|c|с)(?:776)?))/ig;
+                if (nick != "" && validation.test(nick) && !illicitNick.test(nick)) {
+                    saveStatistic("playerNickname", nick)
+                    Player.nickname = nick;
+                }
+                else {
+                    Lobibox.notify('error', {
+                        pauseDelayOnHover: false
+                        , continueDelayOnInactiveTab: false
+                        , width: $(window).width()
+                        , position: 'top center'
+                        , icon: false
+                        , title: Localization.getString('settings.notification.invalid_nick_title')
+                        , delay: 4000
+                        , size: 'mini'
+                        , showClass: 'fadeInDown'
+                        , hideClass: 'fadeOutUp'
+                        , msg: Localization.getString('settings.notification.invalid_nick')
+                    });
+                    return false;
+                }
+                var lang = $('#language option:selected').val();
+                if (Settings.language != lang) 
+                    Localization.changeLanguage(lang);
+                Settings.language = lang;
+                Settings.sounds = $('input[name="sounds"]').prop('checked');
+                Settings.drop = $('input[name="drop"]').prop('checked');
+                saveStatistic('settings_language', Settings.language);
+                saveStatistic('settings_sounds', Settings.sounds);
+                saveStatistic('settings_drop', Settings.drop);
+                try {
+                    var avatar = $('.film_roll_child.active img').attr('src').match(/\/[0-9a-z-_]+\.\w{3}$/i)[0].replace('/', '');
+                }
+                catch (e) {
+                    var avatar = '0.jpg';
+                }
+                saveStatistic("playerAvatar", avatar);
+                Player.avatar = avatar;
+                /*try {
+                    if (firebase.auth().currentUser != "") {
+                        firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/public/avatar')
+                            .set('../images/ava/' + iconSelect.getSelectedValue());
+                        firebase.auth().currentUser.updateProfile({
+                            photoURL: '../images/ava/' + iconSelect.getSelectedValue()
+                        })
+                    }
+                } catch (e) {}*/
+                $('.menu_ava').attr('src', avatarUrl(avatar));
+                Settings.language = lang;
+                try {
+                    var userRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
+                    
+                    userRef.child('/public/betaTrade').set($('input[name="trades"]').prop('checked'));
+                    userRef.child('/public/avatar').set(avatarUrl(avatar));
+                    userRef.child('/settings/language').set(Settings.language);
+                    userRef.child('/settings/drop').set(Settings.drop);
+                    userRef.child('/settings/sounds').set(Settings.sounds);
+                }
+                catch (e) {
+                    console.log(e);
+                }
+                
+                LOG.log({
+                    action: 'Change settings'
+                })
+                Lobibox.notify('info', {
+                    pauseDelayOnHover: false
+                    , continueDelayOnInactiveTab: false
+                    , width: $(window).width()
+                    , position: 'top center'
+                    , icon: false
+                    , title: Localization.getString('settings.notification.title')
+                    , delay: 2000
+                    , size: 'mini'
+                    , showClass: 'fadeInDown'
+                    , hideClass: 'fadeOutUp'
+                    , msg: Localization.getString('settings.notification.saved')
+                });
+            });
+            $('#reset').on('click', function () {
+                Lobibox.confirm({
+                    iconSource: 'fontAwesome'
+                    , title: Localization.getString('settings.notification.reset_confirm_title')
+                    , msg: Localization.getString('settings.notification.reset_confirm')
+                    , callback: function ($tihs, type, ev) {
+                        if (type == 'yes') {
+                            if (isAndroid()) {
+                                client.deleteAllInventory();
+                            }
+                            else {
+                                localStorage.clear();
+                                window.indexedDB.deleteDatabase('Inventory');
+                            }
+                            deleteAllCookies();
+                            saveStatistic('doubleBalance', 0);
+                            saveStatistic('playerPoints', 0);
+                            Lobibox.notify('info', {
+                                pauseDelayOnHover: false
+                                , continueDelayOnInactiveTab: false
+                                , width: $(window).width()
+                                , position: 'top center'
+                                , icon: false
+                                , title: Localization.getString('settings.notification.reset_confirm_title')
+                                , delay: 2000
+                                , size: 'mini'
+                                , showClass: 'fadeInDown'
+                                , hideClass: 'fadeOutUp'
+                                , msg: Localization.getString('settings.notification.reset_done')
+                            });
+                        }
+                    }
+                });
             })
-        }
-    }catch (e) {}
-    $('.menu_ava').attr('src', '../images/ava/'+iconSelect.getSelectedValue());
+            $('.switch').click(function () {
+                $(this).toggleClass("switchOn");
+            });
 
-	Settings.language = lang;
-
-	Lobibox.notify('info', {
-			pauseDelayOnHover: false,
-			continueDelayOnInactiveTab: false,
-			width: $(window).width(),
-			position: 'top center',
-			icon: false,
-			title: Localization.getString('settings.notification.title'),
-			delay: 2000,
-			size: 'mini',
-			showClass: 'fadeInDown',
-			hideClass: 'fadeOutUp',
-			msg: Localization.getString('settings.notification.saved')
-		});
-});
-
-$('#reset').on('click', function () {
-	Lobibox.confirm({
-		iconSource : 'fontAwesome',
-		title : Localization.getString('settings.notification.reset_confirm_title'),
-		msg : Localization.getString('settings.notification.reset_confirm'),
-		callback : function ($tihs, type, ev) {
-			if (type == 'yes') {
-				if (isAndroid()) {
-					client.deleteAllInventory();
-				} else {
-					localStorage.clear();
-                    window.indexedDB.deleteDatabase('Inventory');
-				}
-                deleteAllCookies();
-                saveStatistic('doubleBalance', 0);
-                saveStatistic('playerPoints', 0);
-				Lobibox.notify('info', {
-					pauseDelayOnHover : false,
-					continueDelayOnInactiveTab : false,
-					width : $(window).width(),
-					position : 'top center',
-					icon : false,
-					title : Localization.getString('settings.notification.reset_confirm_title'),
-					delay : 2000,
-					size : 'mini',
-					showClass : 'fadeInDown',
-					hideClass : 'fadeOutUp',
-					msg : Localization.getString('settings.notification.reset_done')
-				});
-			}
-		}
-	});
-})
-
- $('.switch').click(function () {
-	$(this).toggleClass("switchOn");
-});
-
-function deleteAllCookies() {
-	var cookies = document.cookie.split(";");
-
-	for (var i = 0; i < cookies.length; i++) {
-		var cookie = cookies[i];
-		var eqPos = cookie.indexOf("=");
-		var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-		document.cookie = name + "=;";
-	}
-}
-
-$(document).on('click', '.option-block__name[data-loc="group_title"]', function() {
-	$('#code').toggle('slow');
-})
-
-$(document).on('click', '#code-confirm', function() {
-	var codesList = [{
-        code: 'f8d6dd190baff0de491c8fae6399cd64',
-        multiply: false,
-        action: 'saveStatistic("doubleBalance", Player.doubleBalance+=183875)',
-        description: '+183875 double credits'
+            function deleteAllCookies() {
+                var cookies = document.cookie.split(";");
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i];
+                    var eqPos = cookie.indexOf("=");
+                    var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                    document.cookie = name + "=;";
+                }
+            }
+            $(document).on('click', '[data-loc-group="interface"] .option-block__name[data-loc="group_title"]', function () {
+                $('#code').toggle();
+            })
+            $(document).on('click', '#code-confirm', function () {
+                var codesList = [{
+                    code: 'f8d6dd190baff0de491c8fae6399cd64'
+                    , multiply: false
+                    , action: 'saveStatistic("doubleBalance", Player.doubleBalance+=183875)'
+                    , description: '+183875 double credits'
     }, {
-        code: 'fe63765176c7bd5b069d4e6c7eee3d34',
-        multiply: false,
-        action: 'saveStatistic("doubleBalance", Player.doubleBalance+=50000)',
-        description: '+50000 double credits'
+                    code: 'fe63765176c7bd5b069d4e6c7eee3d34'
+                    , multiply: false
+                    , action: 'saveStatistic("doubleBalance", Player.doubleBalance+=50000)'
+                    , description: '+50000 double credits'
     }, {
-        simpleCode: 'localServer',
-        code: '',
-        multiply: true,
-        action: 'location="http://192.168.1.205:8080"',
-        description: 'Go to local web server.'
+                    simpleCode: 'localServer'
+                    , code: ''
+                    , multiply: true
+                    , action: 'location="http://192.168.1.205:8080"'
+                    , description: 'Go to local web server.'
     }, {
-        simpleCode: 'Splash',
-        code: '',
-        multiply: true,
-        action: 'client.showSplashScreen();',
-        description: 'Go to local web server.'
+                    simpleCode: 'Splash'
+                    , code: ''
+                    , multiply: true
+                    , action: 'client.showSplashScreen();'
+                    , description: 'Go to local web server.'
     }, {
-        simpleCode: 'Jackpot Online',
-        code: '',
-        multiply: true,
-        action: 'location="https://vlados776.github.io/OpenCase_Beta2/RUS/jackpot-Online.html";',
-        description: 'Jackpot Online'
+                    simpleCode: 'Jackpot Online'
+                    , code: ''
+                    , multiply: true
+                    , action: 'location="https://vlados776.github.io/OpenCase_Beta2/RUS/jackpot-Online.html";'
+                    , description: 'Jackpot Online'
     }, {
-        simpleCode: 'Polski',
-        code: '',
-        multiply: true,
-        action: 'saveStatistic("settings_language", "PL");',
-        description: 'Language changed to Polski.'
+                    simpleCode: 'Polski'
+                    , code: ''
+                    , multiply: true
+                    , action: 'saveStatistic("settings_language", "PL");'
+                    , description: 'Language changed to Polski.'
     }];
-	var code = $('#code-input').val();
-
-	if (code == "") {
-		$("#code-input").addClass("animated shake");
-		setTimeout(function() {
-			$("#code-input").removeClass("animated shake");
-		}, 1000);
-		return false
-	}
-
-	codeHex = hex_md5(code);
-	var msg = "";
-	for (var i = 0; i < codesList.length; i++)
-		if (codesList[i].code == codeHex || (typeof codesList[i].simpleCode !="undefined" && codesList[i].simpleCode == code))
-			if (getStatistic('code-'+code, 'none') == 'none' || codesList[i].multiply) {
-				eval(codesList[i].action);
-				saveStatistic('code-'+code, 'activated');
-				msg = codesList[i].description;
-			} else {
-				msg = 'Code already activated.';
-			}
-				Lobibox.notify('info', {
-					pauseDelayOnHover : false,
-					continueDelayOnInactiveTab : false,
-					width : $(window).width(),
-					position : 'top center',
-					icon : false,
-					title : "Code activation",
-					delay : 2000,
-					size : 'mini',
-					showClass : 'fadeInDown',
-					hideClass : 'fadeOutUp',
-					msg : msg
-				});
-})
-
-</script>
+                var code = $('#code-input').val();
+                if (code == "") {
+                    $("#code-input").addClass("animated shake");
+                    setTimeout(function () {
+                        $("#code-input").removeClass("animated shake");
+                    }, 1000);
+                    return false
+                }
+                codeHex = hex_md5(code);
+                var msg = "";
+                for (var i = 0; i < codesList.length; i++)
+                    if (codesList[i].code == codeHex || (typeof codesList[i].simpleCode != "undefined" && codesList[i].simpleCode == code))
+                        if (getStatistic('code-' + code, 'none') == 'none' || codesList[i].multiply) {
+                            eval(codesList[i].action);
+                            saveStatistic('code-' + code, 'activated');
+                            msg = codesList[i].description;
+                        }
+                        else {
+                            msg = 'Code already activated.';
+                        }
+                Lobibox.notify('info', {
+                    pauseDelayOnHover: false
+                    , continueDelayOnInactiveTab: false
+                    , width: $(window).width()
+                    , position: 'top center'
+                    , icon: false
+                    , title: "Code activation"
+                    , delay: 2000
+                    , size: 'mini'
+                    , showClass: 'fadeInDown'
+                    , hideClass: 'fadeOutUp'
+                    , msg: msg
+                });
+            })
+        </script>
+        <script src="../scripts/jquery.film_roll.min.js"></script>
+        <script src="../scripts/jquery.touchSwipe.min.js"></script>
 </body>
+
 </html>
