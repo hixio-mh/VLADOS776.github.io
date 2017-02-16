@@ -357,6 +357,10 @@ function newMsg(key, message, edit) {
         extraClasses = message.extra || '';
     edit = edit || false;
     
+    if (!/^\.\.\/images\/ava\/.{1,5}\.\w{3}$/i.test(img) && !/(admin|moder|vip)/i.test(group)) {
+        img = '../images/ava/0.jpg';
+    }
+    
     var imgRegExp = /(https?:\/\/.*\.(?:png|jpg|jpeg|gif))/igm,
         youtubeRegExp = /(?:https?\:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.?be)\/(?:watch\?v=|embed\/)?([a-zA-Z0-9?=-]+)/igm;
         //vkRegExp = /(https?:\/\/vk\.com\/(.*))?/ig;
@@ -382,7 +386,7 @@ function newMsg(key, message, edit) {
     
     username = fbProfile.XSSreplace(username);
     var toMe = text.indexOf('@'+Player.nickname) != -1 ? true : false;
-    text = text.replace(/@(.*?),[ ]?/gi, '<b class="player-nickname">@$1</b>, ');
+    text = text.replace(/@(.*?)[, ]/gi, '<b class="player-nickname">@$1</b>, ');
     
     var moderBlock = "";
     
