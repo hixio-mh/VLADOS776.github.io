@@ -285,15 +285,16 @@ var fbChat = (function (module) {
     }
     module.extraClasses = function(key, classes) {
         module.chatRef.child(key).child('extra').once('value').then(function (data) {
-            var regTest = new RegExp('( ' + classes + '|' + classes + ' )', 'g');
-            if (data.val() == null) {
+            var classesArr = classes.split(' ');
+            var currentClasses = data.val();
+            if (currentClasses == null) {
                 module.chatRef.child(key).child('extra').set(classes);
-            } else if (data.val().trim() === classes) {
+            } else if (currentClasses.trim() === classes) {
                 module.chatRef.child(key).child('extra').remove();
-            } else if (data.val().match(regTest)) {
-                module.chatRef.child(key).child('extra').set(data.val().replace(classes, ''));
+            } else if (currentClasses.split(' ').indexOf(classes) !== -1) {
+                module.chatRef.child(key).child('extra').set(currentClasses.replace(classes, '').trim());
             } else {
-                module.chatRef.child(key).child('extra').set(data.val() + ' ' + classes);
+                module.chatRef.child(key).child('extra').set(currentClasses + ' ' + classes);
             }
         })
     }
@@ -393,7 +394,7 @@ function newMsg(key, message, edit) {
         }
         moderBlock = "<div class='message__moderator' data-loc-group='message-menu'><div class='dropup'>\
                         <i aria-hidden='true' class='fa fa-bars dropdown-toggle' type='button' data-toggle='dropdown'></i>\
-                        <ul class='dropdown-menu'>\
+                        <ul class='dropdown-menu dropdown-menu-right'>\
                             <li style='" + allow.delete + "'><a href='#' data-action='delete-message' data-loc='delete'>Delete</a></li>\
                             <li style='" + allow.fake_vip + "'><a href='#' data-action='fake-vip' data-loc='fake_vip'>Fake VIP</a></li>\
                             <li style='" + allow.blur + "'><a href='#' data-action='blur' data-loc='Blur'>Blur</a></li>\
@@ -436,6 +437,6 @@ function removeMsg(key) {
 $(document).on('click', '#chat__send-new-message', function () {
     var msg = $('#chat__new-message').text();
     if (msg.length == 0) return false;
-    fbChat.sendMsg(Player.nickname, msg, '../images/ava/' + Player.avatar, Player.country);
+    fbChat.sendMsg(Player.nickname, msg, Player.avatar, Player.country);
     $('#chat__new-message').empty();
 });

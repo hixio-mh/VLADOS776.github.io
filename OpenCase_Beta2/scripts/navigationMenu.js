@@ -23,7 +23,7 @@ $(function () {
     catch (e) {}
     var menuHTML = '<div class="menu_playerInfo"> \
         <div id="menu_playerInfo_info"> \
-            <a href="' + link + '" data-profileLink="true"><img src="../images/ava/' + Player.avatar + '" class="menu_ava"></a> \
+            <a href="' + link + '" data-profileLink="true"><img src="' + avatarUrl() + '" class="menu_ava"></a> \
             <div id="menu_playerInfo_info_text"> \
                 <a href="' + link + '" data-profileLink="true"><span id="menu_playerInfo_name"></span></a> \
                 <span id="menu_doubleBalance">' + Player.doubleBalance + '</span><i class="double-icon"></i> \

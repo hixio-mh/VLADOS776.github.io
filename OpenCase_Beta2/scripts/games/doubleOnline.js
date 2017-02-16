@@ -420,7 +420,7 @@ function addBet(tableColor, player) {
     else if (player.bet >= 1000000 && player.bet < 1000000000)
         player.bet = rounded((player.bet / 1000000))+'kk';
     
-    $('.bets-' + tableColor + '-table').append('<tr class="the-bet"><td class="the-bet__player"><img src="../images/ava/' + XSSreplace(player.img) + '">' + XSSreplace(player.name) + '</td><td class="the-bet__bet">' + XSSreplace(player.bet) + '</td></tr>');
+    $('.bets-' + tableColor + '-table').append('<tr class="the-bet"><td class="the-bet__player"><img src="' + XSSreplace(avatarUrl(player.img)) + '">' + XSSreplace(player.name) + '</td><td class="the-bet__bet">' + XSSreplace(player.bet) + '</td></tr>');
     
 }
 

@@ -301,7 +301,7 @@ function botAddBet() {
 
 function addBet(tableColor, player) {
     tableColor = tableColor || 'red';
-    $('.bets-' + tableColor + '-table').append('<tr><td><img src="../images/ava/' + player.img + '">' + player.name + '</td><td>' + player.bet + '</td></tr>');
+    $('.bets-' + tableColor + '-table').append('<tr><td><img src="' + avatarUrl(player.img) + '">' + player.name + '</td><td>' + player.bet + '</td></tr>');
 }
 
 function fillCarusel(lastNumber) {

@@ -38,7 +38,7 @@ var Localization = (function (module) {
     
     module.isSupport = function(cat) {
         var category = module.supportedLanguages[cat];
-        if (!category) return undefined;
+        if (!category) return false;
         
         if (category.regExp) {
             return category.regExp.test(Settings.language);

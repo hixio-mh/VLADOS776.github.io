@@ -17,7 +17,7 @@ var Settings = {
     }
 
 Player.nickname = getStatistic("playerNickname", 'Player');
-Player.avatar = getStatistic("playerAvatar", '0.jpg');
+Player.avatar = getStatistic("playerAvatar", '../images/ava/0.jpg');
 Player.points = parseInt(getStatistic('playerPoints', 0));
 Player.doubleBalance = parseInt(getStatistic('doubleBalance', 0));
 
@@ -29,6 +29,18 @@ if (isNaN(Player.points)) Player.points = 1;
 Settings.language = getStatistic("settings_language", 'EN');
 Settings.sounds = getStatistic("settings_sounds", 'true') === 'true';
 Settings.drop = getStatistic("settings_drop", 'false') === 'true';
+
+function avatarUrl(avatar) {
+    avatar = avatar || Player.avatar;
+    
+    if (/^\d+\.(jpg|png|gif)$/i.test(avatar)) {
+        return '../images/ava/'+avatar;
+    } else if (/^\.\..*?\d+\.\w{3}$/.test(avatar)) {
+        return avatar;
+    } else if (/^(http|www).*?\.(png|gif|jpg|jpeg)$/i.test(avatar)) {
+        return avatar;
+    }
+}
 
 // ===== RANKS =====
 var Ranks = [{

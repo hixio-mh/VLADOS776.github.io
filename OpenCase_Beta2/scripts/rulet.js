@@ -116,7 +116,7 @@ function addItems(fromName, fromImg, itemCount, itemsCost) {
     for (var i = 0; i < PlayersInGame.length; i++) {
         var chance = 0.0;
         chance = parseFloat(Math.round((PlayersInGame[i].itemsCost * 100) / totalMoney * 100) / 100);
-        players += "<span class='playerAva'  data-nick='" + PlayersInGame[i].nick + "'><img src='../images/ava/" + PlayersInGame[i].avatar + "'><p>" + chance + "%</p></span>";
+        players += "<span class='playerAva'  data-nick='" + PlayersInGame[i].nick + "'><img src='" + avatarUrl(PlayersInGame[i].avatar) + "'><p>" + chance + "%</p></span>";
         PlayersInGame[i].chance = chance;
     }
     $("#players").html(players);
@@ -156,7 +156,7 @@ function startGame() {
     arr[winNumber] = getJackpotWiner();
 
     arr.forEach(function(item, index) {
-        var img = '../images/ava/' + item.avatar;
+        var img = avatarUrl(item.avatar);
 
         el += '<span class="playerAva">' +
             '<img src="' + img + '" />' +
@@ -180,7 +180,7 @@ function startGame() {
             //caseOpening = true;
             $(".closeInventory").click();
 
-            $(".win").html("<img src='../images/ava/" + win.avatar + "'><span class='win__title'>" + Localization.getString('jackpot.winner', 'The winner') + "</span><span class='win__nick'>" + win.nick + "</span><span class='win__chance'>" + win.chance + "%</span><span class='win__ticket'><i class='fa fa-ticket'></i> " + ('' + parseInt(winnerTicket)).replace(ticketsRegExp, '$1&#8198;') + "</span>");
+            $(".win").html("<img src='" + avatarUrl(win.avatar) + "'><span class='win__title'>" + Localization.getString('jackpot.winner', 'The winner') + "</span><span class='win__nick'>" + win.nick + "</span><span class='win__chance'>" + win.chance + "%</span><span class='win__ticket'><i class='fa fa-ticket'></i> " + ('' + parseInt(winnerTicket)).replace(ticketsRegExp, '$1&#8198;') + "</span>");
 
             if (win.nick == Player.nickname) {
                 saveWeapons(ItemsInGame);
@@ -296,7 +296,7 @@ function botAddItems() {
 
 function itemsList(fromName, fromImg, tickets, itemsCost, weaponsList) {
     if (typeof weaponsList == 'undefined' || weaponsList.length == 0) return false;
-    var bet = "<li class='game-bet animated zoomIn'><div class='game-bet__info'><div class='game-bet__player'><img src='../images/ava/" + fromImg + "'>" + fromName + "</div><div class='game-bet__tickets'><span class='game-bet__tickets__price'>$" + itemsCost.toFixed(2) + "</span><i class='fa fa-ticket'></i> " + ('' + parseInt(tickets.from)).replace(ticketsRegExp, '$1&#8198;') + " - " + ('' + parseInt(tickets.to)).replace(ticketsRegExp, '$1&#8198;') + "</div></div></div>" +
+    var bet = "<li class='game-bet animated zoomIn'><div class='game-bet__info'><div class='game-bet__player'><img src='" + avatarUrl(fromImg) + "'>" + fromName + "</div><div class='game-bet__tickets'><span class='game-bet__tickets__price'>$" + itemsCost.toFixed(2) + "</span><i class='fa fa-ticket'></i> " + ('' + parseInt(tickets.from)).replace(ticketsRegExp, '$1&#8198;') + " - " + ('' + parseInt(tickets.to)).replace(ticketsRegExp, '$1&#8198;') + "</div></div></div>" +
         "<div class='bet-items " + (weaponsList.length > 4 ? "hide-items" : "") + "'><div colspan=2>";
     for (var i = 0; i < weaponsList.length; i++) {
         var weapon = weaponsList[i];
