@@ -437,7 +437,7 @@ var Jackpot = {
             start: function() {
                 $(".closeInventory").click();
 
-                $(".win").html("<img src='" + XSSreplace(Jackpot.room.winner.avatar) + "'><span class='win__title'>" + Localization.getString('jackpot.winner') + "</span><span class='win__nick'>" + XSSreplace(Jackpot.room.winner.nickname) + "</span><span class='win__chance'>" + Jackpot.room.winner.chance + "%</span><span class='win__ticket'><i class='fa fa-ticket'></i> " + ('' + parseInt(Jackpot.room.winner.ticket)).replace(ticketsRegExp, '$1&#8198;') + "</span>");
+                $(".win").html("<img src='" + avatarUrl(XSSreplace(Jackpot.room.winner.avatar)) + "'><span class='win__title'>" + Localization.getString('jackpot.winner') + "</span><span class='win__nick'>" + XSSreplace(Jackpot.room.winner.nickname) + "</span><span class='win__chance'>" + Jackpot.room.winner.chance + "%</span><span class='win__ticket'><i class='fa fa-ticket'></i> " + ('' + parseInt(Jackpot.room.winner.ticket)).replace(ticketsRegExp, '$1&#8198;') + "</span>");
             },
             progress: function(e, t) {
                 /*progress_animate = Math.round(100 * t),
