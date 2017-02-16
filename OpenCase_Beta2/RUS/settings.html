@@ -144,7 +144,10 @@
                 <div class='option'><span data-loc="nick">Your name</span>
                     <input type="text" id="nickname" class="form-control input-sm" size="20" /> </div>
                 <div class='option'><span data-loc="avatar">Avatar</span>
-                    <div id="avatar"> </div>
+                    <div id="avatar"></div>
+                </div>
+                <div class='option' id='custom_avatar_opt' style='display:none;'><span data-loc="custom_avatar">Custom Avatar (184px x 184px)</span>
+                    <input id="custom_avatar" class='form-control input-sm' placeholder="URL">
                 </div>
             </div>
             <div class='option-block' data-loc-group="beta"> <span class='option-block__name' id='local-beta' data-loc="group_title">Beta</span>
@@ -198,6 +201,11 @@
                     , scroll: false
                     , start_index: $("#avatar div[data-img='" + Player.avatar + "']").index()
                 });
+                
+                $('#custom_avatar').val(Player.avatar);
+                
+                var correctImg = false;
+                
                 $("#nickname").val(Player.nickname);
                 $('select option[value=' + Settings.language + ']').attr('selected', 'true');
                 if (Settings.sounds == true) {
@@ -211,21 +219,47 @@
                 firebase.auth().onAuthStateChanged(function (user) {
                     if (firebase.auth().currentUser != null) {
                         var uid = firebase.auth().currentUser.uid;
-                        firebase.database().ref('users/' + uid + '/public').once('value', function (data) {
-                            try {
-                                if (data.val().betaTrade) {
-                                    $('input[name="trades"]').prop('checked', true);
-                                    $('.switch[data-target="switch-trades"]').addClass('switchOn');
-                                }
-                                else {
-                                    $('input[name="trades"]').prop('checked', false);
-                                }
+                        firebase.database().ref('users/' + uid + '/public/betaTrade').once('value', function (data) {
+                            if (data.val()) {
+                                $('input[name="trades"]').prop('checked', true);
+                                $('.switch[data-target="switch-trades"]').addClass('switchOn');
+                            } else {
+                                $('input[name="trades"]').prop('checked', false);
                             }
-                            catch (e) {}
+                        })
+                        firebase.database().ref('users/'+uid+'/moder/group').once('value', function(data) {
+                            var group = data.val();
+                            if (group && group.match(/(vip|admin)/)) {
+                                $('#custom_avatar_opt').show();
+                            }
                         })
                     }
                 })
             });
+
+            $('#custom_avatar').change(function() {
+                getMeta($(this).val(), function(size) {
+                    if (size && size.width != size.heigth && size.width != 184) {
+                        Lobibox.notify('error', {
+                            pauseDelayOnHover: false
+                            , continueDelayOnInactiveTab: false
+                            , width: $(window).width()
+                            , position: 'top center'
+                            , icon: false
+                            , title: 'Image size'
+                            , delay: 4000
+                            , size: 'mini'
+                            , showClass: 'fadeInDown'
+                            , hideClass: 'fadeOutUp'
+                            , msg: 'Image must be 184px x 184px'
+                        });
+                        correctImg = false;
+                    } else {
+                        correctImg = true;
+                    }
+                })
+            })
+
             $(document).on('localizationloaded', function () {
                 $('#translator').text(Translation.info.author);
                 $('#translation_date').text(Translation.info.date);
@@ -269,17 +303,12 @@
                 catch (e) {
                     var avatar = '0.jpg';
                 }
+                var customAvatar = $('#custom_avatar').val();
+                if (customAvatar !== '' && /^(http|www).*?\.(png|jpg|jpeg|gif)$/.test(customAvatar) && correctImg) {
+                    avatar = XSSreplace(customAvatar);
+                }
                 saveStatistic("playerAvatar", avatar);
                 Player.avatar = avatar;
-                /*try {
-                    if (firebase.auth().currentUser != "") {
-                        firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/public/avatar')
-                            .set('../images/ava/' + iconSelect.getSelectedValue());
-                        firebase.auth().currentUser.updateProfile({
-                            photoURL: '../images/ava/' + iconSelect.getSelectedValue()
-                        })
-                    }
-                } catch (e) {}*/
                 $('.menu_ava').attr('src', avatarUrl(avatar));
                 Settings.language = lang;
                 try {
@@ -342,6 +371,18 @@
                                 , hideClass: 'fadeOutUp'
                                 , msg: Localization.getString('settings.notification.reset_done')
                             });
+                            
+                            try {
+                                var userRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
+
+                                userRef.child('/settings/drop').set(false);
+                                userRef.child('/settings/sounds').set(true);
+                                userRef.child('/private/double').set(0);
+                                userRef.child('/public/points').set(0);
+                            }
+                            catch (e) {
+                                console.log(e);
+                            }
                         }
                     }
                 });
@@ -432,6 +473,18 @@
                     , msg: msg
                 });
             })
+            
+            function getMeta(url, callback){
+                $("<img/>",{
+                    load : function(){ 
+                        callback({
+                            width: this.width,
+                            height: this.height
+                        }); 
+                    },
+                    src  : url
+                });
+            }
         </script>
         <script src="../scripts/jquery.film_roll.min.js"></script>
         <script src="../scripts/jquery.touchSwipe.min.js"></script>
