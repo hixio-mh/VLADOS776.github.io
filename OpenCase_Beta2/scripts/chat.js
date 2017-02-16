@@ -348,7 +348,7 @@ var fbChat = (function (module) {
 
 function newMsg(key, message, edit) {
      var uid = message.uid,
-        img = message.img,
+        img = avatarUrl(message.img),
         username = message.username,
         time = message.timestamp,
         text = message.text,
