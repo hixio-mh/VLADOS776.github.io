@@ -132,7 +132,7 @@ window.onerror = function (msg, url, line, col, error) {
             bottom += $(this).height() + 10;
         })
     }
-    $(document.body).append('<div class="error-log" style="bottom:'+bottom+'px">' + action + '</div>');
+    //$(document.body).append('<div class="error-log" style="bottom:'+bottom+'px">' + action + '</div>');
     console.log(stack);
     if (!DEBUG)
         setTimeout(function(){
