@@ -35,7 +35,7 @@ function avatarUrl(avatar) {
     
     if (/^\d+\.(jpg|png|gif)$/i.test(avatar)) {
         return '../images/ava/'+avatar;
-    } else if (/^\.\..*?\d+\.\w{3}$/.test(avatar)) {
+    } else if (/^\.\..*?\.\w{3}$/.test(avatar)) {
         return avatar;
     } else if (/^(http|www).*?\.(png|gif|jpg|jpeg)$/i.test(avatar)) {
         return avatar;
