@@ -20,6 +20,8 @@ if (isAndroid() && parseFloat(client.getCurrentAppVersionName()) > 1.6) {
     try {
         client.showSplashScreen();
     } catch(e) {}
+} else if (!isAndroid()) {
+    window.location.replace('http://vlados776.github.io/OpenCase_Beta2/RUS/cases.html');
 }
 </script>
 <script src="../scripts/settings.js"></script>
