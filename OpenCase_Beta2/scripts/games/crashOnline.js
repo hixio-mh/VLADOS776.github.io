@@ -30,7 +30,7 @@ $(function() {
     getTop();
     
     function connectToServer() {
-        //socket = new WebSocket('ws://localhost:8000');
+        //socket = new WebSocket('ws://localhost:8001');
         socket = new WebSocket('wss://kvmde40-10035.fornex.org/crash');
         //socket = new WebSocket('wss://crashserver.herokuapp.com/');
         
@@ -39,12 +39,15 @@ $(function() {
                 clearInterval(reconnectTimer);
                 reconnectTimer = 0;
             }
+            $('#place-bet').prop('disabled', false);
         }
 
         socket.onclose = function(event) {
             if (!reconnectTimer) {
                 reconnectTimer = setInterval(function(){checkConnection()}, reconnectDelay);
             }
+            
+            $('#place-bet').prop('disabled', true);
             
             onlineGames.chatMessage({from:'', message: 'Connection lost. Trying to reconnect...', specialType: 'warning'});
            
@@ -407,20 +410,24 @@ $(function() {
             }))
             $('#place-bet').prop('disabled', true);
         } else {
-            playerInfo.bet = parseInt($('#bet').val());
-            if (playerInfo.bet <= 0 || playerInfo.bet > Player.doubleBalance || isNaN(playerInfo.bet)) return;
+            var bet = parseInt($('#bet').val());
+            
+            if (bet <= 0 || bet > Player.doubleBalance || isNaN(bet)) return;
             
             if (socket && socket.readyState == 1)
                 socket.send(JSON.stringify({
                     type: 'addBet',
                     player: Player.nickname,
-                    bet: playerInfo.bet,
+                    bet: bet,
                     id: playerInfo.id,
                 }))
             else
                 return false;
+            playerInfo.bet = bet;
             Player.doubleBalance -= playerInfo.bet;
             saveStatistic('doubleBalance', Player.doubleBalance, 'Number');
+            
+            $(document).trigger('doublechanged');
             
             $("#place-bet").text(Localization.getString('crash.bet.betting'));
             $('#place-bet').prop('disabled', true);
