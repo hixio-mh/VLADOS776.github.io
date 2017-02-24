@@ -75,8 +75,8 @@
             </div>
         </div>
         <div class="moder-menu" style="display: none" data-loc-group="moderator">
-            <div class='block-container'><button class="button_blue" id='block-chat' data-action="block" data-loc="chat_ban">Chat ban</button><div class='block-reason' id='block-chat-reason' data-loc="no_ban">Chat doesn't banned</div></div>
-            <div class='block-container'><button class="button_blue" id='block-trade' data-action="block" data-loc='trade_ban'>Trade ban</button><div class='block-reason' id='block-trade-reason' data-loc="no_ban">Trades doesn't banned</div></div>
+            <div class='block-container'><button class="btn btn-primary" data-block='chat' data-loc="chat_ban" data-toggle='modal' data-target='#moder-ban-modal'>Chat ban</button><div class='block-reason' id='block-chat-reason' data-loc="no_ban">Chat doesn't banned</div></div>
+            <div class='block-container'><button class="btn btn-primary" data-block='trade' data-loc='trade_ban' data-toggle='modal' data-target='#moder-ban-modal'>Trade ban</button><div class='block-reason' id='block-trade-reason' data-loc="no_ban">Trades doesn't banned</div></div>
         </div>
         <div class="posts">
             <div class="posts__new-post">
@@ -180,6 +180,43 @@
                     <button class='trade__button button_blue empty' id='back-step' data-loc="back">Back</button>
                     <button class='trade__button button_blue empty' id='next-step' data-loc="next">Next</button>
                     <button class='trade__button button_blue' id='send-trade' data-loc="send_trade">Send trade</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Moder ban modal -->
+        <div id='moder-ban-modal' class='modal fade' role='dialog'>
+            <div class='modal-dialog modal-sm' data-loc-group='ban_reason'>
+                <div class='modal-content' data-loc-group='ban_modal'>
+                    <div class='modal-header'>
+                        <span data-loc='title'>Ban reason</span>
+                        <button class='close' type='button' data-dismiss='modal'>&times;</button>
+                    </div>
+                    <div class='modal-body' data-loc-group='reasons'>
+                        <div class='checkbox'>
+                            <label><input type='checkbox'> <span data-loc='spam'>Spam</span></label>
+                        </div>
+                        <div class='checkbox'>
+                            <label><input type='checkbox'> <span data-loc='cheats'>Cheats</span></label>
+                        </div>
+                        <div class='checkbox'>
+                            <label><input type='checkbox'> <span data-loc='insults'>Insults</span></label>
+                        </div>
+                        <div class='checkbox'>
+                            <label><input type='checkbox'> <span data-loc='scam'>Scam</span></label>
+                        </div>
+                        <div class='checkbox'>
+                            <label><input type='checkbox'> <span data-loc='adult_img'>18+ pictures</span></label>
+                        </div>
+                        <div class='checkbox'>
+                            <label><input type='checkbox' id='moder-ban-other_checkbox'> <span data-loc='other'>Other</span></label>
+                            <input type='text' class='form-control input-sm' id='moder-ban-other_input' disabled>
+                        </div>
+                    </div>
+                    <div class='modal-footer'>
+                        <button class='btn btn-danger' type='button' id='ban_user'>Confirm</button>
+                        <button class='btn btn-default' type='button' data-dismiss='modal'>Cancel</button>
+                    </div>
                 </div>
             </div>
         </div>

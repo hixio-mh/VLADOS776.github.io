@@ -43,8 +43,7 @@ var fbProfile = (function (module) {
                 $("#login-status").text(error.message);
             }).then(function () {
                 if (firebase.auth().currentUser != null) {
-                    var ava = Player.avatar;
-                    if (/^\d+\.\w{3}$/.test(ava)) ava = "../images/ava/" + ava;
+                    var ava = avatarUrl(Player.avatar);
                     firebase.auth().currentUser.updateProfile({
                         displayName: Player.nickname
                         , photoURL: ava
@@ -394,6 +393,9 @@ var fbProfile = (function (module) {
     module.XSSreplace = function (text) {
         var allowedTags = ["<br>", "<i>", "<b>", "<s>"];
         //allowed html tags
+        
+        if (typeof text !== 'string') return text;
+        
         text = text.replace(/&lt;/g, '<');
         text = text.replace(/&gt;/g, '>');
         text = text.replace(/&amp;/g, '&');

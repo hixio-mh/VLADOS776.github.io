@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
 <!-- Стили -->
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../css/rarity.css">
 <link rel="stylesheet" type="text/css" href="../css/main.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
@@ -11,11 +12,14 @@
 <link rel="stylesheet" type="text/css" href="../css/fonts.css">
 <link rel="stylesheet" type="text/css" href="../css/loading.css">
 <link rel="stylesheet" type="text/css" href="../css/animate.css">
+<link rel="stylesheet" type="text/css" href="../css/online-games.css">
 <link rel="stylesheet" type="text/css" href="../css/inventory-portable.css">
 <link rel="stylesheet" type="text/css" href="../css/winter.css">
     
 <!-- Скрипты -->
 <script src="../scripts/build/libs.js"></script>
+<script src="../scripts/bootstrap.min.js"></script>
+<script src="../scripts/socket.io.js"></script>
 <script src="../scripts/main.js"></script>
 <script src="../scripts/settings.js"></script>
 <script src="../scripts/cases2.js"></script>
@@ -23,28 +27,55 @@
 <script src="../scripts/weapons.js"></script>
 <script src="../scripts/quality.js"></script>
 <script src="../scripts/prices.js"></script>
+<script src="../scripts/profile.js"></script>
 <script src="../scripts/inventory.js"></script>
 <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+<script src="../scripts/games/online-games.js"></script>
 
 <script src="../scripts/navigationMenu.js"></script>
 <link rel="stylesheet" href="../css/navigationMenu.css">
 
 <script src="../scripts/localization.js"></script>
-
+<style>
+    .nav > li > a {
+        padding: 4px 15px;
+    }
+    .chat-tabs {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 3px;
+    }
+    ul.room-select-modal__rooms:empty:before {
+        display: block;
+        content: 'Loading...';
+        text-align: center;
+        color: #fff;
+        font-size: 17px;
+    }
+    #container {
+        padding-bottom: 40px;
+    }
+</style>
 </head>
-<body data-localization="jackpot" data-inventory='no-load' onload="Jackpot.init();">
+<body data-localization="jackpot" data-inventory='no-load'>
 	<div class="site-overlay"></div>
 <div id="container">
     <div class="navigationBar" data-menu-EN="Jackpot" data-menu-RU="Джекпот"></div>
     <div class="room-select-modal">
-        <h2 class="room-select-modal__title" data-loc="select_room">Выберите комнату</h2>
+        <h2 class="room-select-modal__title" data-loc="select_room">Select the room</h2>
         <ul class="room-select-modal__rooms" data-loc-group="difficulty"></ul>
+        <div class='connection_status'></div>
     </div>
     <div id="circle"></div>
     <div id="status"></div>
 
     <div class="scrollerContainer">
-        <div id="caruselOver"><div id="caruselLine"></div></div>
+        <div id="caruselOver">
+            <div id="caruselLine"></div>
+            <div id='countdown-timer'>60</div>
+        </div>
         <div id="aCanvas">
             <div class="casesCarusel">
             </div>
@@ -54,27 +85,65 @@
     <div class="win"></div>
     <div id="players"></div>
     <div class='buttons'>
-        <button id="addItems" data-loc="add_items">Add Items</button>
-        <!--<select id="diffuculty" data-loc-group="difficulty">
-            <option value="1" data-min="0.1" data-max="5" data-loc='1'>Easy peasy $0.1 - $5</option>
-            <option value="2" data-min="5" data-max="30" data-loc='2'>Easy $5 - $30</option>
-            <option value="3" data-min="30" data-max="80" data-loc='3'>Normal $30 - $80</option>
-            <option value="4" data-min="80" data-max="200" data-loc='4'>Hard $80 - $200</option>
-            <option value="5" data-min="200" data-max="5000000" data-loc='5'>Legendary $200 - $∞</option>
-        </select> -->
+        <button id="addItems" class='btn btn-success' data-loc="add_items">Add Items</button>
+        <button id="backItems" class='btn btn-primary' data-loc="back_items" style='display: none;'>Get Items back</button>
     </div>
     <ul class="items"></ul>
+    
+    
+    <!-- === Chat === -->
+        <div class='footer navbar-fixed-bottom chat-bar' data-loc-group='chat'>
+            <div class='col-md-6 col-sm-7 col-lg-4'>
+                <div class='panel panel-primary chat-panel'>
+                    <div class='panel-heading' id='chat' role='tab' style='cursor: pointer;' data-toggle='collapse' data-parent='#accordion' href='#chatCollapse' aria-expanded='true' aria-controls='chatCollapse'>
+                        <span class='glyphicon glyphicon-comment'></span>
+                        <span data-loc='top'>Chat</span>
+                        <span class='chat_new_messages_count badge pull-right'>0</span>
+                    </div>
+                    <div class='panel-collapse collapse' id='chatCollapse' role="tabpanel" aria-labelledby="chat">
+                        <div class='panel-body'>
+                            <div class='chat-tabs'>
+                                <ul class='nav nav-pills'>
+                                    <li class='active'><a data-toggle='tab' href='#chat_currentRoom' data-loc='current_room'>Current room</a></li>
+                                    <li><a data-toggle='tab' href='#chat_all' data-loc='all'>All</a></li>
+                                </ul>
+                            </div>
+                            <div class='tab-content'>
+                                <div id='chat_currentRoom' class='tab-pane fade in active'>
+                                    <ul class='chat__messages' id='current'></ul>
+                                </div>
+                                <div id='chat_all' class='tab-pane fade'>
+                                    <ul class='chat__messages' id='all'></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class='panel-footer'>
+                            <div class='input-group input-group-sm'>
+                                <input type='text' class='form-control inputsm chat__new-message__textbox' placeholder="Enter your message" max='100'>
+                                <div class='input-group-btn'>
+                                    <button class="btn btn-primary" type='submit' id='chat-send-msg' ><i class='glyphicon glyphicon-send'></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- === Chat End === -->
 
     <!-- Инвентарь -->
     <div class="inventoryList" style="display: none;">
         <span id="intentory-Player"></span>
         <div class="closeInventory"></div>
         <ul class="inventory inv-price-counter"></ul>
-        <button class="choseItems" data-loc="choose_items">Add selected</button>
+        <button class="choseItems btn btn-success btn-block" data-loc="choose_items">Add selected</button>
     </div>
 
 </div>
 <!-- Скрипт рулетки -->
 <script src="../scripts/games/jackpotOnline.js"></script>
+    <script>
+        Jackpot.init();
+    </script>
 </body>
 </html>

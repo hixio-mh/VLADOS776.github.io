@@ -92,7 +92,7 @@ var Translation = {
         },
         cases: {
             news: {
-                text: 'Следующей игрой будет... <a href="https://www.patreon.com/posts/7929781" target="_blank">скриншот здесь</a>'
+                text: 'Проголосуйте за следующее обновление <a href="https://www.patreon.com/posts/8183213" target="_blank">ЗДЕСЬ</a>'
             },
             page_name: {
                 text: 'Открыть кейсы',
@@ -213,6 +213,28 @@ var Translation = {
             winner: {
                 text: 'Победитель',
                 en: 'The winner'
+            },
+            select_room: {
+                text: 'Выберите комнату',
+                en: 'Select room'
+            },
+            back_items: {
+                text: 'Забрать предметы',
+                en: 'Get Items back'
+            },
+            chat: {
+                top: {
+                    text: 'Чат',
+                    en: 'Chat'
+                },
+                current_room: {
+                    text: 'Текущая комната',
+                    en: 'Current room'
+                },
+                all: {
+                    text: 'Все',
+                    en: 'All'
+                }
             }
         },
         rps: {
@@ -710,6 +732,38 @@ var Translation = {
                 no_ban: {
                     text: 'Бана нет',
                     en: 'No ban.'
+                },
+                ban_modal: {
+                    title: {
+                        text: 'Причина бана',
+                        en: 'Ban reason'
+                    },
+                    reasons: {
+                        spam: {
+                            text: 'Спам',
+                            en: 'Spam'
+                        },
+                        cheats: {
+                            text: 'Читы',
+                            en: 'Cheats'
+                        },
+                        insults: {
+                            text: 'Оскорбления',
+                            en: 'Insults'
+                        },
+                        scam: {
+                            text: 'Мошенничество',
+                            en: 'Scam'
+                        },
+                        adult_img: {
+                            text: '18+ изображения',
+                            en: '18+ pictures'
+                        },
+                        other: {
+                            text: 'Другое',
+                            en: 'Other'
+                        },
+                    }
                 }
             },
             send_post: {

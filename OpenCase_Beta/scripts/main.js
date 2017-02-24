@@ -26,7 +26,7 @@ $(function () {
                 ifStatInFbDifferent(inv, 'fbInventory_count', 'inventories/' + firebase.auth().currentUser.uid, 'inventory_count');
                 
                 ifStatInFbDifferent(Player.points, 'fbEXP', 'users/' + firebase.auth().currentUser.uid+'/public/points');
-                firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/private/doubleAbsolute').once('value').then(function(snap) {
+                firebase.database().ref('users/'+firebase.auth().currentUser.uid+'/moder/doubleAbsolute').once('value').then(function(snap) {
                     if (snap.val() != null && snap.val != Player.doubleBalance) {
                         Player.doubleBalance = parseInt(snap.val());
                         saveStatistic('doubleBalance', Player.doubleBalance);
@@ -80,12 +80,12 @@ $(function () {
     if (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.hostname === "192.168.1.205") {
         var reload_btn = document.createElement('button');
         reload_btn.className = "btn btn-xs btn-warning"
-        reload_btn.style = "z-index:99999; position:fixed; bottom:10px; right:10px;";
+        reload_btn.style = "z-index:99999; position:fixed; top:10px; right:10px;";
         reload_btn.appendChild(document.createTextNode("Refresh"));
         reload_btn.onclick = function() {
             location.reload();
         }
-        document.body.appendChild(reload_btn);
+       // document.body.appendChild(reload_btn);
     }
 });
 try {
@@ -132,12 +132,18 @@ window.onerror = function (msg, url, line, col, error) {
             bottom += $(this).height() + 10;
         })
     }
-    $(document.body).append('<div class="error-log" style="bottom:'+bottom+'px">' + action + '</div>');
+    //$(document.body).append('<div class="error-log" style="bottom:'+bottom+'px">' + action + '</div>');
     console.log(stack);
     if (!DEBUG)
         setTimeout(function(){
             $('.error-log').remove();
         }, 5000);
+    try {
+        LOG.err({
+            action: action,
+            stack: stack
+        })
+    } catch (e) {}
 };
 
 if (!isAndroid() || (isAndroid() && parseFloat(client.getCurrentAppVersionName()) < 1.3)) {
@@ -269,9 +275,13 @@ function Sound(soundGet, action, priority, repeat, speed) {
             break;
         }
         if (sound) {
-            sound.pause();
-            sound.currentTime = 0;
-            if (action == "play") sound.play();
+            try {
+                sound.pause();
+                sound.currentTime = 0;
+                if (action == "play") sound.play();
+            } catch (e) {
+                console.log('Sound error', e);
+            }
             /*switch (action) {
             case "play":
             	sound.pause();
@@ -288,19 +298,10 @@ function Sound(soundGet, action, priority, repeat, speed) {
 }
 
 function statisticPlusOne(cookieName) {
-    if (isAndroid()) {
-        var stat = client.getStatistic(cookieName);
-        stat = parseInt(stat);
-        if (isNaN(stat)) stat = 0;
-        client.saveStatistic(cookieName, stat + 1);
-    }
-    else {
-        var a = $.cookie(cookieName, Number);
-        if (typeof a == "undefined") a = 0;
-        else a = parseInt(a);
-        a++;
-        $.cookie(cookieName, a);
-    }
+    var stat = getStatistic(cookieName, 0);
+    stat = parseInt((''+stat).replace('$', ''));
+    if (isNaN(stat)) stat = 0;
+    saveStatistic(cookieName, stat + 1);
 }
 
 function saveStatistic(key, value, type, crypt) {
@@ -310,7 +311,7 @@ function saveStatistic(key, value, type, crypt) {
         
         return;
     }
-    crypt = crypt || false;
+    crypt = crypt || true;
     if (typeof type != 'undefined') {
         switch (type) {
         case 'Number':
@@ -337,7 +338,7 @@ function saveStatistic(key, value, type, crypt) {
 
 function getStatistic(key, defaultVal, crypt) {
     defaultVal = defaultVal || 0;
-    crypt = crypt || false;
+    crypt = crypt || true;
     var value = null;
     if (isAndroid()) {
         value = client.getStatistic(key);
@@ -347,9 +348,17 @@ function getStatistic(key, defaultVal, crypt) {
     }
     
     if (crypt) {
-        var newValue = CryptoJS.AES.decrypt(value, key).toString(CryptoJS.enc.Utf8);
-        if (newValue != '')
-            value = newValue;
+        try {
+            var newValue = CryptoJS.AES.decrypt(value, key).toString(CryptoJS.enc.Utf8);
+            if (newValue != '')
+                value = newValue;
+            if (key.match(/(playerPoints|doubleBalance)/i)) {
+                value = newValue == '' ? 0 : newValue;
+            }
+        } catch (e) {
+            console.log('Get statistic Error', e);
+            value = defaultVal || 0;
+        }
     }
     
     return value;
@@ -391,6 +400,8 @@ function saveWeapon(weapon) {
         INVENTORY.changed = true;
         if (isAndroid()) {
             var rowID = client.saveWeapon(weapon.item_id, weapon.quality, weapon.stattrak, weapon.souvenir, weapon['new'], "{}");
+            weapon.id = rowID;
+            updateWeapon(weapon);
             resolver(rowID);
         } else {
             connectDB(function (db) {
@@ -403,8 +414,43 @@ function saveWeapon(weapon) {
                 }
                 var request = store.add(weapon.saveObject());
                 request.onsuccess = function (e) {
+                    weapon.id = e.target.result;
+                    updateWeapon(weapon);
                     resolver(e.target.result);
-                    
+                }
+                request.onerror = function (e) {
+                    reject(e);
+                }
+            })
+        }
+    })
+}
+
+function saveItem(item) {
+    return new Promise(function(resolver, reject) {
+        INVENTORY.changed = true;
+        if (isAndroid()) {
+            if (item.itemType == 'weapon')
+                var rowID = client.saveWeapon(item.item_id, item.quality, item.stattrak, item.souvenir, item['new'], "{}");
+            else if (item.itemType == 'sticker')
+                var rowID = client.saveWeapon(item.item_id, 5, null, null, item['new'], '{}');
+            item.id = rowID;
+            updateItem(item);
+            resolver(rowID);
+        } else {
+            connectDB(function (db) {
+                var tx = db.transaction('weapons', 'readwrite');
+                var store = tx.objectStore('weapons');
+
+                if (typeof item.item_id == 'undefined') {
+                    var item_id = getWeaponId(weapon.type, weapon.skinName);
+                    weapon = new Weapon(item_id, weapon.quality, weapon.statTrak, /(souvenir|сувенир)/.test(weapon.type));
+                }
+                var request = store.add(item.saveObject());
+                request.onsuccess = function (e) {
+                    item.id = e.target.result;
+                    updateItem(item);
+                    resolver(e.target.result);
                 }
                 request.onerror = function (e) {
                     reject(e);
@@ -423,41 +469,91 @@ function saveWeapons(weapons) {
                 var weapon = weapons[i];
                 var rowID = client.saveWeapon(weapon.item_id, weapon.quality, weapon.stattrak, weapon.souvenir, weapon['new'], "{}");
                 rows.push(rowID);
+                weapon.id = rowID;
+                updateWeapon(weapon);
             }
             resolver(rows);
         } else {
-            connectDB(function (db) {
-                var tx = db.transaction('weapons', 'readwrite');
-                var store = tx.objectStore('weapons');
-                
+            return new Promise(function(resolver, reject) {
                 var results = [];
-                for (var i = 0; i < weapons.length; i++) {
-                    var weapon = weapons[i];
-                    if (typeof weapon.item_id == 'undefined') {
-                        var item_id = getWeaponId(weapon.type, weapon.skinName);
-                        weapon = new Weapon(item_id, weapon.quality, weapon.statTrak, /(souvenir|сувенир)/.test(weapon.type));
-                    }
-                    var request = store.add(weapon.saveObject());
-                    request.onsuccess = function (e) {
-                        results.push(e.target.result);
+                connectDB(function (db) {
+                    var tx = db.transaction('weapons', 'readwrite');
+                    var store = tx.objectStore('weapons');
 
+                    for (var i = 0; i < weapons.length; i++) {
+                        var weapon = weapons[i];
+                        if (typeof weapon.item_id == 'undefined') {
+                            var item_id = getWeaponId(weapon.type, weapon.skinName);
+                            weapon = new Weapon(item_id, weapon.quality, weapon.statTrak, /(souvenir|сувенир)/.test(weapon.type));
+                        }
+                        var saveObj = weapon.saveObject()
+                        var request = store.add(saveObj);
+                        request.onsuccess = function (e) {
+                            results.push(e.target.result);
+                        }
+                        request.onerror = function (e) {
+                            reject(e);
+                        }
                     }
-                    request.onerror = function (e) {
-                        reject(e);
-                    }
-                }
+                    resolver(results);
+                })
+            }).then(function(results) {
+                new setHash(results);
                 resolver(results);
             })
         }
     })
 }
 
+function setHash(ids) {
+    if (typeof ids == 'number')
+        ids = [ids];
+    this.ids = ids;
+    this.counter = 0;
+    
+    var that = this;
+    
+    this.replace = function() {
+        //var that = this;
+        connectDB(function(db) {
+            var tx = db.transaction('weapons', 'readwrite');
+            var store = tx.objectStore('weapons');
+            
+            var id = that.ids[that.counter];
+            var request = store.get(id);
+            request.onsuccess = function(event) {
+                var weapon = new Weapon(request.result.item_id, request.result.quality, request.result.stattrak, request.result.souvenir);
+                weapon.id = id;
+                weapon.new = request.result.new || false;
+                var saveObj = weapon.saveObject();
+                saveObj.id = id;
+                saveObj.hash = weapon.hash();
+                store.put(saveObj);
+                if (that.counter < that.ids.length - 1) {
+                    ++that.counter;
+                    that.replace();
+                }
+            }
+        })
+    }
+    
+    this.replace();
+}
+
 function updateWeapon(weapon) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
         if (isAndroid()) {
-            var rowID = client.updateWeapon(weapon.id, weapon.item_id, weapon.quality, weapon.stattrak, weapon.souvenir, weapon['new'], "{}");
-            resolver(true);
+            var rowID = client.updateWeapon(
+                weapon.id, 
+                weapon.item_id, 
+                weapon.quality, 
+                weapon.stattrak, 
+                weapon.souvenir, 
+                weapon['new'], 
+                '{"hash": "' + weapon.hash() + '"}'
+            );
+            resolver(rowID);
         } else {
             connectDB(function(db) {
                 var tx = db.transaction('weapons', 'readwrite');
@@ -466,6 +562,49 @@ function updateWeapon(weapon) {
                 if (typeof weapon.item_id != 'undefined' && typeof weapon.id != 'undefined') {
                     var saveObj = weapon.saveObject();
                     saveObj.id = weapon.id;
+                    saveObj.hash = weapon.hash();
+                    store.put(saveObj);
+                    resolver(true);
+                }
+            })
+        }
+    })
+}
+
+function updateItem(item) {
+    return new Promise(function(resolver, reject) {
+        INVENTORY.changed = true;
+        if (isAndroid()) {
+            if (item.itemType == 'weapon')
+                var rowID = client.updateWeapon(
+                    item.id, 
+                    item.item_id, 
+                    item.quality, 
+                    item.stattrak, 
+                    item.souvenir, 
+                    item['new'], 
+                    '{"hash": "' + item.hash() + '"}'
+                );
+            else if (item.itemType == 'sticker')
+                var rowID = client.updateWeapon(
+                    item.id, 
+                    item.item_id, 
+                    5, 
+                    null, 
+                    null, 
+                    item['new'], 
+                    '{"hash": "' + item.hash() + '"}'
+                );
+            resolver(rowID);
+        } else {
+            connectDB(function(db) {
+                var tx = db.transaction('weapons', 'readwrite');
+                var store = tx.objectStore('weapons');
+
+                if (typeof item.item_id != 'undefined' && typeof item.id != 'undefined') {
+                    var saveObj = item.saveObject();
+                    saveObj.id = item.id;
+                    saveObj.hash = item.hash();
                     store.put(saveObj);
                     resolver(true);
                 }
@@ -491,7 +630,43 @@ function getWeapon(id) {
                 request.onsuccess = function(event) {
                     var weapon = new Weapon(request.result.item_id, request.result.quality, request.result.stattrak, request.result.souvenir);
                     weapon.id = id;
-                    resolver(weapon);
+                    if (getStatistic('hash', 0) == 1 && typeof request.result.hash != 'undefined') {
+                        if (weapon.hashCompare(request.result.hash)) {
+                            resolver(weapon);
+                        }
+                    } else if (getStatistic('hash', 0) == 0) {
+                        resolver(weapon);
+                    } else {
+                        resolver({});
+                    }
+                }
+            })
+        }
+    })
+}
+function getItem(id) {
+    return new Promise(function(resolver, reject) {
+        if (isAndroid()) {
+            var wp = client.getWeaponById(id);
+            wp = $.parseJSON(wp);
+            wp = new Item(wp);
+            wp.id = id;
+            resolver(wp);
+        } else {
+             connectDB(function(db) {
+                var tx = db.transaction('weapons', 'readonly');
+                var store = tx.objectStore('weapons');
+
+                var request = store.get(id);
+                request.onsuccess = function(event) {
+                    var item = new Item({
+                        item_id: request.result.item_id, 
+                        quality: request.result.quality,
+                        stattrak: request.result.stattrak,
+                        souvenir: request.result.souvenir
+                    });
+                    item.id = id;
+                    resolver(item);
                 }
             })
         }
@@ -590,6 +765,11 @@ function getInventory(count_from, count_to, opt) {
     count_to = count_to || 10000;
     opt = opt || {};
     
+    opt.limits = opt.limits || {
+        min: 0,
+        max: 99999999
+    };
+    
     if (INVENTORY.weapons.length >= count_to && opt.loadMore) {
         var ret = [];
         for (var i = (count_from - 1); i < count_to; i++) {
@@ -623,6 +803,13 @@ function getInventory(count_from, count_to, opt) {
                     count:0,
                     weapons:[]
                 }
+            }
+            
+            var invTemp = inv;
+            inv = [];
+            for (var i = 0; i < invTemp.length; i++) {
+                if (invTemp[i].price > opt.limits.min && invTemp[i].price < opt.limits.max)
+                    inv.push(invTemp[i]);
             }
             
             INVENTORY.weapons = inv.sort(function(a,b) {
@@ -662,6 +849,7 @@ function _getInventoryAndroid(opt) {
         if (typeof inventoryJSON[0].error != 'undefined') resolver([]);
         
         var weaponsArr = [];
+        var hashStat = getStatistic('hash', 0);
         for (var i = 0; i < inventoryJSON.length; i++) {
             if (inventoryJSON[i].item_id == "" && inventoryJSON[i].quality == "" && inventoryJSON[i].extra != "{}") {
                 var extra = JSON.parse(inventoryJSON[i].extra);
@@ -679,55 +867,18 @@ function _getInventoryAndroid(opt) {
                 inventoryJSON[i].new = inventoryJSON[i].new == 'true';
                 inventoryJSON[i].extra = $.parseJSON(inventoryJSON[i].extra);
             }
-
-            weaponsArr.push(new Weapon(inventoryJSON[i]));
-            weaponsArr[i].id = parseInt(inventoryJSON[i].id);
+            var item = new Item(inventoryJSON[i]);
+            item.id = parseInt(inventoryJSON[i].id);
+            if (hashStat == 1 && typeof inventoryJSON[i].extra.hash != 'undefined') {
+                if (item.hashCompare(inventoryJSON[i].extra.hash)) {
+                    weaponsArr.push(item);
+                }
+            } else if (hashStat == 0) {
+                weaponsArr.push(item);
+            }
         }
         resolver(weaponsArr);
     })
-}
-
-function _getInventoryLocalStorage() {
-    if (typeof localStorage == 'undefined') return false;
-    var inventoryLocal = [];
-    count = 0;
-    try {
-        count = parseInt(localStorage["inventory.count"], 10);
-    }
-    catch (e) {
-        count = 0;
-    }
-    var new_weapon_count = 0;
-    for (var i = 0; i < count; i++) {
-        var st;
-        var item = {};
-        item.type = localStorage["inventory.item." + i + ".type"];
-        if (typeof item.type == 'undefined') continue;
-        item.skinName = localStorage["inventory.item." + i + ".skinName"];
-        item.rarity = localStorage["inventory.item." + i + ".rarity"];
-        item.img = localStorage["inventory.item." + i + ".img"];
-        item.quality = localStorage["inventory.item." + i + ".quality"];
-        st = localStorage["inventory.item." + i + ".statTrak"];
-        item.price = Number(localStorage["inventory.item." + i + ".price"]);
-        item['new'] = localStorage["inventory.item." + i + ".new"];
-        if ((st == "true") || (st == "1")) {
-            item.statTrak = true;
-        }
-        else {
-            item.statTrak = false;
-        }
-        if ((item['new'] == "true") || (item['new'] == "1")) {
-            item['new'] = true;
-            new_weapon_count++;
-        }
-        else {
-            item['new'] = false;
-        }
-        inventoryLocal.push(item);
-    }
-    if (new_weapon_count) menuNotification('inventory', '' + new_weapon_count)
-    inventory_length = inventoryLocal.length;
-    return inventoryLocal;
 }
 
 function _getInventoryIndexedDB() {
@@ -740,9 +891,18 @@ function _getInventoryIndexedDB() {
             store.getAll().onsuccess = function(e) {
                 var inv = e.target.result;
                 var invWeapons = [];
+                var hashStat = getStatistic('hash', 0);
                 for (var i = 0; i < inv.length; i++) {
-                    invWeapons.push(new Weapon(inv[i]));
-                    invWeapons[i].id = inv[i].id;
+                    var item = new Item(inv[i]);
+                    item.id = inv[i].id;
+                    
+                    if (hashStat == 1 && typeof inv[i].hash != 'undefined') {
+                        if (item.hashCompare(inv[i].hash)) {
+                            invWeapons.push(item);
+                        }
+                    } else if (hashStat == 0) {
+                        invWeapons.push(item);
+                    }
                 }
                 resolver(invWeapons);
             }
@@ -837,14 +997,28 @@ function getCollection(type, name) {
     return collection;
 }
 
-function getWeaponImg(type, name) {
-    type = $.trim(type.replace(/(Souvenir|Сувенир)/g, ''));
-    name = getSkinName(name);
-    var coll = getCollection(type, name);
-    if (!coll) return 'none.png';
-    for (var i = 0; i < coll.weapons.length; i++) {
-        if (coll.weapons[i].type == type && getSkinName(coll.weapons[i].skinName) == name) return coll.weapons[i].img;
+function getCasePrice(caseId, souvenir) {
+    var prSumm = 0;
+
+    if (typeof cases[caseId].weapons === 'undefined') return '0.00';
+    cases[caseId].weapons.forEach(function(item) {
+        prSumm += middlePrice(item, souvenir);
+    })
+    return (prSumm / cases[caseId].weapons.length).toFixed(2)
+}
+
+function middlePrice(item_id, souvenir) {
+    souvenir = souvenir || false;
+    var middlePrice = 0;
+    for (var i = 0; i < 4; i++) {
+        middlePrice += getPrice(item_id, {
+            quality: i,
+            stattrak: false,
+            souvenir: souvenir
+        })
     }
+    middlePrice /= 5;
+    return parseFloat(middlePrice.toFixed(2));
 }
 
 function getWeaponRarity(type, name) {
@@ -886,6 +1060,44 @@ function getImgUrl(img, big) {
         return img;
     }
 }
+
+function XSSreplace (text) {
+        var allowedTags = ["<br>", "<i>", "<b>", "<s>"];
+        if (typeof text !== 'string') return text;
+        //allowed html tags
+        text = text.replace(/&lt;/g, '<');
+        text = text.replace(/&gt;/g, '>');
+        text = text.replace(/&amp;/g, '&');
+        for (var i = 0; i < allowedTags.length; i++) {
+            text = rpls(text, allowedTags[i]);
+        }
+        //XSS replace
+        text = text.replace(/&/g, '&amp;');
+        text = text.replace(/</g, '&lt;');
+        text = text.replace(/>/g, '&gt;');
+        text = text.replace(/"/g, '&quot;');
+        text = text.replace(/'/g, '&#x27;');
+        //text = text.replace(/\//g, '&#x2F;');
+        //allowed html tags
+        for (var i = 0; i < allowedTags.length; i++) {
+            text = rpls(text, allowedTags[i], true);
+        }
+        return text;
+
+        function rpls(text, tag, revert) {
+            revert = revert || false;
+            var inTag = tag.replace(/(<|>)/g, '');
+            if (!revert) {
+                var reg = new RegExp('<([/])?' + inTag + '>', 'gi');
+                text = text.replace(reg, '!!$1' + inTag + '!!');
+            }
+            else {
+                var reg = new RegExp('!!([/])?' + inTag + '!!', 'gi');
+                text = text.replace(reg, '<$1' + inTag + '>');
+            }
+            return text;
+        }
+    }
 
 function connectDB(f) {
     if (!window.indexedDB) {
@@ -950,9 +1162,6 @@ function parseURLParams(url) {
     }
     return parms;
 }
-var Cheats = {
-    winEveryTime: "85d9a0e4"
-}
 
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ""])[1].replace(/\+/g, '%20')) || null;
@@ -980,6 +1189,7 @@ Array.prototype.mul = function (k) {
 Math.rand = function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
     /*Array.prototype.remove = function(from, to) {
     var rest = this.slice((to || from) + 1 || this.length);
     this.length = from < 0 ? this.length + from : from;

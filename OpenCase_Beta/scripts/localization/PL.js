@@ -6,17 +6,17 @@ var Translation = {
         },
         version: 1,
         author: 'JoHnYR',
-        date: '26.01.17', /* Day.Month.Year */
+        date: '07.02.17', /* Day.Month.Year */
     },
     
     translation: {
         menu: {
             to_next_level: {
-                text: '${1} do nastepnego poziomu',
+                text: '${1} do następnego poziomu',
                 en: '${1} to next level'
             },
             open_case: {
-                text: 'Otworz Skrzynki',
+                text: 'Otwórz skrzynki',
                 en: 'Open Case'
             },
             games: {
@@ -33,11 +33,11 @@ var Translation = {
                     en: 'Jackpot'
                 },
                 rps: {
-                    text: 'Kamien-Papier-Nozyce',
+                    text: 'Kamień-Papier-Nożyce',
                     en: 'Rock-Paper-Scissors'
                 },
                 coinflip: {
-                    text: 'Rzut Moneta',
+                    text: 'Rzut monetą',
                     en: 'CoinFlip'
                 },
                 double: {
@@ -49,12 +49,12 @@ var Translation = {
                     en: 'Crash'
                 },
                 dice: {
-                    text: 'Kostka',
+                    text: 'Rzut kostką',
                     en: 'Dice'
                 }
             },
             inventory: {
-                text: 'Moj Ekwipunek',
+                text: 'Mój ekwipunek',
                 en: 'My inventory'
             },
             market: {
@@ -74,7 +74,7 @@ var Translation = {
                 en: 'Statistic'
             },
             updates: {
-                text: 'Aktualizacja',
+                text: 'Aktualizacje',
                 en: 'Updates'
             },
             settings: {
@@ -86,33 +86,33 @@ var Translation = {
                 en: 'About'
             },
             other_apps: {
-                text: 'Inne Aplikacje',
+                text: 'Inne aplikacje',
                 en: 'Other apps'
             }
         },
         cases: {
             page_name: {
-                text: 'Otworz Skrzynki',
+                text: 'Otwórz skrzynki',
                 en: 'Open Cases'
             },
             cases: {
-                text: 'Skrzynki',
+                text: 'Skrzynki zwykłe',
                 en: 'Cases'
             },
             esports: {
-                text: 'eSports',
+                text: 'E-Sportowe',
                 en: 'eSports'
             },
             collections: {
-                text: 'Kolekcje',
+                text: 'Kolekcja',
                 en: 'Collections'
             },
             souvenir: {
-                text: 'Kolekcje z pamiatkami',
+                text: 'Kolekcja z pamiątkami',
                 en: 'Souvenir collections'
             },
             workshop: {
-                text: 'Skrzynki z ladnymi skinami',
+                text: 'Skrzynki ze Steam\'a',
                 en: 'Workshop'
             },
             special: {
@@ -121,7 +121,7 @@ var Translation = {
             },
             special_popup: {
                 need_more_cases: {
-                    text: 'Do otworzenia specjalnej skrzynki potrzebujesz <i>${1}</i> wiecej skrzynek<br>albo obejrzenia reklam',
+                    text: 'Do otworzenia specjalnej skrzynki potrzebujesz <i>${1}</i> więcej skrzynek<br>albo obejrzenia reklam',
                     en: 'To open a special case you need to open <i>${1}</i> more cases.<br>Or watch the ads.'
                 },
                 ad_button: {
@@ -129,18 +129,18 @@ var Translation = {
                     en: 'Watch the ads'
                 },
                 low_level: {
-                    text: 'Tylko gracze z poziomem <i>${1}</i> i wyzszym moga otworzyc ta skrzynie.',
+                    text: 'Tylko gracze z poziomem <i>${1}</i> i wyższym mogą otworzyć tą skrzynie.',
                     en: 'Only players with level <i>${1}</i> and higher can open this case.'
                 },
                 lvl_up: {
-                    text: 'Jak wbic poziom?',
+                    text: 'Jak wbić poziom?',
                     en: 'How to level up?'
                 }
             }
         },
         open_case: {
             open_case: {
-                text: 'Otworz Skrzynki',
+                text: 'Otwórz skrzynki',
                 en: 'Open case'
             },
             opening: {
@@ -148,11 +148,11 @@ var Translation = {
                 en: 'Opening...'
             },
             try_again: {
-                text: 'Otworz ponownie',
+                text: 'Otwórz ponownie',
                 en: 'Open again'
             },
             you_won: {
-                text: 'Wygrales',
+                text: 'Wygrałeś',
                 en: 'You won'
             },
             sell: {
@@ -168,7 +168,7 @@ var Translation = {
                 en: 'What\'s in the case?'
             },
             you_can_win: {
-                text: 'Mozesz wygrac te skiny z kolekcji ${1}',
+                text: 'Możesz wygrać te skiny ze skrzynki ${1}',
                 en: 'You can win one of those items from collection ${1}'
             }
         },
@@ -187,11 +187,11 @@ var Translation = {
             },
             difficulty: {
                 1: {
-                    text: 'Bardzo latwe $0.1 - $5',
+                    text: 'Bardzo łatwe $0.1 - $5',
                     en: 'Easy peasy $0.1 - $5'
                 },
                 2: {
-                    text: 'Latwe $5 - $30',
+                    text: 'Łatwe $5 - $30',
                     en: 'Easy $5 - $30'
                 },
                 3: {
@@ -208,7 +208,7 @@ var Translation = {
                 }
             },
             winner: {
-                text: 'Zwyciezca',
+                text: 'Zwycięzca',
                 en: 'The winner'
             }
         },
@@ -219,15 +219,15 @@ var Translation = {
             },
             status: {
                 start: {
-                    text: 'Dodaj skiny zeby zaczac gre.',
+                    text: 'Dodaj skiny żeby zacząć grę.',
                     en: 'Add weapons to start a game.'
                 },
                 round_win: {
-                    text: 'Wygrales te runde!',
+                    text: 'Wygrałeś tę runde!',
                     en: 'You win this round!'
                 },
                 round_lost: {
-                    text: 'Przegrales te runde.',
+                    text: 'Przegrałeś tę runde.',
                     en: 'You lost this round.'
                 },
                 round_tie: {
@@ -235,11 +235,11 @@ var Translation = {
                     en: 'Tie!'
                 },
                 win: {
-                    text: 'Wygrales!',
+                    text: 'Wygrałeś!',
                     en: 'You win!'
                 },
                 lost: {
-                    text: 'Przegrales',
+                    text: 'Przegrałeś',
                     en: 'You lost.'
                 }
             },
@@ -254,15 +254,15 @@ var Translation = {
                 }
             },
             you_add: {
-                text: 'Ty dodales:',
+                text: 'Ty dodałeś:',
                 en: 'You added:'
             },
             comp_add: {
-                text: 'Przeciwnik dodal:',
+                text: 'Przeciwnik dodał:',
                 en: 'Opponent added:'
             },
             choose_hand: {
-                text: 'Wybierz Kamien, Papier czy Nozyczki.',
+                text: 'Wybierz Kamień, Papier czy Nożyczki.',
                 en: 'Choose Rock, Paper or Scissors.'
             },
             add_items: {
@@ -276,7 +276,7 @@ var Translation = {
         },
         coinflip: {
             page_name: {
-                text: 'Rzut Moneta',
+                text: 'Rzut monetą',
                 en: 'CoinFlip'
             },
             table: {
@@ -285,7 +285,7 @@ var Translation = {
                     en: 'Players'
                 },
                 items: {
-                    text: 'Skiny',
+                    text: 'Ilość',
                     en: 'Items'
                 },
                 worth: {
@@ -293,7 +293,7 @@ var Translation = {
                     en: 'Worth'
                 },
                 join: {
-                    text: 'Dolacz',
+                    text: 'Dołącz',
                     en: 'Join'
                 },
                 view: {
@@ -306,7 +306,7 @@ var Translation = {
                 en: 'Start'
             },
             winner: {
-                text: 'Zwyciezca',
+                text: 'Zwycięzca',
                 en: 'Winner'
             },
             add_items: {
@@ -332,7 +332,7 @@ var Translation = {
                 en: 'Rolling in'
             },
             rolling: {
-                text: 'Krecenie',
+                text: 'Kręcenie...',
                 en: 'Rolling'
             },
             balance: {
@@ -340,7 +340,7 @@ var Translation = {
                 en: 'Balance:'
             },
             fill_up_balance: {
-                text: 'Dopelnij saldo',
+                text: 'Dopełnij saldo',
                 en: 'Fill up balance'
             },
             choose_items: {
@@ -348,7 +348,7 @@ var Translation = {
                 en: 'Sell'
             },
             connection_lost: {
-                text: '<div class="loading-dots" style="text-align: left;margin-left: 10px;">Stracono polaczenie</div>',
+                text: '<div class="loading-dots" style="text-align: left;margin-left: 10px;">Stracono połączenie</div>',
                 en: '<div class="loading-dots" style="text-align: left;margin-left: 10px;">Connection lost</div>'
             },
             chat: {
@@ -361,7 +361,7 @@ var Translation = {
                     en: 'Welcome to chat!'
                 },
                 send: {
-                    text: 'Wyslij',
+                    text: 'Wyślij',
                     en: 'Send'
                 }
             }
@@ -372,7 +372,7 @@ var Translation = {
                 en: 'Crash'
             },
             next_round_in: {
-                text: 'Nastepna runda za',
+                text: 'Następna runda za',
                 en: 'Next round in'
             },
             seconds: {
@@ -389,7 +389,7 @@ var Translation = {
                     en: 'Place bet'
                 },
                 cash_out: {
-                    text: 'Wyplac<br>@ ${1} <i class="double-icon"></i>',
+                    text: 'Wypłać<br>@ ${1} <i class="double-icon"></i>',
                     en: 'Cash Out<br>@ ${1} <i class="double-icon"></i>'
                 },
                 betting: {
@@ -417,7 +417,7 @@ var Translation = {
                     en: 'Nickname'
                 },
                 bet: {
-                    text: 'Obstawienie',
+                    text: 'Ilość',
                     en: 'Bet'
                 },
                 profit: {
@@ -435,33 +435,33 @@ var Translation = {
                     en: 'Welcome to chat!'
                 },
                 send: {
-                    text: 'Wyslij',
+                    text: 'Wyślij',
                     en: 'Send'
                 }
             }
         },
         dice: {
             page_name: {
-                text: 'Kostka',
+                text: 'Rzuć kostką',
                 en: 'Dice'
             },
             roll_dice: {
-                text: 'Rzuc kostka',
+                text: 'Rzuć kostką',
                 en: 'Roll dice'
             },
             how_to_play: {
-                text: 'Jak grac',
+                text: 'Jak grać?',
                 en: 'How to play'
             },
             how_to_play_modal: {
                 title: {
-                    text: 'Jak grac',
+                    text: 'Jak grać?',
                     en: 'How to play'
                 },
                 body: {
-                    text: '<p>Przed tym jak zaczniesz gre mozesz zmienic wszystko.</p> \
-                        <p>Nastepnie wpisz kwote i kliknij przycisk "Rzuc kostka".</p> \
-                        <p>Kiedy klikniesz na "Rzuc kostka" przycisk wygeneruje liczbe. I kiedy ta liczba bedzie zgodna z liczba podana w kwadraciku po prawej dostajesz tyle pieniedzy ile wybrales na kwadraciku "Wyplata"</p> \
+                    text: '<p>Przed tym jak zaczniesz grę możesz zmienić wszystko.</p> \
+                        <p>Następnie wpisz kwotę i kliknij przycisk "Rzuć kostką".</p> \
+                        <p>Kiedy klikniesz na "Rzuć kostką" przycisk wygeneruje liczbę. I kiedy ta liczba będzie zgodna z liczbą podaną w kwadraciku po prawej dostajesz tyle pieniędzy ile wybrałeś na kwadraciku "Wypłata"</p> \
                         <p>Maksymalna stawka - 50 000</p>',
                     en: '<p>Before you start the game you can change roll determiner, payout and win chance.</p> \
                         <p>Then you input a bet amount and tap on the "Roll dice" button.</p> \
@@ -474,11 +474,11 @@ var Translation = {
             },
             game: {
                 to_win_roll: {
-                    text: 'Zeby wygrac rzuc',
+                    text: 'Żeby wygrać rzuć',
                     en: 'To Win Roll'
                 },
                 payout: {
-                    text: 'Wyplata',
+                    text: 'Wypłata',
                     en: 'Payout'
                 },
                 win_chance: {
@@ -490,7 +490,7 @@ var Translation = {
                     en: 'Bet'
                 },
                 roll_dice: {
-                    text: 'Rzuc kostka',
+                    text: 'Rzuć kostką',
                     en: 'Roll dice'
                 },
                 end_roll: {
@@ -504,11 +504,11 @@ var Translation = {
                     en: 'History'
                 },
                 bet: {
-                    text: 'Obstaw',
+                    text: 'Ilość',
                     en: 'Bet'
                 },
                 payout: {
-                    text: 'Wyplac',
+                    text: 'Pomnożono',
                     en: 'Payout'
                 },
                 win_condition: {
@@ -516,7 +516,7 @@ var Translation = {
                     en: 'Condition'
                 },
                 roll: {
-                    text: 'Rzuc',
+                    text: 'Wypadło',
                     en: 'Roll'
                 },
                 profit: {
@@ -536,11 +536,11 @@ var Translation = {
                     en: 'Price'
                 },
                 quality: {
-                    text: 'Jakosc',
+                    text: 'Jakość',
                     en: 'Quality'
                 },
                 trade_up_contract: {
-                    text: 'Zrob kontrakt',
+                    text: 'Zrób kontrakt',
                     en: 'Trade Up Contract'
                 },
                 sell: {
@@ -559,40 +559,40 @@ var Translation = {
                 },
                 contract_error: {
                     title: {
-                        text: 'Blad',
+                        text: 'Błąd',
                         en: 'Error'
                     },
                     message: {
-                        text: 'Sprobuj inna bron',
+                        text: 'Spróbuj inną broń',
                         en: 'Try another weapon'
                     }
                 },
             },
             sell_error: {
-                text: 'Cos nie tak z cena broni',
+                text: 'Coś nie tak z ceną broni',
                 en: 'Something wrong with weapon price'
             },
             statistic: {
                 worth: {
-                    text: 'Wartosc:',
+                    text: 'Wartość:',
                     en: 'Worth:'
                 },
                 count: {
-                    text: 'Ilosc:',
+                    text: 'Ilość:',
                     en: 'Count:'
                 }
             },
             sort: {
                 special: {
-                    text: ["Wszystko", "Nowy", "StatTrak", "Nie StatTrak", "Pamiatka", "Nie Pamiatka", "Normalna"],
+                    text: ["Wszystkie typy", "Nowy", "StatTrak", "Nie StatTrak", "Pamiątka", "Nie Pamiątka", "Normalna"],
                     en: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal"]
                 },
                 types: {
-                    text: ["Wszystkie bronie", "Pistolety", "Karabiny", "Karabiny Snajperskie", "SMG", "Shotguny", "Karabiny Maszynowe", "Kosy", "Rekawice"],
+                    text: ["Wszystkie bronie", "Pistolety", "Karabiny", "Karabiny Snajperskie", "SMG", "Shotguny", "Karabiny Maszynowe", "Kosy", "Rękawice"],
                     en: ["All weapons", "Pistols", "Rifles", "Sniper rifles", "SMGs", "Shotguns", "Machineguns", "Knives", "Gloves"]
                 },
                 quality: {
-                    text: ["Wszystkie rodzaje", "Biale", "Jasno-Niebieskie", "Niebieskie", "Fioletowe", "Rozowe", "Czerwone", "Zlote"],
+                    text: ["Wszystkie kolory", "Białe", "Jasno-Niebieskie", "Niebieskie", "Fioletowe", "Różowe", "Czerwone", "Złote"],
                     en: ["All qualities", "White", "Light-blue", "Blue", "Purple", "Pink", "Red", "Gold"]
                 }
             }
@@ -624,38 +624,38 @@ var Translation = {
             },
             login: {
                 sign_in: {
-                    text: 'Zaloguj sie',
+                    text: 'Zaloguj się',
                     en: 'Sign in'
                 },
                 register: {
-                    text: 'Zarejestruj sie',
+                    text: 'Zarejestruj się',
                     en: 'Register'
                 },
                 forgot_pass: {
-                    text: 'Zapomniales hasla?',
+                    text: 'Zapomniałeś hasła?',
                     en: 'Forgot password?'
                 },
                 have_ban: {
-                    text: 'Dostales bana. Nie mozesz zalozyc nowego konta',
+                    text: 'Dostałeś bana. Nie możesz założyć nowego konta',
                     en: 'You have ban. You can\'t create new account.'
                 }
             },
             banlist: {
-                text: 'Lista banow',
+                text: 'Lista banów',
                 en: 'Banlist'
             },
             send_message: {
-                text: 'Wyslij',
+                text: 'Wyślij',
                 en: 'Send'
             },
             moderator: {
                 delete_msg: {
                     title: {
-                        text: 'Usun wiadomosc',
+                        text: 'Usuń wiadomość',
                         en: 'Delete message'
                     },
                     message: {
-                        text: 'Jestes pewny ze chcesz usunac te wiadomosc?',
+                        text: 'Jesteś pewny że chcesz usunąć te wiadomość?',
                         en: 'Are you sure that you want to delete this message?'
                     }
                 },
@@ -664,7 +664,7 @@ var Translation = {
         },
         banlist: {
             page_name: {
-                text: 'Lista banow',
+                text: 'Lista banów',
                 en: 'Banlist'
             }
         },
@@ -706,12 +706,12 @@ var Translation = {
                 }
             },
             send_post: {
-                text: 'Wyslij',
+                text: 'Wyślij',
                 en: 'Send'
             },
             exchange: {
                 title: {
-                    text: 'Wymien',
+                    text: 'Wymień',
                     en: 'Trade'
                 },
                 exchange_offers: {
@@ -728,21 +728,21 @@ var Translation = {
                         en: 'Not ready'
                     },
                     checkbox: {
-                        text: 'Zaznacz to biale pole jesli jestes gotowy.',
+                        text: 'Zaznacz ten biały kwadrat jeśli jesteś gotowy.',
                         en: 'Check this box when ready to trade.'
                     },
                     gift: {
-                        text: 'To podarunek',
+                        text: 'To podarunek.',
                         en: 'It\'s a gift.'
                     }
                 },
                 your_offer: {
                     main: {
-                        text: 'Ty oferujesz',
+                        text: 'Ty oferujesz:',
                         en: 'Your offerings'
                     },
                     info: {
-                        text: 'Te skiny stracisz w wyniku wymiany',
+                        text: 'Te skiny stracisz w wyniku wymiany:',
                         en: 'These are the items you will lose in the trade.'
                     }
                 },
@@ -752,21 +752,21 @@ var Translation = {
                         en: 'Other player offerings'
                     },
                     info: {
-                        text: 'Te skiny otrzymasz w wyniku wymiany',
+                        text: 'Te skiny otrzymasz w wyniku wymiany:',
                         en: 'These are the items you will receive in the trade.'
                     }
                 },
                 buttons: {
                     change_offer: {
-                        text: 'Zmien oferte',
+                        text: 'Zmień ofertę',
                         en: 'Change your offer'
                     },
                     cancel_trade: {
-                        text: 'Zamknij oferte',
+                        text: 'Zamknij ofertę',
                         en: 'Cancel trade'
                     },
                     make_trade: {
-                        text: 'Zrob oferte',
+                        text: 'Zrób ofertę',
                         en: 'Make trade'
                     },
                     back: {
@@ -779,7 +779,7 @@ var Translation = {
                     }
                 },
                 your_inventory: {
-                    text: 'Twoj ekwipunek',
+                    text: 'Twój ekwipunek',
                     en: 'Your inventory'
                 },
                 their_inventory: {
@@ -791,7 +791,7 @@ var Translation = {
                     en: 'Summary'
                 },
                 watch_inventory_wip: {
-                    text: 'Wyslij oferte i czekaj zeby inny gracz cos dodal.',
+                    text: 'Wyślij ofertę i czekaj żeby inny gracz coś dodał.',
                     en: 'Send trade and wait for other player add something.'
                 },
                 navigation: {
@@ -800,11 +800,11 @@ var Translation = {
                         en: 'Back'
                     },
                     next: {
-                        text: 'Nastepne',
+                        text: 'Następne',
                         en: 'Next'
                     },
                     send_trade: {
-                        text: 'Wyslij oferte',
+                        text: 'Wyślij ofertę',
                         en: 'Send trade'
                     }
                 },
@@ -814,11 +814,11 @@ var Translation = {
                         en: 'Trade'
                     },
                     trade_send: {
-                        text: 'Oferta pomyslnie wyslana',
+                        text: 'Oferta pomyślnie wysłana. :)',
                         en: 'Trade offer successful sended'
                     },
                     to_many_weapons: {
-                        text: 'Maksymalna ilosc skinow: ${1}.',
+                        text: 'Maksymalna ilość skinów: ${1}.',
                         en: 'The maximum number of items: ${1}'
                     }
                 }
@@ -834,7 +834,7 @@ var Translation = {
                 en: 'Total cases opened'
             },
             white: {
-                text: 'Biale',
+                text: 'Białe',
                 en: 'White'
             },
             light_blue: {
@@ -850,7 +850,7 @@ var Translation = {
                 en: 'Purpule'
             },
             pink: {
-                text: 'Rozowe',
+                text: 'Różowe',
                 en: 'Pink'
             },
             red: {
@@ -858,7 +858,7 @@ var Translation = {
                 en: 'Red'
             },
             gold: {
-                text: 'Kosy/Rekawice',
+                text: 'Kosy/Rękawice',
                 en: 'Knives/Gloves'
             },
             contracts: {
@@ -870,19 +870,19 @@ var Translation = {
                 en: 'Jackpot win/lose'
             },
             jackpot_max: {
-                text: 'Maksymalne pieniadze wygrane z Jackpot\'a',
+                text: 'Maksymalne pieniądzę wygrane z Jackpot\'a',
                 en: 'Jackpot max money won'
             },
             rps_win_lose: {
-                text: 'Kamien-Papier-Nozyce wygrane/przegrane',
+                text: 'Kamień-Papier-Nożyce wygrane/przegrane',
                 en: 'Rock-Paper-Scissors win/lose'
             },
             coinflip_win_lose: {
-                text: 'Rzut moneta wygrane/przegrane',
+                text: 'Rzut monetą wygrane/przegrane',
                 en: 'Coinflip win/lose'
             },
             coinflip_max: {
-                text: 'Rzut moneta maksymalne pieniadze wygrane',
+                text: 'Rzut monetą maksymalne pieniądzę wygrane',
                 en: 'Coinflip max money won'
             },
             double_win_lose: {
@@ -897,11 +897,11 @@ var Translation = {
             },
             how_to_play_jackpot: {
                 title: {
-                    text: 'Jak grac Jackpot\'a?',
+                    text: 'Jak grać Jackpot\'a?',
                     en: 'How to play Jackpot?'
                 },
                 info: {
-                    text: 'Maksymalna ilosc broni jaka mozesz dodac: 15.<br> Maksymalna cena - Nieskonczona.<br>Gra wystartuje po wlozeniu 50 broni.<br>Jezeli dodasz skiny i wyjdziesz z Jackpot\'a -bronie znikna. .',
+                    text: 'Maksymalna ilość broni jaką możesz dodać: 15.<br> Maksymalna cena - Nieskończona.<br>Gra wystartuje po włożeniu 50 broni.<br>Jezeli dodasz skiny i wyjdziesz z Jackpot\'a -bronie znikną.',
                     en: 'The max number of weapons that you can add: 15.<br>Maximum price is unlimited.<br>The game will begin after 50 weapons are collected.<br>If you add weapons and close the jackpot, weapons will disappear.'
                 }
             },
@@ -911,28 +911,28 @@ var Translation = {
                     en: 'Why weapon price is $0?'
                 },
                 info: {
-                    text: 'Cena broni bierze sie z bazy danych. Jezeli nie ma ceny aktualnej broni, wtedy cena bieze sie z Rynku Steam\'a. Jezeli nie ma ceny, musi wynosic ona $0. <br> Kiedy bron pojawia sie na Rynku, otworz informacje o broni w ekwipunku, czekaj az cena sie zaladuje i otworz na nowo ekwipunek .',
+                    text: 'Cena broni bierze się z bazy danych. Jezeli nie ma ceny aktualnej broni, wtedy cena bierze się z Rynku Steam\'a. Jeżeli nie ma ceny, musi wynosić ona $0. <br> Kiedy broń pojawi się na Rynku, otwórz informacje o broni w ekwipunku, czekaj aż cena się załaduje i otwórz na nowo ekwipunek .',
                     en: 'Weapons prices are taken from the database. If there are no prices for current weapon, then price is taken from the Steam Market. If there is no price as well, it counts as $0. <br> When the weapon appears in market, open the weapon info in inventory, wait until the price is loaded, reopen inventory.'
                 }
             },
             how_to_exchange: {
                  title: {
-                    text: 'Jak wlaczyc wymiane?',
+                    text: 'Jak włączyć wymianę?',
                     en: 'How to exchange?'
                 },
                 info: {
-                    text:'Wejdz w ustawienia, musisz miec wlaczona opcje "Wymiana".<br><b>Jak wyslac oferte wymiany</b><br><ol><li>Otworz profil innego gracza</li><li>Nacisnij ikone wymiany (<i class="fa fa-exchange" aria-hidden="true"></i>)</li><li>Wybierz skiny jakie chcesz wyslac i nacisnij przycisk "Nastepne"</li><li><s>Wybierz skiny jakie chcesz od gracza</s> (VIP)</li><li>Jesli chcesz wyslac prezent kliknij skrzynke z napisem "To jest Prezent" </li><li>Nacisnij na przycisk "Wyslij oferte"</li></ol><b>Jak dostac przedmioty</b><ol><li>Otworz swoj Profil</li><li>Nacisnij na oferte wymiany (<i class="fa fa-exchange" aria-hidden="true"></i>)</li><li>Wybierz gracza ktory wyslal Ci oferte</li><li>Zaznacz oferte</li><li>Zmien swoja oferte jezeli chcesz</li><li>Sprawdz "Sprawdz ta skrzynie jesli jestes gotowy."</li><li>Poczekaj az inny gracz sprawdzi te skrzynke tez i kliknij na przycisk "Zrob oferte."Albo inny gracz to nacisnie</li></ol>Jezeli inny gracz nacisnal przycisk "Zrob oferte" kiedy byles nieaktywny po prostu nacisnij oferte zeby dostac przedmioty .',
+                    text:'Wejdź w ustawienia, musisz mieć włączoną opcję "Wymiana".<br><b>Jak wysłać ofertę wymiany</b><br><ol><li>Otwórz profil innego gracza</li><li>Naciśnij ikonę wymiany (<i class="fa fa-exchange" aria-hidden="true"></i>)</li><li>Wybierz skiny jakie chcesz wysłać i naciśnij przycisk "Następnę"</li><li><s>Wybierz skiny jakie chcesz od gracza</s> (VIP)</li><li>Jeśli chcesz wysłać prezent kliknij skrzynkę z napisem "To jest Prezent" </li><li>Naciśnij na przycisk "Wyślij ofertę"</li></ol><b>Jak dostać przedmioty?</b><ol><li>Otwórz swój Profil</li><li>Naciśnij na ofertę wymiany (<i class="fa fa-exchange" aria-hidden="true"></i>)</li><li>Wybierz gracza który wysłał Ci ofertę</li><li>Zaznacz ofertę</li><li>Zmień swoją ofertę jeżeli chcesz</li><li>Sprawdź "Sprawdź tę skrzynkę jeśli jesteś gotowy."</li><li>Poczekaj aż inny gracz też sprawdzi tę skrzynkę i kliknij na przycisk "Zrób ofertę."Albo inny gracz to naciśnie</li></ol>Jeżeli inny gracz nacisnął przycisk "Zrób ofertę" kiedy byłeś nieaktywny po prostu naciśnij ofertę żeby dostać przedmioty .',
                     en: 'First of all, you need to enable "Exchange" in settings.<br><b>How to send the trade offer</b><br><ol><li>Open another player profile</li><li>Press on the exchange icon (<i class="fa fa-exchange" aria-hidden="true"></i>)</li><li>Select the weapons that you want to send and press on the "Next" button</li><li><s>Select the weapons that you want to get from player</s> (WIP)</li><li>If you want to send weapons as a gift then check "It\'s a gift" checkbox</li><li>Press on the "Send trade" button</li></ol><b>How to get weapons</b><ol><li>Open your profile</li><li>Press on the exchange icon (<i class="fa fa-exchange" aria-hidden="true"></i>)</li><li>Select the player that send the offer to you</li><li>Select the offer</li><li>Change your offer if you want</li><li>Check the "Check this box when ready to trade." checkbox</li><li>Wait until another player check this checkbox too and press on the "Make trade" button. Or another player can press it</li></ol>If another player pressed the "Make trade" button when you was offline then open this trade to get your weapons.'
                 }
             },
             how_to_level_up: {
                 title: {
-                    text: 'Jak wbic poziom?',
+                    text: 'Jak wbić poziom?',
                     en: 'How to level up?'
                 },
                 info: {
-                    text: 'Zeby okreslic twoj poziom potrzebujesz punktow. Punkty dostajesz za nastepujace kroki:<ul> \
-                        <li>Otworz aplikacje - ${1} punkty (Nagrode dostajesz jeden raz na dzien)</li> \
+                    text: 'Żeby określić twój poziom potrzebujesz punktów. Punkty dostajesz za następujące kroki:<ul> \
+                        <li>Otwórz aplikację - ${1} punkty (Nagrodę dostajesz jeden raz na dzień)</li> \
                         <li>Otworzenie skrzynki - ${2} punkt</li> \
                         <li>Wygrana mini-gry - ${3} punkty</li> \
                     </li></ul>',
@@ -945,11 +945,11 @@ var Translation = {
             },
             found_bug: {
                 title: {
-                    text: 'Znalazlem buga gry co powinienem zrobic?',
+                    text: 'Znalazłem buga gry co powinienem zrobić?',
                     en: 'I found a bug what should I do?'
                 },
                 info: {
-                    text: 'Skontaktuj sie ze mna mailem: <b>kurtukovvlad@gmail.com</b>',
+                    text: 'Skontaktuj się z twórcą gry prze maila: <b>kurtukovvlad@gmail.com</b>',
                     en: 'You can contact me via email: kurtukovvlad@gmail.com'
                 }
             }
@@ -995,11 +995,11 @@ var Translation = {
                     en: 'Interface'
                 },
                 language: {
-                    text: 'Jezyk',
+                    text: 'Język',
                     en: 'Language'
                 },
                 sound: {
-                    text: 'Dzwiek',
+                    text: 'Dźwięk',
                     en: 'Sound'
                 },
                 fast_drop: {
@@ -1008,7 +1008,7 @@ var Translation = {
                 }
             },
             reset: {
-                text: 'Calkowity reset',
+                text: 'Całkowity reset',
                 en: 'Full reset'
             },
             save: {
@@ -1029,19 +1029,19 @@ var Translation = {
                     en: 'Done'
                 },
                 reset_confirm_title: {
-                    text: 'Calkowity reset',
+                    text: 'Całkowity reset',
                     en: 'Full Reset'
                 },
                 reset_confirm: {
-                    text: 'Wszystko zostanie skasowane. Jestes pewny?',
+                    text: 'Wszystko zostanie skasowane. Jesteś pewny?',
                     en: 'All weapons will be deleted. Statistics will be reset. Are you sure?'
                 },
                 invalid_nick_title: {
-                    text: 'Blad',
+                    text: 'Błąd',
                     en: 'Error'
                 },
                 invalid_nick: {
-                    text: 'Zla nazwa. Tylko liczby i cyfry sa dostepne .',
+                    text: 'Zła nazwa. Tylko liczby i cyfry są dostępne .',
                     en: 'Wrong name. Only letters and numbers are available.'
                 }
             }
@@ -1052,15 +1052,15 @@ var Translation = {
                 en: 'About'
             },
             main_developer: {
-                text: 'Glowny Developer',
+                text: 'Główny Developer',
                 en: 'Main developer'
             },
             info: {
-                text: 'Jezeli znalazles jakies bugi albo masz sugestie dotyczace gry napisz do mnie na email\'a<br>Jezeli chcesz podziekowac developerowi mozesz cos wyslac na Steam\'a<br>Nie zapomnij ocenic naszej aplikacji na Play Markecie ^_^',
+                text: 'Jeżeli znalazłeś jakieś bugi albo masz sugestie dotyczące gry napisz do mnie na email\'a<br>Jeżeli chcesz podziękować developerowi możesz coś wysłać na Steam\'a :)<br>Nie zapomnij ocenić naszej aplikacji na Play Markecie ^_^',
                 en: 'If you found some bugs or you have a suggestion you can write me an email.<br>If you want to thank the developer you can send something in Steam :)<br>Do not forget to rate the app in the Play Market ^_^'
             },
             special_thanks: {
-                text: 'Specjalne podziekowania',
+                text: 'Specjalne podziękowania',
                 en: 'Special Thanks'
             },
             copyright: {
@@ -1068,7 +1068,7 @@ var Translation = {
                 en: 'Copyright'
             },
             copyright_info: {
-                text: 'Wszystkie informacje sa brane z publicznych zrodel. Jezeli myslisz ze cos jest skopiowane, prosze skontaktuj sie ze mna.',
+                text: 'Wszystkie informacje są brane z publicznych źródeł. Jeżeli myślisz że coś jest skopiowane, proszę skontaktuj się ze mną.',
                 en: 'All information is taken from public sources. If anything in the application infringes your copyright, please contact me.'
             }
         },
@@ -1080,12 +1080,12 @@ var Translation = {
         },
         other: {
             souvenir: {
-                text: 'Pamiatka',
+                text: 'Pamiątka',
                 en: 'Souvenir'
             },
             new_version: {
                 new_version: {
-                    text: 'Nowa wersja aplikacji jest dostepna.',
+                    text: 'Nowa wersja aplikacji jest dostępna.',
                     en: 'New version of the app is available.'
                 },
                 update: {
@@ -1093,7 +1093,7 @@ var Translation = {
                     en: 'Update'
                 },
                 later: {
-                    text: 'Pozniej',
+                    text: 'Później',
                     en: 'Later'
                 }
             },
@@ -1103,21 +1103,21 @@ var Translation = {
                     en: 'Reward!'
                 },
                 message: {
-                    text: 'Dostales codzienna nagrode!<br>+${1} punktow Poziomu | +${2} punktow Double\'a.',
+                    text: 'Dostałeś nagrodę!<br>+${1} punktów Poziomu | +${2} punktów Double\'a.',
                     en: 'You get daily reward!<br>+${1} EXP | +${2} double points.'
                 }
             },
             sum_text: {
-                text: 'Wartosc: ',
+                text: 'Wartość: ',
                 en: 'Worth: '
             },
             empty_inventory: {
-                text: 'Ekwipunek jest pusty. <a href="cases.html">Otworz skrzynie zeby go uzupelnic.</a>',
+                text: 'Ekwipunek jest pusty. <a href="cases.html">Otwórz skrzynię żeby go uzupełnić.</a>',
                 en: 'Inventory is empty. <a href="cases.html">Open some cases to fill it.</a>'
             },
             ban: {
                 wrong_ban: {
-                    text: 'Jezeli zostales zbanowany przez pomylke, napisz email\'a kurtukovvlad@gmail.com',
+                    text: 'Jeżeli zostałeś zbanowany przez pomyłkę, napisz email\'a kurtukovvlad@gmail.com',
                     en: 'If you were banned by a mistake, write to email kurtukovvlad@gmail.com'
                 }
             }

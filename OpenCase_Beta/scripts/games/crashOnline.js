@@ -30,7 +30,7 @@ $(function() {
     getTop();
     
     function connectToServer() {
-        //socket = new WebSocket('ws://localhost:8000');
+        //socket = new WebSocket('ws://localhost:8001');
         socket = new WebSocket('wss://kvmde40-10035.fornex.org/crash');
         //socket = new WebSocket('wss://crashserver.herokuapp.com/');
         
@@ -173,7 +173,9 @@ $(function() {
     
     function endGame(message) {
         currentMultiply = 0;
-        odometer.update(message.number/100);
+        try {
+            odometer.update(message.number/100);
+        } catch (e) {}
         if (message.cashOuts) {
             for (var key in message.cashOuts) {
                 cashOut({
@@ -221,8 +223,12 @@ $(function() {
     }
     
     function newBet(message) {
-        var status = message.status == 'crashed' ? 'danger' : message.status == 'cashOut' ? 'success' : '';
-        $('#bet-list').append('<tr data-playerID="'+message.id+'" class="'+status+'"><td class="bet__nickname">'+message.player+'</td><td class="bet__multiply">-</td><td class="bet__bet">'+roundK(message.bet)+'</td><td class="bet__profit">-</td></tr>')
+        var status = message.status == 'crashed' ? 'danger' : message.status == 'cashOut' ? 'success' : '',
+            betMultiply = typeof message.multiply !== 'undefined' ? parseFloat((parseInt(message.multiply)/100).toFixed(2)) : '-',
+            profit = typeof betMultiply === 'number' ? Math.round(message.bet * betMultiply - message.bet) : '-';
+            
+        
+        $('#bet-list').append('<tr data-playerID="'+XSSreplace(message.id)+'" class="'+status+'"><td class="bet__nickname">'+XSSreplace(message.player)+'</td><td class="bet__multiply">' + betMultiply + '</td><td class="bet__bet">'+roundK(message.bet)+'</td><td class="bet__profit">' + roundK(profit) + '</td></tr>')
     }
     
     function cashOut(message) {

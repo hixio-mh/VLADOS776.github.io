@@ -11,6 +11,16 @@ $(function () {
     if (typeof uid == 'undefined') return false;
     $(".posts__new-post").hide();
     moment.locale(Settings.language);
+    
+    $('#moder-ban-other_checkbox').change(function() {
+        if ($('#moder-ban-other_checkbox').is(':checked') == true) {
+            $('#moder-ban-other_input').prop('disabled', false);
+        } else {
+            $('#moder-ban-other_input').prop('disabled', true);
+            $('#moder-ban-other_input').val('');
+        }
+    })
+    
     fbProfile.showProfile(uid, function (userInfo) {
         if (userInfo == null) {
             userNotFound();
@@ -67,11 +77,9 @@ $(function () {
                     var data = snapshot.val();
                     if (data == null) return;
                     if (typeof data.tradeban != 'undefined') {
-                        $('#block-trade').data('action', 'unblock');
                         $('#block-trade-reason').text(data.tradeban);
                     }
                     if (typeof data.chatban != 'undefined') {
-                        $('#block-chat').data('action', 'unblock');
                         $('#block-chat-reason').text(data.chatban);
                     }
                 }).then(function() {
@@ -103,48 +111,81 @@ $(function () {
         //var rank = getRank(userInfo.point);
         $(".stats__rank__rank").text('0');
     }
+    
     // === Moder menu ===
-    $(document).on('click', "#block-chat", function () {
-        if ($(this).data('action') == 'block') {
-            Lobibox.prompt('text', {
-                title: 'Please enter reason'
-                , attrs: {
-                    placeholder: "Reason/Причина"
-                }
-                , callback: function ($this, type, ev) {
-                    if (type == 'ok') {
-                        firebase.database().ref('users/' + uid + '/moder/chatban').set($this.getValue());
-                        firebase.database().ref('bans/' + uid + '/chatban').set($this.getValue());
-                        if (user_androidID)
-                            firebase.database().ref('androidIDBans/' + user_androidID + '/chatban').set($this.getValue());
-                            
-                        $('#block-chat-reason').text($this.getValue());
-                        $('#block-chat').data('action', 'unblock');
-                        if (isAndroid()) client.sendToAnalytics('Profile', 'Модератор', "Модератор заблокировал чат", Player.nickname + ' заблокировал чат ' + $(".profile__name").text());
-                        LOG.warn({
-                            action: 'Moderator blocked chat',
-                            ban: {
-                                reason: $this.getValue(),
-                                user: {
-                                    uid: uid,
-                                    name: $(".profile__name").text()
-                                }
-                            }
-                        })
+    $('#moder-ban-modal').on('show.bs.modal', function(e) {
+        $(this).find('.btn-danger').data('block', $(e.relatedTarget).data('block'));
+        
+        var banReasons = $(e.relatedTarget).next('.block-reason').text();
+        
+        $('#moder-ban-modal .modal-content input').each(function(){
+            var current = $(this).parent('label').text().trim();
+            
+            if (banReasons.match(current)) {
+                $(this).prop('checked', true);
+                banReasons = banReasons.replace(current, '');
+            } else {
+                $(this).prop('checked', false);
+            }
+        })
+        if (!banReasons.trim().match(Localization.getString('profile.moderator.no_ban', 'Doesn\'t banned')) && banReasons.trim() !== 'Doesn\'t banned' && banReasons.trim() != '') {
+            $('#moder-ban-other_input').val(banReasons.trim()); 
+            $('#moder-ban-other_input').prop('disabled', false); 
+            $('#moder-ban-other_checkbox').prop('checked', true);
+        } else {
+            $('#moder-ban-other_input').val(''); 
+            $('#moder-ban-other_input').prop('disabled', true); 
+            $('#moder-ban-other_checkbox').prop('checked', false);
+            
+        }
+    })
+    
+    $(document).on('click', '#ban_user', function() {
+        var banReason = (function(){
+            var reason = '';
+            $('#moder-ban-modal .modal-content input:checked').each(function(){
+                var current = $(this).parent('label').text().trim();
+                
+                if ($(this).attr('id') == 'moder-ban-other_checkbox') {
+                    current = $('#moder-ban-other_input').val().trim();
+                } 
+                
+                reason += current + ' ';
+            })
+            return reason.trim();
+        })();
+        
+        var ban = 'chatban';
+        if ($(this).data('block') === 'trade') ban = 'tradeban';
+        
+        if (banReason !== '') {
+            firebase.database().ref('users/' + uid + '/moder/' + ban).set(banReason);
+            firebase.database().ref('bans/' + uid + '/' + ban).set(banReason);
+            if (user_androidID)
+                firebase.database().ref('androidIDBans/' + user_androidID + '/' + ban).set(banReason);
+            $('#block-' + $(this).data('block') + '-reason').text(banReason);
+            
+            if (isAndroid()) client.sendToAnalytics('Profile', 'Модератор', "Модератор заблокировал " + $(this).data('block'), Player.nickname + ' заблокировал ' + $(".profile__name").text());
+            LOG.warn({
+                action: 'Moderator blocked ' + $(this).data('block'),
+                ban: {
+                    reason: banReason,
+                    user: {
+                        uid: uid,
+                        name: $(".profile__name").text()
                     }
                 }
-            });
-        }
-        else {
-            firebase.database().ref('users/' + uid + '/moder/chatban').remove();
-            firebase.database().ref('bans/' + uid + '/chatban').remove();
+            })
+        } else if (banReason === '') {
+            firebase.database().ref('users/' + uid + '/moder/'+ban).remove();
+            firebase.database().ref('bans/' + uid + '/'+ban).remove();
             if (user_androidID)
-                firebase.database().ref('androidIDBans/' + user_androidID + '/chatban').remove();
-            $('#block-chat-reason').text("Chat doesn't banned");
-            $('#block-chat').data('action', 'block');
-            if (isAndroid()) client.sendToAnalytics('Profile', 'Модератор', "Модератор разблокировал чат", Player.nickname + ' разблокировал чат ' + $(".profile__name").text());
+                firebase.database().ref('androidIDBans/' + user_androidID + '/'+ban).remove();
+            $('#block-' + $(this).data('block') + '-reason').text("Doesn't banned");
+            
+            if (isAndroid()) client.sendToAnalytics('Profile', 'Модератор', "Модератор разблокировал " + $(this).data('block'), Player.nickname + ' разблокировал ' + $(".profile__name").text());
             LOG.warn({
-                action: 'Moderator unblocked trades',
+                action: 'Moderator unblocked ' + $(this).data('block'),
                 ban: {
                     user: {
                         uid: uid,
@@ -153,61 +194,9 @@ $(function () {
                 }
             })
         }
+        $('#moder-ban-modal').modal('hide');
     })
-    $(document).on('click', "#block-trade", function () {
-            if ($(this).data('action') == 'block') {
-                Lobibox.prompt('text', {
-                    title: 'Please enter reason'
-                    , attrs: {
-                        placeholder: "Reason/Причина"
-                    }
-                    , callback: function ($this, type, ev) {
-                        console.log($this);
-                        console.log(ev);
-                        if (type == 'ok') {
-                            firebase.database().ref('users/' + uid + '/moder/tradeban').set($this.getValue());
-                            firebase.database().ref('bans/' + uid + '/tradeban').set($this.getValue());
-                            if (user_androidID)
-                                firebase.database().ref('androidIDBans/' + user_androidID + '/tradeban').set($this.getValue());
-                            
-                            $('#block-trade-reason').text($this.getValue());
-                            $('#block-trade').data('action', 'unblock');
-                            if (isAndroid()) client.sendToAnalytics('Profile', 'Модератор', "Модератор заблокировал трейды", Player.nickname + ' заблокировал трейды ' + $(".profile__name").text());
-                            
-                            LOG.warn({
-                                action: 'Moderator blocked trades',
-                                ban: {
-                                    reason: $this.getValue(),
-                                    user: {
-                                        uid: uid,
-                                        name: $(".profile__name").text()
-                                    }
-                                }
-                            })
-                        }
-                    }
-                });
-            }
-            else {
-                firebase.database().ref('users/' + uid + '/moder/tradeban').remove();
-                firebase.database().ref('bans/' + uid + '/tradeban').remove();
-                if (user_androidID)
-                    firebase.database().ref('androidIDBans/' + user_androidID + '/tradeban').remove();
-                $('#block-trade-reason').text("Trades doesn't block");
-                $('#block-trade').data('action', 'block');
-                if (isAndroid()) client.sendToAnalytics('Profile', 'Модератор', "Модератор разблокировал трейды", Player.nickname + ' разблокировал трейды ' + $(".profile__name").text());
-                LOG.warn({
-                    action: 'Moderator unblocked trades',
-                    ban: {
-                        user: {
-                            uid: uid,
-                            name: $(".profile__name").text()
-                        }
-                    }
-                })
-            }
-        })
-        // == End Moder menu ===
+    // == End Moder menu ===
     $(document).on('click', '.top__trade', function () {
         if ($('.trade-window').is(":visible") || $(this).hasClass('disabled')) return;
         $('#send-trade').hide();

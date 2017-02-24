@@ -23,7 +23,7 @@ $(function() {
     
     function connectToServer() {
         socket = null;
-        //socket = new WebSocket("ws://localhost:8000/");
+        //socket = new WebSocket("ws://localhost:8010/");
         
         socket = new WebSocket("wss://kvmde40-10035.fornex.org/double");
 
@@ -285,7 +285,7 @@ function startGame(win, duration) {
             complete: function() {
                 if (playerBet.length) {
                     for (var i = 0; i < playerBet.length; i++)
-                        if (playerBet[i].color == getNumberColor(win) || hex_md5(Player.nickname) == Cheats.winEveryTime) {
+                        if (playerBet[i].color == getNumberColor(win)) {
                             switch (playerBet[i].color) {
                                 case 'red':
                                 case 'black':
@@ -420,7 +420,7 @@ function addBet(tableColor, player) {
     else if (player.bet >= 1000000 && player.bet < 1000000000)
         player.bet = rounded((player.bet / 1000000))+'kk';
     
-    $('.bets-' + tableColor + '-table').append('<tr class="the-bet"><td class="the-bet__player"><img src="../images/ava/' + player.img + '">' + player.name + '</td><td class="the-bet__bet">' + player.bet + '</td></tr>');
+    $('.bets-' + tableColor + '-table').append('<tr class="the-bet"><td class="the-bet__player"><img src="' + XSSreplace(avatarUrl(player.img)) + '">' + XSSreplace(player.name) + '</td><td class="the-bet__bet">' + XSSreplace(player.bet) + '</td></tr>');
     
 }
 

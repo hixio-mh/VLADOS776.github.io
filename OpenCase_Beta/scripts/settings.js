@@ -1,7 +1,9 @@
 // ===== PROGRAM SETTINGS =====
 var DAILY_REWARD_POINTS = 5,
     OPEN_CASE_REWARD_POINTS = 1,
-    GAME_WIN_REWARD_POINTS = 2;
+    GAME_WIN_REWARD_POINTS = 2,
+    //FREE_CASE_INTERVAL_MS = 300000;
+    FREE_CASE_INTERVAL_MS = 1.8e+6; //30 минут
 
 // ===== PLAYER SETTINGS =====
 var Player = {
@@ -17,14 +19,30 @@ var Settings = {
     }
 
 Player.nickname = getStatistic("playerNickname", 'Player');
-Player.avatar = getStatistic("playerAvatar", '0.jpg');
+Player.avatar = getStatistic("playerAvatar", '../images/ava/0.jpg');
 Player.points = parseInt(getStatistic('playerPoints', 0));
 Player.doubleBalance = parseInt(getStatistic('doubleBalance', 0));
+
+//isNaN check
 if (isNaN(Player.doubleBalance)) Player.doubleBalance = 10000;
+if (isNaN(Player.points)) Player.points = 1;
+
 
 Settings.language = getStatistic("settings_language", 'EN');
 Settings.sounds = getStatistic("settings_sounds", 'true') === 'true';
 Settings.drop = getStatistic("settings_drop", 'false') === 'true';
+
+function avatarUrl(avatar) {
+    avatar = avatar || Player.avatar;
+    
+    if (/^\d+\.(jpg|png|gif)$/i.test(avatar)) {
+        return '../images/ava/'+avatar;
+    } else if (/^\.\..*?\.\w{3}$/.test(avatar)) {
+        return avatar;
+    } else if (/^(http|www).*?\.(png|gif|jpg|jpeg)$/i.test(avatar)) {
+        return avatar;
+    }
+}
 
 // ===== RANKS =====
 var Ranks = [{
@@ -180,7 +198,7 @@ var Level = (function(module) {
     }
     
     module.calcLvl = function(exp) {
-        exp = exp || Player.points;
+        exp = exp || isNaN(Player.points) ? 5 : Player.points;
         var i = 1;
         while (true) {
             if (exp < module.lvlEXP(i))
@@ -212,7 +230,10 @@ var Level = (function(module) {
     
     module.doubleBonus = function(lvl) {
         lvl = lvl || module.myLvl();
-        return lvl * 100 > 10000 ? 10000 : lvl * 100;
+        if (lvl === 1 || lvl === 2)
+            return 10000;
+        else
+            return lvl * 100 > 10000 ? 10000 : lvl * 100;
     }
     
     module.levelUP = function() {

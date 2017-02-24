@@ -41,7 +41,7 @@ var CoinFlip = {
             });
 
             for (var i = 0; i < CoinFlip.Games.length; i++) {
-                list += "<tr><td class='table-name'><img src='../images/ava/" + CoinFlip.Games[i].bot.img + "'><span>" + CoinFlip.Games[i].bot.name + "</span></td><td>" + CoinFlip.Games[i].bot.weapons.length + "</td><td><span class='currency dollar'>" + CoinFlip.Games[i].bot.items_cost.toFixed(2) + "</span></td><td><span class='join " + CoinFlip.Games[i].color + " btn' data-game-id=" + i + ">" + Localization.getString('coinflip.table.join') + "</span></td></tr>";
+                list += "<tr><td class='table-name'><img src='" + avatarUrl(CoinFlip.Games[i].bot.img) + "'><span>" + CoinFlip.Games[i].bot.name + "</span></td><td>" + CoinFlip.Games[i].bot.weapons.length + "</td><td><span class='currency dollar'>" + CoinFlip.Games[i].bot.items_cost.toFixed(2) + "</span></td><td><span class='join " + CoinFlip.Games[i].color + " btn' data-game-id=" + i + ">" + Localization.getString('coinflip.table.join') + "</span></td></tr>";
             }
             $('.games').append(list);
             $('#js-table-loading-gif').remove();
@@ -122,12 +122,12 @@ var CoinFlip = {
     showGame: function(game_id) {
         $('#addWeapons').removeClass('hide');
         $('.game__bot__nick').text(CoinFlip.Games[game_id].bot.name);
-        $('.game__bot__img').attr('src', '../images/ava/' + CoinFlip.Games[game_id].bot.img);
+        $('.game__bot__img').attr('src', avatarUrl(CoinFlip.Games[game_id].bot.img));
         $('.game__bot__price').text('$' + CoinFlip.Games[game_id].bot.items_cost.toFixed(2));
         $('.game__bot__chance').text('100%');
 
         $('.game__player__nick').text(Player.nickname);
-        $('.game__player__img').attr('src', '../images/ava/' + Player.avatar);
+        $('.game__player__img').attr('src', avatarUrl(Player.avatar));
         $('.game__player__price').text('$0');
         $('.game__player__chance').text('0%');
 

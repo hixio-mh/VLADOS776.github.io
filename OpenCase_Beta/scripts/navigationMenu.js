@@ -23,9 +23,9 @@ $(function () {
     catch (e) {}
     var menuHTML = '<div class="menu_playerInfo"> \
         <div id="menu_playerInfo_info"> \
-            <a href="' + link + '" data-profileLink="true"><img src="../images/ava/' + Player.avatar + '" class="menu_ava"></a> \
+            <a href="' + link + '" data-profileLink="true"><img src="' + avatarUrl() + '" class="menu_ava"></a> \
             <div id="menu_playerInfo_info_text"> \
-                <a href="' + link + '" data-profileLink="true"><span id="menu_playerInfo_name">' + Player.nickname + '</span></a> \
+                <a href="' + link + '" data-profileLink="true"><span id="menu_playerInfo_name"></span></a> \
                 <span id="menu_doubleBalance">' + Player.doubleBalance + '</span><i class="double-icon"></i> \
             </div> \
         </div> \
@@ -56,8 +56,9 @@ $(function () {
         </ul></li> \
         <li class="submenu closed"><a href="#"><i class="icon icon-pacman"></i><span data-loc="online_games">Online games</span></a> \
         <ul data-loc-group="games_list"> \
-            <li class="pushy-link"><a href="double-Online.html"><span class="icon icon-make-group"></span><span data-loc="double">Double</span><sup class="beta">beta</sup></a></li> \
-            <li class="pushy-link"><a href="crash-Online.html"><span class="icon icon-stats-dots"></span><span data-loc="crash">Crash</span><sup class="beta">beta</sup></a></li> \
+            <li class="pushy-link"><a href="jackpot-Online.html"><span class="icon icon-spinner5"></span><span data-loc="jackpot">Jackpot</span> <sup class="beta">beta</sup></a></li> \
+            <li class="pushy-link"><a href="double-Online.html"><span class="icon icon-make-group"></span><span data-loc="double">Double</span></a></li> \
+            <li class="pushy-link"><a href="crash-Online.html"><span class="icon icon-stats-dots"></span><span data-loc="crash">Crash</span></a></li> \
         </ul></li> \
         <li class="pushy-link"><a href="inventory.html"><span class="icon icon-list"></span><span data-loc="inventory">Inventory</span></a></li>\
         <li class="pushy-link"><a href="market.html"><span class="icon icon-cart"></span><span data-loc="market">Market</span></a></li> \
@@ -86,11 +87,19 @@ $(function () {
         }
     })
     
+    $(function() {
+        $('#menu_playerInfo_name').text(Player.nickname)
+    })
+    
     $(document).on('expchanged', function() {
         $('.menu_rank__exp').text(Level.myEXP() + ' EXP');
         $('.lvl-current').text(Level.myLvl());
         $('.lvl-next').text(Level.nextLvl());
         $('#player-rank-progress').css('width', Level.progress()+'%');
         $('.menu_rank__next-lvl-exp').text((Level.nextLvlEXP() - Level.myEXP()) + ' to next level');
+    })
+    
+    $(document).on('doublechanged', function() {
+        $('#menu_doubleBalance').text(getStatistic('doubleBalance'));
     })
 })

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Статистика</title>
+    <meta charset="utf-8">
+<script src="../scripts/jquery.min.js"></script>
+<script src="../scripts/jquery.cookie.js"></script>
+    <script src="../scripts/build/libs.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/settings.js"></script>
+<script src="../scripts/cases2.js"></script>
+
+<script src="../scripts/navigationMenu.js"></script>
+<link rel="stylesheet" href="../css/navigationMenu.css">
+
+<script src="../scripts/localization.js"></script>
+
+<link rel="stylesheet" type="text/css" href="../css/fonts.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" href="../css/holiday.css">
+</head>
+<style>
+body {
+	color: #fff;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0 5px;
+}
+td:nth-child(2n) {
+    text-align: right;
+}
+td {
+    padding: 1px 5px;
+}
+tr {
+    line-height: 1.6em;
+}
+tr:nth-child(2n) {
+    background: rgba(255, 255, 255, 0.1);
+}
+.container {
+    font-family: LatoRegular;
+}
+.buttons-div {
+    text-align: center;
+    margin-top: 5px;
+}
+.button {
+    background: #296ca5;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+</style>
+<body data-localization='statistic'>
+	<div class="site-overlay"></div>
+	<div id="container">
+<div class="navigationBar" data-menu-EN="Statistic" data-menu-RU="Статистика"></div>
+<table>
+<tr><td id="caseOpened-text">Количество открытых кейсов: </td><td id="caseOpened"></td></tr>
+<tr><td id="stattrak-text">StatTrak: </td><td id="stattrak"></td></tr>
+<tr><td id="white-text">Белые:</td><td id="white"></td></tr>
+<tr><td id="industrial-text">Светло-синие:</td><td id="industrial"></td></tr>
+<tr><td id="blue-text">Синие:</td><td id="blue"></td></tr>
+<tr><td id="restricted-text">Фиолетовые:</td><td id="restricted"></td></tr>
+<tr><td id="classified-text">Розовые:</td><td id="classified"></td></tr>
+<tr><td id="covert-text">Красные:</td><td id="covert"></td></tr>
+<tr><td id="knife-text">Ножи: </td><td id="knife"></td></tr>
+<tr><td id="contract-text">Контракты обмена: </td><td id="contract"></td></tr>
+<tr><td id="rulet-text">Рулетка выиграно/проиграно: </td><td id="rulet"></td></tr>
+<tr><td id="rulet-max-win-text">Максимальный выигрыш в рулетке: </td><td id="rulet-max-win"></td></tr>
+<tr><td id="rps-text">Камень-ножницы-бумага выиграно/проиграно: </td><td id="rps"></td></tr>
+<tr><td id="coinflip-text">Монетка выиграно/проиграно: </td><td id="coinflip"></td></tr>
+<tr><td id="coinflip-max-win-text">Максимальный выигрыш в монетке: </td><td id="coinflip-max-win"></td></tr>
+<tr><td id="double-text">Дабл выиграно/проиграно: </td><td id="double"></td></tr>
+</table>
+<!--<div class='buttons-div'>
+	<a href='ranks.html' class='button'>Ранги</a>
+</div>-->
+</div>
+<script>
+$(function(){
+	if (isAndroid()) {
+		if (client.getStatistic('is-tryed-to-convert-statistic') == '0')
+			convertStatistic();
+		console.log('Try to convert = '+client.getStatistic('is-tryed-to-convert-statistic'));
+	}
+	var i = cases.length;
+	var opened = 0;
+	while (i--) {
+		if (typeof getStatistic('case-'+cases[i].name) != "undefined")
+			opened += parseInt(getStatistic('case-'+cases[i].name));
+	}
+
+	$("#caseOpened").text(opened);
+
+	stat("white", getStatistic('weapon-consumer'));
+	stat("industrial", getStatistic('weapon-industrial'));
+	stat("blue", getStatistic('weapon-milspec'));
+	stat("restricted", getStatistic('weapon-restricted'));
+	stat("classified", getStatistic('weapon-classified'));
+	stat("covert", getStatistic('weapon-covert'));
+	stat("contract", getStatistic('contracts'));
+	stat('rulet', getStatistic('rulet-wins')+"/"+getStatistic('rulet-loose'));
+	stat('rps', getStatistic('rps-wins')+"/"+getStatistic('rps-loose'));
+	stat('rulet-max-win', '$'+getStatistic('rulet-max-win'));
+	stat('knife', getStatistic('weapon-rare'));
+	stat("stattrak", getStatistic('statTrak'));
+	stat("double", getStatistic('double-wins')+'/'+getStatistic('double-loose'));
+	stat("coinflip", getStatistic('coinflip-wins')+'/'+getStatistic('coinflip-loose'));
+	stat("coinflip-max-win", getStatistic('coinflip-max-win'));
+})
+
+function stat(selector, text) {
+	if (typeof text == "undefined")	text = "undefined";
+	if (typeof text == 'string') text = text.replace(/undefined/gi, '0');
+
+	document.getElementById(selector).textContent = text;
+}
+
+function convertStatistic() {
+	var i = cases.length;
+	var opened = 0;
+	while (i--) {
+		if (typeof $.cookie('case-'+cases[i].name) != "undefined")
+			client.saveStatistic('case-'+cases[i].name, $.cookie('case-'+cases[i].name))
+	}
+
+	client.saveStatistic("weapon-consumer", $.cookie('weapon-consumer', Number));
+	client.saveStatistic("weapon-industrial", $.cookie('weapon-industrial', Number));
+	client.saveStatistic("weapon-milspec", $.cookie('weapon-milspec', Number));
+	client.saveStatistic("weapon-restricted", $.cookie('weapon-restricted', Number));
+	client.saveStatistic("weapon-classified", $.cookie('weapon-classified', Number));
+	client.saveStatistic("weapon-covert", $.cookie('weapon-covert', Number));
+	client.saveStatistic("contracts", $.cookie('contracts', Number));
+	client.saveStatistic('rulet-wins', $.cookie('rulet-wins', Number));
+	client.saveStatistic('rulet-loose', $.cookie('rulet-loose', Number));
+	client.saveStatistic('rps-wins', $.cookie('rps-wins', Number));
+	client.saveStatistic('rps-loose', $.cookie('rps-loose', Number));
+	client.saveStatistic('rulet-max-win', $.cookie('rulet-max-win', Number));
+	client.saveStatistic('weapon-rare', $.cookie('weapon-rare', Number));
+	client.saveStatistic("statTrak", $.cookie('statTrak', Number));
+	client.saveStatistic('is-tryed-to-convert-statistic', 1);
+	console.log('converted');
+}
+
+function isAndroid() {
+	try {
+		var a = client.isAndroid();
+		return true;
+	} catch (e) {
+		return false;
+	}
+}
+</script>
+</body>
+</html>

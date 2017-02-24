@@ -860,11 +860,11 @@ var Translation = {
             why_no_price: {
                 title: {
                     rus: 'Почему цена предмета $0?',
-                    text: 'Why weapon price is $0?'
+                    text: 'Why are some weapon prices $0?'
                 },
                 info: {
                     rus: 'Цена предмета берется из базы. Если в базе нет цены, берётся с Торговой площадки стима. Если и там нет, тогда $0.<br>Если в стиме появился этот предмет, а у вас в инвентаре до сих пор цена $0 - откройте описание предмета, подождите пока загрузиться цена, закройте описание предмета и перезайдите в инвентарь.',
-                    text: 'Weapons prices are taken from the database. If there are no prices for current weapon, then price is taken from the Steam Market. If there is no price as well, it counts as $0. <br> When the weapon appears in market, open the weapon info in inventory, wait until the price is loaded, reopen inventory.'
+                    text: 'Weapon prices are taken from the database. If there are no prices for a weapon, then the price is taken from the Steam Market. If there is no price there as well, it counts as $0. <br> When the weapon appears in market, open the weapon info in inventory, wait until the price is loaded, reopen inventory.'
                 }
             },
             how_to_exchange: {
@@ -903,7 +903,7 @@ var Translation = {
                 },
                 info: {
                     rus: 'Чтобы повысить ранг, нужно заработать очки. Очки, даются за следующие действия:<ul><li>Открыть приложение — ${1} очков (награда даётся раз в день)</li><li>Открыть кейс — ${2} очко</li><li>Победить в мини-игре — ${3} очка</li></ul>',
-                    text: 'For increasing your level you need points. Points are given for the following steps:<ul> \
+                    text: 'To increasing you\'re level you need to earn points. Points are given for the following steps:<ul> \
                         <li>Open the app - ${1} points (award is given once a day)</li> \
                         <li>Open one case - ${2} point</li> \
                         <li>Won in the mini-game - ${3} points</li> \
@@ -971,12 +971,12 @@ var Translation = {
                 },
                 fast_drop: {
                     rus: 'Быстрый дроп с кейсов',
-                    text: 'Fast drop (x2)'
+                    text: 'Fast Drop (x2)'
                 }
             },
             reset: {
                 rus: 'Полный сброс',
-                text: 'Full reset'
+                text: 'Full Reset'
             },
             save: {
                 rus: 'Сохранить',
@@ -1001,7 +1001,7 @@ var Translation = {
                 },
                 reset_confirm: {
                     rus: 'Вы уверены, что хотите очистить инвентарь и сбросить статистику?',
-                    text: 'All weapons will be deleted. Statistics will be reset. Are you sure?'
+                    text: 'All weapons and stats will be removed and reset. Are you sure you want to proceed?'
                 },
                 invalid_nick_title: {
                     rus: 'Ошибка',
@@ -1009,7 +1009,7 @@ var Translation = {
                 },
                 invalid_nick: {
                     rus: 'В имени могут быть только буквы и цифры.',
-                    text: 'Wrong name. Only letters and numbers are available.'
+                    text: 'You can only use numbers, underscores, and letters in your username.'
                 }
             }
         },
@@ -1020,11 +1020,11 @@ var Translation = {
             },
             main_developer: {
                 rus: 'Главный разработчик',
-                text: 'Main developer'
+                text: 'Main Developer'
             },
             info: {
                 rus: 'Если Вы обнаружили ошибки, или у Вас есть предложение, напишите на почту.<br>Если хотите поблагодарить разработчика, можете подарить что-нибудь в стиме :)<br>Не забудьте поставить оценку в маркете ^_^',
-                text: 'If you found some bugs or you have a suggestion you can write me an email.<br>If you want to thank the developer you can send something in Steam :)<br>Do not forget to rate the app in the Play Market ^_^'
+                text: 'If you\'ve found any bugs, or have a suggestion, feel free to contact me via my email above.<br>If you want to thank the developer you can send something in Steam :)<br>Don\'t forget to rate the app in the Play Store ^_^'
             },
             special_thanks: {
                 rus: 'Особая благодарность',
@@ -1036,7 +1036,7 @@ var Translation = {
             },
             copyright_info: {
                 rus: 'Вся информация взята из открытых источников. Если что-либо в приложении нарушает ваши авторские права, свяжитесь со мной.',
-                text: 'All information is taken from public sources. If anything in the application infringes your copyright, please contact me.'
+                text: 'All information is taken from public sources. If anything infringes you\'re copyright, contact me via my email above.'
             }
         },
         apps: {
@@ -1085,7 +1085,7 @@ var Translation = {
             ban: {
                 wrong_ban: {
                     rus: 'Если вы считаете, что получили бан по ошибке, напишите на почту kurtukovvlad@gmail.com',
-                    text: 'If you were banned by a mistake, write to email kurtukovvlad@gmail.com'
+                    text: 'If you were banned by mistake, send an email to kurtukovvlad@gmail.com'
                 }
             }
         }

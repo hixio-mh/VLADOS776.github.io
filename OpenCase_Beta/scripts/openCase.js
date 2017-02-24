@@ -1,60 +1,87 @@
 var openCase = {
     caseId: 0,
+    caseType: 'weapons',
     souvenir: false,
     caseOpening: false,
     win: null,
     status: 'init',
     casesCarusel: null,
     scrollSoundOpt: null,
-    weapons: [],
+    items: [],
+    caseInfo: {},
     special: false,
+    isFree: function() {
+        var freeCase = parseInt(getStatistic('free-case-opening', -1));
+        
+        return this.caseId === freeCase;
+    },
+    casePrice: function() {
+        return cases[this.caseId].price || parseFloat(getCasePrice(openCase.caseId, openCase.souvenir))*100;
+    },
     rareItemsRegExp: new RegExp('(rare|extraordinary)' ,'i'),
     init: function() {
         $(function() {
-            //$(".openCase").attr("disabled", null);
             $('.openCase').prop('disabled', true);
             
             openCase.casesCarusel = document.getElementById('casesCarusel');
             
             var param = parseURLParams(window.location.href);
             if(typeof param != "undefined") {
-                openCase.caseId = param.caseId[0];
+                if (param.caseId) {
+                    openCase.caseId = parseInt(param.caseId[0]);
+                    openCase.caseInfo = cases[openCase.caseId];
+                } else if (param.capsuleId) {
+                    openCase.caseId = parseInt(param.capsuleId[0]);
+                    openCase.caseType = 'capsules';
+                    openCase.caseInfo = CAPSULES[openCase.caseId];
+                }
                 try {
-                    openCase.special = cases[openCase.caseId].type == "Special";
-                    openCase.souvenir = param.souvenir[0] == 'true';
+                    openCase.special = openCase.caseInfo.type == "Special";
+                    openCase.souvenir = param.souvenir ? param.souvenir[0] == 'true' : false;
                 } catch(e) {}
-                $("#youCanWin").data('loc-var', {1: cases[openCase.caseId].name})
+                $("#youCanWin").data('loc-var', {1: openCase.caseInfo.name})
  
-                var opened = getStatistic("case-"+cases[openCase.caseId].name, 0);
+                var opened = getStatistic("case-"+openCase.caseInfo.name, 0);
                 $("#opened").text(opened);
 
-                document.title = "Открытие кейса — " + cases[openCase.caseId].name;
+                document.title = "Открытие кейса — " + openCase.caseInfo.name;
 
                 $(document).on('localizationloaded', function() {
                     $('.openCase').prop('disabled', false);
                     
-                    var weaponsArray = [];
-                    if (cases[openCase.caseId].weapons)
-                        weaponsArray = getWeaponsById(cases[openCase.caseId].weapons);
-                    if (cases[openCase.caseId].knives)
-                        weaponsArray = weaponsArray.concat(getWeaponsById(cases[openCase.caseId].knives));
+                    if (!openCase.isFree() && Player.doubleBalance < openCase.casePrice()) {
+                        $(".openCase").prop("disabled", true);
+                    }
+                    
+                    var itemArray = [];
+                    if (openCase.caseInfo.weapons)
+                        itemArray = getWeaponsById(openCase.caseInfo.weapons);
+                    if (openCase.caseInfo.knives)
+                        itemArray = itemArray.concat(getItemsByID(openCase.caseInfo.knives));
+                    if (openCase.caseInfo.stickers)
+                        itemArray = itemArray.concat(getItemsByID(openCase.caseInfo.stickers, 'sticker'));
 
-                    if (weaponsArray.length == 0) {
-                        if (cases[openCase.caseId].regExp) {
-                            var rg = cases[openCase.caseId].regExp;
-                            for (var i = 0; i < Items.weapons.length; i++) {
-                                var weapon = getWeaponById(Items.weapons[i].id);
-                                if (RegExp(rg.reg).test(weapon[rg.param])) {
-                                    if (!openCase.special || (openCase.special && (!weapon.can || weapon.can.specialCase)))
-                                        weaponsArray.push(weapon);
+                    if (itemArray.length == 0) {
+                        if (openCase.caseInfo.regExp) {
+                            var rg = openCase.caseInfo.regExp;
+                            for (var i = 0; i < Items[openCase.caseType].length; i++) {
+                                var item = getItemByID(Items[openCase.caseType][i].id, openCase.caseType);
+                                if (RegExp(rg.reg).test(item[rg.param])) {
+                                    if (!openCase.special || (openCase.special && (!item.can || item.can.specialCase)))
+                                        itemArray.push(item);
                                 }
                             }
                         }
                     }
                     
-                    openCase.weapons = weaponsArray;
+                    openCase.items = itemArray;
                     openCase.fillCarusel();
+                    
                 });
+                $(document).on('localizationfinished', function() {
+                    if (!openCase.isFree())
+                        $('.openCase').append(' $' + (openCase.casePrice()/100));
+                })
             }
             
             
@@ -74,6 +101,10 @@ var openCase = {
                     client.sendToAnalytics("Open case", "Selling weapon", "Player has sold weapon for  double points", doublePoints + " double points");
                 }
                 
+                if (Player.doubleBalance > openCase.casePrice()) {
+                    $(".openCase").prop("disabled", false);
+                }
+                
                 LOG.log({
                     action: 'Sell opened item',
                     case: {
@@ -83,7 +114,7 @@ var openCase = {
                     item: {
                         item_id: openCase.win.item_id,
                         type: !openCase.caseType || openCase.caseType == 'weapons' ? openCase.win.type : '',
-                        name: openCase.win.name
+                        name: openCase.win.nameOrig
                     },
                     profit: doublePoints,
                     balance: Player.doubleBalance
@@ -101,11 +132,9 @@ var openCase = {
         })
     },
     goToCase: function(caseId, souvenir) {
-        $("#rank-popup").css('display', 'none');
-        $('#special-popup').css('display', 'none');
         if (typeof cases[caseId].minLvl != 'undefined' && Level.myLvl() < cases[caseId].minLvl) {
-            $("#rank-popup").css('display', 'block');
-            $("[data-loc='low_level'] i").html(cases[caseId].minLvl);
+            $("#modal-rank").modal('show');
+            $(".modal-body i").html(cases[caseId].minLvl);
             return false;
         }
         if (cases[caseId].type == "Special") {
@@ -113,9 +142,10 @@ var openCase = {
             if (parseInt(getStatistic('specialCases', 0)) >= cases[caseId].casesToOpen) {
                 window.location.replace("open.html?caseId=" + caseId + ((souvenir) ? "&souvenir=" + souvenir : ''));
             } else {
-                $('#special-popup').css('display', 'block');
+                $('#modal-special').modal();
+                
                 var needToOpen = cases[caseId].casesToOpen - parseInt(getStatistic('specialCases', 0));
-                $('[data-loc="need_more_cases"] i').text(needToOpen);
+                $('.modal-body i').text(needToOpen);
                 $('#showVideoAd').data();
                 $('.js-secretField').text(caseId);
             }
@@ -123,49 +153,72 @@ var openCase = {
             window.location.replace("open.html?caseId=" + caseId + ((souvenir) ? "&souvenir=" + souvenir : ''));
         }
     },
+    goToCapsule: function(caseId, souvenir) {
+        $("#rank-popup").css('display', 'none');
+        $('#special-popup').css('display', 'none');
+        if (typeof CAPSULES[caseId].minLvl != 'undefined' && Level.myLvl() < CAPSULES[caseId].minLvl) {
+            $("#rank-popup").css('display', 'block');
+            $("[data-loc='low_level'] i").html(CAPSULES[caseId].minLvl);
+            return false;
+        }
+        if (CAPSULES[caseId].type == "Special") {
+
+            if (parseInt(getStatistic('specialCases', 0)) >= CAPSULES[caseId].casesToOpen) {
+                window.location.replace("open.html?capsuleId=" + caseId);
+            } else {
+                $('#special-popup').css('display', 'block');
+                var needToOpen = CAPSULES[caseId].casesToOpen - parseInt(getStatistic('specialCases', 0));
+                $('[data-loc="need_more_cases"] i').text(needToOpen);
+                $('#showVideoAd').data();
+                $('.js-secretField').text(caseId);
+            }
+        } else {
+            window.location.replace("open.html?capsuleId=" + caseId);
+        }
+    },
     fillCarusel: function(caseId) {
         caseId = caseId || openCase.caseId;
-        var weaponsArray = openCase.weapons;
+        var itemArray = openCase.items;
         
-        var caseWeapons = {
+        var caseItems = {
             win: {},
             weight: {
-                rare:       5,
-                covert:     10,
-                classified: 15,
+                rare:       5,      // exotic для стикеров
+                covert:     10,     
+                classified: 15,     // remarkable для стикеров
                 restricted: 25,
-                milspec:    50,
+                milspec:    50,     // high для стикеров
                 industrial: 60,
                 consumer:   70
             }
         };
-        caseWeapons.consumer = weaponsArray.filter(function(weapon) {
+        caseItems.consumer = itemArray.filter(function(weapon) {
             return weapon.rarity == 'consumer'
         }).mul(7).shuffle();
-        caseWeapons.industrial = weaponsArray.filter(function(weapon) {
+        caseItems.industrial = itemArray.filter(function(weapon) {
             return weapon.rarity == 'industrial'
         }).mul(7).shuffle();
-        caseWeapons.milspec = weaponsArray.filter(function(weapon) {
-            return weapon.rarity == 'milspec'
+        caseItems.milspec = itemArray.filter(function(weapon) {
+            return weapon.rarity.match(/(milspec|high)/);
         }).mul(5).shuffle();
-        caseWeapons.restricted = weaponsArray.filter(function(weapon) {
+        caseItems.restricted = itemArray.filter(function(weapon) {
             return weapon.rarity == 'restricted'
         }).mul(5).shuffle();
-        caseWeapons.classified = weaponsArray.filter(function(weapon) {
-            return weapon.rarity == 'classified'
+        caseItems.classified = itemArray.filter(function(weapon) {
+            return weapon.rarity.match(/(classified|remarkable)/)
         }).mul(4).shuffle();
-        caseWeapons.covert = weaponsArray.filter(function(weapon) {
+        caseItems.covert = itemArray.filter(function(weapon) {
             return weapon.rarity == 'covert'
         }).mul(1).shuffle();
         
-        caseWeapons.rare = weaponsArray.filter(function(weapon) {
-            return (weapon.rarity == 'rare' || weapon.rarity == 'extraordinary')
+        caseItems.rare = itemArray.filter(function(weapon) {
+            return (weapon.rarity.match(/(rare|extraordinary|exotic)/))
         }).mul(1).shuffle();
         
-        if (caseWeapons.consumer.length + caseWeapons.industrial.length + caseWeapons.milspec.length + caseWeapons.restricted.length + caseWeapons.classified.length + caseWeapons.covert.length == 0 && caseWeapons.rare.length > 0) {
-            caseWeapons.all = caseWeapons.rare;
+        if (caseItems.consumer.length + caseItems.industrial.length + caseItems.milspec.length + caseItems.restricted.length + caseItems.classified.length + caseItems.covert.length == 0 && caseItems.rare.length > 0) {
+            caseItems.all = caseItems.rare;
         } else {
-            caseWeapons.all = caseWeapons.consumer.concat(caseWeapons.industrial, caseWeapons.milspec, caseWeapons.restricted, caseWeapons.classified, caseWeapons.covert);
+            caseItems.all = caseItems.consumer.concat(caseItems.industrial, caseItems.milspec, caseItems.restricted, caseItems.classified, caseItems.covert);
         }
         
         /* === Select the rarity of the win item === */
@@ -176,66 +229,67 @@ var openCase = {
                 a += Number(weight[key]);
             }
             return a;
-        })(caseWeapons.weight);
+        })(caseItems.weight);
         
-        while (typeof caseWeapons.win == 'undefined' || typeof caseWeapons.win.id == 'undefined') {
+        while (typeof caseItems.win == 'undefined' || typeof caseItems.win.id == 'undefined') {
             var rnd = Math.rand(0, total_weights);
             var weight_sum = 0;
 
-            for (var i = 0; i < Object.keys(caseWeapons.weight).length; i++) {
-                weight_sum += caseWeapons.weight[Object.keys(caseWeapons.weight)[i]];
+            for (var i = 0; i < Object.keys(caseItems.weight).length; i++) {
+                weight_sum += caseItems.weight[Object.keys(caseItems.weight)[i]];
                 weight_sum = +weight_sum.toFixed(2);
 
                 if (rnd <= weight_sum) {
-                    caseWeapons.win = caseWeapons[Object.keys(caseWeapons.weight)[i]];
-                    caseWeapons.win = caseWeapons.win[Math.floor(Math.random()*caseWeapons.win.length)];
+                    caseItems.win = caseItems[Object.keys(caseItems.weight)[i]];
+                    caseItems.win = caseItems.win[Math.floor(Math.random()*caseItems.win.length)];
                     break;
                 }
             }
         }
         
-        caseWeapons.all = caseWeapons.all.shuffle().shuffle();
+        caseItems.all = caseItems.all.shuffle().shuffle();
     
-        while (caseWeapons.all.length <= (winNumber + 3)) {
-            caseWeapons.all = caseWeapons.all.concat(caseWeapons.all).shuffle().shuffle();
+        while (caseItems.all.length <= (winNumber + 3)) {
+            caseItems.all = caseItems.all.concat(caseItems.all).shuffle().shuffle();
         }
 
-        if (caseWeapons.all.length > winNumber + 3)
-            caseWeapons.all.splice(winNumber + 3, caseWeapons.all.length - (winNumber + 3));
+        if (caseItems.all.length > winNumber + 3)
+            caseItems.all.splice(winNumber + 3, caseItems.all.length - (winNumber + 3));
         
         
-        caseWeapons.all[winNumber] = caseWeapons.win;
+        caseItems.all[winNumber] = caseItems.win;
         
-        for(var i = 0; i < caseWeapons.all.length; i++) {
-            caseWeapons.all[i] = new Weapon(caseWeapons.all[i].id);
-            if (!openCase.souvenir) {
-                caseWeapons.all[i].stattrakRandom();
-            } else {
-                caseWeapons.all[i].stattrak = false;
-                caseWeapons.all[i].souvenir = true;
-            }
+        for(var i = 0; i < caseItems.all.length; i++) {
+            caseItems.all[i] = new Item(caseItems.all[i].id, openCase.caseType);
+            if (caseItems.all[i].itemType == 'weapon')
+                if (!openCase.souvenir) {
+                    caseItems.all[i].stattrakRandom();
+                } else {
+                    caseItems.all[i].stattrak = false;
+                    caseItems.all[i].souvenir = true;
+                }
         }
         
         var el = '';
-        caseWeapons.all.forEach(function(weapon, index) {
-            var img = weapon.getImgUrl();
-            var type = weapon.specialText() + weapon.type;
-            var name = weapon.name;
+        caseItems.all.forEach(function(item, index) {
+            var img = item.getImgUrl();
+            var type = item.specialText() + item.type;
+            var name = item.name;
 
-            if (openCase.rareItemsRegExp.test(weapon.rarity)) {
+            if (openCase.rareItemsRegExp.test(item.rarity)) {
                 type = '★ Rare Special Item ★';
                 name = '&nbsp;';
                 img = '../images/Weapons/rare.png';
             }
-            if (weapon.rarity == 'rare')
+            if (item.rarity == 'rare')
                 img = '../images/Weapons/rare.png';
             el += '<div class="weapon">' +
                 '<img src="' + img + '" />' +
-                '<div class="weaponInfo ' + weapon.rarity + '"><span class="type">' + type + '<br>' + name + '</span></div>' +
+                '<div class="weaponInfo ' + item.rarity + '"><span class="type">' + type + '<br>' + name + '</span></div>' +
                 '</div>'
         })
 
-        openCase.win = caseWeapons.all[winNumber];
+        openCase.win = caseItems.all[winNumber];
         $(".casesCarusel").html(el);
         $(".casesCarusel").css("margin-left", "0px");
     },
@@ -243,15 +297,24 @@ var openCase = {
         if (openCase.caseOpening || $(".openCase").text() == Localization.getString('open_case.opening', 'Opening...')) {
             return false
         };
+                
         $(".win").removeClass("sold-out");
         $(".win").slideUp("slow");
-        if ($(".openCase").text() == Localization.getString('open_case.try_again', 'Open again')) {
+        if ($(".openCase").text().match(Localization.getString('open_case.try_again', 'Open again'))) {
             openCase.backToZero();
+            $(".openCase").text(Localization.getString('open_case.open_case', 'Open case'));
             return false;
         }
         $(".openCase").text(Localization.getString('open_case.opening', 'Opening...'));
         $(".openCase").attr("disabled", "disabled");
-        //var a = 1431 + 16*24;
+        
+        if (!openCase.isFree())
+            Player.doubleBalance -= openCase.casePrice();
+        
+        Player.doubleBalance = Player.doubleBalance > 0 ? Player.doubleBalance : 0;
+        
+        saveStatistic('doubleBalance', Player.doubleBalance);
+        
         openCase.startScroll();
     },
     startScroll: function() {
@@ -275,15 +338,16 @@ var openCase = {
         var type = openCase.win.type;
         //var statTrak = openCase.souvenir ? false : openCase.win.stattrakRandom();
         //openCase.win.souvenir = openCase.souvenir ? true : false;
+        
         var quality = openCase.win.qualityRandom();
         openCase.caseOpening = true;
 
         var price = openCase.win.getPrice();
 
-        $(".win_name").html(openCase.win.specialText() + openCase.win.type + " | " + openCase.win.name);
+        $(".win_name").html(openCase.win.titleText());
         $(".win_quality").html(openCase.win.qualityText());
         $(".win_price").html(price);
-        $(".win_img").attr("src", getImgUrl(openCase.win.img, 1));
+        $(".win_img").attr("src", openCase.win.getImgUrl(true));
         $(".openCase").prop("disabled", true);
         $("#double_sell_button").text((price * 100).toFixed(0));
 
@@ -298,12 +362,27 @@ var openCase = {
 
         $("#double_sell_button").prop("disabled", false);
         openCase.win['new'] = true;
-        saveWeapon(openCase.win).then(function(result) {
-            console.log(result);
-            $("#double_sell_button").data('id', result);
-        });
+        if (openCase.caseType == 'weapons') {
+            saveWeapon(openCase.win).then(function(result) {
+                console.log(result);
+                $("#double_sell_button").data('id', result);
+            });
+        } else {
+            saveItem(openCase.win).then(function(result) {
+                console.log(result);
+                $("#double_sell_button").data('id', result);
+            });
+        }
         Sound("close", "play", 5);
+        
+        if (openCase.isFree()) {
+            saveStatistic('free-case-opening', '-1');
+            
+            saveStatistic('free-case-timeout', Date.now() + FREE_CASE_INTERVAL_MS);
+        }
+        
         $(".openCase").text(Localization.getString('open_case.try_again', 'Open again'));
+        $(".openCase").append(' $' + (openCase.casePrice()/100));
         //$(".win").slideDown("fast");
         $('.win').show();
         openCase.caseOpening = false;
@@ -311,6 +390,11 @@ var openCase = {
         $(".weapons").scrollTop(160);
         
         openCase.status = 'endScroll';
+        
+        
+        if (Player.doubleBalance < openCase.casePrice()) {
+            $(".openCase").prop("disabled", true);
+        }
         
         LOG.log({
             action: 'Open Case',
@@ -321,7 +405,7 @@ var openCase = {
             item: {
                 item_id: openCase.win.item_id,
                 type: !openCase.caseType || openCase.caseType == 'weapons' ? openCase.win.type : '',
-                name: openCase.win.name
+                name: openCase.win.nameOrig
             }
         })
 
@@ -365,7 +449,7 @@ var openCase = {
         openCase.sleep(1000).then(function(){
             $(".casesCarusel").empty();
             openCase.fillCarusel();
-            openCase.startScroll();
+            openCase.openCase();
         })
     },
     scrollSound: function (offset, speed) {
@@ -398,25 +482,25 @@ var openCase = {
     whatInCase: function(caseId) {
         caseId = caseId || openCase.caseId;
         var rare = false;
-        var weaponsArray = openCase.weapons;
+        var itemsArray = openCase.items;
         
-        for (var i = 0; i < weaponsArray.length; i++) {
-            var weapon = new Weapon(weaponsArray[i].id);
-            if (openCase.rareItemsRegExp.test(weapon.rarity) && rare == true)
+        for (var i = 0; i < itemsArray.length; i++) {
+            var item = new Item(itemsArray[i].id, openCase.caseType);
+            if (openCase.rareItemsRegExp.test(item.rarity) && rare == true)
                 continue;
-            var img = getImgUrl(weapon.img);
+            var img = item.getImgUrl();
 
-            var type = weapon.type;
-            var name = weapon.name;
+            var type = item.type;
+            var name = item.name;
 
-            var name = getSkinName(weaponsArray[i].skinName, Settings.language);
-            if (openCase.rareItemsRegExp.test(weapon.rarity)) {
+            var name = item.name;
+            if (openCase.rareItemsRegExp.test(item.rarity)) {
                 type = '★ Rare Special Item ★';
                 name = '&nbsp;';
                 img = '../images/Weapons/rare.png';
                 rare = true;
             }
-            var weaponInfo = "<img src=\"" + img + "\"><div class='weaponInfo " + weapon.rarity + "'><span class='type'>" + type + "<br>" + name + "</span></div>";
+            var weaponInfo = "<img src=\"" + img + "\"><div class='weaponInfo " + item.rarity + "'><span class='type'>" + type + "<br>" + name + "</span></div>";
             $(".weaponsList").append("<li class='weapon animated fadeInDown'>" + weaponInfo + "</li>");
         }
         $(".weaponsList").css("display", "block");

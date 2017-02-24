@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Инвентарь</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
 	<link rel="stylesheet" href="../css/navigationMenu.css">
 	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/rarity.css">
@@ -138,9 +139,9 @@
 			Sound("selectitems", "play");
             
             var self = this;
-            getWeapon($(this).data('id')).then(function(weapon) {
+            getItem($(this).data('id')).then(function(item) {
                 if (contractMode) {
-                    if (weapon.souvenir)
+                    if (item.souvenir)
                         return false;
                     if ($('.inventoryItemSelected').size() < 10 || $(self).hasClass('inventoryItemSelected'))
                         $(self).toggleClass("inventoryItemSelected");
@@ -152,15 +153,20 @@
                 }
                 $(".fullWeaponInfo button").prop("disabled", false);
 
-                $("#weaponInfoContainer").data('id', weapon.id);
+                $("#weaponInfoContainer").data('id', item.id);
 
                 $("#weaponInfoContainer").css("display", "block");
                 $(".fullWeaponInfo").removeClass("info-closed");
-                $("#weaponImg").attr("src", getImgUrl(weapon.img, 1));
-                $("#weaponName").html(weapon.specialText() + weapon.type + " " + weapon.name);
-                $("#weaponPrice").html(weapon.price);
-                $("#weaponQuality").html(weapon.qualityText());
-                $('#weaponRarity').text(weapon.rarity);
+                $("#weaponImg").attr("src", getImgUrl(item.img, 1));
+                $("#weaponName").html(item.specialText() + item.type + " " + item.name);
+                $("#weaponPrice").html(item.price);
+                if (item.itemType == 'weapon') {
+                    $("#weaponQuality").parent().show();
+                    $("#weaponQuality").html(item.qualityText());
+                    $('#weaponRarity').text(item.rarity);
+                } else {
+                    $("#weaponQuality").parent().hide();
+                }
 
                 $("#weaponLoadingImg").show();
                 $("#weaponImg").hide();
@@ -171,10 +177,10 @@
 
                 $('#sellWeapon').show();
                 $('#startContract').css('display', 'none');
-                if (weapon.can.contract)
+                if (item.can.contract)
                     $('#startContract').css('display', 'inline-block');
 
-                $("#statTrakImg").css("display", (weapon.stattrak ? "block" : "none"))
+                $("#statTrakImg").css("display", (item.stattrak ? "block" : "none"))
             })
 		})
 

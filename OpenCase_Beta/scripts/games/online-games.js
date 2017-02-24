@@ -4,15 +4,19 @@ var onlineGames = (function(module) {
         $('.onlineCount').text(online);
     }
 
-    module.chatMessage = function(message) {
+    module.chatMessage = function(message, opt) {
+        opt = opt || {}
+        opt.selector = opt.selector || '.chat__messages';
+        opt.increaseCounter = typeof opt.increaseCounter !== 'undefined' ? opt.increaseCounter === true : true;
+        
         var msgType = typeof message.specialType != 'undefined' ? message.specialType : ''; 
         message.from = fbProfile.XSSreplace(message.from);
         message.message = fbProfile.XSSreplace(message.message);
-        $('.chat__messages').append('<li class="text-'+msgType+'"><span class="text-warning">'+message.from+'</span>: <span class="message__text">'+message.message+'</span></li>');
+        $(opt.selector).append('<li class="text-'+msgType+'"><span class="text-warning">'+message.from+'</span>: <span class="message__text">'+message.message+'</span></li>');
 
-        $('.chat__messages').scrollTop($('.chat__messages')[0].scrollHeight);
+        $(opt.selector).scrollTop($(opt.selector)[0].scrollHeight);
 
-        if (!$('.chat-panel .panel-collapse').hasClass('in')) {
+        if (!$('.chat-panel .panel-collapse').hasClass('in') && opt.increaseCounter) {
             $('.chat_new_messages_count').text(parseInt($('.chat_new_messages_count').text())+1);
         }
     }
@@ -29,14 +33,24 @@ var onlineGames = (function(module) {
             message = message.substring(0, $('.chat__new-message__textbox').attr("max"));
         $('.chat__new-message__textbox').empty();
         $('.chat__new-message__textbox').val('');
-
-        var msgObj = {
-            type: 'message',
-            from: Player.nickname,
-            message: message
-        }
-
-        socket.send(JSON.stringify(msgObj));
+        
+        $(document).trigger('send_chat_msg', [message]);
     })
+    
+    $(document).on('send_chat_msg', function(event, message) {
+        try {
+            //var message = event.msg;
+            var msgObj = {
+                type: 'message',
+                from: Player.nickname,
+                message: message
+            }
+
+            socket.send(JSON.stringify(msgObj));
+        } catch (e) {
+            console.log('can\'t send msg');
+        }
+    }) 
+    
     return module;
 })(onlineGames || {});

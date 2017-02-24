@@ -60,6 +60,7 @@ function fillInventory(selector, action, opt) {
             $(selector).append('<li class="js-loading-inventory" data-from="'+(wp_from+inventory_step)+'"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></li>');
         }
         inventory_loading = false;
+        $('.inventoryList').trigger('scroll');
     });
 }
 
