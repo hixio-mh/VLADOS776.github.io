@@ -85,7 +85,7 @@ $(function () {
         reload_btn.onclick = function() {
             location.reload();
         }
-        document.body.appendChild(reload_btn);
+       // document.body.appendChild(reload_btn);
     }
 });
 try {
@@ -997,14 +997,28 @@ function getCollection(type, name) {
     return collection;
 }
 
-function getWeaponImg(type, name) {
-    type = $.trim(type.replace(/(Souvenir|Сувенир)/g, ''));
-    name = getSkinName(name);
-    var coll = getCollection(type, name);
-    if (!coll) return 'none.png';
-    for (var i = 0; i < coll.weapons.length; i++) {
-        if (coll.weapons[i].type == type && getSkinName(coll.weapons[i].skinName) == name) return coll.weapons[i].img;
+function getCasePrice(caseId, souvenir) {
+    var prSumm = 0;
+
+    if (typeof cases[caseId].weapons === 'undefined') return '0.00';
+    cases[caseId].weapons.forEach(function(item) {
+        prSumm += middlePrice(item, souvenir);
+    })
+    return (prSumm / cases[caseId].weapons.length).toFixed(2)
+}
+
+function middlePrice(item_id, souvenir) {
+    souvenir = souvenir || false;
+    var middlePrice = 0;
+    for (var i = 0; i < 4; i++) {
+        middlePrice += getPrice(item_id, {
+            quality: i,
+            stattrak: false,
+            souvenir: souvenir
+        })
     }
+    middlePrice /= 5;
+    return parseFloat(middlePrice.toFixed(2));
 }
 
 function getWeaponRarity(type, name) {

@@ -128,7 +128,7 @@ $(function () {
                 $(this).prop('checked', false);
             }
         })
-        if (!banReasons.trim().match(Localization.getString('profile.moderator.no_ban', 'Doesn\'t banned')) && banReasons.trim() != '') {
+        if (!banReasons.trim().match(Localization.getString('profile.moderator.no_ban', 'Doesn\'t banned')) && banReasons.trim() !== 'Doesn\'t banned' && banReasons.trim() != '') {
             $('#moder-ban-other_input').val(banReasons.trim()); 
             $('#moder-ban-other_input').prop('disabled', false); 
             $('#moder-ban-other_checkbox').prop('checked', true);

@@ -98,4 +98,8 @@ $(function () {
         $('#player-rank-progress').css('width', Level.progress()+'%');
         $('.menu_rank__next-lvl-exp').text((Level.nextLvlEXP() - Level.myEXP()) + ' to next level');
     })
+    
+    $(document).on('doublechanged', function() {
+        $('#menu_doubleBalance').text(getStatistic('doubleBalance'));
+    })
 })

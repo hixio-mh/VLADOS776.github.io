@@ -10,6 +10,14 @@ var openCase = {
     items: [],
     caseInfo: {},
     special: false,
+    isFree: function() {
+        var freeCase = parseInt(getStatistic('free-case-opening', -1));
+        
+        return this.caseId === freeCase;
+    },
+    casePrice: function() {
+        return cases[this.caseId].price || parseFloat(getCasePrice(openCase.caseId, openCase.souvenir))*100;
+    },
     rareItemsRegExp: new RegExp('(rare|extraordinary)' ,'i'),
     init: function() {
         $(function() {
@@ -20,10 +28,10 @@ var openCase = {
             var param = parseURLParams(window.location.href);
             if(typeof param != "undefined") {
                 if (param.caseId) {
-                    openCase.caseId = param.caseId[0];
+                    openCase.caseId = parseInt(param.caseId[0]);
                     openCase.caseInfo = cases[openCase.caseId];
                 } else if (param.capsuleId) {
-                    openCase.caseId = param.capsuleId[0];
+                    openCase.caseId = parseInt(param.capsuleId[0]);
                     openCase.caseType = 'capsules';
                     openCase.caseInfo = CAPSULES[openCase.caseId];
                 }
@@ -40,6 +48,10 @@ var openCase = {
 
                 $(document).on('localizationloaded', function() {
                     $('.openCase').prop('disabled', false);
+                    
+                    if (!openCase.isFree() && Player.doubleBalance < openCase.casePrice()) {
+                        $(".openCase").prop("disabled", true);
+                    }
                     
                     var itemArray = [];
                     if (openCase.caseInfo.weapons)
@@ -64,7 +76,12 @@ var openCase = {
                     
                     openCase.items = itemArray;
                     openCase.fillCarusel();
+                    
                 });
+                $(document).on('localizationfinished', function() {
+                    if (!openCase.isFree())
+                        $('.openCase').append(' $' + (openCase.casePrice()/100));
+                })
             }
             
             
@@ -82,6 +99,10 @@ var openCase = {
                 Sound("buy");
                 if (isAndroid()) {
                     client.sendToAnalytics("Open case", "Selling weapon", "Player has sold weapon for  double points", doublePoints + " double points");
+                }
+                
+                if (Player.doubleBalance > openCase.casePrice()) {
+                    $(".openCase").prop("disabled", false);
                 }
                 
                 LOG.log({
@@ -111,11 +132,9 @@ var openCase = {
         })
     },
     goToCase: function(caseId, souvenir) {
-        $("#rank-popup").css('display', 'none');
-        $('#special-popup').css('display', 'none');
         if (typeof cases[caseId].minLvl != 'undefined' && Level.myLvl() < cases[caseId].minLvl) {
-            $("#rank-popup").css('display', 'block');
-            $("[data-loc='low_level'] i").html(cases[caseId].minLvl);
+            $("#modal-rank").modal('show');
+            $(".modal-body i").html(cases[caseId].minLvl);
             return false;
         }
         if (cases[caseId].type == "Special") {
@@ -123,9 +142,10 @@ var openCase = {
             if (parseInt(getStatistic('specialCases', 0)) >= cases[caseId].casesToOpen) {
                 window.location.replace("open.html?caseId=" + caseId + ((souvenir) ? "&souvenir=" + souvenir : ''));
             } else {
-                $('#special-popup').css('display', 'block');
+                $('#modal-special').modal();
+                
                 var needToOpen = cases[caseId].casesToOpen - parseInt(getStatistic('specialCases', 0));
-                $('[data-loc="need_more_cases"] i').text(needToOpen);
+                $('.modal-body i').text(needToOpen);
                 $('#showVideoAd').data();
                 $('.js-secretField').text(caseId);
             }
@@ -277,15 +297,24 @@ var openCase = {
         if (openCase.caseOpening || $(".openCase").text() == Localization.getString('open_case.opening', 'Opening...')) {
             return false
         };
+                
         $(".win").removeClass("sold-out");
         $(".win").slideUp("slow");
-        if ($(".openCase").text() == Localization.getString('open_case.try_again', 'Open again')) {
+        if ($(".openCase").text().match(Localization.getString('open_case.try_again', 'Open again'))) {
             openCase.backToZero();
+            $(".openCase").text(Localization.getString('open_case.open_case', 'Open case'));
             return false;
         }
         $(".openCase").text(Localization.getString('open_case.opening', 'Opening...'));
         $(".openCase").attr("disabled", "disabled");
-        //var a = 1431 + 16*24;
+        
+        if (!openCase.isFree())
+            Player.doubleBalance -= openCase.casePrice();
+        
+        Player.doubleBalance = Player.doubleBalance > 0 ? Player.doubleBalance : 0;
+        
+        saveStatistic('doubleBalance', Player.doubleBalance);
+        
         openCase.startScroll();
     },
     startScroll: function() {
@@ -345,7 +374,15 @@ var openCase = {
             });
         }
         Sound("close", "play", 5);
+        
+        if (openCase.isFree()) {
+            saveStatistic('free-case-opening', '-1');
+            
+            saveStatistic('free-case-timeout', Date.now() + FREE_CASE_INTERVAL_MS);
+        }
+        
         $(".openCase").text(Localization.getString('open_case.try_again', 'Open again'));
+        $(".openCase").append(' $' + (openCase.casePrice()/100));
         //$(".win").slideDown("fast");
         $('.win').show();
         openCase.caseOpening = false;
@@ -353,6 +390,11 @@ var openCase = {
         $(".weapons").scrollTop(160);
         
         openCase.status = 'endScroll';
+        
+        
+        if (Player.doubleBalance < openCase.casePrice()) {
+            $(".openCase").prop("disabled", true);
+        }
         
         LOG.log({
             action: 'Open Case',
@@ -407,7 +449,7 @@ var openCase = {
         openCase.sleep(1000).then(function(){
             $(".casesCarusel").empty();
             openCase.fillCarusel();
-            openCase.startScroll();
+            openCase.openCase();
         })
     },
     scrollSound: function (offset, speed) {

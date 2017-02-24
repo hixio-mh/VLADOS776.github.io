@@ -1,7 +1,9 @@
 // ===== PROGRAM SETTINGS =====
 var DAILY_REWARD_POINTS = 5,
     OPEN_CASE_REWARD_POINTS = 1,
-    GAME_WIN_REWARD_POINTS = 2;
+    GAME_WIN_REWARD_POINTS = 2,
+    //FREE_CASE_INTERVAL_MS = 300000;
+    FREE_CASE_INTERVAL_MS = 1.8e+6; //30 минут
 
 // ===== PLAYER SETTINGS =====
 var Player = {
@@ -228,7 +230,10 @@ var Level = (function(module) {
     
     module.doubleBonus = function(lvl) {
         lvl = lvl || module.myLvl();
-        return lvl * 100 > 10000 ? 10000 : lvl * 100;
+        if (lvl === 1 || lvl === 2)
+            return 10000;
+        else
+            return lvl * 100 > 10000 ? 10000 : lvl * 100;
     }
     
     module.levelUP = function() {

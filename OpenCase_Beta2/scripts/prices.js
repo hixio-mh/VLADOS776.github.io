@@ -21,7 +21,7 @@ function getPrice(item_id, opt) {
             return 0;
         }
     }
-    var prices = item.prices[cat][quality];
+    var prices = item.prices[cat] ? item.prices[cat][quality] : 0;
     var price = 0;
     if (typeof prices == 'undefined') return price;
     if (prices.market != -1) price = prices.market;
@@ -4948,7 +4948,18 @@ var Prices = {
           "market": 0.64
         }
       },
-      "stattrak": {}
+      "stattrak": {},
+      "souvenir": {
+          "1": {
+              "market": 68.89
+          },
+          "2": {
+              "market": 73.68
+          },
+          "3": {
+              "market": 87.36
+          },
+      }
     }
   },
   "121": {

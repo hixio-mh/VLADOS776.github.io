@@ -304,7 +304,7 @@
                     var avatar = '0.jpg';
                 }
                 var customAvatar = $('#custom_avatar').val();
-                if (customAvatar !== '' && /^(http|www).*?\.(png|jpg|jpeg|gif)$/.test(customAvatar) && correctImg) {
+                if (customAvatar !== '' && /^(http|www).*?\.(png|jpg|jpeg|gif)$/.test(customAvatar)) {
                     avatar = XSSreplace(customAvatar);
                 }
                 saveStatistic("playerAvatar", avatar);
@@ -316,6 +316,7 @@
                     
                     userRef.child('/public/betaTrade').set($('input[name="trades"]').prop('checked'));
                     userRef.child('/public/avatar').set(avatarUrl(avatar));
+                    userRef.child('/public/nickname').set(XSSreplace(Player.nickname));
                     userRef.child('/settings/language').set(Settings.language);
                     userRef.child('/settings/drop').set(Settings.drop);
                     userRef.child('/settings/sounds').set(Settings.sounds);
