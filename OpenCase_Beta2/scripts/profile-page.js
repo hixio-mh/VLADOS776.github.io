@@ -77,11 +77,9 @@ $(function () {
                     var data = snapshot.val();
                     if (data == null) return;
                     if (typeof data.tradeban != 'undefined') {
-                        $('#block-trade').data('action', 'unblock');
                         $('#block-trade-reason').text(data.tradeban);
                     }
                     if (typeof data.chatban != 'undefined') {
-                        $('#block-chat').data('action', 'unblock');
                         $('#block-chat-reason').text(data.chatban);
                     }
                 }).then(function() {
@@ -114,12 +112,33 @@ $(function () {
         $(".stats__rank__rank").text('0');
     }
     
-    $('#moder-ban-modal').on('show.bs.modal', function(e) {
-        $(this).find('.btn-danger').data('action', $(e.relatedTarget).data('action'))
-        $(this).find('.btn-danger').data('block', $(e.relatedTarget).data('block'))
-    })
-    
     // === Moder menu ===
+    $('#moder-ban-modal').on('show.bs.modal', function(e) {
+        $(this).find('.btn-danger').data('block', $(e.relatedTarget).data('block'));
+        
+        var banReasons = $(e.relatedTarget).next('.block-reason').text();
+        
+        $('#moder-ban-modal .modal-content input').each(function(){
+            var current = $(this).parent('label').text().trim();
+            
+            if (banReasons.match(current)) {
+                $(this).prop('checked', true);
+                banReasons = banReasons.replace(current, '');
+            } else {
+                $(this).prop('checked', false);
+            }
+        })
+        if (!banReasons.trim().match(Localization.getString('profile.moderator.no_ban', 'Doesn\'t banned')) && banReasons.trim() != '') {
+            $('#moder-ban-other_input').val(banReasons.trim()); 
+            $('#moder-ban-other_input').prop('disabled', false); 
+            $('#moder-ban-other_checkbox').prop('checked', true);
+        } else {
+            $('#moder-ban-other_input').val(''); 
+            $('#moder-ban-other_input').prop('disabled', true); 
+            $('#moder-ban-other_checkbox').prop('checked', false);
+            
+        }
+    })
     
     $(document).on('click', '#ban_user', function() {
         var banReason = (function(){
