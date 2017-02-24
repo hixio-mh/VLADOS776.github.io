@@ -732,6 +732,38 @@ var Translation = {
                 no_ban: {
                     text: 'Бана нет',
                     en: 'No ban.'
+                },
+                ban_modal: {
+                    title: {
+                        text: 'Причина бана',
+                        en: 'Ban reason'
+                    },
+                    reasons: {
+                        spam: {
+                            text: 'Спам',
+                            en: 'Spam'
+                        },
+                        cheats: {
+                            text: 'Читы',
+                            en: 'Cheats'
+                        },
+                        insults: {
+                            text: 'Оскорбления',
+                            en: 'Insults'
+                        },
+                        scam: {
+                            text: 'Мошенничество',
+                            en: 'Scam'
+                        },
+                        adult_img: {
+                            text: '18+ изображения',
+                            en: '18+ pictures'
+                        },
+                        other: {
+                            text: 'Другое',
+                            en: 'Other'
+                        },
+                    }
                 }
             },
             send_post: {
