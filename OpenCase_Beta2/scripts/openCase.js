@@ -101,7 +101,7 @@ var openCase = {
                     client.sendToAnalytics("Open case", "Selling weapon", "Player has sold weapon for  double points", doublePoints + " double points");
                 }
                 
-                if (Player.doubleBalance > openCase.casePrice()) {
+                if (Player.doubleBalance > openCase.casePrice() && !openCase.special) {
                     $(".openCase").prop("disabled", false);
                 }
                 
