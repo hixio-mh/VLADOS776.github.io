@@ -519,4 +519,28 @@ var news = [{
         "RU": " - [Исправлено] Исправлена ошибка, когда при запуске не появлялись кейсы и ничего не нажималось. Кстати, если у вас была эта ошибка, кране рекомендую обновить Android.",
         "EN": "- [Fixed] Bug when cases doesn't show up in main page and you can't click on anything."
     }
+}, {
+    "day": 14,
+    "month": 2,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Новая онлайн игра - Джекпот онлайн.",
+        "EN": "- [New] Jackpot online release."
+    }
+}, {
+    "day": 16,
+    "month": 2,
+    "year": 2017,
+    "update": {
+        "RU": " - [Интерфейс] Изменён выбор аватара в настройках",
+        "EN": "- [UI] Avatars carousel in settings."
+    }
+}, {
+    "day": 24,
+    "month": 2,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Кейсы за деньги",
+        "EN": "- [New] RIP free cases"
+    }
 }, ];
