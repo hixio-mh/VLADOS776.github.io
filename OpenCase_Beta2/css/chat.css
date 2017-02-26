@@ -236,6 +236,8 @@ li.chat__message a img[data-userid] {
     word-break: break-all;
     height: auto;
     min-height: 30px;
+    max-height: 100px;
+    overflow-y: auto;
 }
 #login-status {
     font-size: 0.9em;

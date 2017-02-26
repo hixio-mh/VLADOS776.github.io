@@ -1186,6 +1186,10 @@ Array.prototype.mul = function (k) {
     for (var i = 0; i < k; ++i) res = res.concat(this.slice(0))
     return res
 }
+String.prototype.brTrim = function () {
+    return this.replace(/\s*(<br ?\/?>\s*)+/g, "<br />").replace(/^<br \/>|<br \/>$/g, "");
+}
+
 Math.rand = function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }

@@ -5,14 +5,32 @@ $(function () {
         $('#chat__send-new-message').attr('value', Localization.getString('chat.send_message'))
     });
     
-    $("#chat__new-message").on('keydown paste', function (event) {
-        if (event.keyCode == 13) {
+    $("#chat__new-message").on('change', function (event, myEvent) {
+        event = myEvent ? myEvent : event;
+        if (event.ctrlKey && event.keyCode == 13) {
             $("#chat__send-new-message").click();
             event.preventDefault();
+        } else if (event.keyCode == 13) {
+            $('#chat__new-message').append('\n');
         }
-        if (this.innerHTML.length >= this.getAttribute("max") && event.keyCode != 8) {
-            event.preventDefault();
+        
+        if ($(this).text().length >= parseInt($(this).attr("max")) && (event.keyCode != 8 || event.keyCode != 46)) {
+            $("#chat__new-message").html($("#chat__new-message").html().slice(0, parseInt($(this).attr("max"))));
+            
         }
+    });
+    
+    $('[contenteditable]').on('focus', function(event) {
+        var $this = $(this);
+        $this.data('before', $this.html());
+        return $this;
+    }).on('blur keyup paste', function(event) {
+        var $this = $(this);
+        if ($this.data('before') !== $this.html()) {
+            $this.data('before', $this.html());
+        }
+        $this.trigger('change', [event]);
+        return $this;
     });
     
     var goToChat = false;
@@ -439,7 +457,7 @@ function removeMsg(key) {
     catch (e) {}
 }
 $(document).on('click', '#chat__send-new-message', function () {
-    var msg = $('#chat__new-message').text();
+    var msg = $('#chat__new-message').html().brTrim();
     if (msg.length == 0) return false;
     fbChat.sendMsg(Player.nickname, msg, Player.avatar, Player.country);
     $('#chat__new-message').empty();
