@@ -1062,7 +1062,7 @@ function getImgUrl(img, big) {
 }
 
 function XSSreplace (text) {
-        var allowedTags = ["<br>", '<br />', "<i>", "<b>", "<s>", '<div>'];
+        var allowedTags = ["<br>", '<br />', "<i>", "<b>", "<s>"];
         if (typeof text !== 'string') return text;
         //allowed html tags
         text = text.replace(/&lt;/g, '<');
@@ -1189,7 +1189,7 @@ Array.prototype.mul = function (k) {
     return res
 }
 String.prototype.brTrim = function () {
-    return this.replace(/\s*(<br ?\/?>\s*)+/g, "<br />").replace(/^<br \/>|<br \/>$/g, "");
+    return this.replace(/\s*((<div>)?<br ?\/?>(<\/div>)?\s*)+/g, "<br />").replace(/^<br \/>|<br \/>$/g, "");
 }
 
 Math.rand = function getRandomInt(min, max) {

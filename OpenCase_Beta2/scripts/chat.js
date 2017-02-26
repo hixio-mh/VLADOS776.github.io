@@ -395,14 +395,14 @@ function newMsg(key, message, edit) {
     var myMessage = false;
     if (uid == firebase.auth().currentUser.uid) myMessage = true;
     
-    text = uid == "TrgkhCFTfVWdgOhZVUEAwxKyIo33" ? text : fbProfile.XSSreplace(text);
+    text = uid == "TrgkhCFTfVWdgOhZVUEAwxKyIo33" ? text : XSSreplace(text.brTrim());
     
     text = text.replace(imgRegExp, '<img src="$1" style="width: 400px; max-width:100%; display: block;">');
     if (/vip/.test(group)) {
         text = text.replace(youtubeRegExp, '<iframe width="100%" height="auto" src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>');
     }
     
-    username = fbProfile.XSSreplace(username);
+    username = XSSreplace(username);
     var toMe = text.indexOf('@'+Player.nickname) != -1 ? true : false;
     text = text.replace(/@(.*?)[, ]/gi, '<b class="player-nickname">@$1</b>, ');
     
