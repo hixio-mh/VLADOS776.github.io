@@ -1062,7 +1062,7 @@ function getImgUrl(img, big) {
 }
 
 function XSSreplace (text) {
-        var allowedTags = ["<br>", "<i>", "<b>", "<s>"];
+        var allowedTags = ["<br>", '<br />', "<i>", "<b>", "<s>", '<div>'];
         if (typeof text !== 'string') return text;
         //allowed html tags
         text = text.replace(/&lt;/g, '<');
@@ -1077,6 +1077,8 @@ function XSSreplace (text) {
         text = text.replace(/>/g, '&gt;');
         text = text.replace(/"/g, '&quot;');
         text = text.replace(/'/g, '&#x27;');
+    
+        text = text.replace(/&amp;nbsp;/g, ' ');
         //text = text.replace(/\//g, '&#x2F;');
         //allowed html tags
         for (var i = 0; i < allowedTags.length; i++) {
