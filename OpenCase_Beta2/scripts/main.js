@@ -1072,6 +1072,8 @@ function XSSreplace (text) {
             text = rpls(text, allowedTags[i]);
         }
         //XSS replace
+        text = text.replace(/<.*?>(.*?)<\/.*?>/g, '$1');
+        
         text = text.replace(/&/g, '&amp;');
         text = text.replace(/</g, '&lt;');
         text = text.replace(/>/g, '&gt;');
