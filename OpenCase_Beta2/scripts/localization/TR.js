@@ -277,7 +277,7 @@ var Translation = {
                 }
             },
             you_add: {
-                text: 'Вы добавили:',
+                text: 'Sen ekledin:',
                 en: 'You added:'
             },
             comp_add: {
@@ -316,7 +316,7 @@ var Translation = {
                     en: 'Worth'
                 },
                 join: {
-                    text: 'Войти',
+                    text: 'Katılmak',
                     en: 'Join'
                 },
                 view: {
@@ -416,8 +416,8 @@ var Translation = {
                     en: 'Cash Out<br>@ ${1} <i class="double-icon"></i>'
                 },
                 betting: {
-                    text: 'Ставим...',
-                    en: 'Basılıyor'
+                    text: 'Basılıyor',
+                    en: 'Betting...'
                 }
             },
             tabs: {
@@ -478,7 +478,7 @@ var Translation = {
             },
             how_to_play_modal: {
                 title: {
-                    text: 'Как играть',
+                    text: 'Nasıl oynanır',
                     en: 'How to play'
                 },
                 body: {
@@ -517,7 +517,7 @@ var Translation = {
                     en: 'Roll dice'
                 },
                 end_roll: {
-                    text: 'Выпало ${1}. Tekrardan sallamak istermisin?',
+                    text: 'Haddelenmiş ${1}. Tekrardan sallamak istermisin?',
                     en: 'Rolled ${1}. Roll again?'
                 }
             },
@@ -746,8 +746,8 @@ var Translation = {
                             en: 'Cheats'
                         },
                         insults: {
-                            text: 'Оскорбления',
-                            en: 'Hakaret'
+                            text: 'Hakaret',
+                            en: 'Insults'
                         },
                         scam: {
                             text: 'Dolandırıcılık',
@@ -765,7 +765,7 @@ var Translation = {
                 }
             },
             send_post: {
-                text: 'Отправить',
+                text: 'Gönder',
                 en: 'Send'
             },
             delete_trade_confirm: {
@@ -1013,7 +1013,7 @@ var Translation = {
                             <li>Diğer adam işaretleyince hesabınız açıksa otomatik gelicektir</li> \
                             <li>Hesabınız kapalı ise takaslarınızdan eşyaları alabilirsiniz </li> \
                         </ol> \
-                        Если другой игрок нажал кнопку "Совершить обмен", когда вы были не в окне обмена, откройте этот трейд, чтобы получить предметы.',
+                        Çevrimdışıyken başka bir oyuncu "Make trade" düğmesine basarsa silahlarınızı almak için bu ticareti açın.',
                     en: 'First of all, you need to enable "Exchange" in settings.<br><b>How to send the trade offer</b><br><ol><li>Open another player profile</li><li>Press on the exchange icon (<i class="fa fa-exchange" aria-hidden="true"></i>)</li><li>Select the weapons that you want to send and press on the "Next" button</li><li><s>Select the weapons that you want to get from player</s> (WIP)</li><li>If you want to send weapons as a gift then check "It\'s a gift" checkbox</li><li>Press on the "Send trade" button</li></ol><b>How to get weapons</b><ol><li>Open your profile</li><li>Press on the exchange icon (<i class="fa fa-exchange" aria-hidden="true"></i>)</li><li>Select the player that send the offer to you</li><li>Select the offer</li><li>Change your offer if you want</li><li>Check the "Check this box when ready to trade." checkbox</li><li>Wait until another player check this checkbox too and press on the "Make trade" button. Or another player can press it</li></ol>If another player pressed the "Make trade" button when you was offline then open this trade to get your weapons.'
                 }
             },

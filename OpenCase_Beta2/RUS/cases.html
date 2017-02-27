@@ -264,7 +264,7 @@
                     if ($(this).hasClass('disabled')) return false;
                     if ($(this).data('case-id') === 'free') {
                         var caseId = parseInt(getStatistic('free-case-opening', -1));
-                        while (caseId == -1) {
+                        while (caseId == -1 && (typeof cases[caseId].show === 'undefined' || !cases[caseId].show)) {
                             caseId = Math.rand(0, cases.length);
                             if (cases[caseId].minLvl || cases[caseId].casesToOpen) caseId = -1;
                         }
@@ -278,27 +278,6 @@
                 $(document).on('click', '#closePopup', function () {
                     $('.popup').css('display', 'none');
                 });
-                if (getStatistic('hash', 0) == 0) {
-                    getInventory().then(function (inventory) {
-                        for (var i = 0; i < inventory.weapons.length; i++) {
-                            updateWeapon(inventory.weapons[i]);
-                        }
-                        var balance = getStatistic('doubleBalance', 0, false);
-                        var exp = getStatistic('playerPoints', 0, false);
-                        saveStatistic('hash', 1);
-                        saveStatistic('doubleBalance', balance, 'Number', true);
-                        saveStatistic('playerPoints', exp, 'Number', true);
-                        try {
-                            LOG.log({
-                                action: 'Inventory updated'
-                                , inventoryCount: inventory.count
-                            })
-                        }
-                        catch (e) {
-                            console.log(e);
-                        }
-                    })
-                }
             });
             $(document).on('click', '#new-version__update', function () {
                 location = 'https://play.google.com/store/apps/details?id=csgo.opencase';
