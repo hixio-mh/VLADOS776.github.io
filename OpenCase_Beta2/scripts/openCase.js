@@ -308,8 +308,9 @@ var openCase = {
         $(".openCase").text(Localization.getString('open_case.opening', 'Opening...'));
         $(".openCase").attr("disabled", "disabled");
         
-        if (!openCase.isFree())
+        if (!openCase.isFree()) {
             Player.doubleBalance -= openCase.casePrice();
+        } 
         
         Player.doubleBalance = Player.doubleBalance > 0 ? Player.doubleBalance : 0;
         
@@ -400,7 +401,8 @@ var openCase = {
             action: 'Open Case',
             case: {
                 name: cases[openCase.caseId].name,
-                id: openCase.caseId
+                id: openCase.caseId,
+                free: openCase.isFree()
             },
             item: {
                 item_id: openCase.win.item_id,

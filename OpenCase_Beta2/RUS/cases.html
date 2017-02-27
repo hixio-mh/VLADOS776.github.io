@@ -264,7 +264,7 @@
                     if ($(this).hasClass('disabled')) return false;
                     if ($(this).data('case-id') === 'free') {
                         var caseId = parseInt(getStatistic('free-case-opening', -1));
-                        while (caseId == -1 && (typeof cases[caseId].show === 'undefined' || !cases[caseId].show)) {
+                        while (caseId == -1 && (typeof cases[caseId] === 'undefined' || typeof cases[caseId].show === 'undefined' || !cases[caseId].show)) {
                             caseId = Math.rand(0, cases.length);
                             if (cases[caseId].minLvl || cases[caseId].casesToOpen) caseId = -1;
                         }
