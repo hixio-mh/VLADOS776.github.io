@@ -7,13 +7,12 @@ var Translation = {
         version: 1,
         author: 'Mirac',
         authorID: 'fV73qgLi00daMiKeGushmCM2HDm1', // In profile in left bottom corner
-        date: '27.02.17', /* Gün.Ay.Yıl */
+        date: '28.02.17', /* Gün.Ay.Yıl */
     },
-    
     translation: {
         menu: {
             to_next_level: {
-                text: 'Level atlamak için ${1} kaldı.',
+                text: 'Level atlamak için ${1} puan kaldı.',
                 en: '${1} to next level'
             },
             open_case: {
@@ -38,7 +37,7 @@ var Translation = {
                     en: 'Rock-Paper-Scissors'
                 },
                 coinflip: {
-                    text: 'CoinFlip',
+                    text: 'Yazı Tura',
                     en: 'CoinFlip'
                 },
                 double: {
@@ -55,7 +54,7 @@ var Translation = {
                 }
             },
             inventory: {
-                text: 'Eşyalarım',
+                text: 'Envanterim',
                 en: 'My inventory'
             },
             market: {
@@ -92,6 +91,9 @@ var Translation = {
             }
         },
         cases: {
+            news: {
+                text: 'Gelecek güncellemeyi seçin <a href="https://www.patreon.com/posts/8183213" target="_blank">Buraya Tıkla</a>'
+            },
             page_name: {
                 text: 'Kasa aç',
                 en: 'Open Cases'
@@ -122,7 +124,7 @@ var Translation = {
             },
             special_popup: {
                 need_more_cases: {
-                    text: 'Özel bir kasa açman için <i>${1}</i> daha fazla kasa aç<br>yada reklamları izle.',
+                    text: 'Özel bir kasa açman için <i>${1}</i> kaldı.Daha fazla kasa aç<br>yada reklamları izle.',
                     en: 'To open a special case you need to open <i>${1}</i> more cases.<br>Or watch the ads.'
                 },
                 ad_button: {
@@ -165,11 +167,11 @@ var Translation = {
                 en: 'Opened:'
             },
             what_in_case: {
-                text: 'Bu kasanın içinde ne var?',
+                text: 'Bu kasanın içinde neler var?',
                 en: 'What\'s in the case?'
             },
             you_can_win: {
-                text: 'Bu koleksiyonlardan bu itemleri kazanabilirsin ${1}',
+                text: 'Bu koleksiyonlardan bu itemleri kazanabilirsin : ${1}',
                 en: 'You can win one of those items from collection ${1}'
             }
         },
@@ -217,7 +219,7 @@ var Translation = {
                 en: 'Select room'
             },
             back_items: {
-                text: 'Eşyaları geri al',
+                text: 'Eşyalarını geri al',
                 en: 'Get Items back'
             },
             chat: {
@@ -237,20 +239,20 @@ var Translation = {
         },
         rps: {
             page_name: {
-                text: 'Taş Kağıt Makas Savaşı',
+                text: 'Taş Kağıt Makas',
                 en: 'RPS Battle'
             },
             status: {
                 start: {
-                    text: 'Oyuna başlamak için silah ekle.',
+                    text: 'Oyuna başlamak için bir silah ekle.',
                     en: 'Add weapons to start a game.'
                 },
                 round_win: {
-                    text: 'Bu eli sen kazandın!',
+                    text: 'Bu roundu sen kazandın!',
                     en: 'You win this round!'
                 },
                 round_lost: {
-                    text: 'Bu eli kaybettin.',
+                    text: 'Bu roundu kaybettin.',
                     en: 'You lost this round.'
                 },
                 round_tie: {
@@ -277,7 +279,7 @@ var Translation = {
                 }
             },
             you_add: {
-                text: 'Sen ekledin:',
+                text: 'Şu itemi ekledin:',
                 en: 'You added:'
             },
             comp_add: {
@@ -316,7 +318,7 @@ var Translation = {
                     en: 'Worth'
                 },
                 join: {
-                    text: 'Katılmak',
+                    text: 'Katıl',
                     en: 'Join'
                 },
                 view: {
@@ -384,7 +386,7 @@ var Translation = {
                     en: 'Welcome to chat!'
                 },
                 send: {
-                    text: 'Yolla',
+                    text: 'Gönder',
                     en: 'Send'
                 }
             }
@@ -408,7 +410,7 @@ var Translation = {
             },
             bet: {
                 place: {
-                    text: 'Bahit at',
+                    text: 'Bahis at',
                     en: 'Place bet'
                 },
                 cash_out: {
@@ -417,7 +419,7 @@ var Translation = {
                 },
                 betting: {
                     text: 'Basılıyor',
-                    en: 'Betting...'
+                    en: 'Betting'
                 }
             },
             tabs: {
@@ -478,14 +480,14 @@ var Translation = {
             },
             how_to_play_modal: {
                 title: {
-                    text: 'Nasıl oynanır',
+                    text: 'Nasıl Oynanır',
                     en: 'How to play'
                 },
                 body: {
                     text: '<p>Oyuna başlamadan önce sayıyı değiştirip parayı ve kazanma oranını değiştirebilirsin.</p> \
                         <p>Bir bahis gir ve "Zarı Salla" butonuna bas.</p> \
                         <p>Eğer zarı salla butonuna basarsan otomatik rastgele bir numara seçecek ve eğer bu numaraya şart olursa bahsin katlanıcak ve paranı alabileceksin.</p> \
-                        <p>Maksimum hızı : 50.000</p>',
+                        <p>Maksimum hız : 50.000</p>',
                     en: '<p>Before you start the game you can change roll determiner, payout and win chance.</p> \
                         <p>Then you input a bet amount and tap on the "Roll dice" button.</p> \
                         <p>When you click on "Roll dice" button it will generate a random number. And if this number is satisfies the condition you will get your bet multiply by payout.</p>'
@@ -517,7 +519,7 @@ var Translation = {
                     en: 'Roll dice'
                 },
                 end_roll: {
-                    text: 'Haddelenmiş ${1}. Tekrardan sallamak istermisin?',
+                    text: 'Salladın : ${1}. Tekrardan sallamak istermisin?',
                     en: 'Rolled ${1}. Roll again?'
                 }
             },
@@ -550,7 +552,7 @@ var Translation = {
         },
         inventory: {
             page_name: {
-                text: 'Eşyalar',
+                text: 'Envanter',
                 en: 'Inventory'
             },
             weapon_info: {
@@ -563,7 +565,7 @@ var Translation = {
                     en: 'Quality'
                 },
                 trade_up_contract: {
-                    text: 'Takas Kontratı imzala',
+                    text: 'Takas Kontratını imzala',
                     en: 'Trade Up Contract'
                 },
                 sell: {
@@ -586,7 +588,7 @@ var Translation = {
                         en: 'Error'
                     },
                     message: {
-                        text: 'Başka silah deneyin',
+                        text: 'Başka silahda deneyin',
                         en: 'Try another weapon'
                     }
                 },
@@ -765,7 +767,7 @@ var Translation = {
                 }
             },
             send_post: {
-                text: 'Gönder',
+                text: 'Ekle',
                 en: 'Send'
             },
             delete_trade_confirm: {
@@ -984,7 +986,7 @@ var Translation = {
                     en: 'Why weapon price is $0?'
                 },
                 info: {
-                    text: 'Fiyatlar oyunun veritabanından alınır.Eğer orada yoksa , Steam Marketinden alınır.Eğer orada\'da bir fiyat yok ise 0$ olarak sayılır..<br>Silah markette çıkarsa, silahı eşyalarınızda açın, ve fiyatının yüklenmesini bekleyin, yeniden eşyalarınızı açın.',
+                    text: 'Fiyatlar oyunun veritabanından alınır.Eğer orada yoksa , Steam Marketinden alınır.Eğer orada\'da bir fiyat yok ise 0$ olarak sayılır..<br>Silah markette çıkarsa, silahı envanterinizde açın, ve fiyatının yüklenmesini bekleyin, yeniden envanterinizi açın.',
                     en: 'Weapons prices are taken from the database. If there are no prices for current weapon, then price is taken from the Steam Market. If there is no price as well, it counts as $0. <br> When the weapon appears in market, open the weapon info in inventory, wait until the price is loaded, reopen inventory.'
                 }
             },
@@ -1013,7 +1015,7 @@ var Translation = {
                             <li>Diğer adam işaretleyince hesabınız açıksa otomatik gelicektir</li> \
                             <li>Hesabınız kapalı ise takaslarınızdan eşyaları alabilirsiniz </li> \
                         </ol> \
-                        Çevrimdışıyken başka bir oyuncu "Make trade" düğmesine basarsa silahlarınızı almak için bu ticareti açın.',
+                     Eğer hesabınız offline ise bu takası açıp silahlarınızı alabilirsiniz..',
                     en: 'First of all, you need to enable "Exchange" in settings.<br><b>How to send the trade offer</b><br><ol><li>Open another player profile</li><li>Press on the exchange icon (<i class="fa fa-exchange" aria-hidden="true"></i>)</li><li>Select the weapons that you want to send and press on the "Next" button</li><li><s>Select the weapons that you want to get from player</s> (WIP)</li><li>If you want to send weapons as a gift then check "It\'s a gift" checkbox</li><li>Press on the "Send trade" button</li></ol><b>How to get weapons</b><ol><li>Open your profile</li><li>Press on the exchange icon (<i class="fa fa-exchange" aria-hidden="true"></i>)</li><li>Select the player that send the offer to you</li><li>Select the offer</li><li>Change your offer if you want</li><li>Check the "Check this box when ready to trade." checkbox</li><li>Wait until another player check this checkbox too and press on the "Make trade" button. Or another player can press it</li></ol>If another player pressed the "Make trade" button when you was offline then open this trade to get your weapons.'
                 }
             },
@@ -1063,13 +1065,13 @@ var Translation = {
                     en: 'Your name'
                 },
                 avatar: {
-                    text: 'Resmin',
+                    text: 'Profil Resmin',
                     en: 'Avatar'
                 }
             },
             beta: {
                 group_title: {
-                    text: 'Yeni',
+                    text: 'Beta versiyonunda',
                     en: 'Beta'
                 },
                 exchange: {
@@ -1117,7 +1119,7 @@ var Translation = {
                     en: 'Done'
                 },
                 reset_confirm_title: {
-                    text: 'Tamamen reset',
+                    text: 'Oyunu resetle',
                     en: 'Full Reset'
                 },
                 reset_confirm: {
@@ -1144,11 +1146,11 @@ var Translation = {
                 en: 'Main developer'
             },
             info: {
-                text: 'Eğer bug bulduysanız veya sorunuz varsa buradan kurucuya yazabilirsiniz<br>Eğer kurucuya teşekkür etmek istiyorsanız steamdan birşeyler yollayabilirsiniz<br>Oyunu playstore\'de oylamayı unutmayın ^_^',
+                text: 'Eğer bug bulduysanız veya sorunuz varsa buradan kurucuya yazabilirsiniz<br>Eğer kurucuya teşekkür etmek istiyorsanız steamdan skin yollayabilirsiniz<br>Oyunu playstore\'de oylamayı unutmayın ^_^',
                 en: 'If you found some bugs or you have a suggestion you can write me an email.<br>If you want to thank the developer you can send something in Steam :)<br>Do not forget to rate the app in the Play Market ^_^'
             },
             special_thanks: {
-                text: 'Teşekkürler',
+                text: 'Emeği geçenler',
                 en: 'Special Thanks'
             },
             copyright: {
@@ -1177,7 +1179,7 @@ var Translation = {
                     en: 'New version of the app is available.'
                 },
                 update: {
-                    text: 'Güncelleme',
+                    text: 'Güncelle',
                     en: 'Update'
                 },
                 later: {
@@ -1200,7 +1202,7 @@ var Translation = {
                 en: 'Worth: '
             },
             empty_inventory: {
-                text: 'Eşyanız yok <a href="cases.html">Kasa açarak doldurabilirsiniz.</a>',
+                text: 'Envanteriniz bomboş. <a href="cases.html">Biraz kasa açarak doldurabilirsiniz.</a>',
                 en: 'Inventory is empty. <a href="cases.html">Open some cases to fill it.</a>'
             },
             ban: {

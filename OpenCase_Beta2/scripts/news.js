@@ -543,4 +543,12 @@ var news = [{
         "RU": " - [Новое] Кейсы за деньги",
         "EN": "- [New] RIP free cases"
     }
+}, {
+    "day": 28,
+    "month": 2,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Перевод на турецкий",
+        "EN": "- [New] Turkish translation (by Mirac)"
+    }
 }, ];

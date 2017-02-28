@@ -807,7 +807,7 @@ var Translation = {
                         en: 'Check this box when ready to trade.'
                     },
                     gift: {
-                        text: 'Это порадрок',
+                        text: 'Это подарок',
                         en: 'It\'s a gift.'
                     }
                 },

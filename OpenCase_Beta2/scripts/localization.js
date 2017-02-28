@@ -19,8 +19,8 @@ var Localization = (function (module) {
     
     module.supportedLanguages = {
         names: {
-            short: ['RU', 'EN', 'FR', 'PL'],
-            full: ['Русский', 'English', 'Français', 'Polski']
+            short: ['RU', 'EN', 'FR', 'PL', 'TR'],
+            full: ['Русский', 'English', 'Français', 'Polski', 'Türkçe']
         },
         skinNames: {
             arr: ['RU', 'EN'],
