@@ -77,10 +77,10 @@ $(function () {
                     var data = snapshot.val();
                     if (data == null) return;
                     if (typeof data.tradeban != 'undefined') {
-                        $('#block-trade-reason').text(data.tradeban);
+                        $('#block-trade-reason').html(data.tradeban.reason + (data.tradeban.from ? '<br>' + banLength(data.tradeban.from, data.tradeban.to) : ''));
                     }
                     if (typeof data.chatban != 'undefined') {
-                        $('#block-chat-reason').text(data.chatban);
+                        $('#block-chat-reason').html(data.chatban.reason + (data.chatban.from ?'<br>' + banLength(data.chatban.from, data.chatban.to) : '' ));
                     }
                 }).then(function() {
                     firebase.database().ref('users/' + uid + '/private').once('value').then(function(snapshot) {
@@ -116,7 +116,7 @@ $(function () {
     $('#moder-ban-modal').on('show.bs.modal', function(e) {
         $(this).find('.btn-danger').data('block', $(e.relatedTarget).data('block'));
         
-        var banReasons = $(e.relatedTarget).next('.block-reason').text();
+        var banReasons = $(e.relatedTarget).next('.block-reason').html().split('<br>')[0];
         
         $('#moder-ban-modal .modal-content input').each(function(){
             var current = $(this).parent('label').text().trim();
@@ -140,6 +140,20 @@ $(function () {
         }
     })
     
+    $('#moder-ban_time').on('change', function() {
+        var time = parseInt($(this).val());
+        if (isNaN(time) || time <= 0) {
+            time = 1;
+            $('#moder-ban_time').val(time);
+        } else if (time > 60) {
+            time = 60;
+            $('#moder-ban_time').val(time);
+        }
+        var multiply = parseInt($('#moder-ban_time-type option:selected').attr('mult'));
+        if (isNaN(multiply))
+            multiply = 60000;
+    })
+    
     $(document).on('click', '#ban_user', function() {
         var banReason = (function(){
             var reason = '';
@@ -158,12 +172,34 @@ $(function () {
         var ban = 'chatban';
         if ($(this).data('block') === 'trade') ban = 'tradeban';
         
+        var banTime = (function() {
+            var time = parseInt($('#moder-ban_time').val());
+            if (isNaN(time) || time <= 0) {
+                time = 1;
+                $('#moder-ban_time').val(time);
+            } else if (time > 60) {
+                time = 60;
+                $('#moder-ban_time').val(time);
+            }
+            var multiply = parseInt($('#moder-ban_time-type option:selected').attr('mult'));
+            if (isNaN(multiply))
+                multiply = 60000;
+            
+            return time * multiply;
+        })()
+        
         if (banReason !== '') {
-            firebase.database().ref('users/' + uid + '/moder/' + ban).set(banReason);
+            var banObj = {
+                reason: banReason,
+                to: banTime,
+                from: firebase.database.ServerValue.TIMESTAMP
+            }
+            firebase.database().ref('users/' + uid + '/moder/' + ban).set(banObj);
             firebase.database().ref('bans/' + uid + '/' + ban).set(banReason);
-            if (user_androidID)
-                firebase.database().ref('androidIDBans/' + user_androidID + '/' + ban).set(banReason);
-            $('#block-' + $(this).data('block') + '-reason').text(banReason);
+            if (user_androidID) {
+                firebase.database().ref('androidIDBans/' + user_androidID + '/' + ban).set(banObj);
+            }
+            $('#block-' + $(this).data('block') + '-reason').html(banReason + '<br>' + banLength(Date.now(), banTime));
             
             if (isAndroid()) client.sendToAnalytics('Profile', 'Модератор', "Модератор заблокировал " + $(this).data('block'), Player.nickname + ' заблокировал ' + $(".profile__name").text());
             LOG.warn({
@@ -173,14 +209,16 @@ $(function () {
                     user: {
                         uid: uid,
                         name: $(".profile__name").text()
-                    }
+                    },
+                    time: banTime
                 }
             })
         } else if (banReason === '') {
             firebase.database().ref('users/' + uid + '/moder/'+ban).remove();
             firebase.database().ref('bans/' + uid + '/'+ban).remove();
-            if (user_androidID)
+            if (user_androidID) {
                 firebase.database().ref('androidIDBans/' + user_androidID + '/'+ban).remove();
+            }
             $('#block-' + $(this).data('block') + '-reason').text("Doesn't banned");
             
             if (isAndroid()) client.sendToAnalytics('Profile', 'Модератор', "Модератор разблокировал " + $(this).data('block'), Player.nickname + ' разблокировал ' + $(".profile__name").text());
@@ -820,5 +858,10 @@ $(function () {
                 text: text
             }
         })
+    }
+    
+    function banLength(from, to) {
+        var total = parseInt(from) + parseInt(to);
+        return new Date(total).toLocaleString()
     }
 })

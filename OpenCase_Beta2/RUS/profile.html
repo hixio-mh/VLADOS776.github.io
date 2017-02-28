@@ -212,6 +212,17 @@
                             <label><input type='checkbox' id='moder-ban-other_checkbox'> <span data-loc='other'>Other</span></label>
                             <input type='text' class='form-control input-sm' id='moder-ban-other_input' disabled>
                         </div>
+                        <div class='input-group'>
+                           <input type='number' id='moder-ban_time' class='form-control input-sm' value='1'>
+                            <span class="input-group-addon" style="width:0px; padding-left:0px; padding-right:0px; border:none;"></span>
+                            <select id='moder-ban_time-type' class='form-control input-sm'>
+                                <option mult='60000'>min</option>
+                                <option mult='3600000'>hour</option>
+                                <option mult='86400000'>day</option>
+                                <option mult='604800000'>week</option>
+                                <option mult='31536000000'>year</option>
+                            </select>
+                        </div>
                     </div>
                     <div class='modal-footer'>
                         <button class='btn btn-danger' type='button' id='ban_user'>Confirm</button>
