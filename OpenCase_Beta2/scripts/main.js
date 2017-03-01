@@ -1062,7 +1062,7 @@ function getImgUrl(img, big) {
 }
 
 function XSSreplace (text) {
-        var allowedTags = ["<br>", '<br />', "<i>", "<b>", "<s>"];
+        var allowedTags = ["<br>", '<br />', "<i>", "<b>", "<s>", '<div>'];
         if (typeof text !== 'string') return text;
         //allowed html tags
         text = text.replace(/&lt;/g, '<');
