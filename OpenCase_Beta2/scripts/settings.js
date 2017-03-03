@@ -198,7 +198,8 @@ var Level = (function(module) {
     }
     
     module.calcLvl = function(exp) {
-        exp = exp || isNaN(Player.points) ? 5 : Player.points;
+        exp = exp || Player.points;
+        exp = isNaN(exp) ? 5 : exp;
         var i = 1;
         while (true) {
             if (exp < module.lvlEXP(i))
