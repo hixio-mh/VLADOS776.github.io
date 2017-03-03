@@ -1,7 +1,8 @@
 $(document).on('click', '#registerButton', function () {
     if ($(this).hasClass('empty')) {
-        $('#nickname').show();
+        $('#nickname-group').show();
         $(this).removeClass('empty');
+        $(this).removeClass('text-primary');
         $('#loginButton').hide();
         $('#nickname').val(Player.nickname);
     }

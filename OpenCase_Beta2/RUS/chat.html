@@ -43,14 +43,17 @@
         <div class="navigationBar" data-menu-EN="Chat" data-menu-RU="Чат"></div>
         <div id="login" style='display: none;' data-loc-group="login">
             <div class='input-group input-group-sm'>
-                <span class='input-group-addon'><i class='glyphicon glyphicon-user'></i></span>
+                <span class='input-group-addon'><i class='glyphicon glyphicon-envelope'></i></span>
                 <input type="text" class="form-control" placeholder="Email" id="email"></input>
             </div>
             <div class='input-group input-group-sm'>
                 <span class='input-group-addon'><i class='glyphicon glyphicon-lock'></i></span>
                 <input type="password" class="form-control" placeholder="Password" id="password"></input>
             </div>
-            <input type="text" placeholder="Nickname" id="nickname" class="input-text" style='display: none;'></input>
+            <div class='input-group input-group-sm' id='nickname-group' style='display: none;'>
+                <span class='input-group-addon'><i class='glyphicon glyphicon-user'></i></span>
+                <input type="text" placeholder="Nickname" id="nickname" class="form-control"></input>
+            </div>
             <span id="login-status" class='text-danger'></span>
             <div id="login__buttons">
                 <div id='login-buttons-container'><button class="btn btn-primary btn-sm" onclick="fbProfile.login();" id="loginButton" data-loc="sign_in">Sign in</button>
