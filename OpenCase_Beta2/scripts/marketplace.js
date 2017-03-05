@@ -2,7 +2,8 @@
 var Sales = [],
     weaponsOnSale = 6,
     minPriceForSale = 15,
-    discount = 15;
+    showSales = false,
+    discount = 0;
 
 $(function() {
     $("#buy_count").change(function() {
@@ -66,7 +67,7 @@ $(document).ready(function() {
         }
     }
 
-    if (Sales.length) {
+    if (Sales.length && showSales) {
         var SalesHTML = "";
         for (var i = 0; i < Sales.length; i++) {
             SalesHTML += "<div class='sales-weapon animated zoomIn " + (Sales[i].soldOut ? "sold-out" : "") + "' data-weapon-info-json='" + JSON.stringify(Sales[i].saveObject()) + "' data-sales-id='" + i + "' data-discount='" + discount + "'><span class='sales-discount'>" + discount + "%</span><img src=\"" + getImgUrl(Sales[i].img, 1) + "\"><span class='sales-weapon-name'>" + Sales[i].type + " | " + Sales[i].name + "</span><div class='prices'><span class='prices_old-price currency dollar'>" + Sales[i].price + "</span> <span class='prices_new-price currency dollar'>" + (Sales[i].price * (100 - discount) / 100).toFixed(2) + "</span></div></div>";
