@@ -165,8 +165,8 @@ $(document).on('click', '#buy-double', function() {
     if (!weapon.can.buy) return;
     weapon.new = true;
     
-    var price = parseInt($("#buy-double span").text());
     var count = parseInt($("#buy_count").val());
+    var price = weapon.price * count * 100;
     
     if (Player.doubleBalance < price) {
         $('#weaponPrice').addClass('animated flash');
@@ -190,7 +190,7 @@ $(document).on('click', '#buy-double', function() {
         soldOut = true;
     }
     Sound("buy", "play");
-    Player.doubleBalance -= parseInt((price).toFixed(0));
+    Player.doubleBalance -= price;
     saveStatistic('doubleBalance', Player.doubleBalance);
     $("#playerBalance").html(Player.doubleBalance + ' <i class="double-icon"></i>');
 
