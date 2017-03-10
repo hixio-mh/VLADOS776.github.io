@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Свои кейсы</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/rarity.css">
+    <link rel="stylesheet" type="text/css" href="../css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/winter.css">
+    <link rel="stylesheet" type="text/css" href="../css/loading.css">
+
+    <script src="../scripts/build/libs.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/socket.io.js"></script>
+    <script src="../scripts/customCases.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/localization.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/skinNames.js"></script>
+    <script src="../scripts/cases2.js"></script>
+    <script src="../scripts/weapons.js"></script>
+    <script src="../scripts/prices.js"></script>
+    <script src="../scripts/quality.js"></script>
+    <script src="../scripts/openCase.js"></script>
+    <script src="../scripts/navigationMenu.js"></script>
+    <link rel="stylesheet" href="../css/navigationMenu.css">
+    <style>
+        body {
+            margin: 1px;
+        }
+        .casesBlock {
+            overflow: auto;
+            white-space: nowrap;
+        }
+        
+        #openCaseWindow {
+            padding: 20px 0;
+            text-align: center;
+        }
+        div#createCaseWindow {
+            margin-top: 10px;
+        }
+        
+        .closeCase {
+            top: 50px;
+        }
+        
+        .topPanel {
+            margin: 10px;
+            text-align: center;
+        }
+        
+        #caseImg {
+            margin: 10px;
+        }
+        
+        #caseImg img {
+            width: 100px;
+            /*height: 100px;*/
+        }
+        
+        #caseImg .active {
+            background: #7b4242;
+        }
+        
+        #weaponsSelect {
+            text-align: center;
+            background: RGBA(0, 0, 0, 0.4);
+            padding: 5px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        #case_name-group {
+            padding-right: 40px;
+            margin-bottom: 20px;
+        }
+        ul#weaponsList {
+            height: 285px;
+            overflow: auto;
+            padding: 0;
+            margin-top: 10px;
+        }
+        
+        .odds_img {
+            width: 100%;
+        }
+        
+        #odds td {
+            vertical-align: middle;
+        }
+        
+        #odds td:first-child {
+            width: 145px;
+        }
+        
+        #odds td:nth-child(3) {
+            width: 100px;
+        }
+        
+        #odds td:nth-child(4) {
+            color: red;
+            font-size: 2em;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+        #bottom {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        #bottom > span {
+            padding: 10px;
+            color: #fff;
+            border: 1px solid #2a9fd6;
+            border-radius: 6px;
+            margin: 0 3px;
+        }
+        #calcPrice, #Final_createCase {
+            margin-left: auto;
+        }
+        
+        @media (max-width:420px) {
+            #odds {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body data-localization="custom_cases" data-inventory="no-load">
+    <div class="site-overlay"></div>
+    <div id="container" style="background-position: 0 39px;">
+        <div class="navigationBar"></div>
+        <div class='topPanel row'>
+           <div class="col-md-10 col-sm-10 col-xs-8">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search..." id='search_case_name'>
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" id='search_case_btn'>
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+           </div>
+           <div class='col-md-2 col-sm-2 col-xs-4'>
+                <button id="createCase" class='btn btn-success'>Create Case</button>
+           </div>
+        </div>
+        
+        <div class="cases" id='cases'>
+            <div id='cases_groups'>
+                <h1 data-loc="cases">Recent</h1>
+                <div id="recent" class="casesBlock">
+                    <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
+                </div>
+
+                <h1 data-loc='popular'>Popular</h1>
+                <div id="popular" class="casesBlock">
+                    <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
+                </div>
+            </div>
+            
+            <div id='search_result' style='display: none;'>
+               <button class='btn btn-default btn-sm' id='hide_search_result'>Hide search result</button>
+                <h1 data-loc='search'>Search</h1>
+                <div id="search_cases" class="casesBlock">
+                    <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div id="openCaseWindow" style='display:none;'>
+            <div class="closeCase"></div>
+            <div class="scrollContainer">
+                <div id="caruselOver">
+                    <div id="caruselLine"></div>
+                </div>
+                <div id="aCanvas">
+                    <div class="casesCarusel" id="casesCarusel"></div>
+                </div>
+            </div>
+            <div class="win" style="display: none;"> <span id='win_youWon' data-loc="you_won">You won</span> <span class="win_name"></span> <span class="win_quality"></span> <span class="win_price currency dollar"></span> <img src="" class="win_img">
+                <div class="win_sell_div">
+                    <h3 id="win_sell_text" class="lines"><span data-loc="sell">Sell</span></h3>
+                    <button class="btn btn-primary" id="double_sell_button"></button>
+                </div>
+            </div>
+            <button class="openCase btn btn-success" data-loc="open_case">Open Case</button>
+            <div><span id="opened-text" data-loc="opened">Opened:</span> <span id="opened">0</span></div>
+            <button id='what-i-can-win-Button' class='btn btn-info btn-sm' data-loc="what_in_case">What's in the case?</button>
+            <div id="youCanWin" style='display:none'><span data-loc="you_can_win">You can win one of those items from collection</span> <span id='caseName'></span></div>
+            <ul class="weaponsList" style='display:none'> </ul>
+        </div>
+        
+        <div id='createCaseWindow' style='display:none;' class='container'>
+            <div class='input-group' id='case_name-group'>
+                <span class='input-group-addon'>Name</span>
+                <input type="text" id="case_name" placeholder='Case name here' class='form-control' maxlength="15">
+            </div>
+            <div class='closeCase' style='top: 54px;'></div> 
+            <div class='panel panel-primary'>
+               <div class="panel-heading">Choose case picture</div>
+                <div class="panel-body">
+                    <div id='caseImg'></div>
+                </div>
+            </div>
+            
+            <div class='panel panel-primary'>
+               <div class="panel-heading">Select items</div>
+               <div class="panel-body">
+                   <input type="text" class="form-control" id="select_sort" placeholder="Search...">
+                    <div id='weaponsSelect'>
+                        <ul id='weaponsList'>
+                        </ul>
+                    </div>
+               </div>
+            </div>
+            
+            <div class='panel panel-primary'>
+               <div class="panel-heading">
+                   <span>Choose Roll Chance</span>
+                   <span class='close' id='resetAll'>&#x21bb; Reset</span>
+               </div>
+               <div class="panel-body">
+                    <table class="table" id="odds">
+                        <tbody>
+                        </tbody>
+                    </table>
+               </div>
+            </div>
+            
+            <div id="bottom">
+               <div id='status'></div>
+                <span>Total odds: <span id='total_odds'>0%</span></span>
+                <span>Case price: <span id='casePrice' class='currency dollar'>0</span></span>
+                <button class="btn btn-primary pull-right" id="calcPrice">Calc Price</button>
+                <button class="btn btn-success pull-right" id="Final_createCase" style='display:none;'>Create Case</button>
+            </div>
+        </div>
+
+        <div id="modal-rank" class="modal fade" role="dialog" data-loc-group='special_popup'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p data-loc='low_level'>Only players with level <i></i> and higher can open this case.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="faq.html#js-local-question-rank" class="btn btn-primary" data-loc='lvl_up'>How to level up?</a>
+                        <button class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-special" class="modal fade" role="dialog" data-loc-group='special_popup'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p data-loc='need_more_cases'>To open a special case you need to open <i>${1}</i> more cases.
+                            <br>Or watch the ads.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" id="showVideoAd" data-loc='ad_button'>Watch the ads</button>
+                        <button class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        Weapon.prototype.toLi = function() {
+            return '<li class="weapon" data-item_id=' + this.item_id + '>\
+            <img src="' + this.getImgUrl() + '" />\
+            <div class="weaponInfo ' + this.rarity + '"><span class="type">' + this.type + '<br>' + this.name + '</span></div>\
+            </li>'
+        }
+        $(function () {
+            CustomCases.init();
+        })
+    </script>
+    
+    <script src="../scripts/jquery.film_roll.min.js"></script>
+    <script src="../scripts/jquery.touchSwipe.min.js"></script>
+</body>
+
+</html>

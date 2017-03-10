@@ -334,6 +334,8 @@ function saveStatistic(key, value, type, crypt) {
             expires: 200
         });
     }
+    if (key == 'doubleBalance')
+        $(document).trigger('doublechanged');
 }
 
 function getStatistic(key, defaultVal, crypt) {
@@ -1010,6 +1012,8 @@ function getCasePrice(caseId, souvenir) {
 function middlePrice(item_id, souvenir) {
     souvenir = souvenir || false;
     var middlePrice = 0;
+    // Не учитывается качество Прямо с завода
+    // Чтобы учитывалось - поменять 4 на 5
     for (var i = 0; i < 4; i++) {
         middlePrice += getPrice(item_id, {
             quality: i,
@@ -1071,6 +1075,7 @@ function XSSreplace (text) {
         for (var i = 0; i < allowedTags.length; i++) {
             text = rpls(text, allowedTags[i]);
         }
+    
         //XSS replace
         text = text.replace(/<.*?>(.*?)<\/.*?>/g, '$1');
         
@@ -1197,9 +1202,3 @@ String.prototype.brTrim = function () {
 Math.rand = function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-    /*Array.prototype.remove = function(from, to) {
-    var rest = this.slice((to || from) + 1 || this.length);
-    this.length = from < 0 ? this.length + from : from;
-    return this.push.apply(this, rest);
-    };*/
