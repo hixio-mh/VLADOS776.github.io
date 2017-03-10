@@ -1,0 +1,31 @@
+$rarity: (
+    consumer: #9EA7AE,
+    industrial: #4A78AD,
+    milspec: #3747A7,
+    restricted: #6533A6,
+    classified: #A41EA0,
+    covert: #BA3432,
+    rare: #DAB515,
+    workshop: #0ec571,
+    base: #9EA7AE,
+    high: #3747A7,
+    remarkable: #6533A6,
+    exotic: #A41EA0,
+    extraordinary: #BA3432,
+    contraband: #DAB515
+);
+
+
+@each $rare, $color in $rarity {
+    .#{$rare} {
+        background: $color;
+        background: -webkit-linear-gradient(to right, $color, darken($color, 25%));
+        background: linear-gradient(to right, $color, darken($color, 25%));
+    }
+    .#{$rare}-color {
+        background: $color;
+}
+    .#{$rare}-text {
+        color: $color;
+    }
+}
