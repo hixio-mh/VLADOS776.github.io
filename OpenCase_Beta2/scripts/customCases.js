@@ -229,9 +229,15 @@ var CustomCases = {
             Case.weapons = items;
             var img = $('#caseImg .active img').attr('src').split('/');
             Case.img = img[(img.length - 1)];
+            var uid = 'Not auth';
+            try {
+                uid = firebase.auth().currentUser.uid;
+            } catch (e) {
+                console.log(e);
+            }
             Case.author = {
                 name: Player.nickname,
-                uid: 'test'
+                uid: uid
             };
             
             CustomCases.socket.emit('createCase', Case);
