@@ -12,22 +12,23 @@
     <link rel="stylesheet" type="text/css" href="../css/animate.css">
     <link rel="stylesheet" type="text/css" href="../css/winter.css">
     <link rel="stylesheet" type="text/css" href="../css/loading.css">
+    <link rel="stylesheet" type="text/css" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/owl.theme.default.css">
+    <link rel="stylesheet" href="../css/navigationMenu.css">
 
     <script src="../scripts/build/libs.js"></script>
     <script src="../scripts/bootstrap.min.js"></script>
     <script src="../scripts/socket.io.js"></script>
     <script src="../scripts/customCases.js"></script>
     <script src="../scripts/main.js"></script>
-    <script src="../scripts/localization.js"></script>
+    <script src="../scripts/localization.js" async></script>
     <script src="../scripts/settings.js"></script>
-    <script src="../scripts/skinNames.js"></script>
-    <script src="../scripts/cases2.js"></script>
+    <script src="../scripts/skinNames.js" defer></script>
     <script src="../scripts/weapons.js"></script>
-    <script src="../scripts/prices.js"></script>
-    <script src="../scripts/quality.js"></script>
-    <script src="../scripts/openCase.js"></script>
-    <script src="../scripts/navigationMenu.js"></script>
-    <link rel="stylesheet" href="../css/navigationMenu.css">
+    <script src="../scripts/prices.js" defer></script>
+    <script src="../scripts/quality.js" defer></script>
+    <script src="../scripts/navigationMenu.js" async></script>
+    <script src="../scripts/owl.carousel.min.js"></script>
     <style>
         body {
             margin: 1px;
@@ -58,12 +59,7 @@
             margin: 10px;
         }
         
-        #caseImg img {
-            width: 100px;
-            /*height: 100px;*/
-        }
-        
-        #caseImg .active {
+        #caseImg .center {
             background: #7b4242;
         }
         
@@ -209,7 +205,7 @@
             <div class='panel panel-primary'>
                <div class="panel-heading">Choose case picture</div>
                 <div class="panel-body">
-                    <div id='caseImg'></div>
+                    <div id='caseImg' class='owl-carousel'></div>
                 </div>
             </div>
             
@@ -286,9 +282,6 @@
             CustomCases.init();
         })
     </script>
-    
-    <script src="../scripts/jquery.film_roll.min.js"></script>
-    <script src="../scripts/jquery.touchSwipe.min.js"></script>
 </body>
 
 </html>
