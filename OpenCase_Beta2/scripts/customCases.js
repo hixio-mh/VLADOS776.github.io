@@ -2,6 +2,7 @@ var CustomCases = {
     socket: io('https://kvmde40-10035.fornex.org/', {path: '/customcases/socket.io'}),
     caseOpening: false,
     caseId: 0,
+    rareItemsRegExp: new RegExp('(rare|extraordinary)' ,'i'), // From OpenCase.js
     caseImages: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
     a: function(b) {
         if (b) this.b = b;
@@ -29,9 +30,9 @@ var CustomCases = {
             for (var i = 0; i < cases.length; i++) {
                 caseElement += "<div class='case " + (Player.doubleBalance < cases[i].price * 100 ? 'disabled' : '') + "' data-case-id=" + cases[i]._id + ">\
                     <img class='case-card' src='../images/Cases/casecard2.png'>\
-                    <img class='case-img' src='../images/Cases/customCases/" + cases[i].img + "'>\
+                    <img class='case-img' src='../images/Cases/customCases/" + XSSreplace(cases[i].img) + "'>\
                     <span class='case-price currency dollar'>" + cases[i].price + "</span>\
-                    <span class='case-name'>" + cases[i].name + "</span>\
+                    <span class='case-name'>" + XSSreplace(cases[i].name) + "</span>\
                 </div>";
             };
             
@@ -78,9 +79,9 @@ var CustomCases = {
         CustomCases.socket.on('newCase', function(cas) {
             var caseElement = "<div class='case' data-case-id=" + cas._id + ">\
                     <img class='case-card' src='../images/Cases/casecard2.png'>\
-                    <img class='case-img' src='../images/Cases/customCases/" + cas.img + "'>\
+                    <img class='case-img' src='../images/Cases/customCases/" + XSSreplace(cas.img) + "'>\
                     <span class='case-price currency dollar'>" + cas.price + "</span>\
-                    <span class='case-name'>" + cas.name + "</span>\
+                    <span class='case-name'>" + XSSreplace(cas.name) + "</span>\
                 </div>";
             $('#recent').prepend(caseElement);
         })
@@ -299,12 +300,7 @@ var CustomCases = {
         }
         $('#caseImg').html(elem);
         
-        fn = new FilmRoll({
-            container: '#caseImg'
-            , pager: false
-            , scroll: false
-            , start_index: 0
-        });
+        
         
         $('#select_sort').on('input', function() {
             var searchTerm = $('#select_sort').val();
@@ -325,6 +321,21 @@ var CustomCases = {
                 $(this).css('display','inline-block');
             });
         })
+        
+        $('.owl-carousel').owlCarousel({
+            center: true,
+            loop: true,
+            items: 3,
+            margin: 10,
+            responsive: {
+                600: {
+                    items: 5
+                },
+                1000: {
+                    items: 7
+                }
+            }
+        });
         
         var anim = document.getElementById('casesCarusel');
         anim.addEventListener("transitionend", CustomCases.endScroll, false);
@@ -406,7 +417,6 @@ var CustomCases = {
                 '</li>'
         })
 
-        openCase.win = caseItems.all[winNumber];
         $(".casesCarusel").html(el);
         $(".casesCarusel").css("margin-left", "0px");
     },
@@ -436,7 +446,14 @@ var CustomCases = {
         var duration = (Settings.drop) ? 5 : 10,
             marginLeft = -1 * Math.rand(a - 50, a + 60);
         
-        $($('.casesCarusel .weapon')[winNumber]).replaceWith(win.toLi());
+        var winItem = win.toLi();
+        if (win.type[0] === '★') {
+            winItem = '<li class="weapon">' +
+                '<img src="../images/Weapons/rare.png" />' +
+                '<div class="weaponInfo ' + win.rarity + '"><span class="type">★ Rare Special Item ★<br>&nbsp;</span></div>' +
+                '</li>'
+        }
+        $($('.casesCarusel .weapon')[winNumber]).replaceWith(winItem);
 
         $('.casesCarusel').css({
             'transition': 'all ' + duration + 's cubic-bezier(0.07, 0.49, 0.39, 1)',
@@ -543,7 +560,7 @@ var CustomCases = {
             'transition': 'all 0.9s cubic-bezier(0.07, 0.49, 0.39, 1)',
             'margin-left': '0px'
         });
-        openCase.sleep(1000).then(function(){
+        CustomCases.sleep(1000).then(function(){
             $(".casesCarusel").empty();
             CustomCases.fillCarusel();
             CustomCases.openCase();
@@ -573,5 +590,10 @@ var CustomCases = {
         $('#status').html('<div class="alert alert-'+color+' alert-dismissable fade in"> \
                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>\
                             ' + text + '</div>');
+    },
+    sleep: function(time) {
+        return new Promise(function(resolve) {
+            setTimeout(resolve, time)
+        });
     }
 }
