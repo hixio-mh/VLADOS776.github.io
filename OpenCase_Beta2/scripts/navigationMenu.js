@@ -45,7 +45,11 @@ $(function () {
     </div>';
     
     menuHTML += '<ul> \
-        <li class="pushy-link"><a href="cases.html"><span class="icon icon-key2"></span><span data-loc="open_case">Open Cases</span></a></li> \
+        <li class="submenu closed"><a href="#"><i class="icon icon-key2"></i><span data-loc="open_case">Open Cases</span></a>\
+        <ul data-loc-group="cases_menu">\
+            <li class="pushy-link"><a href="cases.html"><span class="icon icon-key2"></span><span data-loc="official">Official cases</span></a></li>\
+            <li class="pushy-link"><a href="customCases.html"><span class="icon icon-key2"></span><span data-loc="custom">Custom cases</span> <sup class="beta">beta</sup></a></li>\
+        </ul></li>\
         <li class="submenu closed" data-podmenu="games"><a href="#"><span class="icon icon-pacman"></span><span data-loc="games">Games</span></a> \
         <ul data-loc-group="games_list"> \
             <li class="pushy-link"><a href="rulet.html"><span class="icon icon-spinner5"></span><span data-loc="jackpot">Jackpot</span></a></li>\

@@ -19,6 +19,16 @@ var Translation = {
                 text: 'Открыть кейсы',
                 en: 'Open Case'
             },
+            cases_menu: {
+                official: {
+                    text: 'Стандартные кейсы',
+                    en: 'Official cases'
+                },
+                custom: {
+                    text: 'Кейсы игроков',
+                    en: 'Custom cases'
+                }
+            },
             games: {
                 text: 'Игры',
                 en: 'Games'
@@ -92,7 +102,7 @@ var Translation = {
         },
         cases: {
             news: {
-                text: 'Канал игры на <a href="https://www.youtube.com/channel/UCblt9N7Os0wTfGCqjigttYg" target="_blank">YouTube</a><br>Ответы на вопросы во время стримов'
+                text: '<a href="customCases.html">Кейсы игроков!</a> Открытый бета тест.'
             },
             page_name: {
                 text: 'Открыть кейсы',
