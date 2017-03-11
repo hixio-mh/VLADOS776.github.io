@@ -175,6 +175,88 @@ var Translation = {
                 en: 'You can win one of those items from collection ${1}'
             }
         },
+        custom_cases: {
+            page_name: {
+                text: 'Кейсы игроков',
+                en: 'Custom cases'
+            },
+            create_case: {
+                text: 'Создать кейс',
+                en: 'Create case'
+            },
+            recent: {
+                text: 'Недавно созданные',
+                en: 'Recent'
+            },
+            popular: {
+                text: 'Популярные',
+                en: 'Popular'
+            },
+            hide_search: {
+                text: 'Убрать результаты поиска',
+                en: 'Hide search result'
+            },
+            you_won: {
+                text: 'Вы выиграли',
+                en: 'You won'
+            },
+            sell: {
+                text: 'Продать',
+                en: 'Sell'
+            },
+            opened: {
+                text: 'Открыт:',
+                en: 'Opened:'
+            },
+            case_by: {
+                text: 'Кейс сделал',
+                en: 'Case by'
+            },
+            what_in_case: {
+                text: 'Что в кейсе?',
+                en: 'What\'s in the case?'
+            },
+            you_can_win: {
+                text: 'Вы можете выиграть один из данных предметов из кейса "${1}"',
+                en: 'You can win one of those items from the "${1}" case'
+            },
+            create: {
+                name: {
+                    text: 'Название',
+                    en: 'Name'
+                },
+                picture: {
+                    text: 'Выберите изображение кейса',
+                    en: 'Choose case picture'
+                },
+                items: {
+                    text: 'Выберите предметы для кейса',
+                    en: 'Select items'
+                },
+                odds: {
+                    text: 'Укажите шансы на выпадение',
+                    en: 'Choose Roll Chance'
+                },
+                total_odds: {
+                    text: 'Сумма шансов: ${1}',
+                    en: 'Total odds: ${1}'
+                },
+                case_price: {
+                    text: 'Цена кейса: ${1}',
+                    en: 'Case price: ${1}'
+                },
+                calc_price: {
+                    text: 'Посчитать стоимость',
+                    en: 'Calc Price'
+                },
+                
+            },
+            beta_modal: {
+                text: '<p>Данная страница находится в Бета тесте.<br>\
+                    Это значит, что тут могут быть ошибки, созданные кейсы могут быть удалены и изменены без предупреждения.</p>\
+                    <p>После релиза, все кейсы, созданные во время бета теста, могут быть удалены.</p>'
+            }
+        },
         jackpot: {
             page_name: {
                 text: 'Джекпот',

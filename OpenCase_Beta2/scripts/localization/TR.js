@@ -91,9 +91,6 @@ var Translation = {
             }
         },
         cases: {
-            news: {
-                text: 'Gelecek güncellemeyi seçin <a href="https://www.patreon.com/posts/8183213" target="_blank">Buraya Tıkla</a>'
-            },
             page_name: {
                 text: 'Kasa aç',
                 en: 'Open Cases'

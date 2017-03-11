@@ -134,6 +134,12 @@ var Translation = {
                 }
             }
         },
+        custom_cases: {
+            page_name: {
+                text: 'Custom cases',
+                rus: 'Свои кейсы'
+            }
+        },
         open_case: {
             open_case: {
                 rus: 'Открыть кейс',
