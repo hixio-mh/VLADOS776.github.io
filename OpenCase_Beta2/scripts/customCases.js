@@ -404,7 +404,7 @@ var CustomCases = {
             var type = item.specialText() + item.type;
             var name = item.name;
 
-            if (openCase.rareItemsRegExp.test(item.rarity)) {
+            if (CustomCases.rareItemsRegExp.test(item.rarity)) {
                 type = '★ Rare Special Item ★';
                 name = '&nbsp;';
                 img = '../images/Weapons/rare.png';
