@@ -20,8 +20,19 @@ var CustomCases = {
         });
         this.socket.emit('get', {
             type: 'popular',
-            sort: '-opens'
+            sort: '-opens',
+            time: '24h'
         });
+        
+        $('#popular_select').change(function(){
+            var time = $('#popular_select option:selected').val();
+            $('#popular').html('<div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>');
+            CustomCases.socket.emit('get', {
+                type: 'popular',
+                sort: '-opens',
+                time: time
+            });
+        })
         
         this.socket.on('cases', function(casesInfo) {
             var type = casesInfo.type;
