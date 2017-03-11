@@ -59,6 +59,7 @@ var CustomCases = {
             else 
                 $(".openCase").prop("disabled", false);
             
+            $('#case_by').text(caseInfo.author.name);            
             CustomCases.caseId = caseInfo._id;
             CustomCases.a(caseInfo.price * 100);
             
@@ -84,6 +85,9 @@ var CustomCases = {
                     <span class='case-name'>" + XSSreplace(cas.name) + "</span>\
                 </div>";
             $('#recent').prepend(caseElement);
+            if ($('#recent .case').length > 20) {
+                $('#recent .case:nth-child(20)').nextAll('.case').remove();
+            }
         })
         
         CustomCases.socket.on('openCase', function(winItem) {
