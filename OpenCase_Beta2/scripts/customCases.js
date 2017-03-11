@@ -59,7 +59,7 @@ var CustomCases = {
             else 
                 $(".openCase").prop("disabled", false);
             
-            $('#case_by').text(caseInfo.author.name);            
+            $('#case_by').text(XSSreplace(caseInfo.author.name));
             CustomCases.caseId = caseInfo._id;
             CustomCases.a(caseInfo.price * 100);
             
