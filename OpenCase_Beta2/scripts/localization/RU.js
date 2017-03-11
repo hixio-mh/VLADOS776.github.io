@@ -202,6 +202,20 @@ var Translation = {
                 text: 'Популярные',
                 en: 'Popular'
             },
+            popular_time: {
+                24: {
+                    text: '24 часа',
+                    en: '24 hours'
+                },
+                48: {
+                    text: '48 часов',
+                    en: '48 hours'
+                },
+                week: {
+                    text: '7 дней',
+                    en: '7 days'
+                },
+            },
             hide_search: {
                 text: 'Убрать результаты поиска',
                 en: 'Hide search result'
