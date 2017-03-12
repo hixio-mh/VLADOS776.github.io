@@ -117,7 +117,7 @@ var fbProfile = (function (module) {
         }
         firebase.database().ref('users/'+uid+'/private/androidID').once('value').then(function(snapshot) {
             callback(snapshot.val());
-        })        
+        })
     }
     module.setAndroidID = function() {
         if (isAndroid() && module.ifAuth && parseFloat(client.getCurrentAppVersionName()) >= 1.6) {
@@ -145,24 +145,41 @@ var fbProfile = (function (module) {
         })
     }
     module.showProfile = function (uid, callback) {
-        var userInfoRef = firebase.database().ref('users/' + uid + '/public');
-        userInfoRef.once('value').then(function (snapshot) {
-            var userInfo = snapshot.val();
+        var userInfoRef = firebase.database().ref('users/' + uid);
+        userInfoRef.child('public').once('value').then(function (snapshot) {
+            
+            var userInfo = {
+                public: snapshot.val()
+            }
             userInfo.uid = uid;
             return userInfo;
         }).then(function(userInfo) {
-            return firebase.database().ref('users/' + uid + '/moder').once('value').then(function(snapshot) {
-                var info = snapshot.val();
-                userInfo.moder = info || {};
-                return userInfo;
+            return userInfoRef.child('moder').once('value').then(function(data) {
+                userInfo.moder = data.val();
+                return userInfo
             })
         }).then(function(userInfo) {
-            callback(userInfo);
+            userInfoRef.child('auto').once('value').then(function(data) {
+                userInfo.auto = data.val();
+                callback(userInfo);
+                //return userInfo
+            })
         }).catch(function(err) {
             console.log(err);
             callback(null);
         })
         if (isAndroid()) client.sendToAnalytics('Profile', 'Show profile', "User open profile", 'none');
+    }
+    module.profilePublic = function (uid, callback) {
+        var userInfoRef = firebase.database().ref('users/' + uid + '/public');
+        userInfoRef.once('value').then(function (snapshot) {
+            var userInfo = snapshot.val();
+            userInfo.uid = uid;
+            callback(userInfo);
+        }).catch(function(err) {
+            console.log(err);
+            callback(null);
+        })
     }
     module.showRep = function (uid, callback) {
         var userInfoRef = firebase.database().ref('users/' + uid + '/outside/rep');

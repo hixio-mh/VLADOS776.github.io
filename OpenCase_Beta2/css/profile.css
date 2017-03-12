@@ -186,6 +186,34 @@ body {
     color: #d81919;
 }
 
+.awards {
+    padding: 0;
+    text-align: center;
+}
+
+li.award {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+}
+
+.award_1k {
+    background-image: url(../images/awards/1k.png);
+}
+.award_2k {
+    background-image: url(../images/awards/2k.png);
+}
+.award_3k {
+    background-image: url(../images/awards/3k.png);
+}
+.award_4k {
+    background-image: url(../images/awards/4k.png);
+}
+.award_5k {
+    background-image: url(../images/awards/5k.png);
+}
+
 .user_cases > .well {
     text-align: center;
 }

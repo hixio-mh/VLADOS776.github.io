@@ -85,7 +85,7 @@
                     if (typeof banList[bannedUid].chatban == 'undefined') banList[bannedUid].chatban = '';
                     $('.banlist').prepend('<li class="banlist__ban" data-bannedUid="'+bannedUid+'"><div class="ban__user-info"><a href="profile.html?uid='+bannedUid+'"><img src="" class="ban__avatar"></a><span class="ban__nickname"></span></div><div class="ban__ban-info"><span class="ban__chatban">'+banList[bannedUid].chatban+'</span><span class="ban__tradeban">'+banList[bannedUid].tradeban+'</span></div>');
                     
-                    fbProfile.showProfile(bannedUid, function(userInfo) {
+                    fbProfile.profilePublic(bannedUid, function(userInfo) {
                         var $parent = $('li[data-bannedUid="'+userInfo.uid+'"]');
                         $($parent).find('.ban__avatar').attr('src', userInfo.avatar);
                         $($parent).find('.ban__nickname').text(userInfo.nickname);

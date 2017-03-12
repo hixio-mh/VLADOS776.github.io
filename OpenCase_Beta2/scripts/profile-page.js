@@ -32,16 +32,20 @@ $(function () {
             socket.emit('userCases', uid);
             
             socket.on('userCases', function(cases) {
-                var usrCases = '';
-                cases.forEach(function(cas) {
-                    usrCases += "<a href='customCases.html?caseid=" + cas._id + "'><div class='case' data-case-id=" + cas._id + ">\
-                        <img class='case-card' src='../images/Cases/casecard2.png'>\
-                        <img class='case-img' src='../images/Cases/customCases/" + XSSreplace(cas.img) + "'>\
-                        <span class='case-price currency dollar'>" + cas.price + "</span>\
-                        <span class='case-name'>" + XSSreplace(cas.name) + "</span>\
-                    </div></a>";
-                });
-                $('.user_cases .well').html('<div class="casesBlock-scroll">' + usrCases + '</div>')
+                if (cases.length > 0) {
+                    var usrCases = '';
+                    cases.forEach(function(cas) {
+                        usrCases += "<a href='customCases.html?caseid=" + cas._id + "'><div class='case' data-case-id=" + cas._id + ">\
+                            <img class='case-card' src='../images/Cases/casecard2.png'>\
+                            <img class='case-img' src='../images/Cases/customCases/" + XSSreplace(cas.img) + "'>\
+                            <span class='case-price currency dollar'>" + cas.price + "</span>\
+                            <span class='case-name'>" + XSSreplace(cas.name) + "</span>\
+                        </div></a>";
+                    });
+                    $('.user_cases .well').html('<div class="casesBlock-scroll">' + usrCases + '</div>')
+                } else {
+                    $('.user_cases .well').html("This user doesn't created any case.")
+                }
             })
         })
     })
@@ -51,11 +55,11 @@ $(function () {
             userNotFound();
             return false;
         }
-        $(".profile__img").attr('src', userInfo.avatar);
-        $(".other-user-profile-img").attr('src', userInfo.avatar);
-        $(".post__header__img").attr('src', userInfo.avatar);
-        $(".profile__name").text(userInfo.nickname);
-        $(".stats__rank__rank").text(Level.calcLvl(userInfo.points));
+        $(".profile__img").attr('src', userInfo.public.avatar);
+        $(".other-user-profile-img").attr('src', userInfo.public.avatar);
+        $(".post__header__img").attr('src', userInfo.public.avatar);
+        $(".profile__name").text(userInfo.public.nickname);
+        $(".stats__rank__rank").text(Level.calcLvl(userInfo.public.points));
         $('.user_uid').text(uid);
         
         if (uid != firebase.auth().currentUser.uid) {
@@ -73,19 +77,18 @@ $(function () {
                 
             })
         }
-        if (userInfo.bigBG && fbProfile.ifValidImg(userInfo.bigBG)) {
-            //$('.top__bg').attr('style', 'background-image:url('+userInfo.bigBG+'); background-size: cover;');
-            $('.top__bg').css('background-image', 'url(' + userInfo.bigBG + ')');
+        if (userInfo.public.bigBG && fbProfile.ifValidImg(userInfo.public.bigBG)) {
+            $('.top__bg').css('background-image', 'url(' + userInfo.public.bigBG + ')');
         }
-        else if (userInfo.colorBG) {
-            $('.top__bg').attr('style', 'background:' + userInfo.colorBG);
+        else if (userInfo.public.colorBG) {
+            $('.top__bg').attr('style', 'background:' + userInfo.public.colorBG);
         }
         
         // Меняем профиль в зависимости от группы пользователя
         if (userInfo.moder.group)
             $('#container').addClass(userInfo.moder.group);
         
-        if (typeof userInfo.betaTrade != "undefined" && userInfo.betaTrade == true) {
+        if (typeof userInfo.public.betaTrade != "undefined" && userInfo.public.betaTrade == true) {
             firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/public/betaTrade').once('value', function (snapshot) {
                 try {
                     if (snapshot.val() == true) $(".top__trade").removeClass("disabled");
@@ -93,27 +96,38 @@ $(function () {
                 catch (e) {}
             })
         }
-        firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/moder').once('value').then(function (snapshot) {
-            var data = snapshot.val();
-            if (data == null) return;
-            if (data.group.match(/(moder|admin)/)) {
-                $(".moder-menu").show();
-                firebase.database().ref('users/' + uid + '/moder').once('value').then(function (snapshot) {
-                    var data = snapshot.val();
-                    if (data == null) return;
-                    if (typeof data.tradeban != 'undefined') {
-                        $('#block-trade-reason').html(data.tradeban.reason + (data.tradeban.from ? '<br>' + banLength(data.tradeban.from, data.tradeban.to) : ''));
-                    }
-                    if (typeof data.chatban != 'undefined') {
-                        $('#block-chat-reason').html(data.chatban.reason + (data.chatban.from ?'<br>' + banLength(data.chatban.from, data.chatban.to) : '' ));
-                    }
-                }).then(function() {
-                    firebase.database().ref('users/' + uid + '/private').once('value').then(function(snapshot) {
-                        window.user_androidID = snapshot.val().androidID ? snapshot.val().androidID : false;
-                    })
-                })
+        
+        if (userInfo.auto !== null) {
+            if (userInfo.auto.awards !== null) {
+                var awards = '';
+                for (var key in userInfo.auto.awards) {
+                    awards += '<li data-toggle="tooltip" title="' + userInfo.auto.awards[key].case_name + '" class="award award_' + userInfo.auto.awards[key].award + '">';
+                }
+                $('.awards').show();
+                $('.awards').html(awards);
+                $('[data-toggle="tooltip"]').tooltip(); 
             }
-        })
+        }
+        
+        if (userInfo.moder !== null) {
+                if (userInfo.moder.group.match(/(moder|admin)/)) {
+                    $(".moder-menu").show();
+                    firebase.database().ref('users/' + uid + '/moder').once('value').then(function (snapshot) {
+                        var data = snapshot.val();
+                        if (data == null) return;
+                        if (typeof data.tradeban != 'undefined') {
+                            $('#block-trade-reason').html(data.tradeban.reason + (data.tradeban.from ? '<br>' + banLength(data.tradeban.from, data.tradeban.to) : ''));
+                        }
+                        if (typeof data.chatban != 'undefined') {
+                            $('#block-chat-reason').html(data.chatban.reason + (data.chatban.from ?'<br>' + banLength(data.chatban.from, data.chatban.to) : '' ));
+                        }
+                    }).then(function() {
+                        firebase.database().ref('users/' + uid + '/private').once('value').then(function(snapshot) {
+                            window.user_androidID = snapshot.val().androidID ? snapshot.val().androidID : false;
+                        })
+                    })
+                }
+            }
     });
     fbProfile.repVal(uid, function (rep, userRep) {
         $(".stats__rate__count").text((rep > 99999 ? '∞' : rep));
@@ -385,7 +399,7 @@ $(function () {
             for (var i = 0; i < trades.length; i++) {
                 var tradesList = JSON.stringify(trades[i].trades).replace(/'/g, "\\'");
                 $('.my-trades-list').prepend("<li class='my-trades-list__tradeWith' data-uid='" + trades[i].tradeWith.uid + "' data-trades='" + tradesList + "'><div class='tradeWith__img-container'><img src='../images/ava/0.jpg'></div>" + "<div class='tradeWith__text-container'><span class='tradeWith__nickname'>Loading...</span><span class='tradeWith__tradeCount'>" + Localization.getString('profile.exchange.exchange_offers') + trades[i].trades.length + "</span></div><div class='tradeWith__controls'><i aria-hidden='true' class='fa fa-times delete-trade'></i></div></li>");
-                fbProfile.showProfile(trades[i].tradeWith.uid, function (plInfo) {
+                fbProfile.profilePublic(trades[i].tradeWith.uid, function (plInfo) {
                     var $parent = $('.my-trades-list__tradeWith[data-uid="' + plInfo.uid + '"]');
                     $($parent.find('img')[0]).attr('src', plInfo.avatar);
                     $($parent.find('.tradeWith__nickname')[0]).text(plInfo.nickname);
