@@ -186,6 +186,10 @@ body {
     color: #d81919;
 }
 
+.user_cases > .well {
+    text-align: center;
+}
+
 .posts {
     color: #000;
     padding: 10px;

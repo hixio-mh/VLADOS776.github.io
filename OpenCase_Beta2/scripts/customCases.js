@@ -24,6 +24,14 @@ var CustomCases = {
             time: '24h'
         });
         
+        var param = parseURLParams(window.location.href);
+        if (typeof param !== "undefined") {
+            var caseId = param.caseid[0];
+            if (typeof caseId !== 'undefined') {
+                CustomCases.socket.emit('caseInfo', caseId);
+            }
+        }
+        
         $('#popular_select').change(function(){
             var time = $('#popular_select option:selected').val();
             $('#popular').html('<div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>');
@@ -71,6 +79,8 @@ var CustomCases = {
                 $(".openCase").prop("disabled", false);
             
             $('#case_by').text(XSSreplace(caseInfo.author.name));
+            $('#caseName').text(XSSreplace(caseInfo.name));
+            
             CustomCases.caseId = caseInfo._id;
             CustomCases.a(caseInfo.price * 100);
             
@@ -138,8 +148,6 @@ var CustomCases = {
         $(document).on('click', '.case', function() {
             var caseId = $(this).data('case-id');
             $('.win').hide();
-            
-            $('#caseName').text($(this).find('.case-name').text());
             
             CustomCases.socket.emit('caseInfo', caseId);
         })

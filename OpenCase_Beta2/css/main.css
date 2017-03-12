@@ -74,6 +74,11 @@ body {
   -webkit-transform: translate(270px, -10px);
   transform: translate(270px, -10px); }
 
+.casesBlock-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap; }
+
 .cases {
   text-align: center;
   padding-left: 5px; }
@@ -160,7 +165,6 @@ body {
   position: absolute;
   width: 140px;
   top: 33px;
-  z-index: -1;
   left: -3px;
   height: 65px; }
 

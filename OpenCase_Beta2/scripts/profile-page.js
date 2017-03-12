@@ -21,6 +21,31 @@ $(function () {
         }
     })
     
+    $(document).on('click', '#load_user_cases', function() {
+        $(this).addClass('m-progress');
+        
+        $.getScript("../scripts/socket.io.js", function(data, status) {
+            console.log('socket.io loading status', status);
+
+            var socket = io('https://kvmde40-10035.fornex.org/', {path: '/customcases/socket.io'});
+            
+            socket.emit('userCases', uid);
+            
+            socket.on('userCases', function(cases) {
+                var usrCases = '';
+                cases.forEach(function(cas) {
+                    usrCases += "<a href='customCases.html?caseid=" + cas._id + "'><div class='case' data-case-id=" + cas._id + ">\
+                        <img class='case-card' src='../images/Cases/casecard2.png'>\
+                        <img class='case-img' src='../images/Cases/customCases/" + XSSreplace(cas.img) + "'>\
+                        <span class='case-price currency dollar'>" + cas.price + "</span>\
+                        <span class='case-name'>" + XSSreplace(cas.name) + "</span>\
+                    </div></a>";
+                });
+                $('.user_cases .well').html('<div class="casesBlock-scroll">' + usrCases + '</div>')
+            })
+        })
+    })
+    
     fbProfile.showProfile(uid, function (userInfo) {
         if (userInfo == null) {
             userNotFound();

@@ -4933,6 +4933,9 @@ var Prices = {
     }
   },
   "120": {
+    "item_id": 120,
+    "type": "R8 Revolver",
+    "skinName": "Amber Fade",
     "prices": {
       "default": {
         "1": {

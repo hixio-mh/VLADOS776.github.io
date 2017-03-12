@@ -822,6 +822,10 @@ var Translation = {
                     en: 'Reputation'
                 }
             },
+            user_cases: {
+                text: 'Показать кейсы пользователя',
+                en: 'Show user cases'
+            },
             text_field: {
                 text: 'Что нового?',
                 en: 'Sup?'

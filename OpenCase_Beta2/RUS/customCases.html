@@ -39,11 +39,6 @@
             right: 5px;
             z-index: 31;
         }
-        .casesBlock {
-            overflow-x: auto;
-            overflow-y: hidden;
-            white-space: nowrap;
-        }
         
         #openCaseWindow {
             padding: 20px 0;
@@ -166,7 +161,7 @@
         <div class="cases" id='cases'>
             <div id='cases_groups'>
                 <h1 data-loc="recent">Recent</h1>
-                <div id="recent" class="casesBlock">
+                <div id="recent" class="casesBlock-scroll">
                     <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
                 </div>
                 
@@ -177,7 +172,7 @@
                         <option value="week" data-loc='week'>7 days</option>
                     </select>
                 </h1>
-                <div id="popular" class="casesBlock">
+                <div id="popular" class="casesBlock-scroll">
                     <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
                 </div>
             </div>
@@ -185,7 +180,7 @@
             <div id='search_result' style='display: none;'>
                <button class='btn btn-default btn-sm' id='hide_search_result' data-loc='hide_search'>Hide search result</button>
                 <h1 data-loc='search'>Search</h1>
-                <div id="search_cases" class="casesBlock">
+                <div id="search_cases" class="casesBlock-scroll">
                     <div class="cssload-container"><div class="cssload-speeding-wheel"></div></div>
                 </div>
             </div>
