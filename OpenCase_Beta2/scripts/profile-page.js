@@ -85,7 +85,7 @@ $(function () {
         }
         
         // Меняем профиль в зависимости от группы пользователя
-        if (userInfo.moder.group)
+        if (userInfo.moder && userInfo.moder.group)
             $('#container').addClass(userInfo.moder.group);
         
         if (typeof userInfo.public.betaTrade != "undefined" && userInfo.public.betaTrade == true) {
