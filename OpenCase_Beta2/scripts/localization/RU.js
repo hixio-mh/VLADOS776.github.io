@@ -102,7 +102,7 @@ var Translation = {
         },
         cases: {
             news: {
-                text: '<a href="customCases.html">Кейсы игроков!</a> Открытый бета тест.'
+                text: "<p><a href='#' data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Награды в профиле</a></p>"
             },
             page_name: {
                 text: 'Открыть кейсы',
@@ -148,6 +148,14 @@ var Translation = {
                 lvl_up: {
                     text: 'Как повысить уровень?',
                     en: 'How to level up?'
+                }
+            },
+            awards_modal: {
+                head: {
+                    text: 'Награды'
+                },
+                body: {
+                    text: "<p>Теперь в профиле появились награды!</p><p>Правда, пока что они даются только за созданные кейсы. Но в планах награды для краша/дабла/джекпота.</p> <p>Список доступных наград на данный момент:</p><ul class='list-unstyled'><li><img src='../images/awards/1k.png' width='50px'> — 1000+ открытий созданного кейса</li><li><img src='../images/awards/2k.png' width='50px'> — 2000+ открытий созданного кейса</li><li><img src='../images/awards/3k.png' width='50px'> — 3000+ открытий созданного кейса</li><li><img src='../images/awards/4k.png' width='50px'> — 4000+ открытий созданного кейса</li><li><img src='../images/awards/5k.png' width='50px'> — 5000+ открытий созданного кейса</li></ul><p>Изображения наград - временные. Потом они будут перерисованы.</p>"
                 }
             }
         },
