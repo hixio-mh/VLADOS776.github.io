@@ -205,6 +205,7 @@
                 </div>
             </div>
             <button class="openCase btn btn-success" data-loc="open_case">Open Case</button>
+            <button class="btn btn-primary" data-loc='boost_to_popular' data-toggle='modal' data-target='#modal-boost' style='display: none;' id='boost'>Boost to popular</button>
             <div><span id="opened-text" data-loc="opened">Opened:</span> <span id="opened">0</span></div>
             <div><span data-loc='case_by'>Case by</span> <span id='case_by'>Undefined</span></div>
             <button id='what-i-can-win-Button' class='btn btn-info btn-sm' data-loc="what_in_case">What's in the case?</button>
@@ -274,11 +275,28 @@
             </div>
         </div>
 
+        <div id="modal-boost" class="modal fade" role="dialog" data-loc-group='special_popup'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">Boost</div>
+                    <div class="modal-body" data-loc='boost_modal'>
+                        <h5>How it works?</h5>
+                        <p>You watch the ad then your case will be in first place in "Popular 24h" for 10 minutes.</p>
+                        <p>If the "Popular" already have a boosted case, your case will get in line.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" id='boost_case' data-dismiss='modal'>Boost</button>
+                        <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <script>
         Weapon.prototype.toLi = function() {
             return '<li class="weapon" data-item_id=' + this.item_id + '>\
-            <img src="' + this.getImgUrl() + '" />\
+            <img data-src="' + this.getImgUrl() + '" />\
             <div class="weaponInfo ' + this.rarity + '"><span class="type">' + this.type + '<br>' + this.name + '</span></div>\
             </li>'
         }
