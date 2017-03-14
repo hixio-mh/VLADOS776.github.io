@@ -10,6 +10,23 @@ var CustomCases = {
     },
     itemsInCase: [],
     init: function() {
+        window.addEventListener('popstate', function(e) {
+            var action = e.state;
+            if (action.page == 'case') {
+                CustomCases.socket.emit('caseInfo', action.id);
+            } else if (action.page === 'cases') {
+                $('#cases').show();
+                $('#openCaseWindow').hide();
+                $('.topPanel').show();
+                $('#createCaseWindow').hide();
+            } else if (action.page === 'create') {
+                $('#createCaseWindow').show();
+                $('#cases').hide();
+                $('#openCaseWindow').hide();
+                $('.topPanel').hide();
+            }
+        }, false);
+        
         this.socket.on('connect', function() {
             console.log('connected to the server');
         })
@@ -26,10 +43,13 @@ var CustomCases = {
         
         var param = parseURLParams(window.location.href);
         if (typeof param !== "undefined") {
-            var caseId = param.caseid[0];
+            var caseId = param.caseid ? param.caseid[0] : undefined;
             if (typeof caseId !== 'undefined') {
                 CustomCases.socket.emit('caseInfo', caseId);
+                history.replaceState({page: 'case', id: caseId}, "Case", '');
             }
+        } else {
+            history.replaceState({page: 'cases'}, "Cases", 'customCases.html');
         }
         
         $('#popular_select').change(function(){
@@ -78,7 +98,11 @@ var CustomCases = {
             else 
                 $(".openCase").prop("disabled", false);
             
-            $('#case_by').text(XSSreplace(caseInfo.author.name));
+            if (caseInfo.author.uid == 'Not auth') {
+                $('#case_by').text(XSSreplace(caseInfo.author.name));
+            } else {
+                $('#case_by').html('<a href="profile.html?uid=' + caseInfo.author.uid + '" >' + XSSreplace(caseInfo.author.name) + '</a>');
+            }
             $('#caseName').text(XSSreplace(caseInfo.name));
             
             try {
@@ -197,6 +221,7 @@ var CustomCases = {
             $('#what-i-can-win-Button').show();
             
             CustomCases.socket.emit('caseInfo', caseId);
+            history.pushState({page: 'case', id: caseId}, "Open Case", 'customCases.html?caseid='+caseId);
         })
         
         $(document).on('click', '#what-i-can-win-Button', function() {
@@ -207,10 +232,11 @@ var CustomCases = {
         })
         
         $(document).on('click', '.closeCase', function() {
+            $('#createCaseWindow').hide();
             $('#cases').show();
             $('#openCaseWindow').hide();
-            $('#createCaseWindow').hide();
             $('.topPanel').show();
+            history.pushState({page: 'cases'}, "Cases", 'customCases.html');
         })
         
         $(document).on('click', '.openCase', function() {
@@ -223,6 +249,7 @@ var CustomCases = {
             $('#cases').hide();
             $('#openCaseWindow').hide();
             $('.topPanel').hide();
+            history.pushState({page: 'create'}, "Create Case", '');
         })
         
         $(document).on('click', '#weaponsList .weapon', function() {
