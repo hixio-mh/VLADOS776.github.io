@@ -137,12 +137,20 @@ var CustomCases = {
                 }, {
                     type: 'danger'
                 })
+                LOG.log({
+                    action: 'Failed Boost',
+                    case_id: CustomCases.caseId
+                })
             } else if (status.status == 'success') {
                 $.notify({
                     title: '<strong>Boost</strong>',
                     message: 'Success! Your case is ' + status.count + ' in line.'
                 }, {
                     type: 'success'
+                })
+                LOG.log({
+                    action: 'Success Boost',
+                    case_id: CustomCases.caseId
                 })
             }
         })
@@ -309,6 +317,10 @@ var CustomCases = {
         
         $(document).on('click', '#boost_case', function() {
             CustomCases.socket.emit('boostCase', CustomCases.caseId);
+            LOG.log({
+                action: 'Boost case',
+                case_id: CustomCases.caseId
+            })
         })
         
         $(document).on('click', '#resetAll', function() {
