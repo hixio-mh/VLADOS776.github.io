@@ -109,25 +109,25 @@ $(function () {
             }
         }
         
-        if (userInfo.moder !== null) {
-                if (userInfo.moder.group.match(/(moder|admin)/)) {
-                    $(".moder-menu").show();
-                    firebase.database().ref('users/' + uid + '/moder').once('value').then(function (snapshot) {
-                        var data = snapshot.val();
-                        if (data == null) return;
-                        if (typeof data.tradeban != 'undefined') {
-                            $('#block-trade-reason').html(data.tradeban.reason + (data.tradeban.from ? '<br>' + banLength(data.tradeban.from, data.tradeban.to) : ''));
-                        }
-                        if (typeof data.chatban != 'undefined') {
-                            $('#block-chat-reason').html(data.chatban.reason + (data.chatban.from ?'<br>' + banLength(data.chatban.from, data.chatban.to) : '' ));
-                        }
-                    }).then(function() {
-                        firebase.database().ref('users/' + uid + '/private').once('value').then(function(snapshot) {
-                            window.user_androidID = snapshot.val().androidID ? snapshot.val().androidID : false;
-                        })
+        firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/moder').once('value').then(function (snapshot) {
+            if (snapshot.val().group.match(/(moder|admin)/)) {
+                $(".moder-menu").show();
+                firebase.database().ref('users/' + uid + '/moder').once('value').then(function (snapshot) {
+                    var data = snapshot.val();
+                    if (data == null) return;
+                    if (typeof data.tradeban != 'undefined') {
+                        $('#block-trade-reason').html(data.tradeban.reason + (data.tradeban.from ? '<br>' + banLength(data.tradeban.from, data.tradeban.to) : ''));
+                    }
+                    if (typeof data.chatban != 'undefined') {
+                        $('#block-chat-reason').html(data.chatban.reason + (data.chatban.from ?'<br>' + banLength(data.chatban.from, data.chatban.to) : '' ));
+                    }
+                }).then(function() {
+                    firebase.database().ref('users/' + uid + '/private').once('value').then(function(snapshot) {
+                        window.user_androidID = snapshot.val().androidID ? snapshot.val().androidID : false;
                     })
-                }
+                })
             }
+        });
     });
     fbProfile.repVal(uid, function (rep, userRep) {
         $(".stats__rate__count").text((rep > 99999 ? '∞' : rep));
