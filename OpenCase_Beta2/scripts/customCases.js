@@ -47,8 +47,8 @@ var CustomCases = {
             var cases = casesInfo.cases;
             var caseElement = "";
             for (var i = 0; i < cases.length; i++) {
-                caseElement += "<div class='case " + (Player.doubleBalance < cases[i].price * 100 ? 'disabled' : '') + "' data-case-id=" + cases[i]._id + "" + (cases[i].boosted ? ' data-boosted="true"' : '') + ">\
-                    <img class='case-card' src='../images/Cases/casecard2.png'>\
+                caseElement += "<div class='case" + (Player.doubleBalance < cases[i].price * 100 ? ' disabled' : '') + (cases[i].boosted ? ' boosted' : '') + "' data-case-id=" + cases[i]._id + ">\
+                    <img class='case-card' src='../images/Cases/" + (cases[i].boosted ? 'casecard_boosted.png' : 'casecard2.png') + "'>\
                     <img class='case-img' src='../images/Cases/customCases/" + XSSreplace(cases[i].img) + "'>\
                     <span class='case-price currency dollar'>" + cases[i].price + "</span>\
                     <span class='case-name'>" + XSSreplace(cases[i].name) + "</span>\
