@@ -74,6 +74,13 @@ $(function () {
         <li class="pushy-link"><a href="about.html"><span class="icon icon-info"></span><span data-loc="about">About</span></a></li> \
         <li class="pushy-link"><a href="apps.html"><span class="icon icon-star-full"></span><span data-loc="other_apps">Other Apps</span></a></li> \
         </ul>';
+    
+    if (!isAndroid()) {
+        menuHTML += '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>\
+                    <!-- Open Case menu block -->\
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-9624392621060703" data-ad-slot="6439402276"></ins>\
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>'
+    }
     $(menu).html(menuHTML);
     $(document.body).addClass("menuClose");
     $(document).on('click', '.leftMenu ul a', function () {
