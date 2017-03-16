@@ -102,7 +102,7 @@ var Translation = {
         },
         cases: {
             news: {
-                text: "<a href='#' data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Награды в профиле</a><p>Кейс Spectrum! Новые ножи будт позже</p>"
+                text: "<a href='#' data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Награды в профиле</a><p>Кейс Spectrum! Новые ножи будут позже</p>"
             },
             page_name: {
                 text: 'Открыть кейсы',
