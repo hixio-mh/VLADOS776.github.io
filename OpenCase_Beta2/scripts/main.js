@@ -46,6 +46,20 @@ $(function () {
                 }
             })
        }
+            // Detect adblock
+        if (!isAndroid()) {
+            $.ajax('../scripts/ads.js?file=showad.js')
+            .fail(function() {
+                console.log('Adblock detected');
+                $(document).trigger('adblock_detected');
+                $.notify({
+                    message: 'Please, disable adblock.'
+                }, {
+                    type: 'danger'
+                })
+            })
+        }
+        
         /*if (((Level.calcLvl() < 7 && Player.doubleBalance > 100000000) || Player.doubleBalance > 70000000000) && !$('.permanent-ban').length) {
             $(document.body).append("<div class='permanent-ban'><h1>BAN</h1><span>Hacker</span><i>Loading...</i></div>");
             if (isAndroid()) {

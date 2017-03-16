@@ -80,7 +80,8 @@ $(function () {
                     <!-- Open Case menu block -->\
                     <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-9624392621060703" data-ad-slot="6439402276"></ins>\
                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>'
-    }
+    }        
+    
     $(menu).html(menuHTML);
     $(document.body).addClass("menuClose");
     $(document).on('click', '.leftMenu ul a', function () {

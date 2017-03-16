@@ -39731,5 +39731,660 @@ var Prices = {
       "stattrak": {},
       "souvenir": {}
     }
+  },
+  "798": {
+    "item_id": 798,
+    "type": "P250",
+    "skinName": "Ripple",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 3.42
+        },
+        "1": {
+          "market": 2.43
+        },
+        "2": {
+          "market": 2.54
+        },
+        "3": {
+          "market": 4.27
+        },
+        "4": {
+          "market": 11.50
+        }
+      },
+      "stattrak": {
+          "0": {
+          "market": 1.7
+        },
+        "1": {
+          "market":1.5
+        },
+        "2": {
+          "market": 1.15
+        },
+        "3": {
+          "market": 1.5
+        },
+        "4": {
+          "market": 1.57
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "799": {
+    "item_id": 799,
+    "type": "Sawed-Off",
+    "skinName": "Zander",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 0.69
+        },
+        "1": {
+          "market": 0.98
+        },
+        "2": {
+          "market": 0.7
+        },
+        "3": {
+          "market": 1.7
+        },
+        "4": {
+          "market": 5.75
+        }
+      },
+      "stattrak": {
+          "0": {
+          "market": 1.24
+        },
+        "1": {
+          "market": 11
+        },
+        "2": {
+          "market": 2.23
+        },
+        "3": {
+          "market": 5
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "799": {
+    "item_id": 799,
+    "type": "Sawed-Off",
+    "skinName": "Zander",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 0.69
+        },
+        "1": {
+          "market": 0.98
+        },
+        "2": {
+          "market": 0.7
+        },
+        "3": {
+          "market": 1.7
+        },
+        "4": {
+          "market": 5.75
+        }
+      },
+      "stattrak": {
+          "0": {
+          "market": 1.24
+        },
+        "1": {
+          "market": 11
+        },
+        "2": {
+          "market": 2.23
+        },
+        "3": {
+          "market": 5
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "800": {
+    "item_id": 800,
+    "type": "MP7",
+    "skinName": "Akoben",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 0.96
+        },
+        "1": {
+          "market": 2.87
+        },
+        "2": {
+          "market": 0.88
+        },
+        "3": {
+          "market": 1.18
+        },
+        "4": {
+          "market": 2.2
+        }
+      },
+      "stattrak": {
+          "0": {
+          "market": 3
+        },
+        "1": {
+          "market": 6.99
+        },
+        "2": {
+          "market": 2.5
+        },
+        "3": {
+          "market": 3.41
+        },
+        "4": {
+          "market": 12
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "801": {
+    "item_id": 801,
+    "type": "PP-Bizon",
+    "skinName": "Jungle Slipstream",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 1.5
+        },
+        "1": {
+          "market": 12.11
+        },
+        "2": {
+          "market": 1.23
+        },
+        "3": {
+          "market": 1.01
+        },
+        "4": {
+          "market": 1
+        }
+      },
+      "stattrak": {
+          "0": {
+          "market": 0.5
+        },
+        "1": {
+          "market": 9.2
+        },
+        "2": {
+          "market": 3.86
+        },
+        "3": {
+          "market": 6.36
+        },
+        "4": {
+          "market": 5
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "802": {
+    "item_id": 802,
+    "type": "SCAR-20",
+    "skinName": "Blueprint",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 1.01
+        },
+        "1": {
+          "market": 1.74
+        },
+        "2": {
+          "market": 1
+        },
+        "3": {
+          "market": 1
+        },
+        "4": {
+          "market": 4
+        }
+      },
+      "stattrak": {
+          "0": {
+          "market": 2.87
+        },
+        "1": {
+          "market": 35
+        },
+        "2": {
+          "market": 3
+        },
+        "3": {
+          "market": 3.75
+        },
+        "4": {
+          "market": 29.74
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "803": {
+    "item_id": 803,
+    "type": "Five-SeveN",
+    "skinName": "Capillary",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 1.79
+        },
+        "1": {
+          "market": 2.99
+        },
+        "2": {
+          "market": 2.33
+        },
+        "3": {
+          "market": 4.5
+        },
+        "4": {
+          "market": 8.02
+        }
+      },
+      "stattrak": {
+          "0": {
+          "market": 8
+        },
+        "2": {
+          "market": 18
+        },
+        "3": {
+          "market": 14.85
+        },
+        "4": {
+          "market": 89.89
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "804": {
+    "item_id": 804,
+    "type": "Desert Eagle",
+    "skinName": "Oxide Blaze",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 6.1
+        },
+        "1": {
+          "market": 4
+        },
+        "2": {
+          "market": 3.87
+        },
+        "3": {
+          "market": 9.2
+        },
+        "4": {
+          "market": 11.5
+        }
+      },
+      "stattrak": {
+          "0": {
+          "market": 28.75
+        },
+        "1": {
+          "market": 45
+        },
+          "2": {
+          "market": 11
+        },
+        "3": {
+          "market": 19.5
+        },
+        "4": {
+          "market": 33
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "805": {
+    "item_id": 805,
+    "type": "MAC-10",
+    "skinName": "Last Dive",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 9.93
+        },
+        "1": {
+          "market": 10
+        },
+        "2": {
+          "market": 5.25
+        },
+        "3": {
+          "market": 6
+        },
+        "4": {
+          "market": 7.51
+        }
+      },
+      "stattrak": {
+          "2": {
+          "market": 11.99
+        },
+        "3": {
+          "market": 29.74
+        },
+        "4": {
+          "market": 19
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "806": {
+    "item_id": 806,
+    "type": "UMP-45",
+    "skinName": "Scaffold",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 5.17
+        },
+        "1": {
+          "market": 5.2
+        },
+        "2": {
+          "market": 7.49
+        },
+        "3": {
+          "market": 8.48
+        },
+        "4": {
+          "market": 22.01
+        }
+      },
+      "stattrak": {
+        "1": {
+          "market": 18.49
+        },
+        "2": {
+          "market": 19.97
+        },
+        "3": {
+          "market": 28.75
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "807": {
+    "item_id": 807,
+    "type": "XM1014",
+    "skinName": "Seasons",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 8.19
+        },
+        "1": {
+          "market": 13
+        },
+        "2": {
+          "market": 6.6
+        },
+        "3": {
+          "market": 7.25
+        },
+        "4": {
+          "market": 6.38
+        }
+      },
+      "stattrak": {
+        "0": {
+          "market": 26.26
+        },
+        "2": {
+          "market": 12
+        },
+        "3": {
+          "market": 25
+        },
+        "4": {
+          "market": 53.05
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "808": {
+    "item_id": 808,
+    "type": "M249",
+    "skinName": "Emerald Poison Dart",
+    "prices": {
+      "default": {
+        "1": {
+          "market": 46
+        },
+        "2": {
+          "market": 4.1
+        },
+        "3": {
+          "market": 7.99
+        },
+        "4": {
+          "market": 6.21
+        }
+      },
+      "stattrak": {
+        "2": {
+          "market": 5
+        },
+        "3": {
+          "market": 24.35
+        },
+        "4": {
+          "market": 39.99
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "809": {
+    "item_id": 809,
+    "type": "Galil AR",
+    "skinName": "Crimson Tsunami",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 3.99
+        },
+        "1": {
+          "market": 10
+        },
+        "2": {
+          "market": 4.02
+        },
+        "3": {
+          "market": 3.45
+        },
+        "4": {
+          "market": 6.96
+        }
+      },
+      "stattrak": {
+        "0": {
+          "market": 28.75
+        },
+        "2": {
+          "market": 10.26
+        },
+        "3": {
+          "market": 256.53
+        },
+        "4": {
+          "market": 149
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "810": {
+    "item_id": 810,
+    "type": "CZ75-Auto",
+    "skinName": "Xiangliu",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 61
+        },
+        "1": {
+          "market": 25
+        },
+        "2": {
+          "market": 13.8
+        },
+        "3": {
+          "market": 17.25
+        },
+        "4": {
+          "market": 23
+        }
+      },
+      "stattrak": {
+        "0": {
+          "market": 225
+        },
+        "2": {
+          "market": 39.99
+        },
+        "4": {
+          "market": 50
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "811": {
+    "item_id": 811,
+    "type": "AWP",
+    "skinName": "Fever Dream",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 34
+        },
+        "1": {
+          "market": 43.99
+        },
+        "2": {
+          "market": 50
+        },
+        "3": {
+          "market": 66.85
+        },
+        "4": {
+          "market": 85.99
+        }
+      },
+      "stattrak": {
+        "2": {
+          "market": 150
+        },
+        "4": {
+          "market": 400
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "812": {
+    "item_id": 812,
+    "type": "M4A1-S",
+    "skinName": "Decimator",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 35.35
+        },
+        "1": {
+          "market": 80
+        },
+        "2": {
+          "market": 47
+        },
+        "3": {
+          "market": 70
+        },
+        "4": {
+          "market": 159.32
+        }
+      },
+      "stattrak": {
+        "1": {
+          "market": 396.75
+        },
+        "3": {
+          "market": 260.26
+        }
+      },
+      "souvenir": {}
+    }
+  },
+  "813": {
+    "item_id": 813,
+    "type": "AK-47",
+    "skinName": "Bloodsport",
+    "prices": {
+      "default": {
+        "2": {
+          "market": 115.86
+        },
+        "3": {
+          "market": 210
+        }
+      },
+      "stattrak": {},
+      "souvenir": {}
+    }
+  },
+  "814": {
+    "item_id": 814,
+    "type": "USP-S",
+    "skinName": "Neo-Noir",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 39.99
+        },
+        "1": {
+          "market": 161
+        },
+        "2": {
+          "market": 152
+        },
+        "3": {
+          "market": 177.1
+        },
+        "4": {
+          "market": 363.42
+        }
+      },
+      "stattrak": {},
+      "souvenir": {}
+    }
   }
 }

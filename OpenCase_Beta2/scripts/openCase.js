@@ -10,7 +10,7 @@ var openCase = {
     items: [],
     caseInfo: {},
     special: false,
-    isFree: function() {
+    isFree: function () {
         var freeCase = parseInt(getStatistic('free-case-opening', -1));
         
         return this.caseId === freeCase;
@@ -98,7 +98,7 @@ var openCase = {
                 $(".win").addClass("sold-out big");
                 Sound("buy");
                 if (isAndroid()) {
-                    client.sendToAnalytics("Open case", "Selling weapon", "Player has sold weapon for  double points", doublePoints + " double points");
+                    client.sendToAnalytics("Open case", "Selling weapon", "Player has sold weapon for double points", doublePoints + " double points");
                 }
                 
                 if (Player.doubleBalance > openCase.casePrice() && !openCase.special) {
