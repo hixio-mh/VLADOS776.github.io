@@ -179,6 +179,15 @@ var CustomCases = {
             }
         })
         
+        CustomCases.socket.on('forceDisconnect', function(reason) {
+            $.notify({
+                title: '<strong>Disconnect</strong>',
+                message: reason
+            }, {
+                type: 'danger'
+            })
+        })
+        
         CustomCases.socket.on('openCase', function(winItem) {
             CustomCases.win = new Weapon(winItem.win);
             CustomCases.startRoll(CustomCases.win);
@@ -236,6 +245,7 @@ var CustomCases = {
             $('#cases').show();
             $('#openCaseWindow').hide();
             $('.topPanel').show();
+            CustomCases.caseOpening = false;
             history.pushState({page: 'cases'}, "Cases", 'customCases.html');
         })
         
