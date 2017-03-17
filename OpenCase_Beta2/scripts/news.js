@@ -551,4 +551,44 @@ var news = [{
         "RU": " - [Новое] Перевод на турецкий",
         "EN": "- [New] Turkish translation (by Mirac)"
     }
+}, {
+    "day": 28,
+    "month": 2,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Перевод на турецкий",
+        "EN": "- [New] Turkish translation (by Mirac)"
+    }
+}, {
+    "day": 11,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Кейсы игроков - открытый бета тест",
+        "EN": "- [New] Custom cases - Open beta test"
+    }
+}, {
+    "day": 12,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Кейсы игрока в профиле<br> - [Новое] Награды в профиле",
+        "EN": "- [New] User cases in profile<br> - [New] Awards in the profile"
+    }
+}, {
+    "day": 16,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Кейс Spectrum!",
+        "EN": "- [New] Spectrum Case!"
+    }
+}, {
+    "day": 17,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Обновлены цены на предметы.",
+        "EN": "- [New] The prices database was updated"
+    }
 }, ];
