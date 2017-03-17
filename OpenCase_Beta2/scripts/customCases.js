@@ -245,6 +245,13 @@ var CustomCases = {
             $('#cases').show();
             $('#openCaseWindow').hide();
             $('.topPanel').show();
+            
+            $('.casesCarusel').empty();
+            $('.casesCarusel').css({
+                'transition': '',
+                'margin-left': '0px'
+            })
+            
             CustomCases.caseOpening = false;
             history.pushState({page: 'cases'}, "Cases", 'customCases.html');
         })
