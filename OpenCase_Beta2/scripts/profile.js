@@ -120,7 +120,7 @@ var fbProfile = (function (module) {
         })
     }
     module.setAndroidID = function() {
-        if (isAndroid() && module.ifAuth && parseFloat(client.getCurrentAppVersionName()) >= 1.6) {
+        if (isAndroid() && module.ifAuth) {
             firebase.database().ref('users/'+currUid()+'/private/androidID').set(client.getAndroidID());
         }
     }

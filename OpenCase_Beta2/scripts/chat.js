@@ -36,8 +36,8 @@ $(function () {
     var goToChat = false;
     
     //User location
-    $.get("https://ipinfo.io", function(response) {
-        Player.country = response.country.toLowerCase();
+    $.get("https://freegeoip.net/json/", function(response) {
+        Player.country = response.country_code.toLowerCase();
     }, "jsonp");
     
     if (/chat-\w{2}$/.test(history.state)) {

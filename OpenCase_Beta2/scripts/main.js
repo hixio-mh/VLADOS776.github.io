@@ -160,7 +160,7 @@ window.onerror = function (msg, url, line, col, error) {
     } catch (e) {}
 };
 
-if (!isAndroid() || (isAndroid() && parseFloat(client.getCurrentAppVersionName()) < 1.3)) {
+if (!isAndroid()) {
     var openSound = new Audio();
     openSound.src = "../sound/open.wav";
     openSound.volume = 1;
@@ -255,7 +255,7 @@ function Sound(soundGet, action, priority, repeat, speed) {
     speed = speed || 1;
     var sound;
     if (soundGet == "click") soundGet = "menuclick";
-    if (isAndroid() && parseFloat(client.getCurrentAppVersionName()) >= 1.3) {
+    if (isAndroid()) {
         client.playSound(soundGet.toLowerCase(), priority, repeat, speed)
     }
     else {
