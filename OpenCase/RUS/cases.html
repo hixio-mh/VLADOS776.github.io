@@ -12,7 +12,7 @@
 <script src="../scripts/build/libs.js"></script>
 <script src="../scripts/main.js"></script>
 <script>
-if (isAndroid() && parseFloat(client.getCurrentAppVersionName()) > 1.6) {
+if (isAndroid()) {
     try {
         client.showSplashScreen();
     } catch(e) {}
