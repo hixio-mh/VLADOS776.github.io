@@ -221,9 +221,9 @@
                 }
                 if (isAndroid()) {
                     var version = client.getCurrentAppVersionName();
-                    if (parseFloat(version) < 1.9) {
+                    /*if (parseFloat(version) < 1.9) {
                         $('body').append('<div class="new-version"><b>' + Localization.getString('other.new_version.new_version') + '</b><span class="new-version__button" id="new-version__later">' + Localization.getString('other.new_version.later') + '</span><span class="new-version__button" id="new-version__update">' + Localization.getString('other.new_version.update') + '</span></div>');
-                    }
+                    }*/
                 }
                 $(document).on('localizationloaded', function () {
                     checkReward();
