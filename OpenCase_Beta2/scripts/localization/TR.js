@@ -4,10 +4,10 @@ var Translation = {
             short: 'TR',
             full: 'Türkçe',
         },
-        version: 1,
+        version: 2,
         author: 'Mirac',
         authorID: 'fV73qgLi00daMiKeGushmCM2HDm1', // In profile in left bottom corner
-        date: '28.02.17', /* Gün.Ay.Yıl */
+        date: '18.03.17', /* Gün.Ay.Yıl */
     },
     translation: {
         menu: {
@@ -18,6 +18,16 @@ var Translation = {
             open_case: {
                 text: 'Kasayı aç',
                 en: 'Open Case'
+            },
+            cases_menu: {
+                official: {
+                    text: 'Resmi Kasalar',
+                    en: 'Official cases'
+                },
+                custom: {
+                    text: 'Özel Kasalar',
+                    en: 'Custom cases'
+                }
             },
             games: {
                 text: 'Oyunlar',
@@ -45,7 +55,7 @@ var Translation = {
                     en: 'Double'
                 },
                 crash: {
-                    text: 'Çöküş',
+                    text: 'Crash',
                     en: 'Crash'
                 },
                 dice: {
@@ -74,7 +84,7 @@ var Translation = {
                 en: 'Statistic'
             },
             updates: {
-                text: 'Güncellemeler',
+                text: 'Yeni Güncellemeler',
                 en: 'Updates'
             },
             settings: {
@@ -140,7 +150,7 @@ var Translation = {
         },
         open_case: {
             open_case: {
-                text: 'Kasayı aç',
+                text: 'Kasa aç',
                 en: 'Open case'
             },
             opening: {
@@ -170,6 +180,113 @@ var Translation = {
             you_can_win: {
                 text: 'Bu koleksiyonlardan bu itemleri kazanabilirsin : ${1}',
                 en: 'You can win one of those items from collection ${1}'
+            }
+        },
+        custom_cases: {
+            page_name: {
+                text: 'Özel kasalar',
+                en: 'Custom cases'
+            },
+            create_case: {
+                text: 'Kasa yarat',
+                en: 'Create case'
+            },
+            recent: {
+                text: 'En son',
+                en: 'Recent'
+            },
+            popular: {
+                text: 'Popüler',
+                en: 'Popular'
+            },
+            popular_time: {
+                24: {
+                    text: '24 saat',
+                    en: '24 hours'
+                },
+                48: {
+                    text: '48 saat',
+                    en: '48 hours'
+                },
+                week: {
+                    text: '7 gün',
+                    en: '7 days'
+                },
+            },
+            hide_search: {
+                text: 'Arananları gizle',
+                en: 'Hide search result'
+            },
+            you_won: {
+                text: 'Sen kazandın',
+                en: 'You won'
+            },
+            sell: {
+                text: 'Sat',
+                en: 'Sell'
+            },
+            opened: {
+                text: 'Aç:',
+                en: 'Opened:'
+            },
+            case_by: {
+                text: 'Kasayı yapan',
+                en: 'Case by'
+            },
+            what_in_case: {
+                text: 'Kasanın içinde neler var?',
+                en: 'What\'s in the case?'
+            },
+            you_can_win: {
+                text: '"${1}" kasasından şu eşyaları çıkartabilirsin',
+                en: 'You can win one of those items from the "${1}" case'
+            },
+            create: {
+                name: {
+                    text: 'İsim',
+                    en: 'Name'
+                },
+                picture: {
+                    text: 'Kasa resmini seç',
+                    en: 'Choose case picture'
+                },
+                items: {
+                    text: 'Eşya seç',
+                    en: 'Select items'
+                },
+                odds: {
+                    text: 'Kazanma oranını seç',
+                    en: 'Choose Roll Chance'
+                },
+                total_odds: {
+                    text: 'Toplam oranlar: ${1}',
+                    en: 'Total odds: ${1}'
+                },
+                case_price: {
+                    text: 'Kasa fiyatı: ${1}',
+                    en: 'Case price: ${1}'
+                },
+                calc_price: {
+                    text: 'Fiyatı ölç',
+                    en: 'Calc Price'
+                },
+                
+            },
+            beta_modal: {
+                text: '<p>Şuan beta tesstinde.<br>\
+                    Buglar olabilir ve kasanız uyarı olmadan silinebilir</p>\
+                    <p>Bir güncellemeden sonra bütün kasalar silinebilir</p>',
+                en: '<p>Current page is on Beta test.<br>\
+                        That means that there can be bugs and cases that you created can be deleted or changed without warning.</p>\
+                        <p>After release all custom cases can be deleted.</p>'
+            },
+            boost_modal: {
+                text: '<h5>Nasıl çalışır</h5>\
+                       <p>Reklam izle ve kasan "24 Saat Popüler"de 10 dakika dursun.</p>\
+                       <p>Eğer saten yardım edilmiş bir kasa varsa senin kasan sıraya girecek</p>',
+                en: '<h5>How it works?</h5>\
+                        <p>You watch the ad then your case will be in first place in "Popular 24h" for 10 minutes.</p>\
+                        <p>If the "Popular" already have a boosted case, your case will get in line.</p>'
             }
         },
         jackpot: {
@@ -713,8 +830,12 @@ var Translation = {
                     en: 'Reputation'
                 }
             },
+            user_cases: {
+                text: 'Kullanıcının kasalarını göster',
+                en: 'Show user cases'
+            },
             text_field: {
-                text: 'Naber?',
+                text: 'Ne yapıyorsun?',
                 en: 'Sup?'
             },
             moderator: {
@@ -1068,7 +1189,7 @@ var Translation = {
             },
             beta: {
                 group_title: {
-                    text: 'Beta versiyonunda',
+                    text: 'Beta',
                     en: 'Beta'
                 },
                 exchange: {
@@ -1095,7 +1216,7 @@ var Translation = {
                 }
             },
             reset: {
-                text: 'Oyunu resetle',
+                text: 'Oyunu sıfırla',
                 en: 'Full reset'
             },
             save: {
@@ -1120,7 +1241,7 @@ var Translation = {
                     en: 'Full Reset'
                 },
                 reset_confirm: {
-                    text: 'Bütün silahların silinecek.Herşeyin silinecek.Emin misin?',
+                    text: 'Bütün silahların silinecek.İstatiklerin silinecek.Emin misin?',
                     en: 'All weapons will be deleted. Statistics will be reset. Are you sure?'
                 },
                 invalid_nick_title: {
@@ -1139,7 +1260,7 @@ var Translation = {
                 en: 'About'
             },
             main_developer: {
-                text: 'Ana Kurucu',
+                text: 'Ana Geliştirici',
                 en: 'Main developer'
             },
             info: {
