@@ -53,27 +53,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.72,
+          "market": 0.34,
           "analyst": 0.59,
           "opskins": 0.95
         },
         "1": {
-          "market": 0.86,
+          "market": 0.35,
           "analyst": -1,
           "opskins": 0.37
         },
         "2": {
-          "market": 0.53,
+          "market": 0.25,
           "analyst": 0.29,
           "opskins": 0.28
         },
         "3": {
-          "market": 0.44,
+          "market": 0.48,
           "analyst": 0.35,
           "opskins": 0.69
         },
         "4": {
-          "market": 3.42,
+          "market": 3.41,
           "analyst": 3.28,
           "opskins": 5.95
         }
@@ -89,27 +89,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.41,
+          "market": 0.43,
           "analyst": 0.32,
           "opskins": 0.4
         },
         "1": {
-          "market": 0.49,
+          "market": 0.62,
           "analyst": 0.54,
           "opskins": 0.74
         },
         "2": {
-          "market": 0.34,
+          "market": 0.27,
           "analyst": 0.52,
           "opskins": 9.98
         },
         "3": {
-          "market": 0.73,
+          "market": 0.75,
           "analyst": 0.53,
           "opskins": 0.6
         },
         "4": {
-          "market": 6.72,
+          "market": 7.17,
           "analyst": 5.22,
           "opskins": 4.49
         }
@@ -125,22 +125,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.41,
+          "market": 0.4,
           "analyst": 0.4,
           "opskins": 5
         },
         "1": {
-          "market": 0.76,
+          "market": 0.44,
           "analyst": 1.59,
           "opskins": 0.77
         },
         "2": {
-          "market": 0.49,
+          "market": 1.06,
           "analyst": 0.29,
           "opskins": 0.26
         },
         "3": {
-          "market": 0.41,
+          "market": 0.52,
           "analyst": 0.38,
           "opskins": 1
         },
@@ -161,12 +161,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 1.54,
+          "market": 2.5,
           "analyst": 1.07,
           "opskins": 0.96
         },
         "4": {
-          "market": 1.49,
+          "market": 2.14,
           "analyst": 1.1,
           "opskins": 0.98
         }
@@ -182,27 +182,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.35,
+          "market": 0.32,
           "analyst": 0.49,
           "opskins": 0.75
         },
         "1": {
-          "market": 0.71,
+          "market": 0.44,
           "analyst": 0.54,
           "opskins": 0.98
         },
         "2": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.31,
           "opskins": 0.75
         },
         "3": {
-          "market": 0.45,
+          "market": 0.59,
           "analyst": 0.41,
           "opskins": 2
         },
         "4": {
-          "market": 2.83,
+          "market": 3.21,
           "analyst": 3,
           "opskins": 3.34
         }
@@ -218,27 +218,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.93,
+          "market": 0.7,
           "analyst": 0.79,
           "opskins": 3.98
         },
         "1": {
-          "market": 0.47,
+          "market": 0.37,
           "analyst": 0.61,
           "opskins": 0.88
         },
         "2": {
-          "market": 0.44,
+          "market": 0.35,
           "analyst": 0.28,
           "opskins": 0.49
         },
         "3": {
-          "market": 0.53,
+          "market": 0.66,
           "analyst": 0.44,
           "opskins": 0.44
         },
         "4": {
-          "market": 5.07,
+          "market": 5.85,
           "analyst": 8.15,
           "opskins": 9.98
         }
@@ -254,27 +254,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.09,
+          "market": 1.37,
           "analyst": 0.92,
           "opskins": 0.81
         },
         "1": {
-          "market": 1.02,
+          "market": 1.06,
           "analyst": 0.73,
           "opskins": 0.9
         },
         "2": {
-          "market": 0.75,
+          "market": 0.9,
           "analyst": 0.5,
           "opskins": 1.83
         },
         "3": {
-          "market": 1.9,
+          "market": 2.77,
           "analyst": 1.47,
           "opskins": 1.94
         },
         "4": {
-          "market": 14,
+          "market": 19.69,
           "analyst": 14.79,
           "opskins": 15.75
         }
@@ -290,27 +290,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.83,
+          "market": 0.9,
           "analyst": 0.69,
           "opskins": 1.1
         },
         "1": {
-          "market": 0.93,
+          "market": 0.88,
           "analyst": 0.49,
           "opskins": 0.45
         },
         "2": {
-          "market": 0.55,
+          "market": 0.77,
           "analyst": 0.43,
           "opskins": 0.47
         },
         "3": {
-          "market": 1.41,
+          "market": 1.61,
           "analyst": 1.25,
           "opskins": 1.29
         },
         "4": {
-          "market": 15.7,
+          "market": 13.17,
           "analyst": 18.66,
           "opskins": 18.75
         }
@@ -326,27 +326,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.64,
+          "market": 0.79,
           "analyst": 0.98,
           "opskins": 2
         },
         "1": {
-          "market": 1,
+          "market": 1.2,
           "analyst": -1,
           "opskins": 2.49
         },
         "2": {
-          "market": 0.54,
+          "market": 0.78,
           "analyst": 0.43,
           "opskins": 0.55
         },
         "3": {
-          "market": 1.01,
+          "market": 1.24,
           "analyst": 0.95,
           "opskins": 1.6
         },
         "4": {
-          "market": 13.68,
+          "market": 13.85,
           "analyst": 14.79,
           "opskins": 44.44
         }
@@ -362,27 +362,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.85,
+          "market": 0.84,
           "analyst": 1.56,
           "opskins": 2.15
         },
         "1": {
-          "market": 0.69,
+          "market": 0.78,
           "analyst": 0.73,
           "opskins": 0.79
         },
         "2": {
-          "market": 0.53,
+          "market": 0.78,
           "analyst": 0.45,
           "opskins": 0.7
         },
         "3": {
-          "market": 1.03,
+          "market": 1.17,
           "analyst": 1.13,
           "opskins": 1.23
         },
         "4": {
-          "market": 21.44,
+          "market": 15,
           "analyst": 18.72,
           "opskins": 45
         }
@@ -398,27 +398,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.69,
+          "market": 0.8,
           "analyst": 0.47,
           "opskins": 1
         },
         "1": {
-          "market": 2.51,
+          "market": 1.88,
           "analyst": 1.54,
           "opskins": 164.89
         },
         "2": {
-          "market": 0.58,
+          "market": 0.81,
           "analyst": 0.53,
           "opskins": 175.92
         },
         "3": {
-          "market": 1.37,
+          "market": 2.14,
           "analyst": 1.11,
           "opskins": 1.08
         },
         "4": {
-          "market": 16.24,
+          "market": 16.83,
           "analyst": 10.94,
           "opskins": 10.92
         }
@@ -434,7 +434,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.87,
+          "market": 2.86,
           "analyst": 5.25,
           "opskins": 4.75
         },
@@ -444,17 +444,17 @@ var Prices = {
           "opskins": 49.99
         },
         "2": {
-          "market": 1.45,
+          "market": 1.63,
           "analyst": 1.11,
           "opskins": 3.7
         },
         "3": {
-          "market": 5.53,
+          "market": 6.6,
           "analyst": 4.19,
           "opskins": 3.78
         },
         "4": {
-          "market": 15.33,
+          "market": 45.31,
           "analyst": 92.73,
           "opskins": 84.85
         }
@@ -470,22 +470,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.79,
+          "market": 4.12,
           "analyst": 3.92,
           "opskins": 3.29
         },
         "1": {
-          "market": 1.45,
+          "market": 2.16,
           "analyst": 3.13,
           "opskins": 5.65
         },
         "2": {
-          "market": 1.45,
+          "market": 1.83,
           "analyst": 1.74,
           "opskins": 1.7
         },
         "3": {
-          "market": 2.5,
+          "market": 4.32,
           "analyst": 3.81,
           "opskins": 3.33
         },
@@ -511,7 +511,7 @@ var Prices = {
           "opskins": 13.55
         },
         "4": {
-          "market": 7.07,
+          "market": 8.35,
           "analyst": 5.75,
           "opskins": 5.99
         }
@@ -527,22 +527,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.6,
+          "market": 2.14,
           "analyst": 1.32,
           "opskins": 1.46
         },
         "1": {
-          "market": 3.35,
+          "market": 3.73,
           "analyst": 3.51,
           "opskins": 3.11
         },
         "2": {
-          "market": 2.95,
+          "market": 3.58,
           "analyst": 2.93,
           "opskins": 2.62
         },
         "3": {
-          "market": 15.38,
+          "market": 18.15,
           "analyst": 13.82,
           "opskins": 12.21
         },
@@ -563,12 +563,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 7.44,
+          "market": 9.23,
           "analyst": 7.48,
           "opskins": 6.3
         },
         "4": {
-          "market": 3.5,
+          "market": 3.63,
           "analyst": 2.88,
           "opskins": 2.39
         }
@@ -584,27 +584,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.96,
+          "market": 1.1,
           "analyst": 0.99,
           "opskins": 0.88
         },
         "1": {
-          "market": 1.03,
+          "market": 1.1,
           "analyst": 0.9,
           "opskins": 25
         },
         "2": {
-          "market": 0.97,
+          "market": 1.12,
           "analyst": 0.92,
           "opskins": 1.83
         },
         "3": {
-          "market": 1.59,
+          "market": 1.6,
           "analyst": 1.11,
           "opskins": 1.5
         },
         "4": {
-          "market": 3.98,
+          "market": 6.44,
           "analyst": 4.37,
           "opskins": 9.33
         }
@@ -620,27 +620,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.01,
+          "market": 1.19,
           "analyst": 0.92,
           "opskins": 0.8
         },
         "1": {
-          "market": 1.34,
+          "market": 1.39,
           "analyst": 0.99,
           "opskins": 1.14
         },
         "2": {
-          "market": 1.09,
+          "market": 1.31,
           "analyst": 0.95,
           "opskins": 1.38
         },
         "3": {
-          "market": 2.22,
+          "market": 3.54,
           "analyst": 1.75,
           "opskins": 1.5
         },
         "4": {
-          "market": 9.75,
+          "market": 11.68,
           "analyst": 7.36,
           "opskins": 6.59
         }
@@ -656,17 +656,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 7.19,
+          "market": 8.75,
           "analyst": 6.45,
           "opskins": 8.15
         },
         "3": {
-          "market": 7.95,
+          "market": 9.49,
           "analyst": 6.49,
           "opskins": 6.19
         },
         "4": {
-          "market": 9.11,
+          "market": 11.11,
           "analyst": 7.6,
           "opskins": 7.39
         }
@@ -687,7 +687,7 @@ var Prices = {
           "opskins": 59
         },
         "4": {
-          "market": 58.32,
+          "market": 62.86,
           "analyst": 50.54,
           "opskins": 50.27
         }
@@ -708,7 +708,7 @@ var Prices = {
           "opskins": 63.16
         },
         "4": {
-          "market": 45.45,
+          "market": 57.56,
           "analyst": 46.34,
           "opskins": 44.44
         }
@@ -724,12 +724,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 236.7,
+          "market": 260,
           "analyst": 248.39,
           "opskins": 209.99
         },
         "4": {
-          "market": 262.36,
+          "market": 294.86,
           "analyst": 227.94,
           "opskins": 192.63
         }
@@ -745,7 +745,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 4.13,
+          "market": 4.05,
           "analyst": 2.87,
           "opskins": 12.84
         },
@@ -755,12 +755,12 @@ var Prices = {
           "opskins": 15
         },
         "2": {
-          "market": 3.96,
+          "market": 3.95,
           "analyst": 3.24,
           "opskins": 2.99
         },
         "3": {
-          "market": 17.58,
+          "market": 20.77,
           "analyst": 16.81,
           "opskins": 14.79
         },
@@ -781,22 +781,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.2,
+          "market": 0.26,
           "analyst": 0.22,
           "opskins": 0.6
         },
         "1": {
-          "market": 0.22,
+          "market": 0.29,
           "analyst": 0.94,
           "opskins": 0.96
         },
         "2": {
-          "market": 0.19,
+          "market": 0.25,
           "analyst": 0.14,
           "opskins": 0.12
         },
         "3": {
-          "market": 0.38,
+          "market": 0.49,
           "analyst": 0.29,
           "opskins": 0.21
         },
@@ -817,27 +817,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.2,
+          "market": 0.23,
           "analyst": 0.15,
           "opskins": 0.14
         },
         "1": {
-          "market": 0.37,
+          "market": 0.48,
           "analyst": 0.24,
           "opskins": 0.19
         },
         "2": {
-          "market": 0.17,
+          "market": 0.21,
           "analyst": 0.15,
           "opskins": 0.25
         },
         "3": {
-          "market": 0.46,
+          "market": 0.54,
           "analyst": 0.35,
           "opskins": 0.31
         },
         "4": {
-          "market": 3.54,
+          "market": 3.92,
           "analyst": 2.55,
           "opskins": 2.49
         }
@@ -853,27 +853,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.28,
+          "market": 0.23,
           "analyst": 0.25,
           "opskins": 1.59
         },
         "1": {
-          "market": 0.26,
+          "market": 0.27,
           "analyst": 0.22,
           "opskins": 9.87
         },
         "2": {
-          "market": 0.17,
+          "market": 0.19,
           "analyst": 0.19,
           "opskins": 0.52
         },
         "3": {
-          "market": 0.44,
+          "market": 0.5,
           "analyst": 0.33,
           "opskins": 0.31
         },
         "4": {
-          "market": 3.51,
+          "market": 3.73,
           "analyst": 3.05,
           "opskins": 2.62
         }
@@ -889,27 +889,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.07,
+          "market": 1.42,
           "analyst": 0.79,
           "opskins": 0.69
         },
         "1": {
-          "market": 1.35,
+          "market": 1.81,
           "analyst": 0.99,
           "opskins": 0.89
         },
         "2": {
-          "market": 0.83,
+          "market": 1.06,
           "analyst": 0.57,
           "opskins": 0.56
         },
         "3": {
-          "market": 2.13,
+          "market": 2.69,
           "analyst": 1.49,
           "opskins": 1.43
         },
         "4": {
-          "market": 19.87,
+          "market": 23.84,
           "analyst": 15.09,
           "opskins": 13.86
         }
@@ -925,27 +925,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.83,
+          "market": 1.03,
           "analyst": 0.59,
           "opskins": 0.65
         },
         "1": {
-          "market": 0.93,
+          "market": 1.25,
           "analyst": 0.71,
           "opskins": 0.66
         },
         "2": {
-          "market": 0.81,
+          "market": 1.05,
           "analyst": 0.54,
           "opskins": 0.63
         },
         "3": {
-          "market": 1.74,
+          "market": 2.27,
           "analyst": 1.33,
           "opskins": 1.15
         },
         "4": {
-          "market": 12.27,
+          "market": 17.22,
           "analyst": 10.2,
           "opskins": 9.5
         }
@@ -961,12 +961,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 1.87,
+          "market": 2.06,
           "analyst": 1.66,
           "opskins": 1.41
         },
         "4": {
-          "market": 0.64,
+          "market": 0.7,
           "analyst": 0.48,
           "opskins": 0.42
         }
@@ -982,17 +982,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.91,
+          "market": 0.78,
           "analyst": 1.16,
           "opskins": 0.66
         },
         "1": {
-          "market": 0.95,
+          "market": 2.32,
           "analyst": 0.87,
           "opskins": 2
         },
         "2": {
-          "market": 0.38,
+          "market": 0.3,
           "analyst": 0.18,
           "opskins": 0.41
         },
@@ -1002,7 +1002,7 @@ var Prices = {
           "opskins": 0.25
         },
         "4": {
-          "market": 0.47,
+          "market": 0.56,
           "analyst": 0.48,
           "opskins": 0.69
         }
@@ -1018,27 +1018,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.44,
+          "market": 1.72,
           "analyst": 0.69,
           "opskins": 0.63
         },
         "1": {
-          "market": 0.53,
+          "market": 1.11,
           "analyst": 0.92,
           "opskins": 0.73
         },
         "2": {
-          "market": 0.19,
+          "market": 0.28,
           "analyst": 0.24,
           "opskins": 0.26
         },
         "3": {
-          "market": 0.23,
+          "market": 0.28,
           "analyst": 0.23,
           "opskins": 1.49
         },
         "4": {
-          "market": 0.51,
+          "market": 0.61,
           "analyst": 0.55,
           "opskins": 0.54
         }
@@ -1054,27 +1054,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.51,
+          "market": 0.9,
           "analyst": 0.23,
           "opskins": 1.36
         },
         "1": {
-          "market": 0.34,
+          "market": 0.62,
           "analyst": 1.14,
           "opskins": 4.97
         },
         "2": {
-          "market": 0.18,
+          "market": 0.25,
           "analyst": 0.2,
           "opskins": 1.03
         },
         "3": {
-          "market": 0.25,
+          "market": 0.3,
           "analyst": 0.22,
           "opskins": 0.3
         },
         "4": {
-          "market": 1.44,
+          "market": 2.35,
           "analyst": 1.44,
           "opskins": 1.88
         }
@@ -1090,27 +1090,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.71,
+          "market": 1.2,
           "analyst": 2.45,
           "opskins": 8.32
         },
         "1": {
-          "market": 0.57,
+          "market": 0.79,
           "analyst": 1.29,
           "opskins": 1.21
         },
         "2": {
-          "market": 0.28,
+          "market": 0.36,
           "analyst": 0.2,
           "opskins": 0.69
         },
         "3": {
-          "market": 0.29,
+          "market": 0.3,
           "analyst": 0.23,
           "opskins": 0.2
         },
         "4": {
-          "market": 0.46,
+          "market": 0.53,
           "analyst": 0.45,
           "opskins": 0.46
         }
@@ -1126,27 +1126,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.59,
+          "market": 0.61,
           "analyst": 0.38,
           "opskins": 0.34
         },
         "1": {
-          "market": 0.41,
+          "market": 0.65,
           "analyst": 0.41,
           "opskins": 0.51
         },
         "2": {
-          "market": 0.34,
+          "market": 0.41,
           "analyst": 0.21,
           "opskins": 0.19
         },
         "3": {
-          "market": 0.98,
+          "market": 1.04,
           "analyst": 0.57,
           "opskins": 0.73
         },
         "4": {
-          "market": 5.28,
+          "market": 7.59,
           "analyst": 6.11,
           "opskins": 12.63
         }
@@ -1162,27 +1162,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.18,
+          "market": 2.31,
           "analyst": 0.45,
           "opskins": 0.49
         },
         "1": {
-          "market": 0.49,
+          "market": 0.63,
           "analyst": 0.38,
           "opskins": 496.14
         },
         "2": {
-          "market": 0.52,
+          "market": 0.65,
           "analyst": 0.36,
           "opskins": 3
         },
         "3": {
-          "market": 0.87,
+          "market": 0.88,
           "analyst": 0.68,
           "opskins": 0.63
         },
         "4": {
-          "market": 2.57,
+          "market": 2.83,
           "analyst": 2.52,
           "opskins": 2.78
         }
@@ -1203,22 +1203,22 @@ var Prices = {
           "opskins": 0.33
         },
         "1": {
-          "market": 0.46,
+          "market": 0.57,
           "analyst": 0.34,
           "opskins": 0.73
         },
         "2": {
-          "market": 0.52,
+          "market": 0.65,
           "analyst": 0.34,
           "opskins": 0.45
         },
         "3": {
-          "market": 0.7,
+          "market": 0.86,
           "analyst": 0.58,
           "opskins": 0.5
         },
         "4": {
-          "market": 1.79,
+          "market": 2.09,
           "analyst": 1.64,
           "opskins": 1.66
         }
@@ -1234,27 +1234,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.49,
+          "market": 0.61,
           "analyst": 0.47,
           "opskins": 0.46
         },
         "1": {
-          "market": 0.48,
+          "market": 0.58,
           "analyst": 0.36,
           "opskins": 0.4
         },
         "2": {
-          "market": 0.53,
+          "market": 0.66,
           "analyst": 0.37,
           "opskins": 0.34
         },
         "3": {
-          "market": 0.75,
+          "market": 0.87,
           "analyst": 0.55,
           "opskins": 0.47
         },
         "4": {
-          "market": 1.92,
+          "market": 1.94,
           "analyst": 1.73,
           "opskins": 1.54
         }
@@ -1270,27 +1270,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.5,
+          "market": 0.59,
           "analyst": 0.47,
           "opskins": 0.34
         },
         "1": {
-          "market": 0.46,
+          "market": 0.55,
           "analyst": 0.32,
           "opskins": 0.83
         },
         "2": {
-          "market": 0.5,
+          "market": 0.64,
           "analyst": 0.34,
           "opskins": 1.46
         },
         "3": {
-          "market": 0.71,
+          "market": 0.79,
           "analyst": 0.5,
           "opskins": 0.5
         },
         "4": {
-          "market": 1.63,
+          "market": 2.2,
           "analyst": 1.72,
           "opskins": 1.58
         }
@@ -1306,27 +1306,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 4.1,
+          "market": 3.37,
           "analyst": 4.62,
           "opskins": 4.66
         },
         "1": {
-          "market": 3.88,
+          "market": 4.11,
           "analyst": 2.1,
           "opskins": 3.46
         },
         "2": {
-          "market": 3.05,
+          "market": 3.73,
           "analyst": 2.3,
           "opskins": 2.7
         },
         "3": {
-          "market": 5.39,
+          "market": 6.27,
           "analyst": 4.68,
           "opskins": 5
         },
         "4": {
-          "market": 14.67,
+          "market": 14.52,
           "analyst": 14.94,
           "opskins": 14.65
         }
@@ -1352,17 +1352,17 @@ var Prices = {
           "opskins": 12.2
         },
         "2": {
-          "market": 2.69,
+          "market": 3.21,
           "analyst": 2.6,
           "opskins": 7.54
         },
         "3": {
-          "market": 2.81,
+          "market": 3.9,
           "analyst": 2.57,
           "opskins": 2.33
         },
         "4": {
-          "market": 3.18,
+          "market": 4.45,
           "analyst": 3.77,
           "opskins": 2.8
         }
@@ -1388,17 +1388,17 @@ var Prices = {
           "opskins": 20
         },
         "2": {
-          "market": 2.4,
+          "market": 3.51,
           "analyst": 1.95,
           "opskins": 3
         },
         "3": {
-          "market": 2.71,
+          "market": 3.45,
           "analyst": 2.28,
           "opskins": 2.32
         },
         "4": {
-          "market": 3.75,
+          "market": 5.15,
           "analyst": 3.37,
           "opskins": 2.99
         }
@@ -1414,27 +1414,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 9.95,
+          "market": 11.42,
           "analyst": 8.63,
           "opskins": 10.94
         },
         "1": {
-          "market": 10.16,
+          "market": 12.06,
           "analyst": 7.26,
           "opskins": 7.99
         },
         "2": {
-          "market": 12.09,
+          "market": 14.24,
           "analyst": 8.1,
           "opskins": 9.25
         },
         "3": {
-          "market": 18.61,
+          "market": 21.35,
           "analyst": 14.68,
           "opskins": 13.93
         },
         "4": {
-          "market": 29.52,
+          "market": 35.46,
           "analyst": 32.63,
           "opskins": 30
         }
@@ -1506,7 +1506,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.18,
+          "market": 0.19,
           "analyst": 0.13,
           "opskins": 0.1
         }
@@ -1542,7 +1542,7 @@ var Prices = {
           "opskins": 0.02
         },
         "4": {
-          "market": 0.08,
+          "market": 0.07,
           "analyst": 0.06,
           "opskins": 0.09
         }
@@ -1610,7 +1610,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.05,
           "opskins": 0.13
         },
@@ -1620,12 +1620,12 @@ var Prices = {
           "opskins": 0.07
         },
         "2": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.07
         },
         "3": {
-          "market": 0.05,
+          "market": 0.06,
           "analyst": 0.04,
           "opskins": 0.05
         }
@@ -1641,7 +1641,7 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.05,
           "opskins": 0.05
         },
@@ -1662,12 +1662,12 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.05,
+          "market": 0.03,
           "analyst": 0.03,
           "opskins": 0.02
         },
         "3": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.03
         },
@@ -1688,7 +1688,7 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.03
         },
@@ -1714,7 +1714,7 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.1
         },
@@ -1735,17 +1735,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.33,
+          "market": 0.34,
           "analyst": 0.25,
           "opskins": 0.21
         },
         "3": {
-          "market": 0.28,
+          "market": 0.32,
           "analyst": 0.22,
           "opskins": 0.18
         },
         "4": {
-          "market": 0.34,
+          "market": 0.38,
           "analyst": 0.26,
           "opskins": 0.26
         }
@@ -1761,17 +1761,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.13,
           "analyst": 0.08,
           "opskins": 0.08
         },
         "1": {
-          "market": 0.25,
+          "market": 0.18,
           "analyst": 0.15,
           "opskins": 0.17
         },
         "2": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.08,
           "opskins": 0.08
         },
@@ -1781,7 +1781,7 @@ var Prices = {
           "opskins": 0.12
         },
         "4": {
-          "market": 0.37,
+          "market": 0.36,
           "analyst": 0.28,
           "opskins": 0.27
         }
@@ -1797,27 +1797,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.13,
           "analyst": 0.08,
           "opskins": 0.09
         },
         "1": {
-          "market": 0.14,
+          "market": 0.16,
           "analyst": 0.15,
           "opskins": 0.13
         },
         "2": {
-          "market": 0.11,
+          "market": 0.13,
           "analyst": 0.08,
           "opskins": 0.08
         },
         "3": {
-          "market": 0.18,
+          "market": 0.19,
           "analyst": 0.12,
           "opskins": 0.11
         },
         "4": {
-          "market": 0.33,
+          "market": 0.34,
           "analyst": 0.25,
           "opskins": 0.21
         }
@@ -1833,22 +1833,22 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.77,
+          "market": 0.88,
           "analyst": 0.64,
           "opskins": 0.52
         },
         "2": {
-          "market": 0.46,
+          "market": 0.51,
           "analyst": 0.4,
           "opskins": 0.33
         },
         "3": {
-          "market": 0.66,
+          "market": 0.75,
           "analyst": 0.59,
           "opskins": 0.47
         },
         "4": {
-          "market": 1.07,
+          "market": 1.13,
           "analyst": 0.88,
           "opskins": 0.67
         }
@@ -1864,27 +1864,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.21,
+          "market": 0.23,
           "analyst": 0.13,
           "opskins": 4
         },
         "1": {
-          "market": 0.29,
+          "market": 0.38,
           "analyst": 0.24,
           "opskins": 0.23
         },
         "2": {
-          "market": 0.22,
+          "market": 0.25,
           "analyst": 0.14,
           "opskins": 0.14
         },
         "3": {
-          "market": 0.36,
+          "market": 0.41,
           "analyst": 0.23,
           "opskins": 0.21
         },
         "4": {
-          "market": 0.64,
+          "market": 0.74,
           "analyst": 0.43,
           "opskins": 0.47
         }
@@ -1926,17 +1926,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.13,
+          "market": 0.15,
           "analyst": 0.1,
           "opskins": 0.1
         },
         "1": {
-          "market": 0.15,
+          "market": 0.18,
           "analyst": 0.11,
           "opskins": 0.1
         },
         "2": {
-          "market": 0.18,
+          "market": 0.2,
           "analyst": 0.13,
           "opskins": 0.29
         },
@@ -1946,7 +1946,7 @@ var Prices = {
           "opskins": 0.18
         },
         "4": {
-          "market": 1.35,
+          "market": 1.68,
           "analyst": 1.06,
           "opskins": 0.89
         }
@@ -1988,27 +1988,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.16,
+          "market": 0.17,
           "analyst": 0.11,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.22,
+          "market": 0.25,
           "analyst": 0.22,
           "opskins": 0.19
         },
         "2": {
-          "market": 0.19,
+          "market": 0.2,
           "analyst": 0.11,
           "opskins": 0.13
         },
         "3": {
-          "market": 0.26,
+          "market": 0.27,
           "analyst": 0.18,
           "opskins": 0.15
         },
         "4": {
-          "market": 0.63,
+          "market": 0.72,
           "analyst": 0.51,
           "opskins": 0.4
         }
@@ -2050,22 +2050,22 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.22,
           "opskins": 0.17
         },
         "2": {
-          "market": 0.21,
+          "market": 0.22,
           "analyst": 0.12,
           "opskins": 0.12
         },
         "3": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 0.17,
           "opskins": 0.17
         },
         "4": {
-          "market": 0.34,
+          "market": 0.33,
           "analyst": 0.24,
           "opskins": 0.18
         }
@@ -2102,27 +2102,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.14,
+          "market": 0.17,
           "analyst": 0.11,
           "opskins": 0.2
         },
         "1": {
-          "market": 0.21,
+          "market": 0.23,
           "analyst": 0.15,
           "opskins": 0.14
         },
         "2": {
-          "market": 0.19,
+          "market": 0.2,
           "analyst": 0.12,
           "opskins": 0.22
         },
         "3": {
-          "market": 0.26,
+          "market": 0.27,
           "analyst": 0.18,
           "opskins": 0.16
         },
         "4": {
-          "market": 0.54,
+          "market": 0.67,
           "analyst": 0.43,
           "opskins": 0.36
         }
@@ -2164,27 +2164,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.14,
+          "market": 0.15,
           "analyst": 0.1,
           "opskins": 0.2
         },
         "1": {
-          "market": 0.16,
+          "market": 0.17,
           "analyst": 0.14,
           "opskins": 0.11
         },
         "2": {
-          "market": 0.17,
+          "market": 0.19,
           "analyst": 0.12,
           "opskins": 0.1
         },
         "3": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 0.17,
           "opskins": 0.13
         },
         "4": {
-          "market": 0.7,
+          "market": 0.92,
           "analyst": 0.58,
           "opskins": 0.49
         }
@@ -2226,22 +2226,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.37,
+          "market": 0.58,
           "analyst": 0.31,
           "opskins": 0.33
         },
         "1": {
-          "market": 0.68,
+          "market": 0.78,
           "analyst": 0.58,
           "opskins": 0.58
         },
         "2": {
-          "market": 0.59,
+          "market": 0.64,
           "analyst": 0.42,
           "opskins": 0.39
         },
         "3": {
-          "market": 0.9,
+          "market": 0.97,
           "analyst": 0.64,
           "opskins": 0.51
         },
@@ -2288,27 +2288,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.92,
+          "market": 1.16,
           "analyst": 0.68,
           "opskins": 0.65
         },
         "1": {
-          "market": 1.96,
+          "market": 2.29,
           "analyst": 1.66,
           "opskins": 1.36
         },
         "2": {
-          "market": 1.15,
+          "market": 1.34,
           "analyst": 0.87,
           "opskins": 0.73
         },
         "3": {
-          "market": 2.39,
+          "market": 2.71,
           "analyst": 1.91,
           "opskins": 1.54
         },
         "4": {
-          "market": 4.08,
+          "market": 4.43,
           "analyst": 3.32,
           "opskins": 2.7
         }
@@ -2350,27 +2350,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.1,
+          "market": 1.29,
           "analyst": 0.9,
           "opskins": 0.86
         },
         "1": {
-          "market": 1.25,
+          "market": 1.54,
           "analyst": 0.99,
           "opskins": 0.84
         },
         "2": {
-          "market": 1.36,
+          "market": 1.7,
           "analyst": 1.06,
           "opskins": 0.89
         },
         "3": {
-          "market": 2.32,
+          "market": 2.83,
           "analyst": 1.96,
           "opskins": 1.57
         },
         "4": {
-          "market": 4.6,
+          "market": 4.64,
           "analyst": 3.5,
           "opskins": 3.33
         }
@@ -2417,22 +2417,22 @@ var Prices = {
           "opskins": 1.18
         },
         "1": {
-          "market": 0.56,
+          "market": 0.96,
           "analyst": 0.4,
           "opskins": 0.49
         },
         "2": {
-          "market": 0.48,
+          "market": 0.57,
           "analyst": 0.39,
           "opskins": 0.43
         },
         "3": {
-          "market": 0.86,
+          "market": 0.9,
           "analyst": 0.61,
           "opskins": 0.6
         },
         "4": {
-          "market": 1.06,
+          "market": 1.1,
           "analyst": 0.84,
           "opskins": 0.71
         }
@@ -2474,27 +2474,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.76,
+          "market": 0.68,
           "analyst": 0.27,
           "opskins": 0.5
         },
         "1": {
-          "market": 0.38,
+          "market": 0.45,
           "analyst": 0.31,
           "opskins": 0.31
         },
         "2": {
-          "market": 0.45,
+          "market": 0.53,
           "analyst": 0.38,
           "opskins": 0.45
         },
         "3": {
-          "market": 0.91,
+          "market": 0.9,
           "analyst": 0.65,
           "opskins": 0.57
         },
         "4": {
-          "market": 1.23,
+          "market": 1.25,
           "analyst": 1.07,
           "opskins": 0.88
         }
@@ -2536,27 +2536,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.69,
+          "market": 0.66,
           "analyst": 0.38,
           "opskins": 1.4
         },
         "1": {
-          "market": 1.35,
+          "market": 1.34,
           "analyst": 1,
           "opskins": 0.92
         },
         "2": {
-          "market": 0.76,
+          "market": 0.85,
           "analyst": 0.68,
           "opskins": 0.56
         },
         "3": {
-          "market": 2.08,
+          "market": 2.26,
           "analyst": 1.79,
           "opskins": 1.4
         },
         "4": {
-          "market": 3.42,
+          "market": 3.78,
           "analyst": 3.14,
           "opskins": 2.59
         }
@@ -2598,27 +2598,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.23,
+          "market": 1.36,
           "analyst": 0.84,
           "opskins": 0.99
         },
         "1": {
-          "market": 2.18,
+          "market": 2.54,
           "analyst": 1.73,
           "opskins": 1.45
         },
         "2": {
-          "market": 2.6,
+          "market": 3.09,
           "analyst": 2.01,
           "opskins": 1.66
         },
         "3": {
-          "market": 6.52,
+          "market": 7.38,
           "analyst": 5.26,
           "opskins": 4.54
         },
         "4": {
-          "market": 11.78,
+          "market": 13.2,
           "analyst": 8.96,
           "opskins": 7.63
         }
@@ -2660,27 +2660,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.05,
+          "market": 0.06,
           "analyst": 0.04,
           "opskins": 0.04
         },
         "1": {
-          "market": 0.05,
+          "market": 0.06,
           "analyst": 0.04,
           "opskins": 0.04
         },
         "2": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.05
         },
         "3": {
-          "market": 0.1,
+          "market": 0.12,
           "analyst": 0.08,
           "opskins": 0.05
         },
         "4": {
-          "market": 0.37,
+          "market": 0.43,
           "analyst": 0.29,
           "opskins": 0.23
         }
@@ -2701,12 +2701,12 @@ var Prices = {
           "opskins": 0.17
         },
         "3": {
-          "market": 0.11,
+          "market": 0.13,
           "analyst": 0.08,
           "opskins": 0.15
         },
         "4": {
-          "market": 0.3,
+          "market": 0.39,
           "analyst": 0.22,
           "opskins": 0.19
         }
@@ -2722,27 +2722,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.05,
+          "market": 0.06,
           "analyst": 0.04,
           "opskins": 0.09
         },
         "1": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.05,
           "opskins": 0.08
         },
         "2": {
-          "market": 0.05,
+          "market": 0.06,
           "analyst": 0.04,
           "opskins": 0.09
         },
         "3": {
-          "market": 0.11,
+          "market": 0.12,
           "analyst": 0.08,
           "opskins": 0.07
         },
         "4": {
-          "market": 0.41,
+          "market": 0.43,
           "analyst": 0.31,
           "opskins": 0.99
         }
@@ -2763,12 +2763,12 @@ var Prices = {
           "opskins": 0.05
         },
         "3": {
-          "market": 0.11,
+          "market": 0.13,
           "analyst": 0.08,
           "opskins": 0.06
         },
         "4": {
-          "market": 0.3,
+          "market": 0.38,
           "analyst": 0.23,
           "opskins": 0.2
         }
@@ -2784,27 +2784,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.39,
+          "market": 0.46,
           "analyst": 0.26,
           "opskins": 0.47
         },
         "1": {
-          "market": 0.6,
+          "market": 0.74,
           "analyst": 0.47,
           "opskins": 0.49
         },
         "2": {
-          "market": 0.34,
+          "market": 0.43,
           "analyst": 0.26,
           "opskins": 0.23
         },
         "3": {
-          "market": 0.65,
+          "market": 0.81,
           "analyst": 0.5,
           "opskins": 0.42
         },
         "4": {
-          "market": 1.96,
+          "market": 2.32,
           "analyst": 1.68,
           "opskins": 1.42
         }
@@ -2820,27 +2820,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.33,
+          "market": 0.4,
           "analyst": 0.25,
           "opskins": 0.24
         },
         "1": {
-          "market": 0.49,
+          "market": 0.58,
           "analyst": 0.33,
           "opskins": 0.29
         },
         "2": {
-          "market": 0.33,
+          "market": 0.41,
           "analyst": 0.25,
           "opskins": 0.34
         },
         "3": {
-          "market": 1.05,
+          "market": 1.33,
           "analyst": 0.81,
           "opskins": 0.68
         },
         "4": {
-          "market": 10.92,
+          "market": 12.69,
           "analyst": 9,
           "opskins": -1
         }
@@ -2856,27 +2856,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.31,
+          "market": 0.42,
           "analyst": 0.26,
           "opskins": 0.25
         },
         "1": {
-          "market": 0.33,
+          "market": 0.43,
           "analyst": 0.26,
           "opskins": 0.21
         },
         "2": {
-          "market": 0.32,
+          "market": 0.42,
           "analyst": 0.22,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.53,
+          "market": 0.62,
           "analyst": 0.4,
           "opskins": 0.36
         },
         "4": {
-          "market": 1.74,
+          "market": 1.91,
           "analyst": 1.33,
           "opskins": 1.12
         }
@@ -2892,27 +2892,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.84,
+          "market": 1.03,
           "analyst": 0.74,
           "opskins": 0.69
         },
         "1": {
-          "market": 0.93,
+          "market": 1.07,
           "analyst": 0.76,
           "opskins": 0.83
         },
         "2": {
-          "market": 0.88,
+          "market": 1.13,
           "analyst": 0.77,
           "opskins": 0.75
         },
         "3": {
-          "market": 1.32,
+          "market": 1.47,
           "analyst": 0.98,
           "opskins": 0.92
         },
         "4": {
-          "market": 6.28,
+          "market": 7.73,
           "analyst": 6.09,
           "opskins": 6.11
         }
@@ -2928,12 +2928,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 5.44,
+          "market": 5.82,
           "analyst": 4.37,
           "opskins": 4.47
         },
         "4": {
-          "market": 2.82,
+          "market": 3.12,
           "analyst": 2.1,
           "opskins": 2.06
         }
@@ -2949,27 +2949,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.89,
+          "market": 0.98,
           "analyst": 0.85,
           "opskins": 0.65
         },
         "1": {
-          "market": 1.54,
+          "market": 1.23,
           "analyst": 0.97,
           "opskins": 0.9
         },
         "2": {
-          "market": 0.88,
+          "market": 1.16,
           "analyst": 0.8,
           "opskins": 0.66
         },
         "3": {
-          "market": 1.17,
+          "market": 1.3,
           "analyst": 0.95,
           "opskins": 0.77
         },
         "4": {
-          "market": 1.7,
+          "market": 1.94,
           "analyst": 1.39,
           "opskins": 1.21
         }
@@ -2985,27 +2985,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.65,
+          "market": 1.16,
           "analyst": 0.86,
           "opskins": 1
         },
         "1": {
-          "market": 1.13,
+          "market": 1.36,
           "analyst": 0.99,
           "opskins": 0.93
         },
         "2": {
-          "market": 1.12,
+          "market": 1.34,
           "analyst": 0.82,
           "opskins": 0.72
         },
         "3": {
-          "market": 7.27,
+          "market": 9.2,
           "analyst": 5.82,
           "opskins": 5.02
         },
         "4": {
-          "market": 59.12,
+          "market": 58.18,
           "analyst": 65.69,
           "opskins": 53.98
         }
@@ -3021,12 +3021,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 3.21,
+          "market": 4.11,
           "analyst": 2.34,
           "opskins": 2.05
         },
         "4": {
-          "market": 1.65,
+          "market": 2.2,
           "analyst": 1.3,
           "opskins": 1.12
         }
@@ -3042,27 +3042,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 6.64,
+          "market": 8.67,
           "analyst": 7.76,
           "opskins": 7.59
         },
         "1": {
-          "market": 6.76,
+          "market": 9.11,
           "analyst": 6.39,
           "opskins": 5.67
         },
         "2": {
-          "market": 6.86,
+          "market": 8.03,
           "analyst": 5.86,
           "opskins": 5.75
         },
         "3": {
-          "market": 8.02,
+          "market": 9.55,
           "analyst": 7.65,
           "opskins": 7.13
         },
         "4": {
-          "market": 11.2,
+          "market": 12.14,
           "analyst": 10.12,
           "opskins": 9.7
         }
@@ -3078,27 +3078,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 6.74,
+          "market": 7.73,
           "analyst": 7.14,
           "opskins": 6.89
         },
         "1": {
-          "market": 7.51,
+          "market": 8.21,
           "analyst": 12.57,
           "opskins": 11.95
         },
         "2": {
-          "market": 7.19,
+          "market": 8.09,
           "analyst": 5.44,
           "opskins": 5.37
         },
         "3": {
-          "market": 9.14,
+          "market": 10.09,
           "analyst": 7.43,
           "opskins": 7.64
         },
         "4": {
-          "market": 20.1,
+          "market": 21.62,
           "analyst": 15.76,
           "opskins": 15.26
         }
@@ -3114,17 +3114,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 10.8,
+          "market": 12.32,
           "analyst": 7.68,
           "opskins": 7.67
         },
         "3": {
-          "market": 11.01,
+          "market": 13.21,
           "analyst": 8.1,
           "opskins": 6.99
         },
         "4": {
-          "market": 13.61,
+          "market": 16.49,
           "analyst": 10.14,
           "opskins": 8.99
         }
@@ -3145,22 +3145,22 @@ var Prices = {
           "opskins": 0.07
         },
         "1": {
-          "market": 0.08,
+          "market": 0.12,
           "analyst": 0.06,
           "opskins": 0.05
         },
         "2": {
-          "market": 0.07,
+          "market": 0.08,
           "analyst": 0.05,
           "opskins": 0.05
         },
         "3": {
-          "market": 0.15,
+          "market": 0.22,
           "analyst": 0.09,
           "opskins": 0.07
         },
         "4": {
-          "market": 1.64,
+          "market": 2.51,
           "analyst": 1.14,
           "opskins": 1.04
         }
@@ -3207,12 +3207,12 @@ var Prices = {
           "opskins": 0.09
         },
         "3": {
-          "market": 0.11,
+          "market": 0.13,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "4": {
-          "market": 0.34,
+          "market": 0.45,
           "analyst": 0.21,
           "opskins": 0.19
         }
@@ -3244,27 +3244,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.07,
+          "market": 0.08,
           "analyst": 0.04,
           "opskins": 0.1
         },
         "1": {
-          "market": 0.07,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.09
         },
         "2": {
-          "market": 0.07,
+          "market": 0.08,
           "analyst": 0.04,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.11,
+          "market": 0.13,
           "analyst": 0.08,
           "opskins": 0.08
         },
         "4": {
-          "market": 0.64,
+          "market": 0.69,
           "analyst": 0.51,
           "opskins": 0.7
         }
@@ -3306,27 +3306,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.07,
+          "market": 0.08,
           "analyst": 0.05,
           "opskins": 0.04
         },
         "1": {
-          "market": 0.07,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.07
         },
         "2": {
-          "market": 0.07,
+          "market": 0.08,
           "analyst": 0.04,
           "opskins": 0.04
         },
         "3": {
-          "market": 0.11,
+          "market": 0.12,
           "analyst": 0.07,
           "opskins": 0.07
         },
         "4": {
-          "market": 0.57,
+          "market": 0.65,
           "analyst": 0.34,
           "opskins": 0.37
         }
@@ -3368,7 +3368,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.07,
+          "market": 0.08,
           "analyst": 0.05,
           "opskins": 0.05
         },
@@ -3378,17 +3378,17 @@ var Prices = {
           "opskins": 0.07
         },
         "2": {
-          "market": 0.07,
+          "market": 0.08,
           "analyst": 0.05,
           "opskins": 0.05
         },
         "3": {
-          "market": 0.11,
+          "market": 0.12,
           "analyst": 0.08,
           "opskins": 0.07
         },
         "4": {
-          "market": 0.63,
+          "market": 0.7,
           "analyst": 0.39,
           "opskins": 0.44
         }
@@ -3430,27 +3430,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.49,
+          "market": 0.6,
           "analyst": 0.37,
           "opskins": 0.7
         },
         "1": {
-          "market": 0.9,
+          "market": 1.18,
           "analyst": 0.65,
           "opskins": 0.68
         },
         "2": {
-          "market": 0.63,
+          "market": 0.84,
           "analyst": 0.35,
           "opskins": 0.47
         },
         "3": {
-          "market": 2.2,
+          "market": 2.75,
           "analyst": 1.44,
           "opskins": 1.63
         },
         "4": {
-          "market": 16.59,
+          "market": 20,
           "analyst": 14.65,
           "opskins": 14.66
         }
@@ -3492,27 +3492,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.4,
+          "market": 0.51,
           "analyst": 0.28,
           "opskins": 0.28
         },
         "1": {
-          "market": 0.51,
+          "market": 0.53,
           "analyst": 0.3,
           "opskins": 0.41
         },
         "2": {
-          "market": 0.39,
+          "market": 0.5,
           "analyst": 0.29,
           "opskins": 1
         },
         "3": {
-          "market": 0.41,
+          "market": 0.52,
           "analyst": 0.29,
           "opskins": 0.28
         },
         "4": {
-          "market": 0.47,
+          "market": 0.62,
           "analyst": 0.34,
           "opskins": 0.34
         }
@@ -3554,12 +3554,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 0.56,
+          "market": 0.67,
           "analyst": 0.34,
           "opskins": 0.37
         },
         "4": {
-          "market": 0.51,
+          "market": 0.64,
           "analyst": 0.37,
           "opskins": 0.3
         }
@@ -3586,17 +3586,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.41,
+          "market": 0.51,
           "analyst": 0.29,
           "opskins": 0.3
         },
         "3": {
-          "market": 0.4,
+          "market": 0.5,
           "analyst": 0.3,
           "opskins": 0.29
         },
         "4": {
-          "market": 0.46,
+          "market": 0.57,
           "analyst": 0.34,
           "opskins": 0.29
         }
@@ -3628,17 +3628,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 4.21,
+          "market": 5.14,
           "analyst": 2.98,
           "opskins": 2.95
         },
         "3": {
-          "market": 4.01,
+          "market": 5.45,
           "analyst": 3,
           "opskins": 2.9
         },
         "4": {
-          "market": 4.14,
+          "market": 5.29,
           "analyst": 3.08,
           "opskins": 2.86
         }
@@ -3670,17 +3670,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 4.04,
+          "market": 5.35,
           "analyst": 3.42,
           "opskins": 3.09
         },
         "3": {
-          "market": 4.16,
+          "market": 4.99,
           "analyst": 2.85,
           "opskins": 2.9
         },
         "4": {
-          "market": 4.08,
+          "market": 5.14,
           "analyst": 3.06,
           "opskins": 2.62
         }
@@ -3712,7 +3712,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 26.91,
+          "market": 33.66,
           "analyst": 22.46,
           "opskins": 24.96
         },
@@ -3722,17 +3722,17 @@ var Prices = {
           "opskins": 27
         },
         "2": {
-          "market": 28.42,
+          "market": 35.53,
           "analyst": 21.88,
           "opskins": 19.94
         },
         "3": {
-          "market": 29.07,
+          "market": 35.04,
           "analyst": 22.49,
           "opskins": 23.01
         },
         "4": {
-          "market": 32.88,
+          "market": 37.67,
           "analyst": 25.68,
           "opskins": 25.16
         }
@@ -3779,7 +3779,7 @@ var Prices = {
           "opskins": 24.5
         },
         "4": {
-          "market": 31.18,
+          "market": 35.96,
           "analyst": 25.21,
           "opskins": 21.11
         }
@@ -3806,12 +3806,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 208.06,
+          "market": 239.99,
           "analyst": 233.3,
           "opskins": 208.88
         },
         "4": {
-          "market": 279.69,
+          "market": 339.11,
           "analyst": 232.47,
           "opskins": 194
         }
@@ -3838,27 +3838,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.95,
+          "market": 1.23,
           "analyst": 0.69,
           "opskins": 0.64
         },
         "1": {
-          "market": 1.29,
+          "market": 1.74,
           "analyst": 0.92,
           "opskins": 0.95
         },
         "2": {
-          "market": 0.88,
+          "market": 1.09,
           "analyst": 0.6,
           "opskins": 0.56
         },
         "3": {
-          "market": 1.64,
+          "market": 2.19,
           "analyst": 1.11,
           "opskins": 1.21
         },
         "4": {
-          "market": 9.51,
+          "market": 10.99,
           "analyst": 6.95,
           "opskins": 6.98
         }
@@ -3874,27 +3874,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.81,
+          "market": 1.09,
           "analyst": 0.6,
           "opskins": 0.59
         },
         "1": {
-          "market": 0.99,
+          "market": 1.22,
           "analyst": 0.7,
           "opskins": 0.76
         },
         "2": {
-          "market": 0.79,
+          "market": 1.08,
           "analyst": 0.55,
           "opskins": 0.62
         },
         "3": {
-          "market": 1.37,
+          "market": 1.78,
           "analyst": 0.99,
           "opskins": 0.89
         },
         "4": {
-          "market": 6.96,
+          "market": 9.42,
           "analyst": 5.96,
           "opskins": 6.42
         }
@@ -3910,22 +3910,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.7,
+          "market": 0.84,
           "analyst": 0.5,
           "opskins": 0.41
         },
         "1": {
-          "market": 0.8,
+          "market": 0.84,
           "analyst": 0.52,
           "opskins": 0.45
         },
         "2": {
-          "market": 0.69,
+          "market": 0.98,
           "analyst": 0.43,
           "opskins": 0.56
         },
         "3": {
-          "market": 0.98,
+          "market": 1.18,
           "analyst": 0.53,
           "opskins": 0.62
         },
@@ -3946,12 +3946,12 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 5.03,
+          "market": 6.1,
           "analyst": 3.51,
           "opskins": 3.95
         },
         "3": {
-          "market": 6.78,
+          "market": 8.08,
           "analyst": 5.91,
           "opskins": 5.49
         }
@@ -3967,27 +3967,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 4.93,
+          "market": 4.97,
           "analyst": 4.69,
           "opskins": 4.25
         },
         "1": {
-          "market": 4.88,
+          "market": 5.19,
           "analyst": 4.23,
           "opskins": 4.67
         },
         "2": {
-          "market": 4.96,
+          "market": 5.64,
           "analyst": 3.22,
           "opskins": 3.97
         },
         "3": {
-          "market": 6.29,
+          "market": 8.15,
           "analyst": 6.38,
           "opskins": 6.9
         },
         "4": {
-          "market": 9.55,
+          "market": 8.47,
           "analyst": 8.01,
           "opskins": 15
         }
@@ -4003,12 +4003,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 55.18,
+          "market": 62.98,
           "analyst": 48.23,
           "opskins": 41.99
         },
         "4": {
-          "market": 57.69,
+          "market": 69.88,
           "analyst": 45.68,
           "opskins": 38.5
         }
@@ -4024,27 +4024,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.5,
+          "market": 1.72,
           "analyst": 1.08,
           "opskins": 1.39
         },
         "1": {
-          "market": 1.75,
+          "market": 1.99,
           "analyst": 1.26,
           "opskins": 4
         },
         "2": {
-          "market": 1.77,
+          "market": 2.02,
           "analyst": 1.3,
           "opskins": 1.37
         },
         "3": {
-          "market": 3.81,
+          "market": 3.96,
           "analyst": 3.02,
           "opskins": 2.7
         },
         "4": {
-          "market": 9.62,
+          "market": 9.29,
           "analyst": 7.83,
           "opskins": 7.95
         }
@@ -4060,12 +4060,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 2.92,
+          "market": 3.84,
           "analyst": 3.82,
           "opskins": 3.23
         },
         "4": {
-          "market": 1.07,
+          "market": 1.12,
           "analyst": 0.93,
           "opskins": 0.78
         }
@@ -4101,7 +4101,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.13
         }
@@ -4163,7 +4163,7 @@ var Prices = {
           "opskins": 0.02
         },
         "4": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.1
         }
@@ -4267,12 +4267,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.05,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.03
         },
         "1": {
-          "market": 0.04,
+          "market": 0.03,
           "analyst": 0.03,
           "opskins": 0.03
         },
@@ -4349,7 +4349,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.07,
           "opskins": 0.07
         }
@@ -4411,7 +4411,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.12,
+          "market": 0.09,
           "analyst": 0.08,
           "opskins": 0.08
         }
@@ -4453,27 +4453,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.14,
+          "market": 0.16,
           "analyst": 0.1,
           "opskins": 0.08
         },
         "1": {
-          "market": 0.17,
+          "market": 0.19,
           "analyst": 0.13,
           "opskins": 0.09
         },
         "2": {
-          "market": 0.11,
+          "market": 0.14,
           "analyst": 0.08,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.29,
+          "market": 0.34,
           "analyst": 0.22,
           "opskins": 0.19
         },
         "4": {
-          "market": 2.36,
+          "market": 2.87,
           "analyst": 1.92,
           "opskins": 1.82
         }
@@ -4515,12 +4515,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.04,
+          "market": 0.03,
           "analyst": 0.03,
           "opskins": 0.03
         },
         "1": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.03
         },
@@ -4535,7 +4535,7 @@ var Prices = {
           "opskins": 0.05
         },
         "4": {
-          "market": 0.44,
+          "market": 0.54,
           "analyst": 0.36,
           "opskins": 0.33
         }
@@ -4597,7 +4597,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.26,
+          "market": 0.3,
           "analyst": 0.25,
           "opskins": 0.2
         }
@@ -4654,7 +4654,7 @@ var Prices = {
           "opskins": 0.02
         },
         "3": {
-          "market": 0.04,
+          "market": 0.03,
           "analyst": 0.03,
           "opskins": 0.02
         },
@@ -4721,7 +4721,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.13,
+          "market": 0.15,
           "analyst": 0.14,
           "opskins": 0.19
         }
@@ -4763,7 +4763,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.06
         },
@@ -4773,7 +4773,7 @@ var Prices = {
           "opskins": 0.06
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.06
         },
@@ -4783,7 +4783,7 @@ var Prices = {
           "opskins": 0.08
         },
         "4": {
-          "market": 0.48,
+          "market": 0.47,
           "analyst": 0.46,
           "opskins": 0.39
         }
@@ -4825,12 +4825,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.09
         },
         "1": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.12
         },
@@ -4840,12 +4840,12 @@ var Prices = {
           "opskins": 0.09
         },
         "3": {
-          "market": 0.11,
+          "market": 0.13,
           "analyst": 0.07,
           "opskins": 0.05
         },
         "4": {
-          "market": 0.32,
+          "market": 0.33,
           "analyst": 0.26,
           "opskins": 0.26
         }
@@ -4887,22 +4887,22 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.36,
+          "market": 0.47,
           "analyst": 0.26,
           "opskins": 2
         },
         "2": {
-          "market": 0.26,
+          "market": 0.37,
           "analyst": 0.21,
           "opskins": 0.45
         },
         "3": {
-          "market": 0.34,
+          "market": 0.43,
           "analyst": 0.24,
           "opskins": 0.24
         },
         "4": {
-          "market": 0.66,
+          "market": 0.74,
           "analyst": 0.42,
           "opskins": 0.49
         }
@@ -4939,29 +4939,29 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.69
+          "market": 0.86
         },
         "2": {
-          "market": 0.45
+          "market": 0.5
         },
         "3": {
-          "market": 0.47
+          "market": 0.51
         },
         "4": {
-          "market": 0.64
+          "market": 0.67
         }
       },
       "stattrak": {},
       "souvenir": {
-          "1": {
-              "market": 68.89
-          },
-          "2": {
-              "market": 73.68
-          },
-          "3": {
-              "market": 87.36
-          },
+        "1": {
+          "market": 68.89
+        },
+        "2": {
+          "market": 73.68
+        },
+        "3": {
+          "market": 87.36
+        }
       }
     }
   },
@@ -4972,27 +4972,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.2,
+          "market": 0.22,
           "analyst": 0.14,
           "opskins": 0.12
         },
         "1": {
-          "market": 0.21,
+          "market": 0.23,
           "analyst": 0.2,
           "opskins": 0.18
         },
         "2": {
-          "market": 0.19,
+          "market": 0.21,
           "analyst": 0.14,
           "opskins": 0.11
         },
         "3": {
-          "market": 0.24,
+          "market": 0.27,
           "analyst": 0.18,
           "opskins": 0.14
         },
         "4": {
-          "market": 0.31,
+          "market": 0.35,
           "analyst": 0.22,
           "opskins": 0.2
         }
@@ -5008,27 +5008,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.17,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.24,
+          "market": 0.28,
           "analyst": 0.15,
           "opskins": 0.13
         },
         "2": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.14,
           "opskins": 0.12
         },
         "3": {
-          "market": 0.25,
+          "market": 0.3,
           "analyst": 0.18,
           "opskins": 0.16
         },
         "4": {
-          "market": 0.28,
+          "market": 0.36,
           "analyst": 0.21,
           "opskins": 0.19
         }
@@ -5044,27 +5044,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.19,
+          "market": 0.26,
           "analyst": 0.15,
           "opskins": 0.14
         },
         "1": {
-          "market": 0.21,
+          "market": 0.23,
           "analyst": 0.16,
           "opskins": 0.13
         },
         "2": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.14,
           "opskins": 0.11
         },
         "3": {
-          "market": 0.25,
+          "market": 0.3,
           "analyst": 0.18,
           "opskins": 0.14
         },
         "4": {
-          "market": 0.29,
+          "market": 0.34,
           "analyst": 0.21,
           "opskins": 0.17
         }
@@ -5080,7 +5080,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.19,
+          "market": 0.21,
           "analyst": 0.16,
           "opskins": 0.14
         },
@@ -5090,17 +5090,17 @@ var Prices = {
           "opskins": 0.19
         },
         "2": {
-          "market": 0.19,
+          "market": 0.21,
           "analyst": 0.14,
           "opskins": 0.12
         },
         "3": {
-          "market": 0.23,
+          "market": 0.26,
           "analyst": 0.19,
           "opskins": 0.14
         },
         "4": {
-          "market": 0.29,
+          "market": 0.33,
           "analyst": 0.25,
           "opskins": 0.2
         }
@@ -5116,27 +5116,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.28,
+          "market": 3.4,
           "analyst": 1.79,
           "opskins": 1.77
         },
         "1": {
-          "market": 2.41,
+          "market": 3.05,
           "analyst": 2.04,
           "opskins": 1.79
         },
         "2": {
-          "market": 2.15,
+          "market": 2.74,
           "analyst": 1.59,
           "opskins": 1.4
         },
         "3": {
-          "market": 3.98,
+          "market": 5.01,
           "analyst": 2.69,
           "opskins": 2.5
         },
         "4": {
-          "market": 5.75,
+          "market": 6.7,
           "analyst": 4.19,
           "opskins": 3.52
         }
@@ -5152,27 +5152,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.67,
+          "market": 0.83,
           "analyst": 0.48,
           "opskins": 0.44
         },
         "1": {
-          "market": 0.64,
+          "market": 0.82,
           "analyst": 0.47,
           "opskins": 0.44
         },
         "2": {
-          "market": 0.64,
+          "market": 0.83,
           "analyst": 0.46,
           "opskins": 0.41
         },
         "3": {
-          "market": 0.67,
+          "market": 0.88,
           "analyst": 0.5,
           "opskins": 0.42
         },
         "4": {
-          "market": 1.06,
+          "market": 1.32,
           "analyst": 0.82,
           "opskins": 0.64
         }
@@ -5188,27 +5188,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.68,
+          "market": 0.84,
           "analyst": 0.59,
           "opskins": 0.59
         },
         "1": {
-          "market": 0.68,
+          "market": 0.83,
           "analyst": 0.56,
           "opskins": 0.43
         },
         "2": {
-          "market": 0.61,
+          "market": 0.83,
           "analyst": 0.46,
           "opskins": 0.44
         },
         "3": {
-          "market": 0.65,
+          "market": 0.84,
           "analyst": 0.47,
           "opskins": 0.44
         },
         "4": {
-          "market": 0.71,
+          "market": 0.95,
           "analyst": 0.54,
           "opskins": 0.48
         }
@@ -5224,17 +5224,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.67,
+          "market": 0.85,
           "analyst": 0.45,
           "opskins": 0.43
         },
         "3": {
-          "market": 0.65,
+          "market": 0.87,
           "analyst": 0.46,
           "opskins": 0.42
         },
         "4": {
-          "market": 0.72,
+          "market": 0.96,
           "analyst": 0.54,
           "opskins": 0.5
         }
@@ -5255,17 +5255,17 @@ var Prices = {
           "opskins": 8.31
         },
         "2": {
-          "market": 6.64,
+          "market": 8.19,
           "analyst": 4.81,
           "opskins": 4.75
         },
         "3": {
-          "market": 6.57,
+          "market": 8.15,
           "analyst": 4.97,
           "opskins": 4.56
         },
         "4": {
-          "market": 7.14,
+          "market": 8.83,
           "analyst": 5.49,
           "opskins": 5.06
         }
@@ -5281,17 +5281,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 6.77,
+          "market": 7.41,
           "analyst": 5.64,
           "opskins": 5.16
         },
         "3": {
-          "market": 6.72,
+          "market": 8.23,
           "analyst": 5.14,
           "opskins": 4.69
         },
         "4": {
-          "market": 7.15,
+          "market": 8.62,
           "analyst": 5.36,
           "opskins": 4.68
         }
@@ -5312,17 +5312,17 @@ var Prices = {
           "opskins": 19.99
         },
         "2": {
-          "market": 19.22,
+          "market": 25.47,
           "analyst": 22.85,
           "opskins": 22.85
         },
         "3": {
-          "market": 20.03,
+          "market": 25.71,
           "analyst": 16.53,
           "opskins": 16.31
         },
         "4": {
-          "market": 21.83,
+          "market": 29.99,
           "analyst": 16.78,
           "opskins": 16.12
         }
@@ -5338,17 +5338,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 98.99,
+          "market": 111.01,
           "analyst": 85.18,
           "opskins": 81
         },
         "3": {
-          "market": 111.39,
+          "market": 136.06,
           "analyst": 93.4,
           "opskins": 78.7
         },
         "4": {
-          "market": 166.65,
+          "market": 212.64,
           "analyst": 125.71,
           "opskins": 106.99
         }
@@ -5364,27 +5364,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.25,
+          "market": 0.19,
           "analyst": 0.16,
           "opskins": 0.12
         },
         "1": {
-          "market": 0.34,
+          "market": 0.22,
           "analyst": 0.18,
           "opskins": 0.15
         },
         "2": {
-          "market": 0.19,
+          "market": 0.23,
           "analyst": 0.12,
           "opskins": 0.11
         },
         "3": {
-          "market": 0.3,
+          "market": 0.36,
           "analyst": 0.25,
           "opskins": 0.28
         },
         "4": {
-          "market": 1.9,
+          "market": 2.4,
           "analyst": 1.52,
           "opskins": 2.63
         }
@@ -5426,27 +5426,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.2,
+          "market": 0.22,
           "analyst": 0.16,
           "opskins": 0.14
         },
         "1": {
-          "market": 0.24,
+          "market": 0.28,
           "analyst": 0.2,
           "opskins": 0.22
         },
         "2": {
-          "market": 0.19,
+          "market": 0.18,
           "analyst": 0.15,
           "opskins": 0.33
         },
         "3": {
-          "market": 0.41,
+          "market": 0.47,
           "analyst": 0.35,
           "opskins": 0.29
         },
         "4": {
-          "market": 2.46,
+          "market": 3.41,
           "analyst": 2.85,
           "opskins": 2.14
         }
@@ -5488,27 +5488,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.93,
+          "market": 1.12,
           "analyst": 0.62,
           "opskins": 0.93
         },
         "1": {
-          "market": 0.98,
+          "market": 1.29,
           "analyst": 0.78,
           "opskins": 0.7
         },
         "2": {
-          "market": 0.78,
+          "market": 1.02,
           "analyst": 0.51,
           "opskins": 0.5
         },
         "3": {
-          "market": 1.93,
+          "market": 2.48,
           "analyst": 1.44,
           "opskins": 1.37
         },
         "4": {
-          "market": 11.01,
+          "market": 17.17,
           "analyst": 10.91,
           "opskins": 10.75
         }
@@ -5550,12 +5550,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.28,
+          "market": 0.31,
           "analyst": 0.26,
           "opskins": 0.23
         },
         "1": {
-          "market": 0.36,
+          "market": 0.41,
           "analyst": 0.25,
           "opskins": 0.21
         },
@@ -5565,12 +5565,12 @@ var Prices = {
           "opskins": 0.17
         },
         "3": {
-          "market": 0.74,
+          "market": 0.9,
           "analyst": 0.54,
           "opskins": 0.43
         },
         "4": {
-          "market": 7.01,
+          "market": 8.69,
           "analyst": 8.19,
           "opskins": 7.4
         }
@@ -5612,12 +5612,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 0.81,
+          "market": 0.91,
           "analyst": 0.81,
           "opskins": 0.74
         },
         "4": {
-          "market": 0.17,
+          "market": 0.2,
           "analyst": 0.14,
           "opskins": 0.12
         }
@@ -5644,27 +5644,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.39,
+          "market": 0.57,
           "analyst": 0.29,
           "opskins": 0.41
         },
         "1": {
-          "market": 0.45,
+          "market": 0.47,
           "analyst": 0.31,
           "opskins": 0.32
         },
         "2": {
-          "market": 0.35,
+          "market": 0.39,
           "analyst": 0.34,
           "opskins": 0.35
         },
         "3": {
-          "market": 1.08,
+          "market": 1.15,
           "analyst": 0.86,
           "opskins": 0.69
         },
         "4": {
-          "market": 6.98,
+          "market": 7.77,
           "analyst": 6.13,
           "opskins": 5.34
         }
@@ -5726,7 +5726,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.14,
+          "market": 0.13,
           "analyst": 0.09,
           "opskins": 0.09
         }
@@ -5788,7 +5788,7 @@ var Prices = {
           "opskins": 0.02
         },
         "4": {
-          "market": 0.12,
+          "market": 0.15,
           "analyst": 0.1,
           "opskins": 0.09
         }
@@ -5850,7 +5850,7 @@ var Prices = {
           "opskins": 0.02
         },
         "4": {
-          "market": 0.11,
+          "market": 0.14,
           "analyst": 0.08,
           "opskins": 0.07
         }
@@ -6016,7 +6016,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.12,
           "analyst": 0.08,
           "opskins": 0.07
         },
@@ -6026,7 +6026,7 @@ var Prices = {
           "opskins": 0.11
         },
         "2": {
-          "market": 0.09,
+          "market": 0.1,
           "analyst": 0.07,
           "opskins": 0.05
         },
@@ -6036,7 +6036,7 @@ var Prices = {
           "opskins": 0.2
         },
         "4": {
-          "market": 2.19,
+          "market": 2.57,
           "analyst": 2.04,
           "opskins": 1.79
         }
@@ -6098,7 +6098,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.13,
+          "market": 0.11,
           "analyst": 0.09,
           "opskins": 0.08
         }
@@ -6217,12 +6217,12 @@ var Prices = {
           "opskins": 0.02
         },
         "3": {
-          "market": 0.05,
+          "market": 0.07,
           "analyst": 0.03,
           "opskins": 0.03
         },
         "4": {
-          "market": 0.81,
+          "market": 1.08,
           "analyst": 0.64,
           "opskins": 0.5
         }
@@ -6279,12 +6279,12 @@ var Prices = {
           "opskins": 0.03
         },
         "3": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.03
         },
         "4": {
-          "market": 0.18,
+          "market": 0.19,
           "analyst": 0.17,
           "opskins": 0.17
         }
@@ -6331,7 +6331,7 @@ var Prices = {
           "opskins": 0.03
         },
         "3": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.03
         },
@@ -6368,7 +6368,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.13
         },
@@ -6378,12 +6378,12 @@ var Prices = {
           "opskins": 0.18
         },
         "2": {
-          "market": 0.09,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.15
         },
         "3": {
-          "market": 0.15,
+          "market": 0.14,
           "analyst": 0.09,
           "opskins": 0.09
         },
@@ -6430,12 +6430,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 0.22,
+          "market": 0.24,
           "analyst": 0.24,
           "opskins": 0.26
         },
         "4": {
-          "market": 0.22,
+          "market": 0.24,
           "analyst": 0.16,
           "opskins": 0.13
         }
@@ -6462,7 +6462,7 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.3,
+          "market": 0.31,
           "analyst": 0.24,
           "opskins": 0.23
         },
@@ -6472,7 +6472,7 @@ var Prices = {
           "opskins": 0.22
         },
         "4": {
-          "market": 0.45,
+          "market": 0.52,
           "analyst": 0.41,
           "opskins": 0.33
         }
@@ -6504,22 +6504,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.97,
+          "market": 1.21,
           "analyst": 0.85,
           "opskins": 0.7
         },
         "1": {
-          "market": 1.07,
+          "market": 1.16,
           "analyst": 0.84,
           "opskins": 0.73
         },
         "2": {
-          "market": 0.76,
+          "market": 0.84,
           "analyst": 0.61,
           "opskins": 0.54
         },
         "3": {
-          "market": 1.21,
+          "market": 1.3,
           "analyst": 0.96,
           "opskins": 0.78
         }
@@ -6638,7 +6638,7 @@ var Prices = {
           "opskins": 0.02
         },
         "4": {
-          "market": 0.12,
+          "market": 0.14,
           "analyst": 0.09,
           "opskins": 0.05
         }
@@ -6700,7 +6700,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.07
         }
@@ -6824,7 +6824,7 @@ var Prices = {
           "opskins": 0.02
         },
         "4": {
-          "market": 0.12,
+          "market": 0.09,
           "analyst": 0.12,
           "opskins": 0.11
         }
@@ -6886,7 +6886,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.15,
+          "market": 0.16,
           "analyst": 0.11,
           "opskins": 0.1
         }
@@ -6948,7 +6948,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.11,
+          "market": 0.1,
           "analyst": 0.08,
           "opskins": 0.08
         }
@@ -7005,12 +7005,12 @@ var Prices = {
           "opskins": 0.02
         },
         "3": {
-          "market": 0.05,
+          "market": 0.06,
           "analyst": 0.04,
           "opskins": 0.19
         },
         "4": {
-          "market": 0.47,
+          "market": 0.52,
           "analyst": 0.43,
           "opskins": 0.41
         }
@@ -7052,7 +7052,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.03
         },
@@ -7072,7 +7072,7 @@ var Prices = {
           "opskins": 0.02
         },
         "4": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.03
         }
@@ -7114,17 +7114,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.39,
+          "market": 0.46,
           "analyst": 0.33,
           "opskins": 0.26
         },
         "1": {
-          "market": 0.18,
+          "market": 0.19,
           "analyst": 0.14,
           "opskins": 0.11
         },
         "2": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.08,
           "opskins": 0.07
         },
@@ -7134,7 +7134,7 @@ var Prices = {
           "opskins": 0.19
         },
         "4": {
-          "market": 2.1,
+          "market": 2.44,
           "analyst": 1.81,
           "opskins": 1.6
         }
@@ -7176,12 +7176,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.05,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.04
         },
         "1": {
-          "market": 0.05,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.06
         },
@@ -7196,7 +7196,7 @@ var Prices = {
           "opskins": 0.05
         },
         "4": {
-          "market": 0.46,
+          "market": 0.54,
           "analyst": 0.31,
           "opskins": 0.39
         }
@@ -7238,12 +7238,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.19,
           "opskins": 0.29
         },
         "4": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.12,
           "opskins": 0.09
         }
@@ -7270,7 +7270,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.1
         },
@@ -7280,17 +7280,17 @@ var Prices = {
           "opskins": 0.09
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.11,
+          "market": 0.12,
           "analyst": 0.08,
           "opskins": 0.1
         },
         "4": {
-          "market": 0.2,
+          "market": 0.19,
           "analyst": 0.16,
           "opskins": 0.13
         }
@@ -7332,17 +7332,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.18,
+          "market": 0.2,
           "analyst": 0.13,
           "opskins": 0.23
         },
         "1": {
-          "market": 0.31,
+          "market": 0.35,
           "analyst": 0.24,
           "opskins": 0.22
         },
         "2": {
-          "market": 0.15,
+          "market": 0.16,
           "analyst": 0.1,
           "opskins": 0.1
         },
@@ -7352,7 +7352,7 @@ var Prices = {
           "opskins": 0.16
         },
         "4": {
-          "market": 0.44,
+          "market": 0.5,
           "analyst": 0.33,
           "opskins": 0.28
         }
@@ -7394,22 +7394,22 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.21,
           "opskins": 0.21
         },
         "2": {
-          "market": 0.19,
+          "market": 0.21,
           "analyst": 0.17,
           "opskins": 0.15
         },
         "3": {
-          "market": 0.19,
+          "market": 0.21,
           "analyst": 0.17,
           "opskins": 0.14
         },
         "4": {
-          "market": 0.2,
+          "market": 0.22,
           "analyst": 0.18,
           "opskins": 0.15
         }
@@ -7446,27 +7446,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.27,
+          "market": 0.32,
           "analyst": 0.14,
           "opskins": 0.11
         },
         "1": {
-          "market": 0.49,
+          "market": 0.72,
           "analyst": 0.19,
           "opskins": 0.73
         },
         "2": {
-          "market": 0.24,
+          "market": 0.25,
           "analyst": 0.16,
           "opskins": 1
         },
         "3": {
-          "market": 0.71,
+          "market": 0.69,
           "analyst": 0.43,
           "opskins": 0.58
         },
         "4": {
-          "market": 7.04,
+          "market": 7.59,
           "analyst": 4.61,
           "opskins": 7.99
         }
@@ -7482,22 +7482,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.23,
+          "market": 0.26,
           "analyst": 0.18,
           "opskins": 0.6
         },
         "1": {
-          "market": 0.4,
+          "market": 0.35,
           "analyst": 1.38,
           "opskins": 249.99
         },
         "2": {
-          "market": 0.24,
+          "market": 0.28,
           "analyst": 0.16,
           "opskins": 0.94
         },
         "3": {
-          "market": 0.59,
+          "market": 0.67,
           "analyst": 0.4,
           "opskins": 0.55
         },
@@ -7518,12 +7518,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.25,
+          "market": 0.24,
           "analyst": 0.17,
           "opskins": 11.99
         },
         "1": {
-          "market": 0.39,
+          "market": 0.6,
           "analyst": 1.02,
           "opskins": 0.98
         },
@@ -7533,12 +7533,12 @@ var Prices = {
           "opskins": 0.16
         },
         "3": {
-          "market": 0.69,
+          "market": 0.63,
           "analyst": 0.38,
           "opskins": 0.5
         },
         "4": {
-          "market": 4.58,
+          "market": 5.53,
           "analyst": 5.95,
           "opskins": 5.65
         }
@@ -7554,22 +7554,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.05,
+          "market": 0.95,
           "analyst": 0.66,
           "opskins": 0.9
         },
         "1": {
-          "market": 1.24,
+          "market": 1.06,
           "analyst": -1,
           "opskins": 3.25
         },
         "2": {
-          "market": 0.94,
+          "market": 1.05,
           "analyst": 0.64,
           "opskins": 0.84
         },
         "3": {
-          "market": 3.64,
+          "market": 5.99,
           "analyst": 3.05,
           "opskins": 2.58
         },
@@ -7590,22 +7590,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.07,
+          "market": 2.1,
           "analyst": 2.63,
           "opskins": 2.59
         },
         "1": {
-          "market": 1.93,
+          "market": 2.09,
           "analyst": 4.04,
           "opskins": 4.79
         },
         "2": {
-          "market": 1.55,
+          "market": 1.84,
           "analyst": 1.68,
           "opskins": 1.46
         },
         "3": {
-          "market": 5.01,
+          "market": 6.7,
           "analyst": 4.86,
           "opskins": 4.85
         },
@@ -7626,22 +7626,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.84,
+          "market": 2.1,
           "analyst": 2.36,
           "opskins": 7.21
         },
         "1": {
-          "market": 2.76,
+          "market": 2.38,
           "analyst": 5.45,
           "opskins": 4.89
         },
         "2": {
-          "market": 1.89,
+          "market": 2.45,
           "analyst": 1.79,
           "opskins": 3.95
         },
         "3": {
-          "market": 7.59,
+          "market": 8.57,
           "analyst": 7.58,
           "opskins": 7.77
         },
@@ -7672,12 +7672,12 @@ var Prices = {
           "opskins": 4.17
         },
         "2": {
-          "market": 1.46,
+          "market": 2,
           "analyst": 1.31,
           "opskins": 1.47
         },
         "3": {
-          "market": 5.79,
+          "market": 6.64,
           "analyst": 5.83,
           "opskins": 5.03
         },
@@ -7708,12 +7708,12 @@ var Prices = {
           "opskins": 9.99
         },
         "2": {
-          "market": 1.75,
+          "market": 1.88,
           "analyst": 1.84,
           "opskins": 1.57
         },
         "3": {
-          "market": 4.68,
+          "market": 6.56,
           "analyst": 6.54,
           "opskins": 9.95
         },
@@ -7734,22 +7734,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.74,
+          "market": 4.13,
           "analyst": 4.72,
           "opskins": 4.25
         },
         "1": {
-          "market": 5.22,
+          "market": 5.31,
           "analyst": 7.87,
           "opskins": 6
         },
         "2": {
-          "market": 1.96,
+          "market": 2.12,
           "analyst": 2.29,
           "opskins": 1.9
         },
         "3": {
-          "market": 6.37,
+          "market": 8.01,
           "analyst": 7.02,
           "opskins": 6.84
         },
@@ -7770,27 +7770,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 4.65,
+          "market": 5.35,
           "analyst": 7.54,
           "opskins": 5.64
         },
         "1": {
-          "market": 4.53,
+          "market": 5.17,
           "analyst": 5.46,
           "opskins": 11
         },
         "2": {
-          "market": 5.93,
+          "market": 6.8,
           "analyst": 4.75,
           "opskins": 9.32
         },
         "3": {
-          "market": 15.76,
+          "market": 22.07,
           "analyst": 15.47,
           "opskins": 16.54
         },
         "4": {
-          "market": 90.12,
+          "market": 100,
           "analyst": 124.19,
           "opskins": 114.81
         }
@@ -7806,22 +7806,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.46,
+          "market": 1.57,
           "analyst": 1.64,
           "opskins": 2.32
         },
         "1": {
-          "market": 1.51,
+          "market": 1.79,
           "analyst": 2.01,
           "opskins": 1.85
         },
         "2": {
-          "market": 1.6,
+          "market": 1.94,
           "analyst": 1.37,
           "opskins": 1.62
         },
         "3": {
-          "market": 7.14,
+          "market": 8.23,
           "analyst": 6.99,
           "opskins": 6.02
         },
@@ -7842,7 +7842,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.08,
+          "market": 0.11,
           "analyst": 0.11,
           "opskins": 0.13
         },
@@ -7852,17 +7852,17 @@ var Prices = {
           "opskins": 0.15
         },
         "2": {
-          "market": 0.07,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.08
         },
         "3": {
-          "market": 0.16,
+          "market": 0.18,
           "analyst": 0.14,
           "opskins": 0.12
         },
         "4": {
-          "market": 0.95,
+          "market": 1.82,
           "analyst": 1.17,
           "opskins": 1.97
         }
@@ -7904,27 +7904,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.08,
+          "market": 0.11,
           "analyst": 0.11,
           "opskins": 0.1
         },
         "1": {
-          "market": 0.11,
+          "market": 0.2,
           "analyst": 0.19,
           "opskins": 0.15
         },
         "2": {
-          "market": 0.07,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.14
         },
         "3": {
-          "market": 0.11,
+          "market": 0.15,
           "analyst": 0.12,
           "opskins": 0.11
         },
         "4": {
-          "market": 1.26,
+          "market": 1.35,
           "analyst": 1.04,
           "opskins": 1.07
         }
@@ -7966,27 +7966,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.17,
+          "market": 0.19,
           "analyst": 0.12,
           "opskins": 0.11
         },
         "1": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 2.78,
           "opskins": 2.41
         },
         "2": {
-          "market": 0.08,
+          "market": 0.1,
           "analyst": 0.08,
           "opskins": 0.1
         },
         "3": {
-          "market": 0.12,
+          "market": 0.15,
           "analyst": 0.13,
           "opskins": 0.11
         },
         "4": {
-          "market": 0.49,
+          "market": 0.61,
           "analyst": 0.32,
           "opskins": 0.29
         }
@@ -8028,7 +8028,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.15,
+          "market": 0.22,
           "analyst": 0.16,
           "opskins": 0.12
         },
@@ -8038,17 +8038,17 @@ var Prices = {
           "opskins": 0.12
         },
         "2": {
-          "market": 0.09,
+          "market": 0.11,
           "analyst": 0.1,
           "opskins": 0.11
         },
         "3": {
-          "market": 0.27,
+          "market": 0.31,
           "analyst": 0.27,
           "opskins": 0.23
         },
         "4": {
-          "market": 2.62,
+          "market": 3.11,
           "analyst": 2.48,
           "opskins": 1.99
         }
@@ -8090,27 +8090,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.11,
+          "market": 0.15,
           "analyst": 0.09,
           "opskins": 0.12
         },
         "1": {
-          "market": 0.16,
+          "market": 0.18,
           "analyst": 0.25,
           "opskins": 0.21
         },
         "2": {
-          "market": 0.08,
+          "market": 0.1,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.12,
+          "market": 0.15,
           "analyst": 0.17,
           "opskins": 0.14
         },
         "4": {
-          "market": 2.45,
+          "market": 2.06,
           "analyst": 1.8,
           "opskins": 2.62
         }
@@ -8152,27 +8152,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.15,
           "analyst": 0.25,
           "opskins": 0.22
         },
         "1": {
-          "market": 0.12,
+          "market": 0.16,
           "analyst": 0.19,
           "opskins": 0.18
         },
         "2": {
-          "market": 0.08,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.47
         },
         "3": {
-          "market": 0.12,
+          "market": 0.14,
           "analyst": 0.15,
           "opskins": 0.14
         },
         "4": {
-          "market": 1.97,
+          "market": 1.98,
           "analyst": 1.86,
           "opskins": 5.5
         }
@@ -8214,27 +8214,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.77,
+          "market": 1.01,
           "analyst": 1.19,
           "opskins": 2
         },
         "1": {
-          "market": 0.68,
+          "market": 0.96,
           "analyst": 0.62,
           "opskins": 1.4
         },
         "2": {
-          "market": 0.67,
+          "market": 0.9,
           "analyst": 0.47,
           "opskins": 0.45
         },
         "3": {
-          "market": 0.79,
+          "market": 1.18,
           "analyst": 0.55,
           "opskins": 0.52
         },
         "4": {
-          "market": 0.92,
+          "market": 1.37,
           "analyst": 0.68,
           "opskins": 0.62
         }
@@ -8276,22 +8276,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.61,
+          "market": 0.94,
           "analyst": 0.56,
           "opskins": 0.55
         },
         "1": {
-          "market": 1.38,
+          "market": 0.92,
           "analyst": 1.7,
           "opskins": 1.45
         },
         "2": {
-          "market": 0.62,
+          "market": 0.87,
           "analyst": 0.45,
           "opskins": 0.39
         },
         "3": {
-          "market": 0.76,
+          "market": 1.17,
           "analyst": 0.57,
           "opskins": 0.55
         },
@@ -8338,27 +8338,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.62,
+          "market": 0.84,
           "analyst": 0.53,
           "opskins": 0.88
         },
         "1": {
-          "market": 0.68,
+          "market": 0.94,
           "analyst": 0.64,
           "opskins": 0.79
         },
         "2": {
-          "market": 0.63,
+          "market": 0.85,
           "analyst": 0.48,
           "opskins": 0.53
         },
         "3": {
-          "market": 1.09,
+          "market": 1.35,
           "analyst": 0.89,
           "opskins": 0.93
         },
         "4": {
-          "market": 9.57,
+          "market": 10.31,
           "analyst": 9.64,
           "opskins": 19.99
         }
@@ -8400,27 +8400,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.71,
+          "market": 0.84,
           "analyst": 1.46,
           "opskins": 1.19
         },
         "1": {
-          "market": 1.26,
+          "market": 1.33,
           "analyst": 1.91,
           "opskins": 1.65
         },
         "2": {
-          "market": 0.62,
+          "market": 0.89,
           "analyst": 0.46,
           "opskins": 2.96
         },
         "3": {
-          "market": 0.74,
+          "market": 1.14,
           "analyst": 0.6,
           "opskins": 0.55
         },
         "4": {
-          "market": 1.16,
+          "market": 1.57,
           "analyst": 0.74,
           "opskins": 0.98
         }
@@ -8462,27 +8462,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.6,
+          "market": 0.87,
           "analyst": 0.59,
           "opskins": 0.48
         },
         "1": {
-          "market": 0.62,
+          "market": 0.74,
           "analyst": 0.7,
           "opskins": 0.81
         },
         "2": {
-          "market": 0.61,
+          "market": 0.85,
           "analyst": 0.47,
           "opskins": 0.41
         },
         "3": {
-          "market": 0.77,
+          "market": 1.09,
           "analyst": 0.61,
           "opskins": 0.58
         },
         "4": {
-          "market": 5.47,
+          "market": 6.57,
           "analyst": 6.93,
           "opskins": 6.92
         }
@@ -8524,12 +8524,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 6.36,
+          "market": 7.67,
           "analyst": 4.46,
           "opskins": 6.35
         },
         "4": {
-          "market": 4.63,
+          "market": 4.55,
           "analyst": 3.95,
           "opskins": 3.27
         }
@@ -8561,17 +8561,17 @@ var Prices = {
           "opskins": 7.75
         },
         "2": {
-          "market": 1.1,
+          "market": 1.27,
           "analyst": 1.03,
           "opskins": 2.97
         },
         "3": {
-          "market": 1.47,
+          "market": 1.53,
           "analyst": 1.13,
           "opskins": 1.71
         },
         "4": {
-          "market": 3.29,
+          "market": 4,
           "analyst": 2.94,
           "opskins": 3.79
         }
@@ -8608,12 +8608,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 15.08,
+          "market": 31.23,
           "analyst": 12.27,
           "opskins": 12.19
         },
         "4": {
-          "market": 9.97,
+          "market": 14.98,
           "analyst": 7.16,
           "opskins": 6.15
         }
@@ -8640,27 +8640,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.39,
+          "market": 0.52,
           "analyst": 0.33,
           "opskins": 0.3
         },
         "1": {
-          "market": 0.78,
+          "market": 1.01,
           "analyst": 0.63,
           "opskins": 0.61
         },
         "2": {
-          "market": 0.48,
+          "market": 0.6,
           "analyst": 0.41,
           "opskins": 0.33
         },
         "3": {
-          "market": 3.52,
+          "market": 3.73,
           "analyst": 2.74,
           "opskins": 2.26
         },
         "4": {
-          "market": 28.23,
+          "market": 31.31,
           "analyst": 31.45,
           "opskins": 29.97
         }
@@ -8702,27 +8702,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.45,
+          "market": 0.27,
           "analyst": 1.09,
           "opskins": 5
         },
         "1": {
-          "market": 0.89,
+          "market": 1.45,
           "analyst": 0.32,
           "opskins": 0.24
         },
         "2": {
-          "market": 0.2,
+          "market": 0.23,
           "analyst": 0.19,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.44,
+          "market": 0.53,
           "analyst": 0.4,
           "opskins": 0.38
         },
         "4": {
-          "market": 3.14,
+          "market": 4.57,
           "analyst": 3.17,
           "opskins": 2.68
         }
@@ -8764,7 +8764,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.18,
+          "market": 0.22,
           "analyst": 0.28,
           "opskins": 0.8
         },
@@ -8774,17 +8774,17 @@ var Prices = {
           "opskins": 0.19
         },
         "2": {
-          "market": 0.22,
+          "market": 0.23,
           "analyst": 0.19,
           "opskins": 0.24
         },
         "3": {
-          "market": 0.42,
+          "market": 0.46,
           "analyst": 0.37,
           "opskins": 0.41
         },
         "4": {
-          "market": 3.12,
+          "market": 4.1,
           "analyst": 3.47,
           "opskins": 3
         }
@@ -8826,27 +8826,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 0.18,
           "opskins": 0.27
         },
         "1": {
-          "market": 0.27,
+          "market": 0.28,
           "analyst": 0.28,
           "opskins": 0.27
         },
         "2": {
-          "market": 0.2,
+          "market": 0.22,
           "analyst": 0.16,
           "opskins": 0.12
         },
         "3": {
-          "market": 0.39,
+          "market": 0.5,
           "analyst": 0.37,
           "opskins": 0.34
         },
         "4": {
-          "market": 2.58,
+          "market": 4.75,
           "analyst": 3.18,
           "opskins": 4
         }
@@ -8888,22 +8888,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1,
+          "market": 1.03,
           "analyst": 0.88,
           "opskins": 1.18
         },
         "1": {
-          "market": 0.93,
+          "market": 1.24,
           "analyst": 0.84,
           "opskins": 0.81
         },
         "2": {
-          "market": 1.09,
+          "market": 1.49,
           "analyst": 0.9,
           "opskins": 0.81
         },
         "3": {
-          "market": 3.01,
+          "market": 3.36,
           "analyst": 2.47,
           "opskins": 2.44
         },
@@ -8950,22 +8950,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.01,
+          "market": 1.43,
           "analyst": 0.99,
           "opskins": 1
         },
         "1": {
-          "market": 1.45,
+          "market": 1.75,
           "analyst": 0.95,
           "opskins": 1.04
         },
         "2": {
-          "market": 1.31,
+          "market": 1.99,
           "analyst": 1,
           "opskins": 1.03
         },
         "3": {
-          "market": 3.64,
+          "market": 5.28,
           "analyst": 3.01,
           "opskins": 2.55
         },
@@ -9012,27 +9012,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.01,
+          "market": 1.22,
           "analyst": 2.21,
           "opskins": 0.75
         },
         "1": {
-          "market": 1.11,
+          "market": 1.42,
           "analyst": 1.07,
           "opskins": 1.74
         },
         "2": {
-          "market": 1.11,
+          "market": 1.53,
           "analyst": 0.97,
           "opskins": 0.97
         },
         "3": {
-          "market": 2.68,
+          "market": 3.47,
           "analyst": 2.6,
           "opskins": 2.47
         },
         "4": {
-          "market": 17.2,
+          "market": 23.24,
           "analyst": 20.41,
           "opskins": 35
         }
@@ -9074,27 +9074,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 4.97,
+          "market": 5.87,
           "analyst": 3.88,
           "opskins": 5.97
         },
         "1": {
-          "market": 5.73,
+          "market": 7.71,
           "analyst": 3.73,
           "opskins": 5.2
         },
         "2": {
-          "market": 5.04,
+          "market": 6.05,
           "analyst": 4.04,
           "opskins": 4.16
         },
         "3": {
-          "market": 16.25,
+          "market": 20.18,
           "analyst": 14.5,
           "opskins": 13.28
         },
         "4": {
-          "market": 119.7,
+          "market": 120,
           "analyst": 90,
           "opskins": 106.99
         }
@@ -9136,27 +9136,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.1,
+          "market": 3.4,
           "analyst": 2.27,
           "opskins": 2.69
         },
         "1": {
-          "market": 4.85,
+          "market": 6.03,
           "analyst": 3.63,
           "opskins": 3.89
         },
         "2": {
-          "market": 5.55,
+          "market": 7.09,
           "analyst": 4.33,
           "opskins": 3.78
         },
         "3": {
-          "market": 24.84,
+          "market": 28.85,
           "analyst": 19.5,
           "opskins": 16.95
         },
         "4": {
-          "market": 243,
+          "market": 280.51,
           "analyst": 239,
           "opskins": 252.99
         }
@@ -9193,22 +9193,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 8.13,
+          "market": 9.42,
           "analyst": 8.91,
           "opskins": 7.68
         },
         "1": {
-          "market": 11.6,
+          "market": 13.75,
           "analyst": 10.08,
           "opskins": 8.95
         },
         "2": {
-          "market": 13.74,
+          "market": 16.12,
           "analyst": 10.49,
           "opskins": 10.13
         },
         "3": {
-          "market": 30.93,
+          "market": 37.53,
           "analyst": 29.61,
           "opskins": 25.9
         },
@@ -9255,27 +9255,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.83,
+          "market": 1.41,
           "analyst": 0.33,
           "opskins": 27.78
         },
         "1": {
-          "market": 1.34,
+          "market": 0.68,
           "analyst": 0.57,
           "opskins": 15
         },
         "2": {
-          "market": 0.39,
+          "market": 0.57,
           "analyst": 0.32,
           "opskins": 0.35
         },
         "3": {
-          "market": 0.73,
+          "market": 1.08,
           "analyst": 0.73,
           "opskins": 0.72
         },
         "4": {
-          "market": 5.88,
+          "market": 7.47,
           "analyst": 6.56,
           "opskins": 5.25
         }
@@ -9291,22 +9291,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.88,
+          "market": 0.87,
           "analyst": 0.96,
           "opskins": 5
         },
         "1": {
-          "market": 1.23,
+          "market": 2.28,
           "analyst": 1.45,
           "opskins": 2
         },
         "2": {
-          "market": 0.93,
+          "market": 1.09,
           "analyst": 0.62,
           "opskins": 3.99
         },
         "3": {
-          "market": 3.08,
+          "market": 3.72,
           "analyst": 2.15,
           "opskins": 2.41
         },
@@ -9327,22 +9327,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.85,
+          "market": 2.46,
           "analyst": 5.09,
           "opskins": 1.55
         },
         "1": {
-          "market": 0.83,
+          "market": 1.22,
           "analyst": 2.04,
           "opskins": 1.5
         },
         "2": {
-          "market": 0.98,
+          "market": 1.07,
           "analyst": 0.65,
           "opskins": 0.66
         },
         "3": {
-          "market": 2.38,
+          "market": 2.66,
           "analyst": 2.2,
           "opskins": 1.68
         },
@@ -9363,22 +9363,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.34,
+          "market": 1.75,
           "analyst": 3.78,
           "opskins": 3.48
         },
         "1": {
-          "market": 3.15,
+          "market": 2.76,
           "analyst": 8.67,
           "opskins": 7.99
         },
         "2": {
-          "market": 0.87,
+          "market": 1.09,
           "analyst": 0.62,
           "opskins": 0.7
         },
         "3": {
-          "market": 2.83,
+          "market": 2.85,
           "analyst": 2.04,
           "opskins": 3.13
         },
@@ -9399,12 +9399,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 3.54,
+          "market": 7.69,
           "analyst": 8.1,
           "opskins": 11.27
         },
         "4": {
-          "market": 0.82,
+          "market": 1.02,
           "analyst": 0.79,
           "opskins": 0.71
         }
@@ -9420,22 +9420,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.3,
+          "market": 1.6,
           "analyst": 1.5,
           "opskins": 1.5
         },
         "1": {
-          "market": 2.85,
+          "market": 2.97,
           "analyst": 1.54,
           "opskins": 1.87
         },
         "2": {
-          "market": 1.39,
+          "market": 1.65,
           "analyst": 1.27,
           "opskins": 1.19
         },
         "3": {
-          "market": 20.03,
+          "market": 22.22,
           "analyst": 17.52,
           "opskins": 17.5
         },
@@ -9461,7 +9461,7 @@ var Prices = {
           "opskins": 0.08
         },
         "1": {
-          "market": 0.03,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.03
         },
@@ -9471,12 +9471,12 @@ var Prices = {
           "opskins": 0.04
         },
         "3": {
-          "market": 0.05,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.05
         },
         "4": {
-          "market": 0.56,
+          "market": 0.69,
           "analyst": 0.46,
           "opskins": 0.34
         }
@@ -9518,12 +9518,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.06,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 1
         },
         "1": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.03
         },
@@ -9533,12 +9533,12 @@ var Prices = {
           "opskins": 0.02
         },
         "3": {
-          "market": 0.05,
+          "market": 0.07,
           "analyst": 0.03,
           "opskins": 0.05
         },
         "4": {
-          "market": 0.48,
+          "market": 0.62,
           "analyst": 0.39,
           "opskins": 0.39
         }
@@ -9585,22 +9585,22 @@ var Prices = {
           "opskins": 0.03
         },
         "1": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.03
         },
         "2": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.03
         },
         "3": {
-          "market": 0.05,
+          "market": 0.06,
           "analyst": 0.04,
           "opskins": 0.05
         },
         "4": {
-          "market": 0.53,
+          "market": 0.56,
           "analyst": 0.37,
           "opskins": 0.37
         }
@@ -9642,12 +9642,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.03
         },
         "1": {
-          "market": 0.05,
+          "market": 0.06,
           "analyst": 0.03,
           "opskins": 0.33
         },
@@ -9657,12 +9657,12 @@ var Prices = {
           "opskins": 0.03
         },
         "3": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.04
         },
         "4": {
-          "market": 0.58,
+          "market": 0.71,
           "analyst": 0.36,
           "opskins": 0.33
         }
@@ -9704,27 +9704,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.04,
           "opskins": 0.1
         },
         "1": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.05,
           "opskins": 0.08
         },
         "2": {
-          "market": 0.04,
+          "market": 0.03,
           "analyst": 0.03,
           "opskins": 0.03
         },
         "3": {
-          "market": 0.05,
+          "market": 0.06,
           "analyst": 0.03,
           "opskins": 0.04
         },
         "4": {
-          "market": 0.47,
+          "market": 0.63,
           "analyst": 0.34,
           "opskins": 0.31
         }
@@ -9766,27 +9766,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.19,
+          "market": 0.25,
           "analyst": 0.15,
           "opskins": 0.14
         },
         "1": {
-          "market": 0.22,
+          "market": 0.27,
           "analyst": 0.22,
           "opskins": 0.19
         },
         "2": {
-          "market": 0.23,
+          "market": 0.28,
           "analyst": 0.17,
           "opskins": 0.14
         },
         "3": {
-          "market": 0.42,
+          "market": 0.44,
           "analyst": 0.37,
           "opskins": 0.31
         },
         "4": {
-          "market": 3.57,
+          "market": 3.32,
           "analyst": 3.15,
           "opskins": 2.7
         }
@@ -9828,27 +9828,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.21,
+          "market": 0.26,
           "analyst": 0.18,
           "opskins": 0.24
         },
         "1": {
-          "market": 0.26,
+          "market": 0.29,
           "analyst": 0.18,
           "opskins": 0.18
         },
         "2": {
-          "market": 0.24,
+          "market": 0.29,
           "analyst": 0.17,
           "opskins": 0.18
         },
         "3": {
-          "market": 0.53,
+          "market": 0.66,
           "analyst": 0.36,
           "opskins": 0.32
         },
         "4": {
-          "market": 3.65,
+          "market": 5.54,
           "analyst": 2.74,
           "opskins": 2.83
         }
@@ -9890,27 +9890,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.19,
+          "market": 0.26,
           "analyst": 0.16,
           "opskins": 0.14
         },
         "1": {
-          "market": 0.25,
+          "market": 0.28,
           "analyst": 0.18,
           "opskins": 0.18
         },
         "2": {
-          "market": 0.23,
+          "market": 0.29,
           "analyst": 0.18,
           "opskins": 0.15
         },
         "3": {
-          "market": 0.45,
+          "market": 0.53,
           "analyst": 0.38,
           "opskins": 0.34
         },
         "4": {
-          "market": 6.36,
+          "market": 8.32,
           "analyst": 5.91,
           "opskins": 5.75
         }
@@ -9952,17 +9952,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.2,
+          "market": 0.25,
           "analyst": 0.15,
           "opskins": 0.2
         },
         "1": {
-          "market": 0.22,
+          "market": 0.25,
           "analyst": 0.18,
           "opskins": 0.18
         },
         "2": {
-          "market": 0.23,
+          "market": 0.28,
           "analyst": 0.16,
           "opskins": 0.16
         },
@@ -9972,7 +9972,7 @@ var Prices = {
           "opskins": 0.25
         },
         "4": {
-          "market": 1.62,
+          "market": 2.38,
           "analyst": 1.35,
           "opskins": 1.49
         }
@@ -10014,27 +10014,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.64,
+          "market": 1.89,
           "analyst": 1.3,
           "opskins": 1.19
         },
         "1": {
-          "market": 1.57,
+          "market": 2.11,
           "analyst": 1.48,
           "opskins": 3.88
         },
         "2": {
-          "market": 1.76,
+          "market": 2.22,
           "analyst": 1.43,
           "opskins": 1.15
         },
         "3": {
-          "market": 2.19,
+          "market": 2.39,
           "analyst": 1.83,
           "opskins": 1.49
         },
         "4": {
-          "market": 9,
+          "market": 11.5,
           "analyst": 9.13,
           "opskins": 7.92
         }
@@ -10076,22 +10076,22 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 1.97,
+          "market": 2.27,
           "analyst": 1.43,
           "opskins": 1.24
         },
         "2": {
-          "market": 1.8,
+          "market": 2.23,
           "analyst": 1.44,
           "opskins": 1.16
         },
         "3": {
-          "market": 2.34,
+          "market": 2.57,
           "analyst": 1.72,
           "opskins": 1.37
         },
         "4": {
-          "market": 3.94,
+          "market": 4.23,
           "analyst": 3.01,
           "opskins": 2.43
         }
@@ -10128,27 +10128,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.35,
+          "market": 2.1,
           "analyst": 1.44,
           "opskins": 1.4
         },
         "1": {
-          "market": 1.53,
+          "market": 1.7,
           "analyst": 1.56,
           "opskins": 1.2
         },
         "2": {
-          "market": 1.81,
+          "market": 2.19,
           "analyst": 1.35,
           "opskins": 1.4
         },
         "3": {
-          "market": 2.65,
+          "market": 2.64,
           "analyst": 2.26,
           "opskins": 1.84
         },
         "4": {
-          "market": 3.52,
+          "market": 4.05,
           "analyst": 2.81,
           "opskins": 2.55
         }
@@ -10190,27 +10190,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 6.56,
+          "market": 7.53,
           "analyst": 5.58,
           "opskins": 5.82
         },
         "1": {
-          "market": 6.65,
+          "market": 8.17,
           "analyst": 5.97,
           "opskins": 5.66
         },
         "2": {
-          "market": 7.34,
+          "market": 9.06,
           "analyst": 6.47,
           "opskins": 5.62
         },
         "3": {
-          "market": 9.92,
+          "market": 12.33,
           "analyst": 8.59,
           "opskins": 7.85
         },
         "4": {
-          "market": 15.36,
+          "market": 17.07,
           "analyst": 13.69,
           "opskins": 12.21
         }
@@ -10252,27 +10252,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 18.33,
+          "market": 20.5,
           "analyst": 15.69,
           "opskins": 13.85
         },
         "1": {
-          "market": 23.66,
+          "market": 26.88,
           "analyst": 18.14,
           "opskins": 15.98
         },
         "2": {
-          "market": 30.09,
+          "market": 34.59,
           "analyst": 24.53,
           "opskins": 21.69
         },
         "3": {
-          "market": 44.68,
+          "market": 52.73,
           "analyst": 37.45,
           "opskins": 32.89
         },
         "4": {
-          "market": 99.42,
+          "market": 119.78,
           "analyst": 87.58,
           "opskins": 72.79
         }
@@ -10314,12 +10314,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.06
         },
         "1": {
-          "market": 0.09,
+          "market": 0.11,
           "analyst": 0.08,
           "opskins": 0.07
         },
@@ -10329,12 +10329,12 @@ var Prices = {
           "opskins": 0.03
         },
         "3": {
-          "market": 0.15,
+          "market": 0.16,
           "analyst": 0.09,
           "opskins": 0.07
         },
         "4": {
-          "market": 0.28,
+          "market": 0.34,
           "analyst": 0.24,
           "opskins": 0.19
         }
@@ -10350,27 +10350,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.07,
           "opskins": 0.08
         },
         "1": {
-          "market": 0.17,
+          "market": 0.18,
           "analyst": 0.12,
           "opskins": 0.1
         },
         "2": {
-          "market": 0.08,
+          "market": 0.09,
           "analyst": 0.06,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.19,
+          "market": 0.23,
           "analyst": 0.13,
           "opskins": 0.11
         },
         "4": {
-          "market": 0.45,
+          "market": 0.56,
           "analyst": 0.3,
           "opskins": 0.24
         }
@@ -10386,27 +10386,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.04
         },
         "1": {
-          "market": 0.1,
+          "market": 0.12,
           "analyst": 0.09,
           "opskins": 0.06
         },
         "2": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.03
         },
         "3": {
-          "market": 0.17,
+          "market": 0.19,
           "analyst": 0.12,
           "opskins": 0.1
         },
         "4": {
-          "market": 0.41,
+          "market": 0.47,
           "analyst": 0.27,
           "opskins": 0.22
         }
@@ -10422,27 +10422,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.05
         },
         "1": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.07,
           "opskins": 0.07
         },
         "2": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.1
         },
         "3": {
-          "market": 0.15,
+          "market": 0.18,
           "analyst": 0.1,
           "opskins": 0.08
         },
         "4": {
-          "market": 0.38,
+          "market": 0.42,
           "analyst": 0.27,
           "opskins": 0.23
         }
@@ -10458,27 +10458,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.3
         },
         "1": {
-          "market": 0.59,
+          "market": 1.03,
           "analyst": 0.25,
           "opskins": 0.59
         },
         "2": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.04
         },
         "3": {
-          "market": 0.14,
+          "market": 0.16,
           "analyst": 0.1,
           "opskins": 0.08
         },
         "4": {
-          "market": 0.25,
+          "market": 0.3,
           "analyst": 0.19,
           "opskins": 0.19
         }
@@ -10494,27 +10494,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.37,
+          "market": 0.44,
           "analyst": 0.28,
           "opskins": 0.45
         },
         "1": {
-          "market": 1.13,
+          "market": 1.36,
           "analyst": 0.84,
           "opskins": 0.7
         },
         "2": {
-          "market": 0.4,
+          "market": 0.59,
           "analyst": 0.29,
           "opskins": 0.29
         },
         "3": {
-          "market": 1.84,
+          "market": 2.2,
           "analyst": 1.29,
           "opskins": 1.12
         },
         "4": {
-          "market": 3.65,
+          "market": 4.34,
           "analyst": 2.56,
           "opskins": 2.24
         }
@@ -10530,27 +10530,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.26,
+          "market": 0.37,
           "analyst": 0.22,
           "opskins": 0.21
         },
         "1": {
-          "market": 0.29,
+          "market": 0.41,
           "analyst": 0.25,
           "opskins": 0.3
         },
         "2": {
-          "market": 0.28,
+          "market": 0.41,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "3": {
-          "market": 0.41,
+          "market": 0.52,
           "analyst": 0.27,
           "opskins": 0.23
         },
         "4": {
-          "market": 0.97,
+          "market": 1.14,
           "analyst": 0.74,
           "opskins": 0.6
         }
@@ -10566,27 +10566,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.11,
+          "market": 2.91,
           "analyst": 1.56,
           "opskins": 2.97
         },
         "1": {
-          "market": 2.25,
+          "market": 3.07,
           "analyst": 1.81,
           "opskins": 1.75
         },
         "2": {
-          "market": 2.48,
+          "market": 3.44,
           "analyst": 1.9,
           "opskins": 1.75
         },
         "3": {
-          "market": 2.81,
+          "market": 3.56,
           "analyst": 2.19,
           "opskins": 1.86
         },
         "4": {
-          "market": 5.79,
+          "market": 6.8,
           "analyst": 4.53,
           "opskins": 4.07
         }
@@ -10602,27 +10602,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.18,
+          "market": 3.27,
           "analyst": 2.01,
           "opskins": 1.76
         },
         "1": {
-          "market": 2.25,
+          "market": 3.06,
           "analyst": 2.88,
           "opskins": 2.96
         },
         "2": {
-          "market": 2.45,
+          "market": 3.42,
           "analyst": 1.93,
           "opskins": 1.95
         },
         "3": {
-          "market": 2.72,
+          "market": 3.59,
           "analyst": 2.14,
           "opskins": 2.43
         },
         "4": {
-          "market": 3.86,
+          "market": 4.53,
           "analyst": 3.11,
           "opskins": 3
         }
@@ -10638,27 +10638,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.24,
+          "market": 2.88,
           "analyst": 1.51,
           "opskins": 5.18
         },
         "1": {
-          "market": 2.31,
+          "market": 2.8,
           "analyst": 2.22,
           "opskins": 1.87
         },
         "2": {
-          "market": 2.45,
+          "market": 3.52,
           "analyst": 1.88,
           "opskins": 1.91
         },
         "3": {
-          "market": 2.77,
+          "market": 3.57,
           "analyst": 2.21,
           "opskins": 1.94
         },
         "4": {
-          "market": 3.66,
+          "market": 4.57,
           "analyst": 2.68,
           "opskins": 2.36
         }
@@ -10674,27 +10674,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 5.6,
+          "market": 9.2,
           "analyst": 6.55,
           "opskins": 8.99
         },
         "1": {
-          "market": 7.15,
+          "market": 10.47,
           "analyst": 7.54,
           "opskins": 339.8
         },
         "2": {
-          "market": 8.21,
+          "market": 10.41,
           "analyst": 6.83,
           "opskins": 6.17
         },
         "3": {
-          "market": 12.22,
+          "market": 14.69,
           "analyst": 9.2,
           "opskins": 8.32
         },
         "4": {
-          "market": 17.25,
+          "market": 19.53,
           "analyst": 12.32,
           "opskins": 10.78
         }
@@ -10710,7 +10710,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 7.46,
+          "market": 8.41,
           "analyst": 6.75,
           "opskins": -1
         },
@@ -10720,17 +10720,17 @@ var Prices = {
           "opskins": -1
         },
         "2": {
-          "market": 8.59,
+          "market": 10.25,
           "analyst": 6.83,
           "opskins": -1
         },
         "3": {
-          "market": 13.42,
+          "market": 16.33,
           "analyst": 10.95,
           "opskins": -1
         },
         "4": {
-          "market": 16.96,
+          "market": 20.78,
           "analyst": 13.43,
           "opskins": -1
         }
@@ -10746,27 +10746,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 6.6,
+          "market": 9.12,
           "analyst": 7.38,
           "opskins": -1
         },
         "1": {
-          "market": 9.59,
+          "market": 8.86,
           "analyst": 13.8,
           "opskins": -1
         },
         "2": {
-          "market": 8.23,
+          "market": 10.32,
           "analyst": 6.17,
           "opskins": -1
         },
         "3": {
-          "market": 13.26,
+          "market": 16.01,
           "analyst": 10.64,
           "opskins": -1
         },
         "4": {
-          "market": 17.05,
+          "market": 20.13,
           "analyst": 13.07,
           "opskins": -1
         }
@@ -10792,17 +10792,17 @@ var Prices = {
           "opskins": 10.8
         },
         "2": {
-          "market": 7.95,
+          "market": 9.9,
           "analyst": 7.34,
           "opskins": 6.78
         },
         "3": {
-          "market": 12.55,
+          "market": 14.74,
           "analyst": 9.98,
           "opskins": 10.23
         },
         "4": {
-          "market": 16.66,
+          "market": 18.61,
           "analyst": 12.12,
           "opskins": 10.97
         }
@@ -10838,7 +10838,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.08,
+          "market": 0.09,
           "analyst": 0.07,
           "opskins": 0.07
         }
@@ -11086,7 +11086,7 @@ var Prices = {
           "opskins": 0.02
         },
         "4": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         }
@@ -11148,7 +11148,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.24,
+          "market": 0.22,
           "analyst": 0.23,
           "opskins": 0.18
         }
@@ -11205,12 +11205,12 @@ var Prices = {
           "opskins": 0.03
         },
         "3": {
-          "market": 0.07,
+          "market": 0.08,
           "analyst": 0.05,
           "opskins": 0.05
         },
         "4": {
-          "market": 0.7,
+          "market": 0.82,
           "analyst": 0.62,
           "opskins": 0.59
         }
@@ -11252,17 +11252,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.08,
+          "market": 0.09,
           "analyst": 0.05,
           "opskins": 0.13
         },
         "1": {
-          "market": 0.06,
+          "market": 0.07,
           "analyst": 0.04,
           "opskins": 0.05
         },
         "2": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.04
         },
@@ -11272,7 +11272,7 @@ var Prices = {
           "opskins": 0.07
         },
         "4": {
-          "market": 0.74,
+          "market": 0.99,
           "analyst": 0.55,
           "opskins": 0.54
         }
@@ -11376,7 +11376,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.04,
+          "market": 0.03,
           "analyst": 0.03,
           "opskins": 0.03
         },
@@ -11396,7 +11396,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.04
         }
@@ -11438,7 +11438,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.04,
+          "market": 0.03,
           "analyst": 0.03,
           "opskins": 0.02
         },
@@ -11458,7 +11458,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.03
         }
@@ -11500,27 +11500,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.09,
           "opskins": 0.09
         },
         "1": {
-          "market": 0.18,
+          "market": 0.21,
           "analyst": 0.11,
           "opskins": 0.1
         },
         "2": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.09,
           "opskins": 0.07
         },
         "3": {
-          "market": 0.19,
+          "market": 0.2,
           "analyst": 0.14,
           "opskins": 0.13
         },
         "4": {
-          "market": 0.31,
+          "market": 0.35,
           "analyst": 0.28,
           "opskins": 0.23
         }
@@ -11562,7 +11562,7 @@ var Prices = {
     "prices": {
       "default": {
         "4": {
-          "market": 0.42,
+          "market": 0.49,
           "analyst": 0.35,
           "opskins": 0.33
         }
@@ -11584,27 +11584,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.06,
+          "market": 1.19,
           "analyst": 0.94,
           "opskins": 0.8
         },
         "1": {
-          "market": 1.32,
+          "market": 1.52,
           "analyst": 1.17,
           "opskins": 0.99
         },
         "2": {
-          "market": 1.1,
+          "market": 1.2,
           "analyst": 0.98,
           "opskins": 0.84
         },
         "3": {
-          "market": 2,
+          "market": 2.15,
           "analyst": 1.68,
           "opskins": 1.43
         },
         "4": {
-          "market": 3.63,
+          "market": 4.12,
           "analyst": 3.16,
           "opskins": 2.6
         }
@@ -11790,7 +11790,7 @@ var Prices = {
           "opskins": 0.03
         },
         "4": {
-          "market": 0.17,
+          "market": 0.15,
           "analyst": 0.12,
           "opskins": 0.12
         }
@@ -11976,7 +11976,7 @@ var Prices = {
           "opskins": 0.02
         },
         "4": {
-          "market": 0.18,
+          "market": 0.23,
           "analyst": 0.12,
           "opskins": 0.1
         }
@@ -12018,12 +12018,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.08,
+          "market": 0.09,
           "analyst": 0.06,
           "opskins": 0.1
         },
         "1": {
-          "market": 0.16,
+          "market": 0.17,
           "analyst": 0.12,
           "opskins": 0.1
         },
@@ -12033,12 +12033,12 @@ var Prices = {
           "opskins": 0.1
         },
         "3": {
-          "market": 0.4,
+          "market": 0.52,
           "analyst": 0.32,
           "opskins": 0.27
         },
         "4": {
-          "market": 2.68,
+          "market": 3.63,
           "analyst": 2.07,
           "opskins": 1.76
         }
@@ -12080,7 +12080,7 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.03,
+          "market": 0.04,
           "analyst": 0.03,
           "opskins": 0.1
         },
@@ -12122,7 +12122,7 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.04,
+          "market": 0.03,
           "analyst": 0.03,
           "opskins": 0.22
         },
@@ -12174,12 +12174,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.03
         },
         "4": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.03
         }
@@ -12206,12 +12206,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 0.05,
+          "market": 0.06,
           "analyst": 0.04,
           "opskins": 0.06
         },
         "4": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.03
         }
@@ -12243,7 +12243,7 @@ var Prices = {
           "opskins": 0.07
         },
         "4": {
-          "market": 0.04,
+          "market": 0.05,
           "analyst": 0.03,
           "opskins": 0.03
         }
@@ -12270,7 +12270,7 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.22,
+          "market": 0.32,
           "analyst": 0.18,
           "opskins": 0.26
         },
@@ -12280,12 +12280,12 @@ var Prices = {
           "opskins": 0.08
         },
         "3": {
-          "market": 0.18,
+          "market": 0.19,
           "analyst": 0.14,
           "opskins": 0.12
         },
         "4": {
-          "market": 0.29,
+          "market": 0.32,
           "analyst": 0.26,
           "opskins": 0.22
         }
@@ -12337,7 +12337,7 @@ var Prices = {
           "opskins": 0.2
         },
         "4": {
-          "market": 0.16,
+          "market": 0.19,
           "analyst": 0.11,
           "opskins": 0.11
         }
@@ -12374,7 +12374,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.15,
+          "market": 0.17,
           "analyst": 0.12,
           "opskins": 0.28
         },
@@ -12384,17 +12384,17 @@ var Prices = {
           "opskins": 0.12
         },
         "2": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.07
         },
         "3": {
-          "market": 0.13,
+          "market": 0.14,
           "analyst": 0.08,
           "opskins": 0.07
         },
         "4": {
-          "market": 0.18,
+          "market": 0.21,
           "analyst": 0.14,
           "opskins": 0.14
         }
@@ -12436,17 +12436,17 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.26,
+          "market": 0.3,
           "analyst": 0.2,
           "opskins": 0.19
         },
         "2": {
-          "market": 0.2,
+          "market": 0.21,
           "analyst": 0.17,
           "opskins": 0.15
         },
         "3": {
-          "market": 0.21,
+          "market": 0.22,
           "analyst": 0.18,
           "opskins": 0.14
         },
@@ -12488,27 +12488,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.42,
+          "market": 0.48,
           "analyst": 0.49,
           "opskins": 0.49
         },
         "1": {
-          "market": 0.4,
+          "market": 0.56,
           "analyst": 0.43,
           "opskins": 0.34
         },
         "2": {
-          "market": 0.41,
+          "market": 0.47,
           "analyst": 0.38,
           "opskins": 0.6
         },
         "3": {
-          "market": 0.53,
+          "market": 0.6,
           "analyst": 0.42,
           "opskins": 0.5
         },
         "4": {
-          "market": 2.23,
+          "market": 2.42,
           "analyst": 3.2,
           "opskins": 7.83
         }
@@ -12524,27 +12524,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.41,
+          "market": 0.46,
           "analyst": 0.52,
           "opskins": 1
         },
         "1": {
-          "market": 0.85,
+          "market": 0.51,
           "analyst": 0.88,
           "opskins": 2.8
         },
         "2": {
-          "market": 0.42,
+          "market": 0.47,
           "analyst": 0.37,
           "opskins": 1.2
         },
         "3": {
-          "market": 0.58,
+          "market": 0.67,
           "analyst": 0.43,
           "opskins": 0.8
         },
         "4": {
-          "market": 2.97,
+          "market": 3.44,
           "analyst": 2.97,
           "opskins": 3.3
         }
@@ -12560,12 +12560,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 3.48,
+          "market": 3.61,
           "analyst": 3.44,
           "opskins": 3.26
         },
         "4": {
-          "market": 4.6,
+          "market": 5.21,
           "analyst": 4.14,
           "opskins": 4.03
         }
@@ -12581,7 +12581,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.72,
+          "market": 1.94,
           "analyst": 2.45,
           "opskins": 6
         },
@@ -12591,12 +12591,12 @@ var Prices = {
           "opskins": 1.54
         },
         "2": {
-          "market": 0.84,
+          "market": 1.1,
           "analyst": 0.81,
           "opskins": 1.5
         },
         "3": {
-          "market": 1.29,
+          "market": 1.41,
           "analyst": 1.26,
           "opskins": 1.29
         },
@@ -12617,27 +12617,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 7.71,
+          "market": 9.45,
           "analyst": 5.62,
           "opskins": 5.53
         },
         "1": {
-          "market": 7.78,
+          "market": 9.42,
           "analyst": 5.57,
           "opskins": 5.5
         },
         "2": {
-          "market": 7.62,
+          "market": 9.3,
           "analyst": 5.55,
           "opskins": 5.05
         },
         "3": {
-          "market": 8.67,
+          "market": 10.58,
           "analyst": 6.6,
           "opskins": 5.76
         },
         "4": {
-          "market": 78.08,
+          "market": 95.09,
           "analyst": 118.91,
           "opskins": 104.99
         }
@@ -12653,17 +12653,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.44,
+          "market": 1.26,
           "analyst": 1.37,
           "opskins": 4.42
         },
         "1": {
-          "market": 1.35,
+          "market": 1.02,
           "analyst": 0.95,
           "opskins": 0.99
         },
         "2": {
-          "market": 1.18,
+          "market": 1.41,
           "analyst": 1,
           "opskins": 0.86
         }
@@ -12679,7 +12679,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.08
         },
@@ -12699,19 +12699,19 @@ var Prices = {
           "opskins": 0.08
         },
         "4": {
-          "market": 0.19,
+          "market": 0.21,
           "analyst": 0.16,
           "opskins": 0.13
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.24,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.2
         },
         "1": {
-          "market": 0.31,
+          "market": 0.5,
           "analyst": 0.22,
           "opskins": 0.22
         },
@@ -12721,12 +12721,12 @@ var Prices = {
           "opskins": 0.17
         },
         "3": {
-          "market": 0.53,
+          "market": 0.49,
           "analyst": 0.47,
           "opskins": 0.36
         },
         "4": {
-          "market": 1.01,
+          "market": 1,
           "analyst": 1.04,
           "opskins": 0.84
         }
@@ -12741,12 +12741,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         },
         "1": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         },
@@ -12756,39 +12756,39 @@ var Prices = {
           "opskins": 0.05
         },
         "3": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.17,
           "opskins": 0.11
         },
         "4": {
-          "market": 1.09,
+          "market": 1.45,
           "analyst": 0.86,
           "opskins": 0.7
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.38,
+          "market": 0.56,
           "analyst": 0.31,
           "opskins": 0.24
         },
         "1": {
-          "market": 0.47,
+          "market": 0.69,
           "analyst": 0.4,
           "opskins": 0.32
         },
         "2": {
-          "market": 0.65,
+          "market": 0.99,
           "analyst": 0.63,
           "opskins": 0.49
         },
         "3": {
-          "market": 1.51,
+          "market": 2.08,
           "analyst": 1.26,
           "opskins": 1.02
         },
         "4": {
-          "market": 6.12,
+          "market": 7.33,
           "analyst": 5.43,
           "opskins": 4.88
         }
@@ -12803,54 +12803,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.2,
+          "market": 0.15,
           "analyst": 0.19,
           "opskins": 0.15
         },
         "1": {
-          "market": 0.41,
+          "market": 0.35,
           "analyst": 0.42,
           "opskins": 0.32
         },
         "2": {
-          "market": 0.22,
+          "market": 0.17,
           "analyst": 0.23,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.43,
+          "market": 0.37,
           "analyst": 0.47,
           "opskins": 0.36
         },
         "4": {
-          "market": 1.06,
+          "market": 0.98,
           "analyst": 1.11,
           "opskins": 0.89
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.87,
+          "market": 0.85,
           "analyst": 0.89,
           "opskins": 0.69
         },
         "1": {
-          "market": 1.54,
+          "market": 1.48,
           "analyst": 1.63,
           "opskins": 1.36
         },
         "2": {
-          "market": 0.95,
+          "market": 0.92,
           "analyst": 0.96,
           "opskins": 0.74
         },
         "3": {
-          "market": 1.79,
+          "market": 1.7,
           "analyst": 1.9,
           "opskins": 1.53
         },
         "4": {
-          "market": 5.02,
+          "market": 4.62,
           "analyst": 4.78,
           "opskins": 4.17
         }
@@ -12865,12 +12865,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "1": {
-          "market": 0.1,
+          "market": 0.08,
           "analyst": 0.08,
           "opskins": 0.07
         },
@@ -12880,29 +12880,29 @@ var Prices = {
           "opskins": 0.05
         },
         "3": {
-          "market": 0.17,
+          "market": 0.15,
           "analyst": 0.14,
           "opskins": 0.12
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.22,
+          "market": 0.23,
           "analyst": 0.19,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.26,
+          "market": 0.27,
           "analyst": 0.22,
           "opskins": 0.18
         },
         "2": {
-          "market": 0.22,
+          "market": 0.23,
           "analyst": 0.19,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.68,
+          "market": 0.59,
           "analyst": 0.86,
           "opskins": 0.7
         }
@@ -12917,7 +12917,7 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         },
@@ -12932,29 +12932,29 @@ var Prices = {
           "opskins": 0.06
         },
         "4": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.16,
           "opskins": 0.12
         }
       },
       "stattrak": {
         "1": {
-          "market": 0.35,
+          "market": 0.27,
           "analyst": 0.33,
           "opskins": 0.26
         },
         "2": {
-          "market": 0.25,
+          "market": 0.24,
           "analyst": 0.24,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.44,
+          "market": 0.41,
           "analyst": 0.44,
           "opskins": 0.38
         },
         "4": {
-          "market": 1.03,
+          "market": 0.99,
           "analyst": 0.99,
           "opskins": 0.88
         }
@@ -12969,54 +12969,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.07
         },
         "1": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.07
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         },
         "3": {
-          "market": 0.11,
+          "market": 0.1,
           "analyst": 0.09,
           "opskins": 0.07
         },
         "4": {
-          "market": 0.3,
+          "market": 0.28,
           "analyst": 0.26,
           "opskins": 0.22
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.47,
+          "market": 0.41,
           "analyst": 0.44,
           "opskins": 0.36
         },
         "1": {
-          "market": 0.48,
+          "market": 0.41,
           "analyst": 0.43,
           "opskins": 0.36
         },
         "2": {
-          "market": 0.5,
+          "market": 0.43,
           "analyst": 0.45,
           "opskins": 0.35
         },
         "3": {
-          "market": 0.66,
+          "market": 0.64,
           "analyst": 0.64,
           "opskins": 0.51
         },
         "4": {
-          "market": 1.9,
+          "market": 2.29,
           "analyst": 1.79,
           "opskins": 1.4
         }
@@ -13031,7 +13031,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.06
         },
@@ -13041,44 +13041,44 @@ var Prices = {
           "opskins": 0.06
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.09,
           "opskins": 0.06
         },
         "4": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.21,
           "opskins": 0.21
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.2,
           "opskins": 0.16
         },
         "1": {
-          "market": 0.25,
+          "market": 0.24,
           "analyst": 0.2,
           "opskins": 0.16
         },
         "2": {
-          "market": 0.24,
+          "market": 0.25,
           "analyst": 0.22,
           "opskins": 0.19
         },
         "3": {
-          "market": 0.45,
+          "market": 0.41,
           "analyst": 0.43,
           "opskins": 0.35
         },
         "4": {
-          "market": 1.48,
+          "market": 1.61,
           "analyst": 1.4,
           "opskins": 1.11
         }
@@ -13093,54 +13093,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "1": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "2": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "3": {
-          "market": 0.38,
+          "market": 0.35,
           "analyst": 0.32,
           "opskins": 0.26
         },
         "4": {
-          "market": 1.15,
+          "market": 1.17,
           "analyst": 0.97,
           "opskins": 0.8
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.68,
+          "market": 0.79,
           "analyst": 0.65,
           "opskins": 0.53
         },
         "1": {
-          "market": 0.71,
+          "market": 0.79,
           "analyst": 0.67,
           "opskins": 0.54
         },
         "2": {
-          "market": 0.79,
+          "market": 0.82,
           "analyst": 0.72,
           "opskins": 0.57
         },
         "3": {
-          "market": 1.77,
+          "market": 1.81,
           "analyst": 1.68,
           "opskins": 1.4
         },
         "4": {
-          "market": 7.37,
+          "market": 6.63,
           "analyst": 6.03,
           "opskins": 7.74
         }
@@ -13155,17 +13155,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 0.22,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 0.21,
           "opskins": 0.17
         },
         "2": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 0.21,
           "opskins": 0.18
         },
@@ -13175,34 +13175,34 @@ var Prices = {
           "opskins": 0.28
         },
         "4": {
-          "market": 0.9,
+          "market": 0.89,
           "analyst": 0.91,
           "opskins": 0.71
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.67,
+          "market": 0.78,
           "analyst": 0.69,
           "opskins": 0.61
         },
         "1": {
-          "market": 0.68,
+          "market": 0.77,
           "analyst": 0.69,
           "opskins": 0.59
         },
         "2": {
-          "market": 0.77,
+          "market": 0.82,
           "analyst": 0.76,
           "opskins": 0.6
         },
         "3": {
-          "market": 1.38,
+          "market": 1.51,
           "analyst": 1.34,
           "opskins": 1.18
         },
         "4": {
-          "market": 3.79,
+          "market": 3.53,
           "analyst": 3.32,
           "opskins": 2.91
         }
@@ -13217,44 +13217,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.26,
+          "market": 0.27,
           "analyst": 0.22,
           "opskins": 0.2
         },
         "2": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 0.21,
           "opskins": 0.17
         },
         "3": {
-          "market": 0.35,
+          "market": 0.33,
           "analyst": 0.3,
           "opskins": 0.24
         },
         "4": {
-          "market": 0.62,
+          "market": 0.66,
           "analyst": 0.58,
           "opskins": 0.5
         }
       },
       "stattrak": {
         "1": {
-          "market": 0.72,
+          "market": 0.83,
           "analyst": 0.68,
           "opskins": 0.66
         },
         "2": {
-          "market": 0.74,
+          "market": 0.81,
           "analyst": 0.7,
           "opskins": 0.62
         },
         "3": {
-          "market": 1.32,
+          "market": 1.39,
           "analyst": 1.18,
           "opskins": 1.08
         },
         "4": {
-          "market": 3.06,
+          "market": 2.94,
           "analyst": 2.41,
           "opskins": 2.28
         }
@@ -13269,54 +13269,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.78,
+          "market": 0.7,
           "analyst": 0.83,
           "opskins": 0.67
         },
         "1": {
-          "market": 0.82,
+          "market": 0.73,
           "analyst": 0.89,
           "opskins": 0.72
         },
         "2": {
-          "market": 0.89,
+          "market": 0.8,
           "analyst": 1.01,
           "opskins": 0.84
         },
         "3": {
-          "market": 1.71,
+          "market": 1.55,
           "analyst": 1.71,
           "opskins": 1.42
         },
         "4": {
-          "market": 3.93,
+          "market": 3.48,
           "analyst": 3.78,
           "opskins": 3.25
         }
       },
       "stattrak": {
         "0": {
-          "market": 3.8,
+          "market": 3.38,
           "analyst": 3.71,
           "opskins": 3.13
         },
         "1": {
-          "market": 4.01,
+          "market": 3.52,
           "analyst": 3.89,
           "opskins": 3.19
         },
         "2": {
-          "market": 4.77,
+          "market": 4.37,
           "analyst": 4.68,
           "opskins": 4.3
         },
         "3": {
-          "market": 7.71,
+          "market": 6.71,
           "analyst": 7.35,
           "opskins": 6.47
         },
         "4": {
-          "market": 18.67,
+          "market": 16.84,
           "analyst": 17.37,
           "opskins": 17.4
         }
@@ -13331,49 +13331,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.38,
+          "market": 0.37,
           "analyst": 0.39,
           "opskins": 0.32
         },
         "1": {
-          "market": 0.52,
+          "market": 0.48,
           "analyst": 0.55,
           "opskins": 0.42
         },
         "2": {
-          "market": 0.45,
+          "market": 0.4,
           "analyst": 0.49,
           "opskins": 0.39
         },
         "3": {
-          "market": 1.86,
+          "market": 1.78,
           "analyst": 1.63,
           "opskins": 1.52
         },
         "4": {
-          "market": 8.08,
+          "market": 8.91,
           "analyst": 7.83,
           "opskins": 7.44
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.46,
+          "market": 2.48,
           "analyst": 2.23,
           "opskins": 1.84
         },
         "1": {
-          "market": 2.85,
+          "market": 2.71,
           "analyst": 2.56,
           "opskins": 2.15
         },
         "2": {
-          "market": 3.34,
+          "market": 3.07,
           "analyst": 2.79,
           "opskins": 2.33
         },
         "3": {
-          "market": 9.37,
+          "market": 8.58,
           "analyst": 9.15,
           "opskins": 8.05
         },
@@ -13393,54 +13393,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.73,
+          "market": 2.58,
           "analyst": 2.34,
           "opskins": 2.09
         },
         "1": {
-          "market": 2.98,
+          "market": 2.76,
           "analyst": 2.51,
           "opskins": 2.1
         },
         "2": {
-          "market": 3.33,
+          "market": 3.16,
           "analyst": 2.94,
           "opskins": 2.42
         },
         "3": {
-          "market": 5.04,
+          "market": 4.73,
           "analyst": 4.38,
           "opskins": 3.95
         },
         "4": {
-          "market": 9.74,
+          "market": 9.89,
           "analyst": 8.82,
           "opskins": 7.5
         }
       },
       "stattrak": {
         "0": {
-          "market": 9.37,
+          "market": 9.36,
           "analyst": 8.42,
           "opskins": 7.5
         },
         "1": {
-          "market": 10.29,
+          "market": 9.86,
           "analyst": 8.88,
           "opskins": 7.51
         },
         "2": {
-          "market": 12.65,
+          "market": 13.01,
           "analyst": 11.33,
           "opskins": 10.06
         },
         "3": {
-          "market": 19.84,
+          "market": 19.48,
           "analyst": 18.06,
           "opskins": 16.5
         },
         "4": {
-          "market": 48.65,
+          "market": 48.29,
           "analyst": 45.68,
           "opskins": 41.26
         }
@@ -13455,54 +13455,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.73,
+          "market": 1.81,
           "analyst": 1.59,
           "opskins": 1.39
         },
         "1": {
-          "market": 1.81,
+          "market": 1.9,
           "analyst": 1.67,
           "opskins": 1.35
         },
         "2": {
-          "market": 1.92,
+          "market": 1.98,
           "analyst": 1.86,
           "opskins": 1.55
         },
         "3": {
-          "market": 2.99,
+          "market": 3.2,
           "analyst": 2.98,
           "opskins": 2.57
         },
         "4": {
-          "market": 5.14,
+          "market": 5.61,
           "analyst": 5.3,
           "opskins": 4.7
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.12,
+          "market": 4.52,
           "analyst": 4.33,
           "opskins": 4.23
         },
         "1": {
-          "market": 4.51,
+          "market": 5.07,
           "analyst": 4.19,
           "opskins": 3.59
         },
         "2": {
-          "market": 5.2,
+          "market": 6,
           "analyst": 5.35,
           "opskins": 5.03
         },
         "3": {
-          "market": 9.6,
+          "market": 11.34,
           "analyst": 10.74,
           "opskins": 10.85
         },
         "4": {
-          "market": 23.61,
+          "market": 21.48,
           "analyst": 18.61,
           "opskins": 20
         }
@@ -13517,34 +13517,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.74,
+          "market": 1.8,
           "analyst": 1.6,
           "opskins": 1.48
         },
         "1": {
-          "market": 2.04,
+          "market": 2.16,
           "analyst": 1.94,
           "opskins": 1.72
         },
         "2": {
-          "market": 1.92,
+          "market": 1.94,
           "analyst": 1.84,
           "opskins": 1.53
         },
         "3": {
-          "market": 3.24,
+          "market": 3.33,
           "analyst": 3.02,
           "opskins": 2.56
         },
         "4": {
-          "market": 5.04,
+          "market": 5.42,
           "analyst": 5.15,
           "opskins": 4.89
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.33,
+          "market": 4.61,
           "analyst": 4.37,
           "opskins": 4
         },
@@ -13554,17 +13554,17 @@ var Prices = {
           "opskins": 6.69
         },
         "2": {
-          "market": 5.45,
+          "market": 5.93,
           "analyst": 5.68,
           "opskins": 4.82
         },
         "3": {
-          "market": 12.73,
+          "market": 12.69,
           "analyst": 11.9,
           "opskins": 12.05
         },
         "4": {
-          "market": 22.89,
+          "market": 23.18,
           "analyst": 17.22,
           "opskins": 20
         }
@@ -13579,49 +13579,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.88,
+          "market": 3.47,
           "analyst": 4.22,
           "opskins": 3.68
         },
         "1": {
-          "market": 4.24,
+          "market": 3.86,
           "analyst": 4.73,
           "opskins": 4
         },
         "2": {
-          "market": 5.11,
+          "market": 4.37,
           "analyst": 5.72,
           "opskins": 5.07
         },
         "3": {
-          "market": 7.47,
+          "market": 6.74,
           "analyst": 8.56,
           "opskins": 7.79
         },
         "4": {
-          "market": 18.82,
+          "market": 18.51,
           "analyst": 18.19,
           "opskins": 18.35
         }
       },
       "stattrak": {
         "0": {
-          "market": 12.34,
+          "market": 9.62,
           "analyst": 11.92,
           "opskins": 12.06
         },
         "1": {
-          "market": 13.34,
+          "market": 11.13,
           "analyst": 14.27,
           "opskins": 13.48
         },
         "2": {
-          "market": 16.41,
+          "market": 15.63,
           "analyst": 19.51,
           "opskins": 18.49
         },
         "3": {
-          "market": 26.67,
+          "market": 25.46,
           "analyst": 27.5,
           "opskins": 29.55
         },
@@ -13641,34 +13641,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 25.06,
+          "market": 25.08,
           "analyst": 21.49,
           "opskins": 20.04
         },
         "1": {
-          "market": 36.17,
+          "market": 35.97,
           "analyst": 31.69,
           "opskins": 26.97
         },
         "2": {
-          "market": 33.34,
+          "market": 32.25,
           "analyst": 28.06,
           "opskins": 25.51
         },
         "3": {
-          "market": 45.88,
+          "market": 46.13,
           "analyst": 41.15,
           "opskins": 37.09
         },
         "4": {
-          "market": 72.85,
+          "market": 77.53,
           "analyst": 70.61,
           "opskins": 64.75
         }
       },
       "stattrak": {
         "0": {
-          "market": 62.31,
+          "market": 67.6,
           "analyst": 59.15,
           "opskins": 54.99
         },
@@ -13678,12 +13678,12 @@ var Prices = {
           "opskins": 75.99
         },
         "2": {
-          "market": 89.36,
+          "market": 94.07,
           "analyst": 81.11,
           "opskins": 69
         },
         "3": {
-          "market": 140.12,
+          "market": 157.05,
           "analyst": 122.8,
           "opskins": 114.79
         },
@@ -13708,7 +13708,7 @@ var Prices = {
           "opskins": 0.05
         },
         "1": {
-          "market": 0.14,
+          "market": 0.13,
           "analyst": 0.1,
           "opskins": 0.09
         },
@@ -13718,39 +13718,39 @@ var Prices = {
           "opskins": 0.05
         },
         "3": {
-          "market": 0.15,
+          "market": 0.14,
           "analyst": 0.13,
           "opskins": 0.1
         },
         "4": {
-          "market": 0.26,
+          "market": 0.23,
           "analyst": 0.22,
           "opskins": 0.17
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.37,
+          "market": 0.35,
           "analyst": 0.32,
           "opskins": 0.26
         },
         "1": {
-          "market": 0.6,
+          "market": 0.68,
           "analyst": 0.6,
           "opskins": 0.48
         },
         "2": {
-          "market": 0.39,
+          "market": 0.41,
           "analyst": 0.32,
           "opskins": 0.25
         },
         "3": {
-          "market": 0.85,
+          "market": 0.9,
           "analyst": 0.74,
           "opskins": 0.57
         },
         "4": {
-          "market": 1.9,
+          "market": 1.85,
           "analyst": 1.52,
           "opskins": 1.22
         }
@@ -13765,12 +13765,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.1,
           "opskins": 0.15
         },
         "1": {
-          "market": 0.14,
+          "market": 0.13,
           "analyst": 0.11,
           "opskins": 0.09
         },
@@ -13780,7 +13780,7 @@ var Prices = {
           "opskins": 0.06
         },
         "3": {
-          "market": 0.19,
+          "market": 0.18,
           "analyst": 0.16,
           "opskins": 0.12
         },
@@ -13792,17 +13792,17 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.55,
+          "market": 0.57,
           "analyst": 0.51,
           "opskins": 0.42
         },
         "1": {
-          "market": 0.91,
+          "market": 0.82,
           "analyst": 0.74,
           "opskins": 0.58
         },
         "2": {
-          "market": 0.57,
+          "market": 0.6,
           "analyst": 0.59,
           "opskins": 0.45
         },
@@ -13827,7 +13827,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         },
@@ -13847,34 +13847,34 @@ var Prices = {
           "opskins": 0.07
         },
         "4": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.18,
           "opskins": 0.16
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.26,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.27,
+          "market": 0.28,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "2": {
-          "market": 0.32,
+          "market": 0.3,
           "analyst": 0.25,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.43,
+          "market": 0.46,
           "analyst": 0.38,
           "opskins": 0.32
         },
         "4": {
-          "market": 0.93,
+          "market": 0.96,
           "analyst": 0.91,
           "opskins": 0.77
         }
@@ -13899,7 +13899,7 @@ var Prices = {
           "opskins": 0.13
         },
         "2": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.07,
           "opskins": 0.06
         },
@@ -13909,7 +13909,7 @@ var Prices = {
           "opskins": 0.09
         },
         "4": {
-          "market": 0.3,
+          "market": 0.34,
           "analyst": 0.26,
           "opskins": 0.23
         }
@@ -13926,17 +13926,17 @@ var Prices = {
           "opskins": 0.24
         },
         "2": {
-          "market": 0.35,
+          "market": 0.32,
           "analyst": 0.28,
           "opskins": 0.21
         },
         "3": {
-          "market": 0.49,
+          "market": 0.51,
           "analyst": 0.45,
           "opskins": 0.33
         },
         "4": {
-          "market": 2.41,
+          "market": 2.52,
           "analyst": 2.25,
           "opskins": 1.92
         }
@@ -13951,27 +13951,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
-          "analyst": 0.08,
-          "opskins": 0.07
-        },
-        "1": {
           "market": 0.1,
           "analyst": 0.08,
           "opskins": 0.07
         },
+        "1": {
+          "market": 0.11,
+          "analyst": 0.08,
+          "opskins": 0.07
+        },
         "2": {
-          "market": 0.09,
+          "market": 0.1,
           "analyst": 0.07,
           "opskins": 0.05
         },
         "3": {
-          "market": 0.12,
+          "market": 0.14,
           "analyst": 0.11,
           "opskins": 0.08
         },
         "4": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.16,
           "opskins": 0.12
         }
@@ -13983,22 +13983,22 @@ var Prices = {
           "opskins": 0.25
         },
         "1": {
-          "market": 0.33,
+          "market": 0.35,
           "analyst": 0.31,
           "opskins": 0.28
         },
         "2": {
-          "market": 0.34,
+          "market": 0.32,
           "analyst": 0.29,
           "opskins": 0.24
         },
         "3": {
-          "market": 0.51,
+          "market": 0.49,
           "analyst": 0.43,
           "opskins": 0.35
         },
         "4": {
-          "market": 0.83,
+          "market": 0.91,
           "analyst": 0.73,
           "opskins": 0.58
         }
@@ -14013,7 +14013,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.1
         },
@@ -14033,7 +14033,7 @@ var Prices = {
           "opskins": 0.08
         },
         "4": {
-          "market": 0.25,
+          "market": 0.23,
           "analyst": 0.2,
           "opskins": 0.16
         }
@@ -14045,22 +14045,22 @@ var Prices = {
           "opskins": 0.2
         },
         "1": {
-          "market": 0.28,
+          "market": 0.29,
           "analyst": 0.23,
           "opskins": 0.2
         },
         "2": {
-          "market": 0.33,
+          "market": 0.31,
           "analyst": 0.26,
           "opskins": 0.23
         },
         "3": {
-          "market": 0.45,
+          "market": 0.47,
           "analyst": 0.4,
           "opskins": 0.3
         },
         "4": {
-          "market": 1.17,
+          "market": 1.2,
           "analyst": 1.01,
           "opskins": 0.92
         }
@@ -14075,22 +14075,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.18,
+          "market": 0.16,
           "analyst": 0.15,
           "opskins": 0.12
         },
         "1": {
-          "market": 0.35,
+          "market": 0.31,
           "analyst": 0.34,
           "opskins": 0.27
         },
         "2": {
-          "market": 0.22,
+          "market": 0.18,
           "analyst": 0.18,
           "opskins": 0.14
         },
         "3": {
-          "market": 0.36,
+          "market": 0.31,
           "analyst": 0.31,
           "opskins": 0.25
         },
@@ -14102,27 +14102,27 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.95,
+          "market": 0.98,
           "analyst": 0.92,
           "opskins": 0.72
         },
         "1": {
-          "market": 1.59,
+          "market": 1.48,
           "analyst": 1.43,
           "opskins": 1.16
         },
         "2": {
-          "market": 0.99,
+          "market": 1.04,
           "analyst": 0.94,
           "opskins": 0.7
         },
         "3": {
-          "market": 1.84,
+          "market": 1.75,
           "analyst": 1.71,
           "opskins": 1.33
         },
         "4": {
-          "market": 4.29,
+          "market": 4.03,
           "analyst": 3.82,
           "opskins": 3.29
         }
@@ -14137,22 +14137,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.5,
+          "market": 0.51,
           "analyst": 0.41,
           "opskins": 0.34
         },
         "1": {
-          "market": 0.51,
+          "market": 0.49,
           "analyst": 0.43,
           "opskins": 0.33
         },
         "2": {
-          "market": 0.56,
+          "market": 0.53,
           "analyst": 0.49,
           "opskins": 0.41
         },
         "3": {
-          "market": 0.8,
+          "market": 0.81,
           "analyst": 0.69,
           "opskins": 0.54
         },
@@ -14164,17 +14164,17 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 1.32,
+          "market": 1.45,
           "analyst": 1.21,
           "opskins": 1.01
         },
         "1": {
-          "market": 1.41,
+          "market": 1.55,
           "analyst": 1.28,
           "opskins": 1.05
         },
         "2": {
-          "market": 1.86,
+          "market": 1.89,
           "analyst": 1.71,
           "opskins": 1.39
         },
@@ -14184,7 +14184,7 @@ var Prices = {
           "opskins": 2.42
         },
         "4": {
-          "market": 12.01,
+          "market": 12.06,
           "analyst": 11.11,
           "opskins": 10.14
         }
@@ -14199,54 +14199,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.5,
+          "market": 0.51,
           "analyst": 0.42,
           "opskins": 0.36
         },
         "1": {
-          "market": 0.51,
+          "market": 0.5,
           "analyst": 0.43,
           "opskins": 0.36
         },
         "2": {
-          "market": 0.57,
+          "market": 0.52,
           "analyst": 0.48,
           "opskins": 0.41
         },
         "3": {
-          "market": 0.79,
+          "market": 0.8,
           "analyst": 0.68,
           "opskins": 0.57
         },
         "4": {
-          "market": 1.6,
+          "market": 1.54,
           "analyst": 1.36,
           "opskins": 1.09
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.31,
+          "market": 1.42,
           "analyst": 1.1,
           "opskins": 1.01
         },
         "1": {
-          "market": 1.4,
+          "market": 1.49,
           "analyst": 1.15,
           "opskins": 1.02
         },
         "2": {
-          "market": 1.75,
+          "market": 1.78,
           "analyst": 1.58,
           "opskins": 1.32
         },
         "3": {
-          "market": 2.77,
+          "market": 2.83,
           "analyst": 2.41,
           "opskins": 2.31
         },
         "4": {
-          "market": 5.55,
+          "market": 6.03,
           "analyst": 5.61,
           "opskins": 5.4
         }
@@ -14261,7 +14261,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.59,
+          "market": 0.54,
           "analyst": 0.49,
           "opskins": 0.39
         },
@@ -14271,44 +14271,44 @@ var Prices = {
           "opskins": 0.5
         },
         "2": {
-          "market": 0.56,
+          "market": 0.55,
           "analyst": 0.52,
           "opskins": 0.41
         },
         "3": {
-          "market": 0.83,
+          "market": 0.81,
           "analyst": 0.76,
           "opskins": 0.59
         },
         "4": {
-          "market": 1.44,
+          "market": 1.39,
           "analyst": 1.39,
           "opskins": 1.11
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.66,
+          "market": 1.78,
           "analyst": 1.67,
           "opskins": 1.29
         },
         "1": {
-          "market": 2.65,
+          "market": 2.38,
           "analyst": 2.46,
           "opskins": 2.11
         },
         "2": {
-          "market": 1.9,
+          "market": 1.89,
           "analyst": 1.76,
           "opskins": 1.42
         },
         "3": {
-          "market": 3.13,
+          "market": 3,
           "analyst": 3.15,
           "opskins": 2.54
         },
         "4": {
-          "market": 5.59,
+          "market": 5.73,
           "analyst": 5.58,
           "opskins": 5.06
         }
@@ -14323,7 +14323,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.51,
+          "market": 0.52,
           "analyst": 0.45,
           "opskins": 0.37
         },
@@ -14333,44 +14333,44 @@ var Prices = {
           "opskins": 0.47
         },
         "2": {
-          "market": 0.56,
+          "market": 0.52,
           "analyst": 0.49,
           "opskins": 0.38
         },
         "3": {
-          "market": 0.81,
+          "market": 0.79,
           "analyst": 0.7,
           "opskins": 0.55
         },
         "4": {
-          "market": 1.41,
+          "market": 1.45,
           "analyst": 1.35,
           "opskins": 1.09
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.73,
+          "market": 1.8,
           "analyst": 1.51,
           "opskins": 1.27
         },
         "1": {
-          "market": 2.3,
+          "market": 2.44,
           "analyst": 2.05,
           "opskins": 1.7
         },
         "2": {
-          "market": 1.83,
+          "market": 1.88,
           "analyst": 1.68,
           "opskins": 1.43
         },
         "3": {
-          "market": 2.89,
+          "market": 2.93,
           "analyst": 2.58,
           "opskins": 2.23
         },
         "4": {
-          "market": 5.69,
+          "market": 5.91,
           "analyst": 5.16,
           "opskins": 4.53
         }
@@ -14385,44 +14385,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 3.16,
+          "market": 3.4,
           "analyst": 2.79,
           "opskins": 2.47
         },
         "2": {
-          "market": 2.4,
+          "market": 2.33,
           "analyst": 2.03,
           "opskins": 1.77
         },
         "3": {
-          "market": 2.66,
+          "market": 2.67,
           "analyst": 2.21,
           "opskins": 1.91
         },
         "4": {
-          "market": 3.61,
+          "market": 3.38,
           "analyst": 3,
           "opskins": 2.55
         }
       },
       "stattrak": {
         "1": {
-          "market": 10.93,
+          "market": 13.01,
           "analyst": 10.21,
           "opskins": 10.41
         },
         "2": {
-          "market": 9.38,
+          "market": 9.66,
           "analyst": 7.6,
           "opskins": 6.36
         },
         "3": {
-          "market": 10.63,
+          "market": 10.79,
           "analyst": 8.76,
           "opskins": 7.41
         },
         "4": {
-          "market": 14.51,
+          "market": 14.44,
           "analyst": 11.79,
           "opskins": 10.2
         }
@@ -14437,54 +14437,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.63,
+          "market": 1.68,
           "analyst": 1.41,
           "opskins": 1.19
         },
         "1": {
-          "market": 1.69,
+          "market": 1.73,
           "analyst": 1.53,
           "opskins": 1.36
         },
         "2": {
-          "market": 1.52,
+          "market": 1.59,
           "analyst": 1.34,
           "opskins": 1.1
         },
         "3": {
-          "market": 2.02,
+          "market": 2.17,
           "analyst": 1.95,
           "opskins": 1.55
         },
         "4": {
-          "market": 3.17,
+          "market": 3.46,
           "analyst": 3.23,
           "opskins": 2.76
         }
       },
       "stattrak": {
         "0": {
-          "market": 7.97,
+          "market": 7.81,
           "analyst": 7.98,
           "opskins": 7.44
         },
         "1": {
-          "market": 7.48,
+          "market": 9.04,
           "analyst": 6.57,
           "opskins": 6.38
         },
         "2": {
-          "market": 6.28,
+          "market": 6.84,
           "analyst": 5.76,
           "opskins": 5.04
         },
         "3": {
-          "market": 10.41,
+          "market": 10.63,
           "analyst": 8.83,
           "opskins": 8.16
         },
         "4": {
-          "market": 20.22,
+          "market": 20.45,
           "analyst": 17.63,
           "opskins": 15.73
         }
@@ -14499,44 +14499,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 1.53,
+          "market": 1.59,
           "analyst": 1.45,
           "opskins": 1.2
         },
         "2": {
-          "market": 1.51,
+          "market": 1.6,
           "analyst": 1.32,
           "opskins": 1.12
         },
         "3": {
-          "market": 1.81,
+          "market": 2.02,
           "analyst": 1.71,
           "opskins": 1.46
         },
         "4": {
-          "market": 2.7,
+          "market": 3,
           "analyst": 2.43,
           "opskins": 2.09
         }
       },
       "stattrak": {
         "1": {
-          "market": 4.97,
+          "market": 5.48,
           "analyst": 4.51,
           "opskins": 4.61
         },
         "2": {
-          "market": 4.91,
+          "market": 5.88,
           "analyst": 4.34,
           "opskins": 3.84
         },
         "3": {
-          "market": 6.59,
+          "market": 8.53,
           "analyst": 6.55,
           "opskins": 6.94
         },
         "4": {
-          "market": 11.84,
+          "market": 13.48,
           "analyst": 12.45,
           "opskins": 11.5
         }
@@ -14551,54 +14551,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 10.04,
+          "market": 9.76,
           "analyst": 8.4,
           "opskins": 7.28
         },
         "1": {
-          "market": 11.51,
+          "market": 11.49,
           "analyst": 10,
           "opskins": 8.58
         },
         "2": {
-          "market": 13.31,
+          "market": 13.01,
           "analyst": 11.77,
           "opskins": 10.24
         },
         "3": {
-          "market": 17.46,
+          "market": 17,
           "analyst": 15.73,
           "opskins": 13.36
         },
         "4": {
-          "market": 30.05,
+          "market": 30.75,
           "analyst": 33.09,
           "opskins": 29.49
         }
       },
       "stattrak": {
         "0": {
-          "market": 26.37,
+          "market": 26.99,
           "analyst": 23.39,
           "opskins": 21.36
         },
         "1": {
-          "market": 32.61,
+          "market": 32.34,
           "analyst": 28.18,
           "opskins": 25.69
         },
         "2": {
-          "market": 40.16,
+          "market": 40.13,
           "analyst": 37.04,
           "opskins": 31.75
         },
         "3": {
-          "market": 58.17,
+          "market": 56.63,
           "analyst": 52.84,
           "opskins": 44.12
         },
         "4": {
-          "market": 113.27,
+          "market": 117.87,
           "analyst": 109.75,
           "opskins": 99.99
         }
@@ -14613,34 +14613,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 13.79,
+          "market": 15.52,
           "analyst": 11.55,
           "opskins": 10.09
         },
         "1": {
-          "market": 18.84,
+          "market": 21.84,
           "analyst": 15.81,
           "opskins": 13.97
         },
         "2": {
-          "market": 16.75,
+          "market": 18.63,
           "analyst": 13.86,
           "opskins": 12.01
         },
         "3": {
-          "market": 24.47,
+          "market": 26.61,
           "analyst": 20.46,
           "opskins": 18.19
         },
         "4": {
-          "market": 37.64,
+          "market": 43.64,
           "analyst": 33.45,
           "opskins": 28.99
         }
       },
       "stattrak": {
         "0": {
-          "market": 40.48,
+          "market": 48.83,
           "analyst": 36.97,
           "opskins": 33.37
         },
@@ -14650,12 +14650,12 @@ var Prices = {
           "opskins": 47.22
         },
         "2": {
-          "market": 54.3,
+          "market": 63.5,
           "analyst": 47.78,
           "opskins": 44.38
         },
         "3": {
-          "market": 83.29,
+          "market": 102.55,
           "analyst": 89.4,
           "opskins": 77.95
         },
@@ -14675,27 +14675,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 7.6,
+          "market": 7.01,
           "analyst": 6.3,
           "opskins": 6.7
         },
         "1": {
-          "market": 10.21,
+          "market": 9.75,
           "analyst": 9.22,
           "opskins": 8.19
         },
         "2": {
-          "market": 9.9,
+          "market": 9.35,
           "analyst": 9.19,
           "opskins": 7.95
         },
         "3": {
-          "market": 11.99,
+          "market": 11.38,
           "analyst": 11.35,
           "opskins": 10.15
         },
         "4": {
-          "market": 14.81,
+          "market": 14.26,
           "analyst": 14.28,
           "opskins": 12.86
         }
@@ -14712,17 +14712,17 @@ var Prices = {
           "opskins": 30
         },
         "2": {
-          "market": 34.74,
+          "market": 34.07,
           "analyst": 29.83,
           "opskins": 27.64
         },
         "3": {
-          "market": 43.68,
+          "market": 44.05,
           "analyst": 45.07,
           "opskins": 40
         },
         "4": {
-          "market": 64.86,
+          "market": 60.52,
           "analyst": 62.38,
           "opskins": 52
         }
@@ -14737,7 +14737,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.15
         },
@@ -14752,7 +14752,7 @@ var Prices = {
           "opskins": 0.06
         },
         "3": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.11
         },
@@ -14764,27 +14764,27 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.3,
+          "market": 0.28,
           "analyst": 0.27,
           "opskins": 0.22
         },
         "1": {
-          "market": 0.49,
+          "market": 0.47,
           "analyst": 0.38,
           "opskins": 0.33
         },
         "2": {
-          "market": 0.29,
+          "market": 0.28,
           "analyst": 0.25,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.52,
+          "market": 0.55,
           "analyst": 0.46,
           "opskins": 0.38
         },
         "4": {
-          "market": 1.44,
+          "market": 1.49,
           "analyst": 1.36,
           "opskins": 1.14
         }
@@ -14804,14 +14804,14 @@ var Prices = {
           "opskins": 0.05
         },
         "1": {
-          "market": 0.09,
+          "market": 0.11,
           "analyst": 0.08,
           "opskins": 0.06
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.22,
+          "market": 0.23,
           "analyst": 0.19,
           "opskins": 0.15
         },
@@ -14831,54 +14831,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         },
         "1": {
-          "market": 0.14,
+          "market": 0.11,
           "analyst": 0.14,
           "opskins": 0.11
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.07
         },
         "3": {
-          "market": 0.12,
+          "market": 0.11,
           "analyst": 0.1,
           "opskins": 0.08
         },
         "4": {
-          "market": 0.21,
+          "market": 0.19,
           "analyst": 0.19,
           "opskins": 0.15
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.31,
+          "market": 0.3,
           "analyst": 0.31,
           "opskins": 0.26
         },
         "1": {
-          "market": 0.53,
+          "market": 0.54,
           "analyst": 0.59,
           "opskins": 0.5
         },
         "2": {
-          "market": 0.32,
+          "market": 0.31,
           "analyst": 0.31,
           "opskins": 0.24
         },
         "3": {
-          "market": 0.66,
+          "market": 0.67,
           "analyst": 0.68,
           "opskins": 0.51
         },
         "4": {
-          "market": 1.19,
+          "market": 1.25,
           "analyst": 1.08,
           "opskins": 0.9
         }
@@ -14898,22 +14898,22 @@ var Prices = {
           "opskins": 0.19
         },
         "1": {
-          "market": 0.13,
+          "market": 0.11,
           "analyst": 0.14,
           "opskins": 0.11
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.12
         },
         "3": {
-          "market": 0.13,
+          "market": 0.11,
           "analyst": 0.12,
           "opskins": 0.11
         },
         "4": {
-          "market": 0.2,
+          "market": 0.18,
           "analyst": 0.19,
           "opskins": 0.13
         }
@@ -14925,22 +14925,22 @@ var Prices = {
           "opskins": 0.27
         },
         "1": {
-          "market": 0.5,
+          "market": 0.4,
           "analyst": 0.44,
           "opskins": 0.4
         },
         "2": {
-          "market": 0.33,
+          "market": 0.32,
           "analyst": 0.29,
           "opskins": 0.23
         },
         "3": {
-          "market": 0.61,
+          "market": 0.63,
           "analyst": 0.63,
           "opskins": 0.49
         },
         "4": {
-          "market": 0.93,
+          "market": 0.96,
           "analyst": 0.88,
           "opskins": 0.69
         }
@@ -14955,12 +14955,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.09,
           "opskins": 0.09
         },
         "1": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.06
         },
@@ -14982,7 +14982,7 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.2,
           "opskins": 0.47
         },
@@ -14992,17 +14992,17 @@ var Prices = {
           "opskins": 0.21
         },
         "2": {
-          "market": 0.24,
+          "market": 0.25,
           "analyst": 0.21,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.46,
+          "market": 0.43,
           "analyst": 0.4,
           "opskins": 0.33
         },
         "4": {
-          "market": 0.77,
+          "market": 0.81,
           "analyst": 0.74,
           "opskins": 0.65
         }
@@ -15044,27 +15044,27 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.26,
+          "market": 0.28,
           "analyst": 0.29,
           "opskins": 0.25
         },
         "1": {
-          "market": 0.32,
+          "market": 0.36,
           "analyst": 0.38,
           "opskins": 0.31
         },
         "2": {
-          "market": 0.26,
+          "market": 0.25,
           "analyst": 0.23,
           "opskins": 0.19
         },
         "3": {
-          "market": 0.43,
+          "market": 0.44,
           "analyst": 0.5,
           "opskins": 0.39
         },
         "4": {
-          "market": 0.77,
+          "market": 0.82,
           "analyst": 0.77,
           "opskins": 0.64
         }
@@ -15094,29 +15094,29 @@ var Prices = {
           "opskins": 0.13
         },
         "4": {
-          "market": 0.15,
+          "market": 0.16,
           "analyst": 0.13,
           "opskins": 0.1
         }
       },
       "stattrak": {
         "1": {
-          "market": 0.37,
+          "market": 0.36,
           "analyst": 0.38,
           "opskins": 0.33
         },
         "2": {
-          "market": 0.29,
+          "market": 0.3,
           "analyst": 0.27,
           "opskins": 0.21
         },
         "3": {
-          "market": 0.51,
+          "market": 0.5,
           "analyst": 0.55,
           "opskins": 0.43
         },
         "4": {
-          "market": 0.84,
+          "market": 0.93,
           "analyst": 0.91,
           "opskins": 0.7
         }
@@ -15131,54 +15131,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.31,
+          "market": 0.35,
           "analyst": 0.27,
           "opskins": 0.23
         },
         "1": {
-          "market": 0.37,
+          "market": 0.39,
           "analyst": 0.29,
           "opskins": 0.26
         },
         "2": {
-          "market": 0.33,
+          "market": 0.38,
           "analyst": 0.27,
           "opskins": 0.23
         },
         "3": {
-          "market": 0.6,
+          "market": 0.68,
           "analyst": 0.51,
           "opskins": 0.42
         },
         "4": {
-          "market": 1.11,
+          "market": 1.21,
           "analyst": 0.97,
           "opskins": 0.81
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.94,
+          "market": 1.1,
           "analyst": 0.78,
           "opskins": 0.73
         },
         "1": {
-          "market": 1.41,
+          "market": 1.37,
           "analyst": 1.32,
           "opskins": 1.19
         },
         "2": {
-          "market": 1.18,
+          "market": 1.36,
           "analyst": 0.99,
           "opskins": 0.84
         },
         "3": {
-          "market": 2.62,
+          "market": 3.13,
           "analyst": 2.33,
           "opskins": 1.99
         },
         "4": {
-          "market": 5.65,
+          "market": 6.07,
           "analyst": 5.31,
           "opskins": 4.65
         }
@@ -15193,44 +15193,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.53,
+          "market": 0.6,
           "analyst": 0.42,
           "opskins": 0.35
         },
         "2": {
-          "market": 0.36,
+          "market": 0.42,
           "analyst": 0.29,
           "opskins": 0.23
         },
         "3": {
-          "market": 0.65,
+          "market": 0.74,
           "analyst": 0.53,
           "opskins": 0.4
         },
         "4": {
-          "market": 1.13,
+          "market": 1.32,
           "analyst": 0.98,
           "opskins": 0.75
         }
       },
       "stattrak": {
         "1": {
-          "market": 2.51,
+          "market": 2.53,
           "analyst": 2.29,
           "opskins": 1.73
         },
         "2": {
-          "market": 2.19,
+          "market": 2.3,
           "analyst": 1.78,
           "opskins": 1.36
         },
         "3": {
-          "market": 4.21,
+          "market": 4.24,
           "analyst": 3.6,
           "opskins": 2.94
         },
         "4": {
-          "market": 6.83,
+          "market": 6.6,
           "analyst": 5.72,
           "opskins": 5.09
         }
@@ -15245,7 +15245,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.32,
+          "market": 0.34,
           "analyst": 0.26,
           "opskins": 0.22
         },
@@ -15255,44 +15255,44 @@ var Prices = {
           "opskins": 0.22
         },
         "2": {
-          "market": 0.42,
+          "market": 0.41,
           "analyst": 0.35,
           "opskins": 0.27
         },
         "3": {
-          "market": 1.09,
+          "market": 1.01,
           "analyst": 0.91,
           "opskins": 0.72
         },
         "4": {
-          "market": 3.16,
+          "market": 2.82,
           "analyst": 2.49,
           "opskins": 2.06
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.02,
+          "market": 2.01,
           "analyst": 1.94,
           "opskins": 1.54
         },
         "1": {
-          "market": 2.39,
+          "market": 2.29,
           "analyst": 1.98,
           "opskins": 1.59
         },
         "2": {
-          "market": 3.24,
+          "market": 2.92,
           "analyst": 2.73,
           "opskins": 2.17
         },
         "3": {
-          "market": 6.25,
+          "market": 5.47,
           "analyst": 5.12,
           "opskins": 4.49
         },
         "4": {
-          "market": 16.14,
+          "market": 14.75,
           "analyst": 15.77,
           "opskins": 16.2
         }
@@ -15307,54 +15307,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.3,
+          "market": 0.33,
           "analyst": 0.25,
           "opskins": 0.21
         },
         "1": {
-          "market": 0.31,
+          "market": 0.34,
           "analyst": 0.26,
           "opskins": 0.24
         },
         "2": {
-          "market": 0.32,
+          "market": 0.38,
           "analyst": 0.27,
           "opskins": 0.21
         },
         "3": {
-          "market": 0.58,
+          "market": 0.68,
           "analyst": 0.53,
           "opskins": 0.41
         },
         "4": {
-          "market": 1.43,
+          "market": 1.41,
           "analyst": 1.31,
           "opskins": 1.14
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.92,
+          "market": 1.08,
           "analyst": 0.89,
           "opskins": 0.69
         },
         "1": {
-          "market": 1.02,
+          "market": 1.16,
           "analyst": 0.86,
           "opskins": 0.69
         },
         "2": {
-          "market": 1.24,
+          "market": 1.41,
           "analyst": 1.04,
           "opskins": 0.84
         },
         "3": {
-          "market": 2.74,
+          "market": 3.17,
           "analyst": 2.46,
           "opskins": 2.09
         },
         "4": {
-          "market": 6.05,
+          "market": 6.65,
           "analyst": 6.3,
           "opskins": 5.74
         }
@@ -15369,54 +15369,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.3,
+          "market": 0.34,
           "analyst": 0.25,
           "opskins": 0.21
         },
         "1": {
-          "market": 0.31,
+          "market": 0.35,
           "analyst": 0.26,
           "opskins": 0.21
         },
         "2": {
-          "market": 0.32,
+          "market": 0.38,
           "analyst": 0.27,
           "opskins": 0.22
         },
         "3": {
-          "market": 0.61,
+          "market": 0.68,
           "analyst": 0.52,
           "opskins": 0.44
         },
         "4": {
-          "market": 1.26,
+          "market": 1.36,
           "analyst": 1.06,
           "opskins": 0.88
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.95,
+          "market": 1.07,
           "analyst": 0.81,
           "opskins": 0.68
         },
         "1": {
-          "market": 0.98,
+          "market": 1.18,
           "analyst": 0.86,
           "opskins": 0.81
         },
         "2": {
-          "market": 1.18,
+          "market": 1.43,
           "analyst": 1.02,
           "opskins": 0.79
         },
         "3": {
-          "market": 2.64,
+          "market": 3.18,
           "analyst": 2.36,
           "opskins": 2.02
         },
         "4": {
-          "market": 7.04,
+          "market": 7.85,
           "analyst": 6.9,
           "opskins": 6.89
         }
@@ -15431,34 +15431,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.99,
+          "market": 4.24,
           "analyst": 2.36,
           "opskins": 1.97
         },
         "1": {
-          "market": 5.01,
+          "market": 6.35,
           "analyst": 4.18,
           "opskins": 4.29
         },
         "2": {
-          "market": 4.54,
+          "market": 6.07,
           "analyst": 3.69,
           "opskins": 2.99
         },
         "3": {
-          "market": 7.17,
+          "market": 8.93,
           "analyst": 5.96,
           "opskins": 5.09
         },
         "4": {
-          "market": 12.18,
+          "market": 15.77,
           "analyst": 10.77,
           "opskins": 9.22
         }
       },
       "stattrak": {
         "0": {
-          "market": 9.89,
+          "market": 12.47,
           "analyst": 9.52,
           "opskins": 9.02
         },
@@ -15468,17 +15468,17 @@ var Prices = {
           "opskins": 14.49
         },
         "2": {
-          "market": 14.75,
+          "market": 18.95,
           "analyst": 13.18,
           "opskins": 11.45
         },
         "3": {
-          "market": 25.38,
+          "market": 32.01,
           "analyst": 23.92,
           "opskins": 21.9
         },
         "4": {
-          "market": 54.48,
+          "market": 70.95,
           "analyst": 55.11,
           "opskins": 53.89
         }
@@ -15493,7 +15493,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2,
+          "market": 2.02,
           "analyst": 1.75,
           "opskins": 1.48
         },
@@ -15503,34 +15503,34 @@ var Prices = {
           "opskins": 3.05
         },
         "2": {
-          "market": 4.32,
+          "market": 4.22,
           "analyst": 3.88,
           "opskins": 3.22
         },
         "3": {
-          "market": 16.76,
+          "market": 15.76,
           "analyst": 16.82,
           "opskins": 15.46
         }
       },
       "stattrak": {
         "0": {
-          "market": 7.57,
+          "market": 7.85,
           "analyst": 6.61,
           "opskins": 5.63
         },
         "1": {
-          "market": 15.62,
+          "market": 16,
           "analyst": 14.12,
           "opskins": 12.19
         },
         "2": {
-          "market": 18.53,
+          "market": 19.06,
           "analyst": 15.93,
           "opskins": 14
         },
         "3": {
-          "market": 72.88,
+          "market": 89.16,
           "analyst": 92.82,
           "opskins": 78.82
         }
@@ -15545,54 +15545,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.21,
+          "market": 1.34,
           "analyst": 1.07,
           "opskins": 0.97
         },
         "1": {
-          "market": 1.25,
+          "market": 1.36,
           "analyst": 1.12,
           "opskins": 0.93
         },
         "2": {
-          "market": 1.34,
+          "market": 1.5,
           "analyst": 1.19,
           "opskins": 0.96
         },
         "3": {
-          "market": 2.16,
+          "market": 2.35,
           "analyst": 1.86,
           "opskins": 1.58
         },
         "4": {
-          "market": 4.63,
+          "market": 4.82,
           "analyst": 4.09,
           "opskins": 3.6
         }
       },
       "stattrak": {
         "0": {
-          "market": 3.42,
+          "market": 3.8,
           "analyst": 3.01,
           "opskins": 2.75
         },
         "1": {
-          "market": 3.32,
+          "market": 3.83,
           "analyst": 3.08,
           "opskins": 2.98
         },
         "2": {
-          "market": 4.1,
+          "market": 4.67,
           "analyst": 4.16,
           "opskins": 4.13
         },
         "3": {
-          "market": 8.3,
+          "market": 9.21,
           "analyst": 8.84,
           "opskins": 8.73
         },
         "4": {
-          "market": 24.39,
+          "market": 26.48,
           "analyst": 35.52,
           "opskins": 64.99
         }
@@ -15607,49 +15607,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 12.92,
+          "market": 14.3,
           "analyst": 11.13,
           "opskins": 10.1
         },
         "1": {
-          "market": 17.34,
+          "market": 18.47,
           "analyst": 13.75,
           "opskins": 12.26
         },
         "2": {
-          "market": 22.05,
+          "market": 22.8,
           "analyst": 17.8,
           "opskins": 16.34
         },
         "3": {
-          "market": 30.93,
+          "market": 32.34,
           "analyst": 25.41,
           "opskins": 22.15
         },
         "4": {
-          "market": 66.51,
+          "market": 72.67,
           "analyst": 53.8,
           "opskins": 49.79
         }
       },
       "stattrak": {
         "0": {
-          "market": 35.24,
+          "market": 38.34,
           "analyst": 27.87,
           "opskins": 27.89
         },
         "1": {
-          "market": 43.01,
+          "market": 51.77,
           "analyst": 38.63,
           "opskins": 34.1
         },
         "2": {
-          "market": 61.17,
+          "market": 68.51,
           "analyst": 50.67,
           "opskins": 44.1
         },
         "3": {
-          "market": 102.95,
+          "market": 118.57,
           "analyst": 97.28,
           "opskins": 84.8
         },
@@ -15669,27 +15669,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 4.05,
+          "market": 3.67,
           "analyst": 3.4,
           "opskins": 3.48
         },
         "1": {
-          "market": 4.83,
+          "market": 4.67,
           "analyst": 4.11,
           "opskins": 3.65
         },
         "2": {
-          "market": 4.58,
+          "market": 4.22,
           "analyst": 4,
           "opskins": 3.38
         },
         "3": {
-          "market": 6.98,
+          "market": 6.71,
           "analyst": 6.16,
           "opskins": 5.4
         },
         "4": {
-          "market": 9.6,
+          "market": 9.32,
           "analyst": 9.7,
           "opskins": 7.46
         }
@@ -15706,17 +15706,17 @@ var Prices = {
           "opskins": 13.49
         },
         "2": {
-          "market": 12.48,
+          "market": 12.18,
           "analyst": 11.87,
           "opskins": 10.68
         },
         "3": {
-          "market": 23.05,
+          "market": 24.6,
           "analyst": 26.2,
           "opskins": 23.75
         },
         "4": {
-          "market": 36.34,
+          "market": 35.52,
           "analyst": 37.08,
           "opskins": 33.4
         }
@@ -15731,54 +15731,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.43,
+          "market": 0.58,
           "analyst": 0.2,
           "opskins": 0.27
         },
         "1": {
-          "market": 0.45,
+          "market": 0.62,
           "analyst": 0.21,
           "opskins": 0.3
         },
         "2": {
-          "market": 0.55,
+          "market": 0.76,
           "analyst": 0.28,
           "opskins": 0.32
         },
         "3": {
-          "market": 0.85,
+          "market": 1.2,
           "analyst": 0.53,
           "opskins": 0.53
         },
         "4": {
-          "market": 2.53,
+          "market": 3.11,
           "analyst": 1.82,
           "opskins": 1.54
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.6,
+          "market": 3.32,
           "analyst": 1.95,
           "opskins": 1.7
         },
         "1": {
-          "market": 2.67,
+          "market": 3.41,
           "analyst": 2,
           "opskins": 1.68
         },
         "2": {
-          "market": 3.17,
+          "market": 4.06,
           "analyst": 2.31,
           "opskins": 2.05
         },
         "3": {
-          "market": 4.58,
+          "market": 5.59,
           "analyst": 3.32,
           "opskins": 2.8
         },
         "4": {
-          "market": 11.85,
+          "market": 13.99,
           "analyst": 9.79,
           "opskins": 8.25
         }
@@ -15793,12 +15793,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.07
         },
         "1": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         },
@@ -15808,29 +15808,29 @@ var Prices = {
           "opskins": 0.05
         },
         "3": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "4": {
-          "market": 0.11,
+          "market": 0.13,
           "analyst": 0.1,
           "opskins": 0.07
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.27,
+          "market": 0.29,
           "analyst": 0.23,
           "opskins": 0.2
         },
         "1": {
-          "market": 0.3,
+          "market": 0.28,
           "analyst": 0.24,
           "opskins": 0.19
         },
         "2": {
-          "market": 0.25,
+          "market": 0.24,
           "analyst": 0.21,
           "opskins": 0.17
         },
@@ -15840,7 +15840,7 @@ var Prices = {
           "opskins": 0.21
         },
         "4": {
-          "market": 0.55,
+          "market": 0.57,
           "analyst": 0.43,
           "opskins": 0.37
         }
@@ -15855,54 +15855,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.14,
           "opskins": 0.15
         },
         "1": {
-          "market": 0.14,
+          "market": 0.13,
           "analyst": 0.08,
           "opskins": 0.08
         },
         "2": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.08,
           "opskins": 0.11
         },
         "3": {
-          "market": 0.15,
+          "market": 0.16,
           "analyst": 0.1,
           "opskins": 0.1
         },
         "4": {
-          "market": 0.2,
+          "market": 0.23,
           "analyst": 0.15,
           "opskins": 0.13
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.41,
+          "market": 1.65,
           "analyst": 1.07,
           "opskins": 1.02
         },
         "1": {
-          "market": 0.82,
+          "market": 0.89,
           "analyst": 0.64,
           "opskins": 0.56
         },
         "2": {
-          "market": 0.63,
+          "market": 0.77,
           "analyst": 0.48,
           "opskins": 0.42
         },
         "3": {
-          "market": 1,
+          "market": 1.18,
           "analyst": 0.72,
           "opskins": 0.62
         },
         "4": {
-          "market": 1.31,
+          "market": 1.64,
           "analyst": 1.05,
           "opskins": 0.9
         }
@@ -15917,7 +15917,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.07,
           "opskins": 0.07
         },
@@ -15937,34 +15937,34 @@ var Prices = {
           "opskins": 0.08
         },
         "4": {
-          "market": 0.32,
+          "market": 0.34,
           "analyst": 0.28,
           "opskins": 0.23
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.35,
+          "market": 0.39,
           "analyst": 0.3,
           "opskins": 0.23
         },
         "1": {
-          "market": 0.6,
+          "market": 0.72,
           "analyst": 0.66,
           "opskins": 0.54
         },
         "2": {
-          "market": 0.36,
+          "market": 0.39,
           "analyst": 0.3,
           "opskins": 0.25
         },
         "3": {
-          "market": 0.57,
+          "market": 0.69,
           "analyst": 0.51,
           "opskins": 0.4
         },
         "4": {
-          "market": 1.89,
+          "market": 2.1,
           "analyst": 1.57,
           "opskins": 1.25
         }
@@ -15979,24 +15979,24 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         },
         "3": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.13
         }
       },
       "stattrak": {
         "2": {
-          "market": 0.23,
+          "market": 0.26,
           "analyst": 0.19,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.25,
+          "market": 0.31,
           "analyst": 0.21,
           "opskins": 0.15
         }
@@ -16011,12 +16011,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.11
         },
         "1": {
-          "market": 0.1,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.11
         },
@@ -16038,27 +16038,27 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.22,
+          "market": 0.25,
           "analyst": 0.19,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.23,
           "opskins": 0.2
         },
         "2": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.2,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.3,
+          "market": 0.32,
           "analyst": 0.24,
           "opskins": 0.18
         },
         "4": {
-          "market": 0.54,
+          "market": 0.58,
           "analyst": 0.42,
           "opskins": 0.35
         }
@@ -16073,44 +16073,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 1.05,
+          "market": 1.2,
           "analyst": 0.85,
           "opskins": 0.73
         },
         "2": {
-          "market": 0.84,
+          "market": 1.02,
           "analyst": 0.66,
           "opskins": 0.55
         },
         "3": {
-          "market": 0.91,
+          "market": 1.1,
           "analyst": 0.72,
           "opskins": 0.62
         },
         "4": {
-          "market": 1.4,
+          "market": 1.59,
           "analyst": 1.11,
           "opskins": 0.95
         }
       },
       "stattrak": {
         "1": {
-          "market": 5,
+          "market": 5.7,
           "analyst": 4.39,
           "opskins": 3.74
         },
         "2": {
-          "market": 4.82,
+          "market": 5.28,
           "analyst": 3.45,
           "opskins": 2.84
         },
         "3": {
-          "market": 5.13,
+          "market": 5.62,
           "analyst": 3.78,
           "opskins": 3.16
         },
         "4": {
-          "market": 6.64,
+          "market": 7.26,
           "analyst": 5.26,
           "opskins": 4.51
         }
@@ -16125,54 +16125,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "2": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "3": {
-          "market": 0.3,
+          "market": 0.31,
           "analyst": 0.24,
           "opskins": 0.21
         },
         "4": {
-          "market": 0.88,
+          "market": 1.02,
           "analyst": 0.72,
           "opskins": 0.61
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.62,
+          "market": 0.76,
           "analyst": 0.52,
           "opskins": 0.45
         },
         "1": {
-          "market": 0.62,
+          "market": 0.75,
           "analyst": 0.52,
           "opskins": 0.46
         },
         "2": {
-          "market": 0.64,
+          "market": 0.77,
           "analyst": 0.53,
           "opskins": 0.48
         },
         "3": {
-          "market": 1.1,
+          "market": 1.32,
           "analyst": 0.98,
           "opskins": 0.77
         },
         "4": {
-          "market": 5,
+          "market": 5.75,
           "analyst": 3.56,
           "opskins": 3.18
         }
@@ -16187,54 +16187,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.25,
+          "market": 0.27,
           "analyst": 0.24,
           "opskins": 0.2
         },
         "2": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.2,
           "opskins": 0.15
         },
         "3": {
-          "market": 0.28,
+          "market": 0.3,
           "analyst": 0.22,
           "opskins": 0.17
         },
         "4": {
-          "market": 0.54,
+          "market": 0.59,
           "analyst": 0.41,
           "opskins": 0.36
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.61,
+          "market": 0.77,
           "analyst": 0.52,
           "opskins": 0.45
         },
         "1": {
-          "market": 0.63,
+          "market": 0.81,
           "analyst": 0.54,
           "opskins": 0.43
         },
         "2": {
-          "market": 0.61,
+          "market": 0.75,
           "analyst": 0.52,
           "opskins": 0.41
         },
         "3": {
-          "market": 1.01,
+          "market": 1.3,
           "analyst": 0.88,
           "opskins": 0.68
         },
         "4": {
-          "market": 2.19,
+          "market": 2.73,
           "analyst": 2.06,
           "opskins": 1.66
         }
@@ -16249,14 +16249,14 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.23,
+          "market": 0.26,
           "analyst": 0.2,
           "opskins": 0.15
         }
       },
       "stattrak": {
         "2": {
-          "market": 0.69,
+          "market": 1.04,
           "analyst": 0.54,
           "opskins": 0.41
         }
@@ -16271,44 +16271,44 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.15,
+          "market": 1.25,
           "analyst": 1.13,
           "opskins": 1.18
         },
         "1": {
-          "market": 1.24,
+          "market": 1.32,
           "analyst": 1.03,
           "opskins": 0.89
         },
         "2": {
-          "market": 1.34,
+          "market": 1.36,
           "analyst": 1.07,
           "opskins": 0.93
         },
         "3": {
-          "market": 6.53,
+          "market": 7.28,
           "analyst": 5.33,
           "opskins": 4.59
         }
       },
       "stattrak": {
         "0": {
-          "market": 3.01,
+          "market": 3.3,
           "analyst": 2.49,
           "opskins": 2.17
         },
         "1": {
-          "market": 4.15,
+          "market": 4.52,
           "analyst": 3.32,
           "opskins": 2.66
         },
         "2": {
-          "market": 4.92,
+          "market": 5.61,
           "analyst": 3.93,
           "opskins": 3.37
         },
         "3": {
-          "market": 27.44,
+          "market": 31.54,
           "analyst": 20.91,
           "opskins": 18.49
         }
@@ -16323,54 +16323,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.1,
+          "market": 1.21,
           "analyst": 0.96,
           "opskins": 0.79
         },
         "1": {
-          "market": 1.1,
+          "market": 1.21,
           "analyst": 0.96,
           "opskins": 0.79
         },
         "2": {
-          "market": 1.1,
+          "market": 1.21,
           "analyst": 0.98,
           "opskins": 0.79
         },
         "3": {
-          "market": 1.46,
+          "market": 1.58,
           "analyst": 1.24,
           "opskins": 1.01
         },
         "4": {
-          "market": 3.09,
+          "market": 3.74,
           "analyst": 3.02,
           "opskins": 2.53
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.64,
+          "market": 3.02,
           "analyst": 2.34,
           "opskins": 2.27
         },
         "1": {
-          "market": 2.59,
+          "market": 3,
           "analyst": 2.32,
           "opskins": 2.02
         },
         "2": {
-          "market": 2.67,
+          "market": 3.09,
           "analyst": 2.37,
           "opskins": 2.04
         },
         "3": {
-          "market": 4.77,
+          "market": 5.21,
           "analyst": 4.05,
           "opskins": 3.72
         },
         "4": {
-          "market": 13.51,
+          "market": 16.63,
           "analyst": 14.5,
           "opskins": 13.46
         }
@@ -16385,12 +16385,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 131.21,
+          "market": 142.63,
           "analyst": 124.69,
           "opskins": 100
         },
         "4": {
-          "market": 118.13,
+          "market": 132.28,
           "analyst": 104.62,
           "opskins": 88
         }
@@ -16402,7 +16402,7 @@ var Prices = {
           "opskins": 189.93
         },
         "4": {
-          "market": 153.18,
+          "market": 174.73,
           "analyst": 144.76,
           "opskins": 123.31
         }
@@ -16417,24 +16417,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 185.32,
+          "market": 206.07,
           "analyst": 168.42,
           "opskins": 137.99
         },
         "4": {
-          "market": 179.8,
+          "market": 203.24,
           "analyst": 159.08,
           "opskins": 132
         }
       },
       "stattrak": {
         "3": {
-          "market": 237.94,
+          "market": 300,
           "analyst": 241,
           "opskins": 285.23
         },
         "4": {
-          "market": 230.75,
+          "market": 262.04,
           "analyst": 212.56,
           "opskins": 175.22
         }
@@ -16449,12 +16449,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.18,
+          "market": 0.22,
           "analyst": 0.17,
           "opskins": 0.16
         },
         "1": {
-          "market": 0.26,
+          "market": 0.24,
           "analyst": 0.17,
           "opskins": 0.38
         },
@@ -16464,39 +16464,39 @@ var Prices = {
           "opskins": 0.1
         },
         "3": {
-          "market": 0.17,
+          "market": 0.18,
           "analyst": 0.13,
           "opskins": 0.1
         },
         "4": {
-          "market": 0.24,
+          "market": 0.28,
           "analyst": 0.19,
           "opskins": 0.2
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.84,
+          "market": 0.96,
           "analyst": 0.73,
           "opskins": 0.72
         },
         "1": {
-          "market": 1,
+          "market": 0.83,
           "analyst": 0.87,
           "opskins": 0.73
         },
         "2": {
-          "market": 0.62,
+          "market": 0.72,
           "analyst": 0.54,
           "opskins": 0.49
         },
         "3": {
-          "market": 0.77,
+          "market": 0.88,
           "analyst": 0.67,
           "opskins": 0.59
         },
         "4": {
-          "market": 1.26,
+          "market": 1.46,
           "analyst": 1.1,
           "opskins": 0.91
         }
@@ -16511,17 +16511,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.13
         },
         "1": {
-          "market": 0.11,
+          "market": 0.14,
           "analyst": 0.08,
           "opskins": 0.09
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.13
         },
@@ -16531,34 +16531,34 @@ var Prices = {
           "opskins": 0.09
         },
         "4": {
-          "market": 0.23,
+          "market": 0.21,
           "analyst": 0.18,
           "opskins": 0.16
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.34,
+          "market": 0.28,
           "analyst": 0.24,
           "opskins": 0.24
         },
         "2": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "3": {
-          "market": 0.31,
+          "market": 0.35,
           "analyst": 0.26,
           "opskins": 0.23
         },
         "4": {
-          "market": 0.9,
+          "market": 0.92,
           "analyst": 0.73,
           "opskins": 0.58
         }
@@ -16583,7 +16583,7 @@ var Prices = {
           "opskins": 0.06
         },
         "2": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.07,
           "opskins": 0.05
         },
@@ -16593,34 +16593,34 @@ var Prices = {
           "opskins": 0.08
         },
         "4": {
-          "market": 0.5,
+          "market": 0.48,
           "analyst": 0.41,
           "opskins": 0.35
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.29,
+          "market": 0.27,
           "analyst": 0.23,
           "opskins": 0.22
         },
         "1": {
-          "market": 0.29,
+          "market": 0.27,
           "analyst": 0.22,
           "opskins": 0.2
         },
         "2": {
-          "market": 0.3,
+          "market": 0.28,
           "analyst": 0.23,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.47,
+          "market": 0.45,
           "analyst": 0.38,
           "opskins": 0.3
         },
         "4": {
-          "market": 2.1,
+          "market": 2.19,
           "analyst": 1.8,
           "opskins": 1.42
         }
@@ -16635,12 +16635,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.16,
+          "market": 0.14,
           "analyst": 0.15,
           "opskins": 0.13
         },
         "1": {
-          "market": 0.15,
+          "market": 0.13,
           "analyst": 0.11,
           "opskins": 0.08
         },
@@ -16650,7 +16650,7 @@ var Prices = {
           "opskins": 0.13
         },
         "3": {
-          "market": 0.13,
+          "market": 0.11,
           "analyst": 0.08,
           "opskins": 0.07
         },
@@ -16662,12 +16662,12 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.43,
+          "market": 0.45,
           "analyst": 0.26,
           "opskins": 0.2
         },
         "1": {
-          "market": 0.37,
+          "market": 0.39,
           "analyst": 0.31,
           "opskins": 0.25
         },
@@ -16677,12 +16677,12 @@ var Prices = {
           "opskins": 0.17
         },
         "3": {
-          "market": 0.38,
+          "market": 0.41,
           "analyst": 0.27,
           "opskins": 0.22
         },
         "4": {
-          "market": 0.73,
+          "market": 0.71,
           "analyst": 0.51,
           "opskins": 0.44
         }
@@ -16697,7 +16697,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.08,
           "opskins": 1
         },
@@ -16707,7 +16707,7 @@ var Prices = {
           "opskins": 0.1
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.1
         },
@@ -16724,27 +16724,27 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.44,
+          "market": 0.33,
           "analyst": 0.23,
           "opskins": 0.22
         },
         "1": {
-          "market": 0.34,
+          "market": 0.28,
           "analyst": 0.21,
           "opskins": 0.21
         },
         "2": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.19,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.31,
+          "market": 0.33,
           "analyst": 0.22,
           "opskins": 0.17
         },
         "4": {
-          "market": 0.56,
+          "market": 0.62,
           "analyst": 0.44,
           "opskins": 0.36
         }
@@ -16759,54 +16759,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.39,
+          "market": 0.45,
           "analyst": 0.35,
           "opskins": 0.35
         },
         "1": {
-          "market": 0.46,
+          "market": 0.45,
           "analyst": 0.4,
           "opskins": 0.4
         },
         "2": {
-          "market": 0.37,
+          "market": 0.41,
           "analyst": 0.28,
           "opskins": 0.26
         },
         "3": {
-          "market": 0.45,
+          "market": 0.54,
           "analyst": 0.36,
           "opskins": 0.31
         },
         "4": {
-          "market": 0.66,
+          "market": 0.77,
           "analyst": 0.52,
           "opskins": 0.39
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.14,
+          "market": 1.45,
           "analyst": 1.3,
           "opskins": 1.11
         },
         "1": {
-          "market": 1.15,
+          "market": 1.38,
           "analyst": 0.99,
           "opskins": 0.98
         },
         "2": {
-          "market": 1.09,
+          "market": 1.41,
           "analyst": 1,
           "opskins": 0.78
         },
         "3": {
-          "market": 1.61,
+          "market": 1.97,
           "analyst": 1.37,
           "opskins": 1.11
         },
         "4": {
-          "market": 2.64,
+          "market": 3.18,
           "analyst": 2.27,
           "opskins": 1.84
         }
@@ -16821,54 +16821,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.39,
+          "market": 0.44,
           "analyst": 0.3,
           "opskins": 0.28
         },
         "1": {
-          "market": 0.43,
+          "market": 0.45,
           "analyst": 0.32,
           "opskins": 0.31
         },
         "2": {
-          "market": 0.38,
+          "market": 0.43,
           "analyst": 0.3,
           "opskins": 0.27
         },
         "3": {
-          "market": 0.61,
+          "market": 0.72,
           "analyst": 0.48,
           "opskins": 0.5
         },
         "4": {
-          "market": 1.87,
+          "market": 2.09,
           "analyst": 1.42,
           "opskins": 1.18
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.88,
+          "market": 2.14,
           "analyst": 1.38,
           "opskins": 1.25
         },
         "1": {
-          "market": 1.81,
+          "market": 2.11,
           "analyst": 1.42,
           "opskins": 1.17
         },
         "2": {
-          "market": 1.91,
+          "market": 2.17,
           "analyst": 1.39,
           "opskins": 1.26
         },
         "3": {
-          "market": 3.04,
+          "market": 3.55,
           "analyst": 2.22,
           "opskins": 1.84
         },
         "4": {
-          "market": 10.32,
+          "market": 10.98,
           "analyst": 7.84,
           "opskins": 7.68
         }
@@ -16883,54 +16883,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.38,
+          "market": 0.46,
           "analyst": 0.33,
           "opskins": 0.28
         },
         "1": {
-          "market": 0.49,
+          "market": 0.56,
           "analyst": 0.56,
           "opskins": 0.45
         },
         "2": {
-          "market": 0.38,
+          "market": 0.42,
           "analyst": 0.29,
           "opskins": 0.77
         },
         "3": {
-          "market": 0.49,
+          "market": 0.56,
           "analyst": 0.38,
           "opskins": 0.33
         },
         "4": {
-          "market": 0.66,
+          "market": 0.81,
           "analyst": 0.6,
           "opskins": 0.47
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.21,
+          "market": 1.88,
           "analyst": 0.82,
           "opskins": 1.25
         },
         "1": {
-          "market": 1.21,
+          "market": 1.48,
           "analyst": 1.08,
           "opskins": 1.03
         },
         "2": {
-          "market": 1.13,
+          "market": 1.43,
           "analyst": 0.97,
           "opskins": 0.81
         },
         "3": {
-          "market": 1.61,
+          "market": 2.01,
           "analyst": 1.31,
           "opskins": 1.2
         },
         "4": {
-          "market": 2.59,
+          "market": 3.19,
           "analyst": 2.38,
           "opskins": 1.95
         }
@@ -16950,49 +16950,49 @@ var Prices = {
           "opskins": 0.33
         },
         "1": {
-          "market": 0.45,
+          "market": 0.5,
           "analyst": 0.35,
           "opskins": 0.41
         },
         "2": {
-          "market": 0.37,
+          "market": 0.41,
           "analyst": 0.28,
           "opskins": 0.24
         },
         "3": {
-          "market": 0.46,
+          "market": 0.53,
           "analyst": 0.36,
           "opskins": 0.34
         },
         "4": {
-          "market": 0.67,
+          "market": 0.81,
           "analyst": 0.53,
           "opskins": 0.4
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.94,
+          "market": 1.27,
           "analyst": 1.05,
           "opskins": 1.26
         },
         "1": {
-          "market": 1.28,
+          "market": 3.88,
           "analyst": 1.26,
           "opskins": 4.44
         },
         "2": {
-          "market": 1.09,
+          "market": 1.38,
           "analyst": 0.93,
           "opskins": 0.77
         },
         "3": {
-          "market": 1.54,
+          "market": 1.96,
           "analyst": 1.35,
           "opskins": 1.22
         },
         "4": {
-          "market": 2.65,
+          "market": 3.12,
           "analyst": 2.2,
           "opskins": 1.96
         }
@@ -17007,29 +17007,29 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.38,
+          "market": 1.69,
           "analyst": 1.14,
           "opskins": 1.01
         },
         "1": {
-          "market": 2.71,
+          "market": 2.98,
           "analyst": 2.05,
           "opskins": 1.72
         },
         "2": {
-          "market": 11,
+          "market": 12.06,
           "analyst": 9.32,
           "opskins": 8.3
         }
       },
       "stattrak": {
         "0": {
-          "market": 5.68,
+          "market": 6.91,
           "analyst": 5.11,
           "opskins": 4.59
         },
         "1": {
-          "market": 12.5,
+          "market": 15.98,
           "analyst": 12.41,
           "opskins": 10.97
         },
@@ -17049,34 +17049,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 156.22,
+          "market": 174.81,
           "analyst": 127.02,
           "opskins": 106.89
         },
         "3": {
-          "market": 176.53,
+          "market": 202.11,
           "analyst": 144.54,
           "opskins": 119.9
         },
         "4": {
-          "market": 203.39,
+          "market": 241.97,
           "analyst": 175.14,
           "opskins": 143.99
         }
       },
       "stattrak": {
         "2": {
-          "market": 214,
+          "market": 208,
           "analyst": 242.98,
           "opskins": 192.02
         },
         "3": {
-          "market": 224.62,
+          "market": 250.64,
           "analyst": 212.11,
           "opskins": 174.39
         },
         "4": {
-          "market": 323.47,
+          "market": 351.79,
           "analyst": 350.16,
           "opskins": 254.99
         }
@@ -17101,44 +17101,44 @@ var Prices = {
           "opskins": 0.08
         },
         "2": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.27,
+          "market": 0.29,
           "analyst": 0.2,
           "opskins": 0.14
         },
         "4": {
-          "market": 2.34,
+          "market": 2.54,
           "analyst": 1.8,
           "opskins": 1.46
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.4,
+          "market": 0.44,
           "analyst": 0.33,
           "opskins": 0.26
         },
         "1": {
-          "market": 0.55,
+          "market": 0.63,
           "analyst": 0.47,
           "opskins": 0.37
         },
         "2": {
-          "market": 0.44,
+          "market": 0.47,
           "analyst": 0.33,
           "opskins": 0.27
         },
         "3": {
-          "market": 1.44,
+          "market": 1.46,
           "analyst": 1.1,
           "opskins": 0.87
         },
         "4": {
-          "market": 17.37,
+          "market": 19.12,
           "analyst": 19.69,
           "opskins": 18.29
         }
@@ -17153,54 +17153,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.15,
+          "market": 0.18,
           "analyst": 0.09,
           "opskins": 0.11
         },
         "1": {
-          "market": 0.39,
+          "market": 0.43,
           "analyst": 0.24,
           "opskins": 0.26
         },
         "2": {
-          "market": 0.18,
+          "market": 0.21,
           "analyst": 0.12,
           "opskins": 0.09
         },
         "3": {
-          "market": 0.38,
+          "market": 0.41,
           "analyst": 0.26,
           "opskins": 0.22
         },
         "4": {
-          "market": 0.88,
+          "market": 1.03,
           "analyst": 0.66,
           "opskins": 0.52
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.93,
+          "market": 1.07,
           "analyst": 0.64,
           "opskins": 0.62
         },
         "1": {
-          "market": 1.35,
+          "market": 1.49,
           "analyst": 1.08,
           "opskins": 0.97
         },
         "2": {
-          "market": 1.02,
+          "market": 1.13,
           "analyst": 0.72,
           "opskins": 0.62
         },
         "3": {
-          "market": 1.44,
+          "market": 1.72,
           "analyst": 1.17,
           "opskins": 0.97
         },
         "4": {
-          "market": 3.46,
+          "market": 3.63,
           "analyst": 2.98,
           "opskins": 2.52
         }
@@ -17215,44 +17215,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.58,
+          "market": 0.69,
           "analyst": 0.35,
           "opskins": 0.36
         },
         "2": {
-          "market": 0.32,
+          "market": 0.39,
           "analyst": 0.23,
           "opskins": 0.22
         },
         "3": {
-          "market": 0.4,
+          "market": 0.51,
           "analyst": 0.3,
           "opskins": 0.25
         },
         "4": {
-          "market": 0.7,
+          "market": 0.75,
           "analyst": 0.44,
           "opskins": 0.41
         }
       },
       "stattrak": {
         "1": {
-          "market": 2.53,
+          "market": 2.74,
           "analyst": 1.97,
           "opskins": 1.87
         },
         "2": {
-          "market": 1.89,
+          "market": 2.25,
           "analyst": 1.37,
           "opskins": 1.19
         },
         "3": {
-          "market": 2.44,
+          "market": 2.89,
           "analyst": 1.96,
           "opskins": 1.64
         },
         "4": {
-          "market": 4.19,
+          "market": 4.63,
           "analyst": 2.95,
           "opskins": 2.55
         }
@@ -17267,34 +17267,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.16,
+          "market": 0.19,
           "analyst": 0.13,
           "opskins": 0.13
         },
         "3": {
-          "market": 0.19,
+          "market": 0.21,
           "analyst": 0.15,
           "opskins": 0.13
         },
         "4": {
-          "market": 0.28,
+          "market": 0.29,
           "analyst": 0.23,
           "opskins": 0.18
         }
       },
       "stattrak": {
         "2": {
-          "market": 0.62,
+          "market": 0.79,
           "analyst": 0.56,
           "opskins": 0.44
         },
         "3": {
-          "market": 0.92,
+          "market": 1.06,
           "analyst": 0.81,
           "opskins": 0.66
         },
         "4": {
-          "market": 1.26,
+          "market": 1.6,
           "analyst": 1.04,
           "opskins": 0.8
         }
@@ -17324,7 +17324,7 @@ var Prices = {
           "opskins": 0.06
         },
         "3": {
-          "market": 0.16,
+          "market": 0.17,
           "analyst": 0.12,
           "opskins": 0.1
         },
@@ -17336,27 +17336,27 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.21,
           "opskins": 0.17
         },
         "2": {
-          "market": 0.29,
+          "market": 0.32,
           "analyst": 0.23,
           "opskins": 0.21
         },
         "3": {
-          "market": 0.72,
+          "market": 0.87,
           "analyst": 0.55,
           "opskins": 0.44
         },
         "4": {
-          "market": 2.1,
+          "market": 2.11,
           "analyst": 1.48,
           "opskins": 1.51
         }
@@ -17371,54 +17371,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.12,
+          "market": 0.14,
           "analyst": 0.09,
           "opskins": 0.07
         },
         "1": {
-          "market": 0.13,
+          "market": 0.14,
           "analyst": 0.1,
           "opskins": 0.09
         },
         "2": {
-          "market": 0.09,
+          "market": 0.1,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.16,
+          "market": 0.18,
           "analyst": 0.12,
           "opskins": 0.09
         },
         "4": {
-          "market": 0.26,
+          "market": 0.28,
           "analyst": 0.18,
           "opskins": 0.14
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.27,
+          "market": 0.34,
           "analyst": 0.27,
           "opskins": 0.48
         },
         "1": {
-          "market": 0.34,
+          "market": 0.38,
           "analyst": 0.28,
           "opskins": 0.24
         },
         "2": {
-          "market": 0.31,
+          "market": 0.37,
           "analyst": 0.29,
           "opskins": 0.24
         },
         "3": {
-          "market": 0.7,
+          "market": 0.86,
           "analyst": 0.56,
           "opskins": 0.47
         },
         "4": {
-          "market": 1.29,
+          "market": 1.45,
           "analyst": 1.07,
           "opskins": 0.84
         }
@@ -17433,54 +17433,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.47,
+          "market": 0.56,
           "analyst": 0.37,
           "opskins": 0.28
         },
         "1": {
-          "market": 0.5,
+          "market": 0.6,
           "analyst": 0.38,
           "opskins": 0.32
         },
         "2": {
-          "market": 0.52,
+          "market": 0.65,
           "analyst": 0.38,
           "opskins": 0.34
         },
         "3": {
-          "market": 1.01,
+          "market": 1.11,
           "analyst": 0.75,
           "opskins": 0.72
         },
         "4": {
-          "market": 2.05,
+          "market": 2.12,
           "analyst": 1.63,
           "opskins": 1.35
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.41,
+          "market": 1.55,
           "analyst": 1.06,
           "opskins": 0.95
         },
         "1": {
-          "market": 1.51,
+          "market": 1.7,
           "analyst": 1.18,
           "opskins": 1.02
         },
         "2": {
-          "market": 1.83,
+          "market": 1.96,
           "analyst": 1.42,
           "opskins": 1.13
         },
         "3": {
-          "market": 4.28,
+          "market": 4.58,
           "analyst": 3.48,
           "opskins": 2.98
         },
         "4": {
-          "market": 8.63,
+          "market": 9.24,
           "analyst": 8.41,
           "opskins": 7.99
         }
@@ -17495,54 +17495,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.48,
+          "market": 0.58,
           "analyst": 0.37,
           "opskins": 0.38
         },
         "1": {
-          "market": 0.51,
+          "market": 0.59,
           "analyst": 0.43,
           "opskins": 0.35
         },
         "2": {
-          "market": 0.51,
+          "market": 0.63,
           "analyst": 0.38,
           "opskins": 0.41
         },
         "3": {
-          "market": 1.12,
+          "market": 1.19,
           "analyst": 0.85,
           "opskins": 0.68
         },
         "4": {
-          "market": 3.03,
+          "market": 3.12,
           "analyst": 2.1,
           "opskins": 1.68
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.42,
+          "market": 1.64,
           "analyst": 1.21,
           "opskins": 1.06
         },
         "1": {
-          "market": 1.89,
+          "market": 1.88,
           "analyst": 1.41,
           "opskins": 1.14
         },
         "2": {
-          "market": 2.39,
+          "market": 2.62,
           "analyst": 1.86,
           "opskins": 1.49
         },
         "3": {
-          "market": 6.02,
+          "market": 6.82,
           "analyst": 5.26,
           "opskins": 4.6
         },
         "4": {
-          "market": 16.46,
+          "market": 18.05,
           "analyst": 14.23,
           "opskins": 13.02
         }
@@ -17557,17 +17557,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.46,
+          "market": 0.55,
           "analyst": 0.41,
           "opskins": 0.42
         },
         "1": {
-          "market": 0.53,
+          "market": 0.57,
           "analyst": 0.4,
           "opskins": 0.41
         },
         "2": {
-          "market": 0.53,
+          "market": 0.63,
           "analyst": 0.4,
           "opskins": 0.32
         },
@@ -17577,34 +17577,34 @@ var Prices = {
           "opskins": 0.63
         },
         "4": {
-          "market": 2.36,
+          "market": 2.51,
           "analyst": 1.72,
           "opskins": 1.43
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.42,
+          "market": 1.41,
           "analyst": 1.08,
           "opskins": 1.05
         },
         "1": {
-          "market": 1.45,
+          "market": 1.55,
           "analyst": 1.04,
           "opskins": 1.02
         },
         "2": {
-          "market": 1.77,
+          "market": 1.88,
           "analyst": 1.41,
           "opskins": 1.17
         },
         "3": {
-          "market": 4.02,
+          "market": 4.38,
           "analyst": 3.77,
           "opskins": 3.11
         },
         "4": {
-          "market": 9.36,
+          "market": 9.59,
           "analyst": 8.35,
           "opskins": 7.74
         }
@@ -17619,54 +17619,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.49,
+          "market": 0.58,
           "analyst": 0.38,
           "opskins": 0.32
         },
         "1": {
-          "market": 0.53,
+          "market": 0.6,
           "analyst": 0.44,
           "opskins": 0.33
         },
         "2": {
-          "market": 0.52,
+          "market": 0.65,
           "analyst": 0.39,
           "opskins": 0.3
         },
         "3": {
-          "market": 1.14,
+          "market": 1.16,
           "analyst": 0.77,
           "opskins": 0.58
         },
         "4": {
-          "market": 2.48,
+          "market": 2.76,
           "analyst": 1.86,
           "opskins": 1.5
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.72,
+          "market": 2.04,
           "analyst": 1.42,
           "opskins": 1.49
         },
         "1": {
-          "market": 1.95,
+          "market": 2.25,
           "analyst": 1.66,
           "opskins": 1.47
         },
         "2": {
-          "market": 2.44,
+          "market": 2.78,
           "analyst": 2.03,
           "opskins": 1.64
         },
         "3": {
-          "market": 5.38,
+          "market": 5.9,
           "analyst": 4.29,
           "opskins": 3.82
         },
         "4": {
-          "market": 13.82,
+          "market": 14.89,
           "analyst": 12.2,
           "opskins": 10.75
         }
@@ -17681,54 +17681,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.49,
+          "market": 0.59,
           "analyst": 0.37,
           "opskins": 0.33
         },
         "1": {
-          "market": 0.57,
+          "market": 0.68,
           "analyst": 0.45,
           "opskins": 0.33
         },
         "2": {
-          "market": 0.65,
+          "market": 0.84,
           "analyst": 0.56,
           "opskins": 0.42
         },
         "3": {
-          "market": 1.74,
+          "market": 1.99,
           "analyst": 1.33,
           "opskins": 1.06
         },
         "4": {
-          "market": 4.1,
+          "market": 4.33,
           "analyst": 3.26,
           "opskins": 2.68
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.61,
+          "market": 3.01,
           "analyst": 2.26,
           "opskins": 1.82
         },
         "1": {
-          "market": 3.7,
+          "market": 3.95,
           "analyst": 2.92,
           "opskins": 2.49
         },
         "2": {
-          "market": 4.73,
+          "market": 5.16,
           "analyst": 3.87,
           "opskins": 3.14
         },
         "3": {
-          "market": 9.25,
+          "market": 9.38,
           "analyst": 8.32,
           "opskins": 7.36
         },
         "4": {
-          "market": 20.01,
+          "market": 24.72,
           "analyst": 15.62,
           "opskins": 14.9
         }
@@ -17743,54 +17743,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.52,
+          "market": 0.62,
           "analyst": 0.39,
           "opskins": 0.34
         },
         "1": {
-          "market": 0.63,
+          "market": 0.74,
           "analyst": 0.54,
           "opskins": 0.42
         },
         "2": {
-          "market": 0.53,
+          "market": 0.64,
           "analyst": 0.4,
           "opskins": 0.33
         },
         "3": {
-          "market": 0.93,
+          "market": 1.08,
           "analyst": 0.74,
           "opskins": 0.58
         },
         "4": {
-          "market": 1.65,
+          "market": 1.92,
           "analyst": 1.19,
           "opskins": 1.12
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.84,
+          "market": 2.16,
           "analyst": 1.32,
           "opskins": 1.46
         },
         "1": {
-          "market": 2.74,
+          "market": 3.38,
           "analyst": 2.44,
           "opskins": 2.19
         },
         "2": {
-          "market": 1.86,
+          "market": 2.08,
           "analyst": 1.36,
           "opskins": 1.19
         },
         "3": {
-          "market": 4.18,
+          "market": 4.41,
           "analyst": 3.46,
           "opskins": 3.24
         },
         "4": {
-          "market": 6.61,
+          "market": 7.66,
           "analyst": 5.53,
           "opskins": 5.45
         }
@@ -17805,39 +17805,39 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.1,
+          "market": 1.26,
           "analyst": 0.97,
           "opskins": 0.88
         },
         "1": {
-          "market": 1.13,
+          "market": 1.25,
           "analyst": 0.98,
           "opskins": 0.82
         },
         "2": {
-          "market": 1.13,
+          "market": 1.23,
           "analyst": 1,
           "opskins": 0.81
         },
         "3": {
-          "market": 10.97,
+          "market": 12.71,
           "analyst": 11.82,
           "opskins": 11.12
         }
       },
       "stattrak": {
         "0": {
-          "market": 3.23,
+          "market": 3.55,
           "analyst": 3.17,
           "opskins": 2.99
         },
         "1": {
-          "market": 3.54,
+          "market": 3.66,
           "analyst": 3.2,
           "opskins": 3.15
         },
         "2": {
-          "market": 4.18,
+          "market": 4.57,
           "analyst": 3.63,
           "opskins": 3.23
         },
@@ -17857,49 +17857,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.13,
+          "market": 1.3,
           "analyst": 1.01,
           "opskins": 0.84
         },
         "1": {
-          "market": 1.14,
+          "market": 1.26,
           "analyst": 1.02,
           "opskins": 0.85
         },
         "2": {
-          "market": 1.13,
+          "market": 1.28,
           "analyst": 0.99,
           "opskins": 0.78
         },
         "3": {
-          "market": 1.82,
+          "market": 2.15,
           "analyst": 1.37,
           "opskins": 1.31
         },
         "4": {
-          "market": 4.43,
+          "market": 5.37,
           "analyst": 4.37,
           "opskins": 4.14
         }
       },
       "stattrak": {
         "0": {
-          "market": 3.54,
+          "market": 3.91,
           "analyst": 3.31,
           "opskins": 2.79
         },
         "1": {
-          "market": 3.57,
+          "market": 4.01,
           "analyst": 3.24,
           "opskins": 3.15
         },
         "2": {
-          "market": 4.15,
+          "market": 4.41,
           "analyst": 3.79,
           "opskins": 3.15
         },
         "3": {
-          "market": 8.43,
+          "market": 9.16,
           "analyst": 6.12,
           "opskins": 5.93
         },
@@ -17919,49 +17919,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 4.73,
+          "market": 5.71,
           "analyst": 3.91,
           "opskins": 3.79
         },
         "1": {
-          "market": 8.63,
+          "market": 9.72,
           "analyst": 7.58,
           "opskins": 6.84
         },
         "2": {
-          "market": 5.9,
+          "market": 6.92,
           "analyst": 4.82,
           "opskins": 4.25
         },
         "3": {
-          "market": 16.07,
+          "market": 18.17,
           "analyst": 12.03,
           "opskins": 11.06
         },
         "4": {
-          "market": 49.09,
+          "market": 57.89,
           "analyst": 38.62,
           "opskins": 35.73
         }
       },
       "stattrak": {
         "0": {
-          "market": 20.88,
+          "market": 26.13,
           "analyst": 19.88,
           "opskins": 18.2
         },
         "1": {
-          "market": 32.66,
+          "market": 35.88,
           "analyst": 34.48,
           "opskins": 35.11
         },
         "2": {
-          "market": 28.66,
+          "market": 31.35,
           "analyst": 24.95,
           "opskins": 22.66
         },
         "3": {
-          "market": 76.9,
+          "market": 85.79,
           "analyst": 65.77,
           "opskins": 54
         },
@@ -17981,22 +17981,22 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 4.12,
+          "market": 4.85,
           "analyst": 3.55,
           "opskins": 5
         },
         "2": {
-          "market": 2.3,
+          "market": 2.39,
           "analyst": 1.75,
           "opskins": 1.75
         },
         "3": {
-          "market": 3.2,
+          "market": 3.3,
           "analyst": 2.56,
           "opskins": 2.4
         },
         "4": {
-          "market": 6.82,
+          "market": 7.17,
           "analyst": 7.72,
           "opskins": 7.97
         }
@@ -18008,17 +18008,17 @@ var Prices = {
           "opskins": 37.78
         },
         "2": {
-          "market": 9.36,
+          "market": 11.95,
           "analyst": 7.47,
           "opskins": 8.55
         },
         "3": {
-          "market": 15.14,
+          "market": 18.64,
           "analyst": 14.22,
           "opskins": 14.36
         },
         "4": {
-          "market": 31.98,
+          "market": 36.97,
           "analyst": 28.53,
           "opskins": 24.84
         }
@@ -18033,54 +18033,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 72.25,
+          "market": 80.43,
           "analyst": 62.62,
           "opskins": 55.44
         },
         "1": {
-          "market": 75.11,
+          "market": 86.13,
           "analyst": 66.16,
           "opskins": 53.97
         },
         "2": {
-          "market": 78.45,
+          "market": 88.9,
           "analyst": 68.72,
           "opskins": 59.7
         },
         "3": {
-          "market": 92.16,
+          "market": 100.98,
           "analyst": 75.82,
           "opskins": 64.99
         },
         "4": {
-          "market": 86.85,
+          "market": 136.85,
           "analyst": 131.24,
           "opskins": 119.69
         }
       },
       "stattrak": {
         "0": {
-          "market": 100,
+          "market": 95,
           "analyst": 97.13,
           "opskins": 96
         },
         "1": {
-          "market": 122.9,
+          "market": 111.08,
           "analyst": 123.3,
           "opskins": 99.9
         },
         "2": {
-          "market": 103.33,
+          "market": 115.07,
           "analyst": 126.31,
           "opskins": 103.98
         },
         "3": {
-          "market": 148.5,
+          "market": 160.15,
           "analyst": 157.28,
           "opskins": 165.99
         },
         "4": {
-          "market": 250,
+          "market": 320,
           "analyst": 500,
           "opskins": 500
         }
@@ -18095,17 +18095,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 249.02,
+          "market": 275.45,
           "analyst": 219.54,
           "opskins": 194.97
         },
         "3": {
-          "market": 276.58,
+          "market": 321.36,
           "analyst": 249.52,
           "opskins": 200
         },
         "4": {
-          "market": 335.35,
+          "market": 392.95,
           "analyst": 312.69,
           "opskins": 255.99
         }
@@ -18117,12 +18117,12 @@ var Prices = {
           "opskins": 249
         },
         "3": {
-          "market": 360.66,
+          "market": 387.66,
           "analyst": 369.94,
           "opskins": 294.99
         },
         "4": {
-          "market": 400.75,
+          "market": 425.75,
           "analyst": 335,
           "opskins": 344.99
         }
@@ -18137,17 +18137,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 105.02,
+          "market": 117.73,
           "analyst": 95.59,
           "opskins": 80.95
         },
         "1": {
-          "market": 126.44,
+          "market": 140.31,
           "analyst": 105.3,
           "opskins": 89.94
         },
         "2": {
-          "market": 143.4,
+          "market": 158.7,
           "analyst": 115.18,
           "opskins": 100.95
         },
@@ -18164,17 +18164,17 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 152.29,
+          "market": 141,
           "analyst": 138.25,
           "opskins": 138
         },
         "1": {
-          "market": 164.89,
+          "market": 180.3,
           "analyst": 184.07,
           "opskins": 150.43
         },
         "2": {
-          "market": 187.63,
+          "market": 202.65,
           "analyst": 179.91,
           "opskins": 143.99
         },
@@ -18184,7 +18184,7 @@ var Prices = {
           "opskins": 498.48
         },
         "4": {
-          "market": 4062.5,
+          "market": 4500,
           "analyst": 5023,
           "opskins": -1
         }
@@ -18199,44 +18199,44 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.17,
+          "market": 0.16,
           "analyst": 0.15,
           "opskins": 0.13
         },
         "1": {
-          "market": 0.27,
+          "market": 0.3,
           "analyst": 0.25,
           "opskins": 0.23
         },
         "2": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.09,
           "opskins": 0.09
         },
         "3": {
-          "market": 0.38,
+          "market": 0.42,
           "analyst": 0.27,
           "opskins": 0.27
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.35,
+          "market": 0.34,
           "analyst": 0.25,
           "opskins": 0.23
         },
         "1": {
-          "market": 0.6,
+          "market": 0.61,
           "analyst": 0.42,
           "opskins": 0.34
         },
         "2": {
-          "market": 0.32,
+          "market": 0.33,
           "analyst": 0.25,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.82,
+          "market": 0.98,
           "analyst": 0.68,
           "opskins": 0.55
         }
@@ -18251,34 +18251,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.27,
+          "market": 0.29,
           "analyst": 0.23,
           "opskins": 0.22
         },
         "3": {
-          "market": 0.29,
+          "market": 0.3,
           "analyst": 0.24,
           "opskins": 0.23
         },
         "4": {
-          "market": 0.4,
+          "market": 0.43,
           "analyst": 0.32,
           "opskins": 0.27
         }
       },
       "stattrak": {
         "2": {
-          "market": 0.86,
+          "market": 0.95,
           "analyst": 0.74,
           "opskins": 0.61
         },
         "3": {
-          "market": 0.93,
+          "market": 1,
           "analyst": 0.75,
           "opskins": 0.57
         },
         "4": {
-          "market": 1.35,
+          "market": 1.52,
           "analyst": 1.05,
           "opskins": 0.81
         }
@@ -18293,54 +18293,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.11,
           "opskins": 0.49
         },
         "1": {
-          "market": 0.19,
+          "market": 0.21,
           "analyst": 0.24,
           "opskins": 0.36
         },
         "2": {
-          "market": 0.11,
+          "market": 0.12,
           "analyst": 0.09,
           "opskins": 0.09
         },
         "3": {
-          "market": 0.14,
+          "market": 0.15,
           "analyst": 0.11,
           "opskins": 0.11
         },
         "4": {
-          "market": 0.28,
+          "market": 0.3,
           "analyst": 0.24,
           "opskins": 0.24
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.3,
+          "market": 0.28,
           "analyst": 0.22,
           "opskins": 0.25
         },
         "1": {
-          "market": 0.31,
+          "market": 0.49,
           "analyst": 0.27,
           "opskins": 0.22
         },
         "2": {
-          "market": 0.28,
+          "market": 0.3,
           "analyst": 0.22,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.46,
+          "market": 0.5,
           "analyst": 0.4,
           "opskins": 0.33
         },
         "4": {
-          "market": 1.07,
+          "market": 1.22,
           "analyst": 0.75,
           "opskins": 0.77
         }
@@ -18355,44 +18355,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.13,
+          "market": 0.17,
           "analyst": 0.17,
           "opskins": 0.14
         },
         "2": {
-          "market": 0.1,
+          "market": 0.12,
           "analyst": 0.08,
           "opskins": 0.15
         },
         "3": {
-          "market": 0.14,
+          "market": 0.15,
           "analyst": 0.11,
           "opskins": 0.09
         },
         "4": {
-          "market": 0.52,
+          "market": 0.66,
           "analyst": 0.4,
           "opskins": 0.45
         }
       },
       "stattrak": {
         "1": {
-          "market": 0.33,
+          "market": 0.4,
           "analyst": 0.25,
           "opskins": 0.22
         },
         "2": {
-          "market": 0.29,
+          "market": 0.32,
           "analyst": 0.23,
           "opskins": 0.19
         },
         "3": {
-          "market": 0.46,
+          "market": 0.48,
           "analyst": 0.39,
           "opskins": 0.31
         },
         "4": {
-          "market": 2.12,
+          "market": 2.22,
           "analyst": 1.57,
           "opskins": 1.39
         }
@@ -18407,44 +18407,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 1.37,
+          "market": 1.76,
           "analyst": 1.61,
           "opskins": 1.44
         },
         "2": {
-          "market": 1,
+          "market": 1.11,
           "analyst": 0.89,
           "opskins": 0.76
         },
         "3": {
-          "market": 1.14,
+          "market": 1.3,
           "analyst": 0.93,
           "opskins": 0.85
         },
         "4": {
-          "market": 1.56,
+          "market": 1.75,
           "analyst": 1.31,
           "opskins": 1.05
         }
       },
       "stattrak": {
         "1": {
-          "market": 3.02,
+          "market": 3.44,
           "analyst": 3.1,
           "opskins": 3.6
         },
         "2": {
-          "market": 2.6,
+          "market": 3.01,
           "analyst": 2.04,
           "opskins": 1.72
         },
         "3": {
-          "market": 3.49,
+          "market": 3.77,
           "analyst": 2.67,
           "opskins": 2.3
         },
         "4": {
-          "market": 5.49,
+          "market": 5.88,
           "analyst": 4.2,
           "opskins": 3.62
         }
@@ -18459,54 +18459,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.16,
+          "market": 1.11,
           "analyst": 1.37,
           "opskins": 1.36
         },
         "1": {
-          "market": 1.27,
+          "market": 1.91,
           "analyst": 0.88,
           "opskins": 0.9
         },
         "2": {
-          "market": 0.85,
+          "market": 0.99,
           "analyst": 0.74,
           "opskins": 0.65
         },
         "3": {
-          "market": 1.01,
+          "market": 1.16,
           "analyst": 0.83,
           "opskins": 0.68
         },
         "4": {
-          "market": 3.22,
+          "market": 3.55,
           "analyst": 3.15,
           "opskins": 2.65
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.14,
+          "market": 2.37,
           "analyst": 2.24,
           "opskins": 2.14
         },
         "1": {
-          "market": 2.35,
+          "market": 2.75,
           "analyst": 2.12,
           "opskins": 1.89
         },
         "2": {
-          "market": 2.15,
+          "market": 2.81,
           "analyst": 1.75,
           "opskins": 1.66
         },
         "3": {
-          "market": 3.03,
+          "market": 3.5,
           "analyst": 2.71,
           "opskins": 2.31
         },
         "4": {
-          "market": 18.64,
+          "market": 20.28,
           "analyst": 25.86,
           "opskins": 23.49
         }
@@ -18521,34 +18521,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 1.26,
+          "market": 1.44,
           "analyst": 1.03,
           "opskins": 0.99
         },
         "3": {
-          "market": 1.4,
+          "market": 1.65,
           "analyst": 1.14,
           "opskins": 0.98
         },
         "4": {
-          "market": 1.76,
+          "market": 1.94,
           "analyst": 1.37,
           "opskins": 1.12
         }
       },
       "stattrak": {
         "2": {
-          "market": 2.68,
+          "market": 2.96,
           "analyst": 2.3,
           "opskins": 2.08
         },
         "3": {
-          "market": 3.59,
+          "market": 3.76,
           "analyst": 3,
           "opskins": 2.51
         },
         "4": {
-          "market": 5.34,
+          "market": 5.39,
           "analyst": 4.7,
           "opskins": 4.33
         }
@@ -18563,54 +18563,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.97,
+          "market": 1.15,
           "analyst": 1.89,
           "opskins": 1.53
         },
         "1": {
-          "market": 0.92,
+          "market": 1.12,
           "analyst": 0.92,
           "opskins": 0.79
         },
         "2": {
-          "market": 0.86,
+          "market": 1.07,
           "analyst": 0.77,
           "opskins": 0.67
         },
         "3": {
-          "market": 1,
+          "market": 1.19,
           "analyst": 0.86,
           "opskins": 0.71
         },
         "4": {
-          "market": 1.3,
+          "market": 1.65,
           "analyst": 1.15,
           "opskins": 0.91
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.84,
+          "market": 2.41,
           "analyst": 2.25,
           "opskins": 1.7
         },
         "1": {
-          "market": 2.45,
+          "market": 2.54,
           "analyst": 2.68,
           "opskins": 2.21
         },
         "2": {
-          "market": 2.09,
+          "market": 2.56,
           "analyst": 1.59,
           "opskins": 1.48
         },
         "3": {
-          "market": 2.93,
+          "market": 3.61,
           "analyst": 2.65,
           "opskins": 2.43
         },
         "4": {
-          "market": 4.88,
+          "market": 4.93,
           "analyst": 3.87,
           "opskins": 3.61
         }
@@ -18625,54 +18625,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 4.61,
+          "market": 5.4,
           "analyst": 4.2,
           "opskins": 3.99
         },
         "1": {
-          "market": 5.07,
+          "market": 5.77,
           "analyst": 4.45,
           "opskins": 3.9
         },
         "2": {
-          "market": 4.79,
+          "market": 5.42,
           "analyst": 4.08,
           "opskins": 3.33
         },
         "3": {
-          "market": 5.42,
+          "market": 6.03,
           "analyst": 4.49,
           "opskins": 3.86
         },
         "4": {
-          "market": 6.85,
+          "market": 7.73,
           "analyst": 5.6,
           "opskins": 5.02
         }
       },
       "stattrak": {
         "0": {
-          "market": 14.23,
+          "market": 15.69,
           "analyst": 15.05,
           "opskins": 12.94
         },
         "1": {
-          "market": 14.73,
+          "market": 17.64,
           "analyst": 14.29,
           "opskins": 13.76
         },
         "2": {
-          "market": 15.68,
+          "market": 17.81,
           "analyst": 12.84,
           "opskins": 11.1
         },
         "3": {
-          "market": 21.31,
+          "market": 24.28,
           "analyst": 18.08,
           "opskins": 15.88
         },
         "4": {
-          "market": 31.64,
+          "market": 35.4,
           "analyst": 28.52,
           "opskins": 25.49
         }
@@ -18687,54 +18687,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.03,
+          "market": 3.26,
           "analyst": 2.54,
           "opskins": 2.55
         },
         "1": {
-          "market": 3.27,
+          "market": 3.55,
           "analyst": 2.68,
           "opskins": 2.36
         },
         "2": {
-          "market": 3.56,
+          "market": 3.93,
           "analyst": 2.87,
           "opskins": 2.35
         },
         "3": {
-          "market": 4.11,
+          "market": 4.62,
           "analyst": 3.3,
           "opskins": 2.86
         },
         "4": {
-          "market": 7.61,
+          "market": 8.17,
           "analyst": 6.81,
           "opskins": 5.8
         }
       },
       "stattrak": {
         "0": {
-          "market": 7.94,
+          "market": 8.54,
           "analyst": 6.11,
           "opskins": 5.42
         },
         "1": {
-          "market": 8.61,
+          "market": 9.74,
           "analyst": 7.62,
           "opskins": 6.78
         },
         "2": {
-          "market": 11.54,
+          "market": 12.94,
           "analyst": 10.67,
           "opskins": 8.87
         },
         "3": {
-          "market": 16.02,
+          "market": 18,
           "analyst": 17.15,
           "opskins": 15.24
         },
         "4": {
-          "market": 41.26,
+          "market": 42.8,
           "analyst": 40.82,
           "opskins": 35.8
         }
@@ -18749,22 +18749,22 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 3.31,
+          "market": 3.71,
           "analyst": 3.48,
           "opskins": 3.95
         },
         "2": {
-          "market": 2.45,
+          "market": 2.7,
           "analyst": 2.08,
           "opskins": 2.02
         },
         "3": {
-          "market": 3.01,
+          "market": 3.25,
           "analyst": 2.54,
           "opskins": 2.33
         },
         "4": {
-          "market": 4.3,
+          "market": 4.5,
           "analyst": 3.95,
           "opskins": 3.49
         }
@@ -18776,17 +18776,17 @@ var Prices = {
           "opskins": 35
         },
         "2": {
-          "market": 8.12,
+          "market": 9.89,
           "analyst": 6.92,
           "opskins": 7.62
         },
         "3": {
-          "market": 13.84,
+          "market": 12.56,
           "analyst": 13.86,
           "opskins": 12.44
         },
         "4": {
-          "market": 25.88,
+          "market": 28.75,
           "analyst": 26.33,
           "opskins": 23.98
         }
@@ -18801,24 +18801,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 84.09,
+          "market": 94.05,
           "analyst": 79.01,
           "opskins": 65.99
         },
         "4": {
-          "market": 83.4,
+          "market": 91.54,
           "analyst": 65.33,
           "opskins": 56.95
         }
       },
       "stattrak": {
         "3": {
-          "market": 109.9,
+          "market": 115.2,
           "analyst": 108.44,
           "opskins": 500
         },
         "4": {
-          "market": 118.29,
+          "market": 121.65,
           "analyst": 90.69,
           "opskins": 79.07
         }
@@ -18833,12 +18833,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 150.28,
+          "market": 160.04,
           "analyst": 171.29,
           "opskins": 149.79
         },
         "4": {
-          "market": 148.47,
+          "market": 153.11,
           "analyst": 116.06,
           "opskins": 97
         }
@@ -18850,7 +18850,7 @@ var Prices = {
           "opskins": 219.99
         },
         "4": {
-          "market": 183.44,
+          "market": 200.04,
           "analyst": 152.91,
           "opskins": 144.89
         }
@@ -18865,22 +18865,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 50.65,
+          "market": 70.17,
           "analyst": 50,
           "opskins": 42.84
         },
         "1": {
-          "market": 51.33,
+          "market": 74.67,
           "analyst": 58.42,
           "opskins": 59
         },
         "2": {
-          "market": 52.33,
+          "market": 76.21,
           "analyst": 51.75,
           "opskins": 46.37
         },
         "3": {
-          "market": 111.71,
+          "market": 104.56,
           "analyst": 83.71,
           "opskins": 69.98
         },
@@ -18902,12 +18902,12 @@ var Prices = {
           "opskins": 95.99
         },
         "2": {
-          "market": 89,
+          "market": 100.14,
           "analyst": 79.41,
           "opskins": 73.3
         },
         "3": {
-          "market": 174.15,
+          "market": 160.66,
           "analyst": 172.47,
           "opskins": 148.99
         },
@@ -18927,54 +18927,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.1,
           "analyst": 0.07,
           "opskins": 0.05
         },
         "1": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.08,
           "opskins": 0.07
         },
         "2": {
-          "market": 0.1,
+          "market": 0.12,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.2,
+          "market": 0.23,
           "analyst": 0.14,
           "opskins": 0.11
         },
         "4": {
-          "market": 0.86,
+          "market": 1.07,
           "analyst": 0.6,
           "opskins": 0.51
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.28,
+          "market": 0.29,
           "analyst": 0.23,
           "opskins": 0.18
         },
         "1": {
-          "market": 0.29,
+          "market": 0.31,
           "analyst": 0.23,
           "opskins": 0.19
         },
         "2": {
-          "market": 0.32,
+          "market": 0.37,
           "analyst": 0.25,
           "opskins": 0.21
         },
         "3": {
-          "market": 0.65,
+          "market": 0.94,
           "analyst": 0.56,
           "opskins": 0.42
         },
         "4": {
-          "market": 3.47,
+          "market": 4.17,
           "analyst": 2.94,
           "opskins": 2.54
         }
@@ -18989,54 +18989,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.17,
+          "market": 0.18,
           "analyst": 0.12,
           "opskins": 0.11
         },
         "1": {
-          "market": 0.3,
+          "market": 0.35,
           "analyst": 0.23,
           "opskins": 0.2
         },
         "2": {
-          "market": 0.16,
+          "market": 0.18,
           "analyst": 0.12,
           "opskins": 0.14
         },
         "3": {
-          "market": 0.22,
+          "market": 0.23,
           "analyst": 0.17,
           "opskins": 0.14
         },
         "4": {
-          "market": 0.53,
+          "market": 0.62,
           "analyst": 0.41,
           "opskins": 0.35
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.74,
+          "market": 0.85,
           "analyst": 0.63,
           "opskins": 0.5
         },
         "1": {
-          "market": 1.23,
+          "market": 1.46,
           "analyst": 1.2,
           "opskins": 1.21
         },
         "2": {
-          "market": 0.71,
+          "market": 0.82,
           "analyst": 0.6,
           "opskins": 0.54
         },
         "3": {
-          "market": 1.16,
+          "market": 1.24,
           "analyst": 0.86,
           "opskins": 0.8
         },
         "4": {
-          "market": 2.96,
+          "market": 3.42,
           "analyst": 2.45,
           "opskins": 2.27
         }
@@ -19051,17 +19051,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.12
         },
         "1": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.09
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.09
         },
@@ -19071,34 +19071,34 @@ var Prices = {
           "opskins": 0.05
         },
         "4": {
-          "market": 0.19,
+          "market": 0.24,
           "analyst": 0.16,
           "opskins": 0.14
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.23,
-          "analyst": 0.19,
-          "opskins": 0.16
-        },
-        "1": {
-          "market": 0.23,
-          "analyst": 0.19,
-          "opskins": 0.16
-        },
-        "2": {
           "market": 0.24,
           "analyst": 0.19,
           "opskins": 0.16
         },
+        "1": {
+          "market": 0.24,
+          "analyst": 0.19,
+          "opskins": 0.16
+        },
+        "2": {
+          "market": 0.25,
+          "analyst": 0.19,
+          "opskins": 0.16
+        },
         "3": {
-          "market": 0.35,
+          "market": 0.39,
           "analyst": 0.26,
           "opskins": 0.21
         },
         "4": {
-          "market": 0.99,
+          "market": 1.04,
           "analyst": 0.76,
           "opskins": 0.63
         }
@@ -19133,34 +19133,34 @@ var Prices = {
           "opskins": 0.11
         },
         "4": {
-          "market": 0.64,
+          "market": 0.7,
           "analyst": 0.48,
           "opskins": 0.44
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.43,
+          "market": 0.44,
           "analyst": 0.38,
           "opskins": 0.32
         },
         "1": {
-          "market": 0.43,
+          "market": 0.47,
           "analyst": 0.4,
           "opskins": 0.33
         },
         "2": {
-          "market": 0.5,
+          "market": 0.55,
           "analyst": 0.46,
           "opskins": 0.36
         },
         "3": {
-          "market": 0.92,
+          "market": 0.95,
           "analyst": 0.77,
           "opskins": 0.61
         },
         "4": {
-          "market": 4.11,
+          "market": 4.52,
           "analyst": 3.5,
           "opskins": 2.95
         }
@@ -19180,7 +19180,7 @@ var Prices = {
           "opskins": 0.07
         },
         "1": {
-          "market": 0.15,
+          "market": 0.21,
           "analyst": 0.09,
           "opskins": 0.12
         },
@@ -19190,39 +19190,39 @@ var Prices = {
           "opskins": 0.05
         },
         "3": {
-          "market": 0.13,
+          "market": 0.17,
           "analyst": 0.08,
           "opskins": 0.06
         },
         "4": {
-          "market": 0.26,
+          "market": 0.44,
           "analyst": 0.18,
           "opskins": 0.16
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.28,
+          "market": 0.4,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "1": {
-          "market": 0.6,
+          "market": 0.84,
           "analyst": 0.38,
           "opskins": 0.33
         },
         "2": {
-          "market": 0.3,
+          "market": 0.48,
           "analyst": 0.22,
           "opskins": 0.19
         },
         "3": {
-          "market": 0.6,
+          "market": 1.07,
           "analyst": 0.43,
           "opskins": 0.36
         },
         "4": {
-          "market": 1.75,
+          "market": 2.66,
           "analyst": 1.31,
           "opskins": 1.09
         }
@@ -19237,54 +19237,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.54,
+          "market": 0.65,
           "analyst": 0.41,
           "opskins": 0.46
         },
         "1": {
-          "market": 0.57,
+          "market": 0.65,
           "analyst": 0.24,
           "opskins": 0.34
         },
         "2": {
-          "market": 0.43,
+          "market": 0.51,
           "analyst": 0.17,
           "opskins": 0.4
         },
         "3": {
-          "market": 0.61,
+          "market": 0.76,
           "analyst": 0.29,
           "opskins": 0.39
         },
         "4": {
-          "market": 0.85,
+          "market": 1.05,
           "analyst": 0.47,
           "opskins": 0.52
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.99,
+          "market": 2.39,
           "analyst": 1.52,
           "opskins": 2.99
         },
         "1": {
-          "market": 1.87,
+          "market": 2.16,
           "analyst": 1.39,
           "opskins": 1.39
         },
         "2": {
-          "market": 1.6,
+          "market": 1.93,
           "analyst": 1.18,
           "opskins": 1.1
         },
         "3": {
-          "market": 2.31,
+          "market": 2.62,
           "analyst": 1.85,
           "opskins": 1.5
         },
         "4": {
-          "market": 3.39,
+          "market": 3.78,
           "analyst": 2.58,
           "opskins": 2.35
         }
@@ -19299,54 +19299,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.27,
+          "market": 0.28,
           "analyst": 0.21,
           "opskins": 0.2
         },
         "1": {
-          "market": 0.3,
+          "market": 0.32,
           "analyst": 0.25,
           "opskins": 0.2
         },
         "2": {
-          "market": 0.25,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.19
         },
         "3": {
-          "market": 0.34,
+          "market": 0.37,
           "analyst": 0.28,
           "opskins": 0.21
         },
         "4": {
-          "market": 0.59,
+          "market": 0.67,
           "analyst": 0.43,
           "opskins": 0.43
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.75,
+          "market": 0.85,
           "analyst": 0.64,
           "opskins": 0.62
         },
         "1": {
-          "market": 0.96,
+          "market": 1.11,
           "analyst": 0.87,
           "opskins": 0.7
         },
         "2": {
-          "market": 0.74,
+          "market": 0.88,
           "analyst": 0.64,
           "opskins": 0.54
         },
         "3": {
-          "market": 1.34,
+          "market": 1.46,
           "analyst": 1.2,
           "opskins": 0.95
         },
         "4": {
-          "market": 2.47,
+          "market": 2.81,
           "analyst": 2.21,
           "opskins": 1.86
         }
@@ -19361,54 +19361,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.11,
+          "market": 1.49,
           "analyst": 0.77,
           "opskins": 0.78
         },
         "1": {
-          "market": 1.44,
+          "market": 1.77,
           "analyst": 1.04,
           "opskins": 0.94
         },
         "2": {
-          "market": 1.18,
+          "market": 1.51,
           "analyst": 0.84,
           "opskins": 0.73
         },
         "3": {
-          "market": 1.72,
+          "market": 2.05,
           "analyst": 1.24,
           "opskins": 1.06
         },
         "4": {
-          "market": 2.65,
+          "market": 3.28,
           "analyst": 1.98,
           "opskins": 1.66
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.65,
+          "market": 5.52,
           "analyst": 3.61,
           "opskins": 3.22
         },
         "1": {
-          "market": 4.99,
+          "market": 6.01,
           "analyst": 4.11,
           "opskins": 3.47
         },
         "2": {
-          "market": 4.93,
+          "market": 5.62,
           "analyst": 3.67,
           "opskins": 3.05
         },
         "3": {
-          "market": 7.14,
+          "market": 8.32,
           "analyst": 5.55,
           "opskins": 4.73
         },
         "4": {
-          "market": 11.36,
+          "market": 13.56,
           "analyst": 8.82,
           "opskins": 8.1
         }
@@ -19428,49 +19428,49 @@ var Prices = {
           "opskins": 0.24
         },
         "1": {
-          "market": 0.29,
+          "market": 0.31,
           "analyst": 0.28,
           "opskins": 0.24
         },
         "2": {
-          "market": 0.25,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.17
         },
         "3": {
-          "market": 0.34,
+          "market": 0.36,
           "analyst": 0.26,
           "opskins": 0.22
         },
         "4": {
-          "market": 0.58,
+          "market": 0.63,
           "analyst": 0.43,
           "opskins": 0.36
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.86,
+          "market": 0.97,
           "analyst": 0.83,
           "opskins": 1.2
         },
         "1": {
-          "market": 1.04,
+          "market": 0.95,
           "analyst": 0.82,
           "opskins": 0.82
         },
         "2": {
-          "market": 0.78,
+          "market": 0.9,
           "analyst": 0.68,
           "opskins": 0.53
         },
         "3": {
-          "market": 1.43,
+          "market": 1.57,
           "analyst": 1.25,
           "opskins": 1.01
         },
         "4": {
-          "market": 2.65,
+          "market": 2.77,
           "analyst": 2.28,
           "opskins": 1.85
         }
@@ -19485,44 +19485,44 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.25,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "1": {
-          "market": 0.31,
+          "market": 0.29,
           "analyst": 0.24,
           "opskins": 0.21
         },
         "2": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "3": {
-          "market": 1.69,
+          "market": 1.91,
           "analyst": 1.34,
           "opskins": 1.18
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.64,
+          "market": 0.81,
           "analyst": 0.52,
           "opskins": 0.54
         },
         "1": {
-          "market": 0.75,
+          "market": 0.87,
           "analyst": 0.8,
           "opskins": 0.68
         },
         "2": {
-          "market": 0.69,
+          "market": 0.8,
           "analyst": 0.55,
           "opskins": 0.43
         },
         "3": {
-          "market": 5.73,
+          "market": 7.47,
           "analyst": 6.85,
           "opskins": 10.99
         }
@@ -19537,54 +19537,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.25,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.4
         },
         "1": {
-          "market": 0.26,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.19
         },
         "2": {
-          "market": 0.25,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.19
         },
         "3": {
-          "market": 0.33,
+          "market": 0.38,
           "analyst": 0.27,
           "opskins": 0.24
         },
         "4": {
-          "market": 1.16,
+          "market": 1.52,
           "analyst": 1.06,
           "opskins": 0.87
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.73,
+          "market": 0.88,
           "analyst": 0.62,
           "opskins": 0.54
         },
         "1": {
-          "market": 0.78,
+          "market": 0.91,
           "analyst": 0.63,
           "opskins": 0.51
         },
         "2": {
-          "market": 0.9,
+          "market": 0.99,
           "analyst": 0.74,
           "opskins": 0.59
         },
         "3": {
-          "market": 1.77,
+          "market": 2.21,
           "analyst": 1.75,
           "opskins": 1.38
         },
         "4": {
-          "market": 8.4,
+          "market": 9.7,
           "analyst": 6.59,
           "opskins": 6.03
         }
@@ -19599,54 +19599,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.81,
+          "market": 2.05,
           "analyst": 1.33,
           "opskins": 1.44
         },
         "1": {
-          "market": 1.81,
+          "market": 2.09,
           "analyst": 1.41,
           "opskins": 1.46
         },
         "2": {
-          "market": 1.91,
+          "market": 2.17,
           "analyst": 1.46,
           "opskins": 1.43
         },
         "3": {
-          "market": 2.83,
+          "market": 3.19,
           "analyst": 2.24,
           "opskins": 1.92
         },
         "4": {
-          "market": 4.49,
+          "market": 5.43,
           "analyst": 4.15,
           "opskins": 3.55
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.34,
+          "market": 5.73,
           "analyst": 3.97,
           "opskins": 7.56
         },
         "1": {
-          "market": 4.55,
+          "market": 5.27,
           "analyst": 3.53,
           "opskins": 3.99
         },
         "2": {
-          "market": 5.26,
+          "market": 6.84,
           "analyst": 4.94,
           "opskins": 4.3
         },
         "3": {
-          "market": 9.24,
+          "market": 10.32,
           "analyst": 7.48,
           "opskins": 6.74
         },
         "4": {
-          "market": 19.76,
+          "market": 21.18,
           "analyst": 19.38,
           "opskins": 16.86
         }
@@ -19661,34 +19661,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 2.45,
+          "market": 2.68,
           "analyst": 2.01,
           "opskins": 1.69
         },
         "3": {
-          "market": 2.92,
+          "market": 3.28,
           "analyst": 2.27,
           "opskins": 1.82
         },
         "4": {
-          "market": 4.04,
+          "market": 4.73,
           "analyst": 3.47,
           "opskins": 2.81
         }
       },
       "stattrak": {
         "2": {
-          "market": 7.03,
+          "market": 7.36,
           "analyst": 6.28,
           "opskins": 5.73
         },
         "3": {
-          "market": 9.66,
+          "market": 10.37,
           "analyst": 8.61,
           "opskins": 7.31
         },
         "4": {
-          "market": 16.29,
+          "market": 18.99,
           "analyst": 17.73,
           "opskins": 15.44
         }
@@ -19703,54 +19703,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.79,
+          "market": 2.03,
           "analyst": 1.41,
           "opskins": 1.3
         },
         "1": {
-          "market": 1.85,
+          "market": 2.08,
           "analyst": 1.45,
           "opskins": 1.25
         },
         "2": {
-          "market": 1.96,
+          "market": 2.16,
           "analyst": 1.53,
           "opskins": 1.21
         },
         "3": {
-          "market": 3.02,
+          "market": 3.29,
           "analyst": 2.28,
           "opskins": 1.99
         },
         "4": {
-          "market": 6.42,
+          "market": 7.49,
           "analyst": 5.03,
           "opskins": 4.2
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.66,
+          "market": 5.95,
           "analyst": 4.02,
           "opskins": 3.88
         },
         "1": {
-          "market": 4.84,
+          "market": 5.64,
           "analyst": 4.57,
           "opskins": 3.83
         },
         "2": {
-          "market": 6.05,
+          "market": 7.02,
           "analyst": 5.11,
           "opskins": 4.46
         },
         "3": {
-          "market": 10.98,
+          "market": 12.89,
           "analyst": 9.31,
           "opskins": 8.74
         },
         "4": {
-          "market": 30.34,
+          "market": 35.07,
           "analyst": 25.79,
           "opskins": 23.92
         }
@@ -19765,27 +19765,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 42.16,
+          "market": 50.63,
           "analyst": 33.02,
           "opskins": 29.63
         },
         "1": {
-          "market": 50.3,
+          "market": 57.8,
           "analyst": 39.2,
           "opskins": 32.54
         },
         "2": {
-          "market": 51.9,
+          "market": 58.63,
           "analyst": 38.4,
           "opskins": 33
         },
         "3": {
-          "market": 71.45,
+          "market": 79.54,
           "analyst": 53.78,
           "opskins": 45.75
         },
         "4": {
-          "market": 310.95,
+          "market": 340,
           "analyst": 362.52,
           "opskins": 289.99
         }
@@ -19797,17 +19797,17 @@ var Prices = {
           "opskins": 39.99
         },
         "1": {
-          "market": 56.87,
+          "market": 60.12,
           "analyst": 55.29,
           "opskins": 69.98
         },
         "2": {
-          "market": 65.54,
+          "market": 77.25,
           "analyst": 53.66,
           "opskins": 49.31
         },
         "3": {
-          "market": 116.55,
+          "market": 111,
           "analyst": 109.91,
           "opskins": 97.74
         },
@@ -19827,49 +19827,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 42.82,
+          "market": 48.69,
           "analyst": 31.84,
           "opskins": 28.07
         },
         "1": {
-          "market": 43.61,
+          "market": 49.93,
           "analyst": 32.15,
           "opskins": 27.98
         },
         "2": {
-          "market": 44.48,
+          "market": 51.61,
           "analyst": 32.98,
           "opskins": 28.86
         },
         "3": {
-          "market": 47.64,
+          "market": 52.87,
           "analyst": 34.89,
           "opskins": 31.48
         },
         "4": {
-          "market": 60.36,
+          "market": 62.86,
           "analyst": 58.91,
           "opskins": 53.89
         }
       },
       "stattrak": {
         "0": {
-          "market": 46.65,
+          "market": 50.65,
           "analyst": 50.34,
           "opskins": 42.5
         },
         "1": {
-          "market": 52.64,
+          "market": 55.98,
           "analyst": 49.05,
           "opskins": 50
         },
         "2": {
-          "market": 56.29,
+          "market": 61.69,
           "analyst": 50.38,
           "opskins": 42.9
         },
         "3": {
-          "market": 51.81,
+          "market": 65.69,
           "analyst": 49.48,
           "opskins": 43.5
         },
@@ -19889,22 +19889,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 39.76,
+          "market": 45.74,
           "analyst": 30.1,
           "opskins": 27.68
         },
         "1": {
-          "market": 40.97,
+          "market": 47.03,
           "analyst": 30.74,
           "opskins": 27.94
         },
         "2": {
-          "market": 41.47,
+          "market": 47.58,
           "analyst": 30.59,
           "opskins": 27.8
         },
         "3": {
-          "market": 47.42,
+          "market": 53.16,
           "analyst": 35.17,
           "opskins": 30.73
         },
@@ -19916,7 +19916,7 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 36.1,
+          "market": 40.1,
           "analyst": 38.56,
           "opskins": 39.95
         },
@@ -19926,12 +19926,12 @@ var Prices = {
           "opskins": 63.99
         },
         "2": {
-          "market": 45.55,
+          "market": 57.2,
           "analyst": 70.64,
           "opskins": 64
         },
         "3": {
-          "market": 54,
+          "market": 67.47,
           "analyst": 61.48,
           "opskins": 47.96
         },
@@ -19951,34 +19951,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.18,
+          "market": 0.19,
           "analyst": 0.15,
           "opskins": 0.35
         },
         "3": {
-          "market": 0.18,
+          "market": 0.21,
           "analyst": 0.16,
           "opskins": 0.22
         },
         "4": {
-          "market": 0.26,
+          "market": 0.3,
           "analyst": 0.2,
           "opskins": 0.39
         }
       },
       "stattrak": {
         "2": {
-          "market": 0.49,
+          "market": 0.58,
           "analyst": 0.42,
           "opskins": 0.39
         },
         "3": {
-          "market": 0.61,
+          "market": 0.75,
           "analyst": 0.49,
           "opskins": 0.4
         },
         "4": {
-          "market": 1.06,
+          "market": 1.26,
           "analyst": 0.86,
           "opskins": 0.84
         }
@@ -19993,12 +19993,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.23,
+          "market": 0.2,
           "analyst": 0.19,
           "opskins": 0.21
         },
         "1": {
-          "market": 0.21,
+          "market": 0.23,
           "analyst": 0.16,
           "opskins": 0.14
         },
@@ -20013,34 +20013,34 @@ var Prices = {
           "opskins": 0.15
         },
         "4": {
-          "market": 1.14,
+          "market": 1.39,
           "analyst": 0.85,
           "opskins": 0.79
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.6,
+          "market": 0.63,
           "analyst": 0.47,
           "opskins": 0.54
         },
         "1": {
-          "market": 0.59,
+          "market": 0.64,
           "analyst": 0.45,
           "opskins": 0.49
         },
         "2": {
-          "market": 0.49,
+          "market": 0.52,
           "analyst": 0.41,
           "opskins": 0.5
         },
         "3": {
-          "market": 0.63,
+          "market": 0.71,
           "analyst": 0.49,
           "opskins": 0.48
         },
         "4": {
-          "market": 6.01,
+          "market": 7.32,
           "analyst": 6.29,
           "opskins": 5.66
         }
@@ -20055,12 +20055,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.69,
+          "market": 0.66,
           "analyst": 0.97,
           "opskins": 2
         },
         "1": {
-          "market": 0.25,
+          "market": 0.23,
           "analyst": 0.19,
           "opskins": 0.2
         },
@@ -20070,12 +20070,12 @@ var Prices = {
           "opskins": 0.13
         },
         "3": {
-          "market": 0.24,
+          "market": 0.25,
           "analyst": 0.2,
           "opskins": 0.18
         },
         "4": {
-          "market": 0.3,
+          "market": 0.32,
           "analyst": 0.25,
           "opskins": 0.2
         }
@@ -20087,22 +20087,22 @@ var Prices = {
           "opskins": 1.9
         },
         "1": {
-          "market": 0.56,
+          "market": 0.64,
           "analyst": 0.42,
           "opskins": 0.42
         },
         "2": {
-          "market": 0.46,
+          "market": 0.54,
           "analyst": 0.39,
           "opskins": 0.33
         },
         "3": {
-          "market": 0.68,
+          "market": 0.78,
           "analyst": 0.53,
           "opskins": 0.53
         },
         "4": {
-          "market": 1.07,
+          "market": 1.21,
           "analyst": 0.93,
           "opskins": 0.83
         }
@@ -20117,34 +20117,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.39,
+          "market": 0.4,
           "analyst": 0.31,
           "opskins": 0.29
         },
         "3": {
-          "market": 0.43,
+          "market": 0.47,
           "analyst": 0.35,
           "opskins": 0.29
         },
         "4": {
-          "market": 0.57,
+          "market": 0.6,
           "analyst": 0.45,
           "opskins": 0.37
         }
       },
       "stattrak": {
         "2": {
-          "market": 1.28,
+          "market": 1.63,
           "analyst": 1.09,
           "opskins": 0.9
         },
         "3": {
-          "market": 1.56,
+          "market": 1.8,
           "analyst": 1.33,
           "opskins": 1.1
         },
         "4": {
-          "market": 2.35,
+          "market": 2.44,
           "analyst": 1.92,
           "opskins": 1.5
         }
@@ -20159,34 +20159,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.17,
+          "market": 0.21,
           "analyst": 0.13,
           "opskins": 0.04
         },
         "3": {
-          "market": 0.26,
+          "market": 0.34,
           "analyst": 0.16,
           "opskins": 0.12
         },
         "4": {
-          "market": 1.94,
+          "market": 2.36,
           "analyst": 1.31,
           "opskins": 1.23
         }
       },
       "stattrak": {
         "2": {
-          "market": 0.56,
+          "market": 0.87,
           "analyst": 0.41,
           "opskins": 0.32
         },
         "3": {
-          "market": 0.97,
+          "market": 1.5,
           "analyst": 0.65,
           "opskins": 0.5
         },
         "4": {
-          "market": 6.6,
+          "market": 8.75,
           "analyst": 4.7,
           "opskins": 4.84
         }
@@ -20201,34 +20201,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.59,
+          "market": 0.67,
           "analyst": 0.52,
           "opskins": 0.51
         },
         "3": {
-          "market": 0.58,
+          "market": 0.61,
           "analyst": 0.46,
           "opskins": 0.5
         },
         "4": {
-          "market": 0.67,
+          "market": 0.77,
           "analyst": 0.58,
           "opskins": 0.45
         }
       },
       "stattrak": {
         "2": {
-          "market": 3.05,
+          "market": 3.41,
           "analyst": 2.4,
           "opskins": 2.3
         },
         "3": {
-          "market": 2.89,
+          "market": 3.36,
           "analyst": 2.39,
           "opskins": 2.05
         },
         "4": {
-          "market": 4.1,
+          "market": 4.68,
           "analyst": 3.51,
           "opskins": 2.86
         }
@@ -20243,54 +20243,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.37,
+          "market": 1.6,
           "analyst": 1.15,
           "opskins": 0.99
         },
         "1": {
-          "market": 2.12,
+          "market": 2.18,
           "analyst": 1.82,
           "opskins": 1.64
         },
         "2": {
-          "market": 1.33,
+          "market": 1.45,
           "analyst": 1.12,
           "opskins": 0.95
         },
         "3": {
-          "market": 1.65,
+          "market": 1.8,
           "analyst": 1.37,
           "opskins": 1.16
         },
         "4": {
-          "market": 2.9,
+          "market": 3.21,
           "analyst": 2.61,
           "opskins": 2.17
         }
       },
       "stattrak": {
         "0": {
-          "market": 7,
+          "market": 7.62,
           "analyst": 6.01,
           "opskins": 5.11
         },
         "1": {
-          "market": 7.3,
+          "market": 7.97,
           "analyst": 6.44,
           "opskins": 6
         },
         "2": {
-          "market": 6.77,
+          "market": 7.46,
           "analyst": 5.6,
           "opskins": 4.83
         },
         "3": {
-          "market": 7.51,
+          "market": 8.4,
           "analyst": 6.24,
           "opskins": 5.29
         },
         "4": {
-          "market": 12.18,
+          "market": 13.76,
           "analyst": 10.35,
           "opskins": 8.89
         }
@@ -20305,54 +20305,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.42,
+          "market": 1.87,
           "analyst": 0.99,
           "opskins": 1
         },
         "1": {
-          "market": 2.48,
+          "market": 3.23,
           "analyst": 1.94,
           "opskins": 1.75
         },
         "2": {
-          "market": 1.53,
+          "market": 1.93,
           "analyst": 1.07,
           "opskins": 0.95
         },
         "3": {
-          "market": 2.17,
+          "market": 2.53,
           "analyst": 1.52,
           "opskins": 1.35
         },
         "4": {
-          "market": 4.55,
+          "market": 5.56,
           "analyst": 3.39,
           "opskins": 2.94
         }
       },
       "stattrak": {
         "0": {
-          "market": 5.23,
+          "market": 6.22,
           "analyst": 4.09,
           "opskins": 3.54
         },
         "1": {
-          "market": 7.57,
+          "market": 9.08,
           "analyst": 6.17,
           "opskins": 6.1
         },
         "2": {
-          "market": 5.44,
+          "market": 6.54,
           "analyst": 4.27,
           "opskins": 3.69
         },
         "3": {
-          "market": 7.96,
+          "market": 9.34,
           "analyst": 6.18,
           "opskins": 5.19
         },
         "4": {
-          "market": 16.92,
+          "market": 19.45,
           "analyst": 14.56,
           "opskins": 14.81
         }
@@ -20367,54 +20367,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.42,
+          "market": 0.32,
           "analyst": 0.24,
           "opskins": 0.28
         },
         "1": {
-          "market": 0.29,
+          "market": 0.34,
           "analyst": 0.23,
           "opskins": 0.23
         },
         "2": {
-          "market": 0.29,
+          "market": 0.3,
           "analyst": 0.27,
           "opskins": 0.46
         },
         "3": {
-          "market": 0.34,
+          "market": 0.38,
           "analyst": 0.28,
           "opskins": 0.45
         },
         "4": {
-          "market": 0.8,
+          "market": 0.77,
           "analyst": 0.63,
           "opskins": 0.62
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.71,
+          "market": 0.81,
           "analyst": 0.7,
           "opskins": 0.59
         },
         "1": {
-          "market": 0.72,
+          "market": 0.86,
           "analyst": 0.6,
           "opskins": 0.59
         },
         "2": {
-          "market": 0.75,
+          "market": 0.84,
           "analyst": 0.65,
           "opskins": 0.75
         },
         "3": {
-          "market": 1.37,
+          "market": 1.55,
           "analyst": 1.1,
           "opskins": 1.11
         },
         "4": {
-          "market": 3.65,
+          "market": 3.86,
           "analyst": 3.55,
           "opskins": 3.73
         }
@@ -20429,54 +20429,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.85,
+          "market": 2.03,
           "analyst": 1.5,
           "opskins": 1.74
         },
         "1": {
-          "market": 2.3,
+          "market": 2.47,
           "analyst": 1.97,
           "opskins": 1.71
         },
         "2": {
-          "market": 1.85,
+          "market": 2.07,
           "analyst": 1.45,
           "opskins": 1.3
         },
         "3": {
-          "market": 2.39,
+          "market": 2.6,
           "analyst": 1.87,
           "opskins": 1.58
         },
         "4": {
-          "market": 5.9,
+          "market": 6.86,
           "analyst": 5.11,
           "opskins": 4.7
         }
       },
       "stattrak": {
         "0": {
-          "market": 6.78,
+          "market": 7.65,
           "analyst": 5.36,
           "opskins": 4.94
         },
         "1": {
-          "market": 7.46,
+          "market": 9.05,
           "analyst": 7.03,
           "opskins": 6.35
         },
         "2": {
-          "market": 6.97,
+          "market": 7.81,
           "analyst": 5.45,
           "opskins": 4.71
         },
         "3": {
-          "market": 10.62,
+          "market": 13.17,
           "analyst": 8.73,
           "opskins": 7.8
         },
         "4": {
-          "market": 28.48,
+          "market": 36.37,
           "analyst": 27.29,
           "opskins": 23.97
         }
@@ -20491,54 +20491,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.07,
+          "market": 2.27,
           "analyst": 1.78,
           "opskins": 1.75
         },
         "1": {
-          "market": 1.66,
+          "market": 1.8,
           "analyst": 1.27,
           "opskins": 1.16
         },
         "2": {
-          "market": 1.69,
+          "market": 1.87,
           "analyst": 1.29,
           "opskins": 1.13
         },
         "3": {
-          "market": 2.16,
+          "market": 2.42,
           "analyst": 1.8,
           "opskins": 1.54
         },
         "4": {
-          "market": 6.23,
+          "market": 6.55,
           "analyst": 5.47,
           "opskins": 4.7
         }
       },
       "stattrak": {
         "0": {
-          "market": 5.15,
+          "market": 5.18,
           "analyst": 4.89,
           "opskins": 4.75
         },
         "1": {
-          "market": 5.13,
+          "market": 5.32,
           "analyst": 6.09,
           "opskins": 6.35
         },
         "2": {
-          "market": 5.43,
+          "market": 6.22,
           "analyst": 5.06,
           "opskins": 4.35
         },
         "3": {
-          "market": 8.96,
+          "market": 10.77,
           "analyst": 7.97,
           "opskins": 6.78
         },
         "4": {
-          "market": 32.13,
+          "market": 34.63,
           "analyst": 34.3,
           "opskins": 29.89
         }
@@ -20553,27 +20553,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.16,
+          "market": 2.18,
           "analyst": 1.97,
           "opskins": 5
         },
         "1": {
-          "market": 1.96,
+          "market": 2.43,
           "analyst": 1.7,
           "opskins": 1.97
         },
         "2": {
-          "market": 1.85,
+          "market": 2.17,
           "analyst": 1.49,
           "opskins": 1.42
         },
         "3": {
-          "market": 2.34,
+          "market": 2.68,
           "analyst": 1.82,
           "opskins": 1.56
         },
         "4": {
-          "market": 5.69,
+          "market": 5.93,
           "analyst": 4.46,
           "opskins": 3.77
         }
@@ -20585,22 +20585,22 @@ var Prices = {
           "opskins": 42.94
         },
         "1": {
-          "market": 6.05,
+          "market": 5.93,
           "analyst": 6.51,
           "opskins": 7.36
         },
         "2": {
-          "market": 5.64,
+          "market": 6.94,
           "analyst": 5.19,
           "opskins": 5.15
         },
         "3": {
-          "market": 10.28,
+          "market": 10.72,
           "analyst": 8.89,
           "opskins": 8.08
         },
         "4": {
-          "market": 23.54,
+          "market": 25.72,
           "analyst": 21.02,
           "opskins": 19.89
         }
@@ -20615,12 +20615,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 84.66,
+          "market": 100.56,
           "analyst": 80.5,
           "opskins": 67.48
         },
         "4": {
-          "market": 85.92,
+          "market": 95.42,
           "analyst": 65.39,
           "opskins": 61.31
         }
@@ -20632,7 +20632,7 @@ var Prices = {
           "opskins": 220
         },
         "4": {
-          "market": 116.03,
+          "market": 126.86,
           "analyst": 103.07,
           "opskins": 88.6
         }
@@ -20647,7 +20647,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.06
         },
@@ -20657,7 +20657,7 @@ var Prices = {
           "opskins": 0.07
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.07
         },
@@ -20667,34 +20667,34 @@ var Prices = {
           "opskins": 0.1
         },
         "4": {
-          "market": 0.43,
+          "market": 0.53,
           "analyst": 0.29,
           "opskins": 0.27
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.24,
+          "market": 0.28,
           "analyst": 0.19,
           "opskins": 0.16
         },
         "1": {
-          "market": 0.28,
+          "market": 0.37,
           "analyst": 0.22,
           "opskins": 0.2
         },
         "2": {
-          "market": 0.24,
+          "market": 0.29,
           "analyst": 0.19,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.35,
+          "market": 0.47,
           "analyst": 0.26,
           "opskins": 0.22
         },
         "4": {
-          "market": 2,
+          "market": 3.26,
           "analyst": 1.53,
           "opskins": 1.45
         }
@@ -20719,7 +20719,7 @@ var Prices = {
           "opskins": 0.05
         },
         "3": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.07,
           "opskins": 0.1
         },
@@ -20731,22 +20731,22 @@ var Prices = {
       },
       "stattrak": {
         "1": {
-          "market": 0.23,
+          "market": 0.26,
           "analyst": 0.21,
           "opskins": 0.19
         },
         "2": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.19,
           "opskins": 0.17
         },
         "3": {
-          "market": 0.34,
+          "market": 0.38,
           "analyst": 0.26,
           "opskins": 0.23
         },
         "4": {
-          "market": 0.54,
+          "market": 0.58,
           "analyst": 0.41,
           "opskins": 0.38
         }
@@ -20761,7 +20761,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.07,
           "opskins": 0.11
         },
@@ -20771,12 +20771,12 @@ var Prices = {
           "opskins": 0.14
         },
         "2": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.34,
+          "market": 0.33,
           "analyst": 0.21,
           "opskins": 0.19
         }
@@ -20788,17 +20788,17 @@ var Prices = {
           "opskins": 0.2
         },
         "1": {
-          "market": 0.57,
+          "market": 0.66,
           "analyst": 0.47,
           "opskins": 0.39
         },
         "2": {
-          "market": 0.3,
+          "market": 0.31,
           "analyst": 0.24,
           "opskins": 0.19
         },
         "3": {
-          "market": 1.3,
+          "market": 1.61,
           "analyst": 1.1,
           "opskins": 0.88
         }
@@ -20813,7 +20813,7 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.09,
           "opskins": 0.07
         },
@@ -20840,17 +20840,17 @@ var Prices = {
           "opskins": 0.3
         },
         "2": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.19,
           "opskins": 0.15
         },
         "3": {
-          "market": 0.36,
+          "market": 0.39,
           "analyst": 0.27,
           "opskins": 0.2
         },
         "4": {
-          "market": 0.56,
+          "market": 0.63,
           "analyst": 0.45,
           "opskins": 0.38
         }
@@ -20865,54 +20865,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.38,
+          "market": 0.43,
           "analyst": 0.31,
           "opskins": 0.28
         },
         "1": {
-          "market": 0.4,
+          "market": 0.45,
           "analyst": 0.33,
           "opskins": 0.32
         },
         "2": {
-          "market": 0.39,
+          "market": 0.46,
           "analyst": 0.32,
           "opskins": 0.29
         },
         "3": {
-          "market": 0.78,
+          "market": 0.9,
           "analyst": 0.62,
           "opskins": 0.5
         },
         "4": {
-          "market": 1.3,
+          "market": 1.36,
           "analyst": 0.98,
           "opskins": 0.78
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.04,
+          "market": 1.19,
           "analyst": 0.91,
           "opskins": 0.8
         },
         "1": {
-          "market": 1.17,
+          "market": 1.3,
           "analyst": 0.95,
           "opskins": 0.78
         },
         "2": {
-          "market": 1.31,
+          "market": 1.5,
           "analyst": 1.09,
           "opskins": 0.89
         },
         "3": {
-          "market": 3.14,
+          "market": 3.91,
           "analyst": 2.64,
           "opskins": 2.54
         },
         "4": {
-          "market": 5.16,
+          "market": 5.91,
           "analyst": 4.26,
           "opskins": 4.61
         }
@@ -20927,44 +20927,44 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.4,
+          "market": 0.46,
           "analyst": 0.33,
           "opskins": 0.3
         },
         "1": {
-          "market": 0.7,
+          "market": 0.75,
           "analyst": 0.54,
           "opskins": 0.48
         },
         "2": {
-          "market": 0.4,
+          "market": 0.45,
           "analyst": 0.31,
           "opskins": 0.3
         },
         "3": {
-          "market": 1.09,
+          "market": 1.3,
           "analyst": 0.78,
           "opskins": 0.62
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.12,
+          "market": 1.36,
           "analyst": 0.9,
           "opskins": 0.72
         },
         "1": {
-          "market": 1.45,
+          "market": 1.86,
           "analyst": 1.38,
           "opskins": 1.14
         },
         "2": {
-          "market": 1.26,
+          "market": 1.45,
           "analyst": 0.97,
           "opskins": 0.78
         },
         "3": {
-          "market": 4.38,
+          "market": 4.86,
           "analyst": 3.27,
           "opskins": 3.03
         }
@@ -20979,44 +20979,44 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.36,
+          "market": 0.41,
           "analyst": 0.29,
           "opskins": 0.48
         },
         "1": {
-          "market": 0.39,
+          "market": 0.44,
           "analyst": 0.3,
           "opskins": 0.27
         },
         "2": {
-          "market": 0.38,
+          "market": 0.44,
           "analyst": 0.31,
           "opskins": 0.25
         },
         "3": {
-          "market": 0.88,
+          "market": 1.07,
           "analyst": 0.75,
           "opskins": 0.63
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.9,
+          "market": 1.07,
           "analyst": 0.69,
           "opskins": 0.56
         },
         "1": {
-          "market": 1.06,
+          "market": 1.33,
           "analyst": 0.88,
           "opskins": 0.71
         },
         "2": {
-          "market": 1.2,
+          "market": 1.4,
           "analyst": 0.95,
           "opskins": 0.75
         },
         "3": {
-          "market": 3.56,
+          "market": 4.25,
           "analyst": 3.07,
           "opskins": 3.75
         }
@@ -21031,34 +21031,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.7,
+          "market": 0.82,
           "analyst": 0.55,
           "opskins": 0.52
         },
         "3": {
-          "market": 0.95,
+          "market": 1.03,
           "analyst": 0.73,
           "opskins": 0.65
         },
         "4": {
-          "market": 1.28,
+          "market": 1.36,
           "analyst": 1,
           "opskins": 0.89
         }
       },
       "stattrak": {
         "2": {
-          "market": 2.8,
+          "market": 3.1,
           "analyst": 2.23,
           "opskins": 2.07
         },
         "3": {
-          "market": 3.99,
+          "market": 4.48,
           "analyst": 3.25,
           "opskins": 2.8
         },
         "4": {
-          "market": 5.66,
+          "market": 6.18,
           "analyst": 4.52,
           "opskins": 3.94
         }
@@ -21073,34 +21073,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 2.82,
+          "market": 3.16,
           "analyst": 2.23,
           "opskins": 2.05
         },
         "3": {
-          "market": 2.55,
+          "market": 2.91,
           "analyst": 2.16,
           "opskins": 1.86
         },
         "4": {
-          "market": 3.05,
+          "market": 3.36,
           "analyst": 2.65,
           "opskins": 2.21
         }
       },
       "stattrak": {
         "2": {
-          "market": 6.58,
+          "market": 7.48,
           "analyst": 5.12,
           "opskins": 5.1
         },
         "3": {
-          "market": 6.2,
+          "market": 7.29,
           "analyst": 4.87,
           "opskins": 4.55
         },
         "4": {
-          "market": 10.82,
+          "market": 12.24,
           "analyst": 8.51,
           "opskins": 8.41
         }
@@ -21115,54 +21115,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.41,
+          "market": 1.56,
           "analyst": 1.17,
           "opskins": 1.08
         },
         "1": {
-          "market": 1.54,
+          "market": 1.71,
           "analyst": 1.23,
           "opskins": 1.2
         },
         "2": {
-          "market": 1.32,
+          "market": 1.55,
           "analyst": 1.07,
           "opskins": 1
         },
         "3": {
-          "market": 1.63,
+          "market": 1.77,
           "analyst": 1.2,
           "opskins": 1.15
         },
         "4": {
-          "market": 2.31,
+          "market": 2.49,
           "analyst": 1.88,
           "opskins": 1.56
         }
       },
       "stattrak": {
         "0": {
-          "market": 5.07,
+          "market": 5.43,
           "analyst": 5,
           "opskins": 4.77
         },
         "1": {
-          "market": 4.63,
+          "market": 5.12,
           "analyst": 4.69,
           "opskins": 4.24
         },
         "2": {
-          "market": 4.4,
+          "market": 4.85,
           "analyst": 3.77,
           "opskins": 3.75
         },
         "3": {
-          "market": 6.5,
+          "market": 6.9,
           "analyst": 5.52,
           "opskins": 5.01
         },
         "4": {
-          "market": 11.21,
+          "market": 13.43,
           "analyst": 9.61,
           "opskins": 8.93
         }
@@ -21177,27 +21177,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 108.45,
+          "market": 122.85,
           "analyst": 85.52,
           "opskins": 74.94
         },
         "1": {
-          "market": 114.61,
+          "market": 123.12,
           "analyst": 84.64,
           "opskins": 75.97
         },
         "2": {
-          "market": 115.81,
+          "market": 128.63,
           "analyst": 88.59,
           "opskins": 75
         },
         "3": {
-          "market": 133.25,
+          "market": 150.42,
           "analyst": 105.43,
           "opskins": 94.9
         },
         "4": {
-          "market": 256.5,
+          "market": 226.5,
           "analyst": -1,
           "opskins": 249
         }
@@ -21209,12 +21209,12 @@ var Prices = {
           "opskins": 113
         },
         "1": {
-          "market": 117.65,
+          "market": 120,
           "analyst": 139,
           "opskins": 120.81
         },
         "2": {
-          "market": 129.03,
+          "market": 149.23,
           "analyst": 116.44,
           "opskins": 118.09
         },
@@ -21239,17 +21239,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 172.55,
+          "market": 205.87,
           "analyst": 163.9,
           "opskins": 133.33
         },
         "3": {
-          "market": 219.15,
+          "market": 239.02,
           "analyst": 184.54,
           "opskins": 158.95
         },
         "4": {
-          "market": 272.67,
+          "market": 317.75,
           "analyst": 240.25,
           "opskins": 200
         }
@@ -21261,12 +21261,12 @@ var Prices = {
           "opskins": 175
         },
         "3": {
-          "market": 256.78,
+          "market": 284.5,
           "analyst": 250.69,
           "opskins": 211.11
         },
         "4": {
-          "market": 395,
+          "market": 420,
           "analyst": 311,
           "opskins": 320.94
         }
@@ -21281,34 +21281,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 107.09,
+          "market": 115.13,
           "analyst": 82.31,
           "opskins": 73
         },
         "3": {
-          "market": 112.17,
+          "market": 123.76,
           "analyst": 90.63,
           "opskins": 78.55
         },
         "4": {
-          "market": 123.28,
+          "market": 135.91,
           "analyst": 96.43,
           "opskins": 83.44
         }
       },
       "stattrak": {
         "2": {
-          "market": 126.44,
+          "market": 143.65,
           "analyst": 133.45,
           "opskins": 112.51
         },
         "3": {
-          "market": 127.11,
+          "market": 153.67,
           "analyst": 148.18,
           "opskins": 118.88
         },
         "4": {
-          "market": 142.07,
+          "market": 152.07,
           "analyst": 156.9,
           "opskins": 127.78
         }
@@ -21323,54 +21323,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.31,
+          "market": 0.35,
           "analyst": 0.21,
           "opskins": 0.21
         },
         "1": {
-          "market": 0.37,
+          "market": 0.41,
           "analyst": 0.26,
           "opskins": 0.24
         },
         "2": {
-          "market": 0.42,
+          "market": 0.55,
           "analyst": 0.31,
           "opskins": 0.27
         },
         "3": {
-          "market": 0.78,
+          "market": 0.92,
           "analyst": 0.56,
           "opskins": 0.43
         },
         "4": {
-          "market": 2.81,
+          "market": 3.29,
           "analyst": 2.19,
           "opskins": 1.93
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.88,
+          "market": 0.91,
           "analyst": 0.64,
           "opskins": 0.53
         },
         "1": {
-          "market": 1.01,
+          "market": 1.11,
           "analyst": 0.71,
           "opskins": 0.55
         },
         "2": {
-          "market": 1.34,
+          "market": 1.52,
           "analyst": 0.97,
           "opskins": 0.76
         },
         "3": {
-          "market": 2.5,
+          "market": 2.84,
           "analyst": 1.9,
           "opskins": 1.48
         },
         "4": {
-          "market": 10.09,
+          "market": 12.49,
           "analyst": 8.91,
           "opskins": 8.33
         }
@@ -21385,34 +21385,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.18,
+          "market": 0.21,
           "analyst": 0.12,
           "opskins": 0.12
         },
         "1": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 0.15,
           "opskins": 0.12
         },
         "2": {
-          "market": 0.27,
+          "market": 0.26,
           "analyst": 0.15,
           "opskins": 0.12
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.45,
+          "market": 0.55,
           "analyst": 0.37,
           "opskins": 0.3
         },
         "1": {
-          "market": 0.6,
+          "market": 0.67,
           "analyst": 0.45,
           "opskins": 0.39
         },
         "2": {
-          "market": 0.75,
+          "market": 0.86,
           "analyst": 0.55,
           "opskins": 0.43
         }
@@ -21432,49 +21432,49 @@ var Prices = {
           "opskins": 0.15
         },
         "1": {
-          "market": 0.17,
+          "market": 0.18,
           "analyst": 0.13,
           "opskins": 0.23
         },
         "2": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.08,
           "opskins": 0.1
         },
         "3": {
-          "market": 0.16,
+          "market": 0.17,
           "analyst": 0.12,
           "opskins": 0.1
         },
         "4": {
-          "market": 0.27,
+          "market": 0.32,
           "analyst": 0.19,
           "opskins": 0.18
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.29,
+          "market": 0.31,
           "analyst": 0.26,
           "opskins": 0.94
         },
         "1": {
-          "market": 0.44,
+          "market": 0.54,
           "analyst": 0.34,
           "opskins": 0.3
         },
         "2": {
-          "market": 0.3,
+          "market": 0.31,
           "analyst": 0.23,
           "opskins": 0.19
         },
         "3": {
-          "market": 0.5,
+          "market": 0.63,
           "analyst": 0.41,
           "opskins": 0.33
         },
         "4": {
-          "market": 1.11,
+          "market": 1.3,
           "analyst": 0.9,
           "opskins": 0.74
         }
@@ -21489,17 +21489,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.1,
           "analyst": 0.07,
           "opskins": 0.1
         },
         "1": {
-          "market": 0.09,
+          "market": 0.1,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "2": {
-          "market": 0.09,
+          "market": 0.1,
           "analyst": 0.07,
           "opskins": 0.1
         },
@@ -21509,34 +21509,34 @@ var Prices = {
           "opskins": 0.08
         },
         "4": {
-          "market": 0.28,
+          "market": 0.4,
           "analyst": 0.28,
           "opskins": 0.28
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.24,
+          "market": 0.25,
           "analyst": 0.21,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.2,
           "opskins": 0.16
         },
         "2": {
-          "market": 0.25,
+          "market": 0.27,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "3": {
-          "market": 0.39,
+          "market": 0.43,
           "analyst": 0.32,
           "opskins": 0.27
         },
         "4": {
-          "market": 1.33,
+          "market": 1.49,
           "analyst": 1.11,
           "opskins": 0.97
         }
@@ -21561,24 +21561,24 @@ var Prices = {
           "opskins": 0.27
         },
         "4": {
-          "market": 0.57,
+          "market": 0.55,
           "analyst": 0.4,
           "opskins": 0.33
         }
       },
       "stattrak": {
         "2": {
-          "market": 0.95,
+          "market": 1.06,
           "analyst": 0.82,
           "opskins": 0.66
         },
         "3": {
-          "market": 1.03,
+          "market": 1.12,
           "analyst": 0.85,
           "opskins": 0.67
         },
         "4": {
-          "market": 1.74,
+          "market": 2.04,
           "analyst": 1.49,
           "opskins": 1.19
         }
@@ -21593,54 +21593,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.11,
+          "market": 0.13,
           "analyst": 0.12,
           "opskins": 0.12
         },
         "1": {
-          "market": 0.2,
+          "market": 0.23,
           "analyst": 0.2,
           "opskins": 0.21
         },
         "2": {
-          "market": 0.11,
+          "market": 0.1,
           "analyst": 0.1,
           "opskins": 0.1
         },
         "3": {
-          "market": 0.16,
+          "market": 0.17,
           "analyst": 0.14,
           "opskins": 0.12
         },
         "4": {
-          "market": 0.28,
+          "market": 0.29,
           "analyst": 0.25,
           "opskins": 0.2
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.3,
+          "market": 0.31,
           "analyst": 0.26,
           "opskins": 0.23
         },
         "1": {
-          "market": 0.45,
+          "market": 0.57,
           "analyst": 0.54,
           "opskins": 0.45
         },
         "2": {
-          "market": 0.31,
+          "market": 0.32,
           "analyst": 0.27,
           "opskins": 0.22
         },
         "3": {
-          "market": 0.53,
+          "market": 0.59,
           "analyst": 0.5,
           "opskins": 0.42
         },
         "4": {
-          "market": 1.17,
+          "market": 1.32,
           "analyst": 1.11,
           "opskins": 0.87
         }
@@ -21655,54 +21655,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.81,
+          "market": 0.97,
           "analyst": 0.83,
           "opskins": 0.77
         },
         "1": {
-          "market": 0.68,
+          "market": 0.73,
           "analyst": 0.61,
           "opskins": 0.53
         },
         "2": {
-          "market": 0.55,
+          "market": 0.63,
           "analyst": 0.45,
           "opskins": 0.39
         },
         "3": {
-          "market": 0.72,
+          "market": 0.8,
           "analyst": 0.56,
           "opskins": 0.57
         },
         "4": {
-          "market": 1.14,
+          "market": 1.28,
           "analyst": 0.92,
           "opskins": 0.78
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.17,
+          "market": 2.57,
           "analyst": 2.41,
           "opskins": 2.02
         },
         "1": {
-          "market": 2.02,
+          "market": 2.17,
           "analyst": 1.89,
           "opskins": 1.62
         },
         "2": {
-          "market": 1.93,
+          "market": 2.12,
           "analyst": 1.5,
           "opskins": 1.32
         },
         "3": {
-          "market": 2.62,
+          "market": 3.1,
           "analyst": 2.25,
           "opskins": 1.85
         },
         "4": {
-          "market": 4.47,
+          "market": 5.13,
           "analyst": 3.48,
           "opskins": 3
         }
@@ -21717,54 +21717,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.9,
+          "market": 0.82,
           "analyst": 0.95,
           "opskins": 1.57
         },
         "1": {
-          "market": 0.68,
+          "market": 0.7,
           "analyst": 0.54,
           "opskins": 0.56
         },
         "2": {
-          "market": 0.54,
+          "market": 0.61,
           "analyst": 0.44,
           "opskins": 0.38
         },
         "3": {
-          "market": 0.66,
+          "market": 0.73,
           "analyst": 0.52,
           "opskins": 0.45
         },
         "4": {
-          "market": 1.09,
+          "market": 1.23,
           "analyst": 0.91,
           "opskins": 0.76
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.89,
+          "market": 1.99,
           "analyst": 2.41,
           "opskins": 1.99
         },
         "1": {
-          "market": 1.81,
+          "market": 2.21,
           "analyst": 1.54,
           "opskins": 1.8
         },
         "2": {
-          "market": 1.9,
+          "market": 2.11,
           "analyst": 1.33,
           "opskins": 1.24
         },
         "3": {
-          "market": 2.61,
+          "market": 3.01,
           "analyst": 2.16,
           "opskins": 1.82
         },
         "4": {
-          "market": 3.96,
+          "market": 4.33,
           "analyst": 3.39,
           "opskins": 3.15
         }
@@ -21779,54 +21779,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.94,
+          "market": 0.75,
           "analyst": 0.94,
           "opskins": 0.8
         },
         "1": {
-          "market": 0.68,
+          "market": 0.73,
           "analyst": 0.58,
           "opskins": 0.5
         },
         "2": {
-          "market": 0.52,
+          "market": 0.61,
           "analyst": 0.43,
           "opskins": 0.36
         },
         "3": {
-          "market": 0.65,
+          "market": 0.73,
           "analyst": 0.52,
           "opskins": 0.41
         },
         "4": {
-          "market": 1.18,
+          "market": 1.41,
           "analyst": 1.04,
           "opskins": 0.86
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.82,
+          "market": 2.15,
           "analyst": 1.83,
           "opskins": 1.68
         },
         "1": {
-          "market": 1.69,
+          "market": 1.98,
           "analyst": 1.25,
           "opskins": 1.53
         },
         "2": {
-          "market": 1.82,
+          "market": 2.05,
           "analyst": 1.34,
           "opskins": 1.2
         },
         "3": {
-          "market": 2.48,
+          "market": 2.88,
           "analyst": 2.09,
           "opskins": 1.97
         },
         "4": {
-          "market": 5.56,
+          "market": 6.4,
           "analyst": 4.59,
           "opskins": 3.96
         }
@@ -21841,54 +21841,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.16,
+          "market": 0.92,
           "analyst": 1.02,
           "opskins": 1.23
         },
         "1": {
-          "market": 0.63,
+          "market": 0.76,
           "analyst": 0.61,
           "opskins": 0.49
         },
         "2": {
-          "market": 0.54,
+          "market": 0.63,
           "analyst": 0.44,
           "opskins": 0.8
         },
         "3": {
-          "market": 0.68,
+          "market": 0.76,
           "analyst": 0.56,
           "opskins": 0.47
         },
         "4": {
-          "market": 1.24,
+          "market": 1.29,
           "analyst": 1.07,
           "opskins": 0.86
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.02,
+          "market": 2.23,
           "analyst": 2.72,
           "opskins": 2.4
         },
         "1": {
-          "market": 1.89,
+          "market": 2.08,
           "analyst": 1.64,
           "opskins": 1.63
         },
         "2": {
-          "market": 1.86,
+          "market": 2.06,
           "analyst": 1.31,
           "opskins": 1.24
         },
         "3": {
-          "market": 2.53,
+          "market": 2.89,
           "analyst": 2.18,
           "opskins": 2.01
         },
         "4": {
-          "market": 3.92,
+          "market": 4.53,
           "analyst": 3.88,
           "opskins": 3.39
         }
@@ -21903,27 +21903,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.86,
+          "market": 3.03,
           "analyst": 3.43,
           "opskins": 3.45
         },
         "1": {
-          "market": 2.6,
+          "market": 2.72,
           "analyst": 2.62,
           "opskins": 2.5
         },
         "2": {
-          "market": 2.5,
+          "market": 2.73,
           "analyst": 2.07,
           "opskins": 2.09
         },
         "3": {
-          "market": 3.18,
+          "market": 3.47,
           "analyst": 2.38,
           "opskins": 2.11
         },
         "4": {
-          "market": 4.51,
+          "market": 5.47,
           "analyst": 3.83,
           "opskins": 3.15
         }
@@ -21935,22 +21935,22 @@ var Prices = {
           "opskins": 6.65
         },
         "1": {
-          "market": 6.33,
+          "market": 7.76,
           "analyst": 8.37,
           "opskins": 9.7
         },
         "2": {
-          "market": 5.69,
+          "market": 7.97,
           "analyst": 7.17,
           "opskins": 6.45
         },
         "3": {
-          "market": 11.23,
+          "market": 13.47,
           "analyst": 10.38,
           "opskins": 10
         },
         "4": {
-          "market": 19.2,
+          "market": 25.6,
           "analyst": 18.61,
           "opskins": 15.9
         }
@@ -21965,44 +21965,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 4.57,
+          "market": 5.15,
           "analyst": 3.68,
           "opskins": 3.49
         },
         "2": {
-          "market": 3.55,
+          "market": 3.65,
           "analyst": 3.25,
           "opskins": 2.86
         },
         "3": {
-          "market": 4.23,
+          "market": 4.52,
           "analyst": 3.86,
           "opskins": 3.28
         },
         "4": {
-          "market": 5.72,
+          "market": 6.11,
           "analyst": 5.09,
           "opskins": 4.37
         }
       },
       "stattrak": {
         "1": {
-          "market": 10.28,
+          "market": 10.82,
           "analyst": 11.34,
           "opskins": 9.95
         },
         "2": {
-          "market": 9.39,
+          "market": 10.06,
           "analyst": 7.98,
           "opskins": 7
         },
         "3": {
-          "market": 14.84,
+          "market": 15.53,
           "analyst": 12.17,
           "opskins": 10.78
         },
         "4": {
-          "market": 21.66,
+          "market": 23.44,
           "analyst": 18.34,
           "opskins": 16
         }
@@ -22017,54 +22017,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.97,
+          "market": 2.16,
           "analyst": 1.58,
           "opskins": 1.53
         },
         "1": {
-          "market": 2.67,
+          "market": 3.22,
           "analyst": 2.23,
           "opskins": 2.21
         },
         "2": {
-          "market": 2.1,
+          "market": 2.25,
           "analyst": 1.68,
           "opskins": 1.55
         },
         "3": {
-          "market": 3.33,
+          "market": 3.86,
           "analyst": 2.71,
           "opskins": 2.43
         },
         "4": {
-          "market": 5.64,
+          "market": 6.3,
           "analyst": 4.56,
           "opskins": 3.91
         }
       },
       "stattrak": {
         "0": {
-          "market": 7.48,
+          "market": 9.86,
           "analyst": 6.71,
           "opskins": 7
         },
         "1": {
-          "market": 11.22,
+          "market": 11.56,
           "analyst": 11.53,
           "opskins": 11.99
         },
         "2": {
-          "market": 8.85,
+          "market": 10.6,
           "analyst": 7.05,
           "opskins": 6.43
         },
         "3": {
-          "market": 16.33,
+          "market": 18.57,
           "analyst": 13.07,
           "opskins": 12.38
         },
         "4": {
-          "market": 29.88,
+          "market": 30.82,
           "analyst": 28.01,
           "opskins": 25.5
         }
@@ -22079,29 +22079,29 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 108.2,
+          "market": 122.78,
           "analyst": 87.29,
           "opskins": 76.99
         },
         "3": {
-          "market": 134.34,
+          "market": 151.78,
           "analyst": 110.38,
           "opskins": 94.9
         },
         "4": {
-          "market": 167.76,
+          "market": 186.91,
           "analyst": 137.39,
           "opskins": 115
         }
       },
       "stattrak": {
         "2": {
-          "market": 178.2,
+          "market": 172.8,
           "analyst": 189.87,
           "opskins": 200.59
         },
         "3": {
-          "market": 199.8,
+          "market": 188.98,
           "analyst": 199.84,
           "opskins": 166
         },
@@ -22121,12 +22121,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 161.57,
+          "market": 170.16,
           "analyst": 150.59,
           "opskins": 124.09
         },
         "4": {
-          "market": 163.73,
+          "market": 181.94,
           "analyst": 127.78,
           "opskins": 107.89
         }
@@ -22138,7 +22138,7 @@ var Prices = {
           "opskins": 239.99
         },
         "4": {
-          "market": 203.1,
+          "market": 255.81,
           "analyst": 228.43,
           "opskins": 189
         }
@@ -22153,22 +22153,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 48.88,
+          "market": 54.97,
           "analyst": 36.55,
           "opskins": 32.81
         },
         "1": {
-          "market": 48.72,
+          "market": 58.34,
           "analyst": 38.16,
           "opskins": 32.98
         },
         "2": {
-          "market": 51.69,
+          "market": 56.96,
           "analyst": 37.21,
           "opskins": 32
         },
         "3": {
-          "market": 61.4,
+          "market": 70.35,
           "analyst": 48.13,
           "opskins": 42
         },
@@ -22180,17 +22180,17 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 52.1,
+          "market": 60.1,
           "analyst": 59.57,
           "opskins": 55.73
         },
         "1": {
-          "market": 56.6,
+          "market": 63.6,
           "analyst": 62.92,
           "opskins": 59.21
         },
         "2": {
-          "market": 65.74,
+          "market": 76.39,
           "analyst": 72.83,
           "opskins": 60.54
         },
@@ -22220,17 +22220,17 @@ var Prices = {
           "opskins": 0.9
         },
         "1": {
-          "market": 0.11,
+          "market": 0.1,
           "analyst": 0.1,
           "opskins": 0.16
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.11,
+          "market": 0.1,
           "analyst": 0.09,
           "opskins": 0.09
         },
@@ -22242,17 +22242,17 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.34,
+          "market": 0.42,
           "analyst": 0.3,
           "opskins": 0.27
         },
         "1": {
-          "market": 0.37,
+          "market": 0.36,
           "analyst": 0.3,
           "opskins": 0.23
         },
         "2": {
-          "market": 0.29,
+          "market": 0.26,
           "analyst": 0.23,
           "opskins": 0.17
         },
@@ -22262,7 +22262,7 @@ var Prices = {
           "opskins": 0.29
         },
         "4": {
-          "market": 0.73,
+          "market": 0.79,
           "analyst": 0.73,
           "opskins": 0.56
         }
@@ -22277,7 +22277,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.08,
           "opskins": 0.1
         },
@@ -22287,7 +22287,7 @@ var Prices = {
           "opskins": 0.35
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.17
         },
@@ -22304,27 +22304,27 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.26,
+          "market": 0.24,
           "analyst": 0.19,
           "opskins": 0.22
         },
         "1": {
-          "market": 0.22,
+          "market": 0.25,
           "analyst": 0.19,
           "opskins": 0.16
         },
         "2": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.19,
           "opskins": 0.15
         },
         "3": {
-          "market": 0.26,
+          "market": 0.31,
           "analyst": 0.2,
           "opskins": 0.18
         },
         "4": {
-          "market": 0.51,
+          "market": 0.54,
           "analyst": 0.39,
           "opskins": 0.37
         }
@@ -22339,17 +22339,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.05
         },
         "1": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.07
         },
@@ -22359,34 +22359,34 @@ var Prices = {
           "opskins": 0.09
         },
         "4": {
-          "market": 0.17,
+          "market": 0.18,
           "analyst": 0.15,
           "opskins": 0.14
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.2,
           "opskins": 0.16
         },
         "1": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.2,
           "opskins": 0.15
         },
         "2": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.2,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.29,
+          "market": 0.31,
           "analyst": 0.22,
           "opskins": 0.16
         },
         "4": {
-          "market": 1.04,
+          "market": 1.17,
           "analyst": 0.87,
           "opskins": 0.7
         }
@@ -22406,22 +22406,22 @@ var Prices = {
           "opskins": 0.06
         },
         "1": {
-          "market": 0.13,
+          "market": 0.14,
           "analyst": 0.08,
           "opskins": 0.08
         },
         "2": {
-          "market": 0.16,
+          "market": 0.17,
           "analyst": 0.1,
           "opskins": 0.09
         },
         "3": {
-          "market": 0.28,
+          "market": 0.31,
           "analyst": 0.2,
           "opskins": 0.15
         },
         "4": {
-          "market": 1.34,
+          "market": 1.5,
           "analyst": 0.95,
           "opskins": 0.86
         }
@@ -22433,22 +22433,22 @@ var Prices = {
           "opskins": 0.22
         },
         "1": {
-          "market": 0.43,
+          "market": 0.45,
           "analyst": 0.3,
           "opskins": 0.25
         },
         "2": {
-          "market": 0.56,
+          "market": 0.59,
           "analyst": 0.37,
           "opskins": 0.3
         },
         "3": {
-          "market": 1.24,
+          "market": 1.35,
           "analyst": 0.92,
           "opskins": 0.72
         },
         "4": {
-          "market": 6.29,
+          "market": 7.16,
           "analyst": 4.84,
           "opskins": 4.12
         }
@@ -22463,12 +22463,12 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.12,
+          "market": 0.16,
           "analyst": 0.1,
           "opskins": 0.09
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         },
@@ -22478,29 +22478,29 @@ var Prices = {
           "opskins": 0.05
         },
         "4": {
-          "market": 0.15,
+          "market": 0.18,
           "analyst": 0.1,
           "opskins": 0.09
         }
       },
       "stattrak": {
         "1": {
-          "market": 0.42,
+          "market": 0.6,
           "analyst": 0.34,
           "opskins": 0.42
         },
         "2": {
-          "market": 0.25,
+          "market": 0.34,
           "analyst": 0.2,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.36,
+          "market": 0.58,
           "analyst": 0.23,
           "opskins": 0.21
         },
         "4": {
-          "market": 0.7,
+          "market": 1,
           "analyst": 0.43,
           "opskins": 0.37
         }
@@ -22515,54 +22515,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.29,
+          "market": 0.32,
           "analyst": 0.26,
           "opskins": 0.27
         },
         "1": {
-          "market": 0.36,
+          "market": 0.33,
           "analyst": 0.3,
           "opskins": 0.26
         },
         "2": {
-          "market": 0.26,
+          "market": 0.28,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "3": {
-          "market": 0.32,
+          "market": 0.34,
           "analyst": 0.26,
           "opskins": 0.19
         },
         "4": {
-          "market": 0.54,
+          "market": 0.58,
           "analyst": 0.4,
           "opskins": 0.33
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.76,
+          "market": 0.93,
           "analyst": 0.62,
           "opskins": 0.62
         },
         "1": {
-          "market": 0.94,
+          "market": 1.01,
           "analyst": 0.75,
           "opskins": 0.6
         },
         "2": {
-          "market": 0.86,
+          "market": 1.03,
           "analyst": 0.66,
           "opskins": 0.62
         },
         "3": {
-          "market": 1.26,
+          "market": 1.42,
           "analyst": 0.97,
           "opskins": 0.8
         },
         "4": {
-          "market": 2.34,
+          "market": 2.52,
           "analyst": 2.04,
           "opskins": 1.63
         }
@@ -22577,54 +22577,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.25,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.2
         },
         "1": {
-          "market": 0.26,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "2": {
-          "market": 0.25,
+          "market": 0.27,
           "analyst": 0.22,
           "opskins": 0.21
         },
         "3": {
-          "market": 0.31,
+          "market": 0.36,
           "analyst": 0.25,
           "opskins": 0.22
         },
         "4": {
-          "market": 0.89,
+          "market": 1.09,
           "analyst": 0.76,
           "opskins": 0.6
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.72,
+          "market": 1.1,
           "analyst": 0.59,
           "opskins": 0.57
         },
         "1": {
-          "market": 0.74,
+          "market": 0.95,
           "analyst": 0.63,
           "opskins": 0.56
         },
         "2": {
-          "market": 0.81,
+          "market": 1.06,
           "analyst": 0.68,
           "opskins": 0.56
         },
         "3": {
-          "market": 1.31,
+          "market": 1.73,
           "analyst": 1.06,
           "opskins": 0.89
         },
         "4": {
-          "market": 4.53,
+          "market": 5.34,
           "analyst": 3.48,
           "opskins": 2.82
         }
@@ -22639,34 +22639,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.31,
+          "market": 0.33,
           "analyst": 0.24,
           "opskins": 0.23
         },
         "3": {
-          "market": 0.32,
+          "market": 0.35,
           "analyst": 0.26,
           "opskins": 0.23
         },
         "4": {
-          "market": 0.51,
+          "market": 0.54,
           "analyst": 0.39,
           "opskins": 0.33
         }
       },
       "stattrak": {
         "2": {
-          "market": 0.9,
+          "market": 1.09,
           "analyst": 0.78,
           "opskins": 0.61
         },
         "3": {
-          "market": 1.18,
+          "market": 1.35,
           "analyst": 0.98,
           "opskins": 0.74
         },
         "4": {
-          "market": 2.29,
+          "market": 2.43,
           "analyst": 1.87,
           "opskins": 1.51
         }
@@ -22681,44 +22681,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.49,
+          "market": 0.56,
           "analyst": 0.41,
           "opskins": 0.35
         },
         "2": {
-          "market": 0.31,
+          "market": 0.33,
           "analyst": 0.23,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.36,
+          "market": 0.41,
           "analyst": 0.28,
           "opskins": 0.24
         },
         "4": {
-          "market": 0.55,
+          "market": 0.62,
           "analyst": 0.43,
           "opskins": 0.34
         }
       },
       "stattrak": {
         "1": {
-          "market": 1.9,
+          "market": 2.21,
           "analyst": 1.47,
           "opskins": 1.28
         },
         "2": {
-          "market": 1.19,
+          "market": 1.36,
           "analyst": 0.87,
           "opskins": 0.72
         },
         "3": {
-          "market": 1.73,
+          "market": 1.98,
           "analyst": 1.2,
           "opskins": 1.04
         },
         "4": {
-          "market": 3.04,
+          "market": 3.48,
           "analyst": 2.21,
           "opskins": 1.86
         }
@@ -22733,34 +22733,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 1.97,
+          "market": 2.2,
           "analyst": 1.51,
           "opskins": 1.4
         },
         "3": {
-          "market": 2.14,
+          "market": 2.43,
           "analyst": 1.62,
           "opskins": 1.37
         },
         "4": {
-          "market": 2.69,
+          "market": 3.09,
           "analyst": 2.13,
           "opskins": 1.81
         }
       },
       "stattrak": {
         "2": {
-          "market": 7.71,
+          "market": 8.36,
           "analyst": 5.75,
           "opskins": 5.09
         },
         "3": {
-          "market": 9.79,
+          "market": 10.16,
           "analyst": 7.68,
           "opskins": 6.48
         },
         "4": {
-          "market": 14.56,
+          "market": 15.72,
           "analyst": 11.46,
           "opskins": 9.99
         }
@@ -22775,54 +22775,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.13,
+          "market": 1.23,
           "analyst": 0.99,
           "opskins": 0.82
         },
         "1": {
-          "market": 1.11,
+          "market": 1.25,
           "analyst": 0.98,
           "opskins": 0.84
         },
         "2": {
-          "market": 1.11,
+          "market": 1.22,
           "analyst": 0.97,
           "opskins": 0.78
         },
         "3": {
-          "market": 1.44,
+          "market": 1.56,
           "analyst": 1.29,
           "opskins": 1.05
         },
         "4": {
-          "market": 2.8,
+          "market": 2.98,
           "analyst": 2.31,
           "opskins": 2.09
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.87,
+          "market": 3.16,
           "analyst": 2.33,
           "opskins": 2.03
         },
         "1": {
-          "market": 2.97,
+          "market": 3.28,
           "analyst": 2.39,
           "opskins": 2.08
         },
         "2": {
-          "market": 3.09,
+          "market": 3.47,
           "analyst": 2.63,
           "opskins": 2.29
         },
         "3": {
-          "market": 5.29,
+          "market": 6.09,
           "analyst": 4.11,
           "opskins": 3.63
         },
         "4": {
-          "market": 12.64,
+          "market": 13.9,
           "analyst": 9.48,
           "opskins": 9.74
         }
@@ -22837,12 +22837,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 227.89,
+          "market": 257.41,
           "analyst": 234.01,
           "opskins": 189.89
         },
         "4": {
-          "market": 221.98,
+          "market": 260.12,
           "analyst": 176.71,
           "opskins": 148.89
         }
@@ -22854,7 +22854,7 @@ var Prices = {
           "opskins": 315.25
         },
         "4": {
-          "market": 323.91,
+          "market": 372.61,
           "analyst": 287.68,
           "opskins": 232.99
         }
@@ -22869,27 +22869,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 95.24,
+          "market": 104.4,
           "analyst": 81.62,
           "opskins": 67.94
         },
         "1": {
-          "market": 96.76,
+          "market": 108.58,
           "analyst": 83.6,
           "opskins": 70.9
         },
         "2": {
-          "market": 101.07,
+          "market": 115.97,
           "analyst": 88.92,
           "opskins": 73.89
         },
         "3": {
-          "market": 116.57,
+          "market": 138.13,
           "analyst": 106.95,
           "opskins": 88.2
         },
         "4": {
-          "market": 159.77,
+          "market": 222.75,
           "analyst": 186.88,
           "opskins": 154.99
         }
@@ -22901,12 +22901,12 @@ var Prices = {
           "opskins": 134.99
         },
         "1": {
-          "market": 128.94,
+          "market": 136.24,
           "analyst": 137.42,
           "opskins": 107.92
         },
         "2": {
-          "market": 139.4,
+          "market": 150.69,
           "analyst": 148.85,
           "opskins": 119.94
         },
@@ -22931,54 +22931,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 81.34,
+          "market": 91.79,
           "analyst": 60.13,
           "opskins": 53.28
         },
         "1": {
-          "market": 83.11,
+          "market": 93.37,
           "analyst": 62.11,
           "opskins": 53.57
         },
         "2": {
-          "market": 84.75,
+          "market": 93.93,
           "analyst": 63.63,
           "opskins": 53.89
         },
         "3": {
-          "market": 91.7,
+          "market": 103.68,
           "analyst": 70.03,
           "opskins": 61
         },
         "4": {
-          "market": 119.65,
+          "market": 138.41,
           "analyst": 110.2,
           "opskins": 88.89
         }
       },
       "stattrak": {
         "0": {
-          "market": 90.1,
+          "market": 113.28,
           "analyst": 100.01,
           "opskins": 79.99
         },
         "1": {
-          "market": 92.63,
+          "market": 109.5,
           "analyst": 91.53,
           "opskins": 114.69
         },
         "2": {
-          "market": 105.88,
+          "market": 121.93,
           "analyst": 98.08,
           "opskins": 80.98
         },
         "3": {
-          "market": 120.46,
+          "market": 133.59,
           "analyst": 103.8,
           "opskins": 90.25
         },
         "4": {
-          "market": 250,
+          "market": 280,
           "analyst": -1,
           "opskins": 520
         }
@@ -22993,54 +22993,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.08,
           "opskins": 0.07
         },
         "1": {
-          "market": 0.15,
+          "market": 0.17,
           "analyst": 0.11,
           "opskins": 0.1
         },
         "2": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.16,
+          "market": 0.19,
           "analyst": 0.12,
           "opskins": 0.1
         },
         "4": {
-          "market": 0.28,
+          "market": 0.29,
           "analyst": 0.21,
           "opskins": 0.18
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.46,
+          "market": 0.56,
           "analyst": 0.37,
           "opskins": 0.31
         },
         "1": {
-          "market": 0.62,
+          "market": 0.75,
           "analyst": 0.63,
           "opskins": 0.5
         },
         "2": {
-          "market": 0.46,
+          "market": 0.56,
           "analyst": 0.36,
           "opskins": 0.27
         },
         "3": {
-          "market": 0.7,
+          "market": 0.81,
           "analyst": 0.57,
           "opskins": 0.47
         },
         "4": {
-          "market": 1.23,
+          "market": 1.41,
           "analyst": 1.02,
           "opskins": 0.81
         }
@@ -23065,7 +23065,7 @@ var Prices = {
           "opskins": 0.08
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.07
         },
@@ -23075,34 +23075,34 @@ var Prices = {
           "opskins": 0.05
         },
         "4": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.16,
           "opskins": 0.14
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.22,
+          "market": 0.24,
           "analyst": 0.19,
           "opskins": 0.16
         },
         "1": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.19,
           "opskins": 0.16
         },
         "2": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.19,
           "opskins": 0.17
         },
         "3": {
-          "market": 0.3,
+          "market": 0.33,
           "analyst": 0.22,
           "opskins": 0.19
         },
         "4": {
-          "market": 0.92,
+          "market": 1.13,
           "analyst": 0.84,
           "opskins": 0.66
         }
@@ -23122,34 +23122,34 @@ var Prices = {
           "opskins": 0.36
         },
         "1": {
-          "market": 0.09,
+          "market": 0.1,
           "analyst": 0.07,
           "opskins": 0.07
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.05
         },
         "3": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "4": {
-          "market": 0.17,
+          "market": 0.2,
           "analyst": 0.13,
           "opskins": 0.09
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.25,
+          "market": 0.26,
           "analyst": 0.22,
           "opskins": 1.31
         },
         "1": {
-          "market": 0.28,
+          "market": 0.29,
           "analyst": 0.25,
           "opskins": 0.41
         },
@@ -23159,12 +23159,12 @@ var Prices = {
           "opskins": 0.16
         },
         "3": {
-          "market": 0.42,
+          "market": 0.45,
           "analyst": 0.32,
           "opskins": 0.28
         },
         "4": {
-          "market": 0.73,
+          "market": 0.84,
           "analyst": 0.6,
           "opskins": 0.47
         }
@@ -23179,12 +23179,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.08
         },
         "1": {
-          "market": 0.15,
+          "market": 0.13,
           "analyst": 0.13,
           "opskins": 0.13
         },
@@ -23211,22 +23211,22 @@ var Prices = {
           "opskins": 0.17
         },
         "1": {
-          "market": 0.28,
+          "market": 0.29,
           "analyst": 0.24,
           "opskins": 0.21
         },
         "2": {
-          "market": 0.24,
+          "market": 0.25,
           "analyst": 0.2,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.39,
+          "market": 0.43,
           "analyst": 0.32,
           "opskins": 0.25
         },
         "4": {
-          "market": 0.82,
+          "market": 0.95,
           "analyst": 0.6,
           "opskins": 0.54
         }
@@ -23251,44 +23251,44 @@ var Prices = {
           "opskins": 0.07
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "3": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.06
         },
         "4": {
-          "market": 0.18,
+          "market": 0.2,
           "analyst": 0.13,
           "opskins": 0.11
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.24,
+          "market": 0.42,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "1": {
-          "market": 0.26,
+          "market": 0.29,
           "analyst": 0.21,
           "opskins": 0.18
         },
         "2": {
-          "market": 0.24,
+          "market": 0.26,
           "analyst": 0.19,
           "opskins": 0.15
         },
         "3": {
-          "market": 0.39,
+          "market": 0.43,
           "analyst": 0.31,
           "opskins": 0.26
         },
         "4": {
-          "market": 0.72,
+          "market": 0.88,
           "analyst": 0.58,
           "opskins": 0.48
         }
@@ -23308,7 +23308,7 @@ var Prices = {
           "opskins": 0.1
         },
         "1": {
-          "market": 0.25,
+          "market": 0.28,
           "analyst": 0.2,
           "opskins": 0.18
         },
@@ -23323,34 +23323,34 @@ var Prices = {
           "opskins": 0.11
         },
         "4": {
-          "market": 0.44,
+          "market": 0.48,
           "analyst": 0.33,
           "opskins": 0.48
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.65,
+          "market": 0.72,
           "analyst": 0.58,
           "opskins": 0.52
         },
         "1": {
-          "market": 1.04,
+          "market": 1.19,
           "analyst": 1.16,
           "opskins": 1.32
         },
         "2": {
-          "market": 0.64,
+          "market": 0.72,
           "analyst": 0.56,
           "opskins": 0.53
         },
         "3": {
-          "market": 0.88,
+          "market": 1.01,
           "analyst": 0.8,
           "opskins": 0.68
         },
         "4": {
-          "market": 2.47,
+          "market": 2.72,
           "analyst": 2.17,
           "opskins": 1.86
         }
@@ -23365,7 +23365,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.09,
           "analyst": 0.07,
           "opskins": 0.05
         },
@@ -23385,14 +23385,14 @@ var Prices = {
           "opskins": 0.09
         },
         "4": {
-          "market": 0.63,
+          "market": 0.72,
           "analyst": 0.55,
           "opskins": 0.43
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.32,
+          "market": 0.33,
           "analyst": 0.25,
           "opskins": 0.22
         },
@@ -23402,17 +23402,17 @@ var Prices = {
           "opskins": 0.22
         },
         "2": {
-          "market": 0.35,
+          "market": 0.36,
           "analyst": 0.27,
           "opskins": 0.22
         },
         "3": {
-          "market": 0.63,
+          "market": 0.66,
           "analyst": 0.51,
           "opskins": 0.41
         },
         "4": {
-          "market": 3.76,
+          "market": 3.63,
           "analyst": 3.04,
           "opskins": 2.51
         }
@@ -23427,54 +23427,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.43,
+          "market": 0.48,
           "analyst": 0.31,
           "opskins": 0.28
         },
         "1": {
-          "market": 0.45,
+          "market": 0.5,
           "analyst": 0.34,
           "opskins": 0.36
         },
         "2": {
-          "market": 0.47,
+          "market": 0.54,
           "analyst": 0.34,
           "opskins": 0.27
         },
         "3": {
-          "market": 0.67,
+          "market": 0.8,
           "analyst": 0.48,
           "opskins": 0.38
         },
         "4": {
-          "market": 1.37,
+          "market": 1.53,
           "analyst": 1.08,
           "opskins": 0.89
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.99,
+          "market": 1.15,
           "analyst": 0.78,
           "opskins": 0.74
         },
         "1": {
-          "market": 1.08,
+          "market": 1.24,
           "analyst": 0.91,
           "opskins": 0.78
         },
         "2": {
-          "market": 1.25,
+          "market": 1.4,
           "analyst": 0.95,
           "opskins": 0.8
         },
         "3": {
-          "market": 2.02,
+          "market": 2.37,
           "analyst": 1.59,
           "opskins": 1.33
         },
         "4": {
-          "market": 5.13,
+          "market": 6.16,
           "analyst": 4.39,
           "opskins": 3.78
         }
@@ -23489,54 +23489,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.44,
+          "market": 0.49,
           "analyst": 0.33,
           "opskins": 0.33
         },
         "1": {
-          "market": 0.47,
+          "market": 0.51,
           "analyst": 0.35,
           "opskins": 0.33
         },
         "2": {
-          "market": 0.46,
+          "market": 0.54,
           "analyst": 0.35,
           "opskins": 0.33
         },
         "3": {
-          "market": 0.73,
+          "market": 0.84,
           "analyst": 0.51,
           "opskins": 0.4
         },
         "4": {
-          "market": 1.76,
+          "market": 2.08,
           "analyst": 1.44,
           "opskins": 1.18
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.05,
+          "market": 1.2,
           "analyst": 0.9,
           "opskins": 0.74
         },
         "1": {
-          "market": 1.15,
+          "market": 1.31,
           "analyst": 1,
           "opskins": 0.8
         },
         "2": {
-          "market": 1.28,
+          "market": 1.43,
           "analyst": 1.06,
           "opskins": 0.83
         },
         "3": {
-          "market": 2.3,
+          "market": 2.66,
           "analyst": 1.85,
           "opskins": 1.5
         },
         "4": {
-          "market": 7.28,
+          "market": 8.33,
           "analyst": 6.63,
           "opskins": 5.75
         }
@@ -23551,54 +23551,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.44,
+          "market": 0.51,
           "analyst": 0.31,
           "opskins": 0.3
         },
         "1": {
-          "market": 0.45,
+          "market": 0.56,
           "analyst": 0.38,
           "opskins": 0.34
         },
         "2": {
-          "market": 0.47,
+          "market": 0.55,
           "analyst": 0.34,
           "opskins": 0.27
         },
         "3": {
-          "market": 0.63,
+          "market": 0.8,
           "analyst": 0.48,
           "opskins": 0.37
         },
         "4": {
-          "market": 1.14,
+          "market": 1.35,
           "analyst": 0.9,
           "opskins": 0.77
         }
       },
       "stattrak": {
         "0": {
-          "market": 1,
+          "market": 1.19,
           "analyst": 0.81,
           "opskins": 0.74
         },
         "1": {
-          "market": 1.13,
+          "market": 1.47,
           "analyst": 1.08,
           "opskins": 0.83
         },
         "2": {
-          "market": 1.21,
+          "market": 1.4,
           "analyst": 0.95,
           "opskins": 0.79
         },
         "3": {
-          "market": 2.05,
+          "market": 2.41,
           "analyst": 1.66,
           "opskins": 1.4
         },
         "4": {
-          "market": 4.01,
+          "market": 5.22,
           "analyst": 3.56,
           "opskins": 3.1
         }
@@ -23613,54 +23613,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.46,
+          "market": 0.52,
           "analyst": 0.33,
           "opskins": 0.29
         },
         "1": {
-          "market": 0.5,
+          "market": 0.55,
           "analyst": 0.37,
           "opskins": 0.29
         },
         "2": {
-          "market": 0.49,
+          "market": 0.57,
           "analyst": 0.34,
           "opskins": 0.28
         },
         "3": {
-          "market": 0.76,
+          "market": 0.88,
           "analyst": 0.57,
           "opskins": 0.46
         },
         "4": {
-          "market": 1.81,
+          "market": 1.95,
           "analyst": 1.64,
           "opskins": 1.36
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.39,
+          "market": 1.59,
           "analyst": 1.11,
           "opskins": 0.93
         },
         "1": {
-          "market": 1.51,
+          "market": 1.77,
           "analyst": 1.32,
           "opskins": 1.1
         },
         "2": {
-          "market": 1.59,
+          "market": 1.81,
           "analyst": 1.22,
           "opskins": 0.94
         },
         "3": {
-          "market": 3,
+          "market": 3.3,
           "analyst": 2.23,
           "opskins": 1.85
         },
         "4": {
-          "market": 7.98,
+          "market": 9.95,
           "analyst": 6.78,
           "opskins": 6.23
         }
@@ -23675,54 +23675,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.88,
+          "market": 2.24,
           "analyst": 1.63,
           "opskins": 1.43
         },
         "1": {
-          "market": 1.94,
+          "market": 2.28,
           "analyst": 1.72,
           "opskins": 1.42
         },
         "2": {
-          "market": 2,
+          "market": 2.3,
           "analyst": 1.78,
           "opskins": 1.44
         },
         "3": {
-          "market": 2.99,
+          "market": 3.49,
           "analyst": 2.56,
           "opskins": 2.15
         },
         "4": {
-          "market": 5.22,
+          "market": 6.05,
           "analyst": 4.99,
           "opskins": 4.35
         }
       },
       "stattrak": {
         "0": {
-          "market": 5.16,
+          "market": 6.26,
           "analyst": 4.39,
           "opskins": 55
         },
         "1": {
-          "market": 5.44,
+          "market": 6.25,
           "analyst": 5.18,
           "opskins": 5.67
         },
         "2": {
-          "market": 6.16,
+          "market": 7.27,
           "analyst": 5.09,
           "opskins": 5.34
         },
         "3": {
-          "market": 11.13,
+          "market": 13.03,
           "analyst": 11.06,
           "opskins": 9.9
         },
         "4": {
-          "market": 23.6,
+          "market": 28.48,
           "analyst": 28.1,
           "opskins": 24.76
         }
@@ -23737,54 +23737,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.1,
+          "market": 2.29,
           "analyst": 1.74,
           "opskins": 1.54
         },
         "1": {
-          "market": 2.31,
+          "market": 2.56,
           "analyst": 2,
           "opskins": 1.65
         },
         "2": {
-          "market": 2.27,
+          "market": 2.45,
           "analyst": 1.92,
           "opskins": 1.55
         },
         "3": {
-          "market": 3.29,
+          "market": 3.72,
           "analyst": 2.72,
           "opskins": 2.3
         },
         "4": {
-          "market": 5.18,
+          "market": 5.81,
           "analyst": 4.4,
           "opskins": 3.78
         }
       },
       "stattrak": {
         "0": {
-          "market": 6,
+          "market": 6.55,
           "analyst": 4.94,
           "opskins": 4.9
         },
         "1": {
-          "market": 7.43,
+          "market": 7.1,
           "analyst": 5.37,
           "opskins": 5.24
         },
         "2": {
-          "market": 6.66,
+          "market": 7.55,
           "analyst": 5.84,
           "opskins": 4.94
         },
         "3": {
-          "market": 12.92,
+          "market": 13.06,
           "analyst": 11.2,
           "opskins": 10.07
         },
         "4": {
-          "market": 21.62,
+          "market": 24.52,
           "analyst": 20.33,
           "opskins": 18.99
         }
@@ -23799,54 +23799,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 20.36,
+          "market": 23.79,
           "analyst": 16.22,
           "opskins": 14.18
         },
         "1": {
-          "market": 21.78,
+          "market": 25.66,
           "analyst": 17.6,
           "opskins": 15.31
         },
         "2": {
-          "market": 24.54,
+          "market": 28.59,
           "analyst": 19.95,
           "opskins": 17.34
         },
         "3": {
-          "market": 34.36,
+          "market": 39.92,
           "analyst": 27.83,
           "opskins": 24.42
         },
         "4": {
-          "market": 57.97,
+          "market": 69.07,
           "analyst": 49.97,
           "opskins": 42.9
         }
       },
       "stattrak": {
         "0": {
-          "market": 62.09,
+          "market": 67.69,
           "analyst": 53.32,
           "opskins": 48.35
         },
         "1": {
-          "market": 68.76,
+          "market": 80.5,
           "analyst": 61.66,
           "opskins": 53.02
         },
         "2": {
-          "market": 85.26,
+          "market": 95.41,
           "analyst": 75.59,
           "opskins": 63.45
         },
         "3": {
-          "market": 130.81,
+          "market": 150.5,
           "analyst": 113.06,
           "opskins": 87.99
         },
         "4": {
-          "market": 257.06,
+          "market": 259.71,
           "analyst": 240.75,
           "opskins": 191.99
         }
@@ -23861,24 +23861,24 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.72,
+          "market": 0.93,
           "analyst": 0.61,
           "opskins": 0.57
         },
         "3": {
-          "market": 0.83,
+          "market": 0.99,
           "analyst": 0.74,
           "opskins": 0.69
         }
       },
       "stattrak": {
         "2": {
-          "market": 1.72,
+          "market": 2.12,
           "analyst": 1.41,
           "opskins": 1.23
         },
         "3": {
-          "market": 2.2,
+          "market": 2.42,
           "analyst": 2.1,
           "opskins": 1.68
         }
@@ -23893,24 +23893,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 0.84,
+          "market": 1,
           "analyst": 0.7,
           "opskins": 0.98
         },
         "4": {
-          "market": 0.79,
+          "market": 0.99,
           "analyst": 0.7,
           "opskins": 0.68
         }
       },
       "stattrak": {
         "3": {
-          "market": 2.29,
+          "market": 2.68,
           "analyst": 1.92,
           "opskins": 1.5
         },
         "4": {
-          "market": 2.41,
+          "market": 2.76,
           "analyst": 1.98,
           "opskins": 1.58
         }
@@ -23925,54 +23925,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.74,
+          "market": 1,
           "analyst": 0.59,
           "opskins": 1.3
         },
         "1": {
-          "market": 0.73,
+          "market": 0.92,
           "analyst": 0.68,
           "opskins": 0.67
         },
         "2": {
-          "market": 0.71,
+          "market": 0.94,
           "analyst": 0.63,
           "opskins": 0.7
         },
         "3": {
-          "market": 1,
+          "market": 1.06,
           "analyst": 0.78,
           "opskins": 0.7
         },
         "4": {
-          "market": 5.87,
+          "market": 6.9,
           "analyst": 5.7,
           "opskins": 5.22
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.55,
+          "market": 2.01,
           "analyst": 1.24,
           "opskins": 1.34
         },
         "1": {
-          "market": 1.64,
+          "market": 2.02,
           "analyst": 1.41,
           "opskins": 1.28
         },
         "2": {
-          "market": 1.65,
+          "market": 2.14,
           "analyst": 1.33,
           "opskins": 1.27
         },
         "3": {
-          "market": 2.94,
+          "market": 3.27,
           "analyst": 2.4,
           "opskins": 2.14
         },
         "4": {
-          "market": 25.44,
+          "market": 28.64,
           "analyst": 30.01,
           "opskins": 29.08
         }
@@ -23987,24 +23987,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 7.44,
+          "market": 7.71,
           "analyst": 6.09,
           "opskins": 5.64
         },
         "4": {
-          "market": 7.18,
+          "market": 7.57,
           "analyst": 5.74,
           "opskins": 4.86
         }
       },
       "stattrak": {
         "3": {
-          "market": 21.73,
+          "market": 25.7,
           "analyst": 19.96,
           "opskins": 17.37
         },
         "4": {
-          "market": 24.14,
+          "market": 29.37,
           "analyst": 18.89,
           "opskins": 17
         }
@@ -24019,24 +24019,24 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 5.88,
+          "market": 6.54,
           "analyst": 4.8,
           "opskins": 4.8
         },
         "3": {
-          "market": 6.48,
+          "market": 7.03,
           "analyst": 5.2,
           "opskins": 5.09
         }
       },
       "stattrak": {
         "2": {
-          "market": 13.57,
+          "market": 15.36,
           "analyst": 13.79,
           "opskins": 11.73
         },
         "3": {
-          "market": 18.94,
+          "market": 19.13,
           "analyst": 16.54,
           "opskins": 16.38
         }
@@ -24051,24 +24051,24 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 5.95,
+          "market": 6.67,
           "analyst": 5.01,
           "opskins": 4.75
         },
         "3": {
-          "market": 6.41,
+          "market": 7.15,
           "analyst": 5.37,
           "opskins": 4.84
         }
       },
       "stattrak": {
         "2": {
-          "market": 12.96,
+          "market": 15.76,
           "analyst": 11.69,
           "opskins": 11.36
         },
         "3": {
-          "market": 17.08,
+          "market": 19.55,
           "analyst": 14.75,
           "opskins": 13.29
         }
@@ -24083,22 +24083,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 61.61,
+          "market": 67.12,
           "analyst": 49.55,
           "opskins": 46.9
         },
         "1": {
-          "market": 82.97,
+          "market": 90.12,
           "analyst": 69.92,
           "opskins": 56.43
         },
         "2": {
-          "market": 88.75,
+          "market": 99.19,
           "analyst": 70.9,
           "opskins": 60
         },
         "3": {
-          "market": 160.14,
+          "market": 174.02,
           "analyst": 145.03,
           "opskins": 117.78
         },
@@ -24120,12 +24120,12 @@ var Prices = {
           "opskins": 90
         },
         "2": {
-          "market": 107.52,
+          "market": 110.3,
           "analyst": 101.21,
           "opskins": 85.81
         },
         "3": {
-          "market": 280,
+          "market": 259.15,
           "analyst": 209.02,
           "opskins": 248.99
         },
@@ -24145,22 +24145,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 84.53,
+          "market": 98.99,
           "analyst": 73.67,
           "opskins": 61.35
         },
         "1": {
-          "market": 107.5,
+          "market": 118.38,
           "analyst": 96.22,
           "opskins": 79.08
         },
         "2": {
-          "market": 114.91,
+          "market": 132.74,
           "analyst": 95.17,
           "opskins": 82.98
         },
         "3": {
-          "market": 206.04,
+          "market": 238.21,
           "analyst": 182.92,
           "opskins": 156.79
         },
@@ -24172,22 +24172,22 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 113.4,
+          "market": 117.98,
           "analyst": 116.82,
           "opskins": 110
         },
         "1": {
-          "market": 134.7,
+          "market": 145.8,
           "analyst": 174.9,
           "opskins": 144.99
         },
         "2": {
-          "market": 156.17,
+          "market": 169.99,
           "analyst": 158.11,
           "opskins": 135.88
         },
         "3": {
-          "market": 291.6,
+          "market": 342.3,
           "analyst": 394.39,
           "opskins": 298.89
         },
@@ -24207,22 +24207,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 41.77,
+          "market": 47.3,
           "analyst": 30.91,
           "opskins": 29.25
         },
         "1": {
-          "market": 44.09,
+          "market": 51.17,
           "analyst": 33.6,
           "opskins": 30.38
         },
         "2": {
-          "market": 44.07,
+          "market": 50.08,
           "analyst": 32,
           "opskins": 28.93
         },
         "3": {
-          "market": 60.45,
+          "market": 66.71,
           "analyst": 49.06,
           "opskins": 42.12
         },
@@ -24244,12 +24244,12 @@ var Prices = {
           "opskins": 88.28
         },
         "2": {
-          "market": 52.12,
+          "market": 55.32,
           "analyst": 47.01,
           "opskins": 41.57
         },
         "3": {
-          "market": 80.22,
+          "market": 80.83,
           "analyst": 76.62,
           "opskins": 63.34
         },
@@ -24269,14 +24269,14 @@ var Prices = {
     "prices": {
       "default": {
         "4": {
-          "market": 1.03,
+          "market": 1.12,
           "analyst": 0.83,
           "opskins": 0.82
         }
       },
       "stattrak": {
         "4": {
-          "market": 2.67,
+          "market": 3.32,
           "analyst": 2.61,
           "opskins": 2.62
         }
@@ -24291,34 +24291,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 1.8,
+          "market": 2.06,
           "analyst": 1.44,
           "opskins": 1.24
         },
         "3": {
-          "market": 1.9,
+          "market": 2.11,
           "analyst": 1.51,
           "opskins": 1.3
         },
         "4": {
-          "market": 2.4,
+          "market": 2.82,
           "analyst": 2.05,
           "opskins": 1.71
         }
       },
       "stattrak": {
         "2": {
-          "market": 7.61,
+          "market": 8.61,
           "analyst": 6.69,
           "opskins": 5.85
         },
         "3": {
-          "market": 7.85,
+          "market": 8.89,
           "analyst": 6.6,
           "opskins": 5.59
         },
         "4": {
-          "market": 10.54,
+          "market": 11.78,
           "analyst": 9.28,
           "opskins": 8.32
         }
@@ -24333,44 +24333,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.85,
+          "market": 1.03,
           "analyst": 0.81,
           "opskins": 0.73
         },
         "2": {
-          "market": 0.59,
+          "market": 0.68,
           "analyst": 0.54,
           "opskins": 0.68
         },
         "3": {
-          "market": 0.79,
+          "market": 0.88,
           "analyst": 0.66,
           "opskins": 0.73
         },
         "4": {
-          "market": 1.08,
+          "market": 1.11,
           "analyst": 0.87,
           "opskins": 0.74
         }
       },
       "stattrak": {
         "1": {
-          "market": 2.78,
+          "market": 2.79,
           "analyst": 2.53,
           "opskins": 2.65
         },
         "2": {
-          "market": 1.21,
+          "market": 1.37,
           "analyst": 1.16,
           "opskins": 0.99
         },
         "3": {
-          "market": 1.82,
+          "market": 2.02,
           "analyst": 1.55,
           "opskins": 1.28
         },
         "4": {
-          "market": 2.99,
+          "market": 3.2,
           "analyst": 2.79,
           "opskins": 3.4
         }
@@ -24385,34 +24385,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.71,
+          "market": 0.83,
           "analyst": 0.63,
           "opskins": 0.65
         },
         "3": {
-          "market": 0.8,
+          "market": 0.88,
           "analyst": 0.7,
           "opskins": 0.65
         },
         "4": {
-          "market": 1.06,
+          "market": 1.15,
           "analyst": 0.89,
           "opskins": 0.84
         }
       },
       "stattrak": {
         "2": {
-          "market": 1.64,
+          "market": 1.71,
           "analyst": 1.45,
           "opskins": 1.32
         },
         "3": {
-          "market": 2.06,
+          "market": 2.2,
           "analyst": 1.75,
           "opskins": 1.58
         },
         "4": {
-          "market": 3.32,
+          "market": 3.66,
           "analyst": 3.02,
           "opskins": 3.43
         }
@@ -24427,54 +24427,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.48,
+          "market": 0.62,
           "analyst": 0.45,
           "opskins": 0.49
         },
         "1": {
-          "market": 0.53,
+          "market": 0.63,
           "analyst": 0.5,
           "opskins": 0.44
         },
         "2": {
-          "market": 0.58,
+          "market": 0.63,
           "analyst": 0.53,
           "opskins": 0.55
         },
         "3": {
-          "market": 0.86,
+          "market": 0.92,
           "analyst": 0.69,
           "opskins": 0.64
         },
         "4": {
-          "market": 3.49,
+          "market": 3.75,
           "analyst": 2.86,
           "opskins": 2.6
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.96,
+          "market": 0.99,
           "analyst": 0.89,
           "opskins": 0.85
         },
         "1": {
-          "market": 1.09,
+          "market": 1.25,
           "analyst": 1.02,
           "opskins": 1.25
         },
         "2": {
-          "market": 1.08,
+          "market": 1.24,
           "analyst": 0.93,
           "opskins": 0.86
         },
         "3": {
-          "market": 2.2,
+          "market": 2.51,
           "analyst": 1.83,
           "opskins": 1.47
         },
         "4": {
-          "market": 20.47,
+          "market": 19.38,
           "analyst": 23.39,
           "opskins": 21.55
         }
@@ -24489,54 +24489,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.62,
+          "market": 3.01,
           "analyst": 2.02,
           "opskins": 2.01
         },
         "1": {
-          "market": 2.79,
+          "market": 3.07,
           "analyst": 2.25,
           "opskins": 1.95
         },
         "2": {
-          "market": 3.19,
+          "market": 3.39,
           "analyst": 2.53,
           "opskins": 2.22
         },
         "3": {
-          "market": 5.05,
+          "market": 5.66,
           "analyst": 4.12,
           "opskins": 3.5
         },
         "4": {
-          "market": 10.61,
+          "market": 11.62,
           "analyst": 9.31,
           "opskins": 8.58
         }
       },
       "stattrak": {
         "0": {
-          "market": 8.92,
+          "market": 9.38,
           "analyst": 7.47,
           "opskins": 6.93
         },
         "1": {
-          "market": 9.11,
+          "market": 10.63,
           "analyst": 8.96,
           "opskins": 7.7
         },
         "2": {
-          "market": 10.81,
+          "market": 12.85,
           "analyst": 9.31,
           "opskins": 8
         },
         "3": {
-          "market": 17.79,
+          "market": 21.88,
           "analyst": 19.58,
           "opskins": 17.92
         },
         "4": {
-          "market": 51.47,
+          "market": 56.21,
           "analyst": 39.85,
           "opskins": 34.95
         }
@@ -24551,7 +24551,7 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 2.49,
+          "market": 2.47,
           "analyst": 2.39,
           "opskins": 2.13
         },
@@ -24563,12 +24563,12 @@ var Prices = {
       },
       "stattrak": {
         "3": {
-          "market": 6.6,
+          "market": 6.34,
           "analyst": 12.06,
           "opskins": 14.99
         },
         "4": {
-          "market": 4.35,
+          "market": 5.1,
           "analyst": 3.94,
           "opskins": 3.33
         }
@@ -24583,24 +24583,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 0.89,
+          "market": 1.01,
           "analyst": 0.81,
           "opskins": 0.64
         },
         "4": {
-          "market": 0.89,
+          "market": 0.99,
           "analyst": 0.73,
           "opskins": 0.6
         }
       },
       "stattrak": {
         "3": {
-          "market": 2.88,
+          "market": 3.36,
           "analyst": 2.86,
           "opskins": 2.45
         },
         "4": {
-          "market": 3.29,
+          "market": 3.88,
           "analyst": 2.97,
           "opskins": 2.79
         }
@@ -24615,34 +24615,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.94,
+          "market": 1.01,
           "analyst": 0.73,
           "opskins": 0.68
         },
         "3": {
-          "market": 1,
+          "market": 1.05,
           "analyst": 0.77,
           "opskins": 0.68
         },
         "4": {
-          "market": 0.97,
+          "market": 1.03,
           "analyst": 0.83,
           "opskins": 0.67
         }
       },
       "stattrak": {
         "2": {
-          "market": 2.63,
+          "market": 3.39,
           "analyst": 3.25,
           "opskins": 2.72
         },
         "3": {
-          "market": 2.87,
+          "market": 3.64,
           "analyst": 3.04,
           "opskins": 2.49
         },
         "4": {
-          "market": 4.45,
+          "market": 5.26,
           "analyst": 4.49,
           "opskins": 3.83
         }
@@ -24657,12 +24657,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 5.1,
+          "market": 5.64,
           "analyst": 4.93,
           "opskins": 4.7
         },
         "4": {
-          "market": 4.41,
+          "market": 4.83,
           "analyst": 4.06,
           "opskins": 3.69
         }
@@ -24674,7 +24674,7 @@ var Prices = {
           "opskins": 21
         },
         "4": {
-          "market": 20.8,
+          "market": 21.7,
           "analyst": 19.21,
           "opskins": 18.89
         }
@@ -24689,34 +24689,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 5.62,
+          "market": 6.26,
           "analyst": 5.11,
           "opskins": 5.65
         },
         "3": {
-          "market": 5.99,
+          "market": 6.21,
           "analyst": 5.21,
           "opskins": 5.09
         },
         "4": {
-          "market": 6.96,
+          "market": 7.94,
           "analyst": 6.34,
           "opskins": 6.03
         }
       },
       "stattrak": {
         "2": {
-          "market": 16.56,
+          "market": 19.77,
           "analyst": 16.85,
           "opskins": 15.98
         },
         "3": {
-          "market": 19.7,
+          "market": 20.96,
           "analyst": 19.72,
           "opskins": 18.05
         },
         "4": {
-          "market": 25,
+          "market": 27.11,
           "analyst": 25.32,
           "opskins": 24.32
         }
@@ -24731,22 +24731,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 140.68,
+          "market": 155.32,
           "analyst": 116.08,
           "opskins": 97.99
         },
         "1": {
-          "market": 152.84,
+          "market": 179.6,
           "analyst": 142.45,
           "opskins": 119.71
         },
         "2": {
-          "market": 156.24,
+          "market": 186.13,
           "analyst": 134.74,
           "opskins": 108.78
         },
         "3": {
-          "market": 233.84,
+          "market": 252.24,
           "analyst": 188.74,
           "opskins": 163.95
         },
@@ -24768,7 +24768,7 @@ var Prices = {
           "opskins": 158.98
         },
         "2": {
-          "market": 212.67,
+          "market": 232.89,
           "analyst": 188.16,
           "opskins": 159.89
         },
@@ -24793,22 +24793,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 65.35,
+          "market": 74.48,
           "analyst": 49.23,
           "opskins": 42.5
         },
         "1": {
-          "market": 68.16,
+          "market": 79.43,
           "analyst": 51.54,
           "opskins": 46.05
         },
         "2": {
-          "market": 70.23,
+          "market": 79.39,
           "analyst": 52.04,
           "opskins": 45.97
         },
         "3": {
-          "market": 84.02,
+          "market": 96.86,
           "analyst": 64.16,
           "opskins": 55.38
         },
@@ -24820,22 +24820,22 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 74.94,
+          "market": 77.91,
           "analyst": 65.33,
           "opskins": 58
         },
         "1": {
-          "market": 71.35,
+          "market": 76.35,
           "analyst": 83.99,
           "opskins": 71.89
         },
         "2": {
-          "market": 84.77,
+          "market": 96.84,
           "analyst": 70.54,
           "opskins": 61.9
         },
         "3": {
-          "market": 101.53,
+          "market": 130.69,
           "analyst": 106.5,
           "opskins": 84.19
         },
@@ -24855,22 +24855,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 75.76,
+          "market": 81.51,
           "analyst": 55.19,
           "opskins": 49.22
         },
         "1": {
-          "market": 73.92,
+          "market": 80.21,
           "analyst": 55.59,
           "opskins": 49.83
         },
         "2": {
-          "market": 78.44,
+          "market": 85.83,
           "analyst": 58.22,
           "opskins": 51.11
         },
         "3": {
-          "market": 90.02,
+          "market": 96.88,
           "analyst": 67.86,
           "opskins": 60.98
         },
@@ -24887,12 +24887,12 @@ var Prices = {
           "opskins": 109
         },
         "1": {
-          "market": 90.36,
+          "market": 90.37,
           "analyst": 100.89,
           "opskins": 83.99
         },
         "2": {
-          "market": 96.06,
+          "market": 105.81,
           "analyst": 90.14,
           "opskins": 78
         },
@@ -24917,12 +24917,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.18,
+          "market": 0.2,
           "analyst": 0.16,
           "opskins": 0.17
         },
         "1": {
-          "market": 0.28,
+          "market": 0.33,
           "analyst": 0.2,
           "opskins": 0.21
         },
@@ -24932,34 +24932,34 @@ var Prices = {
           "opskins": 0.19
         },
         "3": {
-          "market": 0.54,
+          "market": 0.8,
           "analyst": 0.46,
           "opskins": 0.37
         },
         "4": {
-          "market": 7.29,
+          "market": 8.3,
           "analyst": 6,
           "opskins": 5.74
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.53,
+          "market": 0.68,
           "analyst": 0.43,
           "opskins": 0.53
         },
         "1": {
-          "market": 0.73,
+          "market": 0.87,
           "analyst": 0.61,
           "opskins": 0.48
         },
         "2": {
-          "market": 0.61,
+          "market": 0.81,
           "analyst": 0.5,
           "opskins": 0.42
         },
         "3": {
-          "market": 3.08,
+          "market": 3.88,
           "analyst": 2.42,
           "opskins": 2.06
         },
@@ -24979,54 +24979,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.17,
+          "market": 0.29,
           "analyst": 0.15,
           "opskins": 1
         },
         "1": {
-          "market": 0.28,
+          "market": 0.33,
           "analyst": 0.2,
           "opskins": 0.5
         },
         "2": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.1,
           "opskins": 0.19
         },
         "3": {
-          "market": 0.17,
+          "market": 0.19,
           "analyst": 0.15,
           "opskins": 0.15
         },
         "4": {
-          "market": 0.38,
+          "market": 0.43,
           "analyst": 0.37,
           "opskins": 0.33
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.45,
+          "market": 0.56,
           "analyst": 0.48,
           "opskins": 0.47
         },
         "1": {
-          "market": 0.62,
+          "market": 0.89,
           "analyst": 0.52,
           "opskins": 0.65
         },
         "2": {
-          "market": 0.47,
+          "market": 0.58,
           "analyst": 0.42,
           "opskins": 0.39
         },
         "3": {
-          "market": 0.87,
+          "market": 1.06,
           "analyst": 0.7,
           "opskins": 0.65
         },
         "4": {
-          "market": 2.45,
+          "market": 2.81,
           "analyst": 2.51,
           "opskins": 2.36
         }
@@ -25041,54 +25041,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.2,
+          "market": 0.19,
           "analyst": 0.23,
           "opskins": 0.22
         },
         "1": {
-          "market": 0.39,
+          "market": 0.57,
           "analyst": 0.42,
           "opskins": 0.45
         },
         "2": {
-          "market": 0.15,
+          "market": 0.16,
           "analyst": 0.11,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.38,
+          "market": 0.41,
           "analyst": 0.36,
           "opskins": 0.31
         },
         "4": {
-          "market": 0.7,
+          "market": 0.85,
           "analyst": 0.7,
           "opskins": 0.59
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.44,
+          "market": 0.49,
           "analyst": 0.39,
           "opskins": 0.44
         },
         "1": {
-          "market": 1.02,
+          "market": 1.09,
           "analyst": 0.91,
           "opskins": 1.07
         },
         "2": {
-          "market": 0.51,
+          "market": 0.65,
           "analyst": 0.44,
           "opskins": 0.37
         },
         "3": {
-          "market": 1.45,
+          "market": 1.66,
           "analyst": 1.41,
           "opskins": 1.15
         },
         "4": {
-          "market": 3.19,
+          "market": 3.39,
           "analyst": 3.03,
           "opskins": 2.57
         }
@@ -25103,54 +25103,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.47,
+          "market": 1.67,
           "analyst": 0.99,
           "opskins": 1.03
         },
         "1": {
-          "market": 2.31,
+          "market": 2.82,
           "analyst": 1.56,
           "opskins": 1.7
         },
         "2": {
-          "market": 1.53,
+          "market": 1.73,
           "analyst": 1.05,
           "opskins": 1.08
         },
         "3": {
-          "market": 2.49,
+          "market": 2.65,
           "analyst": 1.83,
           "opskins": 1.74
         },
         "4": {
-          "market": 5.84,
+          "market": 6.07,
           "analyst": 4.53,
           "opskins": 4.59
         }
       },
       "stattrak": {
         "0": {
-          "market": 5.65,
+          "market": 6.26,
           "analyst": 4.54,
           "opskins": 4.55
         },
         "1": {
-          "market": 8.8,
+          "market": 9.8,
           "analyst": 6.79,
           "opskins": 7.49
         },
         "2": {
-          "market": 6.02,
+          "market": 6.99,
           "analyst": 4.88,
           "opskins": 4.57
         },
         "3": {
-          "market": 10.05,
+          "market": 11.09,
           "analyst": 8.53,
           "opskins": 7.54
         },
         "4": {
-          "market": 26.01,
+          "market": 31.82,
           "analyst": 26.96,
           "opskins": 24.8
         }
@@ -25165,49 +25165,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.53,
+          "market": 0.65,
           "analyst": 0.44,
           "opskins": 0.43
         },
         "1": {
-          "market": 0.81,
+          "market": 1.12,
           "analyst": 0.66,
           "opskins": 0.94
         },
         "2": {
-          "market": 0.47,
+          "market": 0.51,
           "analyst": 0.36,
           "opskins": 0.33
         },
         "3": {
-          "market": 0.84,
+          "market": 1.02,
           "analyst": 0.67,
           "opskins": 0.55
         },
         "4": {
-          "market": 5.13,
+          "market": 6.1,
           "analyst": 4.16,
           "opskins": 3.76
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.34,
+          "market": 2.76,
           "analyst": 1.99,
           "opskins": 1.6
         },
         "1": {
-          "market": 3.56,
+          "market": 4.16,
           "analyst": 3.16,
           "opskins": 2.79
         },
         "2": {
-          "market": 2.42,
+          "market": 2.92,
           "analyst": 2.07,
           "opskins": 1.65
         },
         "3": {
-          "market": 4.81,
+          "market": 5.42,
           "analyst": 3.84,
           "opskins": 3.31
         },
@@ -25227,34 +25227,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.43,
+          "market": 0.62,
           "analyst": 0.43,
           "opskins": 2.99
         },
         "3": {
-          "market": 0.43,
+          "market": 0.51,
           "analyst": 0.37,
           "opskins": 0.34
         },
         "4": {
-          "market": 0.57,
+          "market": 0.66,
           "analyst": 0.43,
           "opskins": 0.47
         }
       },
       "stattrak": {
         "2": {
-          "market": 1.86,
+          "market": 2.49,
           "analyst": 1.91,
           "opskins": 3.28
         },
         "3": {
-          "market": 2,
+          "market": 2.59,
           "analyst": 1.75,
           "opskins": 1.45
         },
         "4": {
-          "market": 2.95,
+          "market": 3.44,
           "analyst": 2.26,
           "opskins": 1.98
         }
@@ -25269,34 +25269,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.56,
+          "market": 0.64,
           "analyst": 0.64,
           "opskins": 0.52
         },
         "3": {
-          "market": 0.57,
+          "market": 0.63,
           "analyst": 0.42,
           "opskins": 0.37
         },
         "4": {
-          "market": 0.63,
+          "market": 0.7,
           "analyst": 0.46,
           "opskins": 0.39
         }
       },
       "stattrak": {
         "2": {
-          "market": 2.52,
+          "market": 2.79,
           "analyst": 2.32,
           "opskins": 1.91
         },
         "3": {
-          "market": 2.75,
+          "market": 2.82,
           "analyst": 2.14,
           "opskins": 2.03
         },
         "4": {
-          "market": 3.76,
+          "market": 4.19,
           "analyst": 2.92,
           "opskins": 2.63
         }
@@ -25311,54 +25311,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.06,
+          "market": 1.28,
           "analyst": 0.85,
           "opskins": 0.82
         },
         "1": {
-          "market": 1.64,
+          "market": 3.72,
           "analyst": 1.34,
           "opskins": 1.63
         },
         "2": {
-          "market": 0.73,
+          "market": 0.88,
           "analyst": 0.52,
           "opskins": 0.47
         },
         "3": {
-          "market": 1.32,
+          "market": 1.54,
           "analyst": 0.96,
           "opskins": 0.79
         },
         "4": {
-          "market": 4.37,
+          "market": 5.16,
           "analyst": 3.28,
           "opskins": 3.12
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.97,
+          "market": 5.72,
           "analyst": 4.08,
           "opskins": 3.9
         },
         "1": {
-          "market": 7.4,
+          "market": 8.88,
           "analyst": 8.46,
           "opskins": 6.99
         },
         "2": {
-          "market": 5.28,
+          "market": 5.87,
           "analyst": 3.69,
           "opskins": 3.44
         },
         "3": {
-          "market": 8.43,
+          "market": 9.52,
           "analyst": 6.89,
           "opskins": 6.45
         },
         "4": {
-          "market": 25.11,
+          "market": 28.02,
           "analyst": 25.88,
           "opskins": 23
         }
@@ -25373,34 +25373,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.92,
+          "market": 1,
           "analyst": 0.71,
           "opskins": 0.69
         },
         "3": {
-          "market": 1.28,
+          "market": 1.4,
           "analyst": 1.03,
           "opskins": 0.91
         },
         "4": {
-          "market": 1.4,
+          "market": 1.49,
           "analyst": 1.09,
           "opskins": 0.88
         }
       },
       "stattrak": {
         "2": {
-          "market": 3.58,
+          "market": 4.52,
           "analyst": 3.12,
           "opskins": 2.98
         },
         "3": {
-          "market": 7.44,
+          "market": 8.1,
           "analyst": 5.93,
           "opskins": 5.24
         },
         "4": {
-          "market": 10.33,
+          "market": 11.05,
           "analyst": 7.59,
           "opskins": 6.77
         }
@@ -25415,22 +25415,22 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 1.98,
+          "market": 3.16,
           "analyst": 6.84,
           "opskins": 1.98
         },
         "2": {
-          "market": 1.57,
+          "market": 1.9,
           "analyst": 1.43,
           "opskins": 1.45
         },
         "3": {
-          "market": 1.9,
+          "market": 2.34,
           "analyst": 1.65,
           "opskins": 1.56
         },
         "4": {
-          "market": 2.8,
+          "market": 3.76,
           "analyst": 2.5,
           "opskins": 2.83
         }
@@ -25442,17 +25442,17 @@ var Prices = {
           "opskins": 42
         },
         "2": {
-          "market": 5.5,
+          "market": 6.21,
           "analyst": 4.72,
           "opskins": 4.65
         },
         "3": {
-          "market": 9.14,
+          "market": 11.7,
           "analyst": 9.19,
           "opskins": 9.04
         },
         "4": {
-          "market": 14.72,
+          "market": 18.88,
           "analyst": 13.37,
           "opskins": 11.72
         }
@@ -25467,34 +25467,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 2.89,
+          "market": 3.57,
           "analyst": 2.43,
           "opskins": 2.71
         },
         "3": {
-          "market": 3.26,
+          "market": 3.83,
           "analyst": 2.55,
           "opskins": 2.15
         },
         "4": {
-          "market": 3.71,
+          "market": 4.35,
           "analyst": 2.96,
           "opskins": 2.51
         }
       },
       "stattrak": {
         "2": {
-          "market": 8.36,
+          "market": 9.46,
           "analyst": 7.59,
           "opskins": 6.59
         },
         "3": {
-          "market": 13.41,
+          "market": 14.8,
           "analyst": 11.96,
           "opskins": 11.62
         },
         "4": {
-          "market": 20.03,
+          "market": 20.48,
           "analyst": 16.51,
           "opskins": 14.69
         }
@@ -25509,27 +25509,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 50.43,
+          "market": 55.35,
           "analyst": 36.84,
           "opskins": 32.5
         },
         "1": {
-          "market": 50.07,
+          "market": 57.48,
           "analyst": 38.9,
           "opskins": 34
         },
         "2": {
-          "market": 51.74,
+          "market": 56.8,
           "analyst": 37.39,
           "opskins": 32.3
         },
         "3": {
-          "market": 64.3,
+          "market": 72.58,
           "analyst": 47.87,
           "opskins": 43
         },
         "4": {
-          "market": 88.4,
+          "market": 99.85,
           "analyst": 81.52,
           "opskins": 88.84
         }
@@ -25546,7 +25546,7 @@ var Prices = {
           "opskins": 86.11
         },
         "2": {
-          "market": 55.71,
+          "market": 74.71,
           "analyst": 53.85,
           "opskins": 51.99
         },
@@ -25571,54 +25571,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.83,
+          "market": 1.04,
           "analyst": 0.6,
           "opskins": 0.85
         },
         "1": {
-          "market": 0.85,
+          "market": 1.07,
           "analyst": 0.68,
           "opskins": 0.85
         },
         "2": {
-          "market": 0.86,
+          "market": 1.01,
           "analyst": 0.62,
           "opskins": 0.8
         },
         "3": {
-          "market": 1.15,
+          "market": 1.5,
           "analyst": 0.87,
           "opskins": 1.07
         },
         "4": {
-          "market": 4.01,
+          "market": 5.66,
           "analyst": 3.83,
           "opskins": 4.1
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.42,
+          "market": 5.41,
           "analyst": 3.32,
           "opskins": 3.69
         },
         "1": {
-          "market": 3.87,
+          "market": 4.68,
           "analyst": 3.01,
           "opskins": 2.81
         },
         "2": {
-          "market": 3.68,
+          "market": 4.39,
           "analyst": 2.78,
           "opskins": 2.97
         },
         "3": {
-          "market": 4.78,
+          "market": 5.58,
           "analyst": 3.72,
           "opskins": 3.5
         },
         "4": {
-          "market": 21.74,
+          "market": 26.48,
           "analyst": 19.92,
           "opskins": 23.49
         }
@@ -25633,34 +25633,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.55,
+          "market": 0.71,
           "analyst": 0.66,
           "opskins": 1.57
         },
         "3": {
-          "market": 0.56,
+          "market": 0.7,
           "analyst": 0.53,
           "opskins": 0.43
         },
         "4": {
-          "market": 1.17,
+          "market": 1.39,
           "analyst": 0.88,
           "opskins": 0.91
         }
       },
       "stattrak": {
         "2": {
-          "market": 1.04,
+          "market": 1.33,
           "analyst": 0.92,
           "opskins": 1.5
         },
         "3": {
-          "market": 1.22,
+          "market": 1.52,
           "analyst": 1.07,
           "opskins": 0.87
         },
         "4": {
-          "market": 5.4,
+          "market": 5.09,
           "analyst": 4.32,
           "opskins": 3.67
         }
@@ -25675,24 +25675,24 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.59,
+          "market": 0.68,
           "analyst": 0.5,
           "opskins": 0.54
         },
         "3": {
-          "market": 0.56,
+          "market": 0.7,
           "analyst": 0.51,
           "opskins": 0.67
         }
       },
       "stattrak": {
         "2": {
-          "market": 1.08,
+          "market": 1.34,
           "analyst": 0.99,
           "opskins": 0.84
         },
         "3": {
-          "market": 1.21,
+          "market": 1.47,
           "analyst": 1.03,
           "opskins": 0.84
         }
@@ -25707,54 +25707,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.01,
+          "market": 2.31,
           "analyst": 2.14,
           "opskins": 2.26
         },
         "1": {
-          "market": 2.26,
+          "market": 2.3,
           "analyst": 2.08,
           "opskins": 6
         },
         "2": {
-          "market": 2.3,
+          "market": 2.7,
           "analyst": 1.93,
           "opskins": 1.85
         },
         "3": {
-          "market": 3.07,
+          "market": 3.82,
           "analyst": 2.27,
           "opskins": 2.68
         },
         "4": {
-          "market": 14.05,
+          "market": 14.13,
           "analyst": 12.52,
           "opskins": 12.73
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.32,
+          "market": 5.88,
           "analyst": 4.28,
           "opskins": 3.45
         },
         "1": {
-          "market": 4.25,
+          "market": 5.11,
           "analyst": 4.58,
           "opskins": 5
         },
         "2": {
-          "market": 4.78,
+          "market": 6.1,
           "analyst": 4,
           "opskins": 3.8
         },
         "3": {
-          "market": 8.38,
+          "market": 9.88,
           "analyst": 8.28,
           "opskins": 7.98
         },
         "4": {
-          "market": 15.65,
+          "market": 60.65,
           "analyst": 147.76,
           "opskins": 124.99
         }
@@ -25769,22 +25769,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.17,
+          "market": 2.49,
           "analyst": 2.06,
           "opskins": 2.99
         },
         "1": {
-          "market": 2.9,
+          "market": 2.81,
           "analyst": 3.49,
           "opskins": 2.95
         },
         "2": {
-          "market": 2.43,
+          "market": 2.62,
           "analyst": 1.83,
           "opskins": 1.81
         },
         "3": {
-          "market": 3.08,
+          "market": 3.49,
           "analyst": 2.7,
           "opskins": 2.44
         },
@@ -25796,22 +25796,22 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 4.27,
+          "market": 5.29,
           "analyst": 4.38,
           "opskins": 3.7
         },
         "1": {
-          "market": 4.18,
+          "market": 4.28,
           "analyst": 4.26,
           "opskins": 4.19
         },
         "2": {
-          "market": 4.91,
+          "market": 5.9,
           "analyst": 4.29,
           "opskins": 3.98
         },
         "3": {
-          "market": 7.43,
+          "market": 8.41,
           "analyst": 6.26,
           "opskins": 5.69
         },
@@ -25831,34 +25831,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 3.36,
+          "market": 3.9,
           "analyst": 3.31,
           "opskins": 2.8
         },
         "3": {
-          "market": 3.67,
+          "market": 4.18,
           "analyst": 2.71,
           "opskins": 2.41
         },
         "4": {
-          "market": 10.52,
+          "market": 11.97,
           "analyst": 9.76,
           "opskins": 8.5
         }
       },
       "stattrak": {
         "2": {
-          "market": 10.57,
+          "market": 10.82,
           "analyst": 10.73,
           "opskins": 10.99
         },
         "3": {
-          "market": 11.25,
+          "market": 12.73,
           "analyst": 8.53,
           "opskins": 7.73
         },
         "4": {
-          "market": 30.43,
+          "market": 42.13,
           "analyst": 31.33,
           "opskins": 27.75
         }
@@ -25873,29 +25873,29 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 18.14,
+          "market": 21.06,
           "analyst": 13.32,
           "opskins": 12
         },
         "3": {
-          "market": 22.83,
+          "market": 25.38,
           "analyst": 16.89,
           "opskins": 14.9
         },
         "4": {
-          "market": 83.86,
+          "market": 101.65,
           "analyst": 63.56,
           "opskins": 57.93
         }
       },
       "stattrak": {
         "2": {
-          "market": 51.2,
+          "market": 58.54,
           "analyst": 39.19,
           "opskins": 35.55
         },
         "3": {
-          "market": 73.71,
+          "market": 86.55,
           "analyst": 56.01,
           "opskins": 49
         },
@@ -25915,44 +25915,44 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 172.88,
+          "market": 190.25,
           "analyst": 160.7,
           "opskins": 140.63
         },
         "1": {
-          "market": 186.4,
+          "market": 195.06,
           "analyst": 166.32,
           "opskins": 139.95
         },
         "2": {
-          "market": 193.17,
+          "market": 213.94,
           "analyst": 172.76,
           "opskins": 140.92
         },
         "3": {
-          "market": 212.56,
+          "market": 239.92,
           "analyst": 202.67,
           "opskins": 168.51
         },
         "4": {
-          "market": 350.65,
+          "market": 370,
           "analyst": 360.67,
           "opskins": 311.99
         }
       },
       "stattrak": {
         "0": {
-          "market": 314.68,
+          "market": 305.05,
           "analyst": -1,
           "opskins": 268.99
         },
         "1": {
-          "market": 305.55,
+          "market": 302.55,
           "analyst": 354.56,
           "opskins": 269.99
         },
         "2": {
-          "market": 320.65,
+          "market": 312.65,
           "analyst": 323.48,
           "opskins": 269
         },
@@ -25962,7 +25962,7 @@ var Prices = {
           "opskins": 282
         },
         "4": {
-          "market": 704.25,
+          "market": 700,
           "analyst": 868,
           "opskins": 530
         }
@@ -25977,39 +25977,39 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 64.41,
+          "market": 71.69,
           "analyst": 56.23,
           "opskins": 51.56
         },
         "1": {
-          "market": 66.67,
+          "market": 74.17,
           "analyst": 55.29,
           "opskins": 49.59
         },
         "2": {
-          "market": 69.26,
+          "market": 76.69,
           "analyst": 57.38,
           "opskins": 51
         },
         "3": {
-          "market": 75.54,
+          "market": 88.27,
           "analyst": 68.86,
           "opskins": 58.16
         },
         "4": {
-          "market": 97.56,
+          "market": 115,
           "analyst": 89.16,
           "opskins": 76.97
         }
       },
       "stattrak": {
         "0": {
-          "market": 70.96,
+          "market": 85.85,
           "analyst": 94.89,
           "opskins": 76.99
         },
         "1": {
-          "market": 75.94,
+          "market": 86.4,
           "analyst": 88.56,
           "opskins": 77.03
         },
@@ -26019,7 +26019,7 @@ var Prices = {
           "opskins": 99.7
         },
         "3": {
-          "market": 105.33,
+          "market": 105,
           "analyst": 108.36,
           "opskins": 97.97
         },
@@ -26039,27 +26039,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 77.64,
+          "market": 85.4,
           "analyst": 55.91,
           "opskins": 53.08
         },
         "1": {
-          "market": 78.63,
+          "market": 90,
           "analyst": 61.04,
           "opskins": 51.94
         },
         "2": {
-          "market": 81.95,
+          "market": 93.18,
           "analyst": 61.93,
           "opskins": 53.6
         },
         "3": {
-          "market": 101.98,
+          "market": 112.62,
           "analyst": 77.44,
           "opskins": 72.68
         },
         "4": {
-          "market": 244.8,
+          "market": 245.5,
           "analyst": 287.31,
           "opskins": 279
         }
@@ -26076,7 +26076,7 @@ var Prices = {
           "opskins": 78
         },
         "2": {
-          "market": 96.63,
+          "market": 109.6,
           "analyst": 83.48,
           "opskins": 70
         },
@@ -26101,14 +26101,14 @@ var Prices = {
     "prices": {
       "default": {
         "4": {
-          "market": 0.33,
+          "market": 0.34,
           "analyst": 0.23,
           "opskins": 0.22
         }
       },
       "stattrak": {
         "4": {
-          "market": 1.33,
+          "market": 1.63,
           "analyst": 1.06,
           "opskins": 0.97
         }
@@ -26123,54 +26123,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.26,
+          "market": 0.41,
           "analyst": 0.41,
           "opskins": 2
         },
         "1": {
-          "market": 0.33,
+          "market": 0.37,
           "analyst": 0.26,
           "opskins": 0.51
         },
         "2": {
-          "market": 0.22,
+          "market": 0.26,
           "analyst": 0.21,
           "opskins": 0.36
         },
         "3": {
-          "market": 0.33,
+          "market": 0.35,
           "analyst": 0.32,
           "opskins": 0.36
         },
         "4": {
-          "market": 0.44,
+          "market": 0.48,
           "analyst": 0.35,
           "opskins": 0.28
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.84,
+          "market": 1.01,
           "analyst": 0.57,
           "opskins": 0.6
         },
         "1": {
-          "market": 0.83,
+          "market": 0.98,
           "analyst": 0.68,
           "opskins": 0.67
         },
         "2": {
-          "market": 0.72,
+          "market": 0.85,
           "analyst": 0.6,
           "opskins": 0.51
         },
         "3": {
-          "market": 1.09,
+          "market": 1.2,
           "analyst": 0.85,
           "opskins": 0.68
         },
         "4": {
-          "market": 1.66,
+          "market": 1.84,
           "analyst": 1.34,
           "opskins": 1.21
         }
@@ -26185,54 +26185,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.34,
+          "market": 0.35,
           "analyst": 0.52,
           "opskins": 1.59
         },
         "1": {
-          "market": 0.3,
+          "market": 0.45,
           "analyst": 0.22,
           "opskins": 0.21
         },
         "2": {
-          "market": 0.2,
+          "market": 0.25,
           "analyst": 0.17,
           "opskins": 0.16
         },
         "3": {
-          "market": 0.28,
+          "market": 0.29,
           "analyst": 0.21,
           "opskins": 0.59
         },
         "4": {
-          "market": 0.34,
+          "market": 0.36,
           "analyst": 0.24,
           "opskins": 0.21
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.81,
+          "market": 0.86,
           "analyst": 2.58,
           "opskins": 2.18
         },
         "1": {
-          "market": 0.79,
+          "market": 1,
           "analyst": 0.58,
           "opskins": 0.55
         },
         "2": {
-          "market": 0.7,
+          "market": 0.84,
           "analyst": 0.53,
           "opskins": 0.49
         },
         "3": {
-          "market": 0.9,
+          "market": 1,
           "analyst": 0.72,
           "opskins": 0.7
         },
         "4": {
-          "market": 1.12,
+          "market": 1.3,
           "analyst": 0.9,
           "opskins": 0.8
         }
@@ -26247,22 +26247,22 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.77,
+          "market": 0.94,
           "analyst": 2.29,
           "opskins": 0.52
         },
         "2": {
-          "market": 0.23,
+          "market": 0.26,
           "analyst": 0.21,
           "opskins": 1.2
         },
         "3": {
-          "market": 0.24,
+          "market": 0.29,
           "analyst": 0.19,
           "opskins": 0.17
         },
         "4": {
-          "market": 0.31,
+          "market": 0.33,
           "analyst": 0.24,
           "opskins": 0.21
         }
@@ -26274,17 +26274,17 @@ var Prices = {
           "opskins": 1.51
         },
         "2": {
-          "market": 0.7,
+          "market": 0.86,
           "analyst": 0.57,
           "opskins": 0.53
         },
         "3": {
-          "market": 0.91,
+          "market": 1.02,
           "analyst": 0.71,
           "opskins": 0.56
         },
         "4": {
-          "market": 1.12,
+          "market": 1.28,
           "analyst": 0.92,
           "opskins": 0.73
         }
@@ -26299,34 +26299,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.25,
+          "market": 0.28,
           "analyst": 0.21,
           "opskins": 0.6
         },
         "3": {
-          "market": 0.26,
+          "market": 0.29,
           "analyst": 0.2,
           "opskins": 0.49
         },
         "4": {
-          "market": 0.29,
+          "market": 0.32,
           "analyst": 0.22,
           "opskins": 0.28
         }
       },
       "stattrak": {
         "2": {
-          "market": 0.68,
+          "market": 0.89,
           "analyst": 0.52,
           "opskins": 0.63
         },
         "3": {
-          "market": 0.89,
+          "market": 0.98,
           "analyst": 0.65,
           "opskins": 0.56
         },
         "4": {
-          "market": 1.12,
+          "market": 1.25,
           "analyst": 0.91,
           "opskins": 0.73
         }
@@ -26341,7 +26341,7 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.28,
+          "market": 0.29,
           "analyst": 0.25,
           "opskins": 0.98
         },
@@ -26351,24 +26351,24 @@ var Prices = {
           "opskins": 0.28
         },
         "4": {
-          "market": 0.41,
+          "market": 0.45,
           "analyst": 0.27,
           "opskins": 0.38
         }
       },
       "stattrak": {
         "2": {
-          "market": 0.97,
+          "market": 1.16,
           "analyst": 0.84,
           "opskins": 0.76
         },
         "3": {
-          "market": 1.01,
+          "market": 1.19,
           "analyst": 0.82,
           "opskins": 0.66
         },
         "4": {
-          "market": 1.23,
+          "market": 1.38,
           "analyst": 0.96,
           "opskins": 0.82
         }
@@ -26383,44 +26383,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 4.37,
+          "market": 6,
           "analyst": 3.32,
           "opskins": 3.08
         },
         "2": {
-          "market": 2.55,
+          "market": 3.28,
           "analyst": 1.87,
           "opskins": 1.68
         },
         "3": {
-          "market": 2.68,
+          "market": 3.45,
           "analyst": 1.99,
           "opskins": 1.74
         },
         "4": {
-          "market": 3.61,
+          "market": 4.36,
           "analyst": 2.58,
           "opskins": 2.31
         }
       },
       "stattrak": {
         "1": {
-          "market": 12.6,
+          "market": 16.94,
           "analyst": 10.58,
           "opskins": 10.46
         },
         "2": {
-          "market": 10.86,
+          "market": 12.64,
           "analyst": 8.41,
           "opskins": 7.12
         },
         "3": {
-          "market": 11.69,
+          "market": 13.48,
           "analyst": 9.09,
           "opskins": 7.64
         },
         "4": {
-          "market": 16.35,
+          "market": 17.97,
           "analyst": 12.13,
           "opskins": 10.3
         }
@@ -26435,54 +26435,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.05,
+          "market": 0.92,
           "analyst": 0.78,
           "opskins": 1.56
         },
         "1": {
-          "market": 0.85,
+          "market": 1.05,
           "analyst": 0.72,
           "opskins": 0.63
         },
         "2": {
-          "market": 0.79,
+          "market": 0.89,
           "analyst": 0.61,
           "opskins": 0.53
         },
         "3": {
-          "market": 0.88,
+          "market": 1.01,
           "analyst": 0.65,
           "opskins": 0.6
         },
         "4": {
-          "market": 1,
+          "market": 1.14,
           "analyst": 0.72,
           "opskins": 0.66
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.02,
+          "market": 2.34,
           "analyst": 2.12,
           "opskins": 2.03
         },
         "1": {
-          "market": 1.99,
+          "market": 2.89,
           "analyst": 1.84,
           "opskins": 2.09
         },
         "2": {
-          "market": 2.48,
+          "market": 2.7,
           "analyst": 1.71,
           "opskins": 1.45
         },
         "3": {
-          "market": 2.73,
+          "market": 3.18,
           "analyst": 1.94,
           "opskins": 1.79
         },
         "4": {
-          "market": 3.61,
+          "market": 4.03,
           "analyst": 2.68,
           "opskins": 2.49
         }
@@ -26497,44 +26497,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 11.6,
+          "market": 13.68,
           "analyst": 9.24,
           "opskins": 8.37
         },
         "2": {
-          "market": 10.79,
+          "market": 12.12,
           "analyst": 7.53,
           "opskins": 6.61
         },
         "3": {
-          "market": 13.02,
+          "market": 15.14,
           "analyst": 9.46,
           "opskins": 8.18
         },
         "4": {
-          "market": 15.28,
+          "market": 17.33,
           "analyst": 10.95,
           "opskins": 9.67
         }
       },
       "stattrak": {
         "1": {
-          "market": 31.26,
+          "market": 31.96,
           "analyst": 28.82,
           "opskins": 27.86
         },
         "2": {
-          "market": 30.05,
+          "market": 34.52,
           "analyst": 21.91,
           "opskins": 19.76
         },
         "3": {
-          "market": 41.64,
+          "market": 45.56,
           "analyst": 29.8,
           "opskins": 25.89
         },
         "4": {
-          "market": 52.82,
+          "market": 59.92,
           "analyst": 43.41,
           "opskins": 36.98
         }
@@ -26549,34 +26549,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 6.89,
+          "market": 7.2,
           "analyst": 4.89,
           "opskins": 5.38
         },
         "3": {
-          "market": 6.37,
+          "market": 7.28,
           "analyst": 4.58,
           "opskins": 4.1
         },
         "4": {
-          "market": 7.17,
+          "market": 8.18,
           "analyst": 5.17,
           "opskins": 4.56
         }
       },
       "stattrak": {
         "2": {
-          "market": 17.86,
+          "market": 20.42,
           "analyst": 15.4,
           "opskins": 15.1
         },
         "3": {
-          "market": 22.46,
+          "market": 25.35,
           "analyst": 18.38,
           "opskins": 17
         },
         "4": {
-          "market": 31.57,
+          "market": 33.98,
           "analyst": 25.88,
           "opskins": 23
         }
@@ -26591,22 +26591,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 47.41,
+          "market": 52.23,
           "analyst": 33.51,
           "opskins": 31.99
         },
         "1": {
-          "market": 50.43,
+          "market": 56.39,
           "analyst": 37.47,
           "opskins": 33.25
         },
         "2": {
-          "market": 50.4,
+          "market": 55.42,
           "analyst": 35.86,
           "opskins": 31.89
         },
         "3": {
-          "market": 57.77,
+          "market": 65.22,
           "analyst": 43.62,
           "opskins": 38.18
         },
@@ -26628,12 +26628,12 @@ var Prices = {
           "opskins": 53.97
         },
         "2": {
-          "market": 57.58,
+          "market": 68.47,
           "analyst": 51.57,
           "opskins": 45.97
         },
         "3": {
-          "market": 75.77,
+          "market": 75.96,
           "analyst": 66.59,
           "opskins": 65.99
         },
@@ -26653,7 +26653,7 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.23,
+          "market": 0.22,
           "analyst": 0.16,
           "opskins": 0.14
         },
@@ -26665,12 +26665,12 @@ var Prices = {
       },
       "stattrak": {
         "2": {
-          "market": 0.65,
+          "market": 0.74,
           "analyst": 0.48,
           "opskins": 0.41
         },
         "3": {
-          "market": 1.3,
+          "market": 1.34,
           "analyst": 1,
           "opskins": 0.77
         }
@@ -26685,7 +26685,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.12,
+          "market": 0.13,
           "analyst": 0.1,
           "opskins": 3.5
         },
@@ -26695,44 +26695,44 @@ var Prices = {
           "opskins": 0.18
         },
         "2": {
-          "market": 0.14,
+          "market": 0.13,
           "analyst": 0.11,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.43,
+          "market": 0.45,
           "analyst": 0.32,
           "opskins": 0.24
         },
         "4": {
-          "market": 2.61,
+          "market": 2.6,
           "analyst": 1.96,
           "opskins": 1.74
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.34,
+          "market": 0.35,
           "analyst": 0.23,
           "opskins": 0.27
         },
         "1": {
-          "market": 0.35,
+          "market": 0.4,
           "analyst": 0.31,
           "opskins": 0.27
         },
         "2": {
-          "market": 0.35,
+          "market": 0.37,
           "analyst": 0.25,
           "opskins": 0.26
         },
         "3": {
-          "market": 1.01,
+          "market": 1.16,
           "analyst": 0.88,
           "opskins": 0.72
         },
         "4": {
-          "market": 8.25,
+          "market": 10.93,
           "analyst": 9.08,
           "opskins": 8.5
         }
@@ -26747,34 +26747,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.6,
+          "market": 0.68,
           "analyst": 0.36,
           "opskins": 0.59
         },
         "3": {
-          "market": 0.71,
+          "market": 0.8,
           "analyst": 0.4,
           "opskins": 0.58
         },
         "4": {
-          "market": 1,
+          "market": 1.09,
           "analyst": 0.71,
           "opskins": 0.62
         }
       },
       "stattrak": {
         "2": {
-          "market": 1.99,
+          "market": 2.27,
           "analyst": 1.55,
           "opskins": 1.33
         },
         "3": {
-          "market": 2.27,
+          "market": 2.55,
           "analyst": 1.73,
           "opskins": 1.55
         },
         "4": {
-          "market": 4.76,
+          "market": 5.47,
           "analyst": 3.78,
           "opskins": 3.29
         }
@@ -26789,44 +26789,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.26,
+          "market": 0.32,
           "analyst": 0.18,
           "opskins": 0.12
         },
         "2": {
-          "market": 0.15,
+          "market": 0.16,
           "analyst": 0.14,
           "opskins": 0.11
         },
         "3": {
-          "market": 0.26,
+          "market": 0.29,
           "analyst": 0.21,
           "opskins": 0.16
         },
         "4": {
-          "market": 0.59,
+          "market": 0.87,
           "analyst": 0.56,
           "opskins": 0.41
         }
       },
       "stattrak": {
         "1": {
-          "market": 0.6,
+          "market": 0.71,
           "analyst": 0.47,
           "opskins": 0.53
         },
         "2": {
-          "market": 0.42,
+          "market": 0.46,
           "analyst": 0.34,
           "opskins": 0.27
         },
         "3": {
-          "market": 0.8,
+          "market": 1,
           "analyst": 0.69,
           "opskins": 0.56
         },
         "4": {
-          "market": 4.02,
+          "market": 4.76,
           "analyst": 3.12,
           "opskins": 2.97
         }
@@ -26841,17 +26841,17 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.17,
+          "market": 0.16,
           "analyst": 0.14,
           "opskins": 0.26
         },
         "1": {
-          "market": 0.18,
+          "market": 0.17,
           "analyst": 0.14,
           "opskins": 0.13
         },
         "2": {
-          "market": 0.19,
+          "market": 0.22,
           "analyst": 0.17,
           "opskins": 0.29
         },
@@ -26861,34 +26861,34 @@ var Prices = {
           "opskins": 0.19
         },
         "4": {
-          "market": 1.37,
+          "market": 1.44,
           "analyst": 0.99,
           "opskins": 0.85
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.34,
+          "market": 0.38,
           "analyst": 0.28,
           "opskins": 0.24
         },
         "1": {
-          "market": 0.34,
+          "market": 0.37,
           "analyst": 0.28,
           "opskins": 0.23
         },
         "2": {
-          "market": 0.4,
+          "market": 0.39,
           "analyst": 0.33,
           "opskins": 0.29
         },
         "3": {
-          "market": 0.88,
+          "market": 1,
           "analyst": 0.62,
           "opskins": 0.54
         },
         "4": {
-          "market": 5.8,
+          "market": 6.85,
           "analyst": 4.22,
           "opskins": 4
         }
@@ -26903,12 +26903,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.19,
+          "market": 0.17,
           "analyst": 0.23,
           "opskins": 0.19
         },
         "1": {
-          "market": 0.22,
+          "market": 0.24,
           "analyst": 0.18,
           "opskins": 0.39
         },
@@ -26918,29 +26918,29 @@ var Prices = {
           "opskins": 0.17
         },
         "3": {
-          "market": 0.27,
+          "market": 0.28,
           "analyst": 0.21,
           "opskins": 0.16
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.47,
+          "market": 0.59,
           "analyst": 0.48,
           "opskins": 0.5
         },
         "1": {
-          "market": 0.46,
+          "market": 0.52,
           "analyst": 0.36,
           "opskins": 0.31
         },
         "2": {
-          "market": 0.35,
+          "market": 0.39,
           "analyst": 0.26,
           "opskins": 0.27
         },
         "3": {
-          "market": 0.89,
+          "market": 1.03,
           "analyst": 0.73,
           "opskins": 0.71
         }
@@ -26955,12 +26955,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.54,
+          "market": 0.41,
           "analyst": 0.38,
           "opskins": 0.62
         },
         "1": {
-          "market": 0.46,
+          "market": 0.47,
           "analyst": 0.36,
           "opskins": 0.35
         },
@@ -26970,34 +26970,34 @@ var Prices = {
           "opskins": 0.24
         },
         "3": {
-          "market": 0.89,
+          "market": 0.84,
           "analyst": 0.67,
           "opskins": 0.75
         },
         "4": {
-          "market": 5.7,
+          "market": 5,
           "analyst": 4.23,
           "opskins": 3.88
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.88,
+          "market": 1.14,
           "analyst": 1.09,
           "opskins": 0.69
         },
         "1": {
-          "market": 1.19,
+          "market": 1.18,
           "analyst": 1.06,
           "opskins": 0.99
         },
         "2": {
-          "market": 1.04,
+          "market": 1.07,
           "analyst": 0.79,
           "opskins": 0.68
         },
         "3": {
-          "market": 1.93,
+          "market": 2.39,
           "analyst": 1.81,
           "opskins": 1.46
         },
@@ -27017,49 +27017,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.38,
+          "market": 0.41,
           "analyst": 0.35,
           "opskins": 0.78
         },
         "1": {
-          "market": 0.46,
+          "market": 0.45,
           "analyst": 0.36,
           "opskins": 0.34
         },
         "2": {
-          "market": 0.36,
+          "market": 0.38,
           "analyst": 0.28,
           "opskins": 0.24
         },
         "3": {
-          "market": 0.5,
+          "market": 0.51,
           "analyst": 0.47,
           "opskins": 0.43
         },
         "4": {
-          "market": 2.56,
+          "market": 2.86,
           "analyst": 2.42,
           "opskins": 2.27
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.96,
+          "market": 0.98,
           "analyst": 0.83,
           "opskins": 0.7
         },
         "1": {
-          "market": 1.18,
+          "market": 1.29,
           "analyst": 1.07,
           "opskins": 1.1
         },
         "2": {
-          "market": 0.91,
+          "market": 0.99,
           "analyst": 0.84,
           "opskins": 0.71
         },
         "3": {
-          "market": 1.81,
+          "market": 2,
           "analyst": 1.58,
           "opskins": 1.35
         },
@@ -27079,24 +27079,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 1.21,
+          "market": 1.28,
           "analyst": 1.25,
           "opskins": 1.33
         },
         "4": {
-          "market": 0.93,
+          "market": 1.05,
           "analyst": 0.84,
           "opskins": 0.65
         }
       },
       "stattrak": {
         "3": {
-          "market": 4.36,
+          "market": 5.42,
           "analyst": 4.42,
           "opskins": 4.12
         },
         "4": {
-          "market": 3.47,
+          "market": 3.59,
           "analyst": 2.97,
           "opskins": 2.5
         }
@@ -27111,34 +27111,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.82,
+          "market": 0.97,
           "analyst": 0.69,
           "opskins": 0.68
         },
         "3": {
-          "market": 0.69,
+          "market": 0.84,
           "analyst": 0.69,
           "opskins": 0.67
         },
         "4": {
-          "market": 0.98,
+          "market": 1.14,
           "analyst": 0.8,
           "opskins": 0.87
         }
       },
       "stattrak": {
         "2": {
-          "market": 2.6,
+          "market": 3.01,
           "analyst": 2.25,
           "opskins": 2.07
         },
         "3": {
-          "market": 2.51,
+          "market": 2.86,
           "analyst": 2.06,
           "opskins": 1.75
         },
         "4": {
-          "market": 3.43,
+          "market": 3.98,
           "analyst": 3.13,
           "opskins": 2.68
         }
@@ -27153,54 +27153,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.1,
+          "market": 1.3,
           "analyst": 0.73,
           "opskins": 0.88
         },
         "1": {
-          "market": 1.82,
+          "market": 2.24,
           "analyst": 1.18,
           "opskins": 1.2
         },
         "2": {
-          "market": 1.24,
+          "market": 1.53,
           "analyst": 0.83,
           "opskins": 0.85
         },
         "3": {
-          "market": 5.69,
+          "market": 6.82,
           "analyst": 3.71,
           "opskins": 3.37
         },
         "4": {
-          "market": 30.55,
+          "market": 35.61,
           "analyst": 22.22,
           "opskins": 21.94
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.01,
+          "market": 5.09,
           "analyst": 3.07,
           "opskins": 2.84
         },
         "1": {
-          "market": 6.17,
+          "market": 7.27,
           "analyst": 4.52,
           "opskins": 5.54
         },
         "2": {
-          "market": 5.52,
+          "market": 6.49,
           "analyst": 3.81,
           "opskins": 3.42
         },
         "3": {
-          "market": 24.02,
+          "market": 26.53,
           "analyst": 18.56,
           "opskins": 16.14
         },
         "4": {
-          "market": 279,
+          "market": 275,
           "analyst": 222.83,
           "opskins": 250
         }
@@ -27215,27 +27215,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.47,
+          "market": 1.89,
           "analyst": 1.11,
           "opskins": 1.34
         },
         "1": {
-          "market": 1.72,
+          "market": 2.1,
           "analyst": 1.85,
           "opskins": 1.85
         },
         "2": {
-          "market": 1.46,
+          "market": 1.68,
           "analyst": 1.18,
           "opskins": 1.15
         },
         "3": {
-          "market": 2.22,
+          "market": 2.35,
           "analyst": 1.81,
           "opskins": 1.64
         },
         "4": {
-          "market": 10.83,
+          "market": 13.82,
           "analyst": 13.19,
           "opskins": 11.75
         }
@@ -27252,17 +27252,17 @@ var Prices = {
           "opskins": 6.39
         },
         "2": {
-          "market": 4.37,
+          "market": 5.05,
           "analyst": 4.33,
           "opskins": 3.76
         },
         "3": {
-          "market": 7.88,
+          "market": 9.86,
           "analyst": 8.51,
           "opskins": 8
         },
         "4": {
-          "market": 50,
+          "market": 40.11,
           "analyst": 48.4,
           "opskins": 47.37
         }
@@ -27277,34 +27277,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 5.67,
+          "market": 6.36,
           "analyst": 4.37,
           "opskins": 3.73
         },
         "3": {
-          "market": 6.11,
+          "market": 6.96,
           "analyst": 4.7,
           "opskins": 3.87
         },
         "4": {
-          "market": 11.33,
+          "market": 12.88,
           "analyst": 8.53,
           "opskins": 7.53
         }
       },
       "stattrak": {
         "2": {
-          "market": 17.88,
+          "market": 20.97,
           "analyst": 13.95,
           "opskins": 12.14
         },
         "3": {
-          "market": 21.65,
+          "market": 24.59,
           "analyst": 16.35,
           "opskins": 14.16
         },
         "4": {
-          "market": 41.38,
+          "market": 48.17,
           "analyst": 33.65,
           "opskins": 30.36
         }
@@ -27319,27 +27319,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 7.17,
+          "market": 7.63,
           "analyst": 6.95,
           "opskins": 6.48
         },
         "1": {
-          "market": 5.85,
+          "market": 6.83,
           "analyst": 4.78,
           "opskins": 4.6
         },
         "2": {
-          "market": 5.44,
+          "market": 6.4,
           "analyst": 4.31,
           "opskins": 3.88
         },
         "3": {
-          "market": 7.69,
+          "market": 8.89,
           "analyst": 6.19,
           "opskins": 5.3
         },
         "4": {
-          "market": 15.71,
+          "market": 17.88,
           "analyst": 11.68,
           "opskins": 10.64
         }
@@ -27351,22 +27351,22 @@ var Prices = {
           "opskins": 45
         },
         "1": {
-          "market": 19.5,
+          "market": 21.39,
           "analyst": 18.26,
           "opskins": 18.95
         },
         "2": {
-          "market": 18.24,
+          "market": 22.36,
           "analyst": 15.47,
           "opskins": 14.15
         },
         "3": {
-          "market": 33.21,
+          "market": 38.15,
           "analyst": 31.2,
           "opskins": 28.95
         },
         "4": {
-          "market": 63.9,
+          "market": 83.16,
           "analyst": 68.21,
           "opskins": 57.82
         }
@@ -27381,54 +27381,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 9.26,
+          "market": 10.5,
           "analyst": 6.8,
           "opskins": 6.29
         },
         "1": {
-          "market": 10.69,
+          "market": 11.85,
           "analyst": 8,
           "opskins": 6.77
         },
         "2": {
-          "market": 11.6,
+          "market": 12.98,
           "analyst": 8.53,
           "opskins": 7.34
         },
         "3": {
-          "market": 15.71,
+          "market": 17.38,
           "analyst": 11.7,
           "opskins": 10.18
         },
         "4": {
-          "market": 36.37,
+          "market": 39.77,
           "analyst": 27.99,
           "opskins": 25.58
         }
       },
       "stattrak": {
         "0": {
-          "market": 29.78,
+          "market": 36.1,
           "analyst": 28.23,
           "opskins": 25.89
         },
         "1": {
-          "market": 36.15,
+          "market": 43.84,
           "analyst": 29.52,
           "opskins": 27.21
         },
         "2": {
-          "market": 47.34,
+          "market": 54.17,
           "analyst": 36.28,
           "opskins": 32.51
         },
         "3": {
-          "market": 74.4,
+          "market": 84.32,
           "analyst": 57.75,
           "opskins": 56.33
         },
         "4": {
-          "market": 214.65,
+          "market": 220.95,
           "analyst": 236.13,
           "opskins": 196.99
         }
@@ -27443,22 +27443,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 102.94,
+          "market": 123.52,
           "analyst": 86.03,
           "opskins": 75.24
         },
         "1": {
-          "market": 104.25,
+          "market": 128.36,
           "analyst": 92.86,
           "opskins": 77.78
         },
         "2": {
-          "market": 105.29,
+          "market": 125.23,
           "analyst": 91.1,
           "opskins": 80
         },
         "3": {
-          "market": 126.1,
+          "market": 162.48,
           "analyst": 120.02,
           "opskins": 99.89
         },
@@ -27480,12 +27480,12 @@ var Prices = {
           "opskins": 144.99
         },
         "2": {
-          "market": 134.69,
+          "market": 156.51,
           "analyst": 119.72,
           "opskins": 101.96
         },
         "3": {
-          "market": 158.2,
+          "market": 160,
           "analyst": 162.7,
           "opskins": 139.99
         },
@@ -27505,7 +27505,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.07,
           "opskins": 0.11
         },
@@ -27520,19 +27520,19 @@ var Prices = {
           "opskins": 0.06
         },
         "3": {
-          "market": 0.15,
+          "market": 0.16,
           "analyst": 0.09,
           "opskins": 0.07
         },
         "4": {
-          "market": 0.51,
+          "market": 0.57,
           "analyst": 0.36,
           "opskins": 0.3
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.29,
+          "market": 0.3,
           "analyst": 0.23,
           "opskins": 0.22
         },
@@ -27542,17 +27542,17 @@ var Prices = {
           "opskins": 0.2
         },
         "2": {
-          "market": 0.33,
+          "market": 0.34,
           "analyst": 0.26,
           "opskins": 0.21
         },
         "3": {
-          "market": 0.6,
+          "market": 0.68,
           "analyst": 0.54,
           "opskins": 0.4
         },
         "4": {
-          "market": 2.11,
+          "market": 2.43,
           "analyst": 1.86,
           "opskins": 1.63
         }
@@ -27567,54 +27567,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.19,
+          "market": 0.21,
           "analyst": 0.13,
           "opskins": 0.1
         },
         "1": {
-          "market": 0.2,
+          "market": 0.22,
           "analyst": 0.14,
           "opskins": 0.12
         },
         "2": {
-          "market": 0.22,
+          "market": 0.25,
           "analyst": 0.16,
           "opskins": 0.12
         },
         "3": {
-          "market": 0.34,
+          "market": 0.39,
           "analyst": 0.27,
           "opskins": 0.22
         },
         "4": {
-          "market": 1.15,
+          "market": 1.26,
           "analyst": 1.01,
           "opskins": 0.84
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.34,
+          "market": 1.62,
           "analyst": 1.09,
           "opskins": 0.92
         },
         "1": {
-          "market": 1.35,
+          "market": 1.62,
           "analyst": 1.1,
           "opskins": 0.94
         },
         "2": {
-          "market": 1.43,
+          "market": 1.69,
           "analyst": 1.2,
           "opskins": 1.02
         },
         "3": {
-          "market": 2.04,
+          "market": 2.22,
           "analyst": 1.68,
           "opskins": 1.34
         },
         "4": {
-          "market": 6.33,
+          "market": 6.88,
           "analyst": 5.56,
           "opskins": 4.89
         }
@@ -27629,12 +27629,12 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.06
         },
         "1": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.06
         },
@@ -27649,34 +27649,34 @@ var Prices = {
           "opskins": 0.05
         },
         "4": {
-          "market": 0.23,
+          "market": 0.24,
           "analyst": 0.18,
           "opskins": 0.24
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.21,
           "opskins": 0.16
         },
         "1": {
-          "market": 0.23,
+          "market": 0.25,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "2": {
-          "market": 0.24,
+          "market": 0.25,
           "analyst": 0.2,
           "opskins": 0.17
         },
         "3": {
-          "market": 0.37,
+          "market": 0.41,
           "analyst": 0.33,
           "opskins": 0.3
         },
         "4": {
-          "market": 1.15,
+          "market": 1.31,
           "analyst": 1.34,
           "opskins": 1.17
         }
@@ -27696,7 +27696,7 @@ var Prices = {
           "opskins": 0.06
         },
         "1": {
-          "market": 0.09,
+          "market": 0.1,
           "analyst": 0.06,
           "opskins": 0.06
         },
@@ -27706,39 +27706,39 @@ var Prices = {
           "opskins": 0.07
         },
         "3": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.04
         },
         "4": {
-          "market": 0.41,
+          "market": 0.44,
           "analyst": 0.3,
           "opskins": 0.26
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.37,
+          "market": 0.39,
           "analyst": 0.29,
           "opskins": 0.23
         },
         "1": {
-          "market": 0.38,
+          "market": 0.4,
           "analyst": 0.3,
           "opskins": 0.23
         },
         "2": {
-          "market": 0.45,
+          "market": 0.46,
           "analyst": 0.36,
           "opskins": 0.28
         },
         "3": {
-          "market": 0.67,
+          "market": 0.84,
           "analyst": 0.63,
           "opskins": 0.5
         },
         "4": {
-          "market": 3.27,
+          "market": 3.76,
           "analyst": 2.69,
           "opskins": 2.38
         }
@@ -27753,7 +27753,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.1,
+          "market": 0.11,
           "analyst": 0.07,
           "opskins": 0.07
         },
@@ -27763,44 +27763,44 @@ var Prices = {
           "opskins": 0.05
         },
         "2": {
-          "market": 0.11,
+          "market": 0.12,
           "analyst": 0.07,
           "opskins": 0.05
         },
         "3": {
-          "market": 0.2,
+          "market": 0.19,
           "analyst": 0.12,
           "opskins": 0.09
         },
         "4": {
-          "market": 0.93,
+          "market": 1.06,
           "analyst": 0.74,
           "opskins": 0.61
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.42,
+          "market": 0.44,
           "analyst": 0.3,
           "opskins": 0.23
         },
         "1": {
-          "market": 0.46,
+          "market": 0.47,
           "analyst": 0.34,
           "opskins": 0.27
         },
         "2": {
-          "market": 0.55,
+          "market": 0.62,
           "analyst": 0.41,
           "opskins": 0.33
         },
         "3": {
-          "market": 1.18,
+          "market": 1.3,
           "analyst": 0.97,
           "opskins": 0.75
         },
         "4": {
-          "market": 5.5,
+          "market": 5.53,
           "analyst": 5.27,
           "opskins": 4.45
         }
@@ -27825,7 +27825,7 @@ var Prices = {
           "opskins": 0.06
         },
         "2": {
-          "market": 0.09,
+          "market": 0.08,
           "analyst": 0.06,
           "opskins": 0.06
         },
@@ -27842,7 +27842,7 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 0.26,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.19
         },
@@ -27852,17 +27852,17 @@ var Prices = {
           "opskins": 0.21
         },
         "2": {
-          "market": 0.26,
+          "market": 0.27,
           "analyst": 0.21,
           "opskins": 0.15
         },
         "3": {
-          "market": 0.44,
+          "market": 0.49,
           "analyst": 0.38,
           "opskins": 0.33
         },
         "4": {
-          "market": 0.78,
+          "market": 0.88,
           "analyst": 0.69,
           "opskins": 0.53
         }
@@ -27877,54 +27877,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.34,
+          "market": 0.39,
           "analyst": 0.29,
           "opskins": 0.25
         },
         "1": {
-          "market": 0.35,
+          "market": 0.4,
           "analyst": 0.3,
           "opskins": 0.28
         },
         "2": {
-          "market": 0.35,
+          "market": 0.41,
           "analyst": 0.3,
           "opskins": 0.25
         },
         "3": {
-          "market": 0.65,
+          "market": 0.71,
           "analyst": 0.62,
           "opskins": 0.51
         },
         "4": {
-          "market": 2.28,
+          "market": 2.47,
           "analyst": 1.88,
           "opskins": 1.64
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.06,
+          "market": 2.42,
           "analyst": 1.68,
           "opskins": 1.56
         },
         "1": {
-          "market": 2.26,
+          "market": 2.55,
           "analyst": 1.91,
           "opskins": 1.54
         },
         "2": {
-          "market": 2.53,
+          "market": 2.82,
           "analyst": 2.13,
           "opskins": 1.76
         },
         "3": {
-          "market": 4.8,
+          "market": 5.23,
           "analyst": 3.76,
           "opskins": 3.18
         },
         "4": {
-          "market": 14.01,
+          "market": 15.55,
           "analyst": 12.14,
           "opskins": 10.8
         }
@@ -27939,44 +27939,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.48,
+          "market": 0.54,
           "analyst": 0.65,
           "opskins": 0.56
         },
         "2": {
-          "market": 0.36,
+          "market": 0.42,
           "analyst": 0.28,
           "opskins": 0.24
         },
         "3": {
-          "market": 0.51,
+          "market": 0.59,
           "analyst": 0.4,
           "opskins": 0.34
         },
         "4": {
-          "market": 0.89,
+          "market": 1,
           "analyst": 0.71,
           "opskins": 0.61
         }
       },
       "stattrak": {
         "1": {
-          "market": 1.86,
+          "market": 2.09,
           "analyst": 1.68,
           "opskins": 1.6
         },
         "2": {
-          "market": 1.48,
+          "market": 1.75,
           "analyst": 1.15,
           "opskins": 0.92
         },
         "3": {
-          "market": 2.23,
+          "market": 2.5,
           "analyst": 1.96,
           "opskins": 1.6
         },
         "4": {
-          "market": 3.98,
+          "market": 4.46,
           "analyst": 3.48,
           "opskins": 2.94
         }
@@ -27991,54 +27991,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.34,
+          "market": 0.4,
           "analyst": 0.27,
           "opskins": 0.25
         },
         "1": {
-          "market": 0.38,
+          "market": 0.43,
           "analyst": 0.3,
           "opskins": 0.27
         },
         "2": {
-          "market": 0.34,
+          "market": 0.41,
           "analyst": 0.26,
           "opskins": 0.2
         },
         "3": {
-          "market": 0.53,
+          "market": 0.59,
           "analyst": 0.38,
           "opskins": 0.31
         },
         "4": {
-          "market": 0.89,
+          "market": 1.03,
           "analyst": 0.7,
           "opskins": 0.55
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.23,
+          "market": 1.55,
           "analyst": 1.04,
           "opskins": 1.02
         },
         "1": {
-          "market": 1.59,
+          "market": 1.76,
           "analyst": 1.58,
           "opskins": 1.64
         },
         "2": {
-          "market": 1.45,
+          "market": 1.71,
           "analyst": 1.07,
           "opskins": 0.92
         },
         "3": {
-          "market": 2.72,
+          "market": 2.96,
           "analyst": 2.27,
           "opskins": 1.86
         },
         "4": {
-          "market": 5.09,
+          "market": 5.8,
           "analyst": 4.09,
           "opskins": 3.72
         }
@@ -28053,54 +28053,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.47,
+          "market": 0.54,
           "analyst": 0.35,
           "opskins": 0.3
         },
         "1": {
-          "market": 0.9,
+          "market": 1.04,
           "analyst": 0.85,
           "opskins": 0.66
         },
         "2": {
-          "market": 0.51,
+          "market": 0.59,
           "analyst": 0.4,
           "opskins": 0.29
         },
         "3": {
-          "market": 1.02,
+          "market": 1.13,
           "analyst": 0.86,
           "opskins": 0.66
         },
         "4": {
-          "market": 2.52,
+          "market": 2.75,
           "analyst": 2.35,
           "opskins": 1.94
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.71,
+          "market": 1.86,
           "analyst": 1.5,
           "opskins": 1.23
         },
         "1": {
-          "market": 2.64,
+          "market": 3.05,
           "analyst": 2.99,
           "opskins": 2.7
         },
         "2": {
-          "market": 1.97,
+          "market": 2.02,
           "analyst": 1.82,
           "opskins": 1.48
         },
         "3": {
-          "market": 3.91,
+          "market": 3.83,
           "analyst": 3.53,
           "opskins": 2.98
         },
         "4": {
-          "market": 10.06,
+          "market": 10.38,
           "analyst": 12.13,
           "opskins": 10.77
         }
@@ -28115,44 +28115,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.35,
+          "market": 0.41,
           "analyst": 0.28,
           "opskins": 0.25
         },
         "2": {
-          "market": 0.35,
+          "market": 0.41,
           "analyst": 0.26,
           "opskins": 0.21
         },
         "3": {
-          "market": 0.49,
+          "market": 0.58,
           "analyst": 0.37,
           "opskins": 0.29
         },
         "4": {
-          "market": 0.89,
+          "market": 1,
           "analyst": 0.68,
           "opskins": 0.53
         }
       },
       "stattrak": {
         "1": {
-          "market": 1.34,
+          "market": 1.49,
           "analyst": 1.05,
           "opskins": 0.92
         },
         "2": {
-          "market": 1.4,
+          "market": 1.7,
           "analyst": 1.04,
           "opskins": 0.88
         },
         "3": {
-          "market": 2.05,
+          "market": 2.3,
           "analyst": 1.73,
           "opskins": 1.47
         },
         "4": {
-          "market": 3.72,
+          "market": 4.36,
           "analyst": 3.05,
           "opskins": 2.68
         }
@@ -28167,54 +28167,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.04,
+          "market": 3.69,
           "analyst": 2.34,
           "opskins": 2.13
         },
         "1": {
-          "market": 4.92,
+          "market": 5.62,
           "analyst": 3.84,
           "opskins": 3.22
         },
         "2": {
-          "market": 3.67,
+          "market": 4.21,
           "analyst": 2.78,
           "opskins": 2.38
         },
         "3": {
-          "market": 5.62,
+          "market": 6.41,
           "analyst": 4.2,
           "opskins": 3.65
         },
         "4": {
-          "market": 9.7,
+          "market": 11.34,
           "analyst": 7.55,
           "opskins": 6.78
         }
       },
       "stattrak": {
         "0": {
-          "market": 14.41,
+          "market": 16.22,
           "analyst": 11.54,
           "opskins": 10.04
         },
         "1": {
-          "market": 20.54,
+          "market": 21.23,
           "analyst": 18.38,
           "opskins": 18
         },
         "2": {
-          "market": 16.52,
+          "market": 18.92,
           "analyst": 12.74,
           "opskins": 10.94
         },
         "3": {
-          "market": 25.05,
+          "market": 29.07,
           "analyst": 19.99,
           "opskins": 17.88
         },
         "4": {
-          "market": 49.62,
+          "market": 54.43,
           "analyst": 39,
           "opskins": 33.76
         }
@@ -28229,54 +28229,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.88,
+          "market": 2.35,
           "analyst": 1.5,
           "opskins": 1.41
         },
         "1": {
-          "market": 2.19,
+          "market": 2.7,
           "analyst": 1.85,
           "opskins": 1.54
         },
         "2": {
-          "market": 2.09,
+          "market": 2.46,
           "analyst": 1.66,
           "opskins": 1.42
         },
         "3": {
-          "market": 2.87,
+          "market": 3.38,
           "analyst": 2.22,
           "opskins": 1.79
         },
         "4": {
-          "market": 4.54,
+          "market": 5.49,
           "analyst": 3.85,
           "opskins": 3.19
         }
       },
       "stattrak": {
         "0": {
-          "market": 5.28,
+          "market": 6.67,
           "analyst": 5.06,
           "opskins": 4.5
         },
         "1": {
-          "market": 7.26,
+          "market": 7.02,
           "analyst": 7.19,
           "opskins": 6.02
         },
         "2": {
-          "market": 6.63,
+          "market": 7.6,
           "analyst": 5.33,
           "opskins": 4.85
         },
         "3": {
-          "market": 11.73,
+          "market": 13.55,
           "analyst": 10.37,
           "opskins": 9.06
         },
         "4": {
-          "market": 18.83,
+          "market": 21.82,
           "analyst": 15.81,
           "opskins": 13.9
         }
@@ -28291,54 +28291,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.14,
+          "market": 3.64,
           "analyst": 2.3,
           "opskins": 2
         },
         "1": {
-          "market": 3.59,
+          "market": 4.2,
           "analyst": 2.62,
           "opskins": 2.42
         },
         "2": {
-          "market": 4.14,
+          "market": 4.81,
           "analyst": 3.05,
           "opskins": 2.7
         },
         "3": {
-          "market": 6.8,
+          "market": 7.52,
           "analyst": 5.07,
           "opskins": 4.35
         },
         "4": {
-          "market": 11.25,
+          "market": 12.73,
           "analyst": 9.12,
           "opskins": 7.86
         }
       },
       "stattrak": {
         "0": {
-          "market": 12,
+          "market": 14.82,
           "analyst": 9.93,
           "opskins": 9.47
         },
         "1": {
-          "market": 13.48,
+          "market": 16.17,
           "analyst": 10.82,
           "opskins": 9.63
         },
         "2": {
-          "market": 15.85,
+          "market": 18.69,
           "analyst": 12.63,
           "opskins": 10.85
         },
         "3": {
-          "market": 25.31,
+          "market": 29.5,
           "analyst": 19.4,
           "opskins": 17.79
         },
         "4": {
-          "market": 48.3,
+          "market": 53.71,
           "analyst": 42.14,
           "opskins": 37.64
         }
@@ -28353,49 +28353,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 22.97,
+          "market": 25.87,
           "analyst": 16.5,
           "opskins": 14.3
         },
         "1": {
-          "market": 26.06,
+          "market": 29.54,
           "analyst": 18.94,
           "opskins": 16.6
         },
         "2": {
-          "market": 30.5,
+          "market": 34,
           "analyst": 22.75,
           "opskins": 19.99
         },
         "3": {
-          "market": 38.92,
+          "market": 45.84,
           "analyst": 29.85,
           "opskins": 26.25
         },
         "4": {
-          "market": 70.45,
+          "market": 83.28,
           "analyst": 58.82,
           "opskins": 50.45
         }
       },
       "stattrak": {
         "0": {
-          "market": 64.79,
+          "market": 71.69,
           "analyst": 50.23,
           "opskins": 42.7
         },
         "1": {
-          "market": 76.12,
+          "market": 85.15,
           "analyst": 57.58,
           "opskins": 48.87
         },
         "2": {
-          "market": 96.6,
+          "market": 110.01,
           "analyst": 76.33,
           "opskins": 62.89
         },
         "3": {
-          "market": 135.59,
+          "market": 165.7,
           "analyst": 119.87,
           "opskins": 98.69
         },
@@ -28415,34 +28415,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.15,
+          "market": 3.6,
           "analyst": 2.55,
           "opskins": 2.35
         },
         "1": {
-          "market": 4.53,
+          "market": 5.4,
           "analyst": 3.64,
           "opskins": 3.46
         },
         "2": {
-          "market": 3.75,
+          "market": 4.35,
           "analyst": 2.98,
           "opskins": 2.54
         },
         "3": {
-          "market": 6.15,
+          "market": 6.68,
           "analyst": 4.7,
           "opskins": 3.98
         },
         "4": {
-          "market": 8.98,
+          "market": 10.2,
           "analyst": 7.2,
           "opskins": 6.17
         }
       },
       "stattrak": {
         "0": {
-          "market": 13.35,
+          "market": 16.16,
           "analyst": 12.67,
           "opskins": 14
         },
@@ -28452,17 +28452,17 @@ var Prices = {
           "opskins": 34.99
         },
         "2": {
-          "market": 16.97,
+          "market": 19.37,
           "analyst": 13.05,
           "opskins": 12
         },
         "3": {
-          "market": 28.97,
+          "market": 32.1,
           "analyst": 23.74,
           "opskins": 20.99
         },
         "4": {
-          "market": 41.23,
+          "market": 48.83,
           "analyst": 43.77,
           "opskins": 38.31
         }
@@ -28477,7 +28477,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 66.54,
+          "market": 73.91,
           "analyst": 55.01,
           "opskins": 47.63
         },
@@ -28487,12 +28487,12 @@ var Prices = {
           "opskins": 52.9
         },
         "2": {
-          "market": 82.11,
+          "market": 95.49,
           "analyst": 62.82,
           "opskins": 53.88
         },
         "3": {
-          "market": 126.97,
+          "market": 142.38,
           "analyst": 100.03,
           "opskins": 89.88
         },
@@ -28534,22 +28534,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 50.18,
+          "market": 57.72,
           "analyst": 38.61,
           "opskins": 36.97
         },
         "1": {
-          "market": 50.41,
+          "market": 57.98,
           "analyst": 42.89,
           "opskins": 38.74
         },
         "2": {
-          "market": 51.71,
+          "market": 58.42,
           "analyst": 37.86,
           "opskins": 35.89
         },
         "3": {
-          "market": 64.66,
+          "market": 73.12,
           "analyst": 48.02,
           "opskins": 40.99
         },
@@ -28591,22 +28591,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 52.35,
+          "market": 61.13,
           "analyst": 41.49,
           "opskins": 38.21
         },
         "1": {
-          "market": 47.49,
+          "market": 61.6,
           "analyst": 40.5,
           "opskins": 37.48
         },
         "2": {
-          "market": 52.21,
+          "market": 59.39,
           "analyst": 37.64,
           "opskins": 34.37
         },
         "3": {
-          "market": 66.38,
+          "market": 76.57,
           "analyst": 48.69,
           "opskins": 45.79
         },
@@ -28648,49 +28648,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.48,
+          "market": 0.65,
           "analyst": 0.46,
           "opskins": 1.09
         },
         "1": {
-          "market": 0.57,
+          "market": 0.72,
           "analyst": 0.56,
           "opskins": 0.53
         },
         "2": {
-          "market": 0.49,
+          "market": 0.68,
           "analyst": 0.48,
           "opskins": 6.72
         },
         "3": {
-          "market": 0.78,
+          "market": 0.85,
           "analyst": 0.64,
           "opskins": 7.95
         },
         "4": {
-          "market": 2.98,
+          "market": 3.05,
           "analyst": 2.97,
           "opskins": 2.9
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.03,
+          "market": 1.61,
           "analyst": 1.11,
           "opskins": 1.12
         },
         "1": {
-          "market": 1.1,
+          "market": 1.51,
           "analyst": 1.18,
           "opskins": 3
         },
         "2": {
-          "market": 1.11,
+          "market": 1.58,
           "analyst": 1.08,
           "opskins": 1.45
         },
         "3": {
-          "market": 1.97,
+          "market": 2.16,
           "analyst": 1.84,
           "opskins": 1.57
         },
@@ -28710,49 +28710,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.65,
+          "market": 0.76,
           "analyst": 0.72,
           "opskins": 1.09
         },
         "1": {
-          "market": 0.51,
+          "market": 0.62,
           "analyst": 0.48,
           "opskins": 1.06
         },
         "2": {
-          "market": 0.5,
+          "market": 0.69,
           "analyst": 0.5,
           "opskins": 0.98
         },
         "3": {
-          "market": 0.66,
+          "market": 0.78,
           "analyst": 0.62,
           "opskins": 1.11
         },
         "4": {
-          "market": 3.37,
+          "market": 4.77,
           "analyst": 3.02,
           "opskins": 2.68
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.07,
+          "market": 1.47,
           "analyst": 1.15,
           "opskins": 3.99
         },
         "1": {
-          "market": 1.11,
+          "market": 1.66,
           "analyst": 1.92,
           "opskins": 48.5
         },
         "2": {
-          "market": 1.14,
+          "market": 1.59,
           "analyst": 1.08,
           "opskins": 0.9
         },
         "3": {
-          "market": 1.97,
+          "market": 2.17,
           "analyst": 1.64,
           "opskins": 1.5
         },
@@ -28772,34 +28772,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.61,
+          "market": 0.82,
           "analyst": 0.58,
           "opskins": 0.68
         },
         "3": {
-          "market": 0.64,
+          "market": 0.84,
           "analyst": 0.64,
           "opskins": 0.58
         },
         "4": {
-          "market": 2.76,
+          "market": 2.94,
           "analyst": 2.38,
           "opskins": 2.42
         }
       },
       "stattrak": {
         "2": {
-          "market": 1.4,
+          "market": 1.72,
           "analyst": 1.41,
           "opskins": 1.24
         },
         "3": {
-          "market": 1.87,
+          "market": 2.13,
           "analyst": 1.62,
           "opskins": 1.27
         },
         "4": {
-          "market": 12.12,
+          "market": 17.36,
           "analyst": 9.19,
           "opskins": 14.69
         }
@@ -28814,54 +28814,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.57,
+          "market": 0.68,
           "analyst": 0.6,
           "opskins": 0.98
         },
         "1": {
-          "market": 0.54,
+          "market": 0.71,
           "analyst": 0.58,
           "opskins": 0.66
         },
         "2": {
-          "market": 0.51,
+          "market": 0.69,
           "analyst": 0.5,
           "opskins": 2.39
         },
         "3": {
-          "market": 0.8,
+          "market": 0.88,
           "analyst": 0.64,
           "opskins": 0.99
         },
         "4": {
-          "market": 3.54,
+          "market": 3.89,
           "analyst": 3.21,
           "opskins": 2.97
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.1,
+          "market": 1.37,
           "analyst": 1.13,
           "opskins": 1.9
         },
         "1": {
-          "market": 1.06,
+          "market": 1.58,
           "analyst": 1.1,
           "opskins": 1.39
         },
         "2": {
-          "market": 1.13,
+          "market": 1.61,
           "analyst": 1.13,
           "opskins": 1.29
         },
         "3": {
-          "market": 2.04,
+          "market": 2.4,
           "analyst": 1.66,
           "opskins": 1.89
         },
         "4": {
-          "market": 16.43,
+          "market": 16.54,
           "analyst": 27.96,
           "opskins": 27.98
         }
@@ -28876,34 +28876,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.54,
+          "market": 0.73,
           "analyst": 0.52,
           "opskins": 0.73
         },
         "3": {
-          "market": 0.69,
+          "market": 0.89,
           "analyst": 0.61,
           "opskins": 0.71
         },
         "4": {
-          "market": 3.77,
+          "market": 4.88,
           "analyst": 3.17,
           "opskins": 2.99
         }
       },
       "stattrak": {
         "2": {
-          "market": 1.32,
+          "market": 1.78,
           "analyst": 1.27,
           "opskins": 1.1
         },
         "3": {
-          "market": 2.06,
+          "market": 2.67,
           "analyst": 1.75,
           "opskins": 1.49
         },
         "4": {
-          "market": 15.05,
+          "market": 17.56,
           "analyst": 14.94,
           "opskins": 15.59
         }
@@ -28918,49 +28918,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.63,
+          "market": 1.25,
           "analyst": 0.49,
           "opskins": 1.01
         },
         "1": {
-          "market": 0.64,
+          "market": 1.55,
           "analyst": 0.56,
           "opskins": 0.92
         },
         "2": {
-          "market": 0.51,
+          "market": 0.68,
           "analyst": 0.49,
           "opskins": 0.98
         },
         "3": {
-          "market": 0.71,
+          "market": 0.87,
           "analyst": 0.65,
           "opskins": 0.91
         },
         "4": {
-          "market": 2.81,
+          "market": 2.89,
           "analyst": 3.59,
           "opskins": 3.31
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.32,
+          "market": 1.72,
           "analyst": 1.02,
           "opskins": 1.07
         },
         "1": {
-          "market": 1.24,
+          "market": 1.66,
           "analyst": 1.25,
           "opskins": 1.2
         },
         "2": {
-          "market": 1.12,
+          "market": 1.59,
           "analyst": 1.08,
           "opskins": 1.1
         },
         "3": {
-          "market": 2.01,
+          "market": 2.05,
           "analyst": 1.58,
           "opskins": 1.39
         },
@@ -28980,54 +28980,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.54,
+          "market": 4.21,
           "analyst": 3.12,
           "opskins": 3.55
         },
         "1": {
-          "market": 4.1,
+          "market": 5.06,
           "analyst": 3.61,
           "opskins": 3.42
         },
         "2": {
-          "market": 4.23,
+          "market": 4.66,
           "analyst": 3.62,
           "opskins": 3.31
         },
         "3": {
-          "market": 7.32,
+          "market": 8.56,
           "analyst": 5.79,
           "opskins": 5.3
         },
         "4": {
-          "market": 26.34,
+          "market": 29.17,
           "analyst": 26.16,
           "opskins": 26.77
         }
       },
       "stattrak": {
         "0": {
-          "market": 11.4,
+          "market": 12.62,
           "analyst": 14.45,
           "opskins": 14.69
         },
         "1": {
-          "market": 11.29,
+          "market": 12.7,
           "analyst": 11.15,
           "opskins": 9.62
         },
         "2": {
-          "market": 11.97,
+          "market": 14.06,
           "analyst": 10.71,
           "opskins": 9.58
         },
         "3": {
-          "market": 29.38,
+          "market": 32.3,
           "analyst": 27.29,
           "opskins": 24.79
         },
         "4": {
-          "market": 313.7,
+          "market": 245.78,
           "analyst": 310.1,
           "opskins": 295
         }
@@ -29042,44 +29042,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 3.56,
+          "market": 4.71,
           "analyst": 3.64,
           "opskins": 3.56
         },
         "2": {
-          "market": 3.55,
+          "market": 4.43,
           "analyst": 3.04,
           "opskins": 3
         },
         "3": {
-          "market": 4.05,
+          "market": 4.58,
           "analyst": 3.26,
           "opskins": 3.31
         },
         "4": {
-          "market": 10.03,
+          "market": 10.52,
           "analyst": 9.98,
           "opskins": 9.71
         }
       },
       "stattrak": {
         "1": {
-          "market": 9.85,
+          "market": 10.68,
           "analyst": 10.62,
           "opskins": 12.09
         },
         "2": {
-          "market": 9.79,
+          "market": 13.47,
           "analyst": 9.38,
           "opskins": 9.39
         },
         "3": {
-          "market": 14.05,
+          "market": 16.83,
           "analyst": 12.24,
           "opskins": 12.8
         },
         "4": {
-          "market": 67.09,
+          "market": 77.09,
           "analyst": 83.55,
           "opskins": 68.71
         }
@@ -29094,49 +29094,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 4,
+          "market": 4.47,
           "analyst": 3.12,
           "opskins": 2.81
         },
         "1": {
-          "market": 3.56,
+          "market": 4.21,
           "analyst": 3.17,
           "opskins": 2.5
         },
         "2": {
-          "market": 3.43,
+          "market": 4.35,
           "analyst": 2.97,
           "opskins": 8.65
         },
         "3": {
-          "market": 4.06,
+          "market": 4.58,
           "analyst": 3.87,
           "opskins": 5.62
         },
         "4": {
-          "market": 8.8,
+          "market": 9.5,
           "analyst": 13.49,
           "opskins": 13.45
         }
       },
       "stattrak": {
         "0": {
-          "market": 9.03,
+          "market": 11.38,
           "analyst": 8.49,
           "opskins": 12.44
         },
         "1": {
-          "market": 11.43,
+          "market": 10.57,
           "analyst": 11.07,
           "opskins": 9.17
         },
         "2": {
-          "market": 9.6,
+          "market": 12.35,
           "analyst": 8.82,
           "opskins": 8.44
         },
         "3": {
-          "market": 12.42,
+          "market": 15.73,
           "analyst": 11.22,
           "opskins": 10.5
         },
@@ -29156,24 +29156,24 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 3.97,
+          "market": 4.72,
           "analyst": 3.31,
           "opskins": 3.1
         },
         "3": {
-          "market": 4.12,
+          "market": 4.8,
           "analyst": 3.45,
           "opskins": 2.92
         }
       },
       "stattrak": {
         "2": {
-          "market": 12.9,
+          "market": 15.23,
           "analyst": 10.7,
           "opskins": 10.14
         },
         "3": {
-          "market": 14.22,
+          "market": 16.96,
           "analyst": 11.84,
           "opskins": 10.3
         }
@@ -29188,7 +29188,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 14.89,
+          "market": 22.72,
           "analyst": 20.16,
           "opskins": 23.23
         },
@@ -29198,12 +29198,12 @@ var Prices = {
           "opskins": 17.89
         },
         "2": {
-          "market": 20.32,
+          "market": 22.52,
           "analyst": 17.91,
           "opskins": 16.67
         },
         "3": {
-          "market": 23.83,
+          "market": 24.93,
           "analyst": 20.44,
           "opskins": 19.17
         },
@@ -29225,12 +29225,12 @@ var Prices = {
           "opskins": 100
         },
         "2": {
-          "market": 56.83,
+          "market": 56.54,
           "analyst": 52.52,
           "opskins": 42.83
         },
         "3": {
-          "market": 76.48,
+          "market": 75.3,
           "analyst": 77.38,
           "opskins": 66.99
         },
@@ -29250,24 +29250,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 27.13,
+          "market": 31.6,
           "analyst": 26.9,
           "opskins": 27.44
         },
         "4": {
-          "market": 28.01,
+          "market": 33,
           "analyst": 23.14,
           "opskins": 24.43
         }
       },
       "stattrak": {
         "3": {
-          "market": 79.06,
+          "market": 82.35,
           "analyst": 74.35,
           "opskins": 66.9
         },
         "4": {
-          "market": 90.89,
+          "market": 138.48,
           "analyst": 86.59,
           "opskins": 78.19
         }
@@ -29282,12 +29282,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 11.8,
+          "market": 13.3,
           "analyst": 10.23,
           "opskins": 9.94
         },
         "4": {
-          "market": 12.02,
+          "market": 13.05,
           "analyst": 9.56,
           "opskins": 9.11
         }
@@ -29299,7 +29299,7 @@ var Prices = {
           "opskins": 79.99
         },
         "4": {
-          "market": 84.76,
+          "market": 94.59,
           "analyst": 76.24,
           "opskins": 59.99
         }
@@ -29314,27 +29314,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 169.07,
+          "market": 193.68,
           "analyst": 132.57,
           "opskins": 114.49
         },
         "1": {
-          "market": 177.1,
+          "market": 199.82,
           "analyst": 137.24,
           "opskins": 114
         },
         "2": {
-          "market": 180.96,
+          "market": 206.66,
           "analyst": 145.68,
           "opskins": 123
         },
         "3": {
-          "market": 204.57,
+          "market": 226.71,
           "analyst": 163.33,
           "opskins": 133
         },
         "4": {
-          "market": 239.89,
+          "market": 310.5,
           "analyst": 253.84,
           "opskins": 215.55
         }
@@ -29351,7 +29351,7 @@ var Prices = {
           "opskins": 198.98
         },
         "2": {
-          "market": 204.08,
+          "market": 243.87,
           "analyst": 203.49,
           "opskins": 167.99
         },
@@ -29376,27 +29376,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 99.17,
+          "market": 111.45,
           "analyst": 90.7,
           "opskins": 75.32
         },
         "1": {
-          "market": 98.81,
+          "market": 111.88,
           "analyst": 83.12,
           "opskins": 70
         },
         "2": {
-          "market": 104.47,
+          "market": 120.93,
           "analyst": 90.7,
           "opskins": 77.99
         },
         "3": {
-          "market": 122.39,
+          "market": 140.44,
           "analyst": 110.98,
           "opskins": 95.85
         },
         "4": {
-          "market": 146.52,
+          "market": 179.99,
           "analyst": 177.56,
           "opskins": 163.99
         }
@@ -29438,27 +29438,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 76.27,
+          "market": 92.29,
           "analyst": 64.65,
           "opskins": 54.39
         },
         "1": {
-          "market": 82.44,
+          "market": 92.25,
           "analyst": 62.07,
           "opskins": 54
         },
         "2": {
-          "market": 86.67,
+          "market": 95.62,
           "analyst": 63.39,
           "opskins": 54.99
         },
         "3": {
-          "market": 96.6,
+          "market": 108.45,
           "analyst": 70.45,
           "opskins": 65.87
         },
         "4": {
-          "market": 209.25,
+          "market": 204.64,
           "analyst": 220.58,
           "opskins": 190
         }
@@ -29475,7 +29475,7 @@ var Prices = {
           "opskins": 110
         },
         "2": {
-          "market": 119.22,
+          "market": 111,
           "analyst": 113.13,
           "opskins": 89.47
         },
@@ -29500,22 +29500,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 52.48,
+          "market": 59.26,
           "analyst": 40.05,
           "opskins": 51.06
         },
         "1": {
-          "market": 55.63,
+          "market": 59.57,
           "analyst": 39.77,
           "opskins": 39.35
         },
         "2": {
-          "market": 57.92,
+          "market": 66.22,
           "analyst": 44.59,
           "opskins": 38.19
         },
         "3": {
-          "market": 69.43,
+          "market": 78.53,
           "analyst": 55.96,
           "opskins": 46.98
         },
@@ -29557,22 +29557,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 82.71,
+          "market": 95.92,
           "analyst": 73.03,
           "opskins": 62.18
         },
         "1": {
-          "market": 84.58,
+          "market": 99.65,
           "analyst": 77.79,
           "opskins": 63.7
         },
         "2": {
-          "market": 92.21,
+          "market": 102.35,
           "analyst": 77.28,
           "opskins": 67.1
         },
         "3": {
-          "market": 108.95,
+          "market": 126.76,
           "analyst": 98.84,
           "opskins": 81
         },
@@ -29619,7 +29619,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 52.26,
+          "market": 60.18,
           "analyst": 42.99,
           "opskins": 42.18
         },
@@ -29629,12 +29629,12 @@ var Prices = {
           "opskins": 37.74
         },
         "2": {
-          "market": 56.4,
+          "market": 64.37,
           "analyst": 41.27,
           "opskins": 37.47
         },
         "3": {
-          "market": 68.4,
+          "market": 78.21,
           "analyst": 53.52,
           "opskins": 45.99
         },
@@ -29681,17 +29681,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 152.46,
+          "market": 160.49,
           "analyst": 121.27,
           "opskins": 105.95
         },
         "3": {
-          "market": 165.34,
+          "market": 182.67,
           "analyst": 136.47,
           "opskins": 116.16
         },
         "4": {
-          "market": 191.82,
+          "market": 214.56,
           "analyst": 160.01,
           "opskins": 129.99
         }
@@ -29708,7 +29708,7 @@ var Prices = {
           "opskins": 174.99
         },
         "4": {
-          "market": 191.87,
+          "market": 300.15,
           "analyst": 313.96,
           "opskins": 259.99
         }
@@ -29723,22 +29723,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 66.51,
+          "market": 77.39,
           "analyst": 51.67,
           "opskins": 43.61
         },
         "1": {
-          "market": 69.68,
+          "market": 77.82,
           "analyst": 53.38,
           "opskins": 48.71
         },
         "2": {
-          "market": 72.43,
+          "market": 82.09,
           "analyst": 52.59,
           "opskins": 44.78
         },
         "3": {
-          "market": 78.27,
+          "market": 91.63,
           "analyst": 58.44,
           "opskins": 55.14
         },
@@ -29785,22 +29785,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 50.91,
+          "market": 57.04,
           "analyst": 37.15,
           "opskins": 32.98
         },
         "1": {
-          "market": 50.87,
+          "market": 56.34,
           "analyst": 37.49,
           "opskins": 31.5
         },
         "2": {
-          "market": 52.16,
+          "market": 58.1,
           "analyst": 38.45,
           "opskins": 36.94
         },
         "3": {
-          "market": 54.56,
+          "market": 60.21,
           "analyst": 40.29,
           "opskins": 35.09
         },
@@ -29822,7 +29822,7 @@ var Prices = {
           "opskins": 62.99
         },
         "2": {
-          "market": 59.57,
+          "market": 71.05,
           "analyst": 49.06,
           "opskins": 51.45
         },
@@ -29847,22 +29847,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 46.53,
+          "market": 52.79,
           "analyst": 37.94,
           "opskins": 34.45
         },
         "1": {
-          "market": 50.26,
+          "market": 57.22,
           "analyst": 41.38,
           "opskins": 35.87
         },
         "2": {
-          "market": 51.85,
+          "market": 57.16,
           "analyst": 40.48,
           "opskins": 35.25
         },
         "3": {
-          "market": 79.92,
+          "market": 90.07,
           "analyst": 63.45,
           "opskins": 54.97
         },
@@ -29879,17 +29879,17 @@ var Prices = {
           "opskins": 54.14
         },
         "1": {
-          "market": 65.1,
+          "market": 68.1,
           "analyst": 74.62,
           "opskins": 65
         },
         "2": {
-          "market": 63.66,
+          "market": 72.82,
           "analyst": 56.66,
           "opskins": 51.58
         },
         "3": {
-          "market": 111,
+          "market": 126,
           "analyst": 105.01,
           "opskins": 99
         },
@@ -29909,22 +29909,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 52.5,
+          "market": 57.71,
           "analyst": 43.39,
           "opskins": 38.72
         },
         "1": {
-          "market": 52.99,
+          "market": 58.4,
           "analyst": 44.13,
           "opskins": 38.93
         },
         "2": {
-          "market": 53.87,
+          "market": 58.98,
           "analyst": 45.47,
           "opskins": 38.86
         },
         "3": {
-          "market": 61.07,
+          "market": 66.16,
           "analyst": 52.45,
           "opskins": 44.64
         },
@@ -29936,7 +29936,7 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 60.4,
+          "market": 62.03,
           "analyst": 66.04,
           "opskins": 58.58
         },
@@ -29946,7 +29946,7 @@ var Prices = {
           "opskins": 73.68
         },
         "2": {
-          "market": 68.62,
+          "market": 74.3,
           "analyst": 75.91,
           "opskins": 62.19
         },
@@ -29956,7 +29956,7 @@ var Prices = {
           "opskins": 82.5
         },
         "4": {
-          "market": 150.6,
+          "market": 220.6,
           "analyst": 190,
           "opskins": -1
         }
@@ -29971,17 +29971,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 57.22,
+          "market": 63.32,
           "analyst": 45.55,
           "opskins": 49.47
         },
         "3": {
-          "market": 66.54,
+          "market": 74.91,
           "analyst": 55.84,
           "opskins": 48.68
         },
         "4": {
-          "market": 75.26,
+          "market": 82.84,
           "analyst": 61.27,
           "opskins": 52.5
         }
@@ -29993,7 +29993,7 @@ var Prices = {
           "opskins": 61.29
         },
         "3": {
-          "market": 79.12,
+          "market": 89.29,
           "analyst": 77.12,
           "opskins": 64.99
         },
@@ -30013,19 +30013,19 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 75.25,
+          "market": 88.56,
           "analyst": 60.28,
           "opskins": 53.96
         },
         "4": {
-          "market": 69.92,
+          "market": 76.39,
           "analyst": 58.29,
           "opskins": 50.31
         }
       },
       "stattrak": {
         "3": {
-          "market": 100.89,
+          "market": 101.8,
           "analyst": 113.75,
           "opskins": 129
         },
@@ -30045,7 +30045,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 251.6,
+          "market": 272.52,
           "analyst": 205.53,
           "opskins": 183.99
         },
@@ -30055,17 +30055,17 @@ var Prices = {
           "opskins": 699
         },
         "2": {
-          "market": 291.19,
+          "market": 309.68,
           "analyst": 234.98,
           "opskins": 204.99
         },
         "3": {
-          "market": 347.92,
+          "market": 413,
           "analyst": 348.18,
           "opskins": 290.76
         },
         "4": {
-          "market": 571.15,
+          "market": 595,
           "analyst": 463,
           "opskins": 600
         }
@@ -30117,17 +30117,17 @@ var Prices = {
           "opskins": 84.44
         },
         "2": {
-          "market": 116.68,
+          "market": 130.86,
           "analyst": 94.28,
           "opskins": 79.94
         },
         "3": {
-          "market": 147.41,
+          "market": 161.08,
           "analyst": 114.4,
           "opskins": 100.64
         },
         "4": {
-          "market": 167.29,
+          "market": 185.94,
           "analyst": 148.64,
           "opskins": 128.99
         }
@@ -30169,22 +30169,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 179.83,
+          "market": 198.94,
           "analyst": 148.41,
           "opskins": 135
         },
         "1": {
-          "market": 174.33,
+          "market": 190.38,
           "analyst": 130.92,
           "opskins": 133
         },
         "2": {
-          "market": 184.96,
+          "market": 205.56,
           "analyst": 145.66,
           "opskins": 139.99
         },
         "3": {
-          "market": 200.63,
+          "market": 226.24,
           "analyst": 169.42,
           "opskins": 145.95
         },
@@ -30231,7 +30231,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 200.01,
+          "market": 218.65,
           "analyst": 170.81,
           "opskins": 154.99
         },
@@ -30241,24 +30241,24 @@ var Prices = {
           "opskins": 239.99
         },
         "2": {
-          "market": 350.45,
+          "market": 386.33,
           "analyst": 346,
           "opskins": 334.88
         },
         "3": {
-          "market": 580,
+          "market": 715,
           "analyst": 595,
           "opskins": 580
         },
         "4": {
-          "market": 1032.75,
+          "market": 1200,
           "analyst": 810,
           "opskins": 894.99
         }
       },
       "stattrak": {
         "2": {
-          "market": 398.88,
+          "market": 520,
           "analyst": 422,
           "opskins": 420.98
         },
@@ -30288,22 +30288,22 @@ var Prices = {
           "opskins": 109.95
         },
         "1": {
-          "market": 142.97,
+          "market": 164.68,
           "analyst": 128.42,
           "opskins": 114.49
         },
         "2": {
-          "market": 173.81,
+          "market": 185.06,
           "analyst": 140.6,
           "opskins": 125
         },
         "3": {
-          "market": 219.78,
+          "market": 237.51,
           "analyst": 197.29,
           "opskins": 186.98
         },
         "4": {
-          "market": 287.86,
+          "market": 291.46,
           "analyst": 265.4,
           "opskins": 234.99
         }
@@ -30345,12 +30345,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 330.11,
+          "market": 440,
           "analyst": 334,
           "opskins": 370
         },
         "4": {
-          "market": 349.66,
+          "market": 351.56,
           "analyst": 378,
           "opskins": 359.99
         }
@@ -30372,24 +30372,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 238.25,
+          "market": 261.94,
           "analyst": 223.27,
           "opskins": 183.82
         },
         "4": {
-          "market": 224.16,
+          "market": 251.8,
           "analyst": 207.32,
           "opskins": 170
         }
       },
       "stattrak": {
         "3": {
-          "market": 309.6,
+          "market": 339,
           "analyst": 330.71,
           "opskins": 302.06
         },
         "4": {
-          "market": 307.84,
+          "market": 345.49,
           "analyst": 294.1,
           "opskins": 234.93
         }
@@ -30404,19 +30404,19 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 101.31,
+          "market": 112.55,
           "analyst": 75.9,
           "opskins": 64.88
         },
         "1": {
-          "market": 112.44,
+          "market": 122.9,
           "analyst": 101.4,
           "opskins": 82.32
         }
       },
       "stattrak": {
         "0": {
-          "market": 122.83,
+          "market": 147.49,
           "analyst": 107.69,
           "opskins": 94
         },
@@ -30436,12 +30436,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 361.51,
+          "market": 367.67,
           "analyst": 397.82,
           "opskins": 338.84
         },
         "4": {
-          "market": 373.58,
+          "market": 350.77,
           "analyst": 320,
           "opskins": 309.68
         }
@@ -30468,49 +30468,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 122.02,
+          "market": 127.53,
           "analyst": 108.94,
           "opskins": 93.94
         },
         "1": {
-          "market": 122.62,
+          "market": 137.93,
           "analyst": 109.68,
           "opskins": 89.98
         },
         "2": {
-          "market": 127.17,
+          "market": 145.73,
           "analyst": 106.27,
           "opskins": 92
         },
         "3": {
-          "market": 149.18,
+          "market": 164.91,
           "analyst": 115.53,
           "opskins": 96.99
         },
         "4": {
-          "market": 163.41,
+          "market": 184.43,
           "analyst": 128.07,
           "opskins": 105.99
         }
       },
       "stattrak": {
         "0": {
-          "market": 162.2,
+          "market": 142.2,
           "analyst": -1,
           "opskins": 335
         },
         "1": {
-          "market": 166.55,
+          "market": 136.55,
           "analyst": 165.54,
           "opskins": 145
         },
         "2": {
-          "market": 152.48,
+          "market": 165.55,
           "analyst": 125.01,
           "opskins": 136
         },
         "3": {
-          "market": 193.39,
+          "market": 205.65,
           "analyst": 183.21,
           "opskins": 166.67
         },
@@ -30530,24 +30530,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 262.37,
+          "market": 302.37,
           "analyst": 290.41,
           "opskins": 239.99
         },
         "4": {
-          "market": 300.44,
+          "market": 340.24,
           "analyst": 250.95,
           "opskins": 208
         }
       },
       "stattrak": {
         "3": {
-          "market": 480,
+          "market": 499.51,
           "analyst": 401,
           "opskins": -1
         },
         "4": {
-          "market": 391.72,
+          "market": 403.78,
           "analyst": 373.53,
           "opskins": 298.9
         }
@@ -30562,22 +30562,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 87.58,
+          "market": 96.66,
           "analyst": 67.21,
           "opskins": 58.37
         },
         "1": {
-          "market": 95.86,
+          "market": 107.45,
           "analyst": 76.96,
           "opskins": 65.27
         },
         "2": {
-          "market": 104.43,
+          "market": 113.03,
           "analyst": 78.55,
           "opskins": 65.5
         },
         "3": {
-          "market": 171.83,
+          "market": 189.95,
           "analyst": 134.32,
           "opskins": 117.89
         },
@@ -30599,7 +30599,7 @@ var Prices = {
           "opskins": 94.42
         },
         "2": {
-          "market": 127.54,
+          "market": 137.41,
           "analyst": 99.34,
           "opskins": 88.38
         },
@@ -30619,22 +30619,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 67.99,
+          "market": 82.42,
           "analyst": 61.7,
           "opskins": 55.29
         },
         "1": {
-          "market": 68.58,
+          "market": 84.33,
           "analyst": 60.54,
           "opskins": 51.65
         },
         "2": {
-          "market": 69.51,
+          "market": 87.41,
           "analyst": 58.33,
           "opskins": 51.68
         },
         "3": {
-          "market": 101.13,
+          "market": 113.58,
           "analyst": 76.72,
           "opskins": 69.27
         },
@@ -30646,7 +30646,7 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 56.75,
+          "market": 86.75,
           "analyst": 76.96,
           "opskins": 94.94
         },
@@ -30656,12 +30656,12 @@ var Prices = {
           "opskins": 67.62
         },
         "2": {
-          "market": 90.12,
+          "market": 99.67,
           "analyst": 75.81,
           "opskins": 64.34
         },
         "3": {
-          "market": 98.85,
+          "market": 121.5,
           "analyst": 113.42,
           "opskins": 109
         },
@@ -30681,34 +30681,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 97.89,
+          "market": 105.95,
           "analyst": 72.61,
           "opskins": 62.5
         },
         "1": {
-          "market": 96.62,
+          "market": 106.03,
           "analyst": 74.08,
           "opskins": 62.36
         },
         "2": {
-          "market": 102.06,
+          "market": 107.16,
           "analyst": 77.77,
           "opskins": 67
         },
         "3": {
-          "market": 106.52,
+          "market": 116.53,
           "analyst": 81.49,
           "opskins": 69.33
         },
         "4": {
-          "market": 115.61,
+          "market": 146.7,
           "analyst": 121.9,
           "opskins": 103.35
         }
       },
       "stattrak": {
         "0": {
-          "market": 98.8,
+          "market": 108.01,
           "analyst": 95.98,
           "opskins": 81.37
         },
@@ -30718,12 +30718,12 @@ var Prices = {
           "opskins": 101.91
         },
         "2": {
-          "market": 109.26,
+          "market": 122.26,
           "analyst": 101.64,
           "opskins": 82.88
         },
         "3": {
-          "market": 119.25,
+          "market": 129.25,
           "analyst": 140.18,
           "opskins": 150
         },
@@ -30743,49 +30743,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 77.77,
+          "market": 73.6,
           "analyst": 56.73,
           "opskins": 50.85
         },
         "1": {
-          "market": 73.79,
+          "market": 75.95,
           "analyst": 54.51,
           "opskins": 50.49
         },
         "2": {
-          "market": 74.83,
+          "market": 77.76,
           "analyst": 57.3,
           "opskins": 50.44
         },
         "3": {
-          "market": 88.08,
+          "market": 103.38,
           "analyst": 69.22,
           "opskins": 59.47
         },
         "4": {
-          "market": 139.05,
+          "market": 155.44,
           "analyst": -1,
           "opskins": 152
         }
       },
       "stattrak": {
         "0": {
-          "market": 85.95,
+          "market": 82.95,
           "analyst": 88.39,
           "opskins": 107.64
         },
         "1": {
-          "market": 88.2,
+          "market": 84.2,
           "analyst": 79.25,
           "opskins": 90
         },
         "2": {
-          "market": 85.83,
+          "market": 96.28,
           "analyst": 70.7,
           "opskins": 60.95
         },
         "3": {
-          "market": 102.6,
+          "market": 111.5,
           "analyst": 117.92,
           "opskins": 95.99
         }
@@ -30800,22 +30800,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 67.84,
+          "market": 73.49,
           "analyst": 57.73,
           "opskins": 52.39
         },
         "1": {
-          "market": 70.7,
+          "market": 78.96,
           "analyst": 55.24,
           "opskins": 51.16
         },
         "2": {
-          "market": 70.82,
+          "market": 82.03,
           "analyst": 55.44,
           "opskins": 48.99
         },
         "3": {
-          "market": 83.75,
+          "market": 95.41,
           "analyst": 66.97,
           "opskins": 59.79
         },
@@ -30837,12 +30837,12 @@ var Prices = {
           "opskins": 88.91
         },
         "2": {
-          "market": 80.07,
+          "market": 92.78,
           "analyst": 64.28,
           "opskins": 62.25
         },
         "3": {
-          "market": 93.05,
+          "market": 103.88,
           "analyst": 95.49,
           "opskins": 83.99
         }
@@ -30857,44 +30857,44 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 89.47,
+          "market": 97.01,
           "analyst": 65.47,
           "opskins": 59.93
         },
         "1": {
-          "market": 92.83,
+          "market": 108.81,
           "analyst": 81.84,
           "opskins": 66.99
         },
         "2": {
-          "market": 103.25,
+          "market": 111.53,
           "analyst": 78.92,
           "opskins": 66.64
         },
         "3": {
-          "market": 165,
+          "market": 193.73,
           "analyst": 136.79,
           "opskins": 115
         },
         "4": {
-          "market": 866,
+          "market": 836.11,
           "analyst": 681,
           "opskins": 699
         }
       },
       "stattrak": {
         "0": {
-          "market": 102.43,
+          "market": 109.35,
           "analyst": 119.24,
           "opskins": 126.28
         },
         "1": {
-          "market": 103.98,
+          "market": 143.98,
           "analyst": 103.82,
           "opskins": 135
         },
         "2": {
-          "market": 128.38,
+          "market": 145.35,
           "analyst": 114.26,
           "opskins": 105
         },
@@ -30919,27 +30919,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 76.3,
+          "market": 88.77,
           "analyst": 59.12,
           "opskins": 52.4
         },
         "1": {
-          "market": 77.95,
+          "market": 91.96,
           "analyst": 62.62,
           "opskins": 53.91
         },
         "2": {
-          "market": 79.95,
+          "market": 89.6,
           "analyst": 59.02,
           "opskins": 49.98
         },
         "3": {
-          "market": 97.52,
+          "market": 109.24,
           "analyst": 75.55,
           "opskins": 62.46
         },
         "4": {
-          "market": 215.55,
+          "market": 195.34,
           "analyst": -1,
           "opskins": 292
         }
@@ -30956,7 +30956,7 @@ var Prices = {
           "opskins": 74.99
         },
         "2": {
-          "market": 90.8,
+          "market": 106.16,
           "analyst": 82.16,
           "opskins": 79.99
         },
@@ -30981,24 +30981,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 228.05,
+          "market": 240.93,
           "analyst": 244.29,
           "opskins": 204.95
         },
         "4": {
-          "market": 261.11,
+          "market": 300.84,
           "analyst": 215.3,
           "opskins": 181.68
         }
       },
       "stattrak": {
         "3": {
-          "market": 408.75,
+          "market": 380,
           "analyst": 500,
           "opskins": 374.99
         },
         "4": {
-          "market": 368.94,
+          "market": 388.08,
           "analyst": 354,
           "opskins": 275.99
         }
@@ -31013,22 +31013,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 117.59,
+          "market": 128.62,
           "analyst": 102.29,
           "opskins": 87.15
         },
         "1": {
-          "market": 116.6,
+          "market": 128.01,
           "analyst": 104.04,
           "opskins": 84.38
         },
         "2": {
-          "market": 122.26,
+          "market": 141.07,
           "analyst": 110.36,
           "opskins": 92.07
         },
         "3": {
-          "market": 143.1,
+          "market": 153.92,
           "analyst": 123.14,
           "opskins": 103.8
         },
@@ -31055,7 +31055,7 @@ var Prices = {
           "opskins": 144.11
         },
         "3": {
-          "market": 202.4,
+          "market": 204.64,
           "analyst": 214.56,
           "opskins": 195
         },
@@ -31075,22 +31075,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 130.44,
+          "market": 144.11,
           "analyst": 97.67,
           "opskins": 86
         },
         "1": {
-          "market": 123.47,
+          "market": 142.84,
           "analyst": 97,
           "opskins": 85.55
         },
         "2": {
-          "market": 132.06,
+          "market": 145.55,
           "analyst": 101.57,
           "opskins": 91.55
         },
         "3": {
-          "market": 146.26,
+          "market": 157.16,
           "analyst": 110.37,
           "opskins": 97.75
         },
@@ -31102,27 +31102,27 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 131.11,
+          "market": 121.11,
           "analyst": 127.78,
           "opskins": 108.89
         },
         "1": {
-          "market": 144,
+          "market": 151.02,
           "analyst": 147.24,
           "opskins": 137
         },
         "2": {
-          "market": 150.95,
+          "market": 160.07,
           "analyst": 135.92,
           "opskins": 115.53
         },
         "3": {
-          "market": 165.55,
+          "market": 186.3,
           "analyst": 186.23,
           "opskins": 159
         },
         "4": {
-          "market": 607.5,
+          "market": 555,
           "analyst": 525,
           "opskins": 494.99
         }
@@ -31147,17 +31147,17 @@ var Prices = {
           "opskins": 120.17
         },
         "2": {
-          "market": 169.38,
+          "market": 187.33,
           "analyst": 131.45,
           "opskins": 114.28
         },
         "3": {
-          "market": 198.63,
+          "market": 231.7,
           "analyst": 170.58,
           "opskins": 150
         },
         "4": {
-          "market": 237.42,
+          "market": 258.49,
           "analyst": 201.73,
           "opskins": 165
         }
@@ -31194,7 +31194,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 309.83,
+          "market": 342.37,
           "analyst": 273.72,
           "opskins": 265
         },
@@ -31204,17 +31204,17 @@ var Prices = {
           "opskins": 299
         },
         "2": {
-          "market": 361.83,
+          "market": 398.64,
           "analyst": 323.77,
           "opskins": 278.99
         },
         "3": {
-          "market": 494.1,
+          "market": 520,
           "analyst": 379,
           "opskins": 384.99
         },
         "4": {
-          "market": 796.5,
+          "market": 799.41,
           "analyst": 630,
           "opskins": 619.99
         }
@@ -31231,7 +31231,7 @@ var Prices = {
           "opskins": 319
         },
         "2": {
-          "market": 437.85,
+          "market": 450,
           "analyst": 331,
           "opskins": 344.99
         },
@@ -31256,22 +31256,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 234.09,
+          "market": 265.15,
           "analyst": 202.29,
           "opskins": 167.86
         },
         "1": {
-          "market": 234.56,
+          "market": 265.01,
           "analyst": 191.18,
           "opskins": 170
         },
         "2": {
-          "market": 263.57,
+          "market": 290.84,
           "analyst": 208.48,
           "opskins": 200
         },
         "3": {
-          "market": 299.61,
+          "market": 331.88,
           "analyst": 259.08,
           "opskins": 218.88
         },
@@ -31318,7 +31318,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 249.99,
+          "market": 307.14,
           "analyst": 267.44,
           "opskins": 236.9
         },
@@ -31328,17 +31328,17 @@ var Prices = {
           "opskins": 315
         },
         "2": {
-          "market": 330.1,
+          "market": 389.96,
           "analyst": 352,
           "opskins": 355
         },
         "3": {
-          "market": 560,
+          "market": 801.46,
           "analyst": 580,
           "opskins": 587
         },
         "4": {
-          "market": 959.1,
+          "market": 1250,
           "analyst": 926,
           "opskins": 978
         }
@@ -31355,7 +31355,7 @@ var Prices = {
           "opskins": -1
         },
         "2": {
-          "market": 394.75,
+          "market": 538.75,
           "analyst": 465,
           "opskins": 460
         },
@@ -31385,22 +31385,22 @@ var Prices = {
           "opskins": 187.99
         },
         "1": {
-          "market": 216.76,
+          "market": 237.96,
           "analyst": 212.97,
           "opskins": 189.89
         },
         "2": {
-          "market": 245.55,
+          "market": 281.23,
           "analyst": 225.73,
           "opskins": 182
         },
         "3": {
-          "market": 305.82,
+          "market": 335.9,
           "analyst": 265.75,
           "opskins": 235.59
         },
         "4": {
-          "market": 357.95,
+          "market": 401.41,
           "analyst": 358.8,
           "opskins": 284.98
         }
@@ -31437,12 +31437,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 540,
+          "market": 550,
           "analyst": -1,
           "opskins": 450
         },
         "4": {
-          "market": 580,
+          "market": 571.51,
           "analyst": 781,
           "opskins": 476.98
         }
@@ -31454,7 +31454,7 @@ var Prices = {
           "opskins": 549.99
         },
         "4": {
-          "market": 987,
+          "market": 900.65,
           "analyst": 716,
           "opskins": 765
         }
@@ -31469,24 +31469,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 318.05,
+          "market": 333.7,
           "analyst": 314.54,
           "opskins": 248.49
         },
         "4": {
-          "market": 297.1,
+          "market": 334.03,
           "analyst": 279.87,
           "opskins": 231.7
         }
       },
       "stattrak": {
         "3": {
-          "market": 390.15,
+          "market": 400,
           "analyst": 292,
           "opskins": 350
         },
         "4": {
-          "market": 378.58,
+          "market": 348.89,
           "analyst": 324,
           "opskins": 325
         }
@@ -31501,19 +31501,19 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 130.98,
+          "market": 151.98,
           "analyst": 114.78,
           "opskins": 99.99
         },
         "1": {
-          "market": 151.64,
+          "market": 176.89,
           "analyst": 137.63,
           "opskins": 115.79
         }
       },
       "stattrak": {
         "0": {
-          "market": 179.7,
+          "market": 195.06,
           "analyst": 160.22,
           "opskins": 137.78
         },
@@ -31538,7 +31538,7 @@ var Prices = {
           "opskins": 379.99
         },
         "4": {
-          "market": 346.03,
+          "market": 351.58,
           "analyst": 387,
           "opskins": 364.56
         }
@@ -31550,7 +31550,7 @@ var Prices = {
           "opskins": 469
         },
         "4": {
-          "market": 612,
+          "market": 600,
           "analyst": 513,
           "opskins": 475
         }
@@ -31565,27 +31565,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 181.9,
+          "market": 190.49,
           "analyst": 164.75,
           "opskins": 147.99
         },
         "1": {
-          "market": 185.24,
+          "market": 209.86,
           "analyst": 171.38,
           "opskins": 139.99
         },
         "2": {
-          "market": 200.04,
+          "market": 223.13,
           "analyst": 159.12,
           "opskins": 134.89
         },
         "3": {
-          "market": 228.05,
+          "market": 260.06,
           "analyst": 192.08,
           "opskins": 155
         },
         "4": {
-          "market": 203.61,
+          "market": 301.3,
           "analyst": 216.89,
           "opskins": 182
         }
@@ -31602,7 +31602,7 @@ var Prices = {
           "opskins": 257.99
         },
         "2": {
-          "market": 229.77,
+          "market": 256.55,
           "analyst": 206.69,
           "opskins": 177
         },
@@ -31627,19 +31627,19 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 391.33,
+          "market": 433.8,
           "analyst": 316,
           "opskins": 329
         },
         "4": {
-          "market": 417.54,
+          "market": 396.98,
           "analyst": 319,
           "opskins": 320.4
         }
       },
       "stattrak": {
         "3": {
-          "market": 655.29,
+          "market": 625.96,
           "analyst": 528,
           "opskins": 788.26
         },
@@ -31659,27 +31659,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 89.95,
+          "market": 113.81,
           "analyst": 84.31,
           "opskins": 75.89
         },
         "1": {
-          "market": 108.12,
+          "market": 114.83,
           "analyst": 92.24,
           "opskins": 75.64
         },
         "2": {
-          "market": 88.17,
+          "market": 115.77,
           "analyst": 89.58,
           "opskins": 79
         },
         "3": {
-          "market": 143.65,
+          "market": 166.7,
           "analyst": 109.09,
           "opskins": 97.58
         },
         "4": {
-          "market": 342.05,
+          "market": 325.44,
           "analyst": 332,
           "opskins": -1
         }
@@ -31691,12 +31691,12 @@ var Prices = {
           "opskins": 110
         },
         "1": {
-          "market": 121.1,
+          "market": 131.1,
           "analyst": 175.12,
           "opskins": 134.99
         },
         "2": {
-          "market": 134.56,
+          "market": 141.83,
           "analyst": 126.48,
           "opskins": 104.99
         },
@@ -31721,22 +31721,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 150.16,
+          "market": 162.39,
           "analyst": 116.73,
           "opskins": 97.95
         },
         "1": {
-          "market": 157.7,
+          "market": 173.09,
           "analyst": 124.36,
           "opskins": 104.99
         },
         "2": {
-          "market": 162.49,
+          "market": 180.36,
           "analyst": 128.55,
           "opskins": 106.75
         },
         "3": {
-          "market": 173.58,
+          "market": 197.73,
           "analyst": 139.96,
           "opskins": 114.66
         },
@@ -31748,7 +31748,7 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 138.72,
+          "market": 148.72,
           "analyst": 149.9,
           "opskins": 141.79
         },
@@ -31758,12 +31758,12 @@ var Prices = {
           "opskins": 134.28
         },
         "2": {
-          "market": 178.49,
+          "market": 205.51,
           "analyst": 168.34,
           "opskins": 170
         },
         "3": {
-          "market": 225.79,
+          "market": 210.79,
           "analyst": 183.27,
           "opskins": 183.9
         },
@@ -31783,27 +31783,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 108.36,
+          "market": 107.81,
           "analyst": 81.81,
           "opskins": 71.9
         },
         "1": {
-          "market": 104,
+          "market": 117.39,
           "analyst": 88.81,
           "opskins": 73.97
         },
         "2": {
-          "market": 109.62,
+          "market": 123.04,
           "analyst": 86.37,
           "opskins": 73.79
         },
         "3": {
-          "market": 129.65,
+          "market": 149.71,
           "analyst": 101.75,
           "opskins": 85.89
         },
         "4": {
-          "market": 340.6,
+          "market": 324.62,
           "analyst": 261,
           "opskins": 299
         }
@@ -31815,12 +31815,12 @@ var Prices = {
           "opskins": 105.56
         },
         "1": {
-          "market": 135,
+          "market": 125,
           "analyst": 130.73,
           "opskins": 117.6
         },
         "2": {
-          "market": 135.78,
+          "market": 130.61,
           "analyst": 119.08,
           "opskins": 115
         },
@@ -31845,22 +31845,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 103.42,
+          "market": 112.81,
           "analyst": 81.94,
           "opskins": 71.4
         },
         "1": {
-          "market": 99.06,
+          "market": 108.6,
           "analyst": 82.63,
           "opskins": 70.83
         },
         "2": {
-          "market": 105.41,
+          "market": 110.06,
           "analyst": 80.83,
           "opskins": 70.5
         },
         "3": {
-          "market": 114.92,
+          "market": 127.91,
           "analyst": 95.45,
           "opskins": 79.89
         },
@@ -31882,12 +31882,12 @@ var Prices = {
           "opskins": 111.84
         },
         "2": {
-          "market": 118,
+          "market": 127.93,
           "analyst": 104.91,
           "opskins": 89.75
         },
         "3": {
-          "market": 131.72,
+          "market": 137,
           "analyst": 118.89,
           "opskins": 100
         },
@@ -31907,49 +31907,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 142.58,
+          "market": 152.52,
           "analyst": 127.83,
           "opskins": 101.97
         },
         "1": {
-          "market": 153.82,
+          "market": 162.05,
           "analyst": 124.91,
           "opskins": 104.98
         },
         "2": {
-          "market": 157.74,
+          "market": 176.66,
           "analyst": 125.2,
           "opskins": 105
         },
         "3": {
-          "market": 215.51,
+          "market": 250.22,
           "analyst": 182.57,
           "opskins": 159.99
         },
         "4": {
-          "market": 972.99,
+          "market": 900,
           "analyst": 738,
           "opskins": 735
         }
       },
       "stattrak": {
         "0": {
-          "market": 145.85,
+          "market": 165.85,
           "analyst": 165.55,
           "opskins": 131.58
         },
         "1": {
-          "market": 207,
+          "market": 211,
           "analyst": 214.95,
           "opskins": 188.99
         },
         "2": {
-          "market": 196.68,
+          "market": 212,
           "analyst": 178.19,
           "opskins": 145
         },
         "3": {
-          "market": 306.19,
+          "market": 300,
           "analyst": 287.66,
           "opskins": 235.87
         },
@@ -31969,12 +31969,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 440.1,
+          "market": 440,
           "analyst": 341,
           "opskins": 350
         },
         "4": {
-          "market": 400.43,
+          "market": 375.11,
           "analyst": 361,
           "opskins": 357
         }
@@ -32001,49 +32001,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 173.11,
+          "market": 181.56,
           "analyst": 139.11,
           "opskins": 116.93
         },
         "1": {
-          "market": 210.28,
+          "market": 218.48,
           "analyst": 201.39,
           "opskins": 159.89
         },
         "2": {
-          "market": 227.58,
+          "market": 259.69,
           "analyst": 198.31,
           "opskins": 163.7
         },
         "3": {
-          "market": 403.46,
+          "market": 396.2,
           "analyst": 334,
           "opskins": 331.99
         },
         "4": {
-          "market": 1756.47,
+          "market": 1700,
           "analyst": 1363,
           "opskins": 1499
         }
       },
       "stattrak": {
         "0": {
-          "market": 237.85,
+          "market": 243,
           "analyst": 207.72,
           "opskins": 210.95
         },
         "1": {
-          "market": 265.75,
+          "market": 271.71,
           "analyst": 212,
           "opskins": 224.9
         },
         "2": {
-          "market": 271.37,
+          "market": 319.3,
           "analyst": 303.96,
           "opskins": 232.99
         },
         "3": {
-          "market": 510.75,
+          "market": 470,
           "analyst": 413,
           "opskins": 498.99
         },
@@ -32063,22 +32063,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 65.6,
+          "market": 74.97,
           "analyst": 50.24,
           "opskins": 45.1
         },
         "1": {
-          "market": 69.49,
+          "market": 79.09,
           "analyst": 52.16,
           "opskins": 47.96
         },
         "2": {
-          "market": 69.54,
+          "market": 80.52,
           "analyst": 53.02,
           "opskins": 51.49
         },
         "3": {
-          "market": 86.74,
+          "market": 99.32,
           "analyst": 64.91,
           "opskins": 58.04
         },
@@ -32090,22 +32090,22 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 74.84,
+          "market": 79.13,
           "analyst": 75.59,
           "opskins": 57.44
         },
         "1": {
-          "market": 71.81,
+          "market": 83.91,
           "analyst": 74.13,
           "opskins": 61.98
         },
         "2": {
-          "market": 79.75,
+          "market": 99.34,
           "analyst": 77.63,
           "opskins": 64
         },
         "3": {
-          "market": 112.85,
+          "market": 114.17,
           "analyst": 113.06,
           "opskins": 150
         },
@@ -32125,49 +32125,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 64.11,
+          "market": 75.12,
           "analyst": 49.61,
           "opskins": 43.24
         },
         "1": {
-          "market": 68.74,
+          "market": 72.38,
           "analyst": 55.44,
           "opskins": 51.45
         },
         "2": {
-          "market": 68.32,
+          "market": 77.65,
           "analyst": 51.35,
           "opskins": 45.39
         },
         "3": {
-          "market": 88.59,
+          "market": 99.6,
           "analyst": 66.72,
           "opskins": 56.29
         },
         "4": {
-          "market": 91.1,
+          "market": 117.14,
           "analyst": 174.18,
           "opskins": 144.44
         }
       },
       "stattrak": {
         "0": {
-          "market": 63.72,
+          "market": 73.72,
           "analyst": 73.13,
           "opskins": 64.89
         },
         "1": {
-          "market": 73.04,
+          "market": 82.04,
           "analyst": 93.82,
           "opskins": 82.99
         },
         "2": {
-          "market": 77.15,
+          "market": 97.11,
           "analyst": 71.99,
           "opskins": 61
         },
         "3": {
-          "market": 95.48,
+          "market": 111.48,
           "analyst": 117.15,
           "opskins": 86
         },
@@ -32187,49 +32187,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 73.12,
+          "market": 85.43,
           "analyst": 54.33,
           "opskins": 49.42
         },
         "1": {
-          "market": 90.69,
+          "market": 102.52,
           "analyst": 68.14,
           "opskins": 57.99
         },
         "2": {
-          "market": 91.3,
+          "market": 105.2,
           "analyst": 70.59,
           "opskins": 58.41
         },
         "3": {
-          "market": 143.51,
+          "market": 162.25,
           "analyst": 110.59,
           "opskins": 94.85
         },
         "4": {
-          "market": 472,
+          "market": 499.41,
           "analyst": 360,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 64.12,
+          "market": 98.9,
           "analyst": 89.47,
           "opskins": 129.48
         },
         "1": {
-          "market": 98.39,
+          "market": 111.19,
           "analyst": 110.69,
           "opskins": 111.11
         },
         "2": {
-          "market": 116.02,
+          "market": 134.49,
           "analyst": 101.14,
           "opskins": 89.75
         },
         "3": {
-          "market": 207.7,
+          "market": 208.91,
           "analyst": 196,
           "opskins": 163
         },
@@ -32259,17 +32259,17 @@ var Prices = {
           "opskins": 64.95
         },
         "2": {
-          "market": 71.02,
+          "market": 78.76,
           "analyst": 54.09,
           "opskins": 46.93
         },
         "3": {
-          "market": 79.19,
+          "market": 88.18,
           "analyst": 64.73,
           "opskins": 59.89
         },
         "4": {
-          "market": 90.99,
+          "market": 97.62,
           "analyst": 71.32,
           "opskins": 63.99
         }
@@ -32301,7 +32301,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 103.74,
+          "market": 112.86,
           "analyst": 89.86,
           "opskins": 77.77
         },
@@ -32311,12 +32311,12 @@ var Prices = {
           "opskins": 103.99
         },
         "2": {
-          "market": 121.23,
+          "market": 130.98,
           "analyst": 96.73,
           "opskins": 84.44
         },
         "3": {
-          "market": 145.98,
+          "market": 156.85,
           "analyst": 120.99,
           "opskins": 111.96
         },
@@ -32363,22 +32363,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 75.18,
+          "market": 82.05,
           "analyst": 57.32,
           "opskins": 54.4
         },
         "1": {
-          "market": 73.42,
+          "market": 80.73,
           "analyst": 56.99,
           "opskins": 55.08
         },
         "2": {
-          "market": 75.73,
+          "market": 83.23,
           "analyst": 58.63,
           "opskins": 54.72
         },
         "3": {
-          "market": 80.34,
+          "market": 88.43,
           "analyst": 63.24,
           "opskins": 60.65
         },
@@ -32425,7 +32425,7 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 130,
+          "market": 129.28,
           "analyst": 96.22,
           "opskins": 96.82
         },
@@ -32435,17 +32435,17 @@ var Prices = {
           "opskins": 140
         },
         "2": {
-          "market": 175.2,
+          "market": 173.38,
           "analyst": 135.49,
           "opskins": 119.99
         },
         "3": {
-          "market": 161,
+          "market": 239.53,
           "analyst": 198.68,
           "opskins": 184
         },
         "4": {
-          "market": 302.66,
+          "market": 338.9,
           "analyst": 314.31,
           "opskins": 269.95
         }
@@ -32487,22 +32487,22 @@ var Prices = {
           "opskins": 250
         },
         "1": {
-          "market": 90.51,
+          "market": 103.62,
           "analyst": 82.68,
           "opskins": 74.93
         },
         "2": {
-          "market": 98.34,
+          "market": 108.89,
           "analyst": 78.63,
           "opskins": 71.54
         },
         "3": {
-          "market": 108.02,
+          "market": 119.95,
           "analyst": 90.99,
           "opskins": 82.68
         },
         "4": {
-          "market": 116.81,
+          "market": 128.84,
           "analyst": 99.23,
           "opskins": 86.02
         }
@@ -32544,7 +32544,7 @@ var Prices = {
           "opskins": 240
         },
         "4": {
-          "market": 178.48,
+          "market": 205.72,
           "analyst": 177.73,
           "opskins": 144.99
         }
@@ -32571,24 +32571,24 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 57.6,
+          "market": 64.95,
           "analyst": 43.31,
           "opskins": 37.24
         },
         "1": {
-          "market": 62.99,
+          "market": 67.48,
           "analyst": 50.4,
           "opskins": 45.7
         }
       },
       "stattrak": {
         "0": {
-          "market": 73.49,
+          "market": 81.63,
           "analyst": 58.36,
           "opskins": 51.48
         },
         "1": {
-          "market": 152.19,
+          "market": 132.19,
           "analyst": -1,
           "opskins": 221.99
         }
@@ -32603,12 +32603,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 174.52,
+          "market": 185.85,
           "analyst": 199.56,
           "opskins": 162.76
         },
         "4": {
-          "market": 162.04,
+          "market": 178.8,
           "analyst": 143.4,
           "opskins": 121
         }
@@ -32620,7 +32620,7 @@ var Prices = {
           "opskins": 200
         },
         "4": {
-          "market": 240,
+          "market": 262.36,
           "analyst": 236.22,
           "opskins": 185
         }
@@ -32635,27 +32635,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 62.8,
+          "market": 68.37,
           "analyst": 52.65,
           "opskins": 45.68
         },
         "1": {
-          "market": 63.94,
+          "market": 75.28,
           "analyst": 49.74,
           "opskins": 55
         },
         "2": {
-          "market": 65.45,
+          "market": 73.22,
           "analyst": 49.69,
           "opskins": 42.92
         },
         "3": {
-          "market": 74.12,
+          "market": 84.36,
           "analyst": 57.32,
           "opskins": 51.03
         },
         "4": {
-          "market": 83.19,
+          "market": 91.41,
           "analyst": 62.71,
           "opskins": 52.7
         }
@@ -32667,22 +32667,22 @@ var Prices = {
           "opskins": 70
         },
         "1": {
-          "market": 73.31,
+          "market": 75.31,
           "analyst": 75.4,
           "opskins": 65
         },
         "2": {
-          "market": 84.87,
+          "market": 92.22,
           "analyst": 88.03,
           "opskins": 80.16
         },
         "3": {
-          "market": 92.46,
+          "market": 97.88,
           "analyst": 88.57,
           "opskins": 78
         },
         "4": {
-          "market": 118.1,
+          "market": 120.15,
           "analyst": 114.93,
           "opskins": 101.96
         }
@@ -32697,12 +32697,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 139.25,
+          "market": 160.48,
           "analyst": 143.78,
           "opskins": 123.99
         },
         "4": {
-          "market": 144.04,
+          "market": 160.44,
           "analyst": 117.55,
           "opskins": 98
         }
@@ -32714,7 +32714,7 @@ var Prices = {
           "opskins": 320.5
         },
         "4": {
-          "market": 200.02,
+          "market": 211.31,
           "analyst": 177.58,
           "opskins": 143.19
         }
@@ -32729,22 +32729,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 52.92,
+          "market": 61.04,
           "analyst": 40.12,
           "opskins": 36.96
         },
         "1": {
-          "market": 63.61,
+          "market": 75.16,
           "analyst": 54.57,
           "opskins": 45.69
         },
         "2": {
-          "market": 68.48,
+          "market": 76.59,
           "analyst": 50.53,
           "opskins": 43.5
         },
         "3": {
-          "market": 101.23,
+          "market": 114.5,
           "analyst": 78.36,
           "opskins": 67.99
         },
@@ -32766,7 +32766,7 @@ var Prices = {
           "opskins": 79.92
         },
         "2": {
-          "market": 84.68,
+          "market": 105.59,
           "analyst": 80.99,
           "opskins": 67.89
         },
@@ -32791,22 +32791,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 47.88,
+          "market": 53.78,
           "analyst": 34.68,
           "opskins": 30.93
         },
         "1": {
-          "market": 50.54,
+          "market": 55.31,
           "analyst": 39.6,
           "opskins": 35.89
         },
         "2": {
-          "market": 50.59,
+          "market": 56.1,
           "analyst": 37.49,
           "opskins": 31.99
         },
         "3": {
-          "market": 58.22,
+          "market": 63.6,
           "analyst": 43.22,
           "opskins": 40.1
         },
@@ -32828,12 +32828,12 @@ var Prices = {
           "opskins": 53.99
         },
         "2": {
-          "market": 63.21,
+          "market": 69.5,
           "analyst": 50.03,
           "opskins": 44.85
         },
         "3": {
-          "market": 65.76,
+          "market": 71.73,
           "analyst": 69,
           "opskins": 64.02
         },
@@ -32853,49 +32853,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 54.6,
+          "market": 61.46,
           "analyst": 40.64,
           "opskins": 36.14
         },
         "1": {
-          "market": 55.69,
+          "market": 63.03,
           "analyst": 41.93,
           "opskins": 36.46
         },
         "2": {
-          "market": 56.7,
+          "market": 64.34,
           "analyst": 41.49,
           "opskins": 35.71
         },
         "3": {
-          "market": 60.22,
+          "market": 67.61,
           "analyst": 46.58,
           "opskins": 41.07
         },
         "4": {
-          "market": 73.2,
+          "market": 76.41,
           "analyst": 73.77,
           "opskins": 65
         }
       },
       "stattrak": {
         "0": {
-          "market": 53.93,
+          "market": 59.57,
           "analyst": 55.54,
           "opskins": 55.47
         },
         "1": {
-          "market": 70.2,
+          "market": 66.2,
           "analyst": 93.12,
           "opskins": 71.87
         },
         "2": {
-          "market": 71.31,
+          "market": 74.31,
           "analyst": 70.6,
           "opskins": 55.86
         },
         "3": {
-          "market": 75.75,
+          "market": 79.75,
           "analyst": 68.07,
           "opskins": 85
         },
@@ -32915,27 +32915,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 46.31,
+          "market": 52.43,
           "analyst": 34.46,
           "opskins": 31.59
         },
         "1": {
-          "market": 47.86,
+          "market": 54.9,
           "analyst": 41.78,
           "opskins": 38
         },
         "2": {
-          "market": 47.77,
+          "market": 54.18,
           "analyst": 35.13,
           "opskins": 30.79
         },
         "3": {
-          "market": 54.4,
+          "market": 62.01,
           "analyst": 40.81,
           "opskins": 35.98
         },
         "4": {
-          "market": 145,
+          "market": 135,
           "analyst": 134.44,
           "opskins": 129.88
         }
@@ -32952,7 +32952,7 @@ var Prices = {
           "opskins": 49
         },
         "2": {
-          "market": 58.2,
+          "market": 65.87,
           "analyst": 48.82,
           "opskins": 40.09
         },
@@ -32977,22 +32977,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 45.65,
+          "market": 52.12,
           "analyst": 32.91,
           "opskins": 31.66
         },
         "1": {
-          "market": 45.13,
+          "market": 52.73,
           "analyst": 36,
           "opskins": 30.38
         },
         "2": {
-          "market": 46.68,
+          "market": 52.45,
           "analyst": 34.3,
           "opskins": 31.74
         },
         "3": {
-          "market": 50.38,
+          "market": 56.18,
           "analyst": 38.4,
           "opskins": 33.15
         },
@@ -33004,7 +33004,7 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 41,
+          "market": 54.6,
           "analyst": 45.3,
           "opskins": 45
         },
@@ -33014,7 +33014,7 @@ var Prices = {
           "opskins": 46
         },
         "2": {
-          "market": 55.44,
+          "market": 60.3,
           "analyst": 47.38,
           "opskins": 46.95
         },
@@ -33039,22 +33039,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 53.06,
+          "market": 57.65,
           "analyst": 38.39,
           "opskins": 33.97
         },
         "1": {
-          "market": 58.37,
+          "market": 68.61,
           "analyst": 46.07,
           "opskins": 40.94
         },
         "2": {
-          "market": 62.3,
+          "market": 71.27,
           "analyst": 45.47,
           "opskins": 38.97
         },
         "3": {
-          "market": 94.97,
+          "market": 106.42,
           "analyst": 71.5,
           "opskins": 63.18
         },
@@ -33066,22 +33066,22 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 73.11,
+          "market": 66.11,
           "analyst": 72.74,
           "opskins": 63.99
         },
         "1": {
-          "market": 74.37,
+          "market": 69.37,
           "analyst": 87.43,
           "opskins": 74.95
         },
         "2": {
-          "market": 80.4,
+          "market": 92.62,
           "analyst": 68.65,
           "opskins": 59.85
         },
         "3": {
-          "market": 108.85,
+          "market": 110.03,
           "analyst": 128.31,
           "opskins": 98.5
         },
@@ -33101,22 +33101,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 47.38,
+          "market": 53.55,
           "analyst": 34.53,
           "opskins": 31.37
         },
         "1": {
-          "market": 50.92,
+          "market": 55.79,
           "analyst": 36.92,
           "opskins": 33.2
         },
         "2": {
-          "market": 50.28,
+          "market": 55.86,
           "analyst": 36.49,
           "opskins": 31.5
         },
         "3": {
-          "market": 57.92,
+          "market": 62.51,
           "analyst": 41.16,
           "opskins": 38.96
         },
@@ -33128,17 +33128,17 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 47.1,
+          "market": 51.1,
           "analyst": 50.06,
           "opskins": 84.99
         },
         "1": {
-          "market": 52.1,
+          "market": 55.1,
           "analyst": 54.28,
           "opskins": 48
         },
         "2": {
-          "market": 57.37,
+          "market": 69.13,
           "analyst": 55.91,
           "opskins": 49.87
         },
@@ -33163,49 +33163,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 61.18,
+          "market": 71.11,
           "analyst": 48.04,
           "opskins": 42.99
         },
         "1": {
-          "market": 61.61,
+          "market": 71.23,
           "analyst": 47.52,
           "opskins": 38.99
         },
         "2": {
-          "market": 65.33,
+          "market": 73.17,
           "analyst": 48.04,
           "opskins": 41.98
         },
         "3": {
-          "market": 69.76,
+          "market": 77.33,
           "analyst": 51.77,
           "opskins": 45.34
         },
         "4": {
-          "market": 85.2,
+          "market": 95.24,
           "analyst": 87.93,
           "opskins": 74.95
         }
       },
       "stattrak": {
         "0": {
-          "market": 64.8,
+          "market": 67.18,
           "analyst": 76.05,
           "opskins": 63.96
         },
         "1": {
-          "market": 75.59,
+          "market": 79.89,
           "analyst": 71.95,
           "opskins": 59.95
         },
         "2": {
-          "market": 79.44,
+          "market": 84.54,
           "analyst": 85.84,
           "opskins": 72.46
         },
         "3": {
-          "market": 90.66,
+          "market": 94.12,
           "analyst": 85.9,
           "opskins": 72.19
         },
@@ -33225,22 +33225,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 47.86,
+          "market": 54.13,
           "analyst": 35.3,
           "opskins": 31.79
         },
         "1": {
-          "market": 48.82,
+          "market": 54.67,
           "analyst": 36.04,
           "opskins": 30.38
         },
         "2": {
-          "market": 49.68,
+          "market": 54.76,
           "analyst": 36.03,
           "opskins": 31.89
         },
         "3": {
-          "market": 57.04,
+          "market": 62.74,
           "analyst": 42.95,
           "opskins": 38.19
         },
@@ -33262,7 +33262,7 @@ var Prices = {
           "opskins": 48.08
         },
         "2": {
-          "market": 58.76,
+          "market": 68.09,
           "analyst": 57.28,
           "opskins": 50.6
         },
@@ -33287,34 +33287,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 72.17,
+          "market": 81.22,
           "analyst": 58.08,
           "opskins": 53.27
         },
         "1": {
-          "market": 78.88,
+          "market": 87.4,
           "analyst": 69.86,
           "opskins": 59.98
         },
         "2": {
-          "market": 84.5,
+          "market": 94.64,
           "analyst": 68.33,
           "opskins": 59.82
         },
         "3": {
-          "market": 153.67,
+          "market": 177.78,
           "analyst": 147.51,
           "opskins": 120
         },
         "4": {
-          "market": 651,
+          "market": 625,
           "analyst": 495,
           "opskins": 549.99
         }
       },
       "stattrak": {
         "0": {
-          "market": 95.15,
+          "market": 88.15,
           "analyst": 76.61,
           "opskins": 86
         },
@@ -33324,12 +33324,12 @@ var Prices = {
           "opskins": 98.98
         },
         "2": {
-          "market": 117.75,
+          "market": 130.45,
           "analyst": 96.44,
           "opskins": 94.7
         },
         "3": {
-          "market": 355.9,
+          "market": 334,
           "analyst": 364.29,
           "opskins": 292
         },
@@ -33349,22 +33349,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 51.2,
+          "market": 57.24,
           "analyst": 36.17,
           "opskins": 32.28
         },
         "1": {
-          "market": 53.79,
+          "market": 58.59,
           "analyst": 39.14,
           "opskins": 36.57
         },
         "2": {
-          "market": 53.2,
+          "market": 58.65,
           "analyst": 38.58,
           "opskins": 33.21
         },
         "3": {
-          "market": 68.19,
+          "market": 76.39,
           "analyst": 49.78,
           "opskins": 44.61
         },
@@ -33386,7 +33386,7 @@ var Prices = {
           "opskins": 58.22
         },
         "2": {
-          "market": 69.03,
+          "market": 74.23,
           "analyst": 51.37,
           "opskins": 49.84
         },
@@ -33411,27 +33411,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 50.26,
+          "market": 56.47,
           "analyst": 36.64,
           "opskins": 35.69
         },
         "1": {
-          "market": 51.31,
+          "market": 56.18,
           "analyst": 37.52,
           "opskins": 34.33
         },
         "2": {
-          "market": 52.69,
+          "market": 59.03,
           "analyst": 38.69,
           "opskins": 34.48
         },
         "3": {
-          "market": 55.63,
+          "market": 63.34,
           "analyst": 42.43,
           "opskins": 36.98
         },
         "4": {
-          "market": 75.62,
+          "market": 82.62,
           "analyst": 79.63,
           "opskins": 68.99
         }
@@ -33443,17 +33443,17 @@ var Prices = {
           "opskins": 62.95
         },
         "1": {
-          "market": 64.77,
+          "market": 71.04,
           "analyst": 64.07,
           "opskins": 55.99
         },
         "2": {
-          "market": 67.6,
+          "market": 72.87,
           "analyst": 56.45,
           "opskins": 54.9
         },
         "3": {
-          "market": 95.85,
+          "market": 92.85,
           "analyst": 82.13,
           "opskins": 78.88
         },
@@ -33473,27 +33473,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 51.47,
+          "market": 58.35,
           "analyst": 43.82,
           "opskins": 38.96
         },
         "1": {
-          "market": 54.3,
+          "market": 59.37,
           "analyst": 45.04,
           "opskins": 37.24
         },
         "2": {
-          "market": 55.23,
+          "market": 60.29,
           "analyst": 47.76,
           "opskins": 40.89
         },
         "3": {
-          "market": 60.47,
+          "market": 67.34,
           "analyst": 53.85,
           "opskins": 49.45
         },
         "4": {
-          "market": 71.29,
+          "market": 101.29,
           "analyst": 97.95,
           "opskins": 89.85
         }
@@ -33510,17 +33510,17 @@ var Prices = {
           "opskins": 80
         },
         "2": {
-          "market": 77.09,
+          "market": 81.04,
           "analyst": 82.5,
           "opskins": 101.99
         },
         "3": {
-          "market": 78.3,
+          "market": 94.66,
           "analyst": 117.31,
           "opskins": 88
         },
         "4": {
-          "market": 264.95,
+          "market": 290.2,
           "analyst": -1,
           "opskins": 250
         }
@@ -33535,12 +33535,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 117.42,
+          "market": 133.62,
           "analyst": 108.6,
           "opskins": 90.02
         },
         "4": {
-          "market": 111.78,
+          "market": 124.18,
           "analyst": 89.06,
           "opskins": 78.33
         }
@@ -33552,7 +33552,7 @@ var Prices = {
           "opskins": 279.99
         },
         "4": {
-          "market": 182.78,
+          "market": 202.21,
           "analyst": 163.04,
           "opskins": 136.5
         }
@@ -33567,22 +33567,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 40.1,
+          "market": 44.86,
           "analyst": 28.99,
           "opskins": 27.75
         },
         "1": {
-          "market": 40.38,
+          "market": 46.63,
           "analyst": 30.14,
           "opskins": 27.98
         },
         "2": {
-          "market": 40.78,
+          "market": 46.05,
           "analyst": 29.93,
           "opskins": 27.24
         },
         "3": {
-          "market": 42.37,
+          "market": 47.93,
           "analyst": 32.36,
           "opskins": 28.5
         },
@@ -33594,7 +33594,7 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 44.66,
+          "market": 45.76,
           "analyst": 50.2,
           "opskins": 45
         },
@@ -33604,12 +33604,12 @@ var Prices = {
           "opskins": 50.99
         },
         "2": {
-          "market": 49.92,
+          "market": 56.58,
           "analyst": 40,
           "opskins": 38.39
         },
         "3": {
-          "market": 61.5,
+          "market": 59.23,
           "analyst": 58.99,
           "opskins": 61.79
         },
@@ -33629,17 +33629,17 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 76.87,
+          "market": 85.12,
           "analyst": 61.79,
           "opskins": 54.48
         },
         "3": {
-          "market": 80.22,
+          "market": 88.34,
           "analyst": 65.94,
           "opskins": 57.48
         },
         "4": {
-          "market": 89.26,
+          "market": 98.88,
           "analyst": 75.25,
           "opskins": 63.79
         }
@@ -33651,12 +33651,12 @@ var Prices = {
           "opskins": 99
         },
         "3": {
-          "market": 108.64,
+          "market": 131.82,
           "analyst": 114,
           "opskins": 101.54
         },
         "4": {
-          "market": 138.4,
+          "market": 151.4,
           "analyst": 133.47,
           "opskins": 107.88
         }
@@ -33671,27 +33671,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 45.07,
+          "market": 51.91,
           "analyst": 33.59,
           "opskins": 30.48
         },
         "1": {
-          "market": 45.65,
+          "market": 51.67,
           "analyst": 33.98,
           "opskins": 31.59
         },
         "2": {
-          "market": 47.84,
+          "market": 53.5,
           "analyst": 35.3,
           "opskins": 30.75
         },
         "3": {
-          "market": 51.65,
+          "market": 58.04,
           "analyst": 37.27,
           "opskins": 31.36
         },
         "4": {
-          "market": 69.17,
+          "market": 73.68,
           "analyst": 76.77,
           "opskins": 75.9
         }
@@ -33703,12 +33703,12 @@ var Prices = {
           "opskins": 59.19
         },
         "1": {
-          "market": 58.57,
+          "market": 66.19,
           "analyst": 51.81,
           "opskins": 53
         },
         "2": {
-          "market": 60.06,
+          "market": 67.27,
           "analyst": 58.34,
           "opskins": 63.82
         },
@@ -33733,54 +33733,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 7.76,
+          "market": 8.75,
           "analyst": 6.06,
           "opskins": 5.31
         },
         "1": {
-          "market": 9.05,
+          "market": 10.25,
           "analyst": 6.95,
           "opskins": 5.92
         },
         "2": {
-          "market": 10.99,
+          "market": 12.24,
           "analyst": 8.65,
           "opskins": 7.34
         },
         "3": {
-          "market": 16.66,
+          "market": 19.04,
           "analyst": 13.14,
           "opskins": 11.19
         },
         "4": {
-          "market": 38.16,
+          "market": 43.53,
           "analyst": 31.82,
           "opskins": 27.71
         }
       },
       "stattrak": {
         "0": {
-          "market": 19.33,
+          "market": 22.17,
           "analyst": 14.97,
           "opskins": 13.46
         },
         "1": {
-          "market": 23.17,
+          "market": 25.33,
           "analyst": 17.7,
           "opskins": 15.93
         },
         "2": {
-          "market": 29.77,
+          "market": 32.59,
           "analyst": 22.84,
           "opskins": 20.44
         },
         "3": {
-          "market": 52.24,
+          "market": 55.25,
           "analyst": 42.01,
           "opskins": 35.99
         },
         "4": {
-          "market": 162.42,
+          "market": 182.29,
           "analyst": 158.88,
           "opskins": 140
         }
@@ -33795,54 +33795,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 10.35,
+          "market": 11.54,
           "analyst": 7.72,
           "opskins": 6.63
         },
         "1": {
-          "market": 13.22,
+          "market": 14.97,
           "analyst": 9.83,
           "opskins": 8.28
         },
         "2": {
-          "market": 15.85,
+          "market": 17.87,
           "analyst": 11.75,
           "opskins": 10.35
         },
         "3": {
-          "market": 21.59,
+          "market": 24.58,
           "analyst": 16.31,
           "opskins": 14
         },
         "4": {
-          "market": 31.68,
+          "market": 35.74,
           "analyst": 24.3,
           "opskins": 21.19
         }
       },
       "stattrak": {
         "0": {
-          "market": 26.9,
+          "market": 31.16,
           "analyst": 19.75,
           "opskins": 17.57
         },
         "1": {
-          "market": 36.4,
+          "market": 39.92,
           "analyst": 28.17,
           "opskins": 25.94
         },
         "2": {
-          "market": 51.57,
+          "market": 55.59,
           "analyst": 40.39,
           "opskins": 33.84
         },
         "3": {
-          "market": 72.58,
+          "market": 81.77,
           "analyst": 61.08,
           "opskins": 50.57
         },
         "4": {
-          "market": 122.8,
+          "market": 120.41,
           "analyst": 124.36,
           "opskins": 103.79
         }
@@ -33857,34 +33857,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 14.95,
+          "market": 16.99,
           "analyst": 11.16,
           "opskins": 10.07
         },
         "1": {
-          "market": 27.83,
+          "market": 32.24,
           "analyst": 21.46,
           "opskins": 19.95
         },
         "2": {
-          "market": 38.27,
+          "market": 45.52,
           "analyst": 29.26,
           "opskins": 26
         }
       },
       "stattrak": {
         "0": {
-          "market": 52.63,
+          "market": 56.22,
           "analyst": 42.51,
           "opskins": 38.85
         },
         "1": {
-          "market": 112.16,
+          "market": 124.71,
           "analyst": 97.25,
           "opskins": 88
         },
         "2": {
-          "market": 170.52,
+          "market": 194.17,
           "analyst": 158.43,
           "opskins": 129.88
         }
@@ -33899,54 +33899,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 7,
+          "market": 8,
           "analyst": 5.7,
           "opskins": 5.55
         },
         "1": {
-          "market": 8.46,
+          "market": 9.48,
           "analyst": 6.62,
           "opskins": 5.65
         },
         "2": {
-          "market": 7.77,
+          "market": 9.04,
           "analyst": 6.24,
           "opskins": 5.31
         },
         "3": {
-          "market": 10.67,
+          "market": 12.21,
           "analyst": 8.23,
           "opskins": 7.11
         },
         "4": {
-          "market": 13.83,
+          "market": 15.95,
           "analyst": 10.6,
           "opskins": 9.8
         }
       },
       "stattrak": {
         "0": {
-          "market": 20.95,
+          "market": 24.73,
           "analyst": 16.58,
           "opskins": 18.27
         },
         "1": {
-          "market": 23.31,
+          "market": 27.81,
           "analyst": 19.31,
           "opskins": 18.95
         },
         "2": {
-          "market": 24.63,
+          "market": 28.51,
           "analyst": 18.65,
           "opskins": 16.61
         },
         "3": {
-          "market": 39.29,
+          "market": 46.27,
           "analyst": 31.36,
           "opskins": 27.48
         },
         "4": {
-          "market": 62.25,
+          "market": 66.72,
           "analyst": 50.26,
           "opskins": 42.99
         }
@@ -33961,22 +33961,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 108.26,
+          "market": 117.23,
           "analyst": 86.02,
           "opskins": 76.49
         },
         "1": {
-          "market": 163.58,
+          "market": 176.51,
           "analyst": 144.29,
           "opskins": 118
         },
         "2": {
-          "market": 182.21,
+          "market": 209.68,
           "analyst": 148.39,
           "opskins": 122.99
         },
         "3": {
-          "market": 266.15,
+          "market": 299.52,
           "analyst": 234.62,
           "opskins": 192.56
         },
@@ -33988,7 +33988,7 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 349.27,
+          "market": 369.58,
           "analyst": 388.94,
           "opskins": 315.55
         },
@@ -34003,12 +34003,12 @@ var Prices = {
           "opskins": 548
         },
         "3": {
-          "market": 972.34,
+          "market": 1050,
           "analyst": 855,
           "opskins": 869.99
         },
         "4": {
-          "market": 3700.99,
+          "market": 3300,
           "analyst": 2495,
           "opskins": 2699.99
         }
@@ -34023,54 +34023,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.64,
+          "market": 2.86,
           "analyst": 2.26,
           "opskins": 2
         },
         "1": {
-          "market": 4.43,
+          "market": 4.62,
           "analyst": 3.45,
           "opskins": 3.02
         },
         "2": {
-          "market": 4.71,
+          "market": 5,
           "analyst": 3.84,
           "opskins": 3.2
         },
         "3": {
-          "market": 7.87,
+          "market": 8.57,
           "analyst": 6.34,
           "opskins": 5.52
         },
         "4": {
-          "market": 15.97,
+          "market": 17.71,
           "analyst": 12.7,
           "opskins": 11.04
         }
       },
       "stattrak": {
         "0": {
-          "market": 7.31,
+          "market": 8.22,
           "analyst": 6.16,
           "opskins": 5.78
         },
         "1": {
-          "market": 11.22,
+          "market": 11.85,
           "analyst": 9.84,
           "opskins": 8.75
         },
         "2": {
-          "market": 14.08,
+          "market": 14.61,
           "analyst": 11.88,
           "opskins": 10.63
         },
         "3": {
-          "market": 29.64,
+          "market": 31.24,
           "analyst": 25.17,
           "opskins": 21.93
         },
         "4": {
-          "market": 89.66,
+          "market": 89,
           "analyst": 85.43,
           "opskins": 75.98
         }
@@ -34085,34 +34085,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 4.52,
+          "market": 5.35,
           "analyst": 3.73,
           "opskins": 3.85
         },
         "3": {
-          "market": 5.23,
+          "market": 6.05,
           "analyst": 4.32,
           "opskins": 3.8
         },
         "4": {
-          "market": 6.71,
+          "market": 7.87,
           "analyst": 5.56,
           "opskins": 4.75
         }
       },
       "stattrak": {
         "2": {
-          "market": 18.19,
+          "market": 20.73,
           "analyst": 13.83,
           "opskins": 12.67
         },
         "3": {
-          "market": 23.36,
+          "market": 27.32,
           "analyst": 20.45,
           "opskins": 18
         },
         "4": {
-          "market": 39,
+          "market": 46.51,
           "analyst": 33.28,
           "opskins": 32.49
         }
@@ -34127,24 +34127,24 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 19.41,
+          "market": 19.26,
           "analyst": 15.46,
           "opskins": 14.48
         },
         "3": {
-          "market": 30.73,
+          "market": 31.08,
           "analyst": 25.64,
           "opskins": 24.65
         }
       },
       "stattrak": {
         "2": {
-          "market": 66.36,
+          "market": 66.58,
           "analyst": 57.08,
           "opskins": 64.75
         },
         "3": {
-          "market": 134.18,
+          "market": 115.51,
           "analyst": 149.28,
           "opskins": 122
         }
@@ -34159,54 +34159,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 11.36,
+          "market": 12.32,
           "analyst": 8.76,
           "opskins": 7.94
         },
         "1": {
-          "market": 19.46,
+          "market": 21.56,
           "analyst": 14.32,
           "opskins": 12.39
         },
         "2": {
-          "market": 22.74,
+          "market": 26.46,
           "analyst": 17.34,
           "opskins": 14.9
         },
         "3": {
-          "market": 37.48,
+          "market": 43.86,
           "analyst": 27.83,
           "opskins": 23.95
         },
         "4": {
-          "market": 58.63,
+          "market": 69.08,
           "analyst": 45.64,
           "opskins": 40.63
         }
       },
       "stattrak": {
         "0": {
-          "market": 29.84,
+          "market": 33.95,
           "analyst": 22.72,
           "opskins": 21.87
         },
         "1": {
-          "market": 56.68,
+          "market": 66.29,
           "analyst": 44.94,
           "opskins": 41.16
         },
         "2": {
-          "market": 79.82,
+          "market": 89.25,
           "analyst": 63.25,
           "opskins": 54
         },
         "3": {
-          "market": 135.92,
+          "market": 187.67,
           "analyst": 128.44,
           "opskins": 109.75
         },
         "4": {
-          "market": 339.6,
+          "market": 372.91,
           "analyst": 342.83,
           "opskins": 274.49
         }
@@ -34221,34 +34221,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 20.71,
+          "market": 18.5,
           "analyst": 18.6,
           "opskins": 16.89
         },
         "3": {
-          "market": 21.29,
+          "market": 18.9,
           "analyst": 19.24,
           "opskins": 16.69
         },
         "4": {
-          "market": 28.85,
+          "market": 26.09,
           "analyst": 28.41,
           "opskins": 24.65
         }
       },
       "stattrak": {
         "2": {
-          "market": 71.63,
+          "market": 65.3,
           "analyst": 79.96,
           "opskins": 68.54
         },
         "3": {
-          "market": 79.15,
+          "market": 77.13,
           "analyst": 81.04,
           "opskins": 72
         },
         "4": {
-          "market": 179.1,
+          "market": 182.66,
           "analyst": 240.66,
           "opskins": 225
         }
@@ -34263,54 +34263,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.37,
+          "market": 2.74,
           "analyst": 1.93,
           "opskins": 1.86
         },
         "1": {
-          "market": 2.97,
+          "market": 3.75,
           "analyst": 2.89,
           "opskins": 2.71
         },
         "2": {
-          "market": 2.58,
+          "market": 3.25,
           "analyst": 2.07,
           "opskins": 1.89
         },
         "3": {
-          "market": 3.75,
+          "market": 4.57,
           "analyst": 3.19,
           "opskins": 3.13
         },
         "4": {
-          "market": 7.37,
+          "market": 8.22,
           "analyst": 6.06,
           "opskins": 6.5
         }
       },
       "stattrak": {
         "0": {
-          "market": 15.05,
+          "market": 16.08,
           "analyst": 15.43,
           "opskins": 14.98
         },
         "1": {
-          "market": 14.8,
+          "market": 18,
           "analyst": 41.2,
           "opskins": 34.39
         },
         "2": {
-          "market": 17.59,
+          "market": 21.42,
           "analyst": 17.76,
           "opskins": 15.99
         },
         "3": {
-          "market": 35.57,
+          "market": 34.22,
           "analyst": 34.33,
           "opskins": 36.5
         },
         "4": {
-          "market": 91.8,
+          "market": 97,
           "analyst": 93.37,
           "opskins": 87.4
         }
@@ -34325,22 +34325,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 26.73,
+          "market": 34.42,
           "analyst": 22.77,
           "opskins": 65
         },
         "1": {
-          "market": 39.79,
+          "market": 48.43,
           "analyst": 31.29,
           "opskins": 29.99
         },
         "2": {
-          "market": 61.66,
+          "market": 70.09,
           "analyst": 49.24,
           "opskins": 45.99
         },
         "3": {
-          "market": 170.87,
+          "market": 212.49,
           "analyst": 166.2,
           "opskins": 134.75
         },
@@ -34361,34 +34361,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 4.89,
+          "market": 5.21,
           "analyst": 3.81,
           "opskins": 3.52
         },
         "1": {
-          "market": 5.58,
+          "market": 6.25,
           "analyst": 4.69,
           "opskins": 4.49
         },
         "2": {
-          "market": 5.13,
+          "market": 5.43,
           "analyst": 4.06,
           "opskins": 3.49
         },
         "3": {
-          "market": 6.49,
+          "market": 6.95,
           "analyst": 5.25,
           "opskins": 4.5
         },
         "4": {
-          "market": 10.26,
+          "market": 11.16,
           "analyst": 8.18,
           "opskins": 6.96
         }
       },
       "stattrak": {
         "0": {
-          "market": 24.8,
+          "market": 27.33,
           "analyst": 23.52,
           "opskins": 21.93
         },
@@ -34398,17 +34398,17 @@ var Prices = {
           "opskins": 24.74
         },
         "2": {
-          "market": 28.88,
+          "market": 30.34,
           "analyst": 22.03,
           "opskins": 20.21
         },
         "3": {
-          "market": 38.56,
+          "market": 43.6,
           "analyst": 31.58,
           "opskins": 27.78
         },
         "4": {
-          "market": 75.89,
+          "market": 84.09,
           "analyst": 79.47,
           "opskins": 65.56
         }
@@ -34423,44 +34423,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 2.1,
+          "market": 2.29,
           "analyst": 1.74,
           "opskins": 1.7
         },
         "2": {
-          "market": 1.9,
+          "market": 1.95,
           "analyst": 1.65,
           "opskins": 1.41
         },
         "3": {
-          "market": 3.27,
+          "market": 3.5,
           "analyst": 2.6,
           "opskins": 2.1
         },
         "4": {
-          "market": 5.37,
+          "market": 5.22,
           "analyst": 4.41,
           "opskins": 3.75
         }
       },
       "stattrak": {
         "1": {
-          "market": 5.86,
+          "market": 5.85,
           "analyst": 5.06,
           "opskins": 5.14
         },
         "2": {
-          "market": 5.02,
+          "market": 5.03,
           "analyst": 4.27,
           "opskins": 3.69
         },
         "3": {
-          "market": 11.21,
+          "market": 11.35,
           "analyst": 9.24,
           "opskins": 8.37
         },
         "4": {
-          "market": 20.39,
+          "market": 21,
           "analyst": 16.93,
           "opskins": 14.23
         }
@@ -34475,49 +34475,49 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 16.04,
+          "market": 17.84,
           "analyst": 12.5,
           "opskins": 10.96
         },
         "1": {
-          "market": 20.83,
+          "market": 22.65,
           "analyst": 16.37,
           "opskins": 13.95
         },
         "2": {
-          "market": 18.15,
+          "market": 20.32,
           "analyst": 13.77,
           "opskins": 11.83
         },
         "3": {
-          "market": 25.59,
+          "market": 28.14,
           "analyst": 20.18,
           "opskins": 17.76
         },
         "4": {
-          "market": 81.64,
+          "market": 96.44,
           "analyst": 68.69,
           "opskins": 60
         }
       },
       "stattrak": {
         "0": {
-          "market": 51.36,
+          "market": 59.25,
           "analyst": 42.15,
           "opskins": 40.99
         },
         "1": {
-          "market": 62.03,
+          "market": 67.6,
           "analyst": 64.34,
           "opskins": 56.95
         },
         "2": {
-          "market": 68.48,
+          "market": 71.05,
           "analyst": 50.08,
           "opskins": 45.98
         },
         "3": {
-          "market": 111.33,
+          "market": 120.87,
           "analyst": 95.79,
           "opskins": 82.85
         },
@@ -34564,17 +34564,17 @@ var Prices = {
           "opskins": 793
         },
         "2": {
-          "market": 825.02,
+          "market": 1000,
           "analyst": 752,
           "opskins": 801.99
         },
         "3": {
-          "market": 1115.29,
+          "market": 1300,
           "analyst": 1107,
           "opskins": 1169.69
         },
         "4": {
-          "market": 1668.52,
+          "market": 2300,
           "analyst": 1815,
           "opskins": 1600
         }
@@ -34589,54 +34589,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 12.85,
+          "market": 14.52,
           "analyst": 9.12,
           "opskins": 8.27
         },
         "1": {
-          "market": 19.21,
+          "market": 21.23,
           "analyst": 13.91,
           "opskins": 11.96
         },
         "2": {
-          "market": 22.86,
+          "market": 25.73,
           "analyst": 16.85,
           "opskins": 14.69
         },
         "3": {
-          "market": 34.82,
+          "market": 38.22,
           "analyst": 25.5,
           "opskins": 22.14
         },
         "4": {
-          "market": 50.52,
+          "market": 57.13,
           "analyst": 39.74,
           "opskins": 34.33
         }
       },
       "stattrak": {
         "0": {
-          "market": 33.36,
+          "market": 40.08,
           "analyst": 25.7,
           "opskins": 22.15
         },
         "1": {
-          "market": 47.49,
+          "market": 51.25,
           "analyst": 33.95,
           "opskins": 29.84
         },
         "2": {
-          "market": 62.3,
+          "market": 71.04,
           "analyst": 48.89,
           "opskins": 40.18
         },
         "3": {
-          "market": 109.5,
+          "market": 117.84,
           "analyst": 83.59,
           "opskins": 69.5
         },
         "4": {
-          "market": 189.63,
+          "market": 234.32,
           "analyst": 173.17,
           "opskins": 146.75
         }
@@ -34651,12 +34651,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 57.35,
+          "market": 64.91,
           "analyst": 43.72,
           "opskins": 40.88
         },
         "4": {
-          "market": 56.9,
+          "market": 59.85,
           "analyst": 43.17,
           "opskins": 37.45
         }
@@ -34668,7 +34668,7 @@ var Prices = {
           "opskins": 149.98
         },
         "4": {
-          "market": 214.38,
+          "market": 214.36,
           "analyst": 174.33,
           "opskins": 141
         }
@@ -34683,34 +34683,34 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 22.2,
+          "market": 25.56,
           "analyst": 16.78,
           "opskins": 15.24
         },
         "1": {
-          "market": 27.23,
+          "market": 30.91,
           "analyst": 20.54,
           "opskins": 17.88
         },
         "2": {
-          "market": 31.99,
+          "market": 35.77,
           "analyst": 25.18,
           "opskins": 21.94
         }
       },
       "stattrak": {
         "0": {
-          "market": 57.65,
+          "market": 63.38,
           "analyst": 42.28,
           "opskins": 35.96
         },
         "1": {
-          "market": 76.19,
+          "market": 87.25,
           "analyst": 58.96,
           "opskins": 50.83
         },
         "2": {
-          "market": 94.98,
+          "market": 113.13,
           "analyst": 74.61,
           "opskins": 63
         }
@@ -34725,24 +34725,24 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 10.05,
+          "market": 11.21,
           "analyst": 7.34,
           "opskins": 6.28
         },
         "3": {
-          "market": 10.48,
+          "market": 11.57,
           "analyst": 7.56,
           "opskins": 6.47
         }
       },
       "stattrak": {
         "2": {
-          "market": 29.3,
+          "market": 34.36,
           "analyst": 22.5,
           "opskins": 20.82
         },
         "3": {
-          "market": 32.8,
+          "market": 38.48,
           "analyst": 24.8,
           "opskins": 22
         }
@@ -34757,54 +34757,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.61,
+          "market": 3.35,
           "analyst": 2.03,
           "opskins": 1.92
         },
         "1": {
-          "market": 4.1,
+          "market": 5.25,
           "analyst": 2.91,
           "opskins": 3.16
         },
         "2": {
-          "market": 2.52,
+          "market": 3.29,
           "analyst": 1.86,
           "opskins": 1.74
         },
         "3": {
-          "market": 3.07,
+          "market": 3.9,
           "analyst": 2.23,
           "opskins": 2.02
         },
         "4": {
-          "market": 5.88,
+          "market": 6.72,
           "analyst": 4.44,
           "opskins": 4.19
         }
       },
       "stattrak": {
         "0": {
-          "market": 11.37,
+          "market": 14.17,
           "analyst": 9.01,
           "opskins": 7.46
         },
         "1": {
-          "market": 13.1,
+          "market": 15.33,
           "analyst": 10.59,
           "opskins": 9.75
         },
         "2": {
-          "market": 11.18,
+          "market": 13.95,
           "analyst": 8.52,
           "opskins": 7.25
         },
         "3": {
-          "market": 14.19,
+          "market": 17.89,
           "analyst": 11.21,
           "opskins": 9.48
         },
         "4": {
-          "market": 23.39,
+          "market": 29.95,
           "analyst": 19.63,
           "opskins": 17.05
         }
@@ -34816,36 +34816,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.2
+          "market": 4.07
         },
         "1": {
-          "market": 5.29
+          "market": 6.1
         },
         "2": {
-          "market": 3.87
+          "market": 4.57
         },
         "3": {
-          "market": 5.99
+          "market": 6.91
         },
         "4": {
-          "market": 10.04
+          "market": 11.6
         }
       },
       "stattrak": {
         "0": {
-          "market": 9.62
+          "market": 11.27
         },
         "1": {
-          "market": 15.05
+          "market": 17.19
         },
         "2": {
-          "market": 11.13
+          "market": 13.14
         },
         "3": {
-          "market": 20.49
+          "market": 23.02
         },
         "4": {
-          "market": 35.51
+          "market": 40.55
         }
       }
     }
@@ -34857,22 +34857,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 7.51,
+          "market": 8.93,
           "analyst": 5.68,
           "opskins": 5.1
         },
         "1": {
-          "market": 7.95,
+          "market": 9.45,
           "analyst": 6.35,
           "opskins": 5.51
         },
         "2": {
-          "market": 7.59,
+          "market": 8.88,
           "analyst": 5.72,
           "opskins": 5.1
         },
         "3": {
-          "market": 11.88,
+          "market": 13.5,
           "analyst": 8.86,
           "opskins": 7.96
         },
@@ -34884,22 +34884,22 @@ var Prices = {
       },
       "stattrak": {
         "0": {
-          "market": 34.09,
+          "market": 38.12,
           "analyst": 26.61,
           "opskins": 23.39
         },
         "1": {
-          "market": 33.11,
+          "market": 37.42,
           "analyst": 26.62,
           "opskins": 24.35
         },
         "2": {
-          "market": 35.18,
+          "market": 39.95,
           "analyst": 26.23,
           "opskins": 22.18
         },
         "3": {
-          "market": 53.76,
+          "market": 67.75,
           "analyst": 55.16,
           "opskins": 46
         },
@@ -34919,34 +34919,34 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 12.21,
+          "market": 14.6,
           "analyst": 10.34,
           "opskins": 9.26
         },
         "2": {
-          "market": 10.08,
+          "market": 11.68,
           "analyst": 7.4,
           "opskins": 6.4
         },
         "3": {
-          "market": 15.14,
+          "market": 17.36,
           "analyst": 11.3,
           "opskins": 10.06
         }
       },
       "stattrak": {
         "1": {
-          "market": 31.72,
+          "market": 36.22,
           "analyst": 28.14,
           "opskins": 24.94
         },
         "2": {
-          "market": 29.62,
+          "market": 35.82,
           "analyst": 23.15,
           "opskins": 20.8
         },
         "3": {
-          "market": 52.17,
+          "market": 61.14,
           "analyst": 40.13,
           "opskins": 33.87
         }
@@ -34961,54 +34961,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.73,
+          "market": 3.15,
           "analyst": 2.55,
           "opskins": 4.66
         },
         "1": {
-          "market": 3.06,
+          "market": 3.55,
           "analyst": 2.78,
           "opskins": 2.45
         },
         "2": {
-          "market": 2.87,
+          "market": 3.34,
           "analyst": 2.41,
           "opskins": 2.15
         },
         "3": {
-          "market": 4.93,
+          "market": 5.49,
           "analyst": 4.11,
           "opskins": 3.33
         },
         "4": {
-          "market": 10.08,
+          "market": 11.38,
           "analyst": 8.12,
           "opskins": 7.06
         }
       },
       "stattrak": {
         "0": {
-          "market": 7.95,
+          "market": 9.03,
           "analyst": 7.02,
           "opskins": 6.68
         },
         "1": {
-          "market": 9.13,
+          "market": 10.11,
           "analyst": 8.31,
           "opskins": 7.19
         },
         "2": {
-          "market": 9.3,
+          "market": 10.37,
           "analyst": 7.96,
           "opskins": 6.76
         },
         "3": {
-          "market": 16.42,
+          "market": 18.6,
           "analyst": 13.49,
           "opskins": 11.59
         },
         "4": {
-          "market": 39.33,
+          "market": 44.61,
           "analyst": 31.34,
           "opskins": 27
         }
@@ -35023,12 +35023,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 36.29,
+          "market": 42.42,
           "analyst": 28.79,
           "opskins": 25.95
         },
         "4": {
-          "market": 37.38,
+          "market": 43.26,
           "analyst": 28.13,
           "opskins": 25.13
         }
@@ -35040,7 +35040,7 @@ var Prices = {
           "opskins": 87
         },
         "4": {
-          "market": 137.78,
+          "market": 169.6,
           "analyst": 118.96,
           "opskins": 98.75
         }
@@ -35055,44 +35055,44 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.74,
+          "market": 5.04,
           "analyst": 2.93,
           "opskins": 2.91
         },
         "1": {
-          "market": 6.6,
+          "market": 7.84,
           "analyst": 5.11,
           "opskins": 4.57
         },
         "2": {
-          "market": 6.12,
+          "market": 7.62,
           "analyst": 4.8,
           "opskins": 4.35
         },
         "3": {
-          "market": 19.76,
+          "market": 23.01,
           "analyst": 14.72,
           "opskins": 13.2
         }
       },
       "stattrak": {
         "0": {
-          "market": 11.08,
+          "market": 13.73,
           "analyst": 8.74,
           "opskins": 7.45
         },
         "1": {
-          "market": 19.93,
+          "market": 22.79,
           "analyst": 14.67,
           "opskins": 12.4
         },
         "2": {
-          "market": 23,
+          "market": 26.68,
           "analyst": 17.6,
           "opskins": 14.99
         },
         "3": {
-          "market": 107.12,
+          "market": 114.53,
           "analyst": 81.47,
           "opskins": 72
         }
@@ -35112,44 +35112,44 @@ var Prices = {
           "opskins": 1.54
         },
         "1": {
-          "market": 1.87,
+          "market": 1.96,
           "analyst": 1.61,
           "opskins": 1.41
         },
         "2": {
-          "market": 1.55,
+          "market": 1.65,
           "analyst": 1.21,
           "opskins": 1.15
         },
         "3": {
-          "market": 2.58,
+          "market": 2.67,
           "analyst": 2.05,
           "opskins": 1.72
         },
         "4": {
-          "market": 14.19,
+          "market": 18.46,
           "analyst": 14.59,
           "opskins": 13.86
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.24,
+          "market": 4.58,
           "analyst": 4.58,
           "opskins": 4.4
         },
         "1": {
-          "market": 5.28,
+          "market": 7,
           "analyst": 5.21,
           "opskins": 4.75
         },
         "2": {
-          "market": 4.77,
+          "market": 5.17,
           "analyst": 3.84,
           "opskins": 3.8
         },
         "3": {
-          "market": 11,
+          "market": 9.99,
           "analyst": 10.81,
           "opskins": 9.59
         },
@@ -35169,54 +35169,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 21.34,
+          "market": 24.34,
           "analyst": 15.58,
           "opskins": 15.45
         },
         "1": {
-          "market": 22.81,
+          "market": 26.05,
           "analyst": 17.59,
           "opskins": 15.78
         },
         "2": {
-          "market": 25.16,
+          "market": 28.77,
           "analyst": 19.17,
           "opskins": 16.58
         },
         "3": {
-          "market": 32.09,
+          "market": 35.81,
           "analyst": 23.34,
           "opskins": 20.85
         },
         "4": {
-          "market": 52.5,
+          "market": 59.04,
           "analyst": 40.61,
           "opskins": 35.76
         }
       },
       "stattrak": {
         "0": {
-          "market": 69.51,
+          "market": 82.54,
           "analyst": 51.54,
           "opskins": 47.77
         },
         "1": {
-          "market": 77.12,
+          "market": 84.17,
           "analyst": 75.48,
           "opskins": 61.2
         },
         "2": {
-          "market": 90.86,
+          "market": 100.26,
           "analyst": 62.42,
           "opskins": 55.44
         },
         "3": {
-          "market": 118.92,
+          "market": 141.41,
           "analyst": 87.65,
           "opskins": 84.55
         },
         "4": {
-          "market": 263,
+          "market": 283.86,
           "analyst": 224.92,
           "opskins": 213.99
         }
@@ -35231,24 +35231,24 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 13.04,
+          "market": 15.2,
           "analyst": 11.74,
           "opskins": 11.95
         },
         "4": {
-          "market": 9.34,
+          "market": 9.92,
           "analyst": 6.94,
           "opskins": 6.59
         }
       },
       "stattrak": {
         "3": {
-          "market": 31,
+          "market": 42,
           "analyst": 39.97,
           "opskins": 43.15
         },
         "4": {
-          "market": 28.7,
+          "market": 31.73,
           "analyst": 25,
           "opskins": 22.89
         }
@@ -35263,54 +35263,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.38,
+          "market": 2.76,
           "analyst": 1.92,
           "opskins": 1.69
         },
         "1": {
-          "market": 3.55,
+          "market": 4.14,
           "analyst": 2.73,
           "opskins": 2.48
         },
         "2": {
-          "market": 2.94,
+          "market": 3.29,
           "analyst": 2.24,
           "opskins": 1.87
         },
         "3": {
-          "market": 4.02,
+          "market": 4.35,
           "analyst": 3.13,
           "opskins": 2.6
         },
         "4": {
-          "market": 6.48,
+          "market": 7.19,
           "analyst": 5.05,
           "opskins": 4.47
         }
       },
       "stattrak": {
         "0": {
-          "market": 7.21,
+          "market": 8.53,
           "analyst": 5.98,
           "opskins": 5.53
         },
         "1": {
-          "market": 10.81,
+          "market": 12.29,
           "analyst": 9.51,
           "opskins": 8.32
         },
         "2": {
-          "market": 10.17,
+          "market": 11.33,
           "analyst": 7.93,
           "opskins": 6.7
         },
         "3": {
-          "market": 16.45,
+          "market": 17.81,
           "analyst": 13.69,
           "opskins": 11.65
         },
         "4": {
-          "market": 27.56,
+          "market": 28.9,
           "analyst": 20.72,
           "opskins": 17.7
         }
@@ -35325,54 +35325,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.86,
+          "market": 2.06,
           "analyst": 1.39,
           "opskins": 1.35
         },
         "1": {
-          "market": 1.98,
+          "market": 2.31,
           "analyst": 1.9,
           "opskins": 1.63
         },
         "2": {
-          "market": 1.81,
+          "market": 2.02,
           "analyst": 1.34,
           "opskins": 1.27
         },
         "3": {
-          "market": 2.03,
+          "market": 2.27,
           "analyst": 1.45,
           "opskins": 1.3
         },
         "4": {
-          "market": 3.21,
+          "market": 3.63,
           "analyst": 2.6,
           "opskins": 2.24
         }
       },
       "stattrak": {
         "0": {
-          "market": 6.4,
+          "market": 6.96,
           "analyst": 5.16,
           "opskins": 4.79
         },
         "1": {
-          "market": 7.2,
+          "market": 8.07,
           "analyst": 6.5,
           "opskins": 6.09
         },
         "2": {
-          "market": 6.8,
+          "market": 7.46,
           "analyst": 5.19,
           "opskins": 4.57
         },
         "3": {
-          "market": 8.72,
+          "market": 10.18,
           "analyst": 6.84,
           "opskins": 5.96
         },
         "4": {
-          "market": 14.57,
+          "market": 17.58,
           "analyst": 12.43,
           "opskins": 10.45
         }
@@ -35387,22 +35387,22 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 2.43,
+          "market": 2.44,
           "analyst": 3.27,
           "opskins": 3.11
         },
         "2": {
-          "market": 1.79,
+          "market": 2.1,
           "analyst": 1.45,
           "opskins": 1.6
         },
         "3": {
-          "market": 2.01,
+          "market": 2.31,
           "analyst": 1.75,
           "opskins": 1.57
         },
         "4": {
-          "market": 3.15,
+          "market": 3.58,
           "analyst": 2.79,
           "opskins": 2.59
         }
@@ -35414,17 +35414,17 @@ var Prices = {
           "opskins": 19.2
         },
         "2": {
-          "market": 3.94,
+          "market": 4.9,
           "analyst": 4.24,
           "opskins": 4.03
         },
         "3": {
-          "market": 6.04,
+          "market": 6.99,
           "analyst": 5.04,
           "opskins": 4.32
         },
         "4": {
-          "market": 14,
+          "market": 14.92,
           "analyst": 11.94,
           "opskins": 10.19
         }
@@ -35439,44 +35439,44 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.29,
+          "market": 2.33,
           "analyst": 1.83,
           "opskins": 1.72
         },
         "1": {
-          "market": 2.36,
+          "market": 2.5,
           "analyst": 1.87,
           "opskins": 1.88
         },
         "2": {
-          "market": 2.08,
+          "market": 2.39,
           "analyst": 1.85,
           "opskins": 1.5
         },
         "3": {
-          "market": 2.98,
+          "market": 3.1,
           "analyst": 2.5,
           "opskins": 2.09
         }
       },
       "stattrak": {
         "0": {
-          "market": 4.56,
+          "market": 5.47,
           "analyst": 3.85,
           "opskins": 3.74
         },
         "1": {
-          "market": 5.42,
+          "market": 6.75,
           "analyst": 5.61,
           "opskins": 8.97
         },
         "2": {
-          "market": 5.34,
+          "market": 6.35,
           "analyst": 4.41,
           "opskins": 3.69
         },
         "3": {
-          "market": 10.17,
+          "market": 10.45,
           "analyst": 8.52,
           "opskins": 7.33
         }
@@ -35491,44 +35491,44 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.1,
+          "market": 1.23,
           "analyst": 0.96,
           "opskins": 0.78
         },
         "1": {
-          "market": 1.12,
+          "market": 1.22,
           "analyst": 0.96,
           "opskins": 0.8
         },
         "2": {
-          "market": 1.12,
+          "market": 1.22,
           "analyst": 0.96,
           "opskins": 0.75
         },
         "3": {
-          "market": 3.84,
+          "market": 4.07,
           "analyst": 3.03,
           "opskins": 2.53
         }
       },
       "stattrak": {
         "0": {
-          "market": 2.65,
+          "market": 3.01,
           "analyst": 2.15,
           "opskins": 2.03
         },
         "1": {
-          "market": 2.69,
+          "market": 3.03,
           "analyst": 2.31,
           "opskins": 2.02
         },
         "2": {
-          "market": 2.88,
+          "market": 3.23,
           "analyst": 2.42,
           "opskins": 2.07
         },
         "3": {
-          "market": 13.47,
+          "market": 14.9,
           "analyst": 10.37,
           "opskins": 9.16
         }
@@ -35543,34 +35543,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 2.1,
+          "market": 1.75,
           "analyst": 1.54,
           "opskins": 1.55
         },
         "3": {
-          "market": 1.62,
+          "market": 1.8,
           "analyst": 1.35,
           "opskins": 1.22
         },
         "4": {
-          "market": 3.02,
+          "market": 3.33,
           "analyst": 2.89,
           "opskins": 2.44
         }
       },
       "stattrak": {
         "2": {
-          "market": 4.94,
+          "market": 5.56,
           "analyst": 4.29,
           "opskins": 3.62
         },
         "3": {
-          "market": 7.37,
+          "market": 7.66,
           "analyst": 6.15,
           "opskins": 5.38
         },
         "4": {
-          "market": 16.38,
+          "market": 18.32,
           "analyst": 17.35,
           "opskins": 15.79
         }
@@ -35585,27 +35585,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 5.17,
+          "market": 6.25,
           "analyst": 3.83,
           "opskins": 3.99
         },
         "1": {
-          "market": 4.62,
+          "market": 6.58,
           "analyst": 3.48,
           "opskins": 4
         },
         "2": {
-          "market": 5.35,
+          "market": 6.17,
           "analyst": 3.62,
           "opskins": 4.84
         },
         "3": {
-          "market": 7.48,
+          "market": 8.85,
           "analyst": 5.06,
           "opskins": 5.75
         },
         "4": {
-          "market": 31.45,
+          "market": 45.31,
           "analyst": 36.19,
           "opskins": 45
         }
@@ -35621,27 +35621,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 10.22,
+          "market": 12.35,
           "analyst": 7.48,
           "opskins": 7.88
         },
         "1": {
-          "market": 12.69,
+          "market": 15.18,
           "analyst": 9.58,
           "opskins": 8.32
         },
         "2": {
-          "market": 13,
+          "market": 14.88,
           "analyst": 9.2,
           "opskins": 7.87
         },
         "3": {
-          "market": 20.2,
+          "market": 22.38,
           "analyst": 14.35,
           "opskins": 12.38
         },
         "4": {
-          "market": 60.09,
+          "market": 62.09,
           "analyst": 44.87,
           "opskins": 44.54
         }
@@ -35683,27 +35683,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 394.9,
+          "market": 470,
           "analyst": 363,
           "opskins": 370
         },
         "1": {
-          "market": 391.39,
+          "market": 480,
           "analyst": 371,
           "opskins": 375
         },
         "2": {
-          "market": 386.27,
+          "market": 540,
           "analyst": 434,
           "opskins": 422
         },
         "3": {
-          "market": 508.05,
+          "market": 675,
           "analyst": 483,
           "opskins": 483.14
         },
         "4": {
-          "market": 934.2,
+          "market": 1200,
           "analyst": 941,
           "opskins": 965.92
         }
@@ -35719,27 +35719,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 534.2,
+          "market": 640,
           "analyst": 497,
           "opskins": 505
         },
         "1": {
-          "market": 640.71,
+          "market": 700,
           "analyst": 527,
           "opskins": 562.5
         },
         "2": {
-          "market": 800.49,
+          "market": 900,
           "analyst": 666,
           "opskins": 676.95
         },
         "3": {
-          "market": 1002.15,
+          "market": 1300,
           "analyst": 915,
           "opskins": 900
         },
         "4": {
-          "market": 1504.35,
+          "market": 1600,
           "analyst": 1173,
           "opskins": 1175.02
         }
@@ -35781,27 +35781,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.28,
+          "market": 0.31,
           "analyst": 0.22,
           "opskins": 0.23
         },
         "1": {
-          "market": 0.55,
+          "market": 0.73,
           "analyst": 0.58,
           "opskins": 0.48
         },
         "2": {
-          "market": 0.2,
+          "market": 0.22,
           "analyst": 0.17,
           "opskins": 0.14
         },
         "3": {
-          "market": 0.34,
+          "market": 0.38,
           "analyst": 0.31,
           "opskins": 0.24
         },
         "4": {
-          "market": 0.86,
+          "market": 1.07,
           "analyst": 0.72,
           "opskins": 0.56
         }
@@ -35843,12 +35843,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 55.96,
+          "market": 66.33,
           "analyst": 45.67,
           "opskins": 41.25
         },
         "4": {
-          "market": 56.97,
+          "market": 67.3,
           "analyst": 45.6,
           "opskins": 39.89
         }
@@ -35864,12 +35864,12 @@ var Prices = {
     "prices": {
       "default": {
         "3": {
-          "market": 72.92,
+          "market": 84.9,
           "analyst": 66.35,
           "opskins": 52
         },
         "4": {
-          "market": 76.02,
+          "market": 92.09,
           "analyst": 63.13,
           "opskins": 53
         }
@@ -35885,54 +35885,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 10.45,
+          "market": 11.47,
           "analyst": 8.42,
           "opskins": 7.33
         },
         "1": {
-          "market": 12.54,
+          "market": 13.72,
           "analyst": 10.08,
           "opskins": 8.58
         },
         "2": {
-          "market": 14.35,
+          "market": 15.38,
           "analyst": 11.12,
           "opskins": 9.48
         },
         "3": {
-          "market": 20.39,
+          "market": 22.71,
           "analyst": 16.76,
           "opskins": 14.41
         },
         "4": {
-          "market": 34.55,
+          "market": 39.37,
           "analyst": 28.54,
           "opskins": 25.77
         }
       },
       "stattrak": {
         "0": {
-          "market": 28.83,
+          "market": 33.06,
           "analyst": 23.94,
           "opskins": 21.67
         },
         "1": {
-          "market": 35.75,
+          "market": 39.2,
           "analyst": 27.24,
           "opskins": 25.24
         },
         "2": {
-          "market": 43.42,
+          "market": 50.95,
           "analyst": 33.71,
           "opskins": 29.64
         },
         "3": {
-          "market": 73.83,
+          "market": 80,
           "analyst": 58.56,
           "opskins": 50.98
         },
         "4": {
-          "market": 142.37,
+          "market": 168.7,
           "analyst": 122.28,
           "opskins": 102.9
         }
@@ -35947,27 +35947,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.09,
+          "market": 1.33,
           "analyst": 0.86,
           "opskins": 0.74
         },
         "1": {
-          "market": 1.11,
+          "market": 1.33,
           "analyst": 0.89,
           "opskins": 0.72
         },
         "2": {
-          "market": 1.17,
+          "market": 1.41,
           "analyst": 0.92,
           "opskins": 0.79
         },
         "3": {
-          "market": 1.66,
+          "market": 2.02,
           "analyst": 1.29,
           "opskins": 1.15
         },
         "4": {
-          "market": 2.96,
+          "market": 3.2,
           "analyst": 2.42,
           "opskins": 2.03
         }
@@ -35983,27 +35983,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 9.89,
+          "market": 11.2,
           "analyst": 6.32,
           "opskins": 8.19
         },
         "1": {
-          "market": 9.97,
+          "market": 11.4,
           "analyst": 7.09,
           "opskins": 11
         },
         "2": {
-          "market": 9.89,
+          "market": 12.07,
           "analyst": 7.38,
           "opskins": 7.42
         },
         "3": {
-          "market": 14.18,
+          "market": 16.43,
           "analyst": 11.12,
           "opskins": 10.45
         },
         "4": {
-          "market": 21.45,
+          "market": 25.75,
           "analyst": 20.85,
           "opskins": 19.19
         }
@@ -36019,27 +36019,27 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 20.61,
+          "market": 23.88,
           "analyst": 15.75,
           "opskins": 15.34
         },
         "1": {
-          "market": 37.28,
+          "market": 43.3,
           "analyst": 38.47,
           "opskins": 34.69
         },
         "2": {
-          "market": 41.6,
+          "market": 50.54,
           "analyst": 32.06,
           "opskins": 27.38
         },
         "3": {
-          "market": 83.19,
+          "market": 97.68,
           "analyst": 67.97,
           "opskins": 57
         },
         "4": {
-          "market": 123.21,
+          "market": 139.89,
           "analyst": 98.06,
           "opskins": 95.54
         }
@@ -36055,22 +36055,22 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 25.09,
+          "market": 28.96,
           "analyst": 21.44,
           "opskins": 22
         },
         "1": {
-          "market": 27.26,
+          "market": 31.66,
           "analyst": 22.79,
           "opskins": 20.9
         },
         "2": {
-          "market": 29.6,
+          "market": 36.73,
           "analyst": 25.21,
           "opskins": 23
         },
         "3": {
-          "market": 41.2,
+          "market": 48.8,
           "analyst": 36.74,
           "opskins": 30.82
         },
@@ -36091,54 +36091,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 6.37,
+          "market": 7.6,
           "analyst": 4.75,
           "opskins": 4.2
         },
         "1": {
-          "market": 9.12,
+          "market": 10.63,
           "analyst": 6.8,
           "opskins": 5.74
         },
         "2": {
-          "market": 9.51,
+          "market": 11.2,
           "analyst": 7.2,
           "opskins": 6.03
         },
         "3": {
-          "market": 13.5,
+          "market": 14.97,
           "analyst": 9.94,
           "opskins": 8.67
         },
         "4": {
-          "market": 23.94,
+          "market": 27.91,
           "analyst": 19.03,
           "opskins": 16.41
         }
       },
       "stattrak": {
         "0": {
-          "market": 15.91,
+          "market": 19.05,
           "analyst": 12.51,
           "opskins": 11.38
         },
         "1": {
-          "market": 22.73,
+          "market": 25.63,
           "analyst": 17.53,
           "opskins": 15.83
         },
         "2": {
-          "market": 25.13,
+          "market": 28.14,
           "analyst": 18.78,
           "opskins": 16.15
         },
         "3": {
-          "market": 39.48,
+          "market": 44.4,
           "analyst": 30.06,
           "opskins": 25.87
         },
         "4": {
-          "market": 81.54,
+          "market": 92.69,
           "analyst": 70.21,
           "opskins": 60.47
         }
@@ -36153,54 +36153,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 7.54,
+          "market": 9.37,
           "analyst": 6.07,
           "opskins": 5.29
         },
         "1": {
-          "market": 11.9,
+          "market": 14.05,
           "analyst": 9.64,
           "opskins": 8.15
         },
         "2": {
-          "market": 11.06,
+          "market": 12.9,
           "analyst": 8.23,
           "opskins": 6.97
         },
         "3": {
-          "market": 15.51,
+          "market": 17.9,
           "analyst": 11.63,
           "opskins": 10.07
         },
         "4": {
-          "market": 23.8,
+          "market": 25.76,
           "analyst": 18.63,
           "opskins": 16
         }
       },
       "stattrak": {
         "0": {
-          "market": 20.87,
+          "market": 25.16,
           "analyst": 16.73,
           "opskins": 15.99
         },
         "1": {
-          "market": 32.42,
+          "market": 37.47,
           "analyst": 23.54,
           "opskins": 24.49
         },
         "2": {
-          "market": 32.37,
+          "market": 37.34,
           "analyst": 24.16,
           "opskins": 20.89
         },
         "3": {
-          "market": 49.77,
+          "market": 56.15,
           "analyst": 37.24,
           "opskins": 31.93
         },
         "4": {
-          "market": 80.38,
+          "market": 90.24,
           "analyst": 59.66,
           "opskins": 50
         }
@@ -37973,54 +37973,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.15,
+          "market": 0.12,
           "analyst": 0.46,
           "opskins": -1
         },
         "1": {
-          "market": 0.16,
+          "market": 0.12,
           "analyst": 0.52,
           "opskins": -1
         },
         "2": {
-          "market": 0.17,
+          "market": 0.13,
           "analyst": 0.59,
           "opskins": -1
         },
         "3": {
-          "market": 0.24,
+          "market": 0.21,
           "analyst": 0.87,
           "opskins": -1
         },
         "4": {
-          "market": 0.81,
+          "market": 0.57,
           "analyst": 2.65,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.52,
+          "market": 0.41,
           "analyst": 1.43,
           "opskins": -1
         },
         "1": {
-          "market": 0.55,
+          "market": 0.44,
           "analyst": 1.55,
           "opskins": -1
         },
         "2": {
-          "market": 0.71,
+          "market": 0.53,
           "analyst": 2.37,
           "opskins": -1
         },
         "3": {
-          "market": 1.32,
+          "market": 1,
           "analyst": 4.04,
           "opskins": -1
         },
         "4": {
-          "market": 5.62,
+          "market": 4.89,
           "analyst": 10.29,
           "opskins": -1
         }
@@ -38035,42 +38035,42 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.17,
+          "market": 0.14,
           "analyst": 0.45,
           "opskins": -1
         },
         "2": {
-          "market": 0.17,
+          "market": 0.13,
           "analyst": 0.53,
           "opskins": -1
         },
         "3": {
-          "market": 0.24,
+          "market": 0.2,
           "analyst": 0.67,
           "opskins": -1
         },
         "4": {
-          "market": 0.33,
+          "market": 0.3,
           "analyst": 0.81,
           "opskins": -1
         }
       },
       "stattrak": {
         "1": {
-          "market": 0.54
+          "market": 0.46
         },
         "2": {
-          "market": 0.56,
+          "market": 0.52,
           "analyst": 1.39,
           "opskins": -1
         },
         "3": {
-          "market": 0.95,
+          "market": 0.83,
           "analyst": 2,
           "opskins": -1
         },
         "4": {
-          "market": 1.46,
+          "market": 1.3,
           "analyst": 2.95,
           "opskins": -1
         }
@@ -38085,44 +38085,44 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 0.16,
+          "market": 0.13,
           "analyst": 0.48,
           "opskins": -1
         },
         "2": {
-          "market": 0.17,
+          "market": 0.14,
           "analyst": 0.51,
           "opskins": -1
         },
         "3": {
-          "market": 0.24,
+          "market": 0.2,
           "analyst": 0.71,
           "opskins": -1
         },
         "4": {
-          "market": 0.32,
+          "market": 0.3,
           "analyst": 0.79,
           "opskins": -1
         }
       },
       "stattrak": {
         "1": {
-          "market": 0.52,
+          "market": 0.44,
           "analyst": 1.87,
           "opskins": -1
         },
         "2": {
-          "market": 0.6,
+          "market": 0.52,
           "analyst": 1.35,
           "opskins": -1
         },
         "3": {
-          "market": 0.96,
+          "market": 0.83,
           "analyst": 1.99,
           "opskins": -1
         },
         "4": {
-          "market": 1.47,
+          "market": 1.26,
           "analyst": 3.03,
           "opskins": -1
         }
@@ -38137,54 +38137,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.14,
+          "market": 0.12,
           "analyst": 0.47,
           "opskins": -1
         },
         "1": {
-          "market": 0.15,
+          "market": 0.12,
           "analyst": 0.47,
           "opskins": -1
         },
         "2": {
-          "market": 0.17,
+          "market": 0.13,
           "analyst": 0.55,
           "opskins": -1
         },
         "3": {
-          "market": 0.24,
+          "market": 0.2,
           "analyst": 0.75,
           "opskins": -1
         },
         "4": {
-          "market": 0.55,
+          "market": 0.42,
           "analyst": 1.7,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.47,
+          "market": 0.4,
           "analyst": 1.17,
           "opskins": -1
         },
         "1": {
-          "market": 0.5,
+          "market": 0.43,
           "analyst": 1.11,
           "opskins": -1
         },
         "2": {
-          "market": 0.59,
+          "market": 0.52,
           "analyst": 1.48,
           "opskins": -1
         },
         "3": {
-          "market": 1.03,
+          "market": 0.86,
           "analyst": 2.36,
           "opskins": -1
         },
         "4": {
-          "market": 3.27,
+          "market": 2.61,
           "analyst": 13.93,
           "opskins": -1
         }
@@ -38199,54 +38199,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.21,
+          "market": 0.14,
           "analyst": 0.67,
           "opskins": -1
         },
         "1": {
-          "market": 0.45,
+          "market": 0.33,
           "analyst": 1.1,
           "opskins": -1
         },
         "2": {
-          "market": 0.21,
+          "market": 0.15,
           "analyst": 0.81,
           "opskins": -1
         },
         "3": {
-          "market": 0.44,
+          "market": 0.3,
           "analyst": 1.24,
           "opskins": -1
         },
         "4": {
-          "market": 1.07,
+          "market": 0.79,
           "analyst": 2.29,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.98,
+          "market": 0.73,
           "analyst": 2.03,
           "opskins": -1
         },
         "1": {
-          "market": 1.93,
+          "market": 1.23,
           "analyst": 3.59,
           "opskins": -1
         },
         "2": {
-          "market": 1.09,
+          "market": 0.81,
           "analyst": 2.23,
           "opskins": -1
         },
         "3": {
-          "market": 2.12,
+          "market": 1.37,
           "analyst": 4.59,
           "opskins": -1
         },
         "4": {
-          "market": 4.84,
+          "market": 3.7,
           "analyst": 7.63,
           "opskins": -1
         }
@@ -38261,54 +38261,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.15,
+          "market": 0.13,
           "analyst": 0.63,
           "opskins": -1
         },
         "1": {
-          "market": 0.16,
+          "market": 0.13,
           "analyst": 0.63,
           "opskins": -1
         },
         "2": {
-          "market": 0.18,
+          "market": 0.14,
           "analyst": 0.77,
           "opskins": -1
         },
         "3": {
-          "market": 0.27,
+          "market": 0.2,
           "analyst": 1.14,
           "opskins": -1
         },
         "4": {
-          "market": 0.89,
+          "market": 0.64,
           "analyst": 3.4,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.96,
+          "market": 0.74,
           "analyst": 2.55,
           "opskins": -1
         },
         "1": {
-          "market": 0.96,
+          "market": 0.75,
           "analyst": 2.29,
           "opskins": -1
         },
         "2": {
-          "market": 1.03,
+          "market": 0.81,
           "analyst": 3.08,
           "opskins": -1
         },
         "3": {
-          "market": 1.65,
+          "market": 1.31,
           "analyst": 4.88,
           "opskins": -1
         },
         "4": {
-          "market": 5.89,
+          "market": 5.13,
           "analyst": 14.08,
           "opskins": -1
         }
@@ -38323,54 +38323,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.16,
+          "market": 0.14,
           "analyst": 0.46,
           "opskins": -1
         },
         "1": {
-          "market": 0.17,
+          "market": 0.15,
           "analyst": 0.51,
           "opskins": -1
         },
         "2": {
-          "market": 0.17,
+          "market": 0.15,
           "analyst": 0.54,
           "opskins": -1
         },
         "3": {
-          "market": 0.25,
+          "market": 0.21,
           "analyst": 0.7,
           "opskins": -1
         },
         "4": {
-          "market": 0.36,
+          "market": 0.37,
           "analyst": 0.93,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.53,
+          "market": 0.47,
           "analyst": 1.37,
           "opskins": -1
         },
         "1": {
-          "market": 0.59,
+          "market": 0.81,
           "analyst": 1.43,
           "opskins": -1
         },
         "2": {
-          "market": 0.59,
+          "market": 0.51,
           "analyst": 1.35,
           "opskins": -1
         },
         "3": {
-          "market": 1.01,
+          "market": 0.89,
           "analyst": 2.08,
           "opskins": -1
         },
         "4": {
-          "market": 1.52,
+          "market": 1.4,
           "analyst": 3.29,
           "opskins": -1
         }
@@ -38385,50 +38385,50 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.33,
+          "market": 2,
           "analyst": 3.69,
           "opskins": -1
         },
         "1": {
-          "market": 3.74,
+          "market": 3.27,
           "analyst": 5.89,
           "opskins": -1
         },
         "2": {
-          "market": 3.21,
+          "market": 2.97,
           "analyst": 5.81,
           "opskins": -1
         },
         "3": {
-          "market": 5.32,
+          "market": 4.43,
           "analyst": 10.44,
           "opskins": -1
         },
         "4": {
-          "market": 7.08,
+          "market": 6.18,
           "analyst": 14.39,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 7.11
+          "market": 6.31
         },
         "1": {
-          "market": 11.56
+          "market": 10.2
         },
         "2": {
-          "market": 10.96,
+          "market": 9.79,
           "analyst": 18.23,
           "opskins": -1
         },
         "3": {
-          "market": 19.47,
+          "market": 16.92,
           "analyst": 35.58,
           "opskins": -1
         },
         "4": {
-          "market": 28.42,
+          "market": 24.43,
           "analyst": 55.08,
           "opskins": -1
         }
@@ -38443,34 +38443,34 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 0.36,
+          "market": 0.3,
           "analyst": 0.92,
           "opskins": -1
         },
         "3": {
-          "market": 0.38,
+          "market": 0.33,
           "analyst": 1.12,
           "opskins": -1
         },
         "4": {
-          "market": 0.56,
+          "market": 0.49,
           "analyst": 1.34,
           "opskins": -1
         }
       },
       "stattrak": {
         "2": {
-          "market": 1,
+          "market": 0.94,
           "analyst": 3.26,
           "opskins": -1
         },
         "3": {
-          "market": 1.36,
+          "market": 1.35,
           "analyst": 3.9,
           "opskins": -1
         },
         "4": {
-          "market": 2.39,
+          "market": 2.35,
           "analyst": 4.97,
           "opskins": -1
         }
@@ -38485,54 +38485,54 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.59,
+          "market": 2.06,
           "analyst": 6.15,
           "opskins": -1
         },
         "1": {
-          "market": 2.78,
+          "market": 2.14,
           "analyst": 6.51,
           "opskins": -1
         },
         "2": {
-          "market": 3.1,
+          "market": 2.65,
           "analyst": 7.74,
           "opskins": -1
         },
         "3": {
-          "market": 4.57,
+          "market": 3.52,
           "analyst": 11.33,
           "opskins": -1
         },
         "4": {
-          "market": 8.19,
+          "market": 6.53,
           "analyst": 18.95,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 9.89,
+          "market": 8.28,
           "analyst": 17.96,
           "opskins": -1
         },
         "1": {
-          "market": 10.21,
+          "market": 8.59,
           "analyst": 17.93,
           "opskins": -1
         },
         "2": {
-          "market": 11.7,
+          "market": 9.88,
           "analyst": 22.37,
           "opskins": -1
         },
         "3": {
-          "market": 17.05,
+          "market": 14.34,
           "analyst": 35.85,
           "opskins": -1
         },
         "4": {
-          "market": 35.67,
+          "market": 27.47,
           "analyst": 52.15,
           "opskins": -1
         }
@@ -38547,52 +38547,52 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.31,
+          "market": 0.27,
           "analyst": 0.92,
           "opskins": -1
         },
         "1": {
-          "market": 0.42,
+          "market": 0.31,
           "analyst": 1.2,
           "opskins": -1
         },
         "2": {
-          "market": 0.29,
+          "market": 0.26,
           "analyst": 1.01,
           "opskins": -1
         },
         "3": {
-          "market": 0.42,
+          "market": 0.35,
           "analyst": 1.22,
           "opskins": -1
         },
         "4": {
-          "market": 0.75,
+          "market": 0.61,
           "analyst": 1.7,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 0.95
+          "market": 0.83
         },
         "1": {
-          "market": 1.79,
+          "market": 1.43,
           "analyst": 4.14,
           "opskins": -1
         },
         "2": {
-          "market": 1.03,
+          "market": 0.87,
           "analyst": 2.63,
           "opskins": -1
         },
         "3": {
-          "market": 1.72,
+          "market": 1.46,
           "analyst": 4.11,
           "opskins": -1
         },
         "4": {
-          "market": 3.19,
+          "market": 3.08,
           "analyst": 6.26,
           "opskins": -1
         }
@@ -38607,52 +38607,52 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.3,
+          "market": 0.26,
           "analyst": 1.25,
           "opskins": -1
         },
         "1": {
-          "market": 0.3,
+          "market": 0.26,
           "analyst": 1.3,
           "opskins": -1
         },
         "2": {
-          "market": 0.3,
+          "market": 0.26,
           "analyst": 1.66,
           "opskins": -1
         },
         "3": {
-          "market": 0.73,
+          "market": 0.38,
           "analyst": 3.54,
           "opskins": -1
         },
         "4": {
-          "market": 2.15,
+          "market": 1.21,
           "analyst": 6,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 1.31
+          "market": 0.85
         },
         "1": {
-          "market": 1.27,
+          "market": 0.82,
           "analyst": 4.34,
           "opskins": -1
         },
         "2": {
-          "market": 1.47,
+          "market": 0.94,
           "analyst": 5.51,
           "opskins": -1
         },
         "3": {
-          "market": 3.6,
+          "market": 2.04,
           "analyst": 11.16,
           "opskins": -1
         },
         "4": {
-          "market": 10.51,
+          "market": 6.2,
           "analyst": 32.02,
           "opskins": -1
         }
@@ -38667,38 +38667,41 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.24,
+          "market": 1.97,
           "analyst": 4.9,
           "opskins": -1
         },
         "1": {
-          "market": 2.73
+          "market": 2.16
         },
         "2": {
-          "market": 2.42,
+          "market": 2.06,
           "analyst": 5.34,
           "opskins": -1
         },
         "3": {
-          "market": 3.44,
+          "market": 3,
           "analyst": 7.76,
           "opskins": -1
         },
         "4": {
-          "market": 4.62,
+          "market": 3.87,
           "analyst": 12.04,
           "opskins": -1
         }
       },
       "stattrak": {
+        "0": {
+          "market": 5.67
+        },
         "2": {
-          "market": 7.13
+          "market": 6.16
         },
         "3": {
-          "market": 11.42
+          "market": 10.44
         },
         "4": {
-          "market": 16.99,
+          "market": 16.92,
           "analyst": 38.1,
           "opskins": -1
         }
@@ -38713,45 +38716,45 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.41,
+          "market": 2,
           "analyst": 4.68,
           "opskins": -1
         },
         "1": {
-          "market": 3.03
+          "market": 2.37
         },
         "2": {
-          "market": 2.46,
+          "market": 2.12,
           "analyst": 5.43,
           "opskins": -1
         },
         "3": {
-          "market": 3.57,
+          "market": 3.11,
           "analyst": 7.6,
           "opskins": -1
         },
         "4": {
-          "market": 5.34,
+          "market": 4.44,
           "analyst": 12.85,
           "opskins": -1
         }
       },
       "stattrak": {
         "0": {
-          "market": 6.76
+          "market": 6.35
         },
         "2": {
-          "market": 7.95,
+          "market": 7.06,
           "analyst": 15.39,
           "opskins": -1
         },
         "3": {
-          "market": 13.64,
+          "market": 11.97,
           "analyst": 30.08,
           "opskins": -1
         },
         "4": {
-          "market": 25.54
+          "market": 21.57
         }
       },
       "souvenir": {}
@@ -38764,40 +38767,40 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 2.4
+          "market": 2.04
         },
         "1": {
-          "market": 2.61
+          "market": 2.21
         },
         "2": {
-          "market": 2.76,
+          "market": 2.23,
           "analyst": 6.2,
           "opskins": -1
         },
         "3": {
-          "market": 4.27,
+          "market": 3.31,
           "analyst": 9.64,
           "opskins": -1
         },
         "4": {
-          "market": 5.6,
+          "market": 4.37,
           "analyst": 12.76,
           "opskins": -1
         }
       },
       "stattrak": {
         "2": {
-          "market": 8.46,
+          "market": 7.29,
           "analyst": 16.88,
           "opskins": -1
         },
         "3": {
-          "market": 13.97,
+          "market": 12.83,
           "analyst": 25.58,
           "opskins": -1
         },
         "4": {
-          "market": 18.96,
+          "market": 18.54,
           "analyst": 45.31,
           "opskins": -1
         }
@@ -38812,37 +38815,40 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 14.63,
+          "market": 13.87,
           "analyst": 21.86,
           "opskins": -1
         },
         "1": {
-          "market": 18.86
+          "market": 19.55
         },
         "2": {
-          "market": 19.03,
+          "market": 16.98,
           "analyst": 31.77,
           "opskins": -1
         },
         "3": {
-          "market": 27.15,
+          "market": 24.92,
           "analyst": 45.44,
           "opskins": -1
         },
         "4": {
-          "market": 39.22,
+          "market": 36.38,
           "analyst": 85.59,
           "opskins": -1
         }
       },
       "stattrak": {
         "2": {
-          "market": 61.35
+          "market": 58.6
         },
         "3": {
-          "market": 96.83,
+          "market": 90.59,
           "analyst": 246.31,
           "opskins": -1
+        },
+        "4": {
+          "market": 157.66
         }
       },
       "souvenir": {}
@@ -38855,40 +38861,40 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 20.22
+          "market": 15.59
         },
         "1": {
-          "market": 24.85
+          "market": 19.92
         },
         "2": {
-          "market": 27.05,
+          "market": 20.71,
           "analyst": 43.66,
           "opskins": -1
         },
         "3": {
-          "market": 35.01,
+          "market": 27.21,
           "analyst": 63.5,
           "opskins": -1
         },
         "4": {
-          "market": 43.44,
+          "market": 34.67,
           "analyst": 81.85,
           "opskins": -1
         }
       },
       "stattrak": {
         "2": {
-          "market": 68.37,
+          "market": 54.31,
           "analyst": 114.78,
           "opskins": -1
         },
         "3": {
-          "market": 103.44,
+          "market": 82.36,
           "analyst": 133.42,
           "opskins": -1
         },
         "4": {
-          "market": 146.15
+          "market": 120.92
         }
       },
       "souvenir": {}
@@ -38917,7 +38923,7 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 148.97
+          "market": 175.1
         },
         "3": {
           "market": 380,
@@ -38941,7 +38947,7 @@ var Prices = {
           "opskins": -1
         },
         "2": {
-          "market": 123.03,
+          "market": 145.83,
           "analyst": 385.41,
           "opskins": -1
         }
@@ -38962,7 +38968,7 @@ var Prices = {
           "opskins": -1
         },
         "2": {
-          "market": 162.83,
+          "market": 192.2,
           "analyst": 482.19,
           "opskins": -1
         }
@@ -38977,6 +38983,9 @@ var Prices = {
     "skinName": "Forest DDPAT",
     "prices": {
       "default": {
+        "2": {
+          "market": 131
+        },
         "3": {
           "market": 230,
           "analyst": -1,
@@ -38994,7 +39003,7 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 181.81,
+          "market": 230.03,
           "analyst": 446.36,
           "opskins": -1
         },
@@ -39015,7 +39024,7 @@ var Prices = {
     "prices": {
       "default": {
         "2": {
-          "market": 155.78
+          "market": 179.31
         },
         "3": {
           "market": 235.36,
@@ -39039,7 +39048,7 @@ var Prices = {
           "opskins": -1
         },
         "2": {
-          "market": 186.07
+          "market": 228.13
         },
         "3": {
           "market": -1,
@@ -39496,7 +39505,7 @@ var Prices = {
           "market": 135.87
         },
         "2": {
-          "market": 244.34
+          "market": 295.08
         }
       },
       "stattrak": {},
@@ -39516,7 +39525,7 @@ var Prices = {
           "market": 191.75
         },
         "2": {
-          "market": 177.6
+          "market": 226.64
         }
       },
       "stattrak": {},
@@ -39536,7 +39545,7 @@ var Prices = {
           "market": 254
         },
         "2": {
-          "market": 286.05
+          "market": 325.27
         }
       },
       "stattrak": {},
@@ -39556,7 +39565,7 @@ var Prices = {
           "market": 203.73
         },
         "2": {
-          "market": 236.96
+          "market": 303.76
         },
         "3": {
           "market": 359.54
@@ -39579,7 +39588,7 @@ var Prices = {
           "market": 143.33
         },
         "2": {
-          "market": 133.79
+          "market": 183.38
         },
         "3": {
           "market": 238.63
@@ -39602,7 +39611,7 @@ var Prices = {
           "market": 192.67
         },
         "2": {
-          "market": 231.82
+          "market": 271.05
         },
         "3": {
           "market": 353.3
@@ -39625,7 +39634,7 @@ var Prices = {
           "market": 140
         },
         "2": {
-          "market": 123.92
+          "market": 130.73
         },
         "3": {
           "market": 170.94
@@ -39648,7 +39657,7 @@ var Prices = {
           "market": 171.97
         },
         "2": {
-          "market": 115.37
+          "market": 151.51
         },
         "3": {
           "market": 199.8
@@ -39671,7 +39680,7 @@ var Prices = {
           "market": 99.01
         },
         "2": {
-          "market": 109.06
+          "market": 123.31
         },
         "3": {
           "market": 182.39
@@ -39694,7 +39703,7 @@ var Prices = {
           "market": 145.91
         },
         "2": {
-          "market": 184.36
+          "market": 206.66
         }
       },
       "stattrak": {},
@@ -39711,7 +39720,7 @@ var Prices = {
           "market": 150
         },
         "2": {
-          "market": 230.65
+          "market": 298.49
         }
       },
       "stattrak": {},
@@ -39726,7 +39735,7 @@ var Prices = {
       "default": {
         "4": {
           "market": 4314
-        },
+        }
       },
       "stattrak": {},
       "souvenir": {}
@@ -39739,36 +39748,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.42
+          "market": 0.56
         },
         "1": {
-          "market": 2.43
+          "market": 0.5
         },
         "2": {
-          "market": 2.54
+          "market": 0.62
         },
         "3": {
-          "market": 4.27
+          "market": 0.69
         },
         "4": {
-          "market": 11.50
+          "market": 1.07
         }
       },
       "stattrak": {
-          "0": {
-          "market": 1.7
+        "0": {
+          "market": 1.35
         },
         "1": {
-          "market":1.5
+          "market": 1.18
         },
         "2": {
-          "market": 1.15
+          "market": 1.39
         },
         "3": {
-          "market": 1.5
+          "market": 2.92
         },
         "4": {
-          "market": 1.57
+          "market": 3.14
         }
       },
       "souvenir": {}
@@ -39781,72 +39790,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.69
+          "market": 0.56
         },
         "1": {
-          "market": 0.98
+          "market": 0.53
         },
         "2": {
-          "market": 0.7
+          "market": 0.41
         },
         "3": {
-          "market": 1.7
+          "market": 0.74
         },
         "4": {
-          "market": 5.75
+          "market": 1.13
         }
       },
       "stattrak": {
-          "0": {
-          "market": 1.24
-        },
-        "1": {
-          "market": 11
-        },
-        "2": {
-          "market": 2.23
-        },
-        "3": {
-          "market": 5
-        }
-      },
-      "souvenir": {}
-    }
-  },
-  "799": {
-    "item_id": 799,
-    "type": "Sawed-Off",
-    "skinName": "Zander",
-    "prices": {
-      "default": {
         "0": {
-          "market": 0.69
+          "market": 0.91
         },
         "1": {
-          "market": 0.98
+          "market": 1
         },
         "2": {
-          "market": 0.7
+          "market": 1.46
         },
         "3": {
-          "market": 1.7
+          "market": 1.38
         },
         "4": {
-          "market": 5.75
-        }
-      },
-      "stattrak": {
-          "0": {
-          "market": 1.24
-        },
-        "1": {
-          "market": 11
-        },
-        "2": {
-          "market": 2.23
-        },
-        "3": {
-          "market": 5
+          "market": 10.72
         }
       },
       "souvenir": {}
@@ -39859,36 +39832,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 0.96
+          "market": 0.49
         },
         "1": {
-          "market": 2.87
+          "market": 0.57
         },
         "2": {
-          "market": 0.88
+          "market": 0.6
         },
         "3": {
-          "market": 1.18
+          "market": 0.69
         },
         "4": {
-          "market": 2.2
+          "market": 0.96
         }
       },
       "stattrak": {
-          "0": {
-          "market": 3
+        "0": {
+          "market": 0.83
         },
         "1": {
-          "market": 6.99
+          "market": 1.65
         },
         "2": {
-          "market": 2.5
+          "market": 0.85
         },
         "3": {
-          "market": 3.41
+          "market": 1.99
         },
         "4": {
-          "market": 12
+          "market": 2.3
         }
       },
       "souvenir": {}
@@ -39901,36 +39874,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.5
+          "market": 0.68
         },
         "1": {
-          "market": 12.11
+          "market": 0.69
         },
         "2": {
-          "market": 1.23
+          "market": 0.67
         },
         "3": {
-          "market": 1.01
+          "market": 0.74
         },
         "4": {
-          "market": 1
+          "market": 0.75
         }
       },
       "stattrak": {
-          "0": {
-          "market": 0.5
+        "0": {
+          "market": 2.03
         },
         "1": {
-          "market": 9.2
+          "market": 2
         },
         "2": {
-          "market": 3.86
+          "market": 1.32
         },
         "3": {
-          "market": 6.36
+          "market": 0.74
         },
         "4": {
-          "market": 5
+          "market": 2.32
         }
       },
       "souvenir": {}
@@ -39943,36 +39916,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.01
+          "market": 0.55
         },
         "1": {
-          "market": 1.74
+          "market": 0.67
         },
         "2": {
-          "market": 1
+          "market": 0.61
         },
         "3": {
-          "market": 1
+          "market": 0.9
         },
         "4": {
-          "market": 4
+          "market": 1.05
         }
       },
       "stattrak": {
-          "0": {
-          "market": 2.87
+        "0": {
+          "market": 0.75
         },
         "1": {
-          "market": 35
+          "market": 3.19
         },
         "2": {
-          "market": 3
+          "market": 1.15
         },
         "3": {
-          "market": 3.75
+          "market": 2.3
         },
         "4": {
-          "market": 29.74
+          "market": 4.92
         }
       },
       "souvenir": {}
@@ -39985,33 +39958,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 1.79
+          "market": 0.8
         },
         "1": {
-          "market": 2.99
+          "market": 1.7
         },
         "2": {
-          "market": 2.33
+          "market": 1.33
         },
         "3": {
-          "market": 4.5
+          "market": 2.42
         },
         "4": {
-          "market": 8.02
+          "market": 4.22
         }
       },
       "stattrak": {
-          "0": {
-          "market": 8
+        "0": {
+          "market": 3.62
+        },
+        "1": {
+          "market": 3
         },
         "2": {
-          "market": 18
+          "market": 3.5
         },
         "3": {
-          "market": 14.85
+          "market": 7.31
         },
         "4": {
-          "market": 89.89
+          "market": 9.15
         }
       },
       "souvenir": {}
@@ -40024,36 +40000,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 6.1
+          "market": 1.52
         },
         "1": {
-          "market": 4
+          "market": 2.69
         },
         "2": {
-          "market": 3.87
+          "market": 2.3
         },
         "3": {
-          "market": 9.2
+          "market": 6.33
         },
         "4": {
-          "market": 11.5
+          "market": 7.48
         }
       },
       "stattrak": {
-          "0": {
-          "market": 28.75
+        "0": {
+          "market": 8.58
         },
         "1": {
-          "market": 45
+          "market": 4.19
         },
-          "2": {
+        "2": {
           "market": 11
         },
         "3": {
-          "market": 19.5
+          "market": 15.78
         },
         "4": {
-          "market": 33
+          "market": 25.36
         }
       },
       "souvenir": {}
@@ -40066,30 +40042,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 9.93
+          "market": 3.92
         },
         "1": {
-          "market": 10
+          "market": 4.29
         },
         "2": {
-          "market": 5.25
+          "market": 4.05
         },
         "3": {
-          "market": 6
+          "market": 4.5
         },
         "4": {
-          "market": 7.51
+          "market": 5
         }
       },
       "stattrak": {
-          "2": {
-          "market": 11.99
+        "0": {
+          "market": 5.78
+        },
+        "1": {
+          "market": 5.99
+        },
+        "2": {
+          "market": 7.98
         },
         "3": {
-          "market": 29.74
+          "market": 13.94
         },
         "4": {
-          "market": 19
+          "market": 16.48
         }
       },
       "souvenir": {}
@@ -40102,30 +40084,33 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 5.17
+          "market": 3.16
         },
         "1": {
-          "market": 5.2
+          "market": 3.55
         },
         "2": {
-          "market": 7.49
+          "market": 4.07
         },
         "3": {
-          "market": 8.48
+          "market": 6.16
         },
         "4": {
-          "market": 22.01
+          "market": 13.28
         }
       },
       "stattrak": {
+        "0": {
+          "market": 5.35
+        },
         "1": {
-          "market": 18.49
+          "market": 7.37
         },
         "2": {
-          "market": 19.97
+          "market": 13.46
         },
         "3": {
-          "market": 28.75
+          "market": 20.7
         }
       },
       "souvenir": {}
@@ -40138,33 +40123,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 8.19
+          "market": 4
         },
         "1": {
-          "market": 13
+          "market": 4.03
         },
         "2": {
-          "market": 6.6
+          "market": 3.59
         },
         "3": {
           "market": 7.25
         },
         "4": {
-          "market": 6.38
+          "market": 4.7
         }
       },
       "stattrak": {
         "0": {
-          "market": 26.26
+          "market": 7.97
+        },
+        "1": {
+          "market": 5.37
         },
         "2": {
-          "market": 12
+          "market": 6.65
         },
         "3": {
-          "market": 25
+          "market": 15
         },
         "4": {
-          "market": 53.05
+          "market": 17.16
         }
       },
       "souvenir": {}
@@ -40177,27 +40165,30 @@ var Prices = {
     "prices": {
       "default": {
         "1": {
-          "market": 46
+          "market": 2.5
         },
         "2": {
-          "market": 4.1
+          "market": 3.57
         },
         "3": {
-          "market": 7.99
+          "market": 4.33
         },
         "4": {
-          "market": 6.21
+          "market": 4.79
         }
       },
       "stattrak": {
+        "1": {
+          "market": 4.29
+        },
         "2": {
-          "market": 5
+          "market": 6.85
         },
         "3": {
-          "market": 24.35
+          "market": 10.63
         },
         "4": {
-          "market": 39.99
+          "market": 11.5
         }
       },
       "souvenir": {}
@@ -40210,33 +40201,36 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 3.99
+          "market": 3
         },
         "1": {
-          "market": 10
+          "market": 3.6
         },
         "2": {
-          "market": 4.02
+          "market": 3.75
         },
         "3": {
-          "market": 3.45
+          "market": 4.03
         },
         "4": {
-          "market": 6.96
+          "market": 5.36
         }
       },
       "stattrak": {
         "0": {
-          "market": 28.75
+          "market": 5.35
+        },
+        "1": {
+          "market": 13.05
         },
         "2": {
-          "market": 10.26
+          "market": 7.5
         },
         "3": {
-          "market": 256.53
+          "market": 9.62
         },
         "4": {
-          "market": 149
+          "market": 17.08
         }
       },
       "souvenir": {}
@@ -40249,16 +40243,16 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 61
+          "market": 10.6
         },
         "1": {
-          "market": 25
+          "market": 11.23
         },
         "2": {
-          "market": 13.8
+          "market": 10
         },
         "3": {
-          "market": 17.25
+          "market": 11.36
         },
         "4": {
           "market": 23
@@ -40285,13 +40279,13 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 34
+          "market": 24.64
         },
         "1": {
           "market": 43.99
         },
         "2": {
-          "market": 50
+          "market": 33.48
         },
         "3": {
           "market": 66.85
@@ -40301,11 +40295,17 @@ var Prices = {
         }
       },
       "stattrak": {
+        "0": {
+          "market": 42.14
+        },
+        "1": {
+          "market": 106.14
+        },
         "2": {
-          "market": 150
+          "market": 74.99
         },
         "4": {
-          "market": 400
+          "market": 205.01
         }
       },
       "souvenir": {}
@@ -40318,19 +40318,19 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 35.35
+          "market": 33.33
         },
         "1": {
-          "market": 80
+          "market": 45
         },
         "2": {
-          "market": 47
+          "market": 50.98
         },
         "3": {
-          "market": 70
+          "market": 66.5
         },
         "4": {
-          "market": 159.32
+          "market": 84.64
         }
       },
       "stattrak": {
@@ -40350,11 +40350,17 @@ var Prices = {
     "skinName": "Bloodsport",
     "prices": {
       "default": {
+        "1": {
+          "market": 85.79
+        },
         "2": {
-          "market": 115.86
+          "market": 105.77
         },
         "3": {
-          "market": 210
+          "market": 106.5
+        },
+        "4": {
+          "market": 137.9
         }
       },
       "stattrak": {},
@@ -40368,19 +40374,19 @@ var Prices = {
     "prices": {
       "default": {
         "0": {
-          "market": 39.99
+          "market": 22.25
         },
         "1": {
-          "market": 161
+          "market": 52.52
         },
         "2": {
-          "market": 152
+          "market": 49.04
         },
         "3": {
-          "market": 177.1
+          "market": 92.66
         },
         "4": {
-          "market": 363.42
+          "market": 134
         }
       },
       "stattrak": {},
