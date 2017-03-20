@@ -22,6 +22,8 @@ var Minesweeper = (function() {
         total_reward: 0
     }
     
+    var animElement = '<div class="animElement animated flipOutX"></div>';
+    
     this.init = function() {
         $(document).on('click', '.square', function() {
             if (status !== 'game') return;
@@ -31,10 +33,15 @@ var Minesweeper = (function() {
                 
                 var pos = $(this).attr('id').split(',');
                 if (field[pos[0]][pos[1]] == 0) {
-                    $(this).addClass('win');
+                    $(this).addClass('square-win');
+                    $(this).html(animElement);
+                    $(this).append('+'+calcReward(config.bet, config.mines, config.steps-1));
                     config.total_reward += calcReward(config.bet, config.mines, config.steps-1);
+                    Sound('minesweeper.click');
                 } else {
-                    $(this).addClass('lose');
+                    $(this).addClass('square-lose');
+                    
+                    Sound('minesweeper.lose');
                     status = 'game over';
                     gameOver();
                 }
@@ -44,7 +51,7 @@ var Minesweeper = (function() {
         })
         
         $('#start_game').on('click', function() {
-            
+            Sound('interface.click');
             if (status !== 'wait') return;
             
             config.bet = parseInt($('#bet').val());
@@ -54,7 +61,9 @@ var Minesweeper = (function() {
             config.bet = isNaN(config.bet) ? 0 : config.bet;
             config.mines = isNaN(config.mines) ? 0 : config.mines;
             
-            if (config.bet > limits.maxBet || config.bet < limits.minBet) {
+            var max = Player.doubleBalance > limits.maxBet ? limits.maxBet : Player.doubleBalance;
+            
+            if (config.bet > max || config.bet < limits.minBet) {
                 $.notify({
                     title: '<strong>Wrong Bet</strong>',
                     message: 'Bet must be in range ' + limits.minBet + ' - ' + limits.maxBet
@@ -74,6 +83,9 @@ var Minesweeper = (function() {
                 return;
             }
             
+            Player.doubleBalance -= config.bet;
+            saveStatistic('doubleBalance', Player.doubleBalance);
+            
             newGame();
             
             status = 'game';
@@ -87,12 +99,19 @@ var Minesweeper = (function() {
         $('#cashout').on('click', function() {
             if (status !== 'game') return;
             
+            Sound('minesweeper.coins');
+            
+            Player.doubleBalance += config.total_reward;
+            saveStatistic('doubleBalance', Player.doubleBalance);
+            
             status = 'game over';
             gameOver();
         })
         
         $('#new_game').on('click', function() {
             status = 'wait';
+            
+            Sound('interface.click');
             
             $('.status').hide();
             $('.config').show();
@@ -133,8 +152,13 @@ var Minesweeper = (function() {
         for (var row = 0; row < fieldConfig.row; row++) {
             for (var col = 0; col < fieldConfig.column; col++) {
                 if (field[row][col] == 1) {
-                    $('#' + row + '\\,' + col).text('X');
-                } 
+                    var $elem = $('#' + row + '\\,' + col);
+                    $($elem).html(animElement);
+                    $($elem).removeClass('blank');
+                    if (!$elem.hasClass('square-lose'))
+                        $($elem).addClass('bomb-hidden');
+                    $($elem).append('<i class="fa fa-bomb"></i>');
+                }
             }
         }
         
@@ -143,8 +167,8 @@ var Minesweeper = (function() {
     }
     
     function calcReward(bet, mines, step) {
-        var all = fieldConfig.row * fieldConfig.column;
-        return Math.round(bet * (all/(all - mines - step)) - bet)
+        var all = fieldConfig.row * fieldConfig.column + 1;
+        return Math.round((bet * (all/(all - mines - step)) - bet)/1.2)
     }
     return this;
 })();
