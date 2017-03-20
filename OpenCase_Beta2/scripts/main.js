@@ -195,17 +195,17 @@ if (!isAndroid()) {
     var contractSound = new Audio();
     contractSound.src = "../sound/interface/contract.wav";
     contractSound.volume = 1;
-    
-    var Sounds = {
-        interface: {
-            wind: new Audio('../sound/interface/wind.wav'),
-            click: new Audio('../sound/interface/click.wav'),
-        },
-        minesweeper: {
-            click: new Audio('../sound/minesweeper/click.wav'),
-            lose: new Audio('../sound/minesweeper/lose.wav'),
-            coins: new Audio('../sound/minesweeper/coins.wav'),
-        }
+}
+
+var Sounds = {
+    interface: {
+        wind: new Audio('../sound/interface/wind.wav'),
+        click: new Audio('../sound/interface/click.wav'),
+    },
+    minesweeper: {
+        click: new Audio('../sound/minesweeper/click.wav'),
+        lose: new Audio('../sound/minesweeper/lose.wav'),
+        coins: new Audio('../sound/minesweeper/coins.wav'),
     }
 }
 
