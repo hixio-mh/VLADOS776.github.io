@@ -168,7 +168,7 @@ var Minesweeper = (function() {
     
     function calcReward(bet, mines, step) {
         var all = fieldConfig.row * fieldConfig.column + 1;
-        return Math.round((bet * (all/(all - mines - step)) - bet)/1.2)
+        return Math.round((bet * (all/(all - mines - step)) - bet)/2)
     }
     return this;
 })();
