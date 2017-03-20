@@ -88,7 +88,8 @@ $(function () {
         Sound("click", "play");
     });
     $(document).on('click', '.submenu', function () {
-        $(this).toggleClass("closed opened"); //, 200, "easeOutSine");
+        $(this).toggleClass("closed opened");
+        Sound('interface.wind');
     })
     $(document).on('click', '.navigationBar_hamburger, .site-overlay', function () {
         Sound("menuclick", "play");

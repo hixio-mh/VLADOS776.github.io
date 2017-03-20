@@ -147,6 +147,7 @@ window.onerror = function (msg, url, line, col, error) {
         })
     }
     //$(document.body).append('<div class="error-log" style="bottom:'+bottom+'px">' + action + '</div>');
+    console.log(action);
     console.log(stack);
     if (!DEBUG)
         setTimeout(function(){
@@ -191,6 +192,21 @@ if (!isAndroid()) {
     coinFlipSound.src = "../sound/coinFlip.wav";
     coinFlipSound.volume = 1;
     coinFlipSound.loop = true;
+    var contractSound = new Audio();
+    contractSound.src = "../sound/interface/contract.wav";
+    contractSound.volume = 1;
+    
+    var Sounds = {
+        interface: {
+            wind: new Audio('../sound/interface/wind.wav'),
+            click: new Audio('../sound/interface/click.wav'),
+        },
+        minesweeper: {
+            click: new Audio('../sound/minesweeper/click.wav'),
+            lose: new Audio('../sound/minesweeper/lose.wav'),
+            coins: new Audio('../sound/minesweeper/coins.wav'),
+        }
+    }
 }
 
 var LOG = {
@@ -253,60 +269,58 @@ function Sound(soundGet, action, priority, repeat, speed) {
     priority = priority || 0;
     repeat = repeat || 0;
     speed = speed || 1;
-    var sound;
+    var sound = null;
     if (soundGet == "click") soundGet = "menuclick";
     if (isAndroid()) {
-        client.playSound(soundGet.toLowerCase(), priority, repeat, speed)
+        var pl = client.playSound(soundGet.toLowerCase(), priority, repeat, speed);
+        if (pl) return;
     }
-    else {
-        switch (soundGet.toLowerCase()) {
-        case "open":
-            sound = openSound;
-            break;
-        case "close":
-            sound = closeSound;
-            break;
-        case "scroll":
-            sound = scrollSound;
-            break;
-        case "menuclick":
-            sound = menuClickSound;
-            break;
-        case "additems":
-            sound = addItemsSound;
-            break;
-        case "selectitems":
-            sound = selectItemSound;
-            break;
-        case "contract":
-            sound = contractSound;
-            break;
-        case "buy":
-            sound = buySound;
-            break;
-        case "coinflip":
-            sound = coinFlipSound;
-            break;
-        }
-        if (sound) {
-            try {
-                sound.pause();
-                sound.currentTime = 0;
-                if (action == "play") sound.play();
-            } catch (e) {
-                console.log('Sound error', e);
+    switch (soundGet.toLowerCase()) {
+    case "open":
+        sound = openSound;
+        break;
+    case "close":
+        sound = closeSound;
+        break;
+    case "scroll":
+        sound = scrollSound;
+        break;
+    case "menuclick":
+        sound = menuClickSound;
+        break;
+    case "additems":
+        sound = addItemsSound;
+        break;
+    case "selectitems":
+        sound = selectItemSound;
+        break;
+    case "contract":
+        sound = contractSound;
+        break;
+    case "buy":
+        sound = buySound;
+        break;
+    case "coinflip":
+        sound = coinFlipSound;
+        break;
+    }
+    if (sound == null && soundGet.match(/\./)) {
+        sound = (function(path) {
+            var arr = path.split('.'),
+                curr = Sounds;
+            for (var i = 0; i < arr.length; i++) {
+                curr = curr[arr[i]];
             }
-            /*switch (action) {
-            case "play":
-            	sound.pause();
-            	sound.currentTime = 0;
-            	sound.play();
-            	break;
-            case "pause":
-            	sound.pause();
-            	sound.currentTime = 0;
-            	break;
-            }*/
+            return curr;
+        })(soundGet);
+    }
+    if (sound) {
+        try {
+            sound.pause();
+            sound.currentTime = 0;
+            if (action == "play") sound.play();
+        } catch (e) {
+            console.log('Sound error', e);
         }
     }
 }
@@ -1057,6 +1071,9 @@ function getImgUrl(img, big) {
     prefix = window.location.protocol == "http:" ? prefix.replace("https", "http") : prefix;
     var postfix = "/124fx124f";
     var postfixBig = "/383fx383f";
+    
+    if (img.indexOf('http') != -1) return img;
+    
     if (typeof img == 'undefined') return "../images/none.png";
     if (img.indexOf("images/") != -1)
         if (typeof big != "undefined") {
