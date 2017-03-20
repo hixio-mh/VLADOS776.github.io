@@ -29892,11 +29892,6 @@ var Prices = {
           "market": 126,
           "analyst": 105.01,
           "opskins": 99
-        },
-        "4": {
-          "market": -1,
-          "analyst": -1,
-          "opskins": -1
         }
       },
       "souvenir": {}
@@ -30347,12 +30342,12 @@ var Prices = {
         "3": {
           "market": 440,
           "analyst": 334,
-          "opskins": 370
+          "opskins": 400
         },
         "4": {
           "market": 351.56,
           "analyst": 378,
-          "opskins": 359.99
+          "opskins": 454.84
         }
       },
       "stattrak": {
