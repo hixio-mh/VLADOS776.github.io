@@ -729,6 +729,7 @@ $(function () {
     })
     $(document).on('click', '#make-trade', function () {
         var tradeID = $(this).data('tradeid');
+        $('#make-trade').prop('disabled', true);
         fbProfile.tradeInfo(tradeID, function (tradeInfo) {
             if (tradeInfo.otherPlayer.accepted && tradeInfo.player.accepted && !tradeInfo.player.getWeapons && tradeInfo.status != 'done' && tradeInfo.status != 'canceled') {
                 fbProfile.setTradeStatus(tradeID, 'done');
