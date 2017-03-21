@@ -61,6 +61,10 @@ var Translation = {
                 dice: {
                     text: 'Кости',
                     en: 'Dice'
+                },
+                minesweeper: {
+                    text: 'Сапер',
+                    en: 'Minesweeper'
                 }
             },
             inventory: {
@@ -102,7 +106,7 @@ var Translation = {
         },
         cases: {
             news: {
-                text: "<a href='#' data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Награды в профиле</a><p>Кейс Spectrum! Новые ножи будут позже</p>"
+                text: "<a href='#' data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Награды в профиле</a><p><a href='minesweeper.html'>Сапер</a>! И новые ножи в кейсе Спектрум.</p>"
             },
             page_name: {
                 text: 'Открыть кейсы',

@@ -75,6 +75,9 @@
 .status p {
     margin: 2px 0;
 }
+#history {
+    text-align: center;
+}
 .history-game {
     width:50px;
     display: inline-block;
