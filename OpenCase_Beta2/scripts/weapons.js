@@ -5609,7 +5609,7 @@ var Items = {
       "id": 815,
       "type": "★ Huntsman Knife",
       "skinName": "Damascus Steel",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJfx_LLZTRB7dCJlZG0k_b5MqjSg3husZVOhuDG_ZjKhFWmrBZyNWHycNPDdg43Z17Rq1C2kLvogZfvuJTJyHM3vSB05HnemhC10kwfO_sv26Ix5Gf1Rg",
       "can": {
         "buy": false,
@@ -5626,7 +5626,7 @@ var Items = {
       "id": 816,
       "type": "★ Butterfly Knife",
       "skinName": "Damascus Steel",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_aq_damascus_90_light_large.f6eecc56e9d69742d80ad0bf59695a89cb8d9684.png",
       "can": {
         "buy": false,
@@ -5643,7 +5643,7 @@ var Items = {
       "id": 817,
       "type": "★ Bowie Knife",
       "skinName": "Damascus Steel",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_aq_damascus_90_light_large.b53066882790815ba15f508ac268f29cd6cedf2a.png",
       "can": {
         "buy": false,
@@ -5660,7 +5660,7 @@ var Items = {
       "id": 818,
       "type": "★ Falchion Knife",
       "skinName": "Damascus Steel",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aq_damascus_90_light_large.9bd7e0f1d32a177ab01bc8c52a51dac9ad61e5a9.png",
       "can": {
         "buy": false,
@@ -5677,7 +5677,7 @@ var Items = {
       "id": 819,
       "type": "★ Shadow Daggers",
       "skinName": "Damascus Steel",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_aq_damascus_90_light_large.682e0e63f745ebea76a093e8ff4f7cdb17d5d093.png",
       "can": {
         "buy": false,
@@ -5694,7 +5694,7 @@ var Items = {
       "id": 820,
       "type": "★ Falchion Knife",
       "skinName": "Doppler",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_am_doppler_phase2_light_large.40d335a80eef9b10c695e9907aabe7da9b7d704c.png",
       "can": {
         "buy": false,
@@ -5711,7 +5711,7 @@ var Items = {
       "id": 821,
       "type": "★ Shadow Daggers",
       "skinName": "Doppler",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_am_doppler_phase2_b_light_large.516d6cf5e16c964cd35b839a2b8b6f62ad564083.png",
       "can": {
         "buy": false,
@@ -5728,7 +5728,7 @@ var Items = {
       "id": 822,
       "type": "★ Shadow Daggers",
       "skinName": "Marble Fade",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_am_marble_fade_light_large.fce3f43a307394dcfa71988787dbb5d2ef6a3611.png",
       "can": {
         "buy": false,
@@ -5745,7 +5745,7 @@ var Items = {
       "id": 823,
       "type": "★ Falchion Knife",
       "skinName": "Marble Fade",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_am_marble_fade_light_large.6702e01c69bbdd050ed27964385eaf57fd96d579.png",
       "can": {
         "buy": false,
@@ -5762,7 +5762,7 @@ var Items = {
       "id": 824,
       "type": "★ Huntsman Knife",
       "skinName": "Rust Coat",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_aq_steel_knife_light_large.1e93732da4a5534deaa88e65c22274c57f2cd924.png",
       "can": {
         "buy": false,
@@ -5779,7 +5779,7 @@ var Items = {
       "id": 825,
       "type": "★ Bowie Knife",
       "skinName": "Rust Coat",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_aq_steel_knife_light_large.3a61b0cf23bfa737be1cac012f4cdcde14347921.png",
       "can": {
         "buy": false,
@@ -5796,7 +5796,7 @@ var Items = {
       "id": 826,
       "type": "★ Falchion Knife",
       "skinName": "Rust Coat",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aq_steel_knife_light_large.6d5b1f9bbc924ae1335175a262a69b1587448ccc.png",
       "can": {
         "buy": false,
@@ -5813,7 +5813,7 @@ var Items = {
       "id": 827,
       "type": "★ Butterfly Knife",
       "skinName": "Rust Coat",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_aq_steel_knife_light_large.033e7505158efd2a1758a7144ccccfb554fcf576.png",
       "can": {
         "buy": false,
@@ -5830,7 +5830,7 @@ var Items = {
       "id": 828,
       "type": "★ Shadow Daggers",
       "skinName": "Rust Coat",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_aq_steel_knife_light_large.2753f1bc2008c99c34103b2b247801d3eb881d20.png",
       "can": {
         "buy": false,
@@ -5847,7 +5847,7 @@ var Items = {
       "id": 829,
       "type": "★ Shadow Daggers",
       "skinName": "Tiger Tooth",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_an_tiger_orange_light_large.dc3ed0014b7b2024a7fbcaaaca1fbbfae3331735.png",
       "can": {
         "buy": false,
@@ -5864,7 +5864,7 @@ var Items = {
       "id": 830,
       "type": "★ Falchion Knife",
       "skinName": "Tiger Tooth",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_an_tiger_orange_light_large.c467ce8f738dd9bce8cd7af54610f9186dadd362.png",
       "can": {
         "buy": false,
@@ -5881,7 +5881,7 @@ var Items = {
       "id": 831,
       "type": "★ Falchion Knife",
       "skinName": "Ultraviolet",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_so_purple_falchion_light_large.010830e050576efeb80b3e046d9dccf6ee21c31b.png",
       "can": {
         "buy": false,
@@ -5898,7 +5898,7 @@ var Items = {
       "id": 832,
       "type": "★ Huntsman Knife",
       "skinName": "Ultraviolet",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_cu_purple_huntsman_light_large.3d9355c0a0c0c170d10856ebc2492fef61832fbc.png",
       "can": {
         "buy": false,
@@ -5915,7 +5915,7 @@ var Items = {
       "id": 833,
       "type": "★ Bowie Knife",
       "skinName": "Ultraviolet",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_so_purple_light_large.af202da5d81b8667477667b6db332769a96bf80e.png",
       "can": {
         "buy": false,
@@ -5932,7 +5932,7 @@ var Items = {
       "id": 834,
       "type": "★ Shadow Daggers",
       "skinName": "Ultraviolet",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_so_purple_light_large.af1841afc5146b836e87e6afab49f9a78d90ed1b.png",
       "can": {
         "buy": false,
@@ -5949,7 +5949,7 @@ var Items = {
       "id": 835,
       "type": "★ Butterfly Knife",
       "skinName": "Ultraviolet",
-      "rarity": "covert",
+      "rarity": "rare",
       "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_so_purple_light_large.116c48bf6a4a33f56d11b3204919422aa58f9337.png",
       "can": {
         "buy": false,

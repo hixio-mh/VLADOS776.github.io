@@ -195,7 +195,7 @@ function startGame() {
                 if (typeof a == "undefined")
                     a = winSum;
                 else
-                    a = winSum > parseFloat(a) ? winSum : parseFloat(a);
+                    a = winSum > parseFloat(a) ? winSum : parseFloat(a.replace('$', ''));
                 saveStatistic('rulet-max-win', a);
             } else {
                 if (PlayerInGame) {

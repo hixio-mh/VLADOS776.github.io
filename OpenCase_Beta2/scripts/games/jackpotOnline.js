@@ -146,6 +146,7 @@ var Jackpot = {
                     weapons[i].new = true;
                 }
                 saveWeapons(weapons);
+                Level.addEXP(2);
             })
             
             Jackpot.socket.on('new_game', function(timer) {

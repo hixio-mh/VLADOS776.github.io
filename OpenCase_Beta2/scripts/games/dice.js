@@ -175,6 +175,8 @@ var Dice = {
             if (playerWin) {
                 profit = parseInt(bet * parseFloat($('#oddsPayout').text()));
                 Player.doubleBalance += profit;
+                
+                Level.addEXP(2);
             } else {
                 profit = bet;
                 Player.doubleBalance -= bet;

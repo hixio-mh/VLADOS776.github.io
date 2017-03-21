@@ -2,7 +2,7 @@ var Minesweeper = (function() {
     
     var limits = {
         minBet: 100,
-        maxBet: 100000,
+        maxBet: 10000,
         minMines: 1,
         maxMines: 24
     }
@@ -38,6 +38,7 @@ var Minesweeper = (function() {
                     $(this).append('+'+calcReward(config.bet, config.mines, config.steps-1));
                     config.total_reward += calcReward(config.bet, config.mines, config.steps-1);
                     Sound('minesweeper.click');
+                    field[pos[0]][pos[1]] = 2;
                 } else {
                     $(this).addClass('square-lose');
                     
@@ -104,6 +105,9 @@ var Minesweeper = (function() {
             Player.doubleBalance += config.total_reward;
             saveStatistic('doubleBalance', Player.doubleBalance);
             
+            if (config.total_reward > config.bet*1.5)
+                Level.addEXP(2);
+            
             status = 'game over';
             gameOver();
         })
@@ -149,6 +153,7 @@ var Minesweeper = (function() {
     }
     
     function gameOver() {
+        var historyBlock = '<div class="history-game">';
         for (var row = 0; row < fieldConfig.row; row++) {
             for (var col = 0; col < fieldConfig.column; col++) {
                 if (field[row][col] == 1) {
@@ -158,9 +163,17 @@ var Minesweeper = (function() {
                     if (!$elem.hasClass('square-lose'))
                         $($elem).addClass('bomb-hidden');
                     $($elem).append('<i class="fa fa-bomb"></i>');
+                    historyBlock += '<div class="history-square history-bomb"></div>';
+                } else if (field[row][col] == 2) {
+                    historyBlock += '<div class="history-square history-opened"></div>';
+                } else {
+                    historyBlock += '<div class="history-square history-normal"></div>';
                 }
             }
         }
+        historyBlock += '</div>';
+        
+        $('#history').prepend(historyBlock);
         
         $('#cashout').hide();
         $('#new_game').show();
@@ -168,7 +181,8 @@ var Minesweeper = (function() {
     
     function calcReward(bet, mines, step) {
         var all = fieldConfig.row * fieldConfig.column + 1;
-        return Math.round((bet * (all/(all - mines - step)) - bet)/2)
+        var del = mines == 1 ? 6 : mines < 3 ? 4 : mines < 6 ? 3 : mines < 10 ? 2 : 1;
+        return Math.round((bet * (all/(all - mines - step)) - bet)/del)
     }
     return this;
 })();

@@ -48,13 +48,6 @@
 .square i {
     margin-top: 17px;
 }
-/*.square-lose:before {
-    content: '';
-    background-image: url(../images/mine.png);
-    width:24px;
-    height: 24px;
-    display: inline-block;
-}*/
 .square-temp {
     position: absolute;
 }
@@ -82,6 +75,21 @@
 .status p {
     margin: 2px 0;
 }
+.history-game {
+    width:50px;
+    display: inline-block;
+    margin: 10px;
+}
 .history-square {
-    
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    background: #eee;
+    margin: 1px;
+}
+.history-bomb {
+    background: #982626;
+}
+.history-opened {
+    background: #269830;
 }

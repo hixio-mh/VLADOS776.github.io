@@ -286,11 +286,17 @@ var Translation = {
             beta_modal: {
                 text: '<p>Данная страница находится в Бета тесте.<br>\
                     Это значит, что тут могут быть ошибки, созданные кейсы могут быть удалены и изменены без предупреждения.</p>\
-                    <p>После релиза, все кейсы, созданные во время бета теста, могут быть удалены.</p>'
+                    <p>После релиза, все кейсы, созданные во время бета теста, могут быть удалены.</p>',
+                en: '<p>Current page is on Beta test.<br>\
+                        That means that there can be bugs and cases that you created can be deleted or changed without warning.</p>\
+                        <p>After release all custom cases can be deleted.</p>'
             },
             boost_modal: {
                 text: '<h5>Как это работает?</h5>\
-                       <p>Вы смотрите рекламу за это ваш кейс попадает в "Популярное за 24 часа" на 10 минут.</p><p>Если на данный момент в популярном уже есть забущенный кейс, ваш кейс будет добавлен в очередь на показ.</p>'
+                       <p>Вы смотрите рекламу за это ваш кейс попадает в "Популярное за 24 часа" на 10 минут.</p><p>Если на данный момент в популярном уже есть забущенный кейс, ваш кейс будет добавлен в очередь на показ.</p>',
+                en: '<h5>How it works?</h5>\
+                        <p>You watch the ad then your case will be in first place in "Popular 24h" for 10 minutes.</p>\
+                        <p>If the "Popular" already have a boosted case, your case will get in line.</p>'
             }
         },
         jackpot: {
@@ -666,6 +672,50 @@ var Translation = {
                     text: 'Выгода',
                     en: 'Profit'
                 }
+            }
+        },
+        minesweeper: {
+            page_name: {
+                text: 'Сапер',
+                en: 'Minesweeper'
+            },
+            game: {
+                bet: {
+                    $placeholder: {
+                        text: 'Ставка',
+                        en: 'Bet'
+                    }
+                },
+                mines: {
+                    $placeholder: {
+                        text: 'Кол-во мин',
+                        en: 'Mines Amount'
+                    }
+                },
+                start_game: {
+                    text: 'Начать',
+                    en: 'Confirm'
+                },
+                next: {
+                    text: 'Следующий ход:',
+                    en: 'Next:'
+                },
+                total: {
+                    text: 'Всего:',
+                    en: 'Total:'
+                },
+                cashout: {
+                    text: 'Забрать',
+                    en: 'Cashout'
+                },
+                new_game: {
+                    text: 'Новая игра',
+                    en: 'New game'
+                }
+            },
+            history: {
+                text: 'История',
+                en: 'History'
             }
         },
         inventory: {

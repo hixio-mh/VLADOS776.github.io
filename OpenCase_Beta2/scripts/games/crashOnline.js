@@ -248,6 +248,9 @@ $(function() {
             playerInfo.bet = 0;
             saveStatistic('doubleBalance', Player.doubleBalance, 'Number');
             
+            if (message.profit > playerInfo.bet)
+                Level.addEXP(2);
+            
             $('#balance').text(Player.doubleBalance);
             $('#menu_doubleBalance').text(Player.doubleBalance);
         }

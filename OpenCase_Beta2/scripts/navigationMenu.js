@@ -2,7 +2,11 @@ $(function () {
     $(".site-overlay").hide();
     var bar = $('.navigationBar');
     var barHTML = '<img src="../images/navigation/hamburger.png" class="navigationBar_hamburger menu-btn"><span data-loc="page_name"></span>';
+    var defPageName = bar.text();
     bar.html(barHTML);
+    
+    if (defPageName != '')
+        $('span[data-loc="page_name"]').text(defPageName);
     $(document.body).prepend('<div class="left-menu closed" data-loc-group="menu"></div>');
     var menu = $('.left-menu');
     var rank = getRank();

@@ -14,36 +14,36 @@
 <link rel="stylesheet" href="../css/navigationMenu.css">
 </head>
     
-<body data-localization="minesweeper" data-inventory='no-load'>
+<body data-localization="minesweeper" data-page_name="Minesweeper" data-inventory='no-load'>
 	<div class="site-overlay"></div>
 <div id="container">
-    <div class="navigationBar" data-menu-EN="Dice" data-menu-RU="Dice"></div>
+    <div class="navigationBar" data-menu-EN="Minesweeper">Minesweeper</div>
     <div class="panel panel-default">
-        <div class="panel-heading"><span data-loc='roll_dice'>Minesweeper</span>
+        <div class="panel-heading"><span data-loc='page_name'>Minesweeper</span>
             <button id="hot-to-play" class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#how-to-play-modal" data-loc='how_to_play' style='display:none'>How to play</button>
         </div>
         <div class="panel-body" data-loc-group="game">
             <div class="game_field">Loading...</div>
             <div class="form-group config">
-                <input type="number" min='100' class='form-control input-sm' placeholder='Bet' id='bet'>
-                <input type="number" min='1' max='24' class='form-control input-sm' placeholder='Mines Amout' id='mines'>
-                <button class="btn btn-success btn-sm" id='start_game'>Confirm</button>
+                <input type="number" min='100' class='form-control input-sm' placeholder='Bet' id='bet' data-loc='bet'>
+                <input type="number" min='1' max='24' class='form-control input-sm' placeholder='Mines Amount' id='mines' data-loc='mines'>
+                <button class="btn btn-success btn-sm" id='start_game' data-loc='start_game'>Confirm</button>
             </div>
             <div class="status" style='display:none;'>
                 <div>
-                    <p><span>Next:</span> <span id='next_reward'>200</span><i class='double-icon'></i></p>
-                    <p><span>Total:</span> <span id='total_reward'>500</span><i class="double-icon"></i></p>
+                    <p><span data-loc='next'>Next:</span> <span id='next_reward'>200</span><i class='double-icon'></i></p>
+                    <p><span data-loc='total'>Total:</span> <span id='total_reward'>500</span><i class="double-icon"></i></p>
                 </div>
-                <button class="btn btn-warning" id='cashout'>Cashout</button>
-                <button class="btn btn-primary" id='new_game' style='display: none;'>New Game</button>
+                <button class="btn btn-warning" id='cashout' data-loc='cashout'>Cashout</button>
+                <button class="btn btn-primary" id='new_game' style='display: none;' data-loc='new_game'>New Game</button>
             </div>
         </div>
             
     </div>
     
-    <div class="panel panel-default" data-loc-group='history'>
-        <div class="panel-heading" data-loc='history_title'>History</div>
-        <div class='panel-body'>
+    <div class="panel panel-default">
+        <div class="panel-heading" data-loc='history'>History</div>
+        <div class='panel-body' id='history'>
         </div>
     </div>
 </div>
