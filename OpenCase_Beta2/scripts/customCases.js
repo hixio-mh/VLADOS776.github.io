@@ -278,7 +278,7 @@ var CustomCases = {
             if ($(this).hasClass('inventoryItemSelected')) {
                 var elem = '<tr data-item_id=' + $(this).data('item_id') + '>\
                                 <td><img src="' + $(this).find('img').attr('src') + '" class="odds_img"></td>\
-                                <td>' + $(this).find('.weaponInfo .type').html().replace('<br>', ' | ') + '</td>\
+                                <td>' + $(this).find('.weaponInfo .type').text() + ' | ' + $(this).find('.weaponInfo .name').text() + '</td>\
                                 <td><input type="text" class="form-control items_odds" placeholder="0%"></td>\
                                 <td class="odds_delete">&times;</td>\
                             </tr>';
@@ -415,7 +415,7 @@ var CustomCases = {
         for (var i = 0; i < Items.weapons.length; i++) {
             var item = new Weapon(i);
             if (item.can && item.can.buy)
-                elem += item.toLi();
+                elem += item.toLi({lazy_load: true});
         }
         $('#weaponsList').html(elem);
         
@@ -537,7 +537,7 @@ var CustomCases = {
                 img = '../images/Weapons/rare.png';
             el += '<li class="weapon">' +
                 '<img src="' + img + '" />' +
-                '<div class="weaponInfo ' + item.rarity + '"><span class="type">' + type + '<br>' + name + '</span></div>' +
+                '<div class="weaponInfo ' + item.rarity + '"><div class="type"><span>' + type + '</span></div><div class="name"><span>' + name + '</span></div></div></div>' +
                 '</li>'
         })
 
@@ -573,10 +573,9 @@ var CustomCases = {
         var winItem = $(win.toLi());
         winItem.find('img').attr('src', winItem.find('img').attr('data-src'));
         if (win.type[0] === '★') {
-            winItem = '<li class="weapon">' +
-                '<img src="../images/Weapons/rare.png" />' +
-                '<div class="weaponInfo ' + win.rarity + '"><span class="type">★ Rare Special Item ★<br>&nbsp;</span></div>' +
-                '</li>'
+            winItem.find('img').attr('src', '../images/Weapons/rare.png');
+            winItem.find('.type span').text('★ Rare Special Item ★');
+            winItem.find('.name span').html('&nbsp;');
         }
         $('.casesCarusel .weapon:nth-child('+(winNumber + 1)+')').replaceWith(winItem);        
 
@@ -598,7 +597,7 @@ var CustomCases = {
         $(".win_price").html(CustomCases.win.price);
         $(".win_img").attr("src", CustomCases.win.getImgUrl(true));
         $(".openCase").prop("disabled", true);
-        $("#double_sell_button").text((CustomCases.win.price * 100).toFixed(0));
+        $("#double_sell_button").html((CustomCases.win.price * 100).toFixed(0) + '<i class="double-icon"></i>');
         
         saveStatistic('doubleBalance', Player.doubleBalance);
     },

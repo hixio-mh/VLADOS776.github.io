@@ -272,21 +272,15 @@ var openCase = {
         
         var el = '';
         caseItems.all.forEach(function(item, index) {
-            var img = item.getImgUrl();
-            var type = item.specialText() + item.type;
-            var name = item.name;
+            
+            var $item = $(item.toLi({ticker: false}));
 
             if (openCase.rareItemsRegExp.test(item.rarity)) {
-                type = '★ Rare Special Item ★';
-                name = '&nbsp;';
-                img = '../images/Weapons/rare.png';
+                $item.find('.type span').text('★ Rare Special Item ★');
+                $item.find('.name span').html('&nbsp;');
+                $item.find('img').attr('src', '../images/Weapons/rare.png');
             }
-            if (item.rarity == 'rare')
-                img = '../images/Weapons/rare.png';
-            el += '<div class="weapon">' +
-                '<img src="' + img + '" />' +
-                '<div class="weaponInfo ' + item.rarity + '"><div class="type"><span>' + type + '</span></div><div class="name"><span>' + name + '</span></div></div></div>' +
-                '</div>'
+            el += $item.wrap('<p/>').parent().html();;
         })
 
         openCase.win = caseItems.all[winNumber];
@@ -491,19 +485,17 @@ var openCase = {
             if (openCase.rareItemsRegExp.test(item.rarity) && rare == true)
                 continue;
             var img = item.getImgUrl();
+            
+            var $weaponInfo = $(item.toLi());
 
-            var type = item.type;
-            var name = item.name;
-
-            var name = item.name;
             if (openCase.rareItemsRegExp.test(item.rarity)) {
-                type = '★ Rare Special Item ★';
-                name = '&nbsp;';
-                img = '../images/Weapons/rare.png';
                 rare = true;
+                $weaponInfo.find('.type span').text('★ Rare Special Item ★');
+                $weaponInfo.find('.name span').html('&nbsp;');
+                $weaponInfo.find('img').attr('src', '../images/Weapons/rare.png');
+                
             }
-            var weaponInfo = "<img src=\"" + img + "\"><div class='weaponInfo " + item.rarity + "'><div class='type'><span>" + type + "</span><div class='name'><span>" + name + "</span></div></div>";
-            $(".weaponsList").append("<li class='weapon animated fadeInDown'>" + weaponInfo + "</li>");
+            $(".weaponsList").append($weaponInfo);
         }
         $(".weaponsList").css("display", "block");
         $("#youCanWin").css("display", "block");

@@ -259,7 +259,8 @@ Weapon.prototype.hash = function(id) {
 
 Weapon.prototype.toLi = function(config) {
     config = config || {};
-    var ticker_limit = config.ticker || window.innerWidth <= 433 ? 16 : 20;
+    config.ticker = typeof config.ticker === 'undefined' ? true : config.ticker;
+    var ticker_limit = config.ticker_limit || window.innerWidth <= 433 ? 16 : 20;
     
     var li = '<li class="weapon" data-item_id=' + this.item_id + '>';
     if (config.price) {
@@ -272,9 +273,9 @@ Weapon.prototype.toLi = function(config) {
     }
     
     li += '<div class="weaponInfo ' + this.rarity + '">\
-            <div class="type' + (this.type.length >= ticker_limit ? ' text-ticker' : '') + '">\
+            <div class="type' + (config.ticker && this.type.length >= ticker_limit ? ' text-ticker' : '') + '">\
                 <span>' + this.type + '</span>\
-            </div><div class="name' + (this.name.length >= ticker_limit ? ' text-ticker' : '') + '">\
+            </div><div class="name' + (config.ticker && this.name.length >= ticker_limit ? ' text-ticker' : '') + '">\
                 <span>' + this.name + '</span>\
             </div>\
            </div>';
