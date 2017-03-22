@@ -509,13 +509,18 @@
 			var wp_from = parseInt($('#js-loading-inventory').data('from'));
             $('#js-loading-inventory').remove();
             if (!Array.isArray(currInventory)) return false;
+            
+            //var ticker_limit = window.innerWidth <= 433 ? 16 : 20;
 
 			for (var i = 0; i < currInventory.length; i++) {
 				var weapon = currInventory[i];
 				var img = getImgUrl(weapon.img);
                 
-				var weaponInfo = "<i class='currency dollar'>" + weapon.price + "</i><img src=\"" + img + "\"><div class='weaponInfo " + weapon.rarity + "'><span class='type'>" + weapon.specialText() + weapon.type + "<br>" + weapon.name + "</span></div>";
-				$(".inventory").append("<li class='weapon " + (weapon.stattrak ? "wp-statTrak" : "") + " " + (weapon.new ? "new-weapon" : "") + "' data-id='" + weapon.id + "'>" + weaponInfo + "</li>");
+				/*var weaponInfo = "<i class='currency dollar'>" + weapon.price + "</i><img src=\"" + img + "\"><div class='weaponInfo " + weapon.rarity + "'><div class='type'><span>" + weapon.specialText() + weapon.type + "</span></div><div class='name " + (weapon.name.length > ticker_limit ? "text-ticker" : '') + "'><span>" + weapon.name + "</span></div></div>";*/
+                
+                var weaponInfo = weapon.toLi({price: true});
+                
+				$(".inventory").append(weaponInfo);
 
 				if (weapon.new == true) {
 					currInventory[i].new = false;

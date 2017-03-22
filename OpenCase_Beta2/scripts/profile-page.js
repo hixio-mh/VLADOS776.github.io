@@ -571,7 +571,7 @@ $(function () {
                         var weapon = Trade_weapons[i];
                         if (typeof weapon == 'undefined') continue;
                         weapon = new Weapon(weapon);
-                        $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append("<li class='weapon'>" + weapon.toLi() + "</li>");
+                        $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append( weapon.toLi());
                     }
                     $('#my-trades__other-offer').effect('highlight');
                     $('li[data-tradeid="' + fbProfile.currentTrade.id + '"] .trade__other .give-to-you').text(Trade_weapons.length);
@@ -688,7 +688,9 @@ $(function () {
             for (var i = 0; i < convertedWeapons.length; i++) {
                 var weapon = new Weapon(convertedWeapons[i]);
                 var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
-                $($parent).append("<li class='weapon' data-weapon_obj='" + weaponJSON + "'>" + weapon.toLi() + "</li>");
+                var $li = $(weapon.toLi());
+                $li.data('weapon_obj', weaponJSON);
+                $($parent).append($li);
             }
             fbProfile.setChangeOfferTime($('#you-ready-to-trade').data('tradeid'));
             if (isAndroid()) client.sendToAnalytics('Profile', 'Trades', 'Trade changed', "Player changed trade. tradeID: " + $('#you-ready-to-trade').data('tradeid'));

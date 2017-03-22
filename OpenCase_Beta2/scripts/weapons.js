@@ -257,6 +257,32 @@ Weapon.prototype.hash = function(id) {
     return hex_md5(JSON.stringify(hash_obj))
 }
 
+Weapon.prototype.toLi = function(config) {
+    config = config || {};
+    var ticker_limit = config.ticker || window.innerWidth <= 433 ? 16 : 20;
+    
+    var li = '<li class="weapon" data-item_id=' + this.item_id + '>';
+    if (config.price) {
+        li += '<i class="currency dollar">' + this.price + '</i>';
+    }
+    if (config.lazy_load) {
+        li += '<img data-src="' + this.getImgUrl() + '" />';
+    } else {
+        li += '<img src="' + this.getImgUrl() + '" />';
+    }
+    
+    li += '<div class="weaponInfo ' + this.rarity + '">\
+            <div class="type' + (this.type.length >= ticker_limit ? ' text-ticker' : '') + '">\
+                <span>' + this.type + '</span>\
+            </div><div class="name' + (this.name.length >= ticker_limit ? ' text-ticker' : '') + '">\
+                <span>' + this.name + '</span>\
+            </div>\
+           </div>';
+    li += '</li>'
+    
+    return li;
+}
+
 // === Functions ===
 
 function getRandomWeapon(opt) {

@@ -39,13 +39,13 @@ function fillInventory(selector, action, opt) {
             var weapon = inventory[i];
             
             if (action != "" && typeof weapon.can[action] != 'undefined' && weapon.can[action] == false) continue
-
-            var weaponInfo = "<img src='"+getImgUrl(weapon.img)+"'> \
-            <div class='weaponInfo "+weapon.rarity+"'> \
-                <span class='type'>"+weapon.specialText()+weapon.type+"<br>" + weapon.name + "</span> \
-            </div><i class='currency dollar'>"+weapon.price+"</i>";
             
-            $(selector).append("<li class='weapon "+ (weapon.statTrak ? "wp-statTrak" : "") +" "+((weapon['new'] == true) ? "new-weapon" : "")+"' data-id='"+weapon.id+"' data-weapon_obj='"+JSON.stringify(weapon.saveObject())+"' data-weapon_can='"+JSON.stringify(weapon.can)+"'>"+weaponInfo+"</li>");
+            var $weaponInfo = $(weapon.toLi());
+            
+            $weaponInfo.data('id', weapon.id);
+            $weaponInfo.data('weapon_obj', JSON.stringify(weapon.saveObject()));
+            
+            $(selector).append($weaponInfo);
 
             if (weapon['new'] == true) {
                 inventory[i]['new'] = false;

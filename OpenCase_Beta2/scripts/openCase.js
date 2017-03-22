@@ -285,7 +285,7 @@ var openCase = {
                 img = '../images/Weapons/rare.png';
             el += '<div class="weapon">' +
                 '<img src="' + img + '" />' +
-                '<div class="weaponInfo ' + item.rarity + '"><span class="type">' + type + '<br>' + name + '</span></div>' +
+                '<div class="weaponInfo ' + item.rarity + '"><div class="type"><span>' + type + '</span></div><div class="name"><span>' + name + '</span></div></div></div>' +
                 '</div>'
         })
 
@@ -350,7 +350,7 @@ var openCase = {
         $(".win_price").html(price);
         $(".win_img").attr("src", openCase.win.getImgUrl(true));
         $(".openCase").prop("disabled", true);
-        $("#double_sell_button").text((price * 100).toFixed(0));
+        $("#double_sell_button").html((price * 100).toFixed(0) + '<i class="double-icon"></i>');
 
         var anim = document.getElementById('casesCarusel');
         anim.addEventListener("transitionend", openCase.endScroll, false);
@@ -502,7 +502,7 @@ var openCase = {
                 img = '../images/Weapons/rare.png';
                 rare = true;
             }
-            var weaponInfo = "<img src=\"" + img + "\"><div class='weaponInfo " + item.rarity + "'><span class='type'>" + type + "<br>" + name + "</span></div>";
+            var weaponInfo = "<img src=\"" + img + "\"><div class='weaponInfo " + item.rarity + "'><div class='type'><span>" + type + "</span><div class='name'><span>" + name + "</span></div></div>";
             $(".weaponsList").append("<li class='weapon animated fadeInDown'>" + weaponInfo + "</li>");
         }
         $(".weaponsList").css("display", "block");

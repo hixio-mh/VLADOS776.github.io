@@ -124,6 +124,11 @@ var fbProfile = (function (module) {
             firebase.database().ref('users/'+currUid()+'/private/androidID').set(client.getAndroidID());
         }
     }
+    module.setFirebaseToken = function() {
+        if (isAndroid() && module.ifAuth) {
+            firebase.database().ref('users/' + currUid() + '/private/firebaseToken').set(client.getFirebaseID());
+        }
+    }
     module.ifValidNickname = function (nick) {
         if (nick == "") return false;
         var illicitNick = /((a|а|о|o)(d|д)(m|м)(i|\||и|n)(n|и|н)|(VL(A|а)D(O|о)(S|c|с)(?:776)?))/ig;

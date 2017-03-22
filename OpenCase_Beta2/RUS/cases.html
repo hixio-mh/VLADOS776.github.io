@@ -236,6 +236,15 @@
                         }
                     })
                 })
+                
+                if (getURLParameter('start') && isAndroid() && client.getCurrentAppVersionCode() >= 12) {
+                    firebase.auth().onAuthStateChanged(function (user) {
+                        if (user) {
+                            firebase.database().ref('users/' + user.uid + '/private/firebaseToken').set(client.getFirebaseID());
+                            LOG.log('Set firebaseToken');
+                        }
+                    })
+                }
 
                 function getTimeRemaining(endtime) {
                     if (typeof endtime === 'number') {

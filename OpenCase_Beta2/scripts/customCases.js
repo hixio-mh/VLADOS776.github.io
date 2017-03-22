@@ -12,19 +12,21 @@ var CustomCases = {
     init: function() {
         window.addEventListener('popstate', function(e) {
             var action = e.state;
-            if (action.page == 'case') {
-                CustomCases.socket.emit('caseInfo', action.id);
-            } else if (action.page === 'cases') {
-                $('#cases').show();
-                $('#openCaseWindow').hide();
-                $('.topPanel').show();
-                $('#createCaseWindow').hide();
-            } else if (action.page === 'create') {
-                $('#createCaseWindow').show();
-                $('#cases').hide();
-                $('#openCaseWindow').hide();
-                $('.topPanel').hide();
-            }
+            try {
+                if (action.page == 'case') {
+                    CustomCases.socket.emit('caseInfo', action.id);
+                } else if (action.page === 'cases') {
+                    $('#cases').show();
+                    $('#openCaseWindow').hide();
+                    $('.topPanel').show();
+                    $('#createCaseWindow').hide();
+                } else if (action.page === 'create') {
+                    $('#createCaseWindow').show();
+                    $('#cases').hide();
+                    $('#openCaseWindow').hide();
+                    $('.topPanel').hide();
+                }
+            } catch (e) {};
         }, false);
         
         this.socket.on('connect', function() {

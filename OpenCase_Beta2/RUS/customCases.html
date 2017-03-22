@@ -294,12 +294,6 @@
 
     </div>
     <script>
-        Weapon.prototype.toLi = function() {
-            return '<li class="weapon" data-item_id=' + this.item_id + '>\
-            <img data-src="' + this.getImgUrl() + '" />\
-            <div class="weaponInfo ' + this.rarity + '"><span class="type">' + this.type + '<br>' + this.name + '</span></div>\
-            </li>'
-        }
         $(function () {
             CustomCases.init();
         })

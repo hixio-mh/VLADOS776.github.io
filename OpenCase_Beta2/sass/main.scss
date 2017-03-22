@@ -53,7 +53,7 @@ $url_carusel_shadow: url(../images/Weapons/shadow.png);
 $url_item_new: url(../images/new_weapon.png);
 $url_item_selected: url(../images/weapon_selected.png);
 $url_double: url(../images/double/coin.png);
-$url_double_white: url(../images/double/coin-white.png);
+$url_double_white: url(../images/double/coin_new.png);
 //@extend-elements
 //original selectors
 //.case, .capsule
@@ -434,14 +434,41 @@ body {
         color: $color_pale_prim_approx;
         font-family: $font_light;
     }
+    .type, .name {
+        background-size: cover;
+        font-size: 11px;
+        display: inline-block;
+        font-family: $font_default;
+        line-height: 14px;
+        //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+        text-shadow: 1px 1px 2px $black_84;
+        margin-top: 1px;
+        padding: 1px 5px;
+        white-space: nowrap;
+        display: block;
+    }
+    .weaponInfo {
+        text-align: left;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    .text-ticker span {
+        padding-left: 100%;
+        display: inline-block;
+        animation: marquee 7s linear infinite;
+    }
 }
 
-.weaponInfo {
-    text-align: left;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+@keyframes marquee {
+    0% {
+        transform: translate(0,0);
+    }
+    100% {
+        transform: translate(-101%, 0);
+    }
 }
 
 .new-weapon {
@@ -459,20 +486,6 @@ body {
         bottom: 0;
         right: 0;
     }
-}
-
-.type {
-    background-size: cover;
-    font-size: 11px;
-    width: 125px;
-    display: inline-block;
-    font-family: $font_default;
-    line-height: 14px;
-    //Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
-    text-shadow: 1px 1px 2px $black_84;
-    margin-top: 1px;
-    padding: 3px 5px;
-    white-space: nowrap;
 }
 
 .closeCase {

@@ -1,9 +1,3 @@
-Weapon.prototype.toLi = function() {
-    var weapon = fbInventory.reverseConvert(this);
-    var wp = "<img src=\"" + getImgUrl(weapon.img) + "\"><div class='weaponInfo " + weapon.rarity + "'><span class='type'>"+(this.stattrak == true ? "StatTrak™ " : "") + weapon.type + "<br>" + getSkinName(weapon.skinName, Settings.language) + "</span></div>";
-    return wp;
-}
-
 var fbInventory = (function (module) {
     'use strict';
     module = module || {};
@@ -77,20 +71,6 @@ var fbInventory = (function (module) {
                 })
             })
         })
-    }
-    module.reverseConvert = function (weapon) {
-        weapon.item_id = weapon.item_id || 0;
-        var convertedWeapon = module.getWeaponById(weapon.item_id);
-        weapon.quality = weapon.quality || 0;
-        convertedWeapon.stattrak = weapon.stattrak || false;
-        convertedWeapon.souvenir = weapon.souvenir || false;
-        convertedWeapon.quality  = parseInt(weapon.quality);
-        if (weapon.souvenir) convertedWeapon.type = Localization.getString('other.souvenir')+' '+convertedWeapon.type;
-        try {
-            convertedWeapon.skinName = getSkinName(convertedWeapon.skinName, Settings.language);
-            convertedWeapon.price = getPrice(convertedWeapon.type, convertedWeapon.skinName, convertedWeapon.quality, convertedWeapon.stattrek);
-        } catch(e){}
-        return convertedWeapon;
     }
     return module;
 }(fbInventory || {}))
