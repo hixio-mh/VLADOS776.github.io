@@ -262,7 +262,7 @@ Weapon.prototype.toLi = function(config) {
     config.ticker = typeof config.ticker === 'undefined' ? true : config.ticker;
     var ticker_limit = config.ticker_limit || window.innerWidth <= 433 ? 16 : 20;
     
-    var li = '<li class="weapon" data-item_id=' + this.item_id + '>';
+    var li = '<li class="weapon" data-item_id=' + this.item_id + ' '+ (this.id ? 'data-id='+this.id : '') +'>';
     if (config.price) {
         li += '<i class="currency dollar">' + this.price + '</i>';
     }
