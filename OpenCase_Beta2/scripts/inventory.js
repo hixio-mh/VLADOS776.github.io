@@ -40,7 +40,7 @@ function fillInventory(selector, action, opt) {
             
             if (action != "" && typeof weapon.can[action] != 'undefined' && weapon.can[action] == false) continue
             
-            var $weaponInfo = $(weapon.toLi());
+            var $weaponInfo = $(weapon.toLi({price: true}));
             
             $weaponInfo.data('id', weapon.id);
             $weaponInfo.data('weapon_obj', JSON.stringify(weapon.saveObject()));
