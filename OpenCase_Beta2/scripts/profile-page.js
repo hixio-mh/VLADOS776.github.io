@@ -533,7 +533,7 @@ $(function () {
                     if (typeof weapon == 'undefined') continue;
                     weapon = new Weapon(weapon);
                     var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
-                    $('#my-trades__your-offer').find(".trade__info__weapons.your").append("<li class='weapon' data-weapon_obj='" + weaponJSON + "'>" + weapon.toLi() + "</li>");
+                    $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi()).data('weapon_obj', weaponJSON));
                 }
             }
         })
@@ -631,7 +631,7 @@ $(function () {
     $(document).on('click', '#change-weapons-trade', function () {
         var oldWp = [];
         $('#my-trades__your-offer .trade__info__weapons.your li').each(function () {
-            oldWp.push($(this).data('weapon_obj'));
+            oldWp.push(JSON.parse($(this).data('weapon_obj')));
         });
         if (oldWp.length >= maxItems) {
             Lobibox.notify('error', {
@@ -657,7 +657,7 @@ $(function () {
         var ids = [];
         var oldWp = [];
         $('#my-trades__your-offer .trade__info__weapons.your li').each(function () {
-            oldWp.push($(this).data('weapon_obj'));
+            oldWp.push(JSON.parse($(this).data('weapon_obj')));
         });
         if (oldWp.length >= maxItems) {
             Lobibox.notify('error', {
@@ -676,7 +676,7 @@ $(function () {
         }
         $('.inventoryItemSelected').each(function () {
             ids.push(parseInt($(this).data('id')));
-            var wp = $(this).data('weapon_obj');
+            var wp = JSON.parse($(this).data('weapon_obj'));
             tradeWeapons.push(wp);
             $(this).clone().removeClass('inventoryItemSelected').appendTo('#my-trades__your-offer .trade__info__weapons.your').data('weapon_obj', wp).find('i').remove();
         });
