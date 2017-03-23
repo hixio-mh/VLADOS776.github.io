@@ -151,10 +151,16 @@
                 </div>
             </div>
             <div class='option-block' data-loc-group="beta"> <span class='option-block__name' id='local-beta' data-loc="group_title">Beta</span>
-                <div class='option inline'><span data-loc="exchange">Exchange</span>
+                <div class='option inline'><span data-loc="exchange">Trades</span>
                     <label class='switch-label'>
                         <input type="checkbox" name='trades' class='hide' />
                         <div class='switch' data-target='switch-trades'></div>
+                    </label>
+                </div>
+                <div class='option inline'><span data-loc="trade_notif">Trade notifications</span>
+                    <label class='switch-label'>
+                        <input type="checkbox" name='trade_notif' class='hide' />
+                        <div class='switch' data-target='switch-trade_notif'></div>
                     </label>
                 </div>
             </div>
@@ -220,11 +226,19 @@
                     if (firebase.auth().currentUser != null) {
                         var uid = firebase.auth().currentUser.uid;
                         firebase.database().ref('users/' + uid + '/public/betaTrade').once('value', function (data) {
-                            if (data.val()) {
-                                $('input[name="trades"]').prop('checked', true);
+                            if (data.val() == true) {
+                                $('input[name="trade"]').prop('checked', true);
                                 $('.switch[data-target="switch-trades"]').addClass('switchOn');
                             } else {
                                 $('input[name="trades"]').prop('checked', false);
+                            }
+                        })
+                        firebase.database().ref('users/' + uid + '/private/tradeNotification').once('value', function (data) {
+                            if (data.val() == false) {
+                                $('input[name="trade_notif"]').prop('checked', false);
+                            } else {
+                                $('input[name="trade_notif"]').prop('checked', true);
+                                $('.switch[data-target="switch-trade_notif"]').addClass('switchOn');
                             }
                         })
                         firebase.database().ref('users/'+uid+'/moder/group').once('value', function(data) {
@@ -315,6 +329,7 @@
                     var userRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
                     
                     userRef.child('/public/betaTrade').set($('input[name="trades"]').prop('checked'));
+                    userRef.child('/private/tradeNotification').set($('input[name="trade_notif"]').prop('checked'));
                     userRef.child('/public/avatar').set(avatarUrl(avatar));
                     userRef.child('/public/nickname').set(XSSreplace(Player.nickname));
                     userRef.child('/settings/language').set(Settings.language);
