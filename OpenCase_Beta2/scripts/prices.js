@@ -40389,25 +40389,31 @@ var Prices = {
         }
     },
     "815": {
-        "item_id": 815,
-        "type": "★ Huntsman Knife",
-        "skinName": "Damascus Steel",
-        "prices": {
-            "default": {
-                "0": {
-                    "market": 289.57
-                },
-                "1": {
-                    "market": 295.45
-                },
-                "2": {
-                    "market": 359.27
-                }
-            },
-            "stattrak": {},
-            "souvenir": {}
+    "item_id": 815,
+    "type": "★ Huntsman Knife",
+    "skinName": "Damascus Steel",
+    "prices": {
+      "default": {
+        "0": {
+          "market": 289.57
+        },
+        "1": {
+          "market": 295.45
+        },
+        "2": {
+          "market": 359.27
+        },
+        "3": {
+          "market": 238.22
+        },
+        "4": {
+          "market": 202.86
         }
-    },
+      },
+      "stattrak": {},
+      "souvenir": {}
+    }
+  },
     "816": {
         "item_id": 816,
         "type": "★ Butterfly Knife",
@@ -40584,7 +40590,19 @@ var Prices = {
             "default": {
                 "0": {
                     "market": 112.24
-                }
+                },
+                "1": {
+                    "market": 152.24
+                },
+                "2": {
+                    "market": 214.24
+                },
+                "3": {
+                    "market": 286.24
+                },
+                "4": {
+                    "market": 334.24
+                },
             },
             "stattrak": {},
             "souvenir": {}
