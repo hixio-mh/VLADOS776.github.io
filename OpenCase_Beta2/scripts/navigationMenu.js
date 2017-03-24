@@ -130,6 +130,9 @@ $(function () {
 
         $(document).on('click', '#watch_ad_for_coins', function() {
             client.showVideoAd('javascript:$(document).trigger("coins_for_ad-watched")');
+            LOG.log({
+                action: 'Watch ad for coins'
+            })
         })
 
         $(document).on('coins_for_ad-watched', function() {
