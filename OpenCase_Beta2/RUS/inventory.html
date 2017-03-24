@@ -225,6 +225,14 @@
 			$("#menu_doubleBalance").text(Player.doubleBalance);
 			saveStatistic('doubleBalance', Player.doubleBalance);
 			$(".fullWeaponInfo-close").click();
+            
+            $('#stat-count').text($('li.weapon').length);
+            
+            var sum = 0;
+            $('li.weapon').each(function(i, item) {
+                sum += parseFloat($(item).find('i').text());
+            })
+            $('#stat-sum').text(sum.toFixed(2));
 		});
 
 		$('#startContract').on('click', function() {
