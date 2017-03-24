@@ -148,6 +148,7 @@ body {
    @extend %extend_background_gradient;
     //background: linear-gradient(to right, $color_big_stone_approx, $color_outer_space_approx, $color_charade_approx, $color_mirage_approx);
     overflow-x: hidden;
+    margin: 1px;
 }
 
 #container {
