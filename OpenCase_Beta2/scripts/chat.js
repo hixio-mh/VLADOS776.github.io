@@ -444,6 +444,12 @@ function newMsg(key, message, edit) {
     } else {
         $(".chat__messages").append(msg);
     }
+    
+    if (group.match(/vip/)) {
+        $('.vip .message__from').gradientText({
+            colors: ['#df56ff', '#ff5656']
+        });
+    }
 }
 
 function removeMsg(key) {
