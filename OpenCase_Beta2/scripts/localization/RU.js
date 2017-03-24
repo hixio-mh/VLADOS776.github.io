@@ -11,6 +11,10 @@ var Translation = {
     
     translation: {
         menu: {
+            more_coins: {
+                text: 'Получить монеты',
+                en: 'Get more coins'
+            },
             to_next_level: {
                 text: '${1} до следующего уровня',
                 en: '${1} to next level'
@@ -102,6 +106,24 @@ var Translation = {
             other_apps: {
                 text: 'Другие приложения',
                 en: 'Other apps'
+            },
+            more_coins_modal: {
+                title: {
+                    text: 'Получить монеты',
+                    en: 'Get more coins'
+                },
+                body: {
+                    text: 'Если вам не хватает монет, вы можете посмотреть рекламу и получить 1000<i class="double-icon"></i>',
+                    en: 'If you have no coins, you can watch the ad and get 1000 <i class="double-icon"></i>'
+                },
+                watch: {
+                    text: 'Смотреть рекламу',
+                    en: 'Watch the ad'
+                },
+                cancel: {
+                    text: 'Закрыть',
+                    en: 'Cancel'
+                }
             }
         },
         cases: {

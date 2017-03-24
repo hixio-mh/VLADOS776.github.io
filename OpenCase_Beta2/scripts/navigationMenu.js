@@ -30,8 +30,9 @@ $(function () {
             <a href="' + link + '" data-profileLink="true"><img src="' + avatarUrl() + '" class="menu_ava"></a> \
             <div id="menu_playerInfo_info_text"> \
                 <a href="' + link + '" data-profileLink="true"><span id="menu_playerInfo_name"></span></a> \
-                <span id="menu_doubleBalance">' + Player.doubleBalance + '</span><i class="double-icon"></i> \
-            </div> \
+                <span id="menu_doubleBalance">' + Player.doubleBalance + '</span><i class="double-icon"></i>\
+                ' + (isAndroid() ? '<button href="#" class="btn btn-xs btn-default more_coins" data-toggle="modal" data-target="#more_coins_modal" data-loc="more_coins">Get more coins</button>' : '') +'\
+            </div>\
         </div> \
         <div class="menu_rank"> \
             <div class="menu_rank__top"> \
@@ -105,10 +106,45 @@ $(function () {
         }
     })
     
-    $(function() {
-        $('#menu_playerInfo_name').text(Player.nickname)
-    })
+    //More coins modal
+    if (isAndroid()) {
+        $(document.body).append('<div class="modal fade" id="more_coins_modal" role="dialog" data-loc-group="more_coins_modal">\
+            <div class="modal-dialog">\
+                <div class="modal-content">\
+                    <div class="modal-header">\
+                        <button class="close" data-dismiss="modal">&times;</button>\
+                        <h4 class="modal-title" data-loc="title">Get more coins</h4>\
+                    </div>\
+                    <div class="modal-body">\
+                        <p data-loc="body">\
+                           If you have no coins, you can watch the ad and get 1000 <i class="double-icon"></i>\
+                        </p>\
+                    </div>\
+                    <div class="modal-footer">\
+                        <button class="btn btn-success" id="watch_ad_for_coins" data-dismiss="modal" data-loc="watch">Watch the ad</button>\
+                        <button class="btn btn-default" data-dismiss="modal" data-loc="cancel">Cancel</button>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>');
+
+        $(document).on('click', '#watch_ad_for_coins', function() {
+            client.showVideoAd('javascript:$(document).trigger("coins_for_ad-watched")');
+        })
+
+        $(document).on('coins_for_ad-watched', function() {
+            $.notify({
+                message: '+1000<i class="double-icon"></i>'
+            }, {
+                type: 'success',
+                delay: 1000
+            })
+            Player.doubleBalance+=1000;
+            saveStatistic("doubleBalance", Player.doubleBalance);
+        })
+    }
     
+    $('#menu_playerInfo_name').text(Player.nickname);
     $(document).on('expchanged', function() {
         $('.menu_rank__exp').text(Level.myEXP() + ' EXP');
         $('.lvl-current').text(Level.myLvl());

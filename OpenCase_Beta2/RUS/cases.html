@@ -242,6 +242,13 @@
                         if (user) {
                             firebase.database().ref('users/' + user.uid + '/private/firebaseToken').set(client.getFirebaseID());
                             LOG.log('Set firebaseToken');
+                            
+                            firebase.database().ref('users/' + user.uid + '/moder/group').once('value')
+                            .then(function(group) {
+                                if(group.val().match(/vip/)) {
+                                    client.hideAd();
+                                }
+                            })
                         }
                     })
                 }

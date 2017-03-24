@@ -43,7 +43,7 @@
     flex-flow: row nowrap;
     display: -webkit-box;
     justify-content: flex-start;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .menu_ava {
     width: 60px;
@@ -52,7 +52,7 @@
     vertical-align: middle;
 }
 #menu_playerInfo_info_text {
-    padding-top: 10px;
+
 }
 #menu_playerInfo_name {
     display: block;
@@ -60,6 +60,10 @@
 .menu_playerInfo span {
     color: #fff;
     font-family: LatoRegular;
+}
+.more_coins {
+    display: block;
+    font-size: 11px;
 }
 .menu_rank__top {
     text-align: center;

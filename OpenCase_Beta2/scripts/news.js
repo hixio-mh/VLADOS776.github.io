@@ -501,7 +501,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Новое] Возможность вставлять изображения в чат<br> - [Новое] Добавлен перевод на Польский язык.<br> - [Изменено] Улучшены уведомления.",
-        "EN": "- [New] You can send images in chat.<br> - [New] Tranlsation to Polish.<br> - [Changed] Improved notification."
+        "EN": " - [New] You can send images in chat.<br> - [New] Tranlsation to Polish.<br> - [Changed] Improved notification."
     }
 }, {
     "day": 6,
@@ -509,7 +509,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Исправлено] Улучшена защита от взломов.",
-        "EN": "- [Fixed] Improved anti-hack protection."
+        "EN": " - [Fixed] Improved anti-hack protection."
     }
 }, {
     "day": 7,
@@ -517,7 +517,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Исправлено] Исправлена ошибка, когда при запуске не появлялись кейсы и ничего не нажималось. Кстати, если у вас была эта ошибка, крайне рекомендую обновить Android.",
-        "EN": "- [Fixed] Bug when cases doesn't show up in main page and you can't click on anything."
+        "EN": " - [Fixed] Bug when cases doesn't show up in main page and you can't click on anything."
     }
 }, {
     "day": 14,
@@ -525,7 +525,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Новое] Новая онлайн игра - Джекпот онлайн.",
-        "EN": "- [New] Jackpot online release."
+        "EN": " - [New] Jackpot online release."
     }
 }, {
     "day": 16,
@@ -533,7 +533,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Интерфейс] Изменён выбор аватара в настройках",
-        "EN": "- [UI] Avatars carousel in settings."
+        "EN": " - [UI] Avatars carousel in settings."
     }
 }, {
     "day": 24,
@@ -541,7 +541,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Новое] Кейсы за деньги",
-        "EN": "- [New] RIP free cases"
+        "EN": " - [New] RIP free cases"
     }
 }, {
     "day": 28,
@@ -549,7 +549,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Новое] Перевод на турецкий",
-        "EN": "- [New] Turkish translation (by Mirac)"
+        "EN": " - [New] Turkish translation (by Mirac)"
     }
 }, {
     "day": 11,
@@ -557,7 +557,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Новое] Кейсы игроков - открытый бета тест",
-        "EN": "- [New] Custom cases - Open beta test"
+        "EN": " - [New] Custom cases - Open beta test"
     }
 }, {
     "day": 12,
@@ -565,7 +565,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Новое] Кейсы игрока в профиле<br> - [Новое] Награды в профиле",
-        "EN": "- [New] User cases in profile<br> - [New] Awards in the profile"
+        "EN": " - [New] User cases in profile<br> - [New] Awards in the profile"
     }
 }, {
     "day": 16,
@@ -573,7 +573,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Новое] Кейс Spectrum!",
-        "EN": "- [New] Spectrum Case!"
+        "EN": " - [New] Spectrum Case!"
     }
 }, {
     "day": 17,
@@ -581,6 +581,30 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Новое] Обновлены цены на предметы.",
-        "EN": "- [New] The prices database was updated"
+        "EN": " - [New] The prices database was updated"
+    }
+}, {
+    "day": 18,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Изменено] Обновлен перевод на турецкий.",
+        "EN": " - [Changed] Turkish translation was updated"
+    }
+}, {
+    "day": 21,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Новая мини-игра Сапер!<br> - [UI] Новые звуки для меню",
+        "EN": " - [New] New game - Minesweeper!<br> - [UI] New sounds for menu"
+    }
+}, {
+    "day": 23,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Исправлено] Исправлены ошибки в трейдах<br> - [Новое] Уведомление при новом предложении обмена<br> - [Новое] Убран нижний банер с рекламой для VIP",
+        "EN": " - [Fixed] Trade bugs<br> - [New] Notification on new trade offer<br> - [New] No banner ad for VIP"
     }
 }, ];

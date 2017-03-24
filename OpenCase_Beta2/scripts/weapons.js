@@ -272,9 +272,11 @@ Weapon.prototype.toLi = function(config) {
         li += '<img src="' + this.getImgUrl() + '" />';
     }
     
+    var type = this.specialText() + this.type
+    
     li += '<div class="weaponInfo ' + this.rarity + '">\
-            <div class="type' + (config.ticker && this.type.length >= ticker_limit ? ' text-ticker' : '') + '">\
-                <span>' + this.type + '</span>\
+            <div class="type' + (config.ticker && type.length >= ticker_limit ? ' text-ticker' : '') + '">\
+                <span>' + type + '</span>\
             </div><div class="name' + (config.ticker && this.name.length >= ticker_limit ? ' text-ticker' : '') + '">\
                 <span>' + this.name + '</span>\
             </div>\
