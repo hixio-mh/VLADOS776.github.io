@@ -13,15 +13,6 @@
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/lobibox.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/winter.css">
-    <script src="../scripts/build/libs.js"></script>
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/fb-inventory.js"></script>
-    <script src="../scripts/settings.js"></script>
-    <script src="../scripts/profile.js"></script>
-    <script src="../scripts/navigationMenu.js"></script>
-    <link rel="stylesheet" href="../css/navigationMenu.css">
-    <script src="../scripts/localization.js"></script>
-    <script src="../scripts/inventory.js"></script>
     
     <style>
     .banlist {
@@ -73,7 +64,16 @@
         
         <ul class="banlist"></ul>
     </div>
-    
+    <script src="../scripts/build/libs.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/fb-inventory.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/profile.js"></script>
+    <script src="../scripts/navigationMenu.js"></script>
+    <link rel="stylesheet" href="../css/navigationMenu.css">
+    <script src="../scripts/localization.js"></script>
+    <script src="../scripts/inventory.js"></script>
     <script>
         $(function(){
             firebase.database().ref('bans').once('value')
