@@ -425,7 +425,7 @@ function newMsg(key, message, edit) {
                     </div>";
     }
     
-    var msg = "<li class='" + (!edit ? "animated bounceIn" : "") + " chat__message" + (myMessage ? " my_message" : "") + (toMe ? " msgToMe" : "") + " " + group + " " + extraClasses + "' data-msgkey='" + key + "'>\
+    var msg = "<li class='" + (!edit ? "animated bounceIn " : "") + "chat__message" + (myMessage ? " my_message" : "") + (toMe ? " msgToMe" : "") + " " + group + " " + extraClasses + "' data-msgkey='" + key + "'>\
         <a href='profile.html?uid="+uid+"'>\
             <img src='" + img + "' data-userID='" + uid + "'>\
         </a>\
@@ -440,12 +440,12 @@ function newMsg(key, message, edit) {
         </div></li>";
     
     if (edit) {
-        $("li[data-msgkey='" + key + "']").replaceWith(msg);
+        $("li[data-msgkey='" + key + "']").replaceWith($(msg));
     } else {
         $(".chat__messages").append(msg);
     }
     
-    if (group.match(/vip/)) {
+    if (group.match(/vip/) || extraClasses.match(/vip/)) {
         $('.vip .message__from').gradientText({
             colors: ['#df56ff', '#ff5656']
         });
