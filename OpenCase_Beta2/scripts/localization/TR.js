@@ -11,6 +11,10 @@ var Translation = {
     },
     translation: {
         menu: {
+            more_coins: {
+                text: 'Reklam izle , Coin kazan',
+                en: 'Get more coins'
+            },
             to_next_level: {
                 text: 'Level atlamak için ${1} puan kaldı.',
                 en: '${1} to next level'
@@ -61,6 +65,10 @@ var Translation = {
                 dice: {
                     text: 'Zar',
                     en: 'Dice'
+                },
+                minesweeper: {
+                    text: 'Mayın Tarlası',
+                    en: 'Minesweeper'
                 }
             },
             inventory: {
@@ -98,6 +106,24 @@ var Translation = {
             other_apps: {
                 text: 'Diğer uygulamalar',
                 en: 'Other apps'
+            },
+            more_coins_modal: {
+                title: {
+                    text: 'Daha fazla coin al',
+                    en: 'Get more coins'
+                },
+                body: {
+                    text: 'Eğer coininiz yoksa , reklam izleyerek 1000 coin kazanabilirsiniz<i class="double-icon"></i>',
+                    en: 'If you have no coins, you can watch the ad and get 1000 <i class="double-icon"></i>'
+                },
+                watch: {
+                    text: 'Reklam izle',
+                    en: 'Watch the ad'
+                },
+                cancel: {
+                    text: 'İptal et',
+                    en: 'Cancel'
+                }
             }
         },
         cases: {
@@ -662,6 +688,50 @@ var Translation = {
                     text: 'Kazanç',
                     en: 'Profit'
                 }
+            }
+        },
+        minesweeper: {
+            page_name: {
+                text: 'Mayın Tarlası',
+                en: 'Minesweeper'
+            },
+            game: {
+                bet: {
+                    $placeholder: {
+                        text: 'Parayı koy',
+                        en: 'Bet'
+                    }
+                },
+                mines: {
+                    $placeholder: {
+                        text: 'Mayınların Miktarı',
+                        en: 'Mines Amount'
+                    }
+                },
+                start_game: {
+                    text: 'Onayla',
+                    en: 'Confirm'
+                },
+                next: {
+                    text: 'Sonraki:',
+                    en: 'Next:'
+                },
+                total: {
+                    text: 'Toplam:',
+                    en: 'Total:'
+                },
+                cashout: {
+                    text: 'Parayı çek',
+                    en: 'Cashout'
+                },
+                new_game: {
+                    text: 'Yeni oyun',
+                    en: 'New game'
+                }
+            },
+            history: {
+                text: 'Geçmiş',
+                en: 'History'
             }
         },
         inventory: {

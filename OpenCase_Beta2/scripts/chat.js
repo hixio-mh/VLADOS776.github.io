@@ -63,6 +63,7 @@ $(function () {
             })
             fbProfile.isVip(null, function(isVip) {
                 fbChat.isVip = isVip;
+                $(document).trigger('player_vip');
             })
         } else if (firebase.auth().currentUser != null && goToChat != false) {
             fbChat.setChatRef(goToChat);
@@ -75,12 +76,23 @@ $(function () {
             })
             fbProfile.isVip(null, function(isVip) {
                 fbChat.isVip = isVip;
+                $(document).trigger('player_vip');
             })
         } else {
             $("#chat").hide();
             $(".chat__rooms-container").hide();
             $("#login").show();
         }
+        
+        // VIP nickname user
+        $(document).on('player_vip', function() {
+            firebase.database().ref('/users/' + user.uid + '/vip/nicknameColor')
+                .once('value', function(colors) {
+                colors = colors.val();
+                if (colors)
+                    fbChat.vip.nickColors = colors;
+            })
+        })
     });
      
     $(document).on('click', '.message__info', function() {
@@ -200,6 +212,7 @@ var fbChat = (function (module) {
     module.chatRef = '';
     module.isModerator = false;
     module.isVip = false;
+    module.vip = {};
     module.rooms = [
         {
             name: "Русский"
@@ -241,6 +254,9 @@ var fbChat = (function (module) {
     ];
     module.setChatRef = function(ref) {
         if (module.chatRef) module.chatRef.off('child_added');
+        if (module.chatRef) module.chatRef.off('child_removed');
+        if (module.chatRef) module.chatRef.off('child_changed');
+        
         module.chatRef = firebase.database().ref('chat/'+ref);
     }
     module.sendMsg = function (userName, text, img, country) {
@@ -248,7 +264,8 @@ var fbChat = (function (module) {
         var uid = firebase.auth().currentUser.uid;
         firebase.database().ref('users/'+uid+'/moder/group').once('value', function(snapshot) {
             var group = snapshot.val() ;
-            fbChat.chatRef.push({
+            
+            var msg = {
                 username: userName
                 , uid: uid
                 , text: text
@@ -256,7 +273,18 @@ var fbChat = (function (module) {
                 , group: group
                 , country: country
                 , timestamp: firebase.database.ServerValue.TIMESTAMP
-            });
+            }
+            
+            if (fbChat.isVip) {
+                msg.vip = {};
+                
+                if (fbChat.vip.nickColors) {
+                    msg.vip.nickColors = fbChat.vip.nickColors;
+                }
+            }
+            
+            
+            fbChat.chatRef.push(msg);
         })
         if (isAndroid())
             client.sendToAnalytics('Chat', 'Send message', "User send msg", text);
@@ -268,18 +296,6 @@ var fbChat = (function (module) {
     }
     module.deleteMsg = function (msgKey) {
         module.chatRef.child(msgKey).remove();
-    }
-    module.clearChat = function (ref) {
-        var chatRef = firebase.database().ref('chat/'+ref);
-        (function(chatRef) {
-            chatRef.limitToLast(40).once('value', function(snapshot) {
-                chatRef.set(snapshot.val());
-            });
-        })(chatRef)
-    }
-    module.clearChatFull = function(ref) {
-        var chatRef = firebase.database().ref('chat/'+ref);
-        chatRef.remove();
     }
     module.loadAllChat = function (ref) {
         var chatRef = firebase.database().ref(ref);
@@ -372,7 +388,8 @@ function newMsg(key, message, edit) {
         text = message.text,
         group = message.group || "",
         country = message.country || "",
-        extraClasses = message.extra || '';
+        extraClasses = message.extra || '',
+        vip = message.vip || {};
     edit = edit || false;
     
     if (!/^\.\.\/images\/ava\/.{1,5}\.\w{3}$/i.test(img) && !/(admin|moder|vip)/i.test(group)) {
@@ -398,6 +415,7 @@ function newMsg(key, message, edit) {
     text = uid == "TrgkhCFTfVWdgOhZVUEAwxKyIo33" ? text : XSSreplace(text.brTrim());
     
     text = text.replace(imgRegExp, '<img src="$1" style="width: 400px; max-width:100%; display: block;">');
+    
     if (/vip/.test(group)) {
         text = text.replace(youtubeRegExp, '<iframe width="100%" height="auto" src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>');
     }
@@ -446,9 +464,16 @@ function newMsg(key, message, edit) {
     }
     
     if (group.match(/vip/) || extraClasses.match(/vip/)) {
-        $('.vip .message__from').gradientText({
-            colors: ['#df56ff', '#ff5656']
-        });
+        
+        if (vip.nickColors) {
+            $("li[data-msgkey='" + key + "'] .message__from").gradientText({
+                colors: vip.nickColors.split(',')
+            });
+        } else {
+            $("li[data-msgkey='" + key + "'] .message__from").gradientText({
+                colors: ['#df56ff', '#ff5656']
+            });
+        }
     }
 }
 
