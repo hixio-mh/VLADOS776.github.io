@@ -749,107 +749,245 @@ this.tablist=this._getList().addClass("ui-tabs-nav ui-helper-reset ui-helper-cle
 
 }));
 
-(function ($) {
-    $.gradientText = $.gradientText || {version: '1.0'};
-    
-    $.gradientText.conf = {
-		colors: ['#5f3db6', '#c10000']
+/**
+ * @author Leechy (leechy@leechy.ru)
+ * @link www.artlebedev.ru
+ * @requires jQuery
+ *
+ * Description:
+ * gradientText is a jQuery plugin that paints text in gradient colors
+ *
+ * Usage:
+ * $(selector).gradientText(config);
+ *
+ * config is an object contents configuraton paramenters:
+ * 	{Array} colors - array of hex colors, e.g. ['#000000', '#FFFFFF'];
+ * 	{Array} toProcess - array of jQuery selectors, matched elements will be toProcessed
+ */
+
+(function($){
+	// Параметры по умолчанию
+	$.gradientText = $.gradientText || {version: '1.0'};
+
+	$.gradientText.conf = {
+		colors: ['#5f3db6', '#c10000'],
+		toProcess: []
 	};
 
 	$.gradientTextSetup = function(conf) {
 		$.extend($.gradientText.conf, conf);
 	};
 
-    $.fn.gradientText = function(conf) {
-        var color_from = $.gradientText.conf.colors[0];
-        var color_to = $.gradientText.conf.colors[1];
+	$.fn.gradientText = function(conf) {
+		
+		// already constructed --> return API
+		/*var el = this.data("gradientText");
+		if (el) { return el; }*/
+				
+		// concatinate defined conf object with the user's one
+		if (!conf) {
+			conf = $.gradientText.conf;
+		} else {
+			if (typeof(conf.colors) == 'undefined') {
+				conf.colors = $.gradientText.conf.colors;
+			}
+		}
 
-        if (conf) {
-            if (typeof conf.colors !== 'undefined') {
-                color_from = conf.colors[0];
-                color_to = conf.colors[1];
-            }
-        }
+		var aLetters = [];
 
-        var color_from_r = convert16to10(color_from[1]) * 16 + convert16to10(color_from[2])
-            , color_from_g = convert16to10(color_from[3]) * 16 + convert16to10(color_from[4])
-            , color_from_b = convert16to10(color_from[5]) * 16 + convert16to10(color_from[6])
-            , color_to_r = convert16to10(color_to[1]) * 16 + convert16to10(color_to[2])
-            , color_to_g = convert16to10(color_to[3]) * 16 + convert16to10(color_to[4])
-            , color_to_b = convert16to10(color_to[5]) * 16 + convert16to10(color_to[6])
-            , delta_r = color_to_r - color_from_r
-            , delta_g = color_to_g - color_from_g
-            , delta_b = color_to_b - color_from_b;
+		this.each(function(i) {
+			aLetters[i] = new GradientLetters($(this), conf);
+			$(this).data("gradientText", aLetters[i]);	
+		});
+		
+		$(window).load(function() {
+			var iLetters_amount = aLetters.length;
+			for (var i = 0; i < iLetters_amount; i++) {
+				aLetters[i].update();
+			}
+		});
 
-        this.each(function () {
-            var field = $(this);
-            var string = field.text();
-            var len = string.length;
-            var stringResult = '';
-            for (var i = 0; i <= len - 1; i++) {
-                var color_now_r = (color_from_r + delta_r / len * i).toFixed(0)
-                    , color_now_g = (color_from_g + delta_g / len * i).toFixed(0)
-                    , color_now_b = (color_from_b + delta_b / len * i).toFixed(0)
-                    , color_now = '#' + convert10to16(Math.floor(color_now_r / 16)) + convert10to16(color_now_r % 16) + convert10to16(Math.floor(color_now_g / 16)) + convert10to16(color_now_g % 16) + convert10to16(Math.floor(color_now_b / 16)) + convert10to16(color_now_b % 16);
-                stringResult += '<span style="color: ' + color_now + ';">' + string[i] + '</span>';
-                field.html(stringResult);
-            }
-        });
-    }
-        
-    // Перевод из 16-ной в 10-ную
-    function convert16to10(number) {
-        var result = 0;
-        if (number <= 9 && number >= 0) {
-            result = number;
-        }
-        else if (number == "A" || number == "a") {
-            result = 10;
-        }
-        else if (number == "B" || number == "b") {
-            result = 11;
-        }
-        else if (number == "C" || number == "c") {
-            result = 12;
-        }
-        else if (number == "D" || number == "d") {
-            result = 13;
-        }
-        else if (number == "E" || number == "e") {
-            result = 14;
-        }
-        else if (number == "F" || number == "f") {
-            result = 15;
-        }
-        return parseInt(result);
-    }
-    // Перевод из 10-ной в 16-ную
-    function convert10to16(number) {
-        var result = '0';
-        if (number <= 9 && number >= 0) {
-            result = number.toString();
-        }
-        else if (number == 10) {
-            result = "A";
-        }
-        else if (number == 11) {
-            result = "B";
-        }
-        else if (number == 12) {
-            result = "C";
-        }
-        else if (number == 13) {
-            result = "D";
-        }
-        else if (number == 14) {
-            result = "E";
-        }
-        else if (number == 15) {
-            result = "F";
-        }
-        return result;
-    }
-})(jQuery);
+		return conf.api ? el: this; 
+	};
+
+
+	function GradientLetters(jContainer, conf) {
+		/**
+		 * 	Если плагин уже поработал над элементом,
+		 * 	то заново дробить его не нужно
+		 */
+		if (jContainer.find('span.gr-text').size() == 0) {
+			/**
+			 * 	getting nodes, good enough
+			 * 	to be spliced in letters
+			 */
+			var jTextNodes = jContainer.contents().filter(function() {
+				return (this.nodeType == 3 && /\S/.test(this.nodeValue))
+			}).wrap('<span class="gr-text" />');
+
+			if (typeof(conf.toProcess) != 'undefined') {
+				var tags = conf.toProcess.toString();
+
+				if (tags) {
+					jTextNodes = jContainer.find(tags).contents().filter(function() {
+						return (this.nodeType == 3 && /\S/.test(this.nodeValue))
+					}).wrap('<span class="gr-text" />');
+				}
+			}
+
+			/**
+			 * 	width of the content can be less than jContainer's width
+			 * 	that's why we have to use inline wrapper like span
+			 */
+			jContainer.html('<span class="gr-wrap">' + jContainer.html() + '</span>');
+			jContainer = jContainer.find('.gr-wrap');
+
+			/**
+			*	Оборачиваем каждую букву в span.gr-letter.
+			*	Пробелы заменяем на пробел нулевой ширины
+			*/
+			jContainer.find('span.gr-text').each(function(){
+				var aText = $(this).text().split('');
+				var sHTML = '';
+				var iText_amount = aText.length;
+
+				for (var i = 0; i < iText_amount; i++) {
+					if (aText[i] != ' ') {
+						sHTML += '<span class="gr-letter">' + aText[i] + '</span>';
+					} else {
+						sHTML += '<span class="gr-letter"><span style="display:none;">&#8203;</span> </span>';
+					}
+				}
+				$(this).html(sHTML);
+			});
+		}
+
+		var jWords = jContainer.find('span.gr-text');
+		var jLetters = jContainer.find('span.gr-letter');
+		var iHeight = 0;
+
+		// Convert defined hex colors to rgb-colors
+		conf.RGBcolors = [];
+		for (var i = 0; i < conf.colors.length; i++) conf.RGBcolors[i] = hex2Rgb(conf.colors[i]);
+
+		/**
+		 * 	Measurer — некий объект, который понимает не только когда изменяется ширина окна,
+		 * 	но и когда меняется размер шрифта.
+		 *
+		 * 	Плагин использует:
+		 *	- jcommon, если он есть;
+		 *	- measurer, если нет jcommon и подключен файл с measurer,
+		 *	- resize, если по какой-то причине ни того, ни другого не обнаружено.
+		 */
+		if (typeof($c) != 'undefined') $c.measurer.bind(updateColors);
+		else if (typeof($measurer) != 'undefined') $measurer.bind(updateColors);
+		else $(window).resize(updateColors);
+
+		PaintUnderlines();
+
+		function updateColors() {
+			var iRootLeftOffset = Math.round(jContainer[0].offsetLeft),
+				iRootWidth = getMaxRootWidth(iRootLeftOffset),
+				jLetters_amount = jLetters.size();
+
+			//if (iRootWidth < 200) iRootWidth = 200;
+
+			for( var i = jLetters_amount; i--; ) {
+				jLetters[i].style.color = getColor(Math.round(jLetters[i].offsetLeft - iRootLeftOffset), iRootWidth);
+			}
+		}
+
+		function getMaxRootWidth(iRootLeftOffset) {
+			var iMaxWidth = 0;
+			jWords.each(function(index) {
+				var iRightEdge = Math.round(this.offsetWidth + this.offsetLeft) - iRootLeftOffset;
+				if (iRightEdge > iMaxWidth) iMaxWidth = iRightEdge;
+			});
+			return iMaxWidth;
+		}
+
+		function getColor(iLeftOffset, iRootWidth) {
+			var
+				fLeft = (iLeftOffset > 0)? (iLeftOffset / iRootWidth) : 0;
+			for (var i = 0; i < conf.colors.length; i++) {
+				fStopPosition = (i / (conf.colors.length - 1));
+				fLastPosition = (i > 0)? ((i - 1) / (conf.colors.length - 1)) : 0;
+
+				if (fLeft == fStopPosition) {
+					return conf.colors[i];
+				} else if (fLeft < fStopPosition) {
+					fCurrentStop = (fLeft - fLastPosition) / (fStopPosition - fLastPosition);
+					return getMidColor(conf.RGBcolors[i-1], conf.RGBcolors[i], fCurrentStop);
+				}
+			}
+			return conf.colors[conf.colors.length - 1];
+		}
+
+		function getMidColor(aStart, aEnd, fMidStop) {
+			var aRGBColor = [];
+
+			for (var i = 0; i < 3; i++) {
+				aRGBColor[i] = aStart[i] + Math.round((aEnd[i] - aStart[i]) * fMidStop)
+			}
+
+			return rgb2Hex(aRGBColor)
+		}
+
+
+		/**
+		* To paint underline of gradiented text in right colors
+		* every .gr-letter element has to have css rule:
+		* 	text-decoration: underline;
+		* so this function searching for .gr-text that is child
+		* of underlined element
+		*/
+		function PaintUnderlines () {
+			/* When gradiented element contains underlined child */
+			jContainer.find('.gr-text').each(function(){
+				if ($(this).parent().css('text-decoration') == 'underline') {
+					$(this).parent().find('.gr-letter').css('text-decoration', 'underline');
+				}
+			});
+
+			/* When gradiented element is underlined */
+			if (jContainer.parent().css('text-decoration') == 'underline') {
+				jContainer.find('.gr-letter').css('text-decoration', 'underline');
+			}
+		}
+        updateColors();
+		return {
+			update: updateColors
+		}
+	}
+
+	/**
+	 * Преобразует HEX-представление цвета в RGB.
+	 * @param {String} hex
+	 * @return {Array}
+	 */
+	function hex2Rgb(hex) {
+		if ('#' == hex.substr(0, 1)) {
+			hex = hex.substr(1);
+		}
+		if (3 == hex.length) {
+			hex = hex.substr(0, 1) + hex.substr(0, 1) + hex.substr(1, 1) + hex.substr(1, 1) + hex.substr(2, 1) + hex.substr(2, 1);
+		}
+
+		return [parseInt(hex.substr(0, 2), 16), parseInt(hex.substr(2, 2), 16), parseInt(hex.substr(4, 2), 16)];
+	}
+
+	/**
+	 * Преобразует RGB-представление цвета в HEX.
+	 * @param {Array} rgb
+	 * @return {String}
+	 */
+	function rgb2Hex(rgb) {
+		var s = '0123456789abcdef';
+
+		return '#' + s.charAt(parseInt(rgb[0] / 16)) + s.charAt(rgb[0] % 16) + s.charAt(parseInt(rgb[1] / 16)) +
+			s.charAt(rgb[1] % 16) + s.charAt(parseInt(rgb[2] / 16)) + s.charAt(rgb[2] % 16);
+	}
+})( jQuery );
 /* Lazy Load XT 1.1.0 | MIT License */
 !function(a,b,c,d){function e(a,b){return a[b]===d?t[b]:a[b]}function f(){var a=b.pageYOffset;return a===d?r.scrollTop:a}function g(a,b){var c=t["on"+a];c&&(w(c)?c.call(b[0]):(c.addClass&&b.addClass(c.addClass),c.removeClass&&b.removeClass(c.removeClass))),b.trigger("lazy"+a,[b]),k()}function h(b){g(b.type,a(this).off(p,h))}function i(c){if(z.length){c=c||t.forceLoad,A=1/0;var d,e,i=f(),j=b.innerHeight||r.clientHeight,k=b.innerWidth||r.clientWidth;for(d=0,e=z.length;e>d;d++){var l,m=z[d],q=m[0],s=m[n],u=!1,v=c||y(q,o)<0;if(a.contains(r,q)){if(c||!s.visibleOnly||q.offsetWidth||q.offsetHeight){if(!v){var x=q.getBoundingClientRect(),B=s.edgeX,C=s.edgeY;l=x.top+i-C-j,v=i>=l&&x.bottom>-C&&x.left<=k+B&&x.right>-B}if(v){m.on(p,h),g("show",m);var D=s.srcAttr,E=w(D)?D(m):q.getAttribute(D);E&&(q.src=E),u=!0}else A>l&&(A=l)}}else u=!0;u&&(y(q,o,0),z.splice(d--,1),e--)}e||g("complete",a(r))}}function j(){B>1?(B=1,i(),setTimeout(j,t.throttle)):B=0}function k(a){z.length&&(a&&"scroll"===a.type&&a.currentTarget===b&&A>=f()||(B||setTimeout(j,0),B=2))}function l(){v.lazyLoadXT()}function m(){i(!0)}var n="lazyLoadXT",o="lazied",p="load error",q="lazy-hidden",r=c.documentElement||c.body,s=b.onscroll===d||!!b.operamini||!r.getBoundingClientRect,t={autoInit:!0,selector:"img[data-src]",blankImage:"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",throttle:99,forceLoad:s,loadEvent:"pageshow",updateEvent:"load orientationchange resize scroll touchmove focus",forceEvent:"lazyloadall",oninit:{removeClass:"lazy"},onshow:{addClass:q},onload:{removeClass:q,addClass:"lazy-loaded"},onerror:{removeClass:q},checkDuplicates:!0},u={srcAttr:"data-src",edgeX:0,edgeY:0,visibleOnly:!0},v=a(b),w=a.isFunction,x=a.extend,y=a.data||function(b,c){return a(b).data(c)},z=[],A=0,B=0;a[n]=x(t,u,a[n]),a.fn[n]=function(c){c=c||{};var d,f=e(c,"blankImage"),h=e(c,"checkDuplicates"),i=e(c,"scrollContainer"),j=e(c,"show"),l={};a(i).on("scroll",k);for(d in u)l[d]=e(c,d);return this.each(function(d,e){if(e===b)a(t.selector).lazyLoadXT(c);else{var i=h&&y(e,o),m=a(e).data(o,j?-1:1);if(i)return void k();f&&"IMG"===e.tagName&&!e.src&&(e.src=f),m[n]=x({},l),g("init",m),z.push(m),k()}})},a(c).ready(function(){g("start",v),v.on(t.updateEvent,k).on(t.forceEvent,m),a(c).on(t.updateEvent,k),t.autoInit&&(v.on(t.loadEvent,l),l())})}(window.jQuery||window.Zepto||window.$,window,document);
 /*

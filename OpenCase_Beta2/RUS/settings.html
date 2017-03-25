@@ -121,13 +121,20 @@
             border: 5px solid #F0E50E;
         }
         
-        .color_box {
+        .color_box, .add_color {
             width: 50px;
             height: 50px;
             background: #fff;
             border-radius: 5px;
             margin: 3px;
             display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            line-height: 50px;
+            color: #7b7b7b;
+            font-weight: bold;
+            font-size: 2em;
+            cursor: pointer;
         }
         
         #color_example {
@@ -175,9 +182,8 @@
                     <input id="custom_avatar" class='form-control input-sm' placeholder="URL"> </div>
                 <div class='option' id='nickname_color'><span data-loc="custom_avatar">Nickname color</span>
                     <div>
-                        <div class='color_box color-1' data-color='#ffffff'></div>
-                        <div class='color_box color-2' data-color='#ffffff'></div>
-                        <div id='color_example'> </div>
+                        <div class='add_color'>+</div>
+                        <div id='color_example'></div>
                     </div>
                 </div>
             </div>
@@ -283,27 +289,38 @@
                     }
                 })
             });
-            $('.color-1').ColorPicker({
-                onChange: function (hsb, hex, rgb) {
-                    $('.color-1').css('background', '#' + hex);
-                    $('.color-1').data('color', '#' + hex);
-                    nicknameColorChange();
-                }
-            })
-            $('.color-2').ColorPicker({
-                onChange: function (hsb, hex, rgb) {
-                    $('.color-2').css('background', '#' + hex);
-                    $('.color-2').data('color', '#' + hex);
-                    nicknameColorChange();
-                }
+            
+            $('.add_color').on('click', function() {
+                
+                $('<div class="color_box" data-color="#ffffff"></div>').insertBefore('.add_color');
+                
+                $('.color_box').each(function() {
+                    var that = this;
+                    $(that).ColorPicker({
+                        onChange: function(hsb, hex, rgb) {
+                            $(that).css('background', '#' + hex);
+                            $(that).data('color', '#' + hex);
+                            nicknameColorChange();
+                        }
+                    })
+                })
+                
+                if ($('.color_box').length == 4)
+                    $('.add_color').remove();
             })
 
             function nicknameColorChange() {
                 var nickname = $('#nickname').val();
-                $('#color_example').html('<b>' + nickname + '</b>');
-                $('#color_example').gradientText({
-                    colors: [$('.color-1').data('color'), $('.color-2').data('color')]
+                $('#color_example').html(nickname);
+                
+                var colors = [];
+                $('.color_box').each(function() {
+                    colors.push($(this).data('color'));
                 })
+                
+                $('#color_example').gradientText({
+                    colors: colors
+                });
             }
             $('#custom_avatar').change(function () {
                 getMeta($(this).val(), function (size) {
@@ -389,7 +406,11 @@
                     userRef.child('/settings/sounds').set(Settings.sounds);
                     
                     if (Player.isVip) {
-                        userRef.child('/vip/nicknameColor').set($('.color-1').data('color') + ',' + $('.color-2').data('color'));
+                        var colors = [];
+                        $('.color_box').each(function() {
+                            colors.push($(this).data('color'));
+                        })
+                        userRef.child('/vip/nicknameColor').set(colors.join(','));
                     }
                 }
                 catch (e) {
