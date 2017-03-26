@@ -169,7 +169,7 @@ var Dice = {
         var condition = $('#oddsOverUnder').text();
         var playerWin = condition[0] == '>' ? number > parseInt(condition.replace('>', '')) : number < parseInt(condition.replace('<', ''));
 
-        if (playerWin && Math.rand(0, 100) > 60 && counter < 3) {
+        if (playerWin && Math.rand(0, 100) > 40 && counter < 4) {
             Dice.startGame(++counter);
             return;
         }
