@@ -125,6 +125,21 @@ var Dice = {
                 }
             })
         })
+        
+        firebase.auth().onAuthStateChanged(function (user) {
+        // Once authenticated, instantiate Firechat with the logged in user
+            if (user != null) {
+                firebase.database().ref('users/'+user.uid+'/moder/group').once('value')
+                .then(function(snapshot) {
+                    var group = snapshot.val();
+                    if (!group) {
+                        return
+                    } else if (group.match(/vip/)) {
+                        Dice.betLimit = 100000;
+                    }
+                })
+            }
+        })
     },
     recount: function(config) {
         if (config.payout) {
@@ -154,7 +169,7 @@ var Dice = {
         var condition = $('#oddsOverUnder').text();
         var playerWin = condition[0] == '>' ? number > parseInt(condition.replace('>', '')) : number < parseInt(condition.replace('<', ''));
 
-        if (playerWin && Math.rand(0, 100) > 80 && counter < 2) {
+        if (playerWin && Math.rand(0, 100) > 60 && counter < 3) {
             Dice.startGame(++counter);
             return;
         }
