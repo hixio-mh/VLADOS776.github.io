@@ -188,7 +188,7 @@ var Dice = {
 
             var profit = 0;
             if (playerWin) {
-                profit = parseInt(bet * parseFloat($('#oddsPayout').text()));
+                profit = parseInt(bet * parseFloat($('#oddsPayout').text())) - bet;
                 Player.doubleBalance += profit;
                 
                 Level.addEXP(2);
@@ -223,7 +223,7 @@ var Dice = {
     },
     historyPush: function(item) {
         var row = '<tr class="' + (item.profit > 0 ? 'success' : 'danger') + '"> \
-            <td>' + item.bet + '</td><td>' + item.payout + '</td><td>' + item.condition + '</td><td>' + item.random + '</td><td>' + (item.profit - item.bet) +'</td></tr>';
+            <td>' + item.bet + '</td><td>' + item.payout + '</td><td>' + item.condition + '</td><td>' + item.random + '</td><td>' + item.profit +'</td></tr>';
         $('#my_history tbody').prepend(row);
         
         if ($('#my_history tbody tr').length > 10) {
