@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 <title>Список кейсов</title>
-    <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="../css/main.css">
-<link rel="stylesheet" type="text/css" href="../css/rarity.css">
-<link rel="stylesheet" type="text/css" href="../css/fonts.css">
-<link rel="stylesheet" type="text/css" href="../css/animate.css">
-<link rel="stylesheet" href="../css/lobibox.min.css"/>
-<link rel="stylesheet" href="../css/holiday.css">
-    
-<script src="../scripts/build/libs.js"></script>
-<script src="../scripts/main.js"></script>
+<body>
 <script>
 if (isAndroid()) {
     try {
@@ -23,177 +14,16 @@ if (isAndroid()) {
 } else if (!isAndroid()) {
     window.location.replace('http://vlados776.github.io/OpenCase_Beta2/RUS/cases.html?start=true');
 }
-</script>
-<script src="../scripts/settings.js"></script>
-<script src="../scripts/skinNames.js"></script>
-<script src="../scripts/cases2.js"></script>
-<script src="../scripts/weapons.js"></script>
-<script src="../scripts/openCase.js"></script>
 
-<script src="../scripts/navigationMenu.js"></script>
-<link rel="stylesheet" href="../css/navigationMenu.css">
-
-<script src="../scripts/localization.js"></script>
-</head>
-<body data-localization="cases" data-inventory="no-load">
-	<div class="site-overlay"></div>
-	<div id="container" class="sosulki" style="background-position: 0 39px;">
-<div class="navigationBar" data-menu-EN="Open Cases" data-menu-RU="Открыть кейсы"></div>
-
-<div class="popup" id="special-popup">
-<span id='closePopup'></span>
-<span id='js-local-special-text'>Чтобы открыть специальный кейс, откройте ещё</span> <span id='special'>?</span> <span id='js-local-special-text2'>кейсов.</span><br><span id='js-local-special-text3'>Или посмотрите рекламу.</span>
-<button id='showVideoAd'>Посмотреть рекламу</button>
-<span class='js-secretField' style='display: none'></span>
-</div>
-
-<div class="popup" id="rank-popup">
-<span id='closePopup'></span>
-<span id='js-local-rank-text'>Только игроки с уровнем</span> <span id='rank'>?</span> <span id='js-local-rank-text2'> и выше могут открыть этот кейс.</span><br><a href="faq.html#js-local-question-rank" class="inline-link"><span id='js-local-rank-text3'>Как поднять уровень?</span></a>
-</div>
-<div class="cases">
-<div id="Default" class="casesBlock opened"><h1>Кейсы</h1></div>
-<div id="eSports" class="casesBlock closed"><h1>eSports</h1></div>
-<div id="Collection" class="casesBlock closed"><h1>Коллекции</h1></div>
-<div id="Souvenir" class="casesBlock closed"><h1>Сувенирные коллекции</h1></div>
-<div id="Workshop" class="casesBlock closed"><h1>Мастерская</h1></div>
-<div id="Special" class="casesBlock closed"><h1>Особые</h1></div>
-</div>
-<script>
-
-$(function () {
-	for (var i = 0; i < cases.length; i++) {
-		var specialClass = (typeof cases[i].specialClass == "undefined") ? "" : cases[i].specialClass;
-		var collection = (cases[i].type == "Souvenir") ? "souvenir" : (cases[i].type == "Collection") ? "collection" : "";
-		//var collection = (cases[i].type == "Collection") ? "collection" : "";
-		var curCase = "<div class='case " + collection + "' data-case-id=" + i + " data-souvenir='false'>" + (cases[i].deadline ? "<span class='countdown' data-deadline='" + cases[i].deadline + "'></span>" : "") + "<img src='../images/Cases/cases/" + cases[i].img + "'><span class='name " + specialClass + "'>" + cases[i].name + "</span>";
-        
-        if (typeof cases[i].show != 'undefined' && cases[i].show === false)
-            continue;
-        
-        if (cases[i].deadline) {
-            var t = getTimeRemaining(cases[i].deadline);
-            if (t.total < 0) continue;
-        }
-        
-        
-		switch (cases[i].type) {
-            case "Default":
-                $("#Default").append(curCase);
-                break;
-            case "eSports":
-                $("#eSports").append(curCase);
-                break;
-            case "Special":
-                $("#Special").append(curCase);
-                break;
-            case "Collection":
-                $("#Collection").append(curCase);
-                break;
-            case "Workshop":
-                $("#Workshop").append(curCase);
-                break;
-		}
-		if (typeof cases[i].canBeSouvenir != 'undefined' && cases[i].canBeSouvenir == true) {
-			curCase = curCase.replace("data-souvenir='false'", "data-souvenir='true'");
-			$("#Souvenir").append(curCase);
-		}
-	}
-    
-    if ($('.countdown').length != 0) {
-        var clockInterval = setInterval(function() {
-            $('.countdown').each(function(){
-                var deadline = $(this).data('deadline');
-                var t = getTimeRemaining(deadline);
-                if (t.total < 0) {
-                    $(this).parent('.case').remove();
-                }
-                if (t.days == 0 && !$(this).hasClass('lastDay'))
-                    $(this).addClass('lastDay');
-                $(this).text(t.days + ':' + t.hours + ':' + t.minutes + ':' + t.seconds);
-            })
-        }, 1000)
+function isAndroid() {
+    try {
+        var a = client.isAndroid();
+        return true;
     }
-    
-	if (isAndroid()) {
-        /*try {
-            var fbKey1 = getStatistic('firebase-key 1', "");
-            var fbKey2 = getStatistic('firebase-key 2', "");
-
-            var fbVal1 = getStatistic('firebase-value 1', "");
-            var fbVal2 = getStatistic('firebase-value 2', "");
-            localStorage[fbKey1] = fbVal1;
-            localStorage[fbKey2] = fbVal2;
-        } catch (e){};*/
-
-		var version = client.getCurrentAppVersionName();
-
-		if (parseFloat(version) < 1.8) {
-			$('body').append('<div class="new-version"><b>' + Localization.cases2['new_version'][Settings.language] + '</b><span class="new-version__button" id="new-version__later">' + Localization.cases2['new_version_button_later'][Settings.language] + '</span><span class="new-version__button" id="new-version__update">' + Localization.cases2['new_version_button_update'][Settings.language] + '</span></div>');
-		}
-	}
-    
-    function getTimeRemaining(endtime){
-        var t = Date.parse(endtime) - Date.parse(new Date());
-        var seconds = Math.floor( (t/1000) % 60 );
-        var minutes = Math.floor( (t/1000/60) % 60 );
-        var hours = Math.floor( (t/(1000*60*60)) % 24 );
-        var days = Math.floor( t/(1000*60*60*24) );
-        return {
-            'total': t,
-            'days': days,
-            'hours': hours,
-            'minutes': minutes,
-            'seconds': seconds
-        };
+    catch (e) {
+        return false;
     }
-
-	var lastReward = getStatistic('lastPointReward', 0);
-	var now = new Date();
-	if (lastReward == 0)
-		lastReward = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
-	else
-		lastReward = new Date(lastReward);
-
-	var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-	if (lastReward < today) { // 24*60*60*1000
-		console.log(lastReward);
-		console.log(today);
-		// вчера или раньше
-		Level.addEXP(DAILY_REWARD_POINTS);
-		Player.doubleBalance += getRank(Player.points).doubleBonus;
-		Lobibox.notify('info', {
-			pauseDelayOnHover : false,
-			continueDelayOnInactiveTab : false,
-			width : $(window).width(),
-			position : 'top center',
-			icon : false,
-			title : Localization.cases2.daily_reward_title[Settings.language],
-			size : 'mini',
-			showClass : 'fadeInDown',
-			hideClass : 'fadeOutUp',
-			msg : Localization.cases2.daily_reward_msg[Settings.language]
-		});
-
-		saveStatistic('lastPointReward', '' + today);
-		saveStatistic('doubleBalance', Player.doubleBalance);
-	}
-});
-
-$(document).on('click', '#new-version__update', function () {
-	location = 'https://play.google.com/store/apps/details?id=csgo.opencase';
-});
-
-$(document).on('click', '#new-version__later', function () {
-	$('.new-version').css('display', 'none');
-});
-
-$('#showVideoAd').on('click', function () {
-	if (isAndroid())
-		client.showVideoAd("open.html?caseId=" + $('.js-secretField').text() + '&fromAd=1');
-	else {
-		//window.location = "open.html?caseId=" + $('.js-secretField').text() + '&fromAd=1';
-	}
-});
+}
 </script>
-</div></body></html>
+
+</body></html>
