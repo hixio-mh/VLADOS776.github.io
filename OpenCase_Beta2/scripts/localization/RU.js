@@ -128,7 +128,7 @@ var Translation = {
         },
         cases: {
             news: {
-                text: "<a href='#' data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Награды в профиле</a><p><a href='minesweeper.html'>Сапер</a>! И новые ножи в кейсе Спектрум.</p>"
+                text: "<a href='#' data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Награды в профиле</a><p>Сервер тормозит. Пожалуйста, подождите немного.</p>"
             },
             page_name: {
                 text: 'Открыть кейсы',
