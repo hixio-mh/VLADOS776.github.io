@@ -879,7 +879,6 @@ function _getInventoryAndroid(opt) {
         if (typeof inventoryJSON[0].error != 'undefined') resolver([]);
         
         var weaponsArr = [];
-        var hashStat = getStatistic('hash', 0);
         for (var i = 0; i < inventoryJSON.length; i++) {
             if (inventoryJSON[i].item_id == "" && inventoryJSON[i].quality == "" && inventoryJSON[i].extra != "{}") {
                 var extra = JSON.parse(inventoryJSON[i].extra);
@@ -903,8 +902,6 @@ function _getInventoryAndroid(opt) {
                 if (item.hashCompare(inventoryJSON[i].extra.hash)) {
                     weaponsArr.push(item);
                 }
-            } else if (hashStat == 0) {
-                weaponsArr.push(item);
             }
         }
         resolver(weaponsArr);

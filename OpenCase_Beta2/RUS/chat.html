@@ -67,6 +67,28 @@
         
         <div class="chat__rooms-container">
             <div class="chat__rooms"></div>
+            <div class='recruit well well-sm' style='overflow: scroll;' data-loc='moder_recruit'>
+                <h6>Wanna be a moderator?</h6>
+                <p>
+                   <p>
+                        Hello.
+                   </p>
+                    If you want to keep order in this world and you meet the requirements you can send a request for become a moderator!
+                    <p>
+                        <b>Requirements:</b>
+                        <ol>
+                            <li>Level higher than 20</li>
+                            <li>Rep higher than 20</li>
+                            <li>Spend more than 1 hour in game per day.</li>
+                            <li>Adequacy / Literacy</li>
+                        </ol>
+                    </p>
+                    <p>
+                        All of the above about you?<br>
+                        Then you can answer a few questions <a href="#" data-toggle='modal' data-target='#moder_modal'>HERE</a>.
+                    </p>
+                </p>
+            </div>
             <div class="chat__rooms__info"><a href="banlist.html" data-loc="banlist">Banlist</a></div>
         </div>
     
@@ -90,6 +112,23 @@
             </div>
         </div>
     </div>
+    
+    <!-- Modal -->
+    <div id="moder_modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc7d2U53Cdqk3zSB6OfNkewCKhwRdOObrwuf5DR1SIdM22dPg/viewform?embedded=true" width="100%" frameborder="0" marginheight="0" marginwidth="0" style='min-height:400px' id='moder_iframe'>Загрузка...</iframe>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <script>
         $(function() {
@@ -109,6 +148,17 @@
                 .bind('cloudinaryprogress', function(e, data) {
                     console.log('load');
             })
+            var Test = {
+                rusLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc6YLq7P6OMpQWsx4XlzYEiXAtnAnpgWAE-nTa-MwsZ9JM0jw/viewform?embedded=true',
+                engLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc7d2U53Cdqk3zSB6OfNkewCKhwRdOObrwuf5DR1SIdM22dPg/viewform?embedded=true',
+                init: function() {
+                    if (Settings.language === 'RU') {
+                        $('#moder_iframe').attr('src', Test.rusLink);
+                    }
+                }
+            }
+            
+            Test.init();
         })
     </script>
 </body>

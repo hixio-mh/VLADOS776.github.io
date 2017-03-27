@@ -7,11 +7,11 @@ $(function () {
     
     $("#chat__new-message").on('change', function (event, myEvent) {
         event = myEvent ? myEvent : event;
-        if (event.ctrlKey && event.keyCode == 13) {
+        if (event.shiftKey && event.keyCode == 13) {
+            $('#chat__new-message').append('\n');
+        } else if (event.keyCode == 13) {
             $("#chat__send-new-message").click();
             event.preventDefault();
-        } else if (event.keyCode == 13) {
-            $('#chat__new-message').append('\n');
         }
         
         if ($(this).text().length >= parseInt($(this).attr("max")) && (event.keyCode != 8 || event.keyCode != 46)) {
