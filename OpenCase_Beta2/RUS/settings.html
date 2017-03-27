@@ -277,11 +277,31 @@
                                 $('.switch[data-target="switch-trade_notif"]').addClass('switchOn');
                             }
                         })
+                        
+                        // if User is VIP.
                         firebase.database().ref('users/' + uid + '/moder/group').once('value', function (data) {
                             var group = data.val();
                             if (group && group.match(/(vip|admin)/)) {
                                 $('#vip_block').show();
                                 Player.isVip = true;
+                                
+                                // Load user nickname color
+                                firebase.database().ref('users/' + uid + '/vip/nicknameColor').once('value', function (data) {
+                                    var colors = data.val(); // String
+                                    if (!colors) return;
+                                    colors = colors.split(','); // Array
+                                    for (var i = 0; i < colors.length; i++) {
+                                        $('.add_color').click();
+                                    }
+                                    for (var i = 0; i < colors.length; i++) {
+                                        var $el = $('.color_box:eq('+i+')');
+                                        $el.css('background-color', colors[i]);
+                                        $el.data('color', colors[i]);
+                                        
+                                        $el.ColorPickerSetColor(colors[i]);
+                                    }
+                                    nicknameColorChange();
+                                })
                             }
                         })
                     }
