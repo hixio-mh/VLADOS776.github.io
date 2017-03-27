@@ -899,7 +899,7 @@ function _getInventoryAndroid(opt) {
             }
             var item = new Item(inventoryJSON[i]);
             item.id = parseInt(inventoryJSON[i].id);
-            if (hashStat == 1 && typeof inventoryJSON[i].extra.hash != 'undefined') {
+            if (typeof inventoryJSON[i].extra.hash != 'undefined') {
                 if (item.hashCompare(inventoryJSON[i].extra.hash)) {
                     weaponsArr.push(item);
                 }
