@@ -52,7 +52,6 @@
         
         <div class='news well well-sm'> <span data-loc='news'>
             <a href="#" data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Awards in Profile</a>
-            <p>Server is lagging. Please wait a bit.</p>
         </span></div>
         
         <div class="cases">
@@ -219,13 +218,13 @@
                         })
                     }, 1000)
                 }
-                if (isAndroid()) {
-                    var version = client.getCurrentAppVersionName();
-                    /*if (parseFloat(version) < 1.9) {
-                        $('body').append('<div class="new-version"><b>' + Localization.getString('other.new_version.new_version') + '</b><span class="new-version__button" id="new-version__later">' + Localization.getString('other.new_version.later') + '</span><span class="new-version__button" id="new-version__update">' + Localization.getString('other.new_version.update') + '</span></div>');
-                    }*/
-                }
                 $(document).on('localizationloaded', function () {
+                    if (isAndroid()) {
+                        var version = client.getCurrentAppVersionCode();
+                        if (parseFloat(version) < 13) {
+                            $('body').append('<div class="new-version"><b>' + Localization.getString('other.new_version.new_version') + '</b><span class="new-version__button" id="new-version__later">' + Localization.getString('other.new_version.later') + '</span><span class="new-version__button" id="new-version__update">' + Localization.getString('other.new_version.update') + '</span></div>');
+                        }
+                    }
                     checkReward();
                     var $prices = $('.case-price');
                     $prices.each(function () {
