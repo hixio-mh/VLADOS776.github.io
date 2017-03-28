@@ -128,7 +128,7 @@ var Translation = {
         },
         cases: {
             news: {
-                text: "<a href='#' data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Награды в профиле</a><p>Сервер тормозит. Пожалуйста, подождите немного.</p>"
+                text: "<a href='#' data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Награды в профиле</a>"
             },
             page_name: {
                 text: 'Открыть кейсы',
