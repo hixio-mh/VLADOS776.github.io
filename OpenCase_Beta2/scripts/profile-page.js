@@ -8,6 +8,8 @@ $(function () {
     var uid = getURLParameter('uid');
     if (uid == null ) return false;
     
+    var showTradeID = getURLParameter('trade');
+    
     $(".posts__new-post").hide();
     moment.locale(Settings.language);
     
@@ -89,8 +91,7 @@ $(function () {
         if (uid != firebase.auth().currentUser.uid) {
             $(".posts__new-post").hide();
             $('.rep').show();
-        }
-        else {
+        } else {
             $(".posts__new-post").show();
             $('.rep').hide();
             $(".left-side, .right-side").show();
@@ -100,6 +101,12 @@ $(function () {
                 inventoryRef.child('inventory_count').set(result.count);
                 
             })
+            
+            if (showTradeID != null) {
+                $(document).on('trade_allowed', function() {
+                    showTrade(showTradeID);
+                })
+            }
         }
         if (userInfo.public.bigBG && fbProfile.ifValidImg(userInfo.public.bigBG)) {
             $('.top__bg').css('background-image', 'url(' + userInfo.public.bigBG + ')');
@@ -116,8 +123,11 @@ $(function () {
             firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/public/betaTrade').once('value', function (snapshot) {
                 try {
                     if (snapshot.val() == true) $(".top__trade").removeClass("disabled");
+                    $(document).trigger('trade_allowed');
                 }
-                catch (e) {}
+                catch (e) {
+                    $(document).trigger('trade_disallowed');
+                }
             })
         }
         
@@ -518,8 +528,11 @@ $(function () {
     $(document).on('click', '.trades-with-user__trade', function () {
         $(".my-trades .trade__weapons__summ").show();
         $('.my-trades__trades-with-user').hide();
+        
         var otherAva = $(this).find('.trade__other img').attr('src');
         $('.other-user-profile-img').attr('src', otherAva);
+        $('.user-profile-img').attr('src', avatarUrl(Player.avatar));
+        
         fbProfile.currentTrade = {
             id: $(this).data('tradeid')
             , otherUid: $(this).data('otherUid')
@@ -572,6 +585,7 @@ $(function () {
                 for (var i = 0; i < myWeapons.length; i++) {
                     var weapon = myWeapons[i];
                     if (typeof weapon == 'undefined') continue;
+                    if (typeof weapon == 'string') weapon = JSON.parse(weapon);
                     weapon = new Weapon(weapon);
                     var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
                     $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi()).data('weapon_obj', weaponJSON));
@@ -628,12 +642,14 @@ $(function () {
             }
         };
     })
+    
     $(document).on('click', '#you-ready-to-trade', function () {
         var tradeID = $(this).data('tradeid');
         var status = $('#you-ready-to-trade').is(':checked');
         if (status == true) status = firebase.database.ServerValue.TIMESTAMP;
         firebase.database().ref('trades/' + tradeID + '/tradeInfo/' + firebase.auth().currentUser.uid + '/accepted').set(status);
         fbProfile.currentTrade.youAccepted = $('#you-ready-to-trade').is(':checked');
+        Trades.currentTrade.you.ready = $('#you-ready-to-trade').is(':checked');
         $('[data-tradeid="' + tradeID + '"]').data('youAccepted', status);
         $('[data-tradeid="' + tradeID + '"]').removeClass('changed');
         if ($('#you-ready-to-trade').is(':checked') && $(".other-player-ready").hasClass('ready')) {
@@ -940,6 +956,122 @@ $(function () {
                 date: date,
                 text: text
             }
+        })
+    }
+    
+    function showTrade(tradeID) {
+        if (!$('.trade-window').is(':visible')) 
+            $('.trade-window').show();
+        
+        $('.my-trades-list').hide();
+        $(".my-trades .trade__weapons__summ").show();
+        $('.my-trades__trades-with-user').hide();
+        
+        Trades.getTrade(tradeID, function(trade) {
+            $('.other-user-profile-img').attr('src', avatarUrl(trade.other.public.avatar));
+            $('.user-profile-img').attr('src', avatarUrl(Player.avatar));
+
+            $('#my-trades__your-offer').empty();
+            $('#my-trades__other-offer').empty();
+            
+            $("#make-trade").prop('disabled', true);
+            $("#cancel-trade").data('tradeid', trade.tradeID);
+            $("#make-trade").data('tradeid', trade.tradeID);
+            $("#you-ready-to-trade").data('tradeid', trade.tradeID);
+            
+            if (trade.you.ready) $("#you-ready-to-trade").prop('checked', true);
+            else $("#you-ready-to-trade").prop('checked', false);
+            
+            if (trade.other.ready) {
+                $(".other-player-ready").text(Localization.getString('profile.exchange.status.ready'));
+                $(".other-player-ready").addClass('ready');
+            }
+            else {
+                $(".other-player-ready").text(Localization.getString('profile.exchange.status.not_ready'));
+                $(".other-player-ready").removeClass('ready');
+            }
+            if (trade.you.ready && trade.other.ready) {
+                $('#make-trade').prop('disabled', false);
+            }
+            if (trade.isCanceled || trade.isDone) {
+                $("#cancel-trade").hide();
+                $("#make-trade").hide();
+                $("#change-weapons-trade").hide();
+            }
+            else {
+                $("#cancel-trade").show();
+                $("#make-trade").show();
+                $("#change-weapons-trade").show();
+            }
+            if (!trade.you.watched) {
+                firebase.database().ref('trades/' + trade.tradeID + '/tradeInfo/' + firebase.auth().currentUser.uid + '/accepted').set(false);
+            }
+            $('<ul class="trade__info__weapons inv-no-select summ-inventory your"></ul>').appendTo('#my-trades__your-offer');
+            $('<ul class="trade__info__weapons inv-no-select summ-inventory to-you"></ul>').appendTo('#my-trades__other-offer');
+
+            var tradeInfoRef = firebase.database().ref('trades/' + trade.tradeID + '/tradeInfo/' + trade.other.uid);
+
+            if (trade.you.itemsCount > 0) {
+                for (var i = 0; i < trade.you.itemsCount; i++) {
+                    var weapon = trade.you.items[i];
+                    if (typeof weapon == 'undefined') continue;
+                    if (typeof weapon == 'string') weapon = JSON.parse(weapon);
+                    weapon = new Weapon(weapon);
+                    var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
+                    $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi()).data('weapon_obj', weaponJSON));
+                }
+            }
+            tradeInfoRef.on('child_changed', changed);
+            tradeInfoRef.on('child_added', changed);
+
+            function changed(data) {
+                console.log('changed');
+                if (data.key == 'accepted') {
+                    console.log('Other player Ready!');
+                    //Если другой пользователь нажал на галочку "Готов трейдиться"
+                    Trades.currentTrade.other.ready = data.val();
+                    if (Trades.currentTrade.other.ready) {
+                        $(".other-player-ready").text(Localization.getString('profile.exchange.status.ready'));
+                        $(".other-player-ready").addClass('ready');
+                    }
+                    else {
+                        $(".other-player-ready").text(Localization.getString('profile.exchange.status.not_ready'));
+                        $(".other-player-ready").removeClass('ready');
+                    }
+                    if (Trades.currentTrade.you.ready && Trades.currentTrade.other.ready) {
+                        $('#make-trade').prop('disabled', false);
+                    }
+                    else {
+                        $('#make-trade').prop('disabled', true);
+                    }
+                }
+                else if (data.key == 'weapons') {
+                    //Если другой пользователь именил своё предложение
+                    // TODO: переделать это. Возможно не надо получать еще раз
+                    
+                    firebase.database().ref('trades/' + Trades.currentTrade.tradeID + '/' + Trades.currentTrade.other.uid).once('value').then(function (data) {
+                        var Trade_weapons = data.val();
+                        if (Trade_weapons == null) Trade_weapons = [];
+                        $('#my-trades__other-offer').find(".trade__info__weapons.to-you").empty();
+                        for (var i = 0; i < Trade_weapons.length; i++) {
+                            var weapon = Trade_weapons[i];
+                            if (typeof weapon == 'undefined') continue;
+                            weapon = new Weapon(weapon);
+                            $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append( weapon.toLi());
+                        }
+                        $('#my-trades__other-offer').effect('highlight');
+                        $('li[data-tradeid="' + fbProfile.currentTrade.id + '"] .trade__other .give-to-you').text(Trade_weapons.length);
+                    });
+                }
+                else if (data.key == 'getWeapons') {
+                    fbProfile.tradeInfoShort(Trades.currentTrade.tradeID, function (tradeInfo) {
+                        if (typeof tradeInfo.player.getWeapons != 'undefined') return;
+                        fbProfile.getTradeWeapons(tradeInfo.tradeID, tradeInfo.status == 'done' ? tradeInfo.otherPlayer.id : tradeInfo.player.id)
+                        $('.trade-back').click();
+                        $('li[data-tradeid="' + tradeInfo.tradeID + '"]').addClass(tradeInfo.status);
+                    })
+                }
+            };
         })
     }
     

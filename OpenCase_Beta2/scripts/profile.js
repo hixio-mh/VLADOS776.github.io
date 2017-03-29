@@ -25,7 +25,7 @@ var fbProfile = (function (module) {
         var email = $("#email").val() || "";
         var password = $("#password").val() || "";
         
-        var androidID = "nope";
+        var androidID = null;
         if (isAndroid())
             androidID = client.getAndroidID();
         
@@ -453,4 +453,186 @@ var fbProfile = (function (module) {
         }
     }
     return module;
-}(fbProfile || {}))
+}(fbProfile || {}));
+
+var Trades = (function(module) {
+    module = module || {};
+    
+    module.currentTrade = {};
+    
+    module.getTrade = function(tradeID, opt, callback) {
+        if (typeof opt === 'function') {
+            callback = opt;
+            opt = {
+                setCurrent: true
+            };
+        }
+        firebase.database().ref('/trades/' + tradeID).once('value', function(snapshot) {
+            var trade = snapshot.val();
+            
+            var result = {
+                isDone: false,
+                isCanceled: false,
+                tradeID: tradeID
+            };
+            
+            result.Player1 = {
+                uid: trade.tradeInfo.Player1,
+                ready: false,
+                items: [],
+                getWeapons: false
+            };
+            result.Player2 = {
+                uid: trade.tradeInfo.Player2,
+                ready: false,
+                items: [],
+                getWeapons: false
+            };
+            
+            if (trade[result.Player1.uid]) {
+                result.Player1.items = trade[result.Player1.uid]
+            }
+            if (trade[result.Player2.uid]) {
+                result.Player2.items = trade[result.Player2.uid]
+            }
+            
+            if (trade.tradeInfo[result.Player1.uid]) {
+                if (trade.tradeInfo[result.Player1.uid].accepted != null) {
+                    result.Player1.ready = trade.tradeInfo[result.Player1.uid].accepted == false ? false : true;
+                    result.Player1.readyTime = trade.tradeInfo[result.Player1.uid].accepted
+                    result.Player1.watched = true;
+                } else {
+                    result.Player1.ready = false;
+                    result.Player1.watched = false;
+                }
+                if (trade.tradeInfo[result.Player1.uid].getWeapons != null) {
+                    result.Player1.getWeapons = true;
+                    result.Player1.getWeaponsTime = trade.tradeInfo[result.Player1.uid].getWeapons;
+                }
+            }
+            if (trade.tradeInfo[result.Player2.uid]) {
+                if (trade.tradeInfo[result.Player2.uid].accepted != null) {
+                    result.Player2.ready = trade.tradeInfo[result.Player2.uid].accepted == false ? false : true;
+                    result.Player2.readyTime = trade.tradeInfo[result.Player2.uid].accepted
+                    result.Player2.watched = true;
+                } else {
+                    result.Player2.ready = false;
+                    result.Player2.watched = false;
+                }
+                if (trade.tradeInfo[result.Player2.uid].getWeapons != null) {
+                    result.Player2.getWeapons = true;
+                    result.Player2.getWeaponsTime = trade.tradeInfo[result.Player2.uid].getWeapons;
+                }
+            }
+            
+            if (trade.tradeInfo.status != null) {
+                result.status = trade.tradeInfo.status;
+                if (trade.tradeInfo.status == 'done') {
+                    result.isDone = true;
+                } else if (trade.tradeInfo.status == 'canceled') {
+                    result.isCanceled = true;
+                }
+            }
+            
+            result.Player1.itemsCount = result.Player1.items.length;
+            result.Player2.itemsCount = result.Player2.items.length;
+            
+            if (result.Player1.uid == firebase.auth().currentUser.uid) {
+                result.you = result.Player1;
+                result.other = result.Player2;
+            } else if (result.Player2.uid == firebase.auth().currentUser.uid) {
+                result.you = result.Player2;
+                result.other = result.Player1;
+            }
+            
+            if (opt.setCurrent) {
+                module.currentTrade = result;
+            }
+            
+            if (result.other) {
+                fbProfile.profilePublic(result.other.uid, function(otherUser) {
+                    result.other.public = otherUser;
+                    callback(result);
+                })
+            } else {
+                result.other.public = {};
+                callback(result);
+            }
+        })
+    }
+    
+    module.tradeInfo = function(tradeID, callback) {
+        firebase.database().ref('trades/' + tradeID + '/tradeInfo').once('value').then(function (snapshot) {
+            var tradeInfo = snapshot.val();
+            var trade = {
+                tradeInfo: tradeInfo
+            }
+            
+            var result = {
+                isDone: false,
+                isCanceled: false,
+                tradeID: tradeID
+            };
+            
+            result.Player1 = {
+                uid: tradeInfo.Player1,
+                ready: false,
+                getWeapons: false
+            };
+            result.Player2 = {
+                uid: tradeInfo.Player2,
+                ready: false,
+                getWeapons: false
+            };
+            
+            if (trade.tradeInfo[result.Player1.uid]) {
+                if (trade.tradeInfo[result.Player1.uid].accepted != null) {
+                    result.Player1.ready = true
+                    result.Player1.readyTime = trade.tradeInfo[result.Player1.uid].accepted
+                }
+                if (trade.tradeInfo[result.Player1.uid].getWeapons != null) {
+                    result.Player1.getWeapons = true;
+                    result.Player1.getWeaponsTime = trade.tradeInfo[result.Player1.uid].getWeapons;
+                }
+            }
+            if (trade.tradeInfo[result.Player2.uid]) {
+                if (trade.tradeInfo[result.Player2.uid].accepted != null) {
+                    result.Player2.ready = true;
+                    result.Player2.readyTime = trade.tradeInfo[result.Player2.uid].accepted
+                }
+                if (trade.tradeInfo[result.Player2.uid].getWeapons != null) {
+                    result.Player2.getWeapons = true;
+                    result.Player2.getWeaponsTime = trade.tradeInfo[result.Player2.uid].getWeapons;
+                }
+            }
+            
+            if (trade.tradeInfo.status != null) {
+                result.status = trade.tradeInfo.status;
+                if (trade.tradeInfo.status == 'done') {
+                    result.isDone = true;
+                } else if (trade.tradeInfo.status == 'canceled') {
+                    result.isCanceled = true;
+                }
+            }
+            
+            if (result.Player1.uid == firebase.auth().currentUser.uid) {
+                result.you = result.Player1;
+                result.other = result.Player2;
+            } else if (result.Player2.uid == firebase.auth().currentUser.uid) {
+                result.you = result.Player2;
+                result.other = result.Player1;
+            }
+            
+            if (result.other) {
+                fbProfile.profilePublic(result.other.uid, function(otherUser) {
+                    result.other.public = otherUser;
+                    callback(result);
+                })
+            } else {
+                callback(result);
+            }
+        })
+    }
+    
+    return module;
+})(Trades || {});
