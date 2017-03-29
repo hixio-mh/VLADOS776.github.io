@@ -5,10 +5,9 @@ $(document).on('localizationloaded', function() {
 })
 
 $(function () {
-    var param = parseURLParams(window.location.href);
-    if (typeof param == "undefined") return false;
-    uid = param.uid[0];
-    if (typeof uid == 'undefined') return false;
+    var uid = getURLParameter('uid');
+    if (uid == null ) return false;
+    
     $(".posts__new-post").hide();
     moment.locale(Settings.language);
     
@@ -48,6 +47,31 @@ $(function () {
                 }
             })
         })
+    })
+    
+    $(document).on('click', '#follow', function() {
+        var currentUID = firebase.auth().currentUser.uid;
+        //if (!currentUID || uid === currentUID) return;
+        
+        var setVar = true;
+        
+        if (isAndroid() && client.getCurrentAppVersionCode() >= 12) {
+            setVar = client.getFirebaseID();
+        }
+        
+        if ($(this).data('action') === 'follow') {
+            firebase.database().ref('/followers/' + uid + '/' + currentUID).set(setVar);
+            firebase.database().ref('/users/' + currentUID + '/follow/' + uid).set(setVar);
+            
+            $(this).text('Unfollow');
+            $(this).data('action', 'unfollow');
+        } else {
+            firebase.database().ref('/followers/' + uid + '/' + currentUID).remove();
+            firebase.database().ref('/users/' + currentUID + '/follow/' + uid).remove();
+            
+            $(this).text('Follow');
+            $(this).data('action', 'follow');
+        }
     })
     
     fbProfile.showProfile(uid, function (userInfo) {
@@ -110,7 +134,10 @@ $(function () {
         }
         
         firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/moder').once('value').then(function (snapshot) {
-            if (snapshot.val().group.match(/(moder|admin)/)) {
+            var groups = snapshot.val() != null ? snapshot.val().group : null;
+            if (!groups) return
+            
+            if (groups.match(/(moder|admin)/)) {
                 $(".moder-menu").show();
                 firebase.database().ref('users/' + uid + '/moder').once('value').then(function (snapshot) {
                     var data = snapshot.val();
@@ -127,7 +154,21 @@ $(function () {
                     })
                 })
             }
+            
+            if (groups.match(/(beta|admin)/)) {
+                $('.beta_only').show();
+            }
         });
+        
+        firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/follow/' + uid).once('value').then(function(snapshot) {
+            if (snapshot.val() !== null) {
+                $('#follow').text('Unfollow');
+                $('#follow').data('action', 'unfollow');
+            } else {
+                $('#follow').data('action', 'follow');
+            }
+            $('#follow').show();
+        })
     });
     fbProfile.repVal(uid, function (rep, userRep) {
         $(".stats__rate__count").text((rep > 99999 ? '∞' : rep));

@@ -681,4 +681,7 @@ i.double-icon {
   position: relative;
   top: -2px; }
 
+.beta_only {
+  display: none; }
+
 /*# sourceMappingURL=main.css.map */
