@@ -8608,27 +8608,27 @@ var Prices = {
         "prices": {
             "default": {
                 "3": {
-                    "market": 31.23,
-                    "analyst": 12.27,
-                    "opskins": 12.19
-                },
-                "4": {
                     "market": 14.98,
                     "analyst": 7.16,
                     "opskins": 6.15
+                },
+                "4": {
+                    "market": 31.23,
+                    "analyst": 12.27,
+                    "opskins": 12.19
                 }
             },
             "stattrak": {},
             "souvenir": {
                 "3": {
-                    "market": 32.91,
-                    "analyst": 28.9,
-                    "opskins": 35
-                },
-                "4": {
                     "market": 25.96,
                     "analyst": 24.68,
                     "opskins": 23
+                },
+                "4": {
+                    "market": 32.91,
+                    "analyst": 28.9,
+                    "opskins": 35
                 }
             }
         }
