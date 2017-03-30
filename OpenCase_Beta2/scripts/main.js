@@ -662,14 +662,10 @@ function getWeapon(id) {
                 request.onsuccess = function(event) {
                     var weapon = new Weapon(request.result.item_id, request.result.quality, request.result.stattrak, request.result.souvenir);
                     weapon.id = id;
-                    if (getStatistic('hash', 0) == 1 && typeof request.result.hash != 'undefined') {
+                    if (typeof request.result.hash != 'undefined') {
                         if (weapon.hashCompare(request.result.hash)) {
                             resolver(weapon);
                         }
-                    } else if (getStatistic('hash', 0) == 0) {
-                        resolver(weapon);
-                    } else {
-                        resolver({});
                     }
                 }
             })
@@ -920,17 +916,14 @@ function _getInventoryIndexedDB() {
             store.getAll().onsuccess = function(e) {
                 var inv = e.target.result;
                 var invWeapons = [];
-                var hashStat = getStatistic('hash', 0);
                 for (var i = 0; i < inv.length; i++) {
                     var item = new Item(inv[i]);
                     item.id = inv[i].id;
                     
-                    if (hashStat == 1 && typeof inv[i].hash != 'undefined') {
+                    if (typeof inv[i].hash != 'undefined') {
                         if (item.hashCompare(inv[i].hash)) {
                             invWeapons.push(item);
                         }
-                    } else if (hashStat == 0) {
-                        invWeapons.push(item);
                     }
                 }
                 resolver(invWeapons);
