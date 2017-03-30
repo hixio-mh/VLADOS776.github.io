@@ -127,9 +127,7 @@ var Translation = {
             }
         },
         cases: {
-            news: {
-                text: "<a href='#' data-toggle='modal' data-target='#awards_modal' data-loc='awards'>Награды в профиле</a>"
-            },
+
             page_name: {
                 text: 'Открыть кейсы',
                 en: 'Open Cases'

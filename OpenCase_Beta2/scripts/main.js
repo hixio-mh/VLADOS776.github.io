@@ -2,7 +2,7 @@ var win;
 var winNumber = 35;
 var sellCommis = 15;
 var Global = {
-    caseDiscount: 50, //%
+    caseDiscount: 0, //%
 }
 var inventory = [],
     inventory_length = 0,
@@ -680,11 +680,16 @@ function getWeapon(id) {
 function getItem(id) {
     return new Promise(function(resolver, reject) {
         if (isAndroid()) {
-            var wp = client.getWeaponById(id);
-            wp = $.parseJSON(wp);
-            wp = new Item(wp);
+            var wpJSON = client.getWeaponById(id);
+            wpJSON = $.parseJSON(wpJSON);
+            var wp = new Weapon(wpJSON);
             wp.id = id;
-            resolver(wp);
+            
+            if (typeof wpJSON.extra.hash != 'undefined') {
+                if (wp.hashCompare(wpJSON.extra.hash)) {
+                    resolver(wp);
+                }
+            }
         } else {
              connectDB(function(db) {
                 var tx = db.transaction('weapons', 'readonly');
