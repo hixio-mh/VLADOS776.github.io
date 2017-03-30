@@ -1,7 +1,9 @@
 var win;
 var winNumber = 35;
 var sellCommis = 15;
-var VERSION = 1;
+var Global = {
+    caseDiscount: 50, //%
+}
 var inventory = [],
     inventory_length = 0,
     inventory_step = 50,
@@ -1031,7 +1033,12 @@ function getCasePrice(caseId, souvenir) {
     cases[caseId].weapons.forEach(function(item) {
         prSumm += middlePrice(item, souvenir);
     })
-    return (prSumm / cases[caseId].weapons.length).toFixed(2)
+    var price = parseFloat((prSumm / cases[caseId].weapons.length).toFixed(2));
+    if (Global.caseDiscount > 0) {
+        price = price - (price * Global.caseDiscount / 100);
+        price = parseFloat(price.toFixed(2));
+    }
+    return price;
 }
 
 function middlePrice(item_id, souvenir) {

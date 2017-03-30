@@ -16,7 +16,9 @@ var openCase = {
         return this.caseId === freeCase;
     },
     casePrice: function() {
-        return cases[this.caseId].price || parseFloat(getCasePrice(openCase.caseId, openCase.souvenir))*100;
+        var casePrice = cases[this.caseId].price || parseFloat(getCasePrice(openCase.caseId, openCase.souvenir))*100;
+        
+        return casePrice;
     },
     rareItemsRegExp: new RegExp('(rare|extraordinary)' ,'i'),
     init: function() {
