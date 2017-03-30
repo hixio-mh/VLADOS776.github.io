@@ -648,11 +648,16 @@ function updateItem(item) {
 function getWeapon(id) {
     return new Promise(function(resolver, reject) {
         if (isAndroid()) {
-            var wp = client.getWeaponById(id);
-            wp = $.parseJSON(wp);
-            wp = new Weapon(wp);
+            var wpJSON = client.getWeaponById(id);
+            wpJSON = $.parseJSON(wpJSON);
+            var wp = new Weapon(wpJSON);
             wp.id = id;
-            resolver(wp);
+            
+            if (typeof wpJSON.extra.hash != 'undefined') {
+                if (wp.hashCompare(wpJSON.extra.hash)) {
+                    resolver(wp);
+                }
+            }
         } else {
              connectDB(function(db) {
                 var tx = db.transaction('weapons', 'readonly');
