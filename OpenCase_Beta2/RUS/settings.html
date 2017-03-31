@@ -369,6 +369,11 @@
                                 if (!extra.promocodes) extra.promocodes = {};
                                 extra.promocodes[promocode] = true;
                                 saveStatistic('extra', extra);
+                                
+                                LOG.log({
+                                    action: 'Activate promo code',
+                                    code: promocode
+                                })
                             } else {
                                 $.notify({
                                     message: Localization.getString('other.promocode.wrong', 'Wrong promo code.')
