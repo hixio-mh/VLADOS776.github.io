@@ -676,7 +676,6 @@ $(function () {
         if (status == true) status = firebase.database.ServerValue.TIMESTAMP;
         firebase.database().ref('trades/' + tradeID + '/tradeInfo/' + firebase.auth().currentUser.uid + '/accepted').set(status);
         fbProfile.currentTrade.youAccepted = $('#you-ready-to-trade').is(':checked');
-        Trades.currentTrade.you.ready = $('#you-ready-to-trade').is(':checked');
         $('[data-tradeid="' + tradeID + '"]').data('youAccepted', status);
         $('[data-tradeid="' + tradeID + '"]').removeClass('changed');
         if ($('#you-ready-to-trade').is(':checked') && $(".other-player-ready").hasClass('ready')) {
@@ -690,6 +689,9 @@ $(function () {
             action: 'Ready to trade',
             tradeID: tradeID
         })
+        try {
+            Trades.currentTrade.you.ready = $('#you-ready-to-trade').is(':checked');
+        } catch (e) {}
     })
     $(document).on('click', '.trade-back', function () {
         if ($('.my-trades__trades-with-user').is(':visible')) {
