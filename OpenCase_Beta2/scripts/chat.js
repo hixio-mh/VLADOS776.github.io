@@ -464,7 +464,6 @@ function newMsg(key, message, edit) {
     }
     
     if (group.match(/vip/) || extraClasses.match(/vip/)) {
-        
         if (vip.nickColors) {
             $("li[data-msgkey='" + key + "'] .message__from").gradientText({
                 colors: vip.nickColors.split(',')
@@ -474,6 +473,37 @@ function newMsg(key, message, edit) {
                 colors: ['#df56ff', '#ff5656']
             });
         }
+    }
+    
+    var now = new Date();
+    if (now.getDate() == 1 && now.getMonth() == 3) {
+        if (group.match(/vip/) || extraClasses.match(/vip/)) {
+            $("li[data-msgkey='" + key + "']").removeClass('vip');
+            $("li[data-msgkey='" + key + "'] .message__from .gr-letter").css({color: '#cb6a6a'});
+        } else {
+            $("li[data-msgkey='" + key + "']").addClass('vip');
+            
+            var colorsLength = Math.rand(1, 4);
+            
+            var colors = [];
+            
+            for (var i = 0; i < colorsLength; i++) {
+                colors.push(getRandomColor());
+            }
+            
+            $("li[data-msgkey='" + key + "'] .message__from").gradientText({
+                colors: colors
+            });
+        }
+    }
+    
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++ ) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
     }
 }
 
