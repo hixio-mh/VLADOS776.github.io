@@ -126,7 +126,7 @@ var Localization = (function (module) {
     }
     
     module.getString = function(path, defaultText, original) {
-        defaultText = defaultText || null;
+        defaultText = defaultText || '';
         original = original || false;
         try{
             var paths = path.split('.'),
@@ -134,7 +134,7 @@ var Localization = (function (module) {
                 i;
             for (i = 0; i < paths.length; ++i) {
                 if (current[paths[i]] == undefined) {
-                    return '';
+                    return defaultText;
                 } else {
                     current = current[paths[i]];
                 }
@@ -143,8 +143,7 @@ var Localization = (function (module) {
                 current = original ? current.en : current.text
             return current;
         } catch (e) {
-            if (defaultText)
-                return defaultText
+            return defaultText
         }
     }
     

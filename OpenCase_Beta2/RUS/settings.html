@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/fonts.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/loading.css">
     <link rel="stylesheet" type="text/css" href="../css/lobibox.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/winter.css">
     <link rel="stylesheet" href="../css/navigationMenu.css">
@@ -205,10 +206,31 @@
                 </div>
             </div>
             <div style='margin: 10px 0; text-align:center'>
+                <button class='btn btn-primary' data-loc='promocode' data-toggle='modal' data-target='#modal_promocode'>Activate a promo code</button>
+            </div>
+            <div style='margin: 10px 0; text-align:center'>
                 <button id='submit' class='btn btn-success' data-loc='save'>Save</button>
                 <button id='reset' class='btn btn-danger' data-loc='reset'>Full reset</button>
             </div>
         </div>
+        
+        <div id='modal_promocode' class='modal fade' role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content" data-loc-group='promo_modal'>
+                    <div class="modal-body">
+                       <div class="form-group">
+                           <label for="promocode" data-loc='enter'>Enter promocode:</label>
+                           <input type="text" class='form-control' id='promocode'>
+                       </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" id='activate_promocode' data-loc='activate'>Activate</button>
+                        <button class="btn btn-default" data-dismiss='modal' data-loc='close'>Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <script src="../scripts/build/libs.js"></script>
         <script src="../scripts/bootstrap.min.js"></script>
         <script src="../scripts/main.js"></script>
@@ -305,6 +327,57 @@
                             }
                         })
                     }
+                })
+                
+                $('#activate_promocode').on('click', function() {
+                    var promocode = $('#promocode').val();
+                    if (promocode.length < 3) return;
+                    
+                    var extra = JSON.parse(getStatistic('extra', '{}'));
+                    if (extra.promocodes && extra.promocodes[promocode] != null) {
+                        $.notify({
+                            message: Localization.getString('other.promocode.used', 'You already used this code.')
+                        }, {
+                            type: 'danger'
+                        })
+                        $('#modal_promocode').modal('hide');
+                        return;
+                    }
+
+                    $(this).addClass('m-progress');
+                    
+                    $.ajax({
+                        //url: 'http://localhost:3000/api/promocode?code=' + promocode,
+                        url: 'https://kvmde40-10035.fornex.org/api/promocode?code=' + promocode,
+                        jsonp: 'callback',
+                        dataType: 'jsonp',
+                        success: function(response) {
+                            $('#modal_promocode').modal('hide');
+                            $('#activate_promocode').removeClass('m-progress');
+                            
+                            if (response != null) {
+                                if (response.action) {
+                                    eval(response.action);
+                                }
+                                if (response.comment) {
+                                    $.notify({
+                                        message: response.comment
+                                    }, {
+                                        type: 'success'
+                                    })
+                                }
+                                if (!extra.promocodes) extra.promocodes = {};
+                                extra.promocodes[promocode] = true;
+                                saveStatistic('extra', extra);
+                            } else {
+                                $.notify({
+                                    message: Localization.getString('other.promocode.wrong', 'Wrong promo code.')
+                                }, {
+                                    type: 'danger'
+                                })
+                            }                            
+                        }
+                    })
                 })
             });
             

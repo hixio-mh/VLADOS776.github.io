@@ -1293,6 +1293,10 @@ var Translation = {
                     en: 'Fast drop (x2)'
                 }
             },
+            promocode: {
+                text: 'Активировать промокод',
+                en: 'Activate a promo code'
+            },
             reset: {
                 text: 'Полный сброс',
                 en: 'Full reset'
@@ -1300,6 +1304,20 @@ var Translation = {
             save: {
                 text: 'Сохранить',
                 en: 'Save'
+            },
+            promo_modal: {
+                enter: {
+                    text: 'Введите промокод:',
+                    en: 'Enter promocode:'
+                },
+                activate: {
+                    text: 'Активировать',
+                    en: 'Activate'
+                },
+                close: {
+                    text: 'Отмена',
+                    en: 'Close'
+                }
             },
             notification: {
                 title: {
@@ -1396,6 +1414,16 @@ var Translation = {
             sum_text: {
                 text: 'Сумма: ',
                 en: 'Worth: '
+            },
+            promocode: {
+                wrong: {
+                    text: 'Неправильный промокод',
+                    en: 'Wrong promo code.'
+                },
+                used: {
+                    text: 'Вы уже использовали этот код',
+                    en: 'You already used this code.'
+                }
             },
             empty_inventory: {
                 text: 'Инвентарь пуст. Чтобы пополнить его, <a href="cases.html">откройте пару кейсов.</a>',

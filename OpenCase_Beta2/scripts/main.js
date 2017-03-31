@@ -353,6 +353,9 @@ function saveStatistic(key, value, type, crypt) {
             break
         }
     }
+    if (typeof value == 'object') {
+        value = JSON.stringify(value);
+    }
     if (crypt == true) {
         value = CryptoJS.AES.encrypt(value.toString(), key).toString();
     }
