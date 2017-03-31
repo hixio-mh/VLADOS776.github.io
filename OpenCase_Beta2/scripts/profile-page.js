@@ -65,14 +65,16 @@ $(function () {
             firebase.database().ref('/followers/' + uid + '/' + currentUID).set(setVar);
             firebase.database().ref('/users/' + currentUID + '/follow/' + uid).set(setVar);
             
-            $(this).text('Unfollow');
+            $(this).text(Localization.getString('profile.follow.unfollow', 'Unfollow'));
             $(this).data('action', 'unfollow');
+            $('.stats__followers__count').text(parseInt($('.stats__followers__count').text()) + 1);
         } else {
             firebase.database().ref('/followers/' + uid + '/' + currentUID).remove();
             firebase.database().ref('/users/' + currentUID + '/follow/' + uid).remove();
             
-            $(this).text('Follow');
+            $(this).text(Localization.getString('profile.follow.follow', 'Follow'));
             $(this).data('action', 'follow');
+            $('.stats__followers__count').text(parseInt($('.stats__followers__count').text()) - 1);
         }
     })
     
@@ -92,6 +94,7 @@ $(function () {
             $(".posts__new-post").hide();
             $('.rep').show();
         } else {
+            $('.follow_block').hide();
             $(".posts__new-post").show();
             $('.rep').hide();
             $(".left-side, .right-side").show();
@@ -141,6 +144,13 @@ $(function () {
                 $('.awards').html(awards);
                 $('[data-toggle="tooltip"]').tooltip(); 
             }
+            if (userInfo.auto.followers_count !== null) {
+                var followers_count = parseInt(userInfo.auto.followers_count);
+                if (isNaN(followers_count)) followers_count = 0;
+                $('.stats__followers__count').text(followers_count);
+            } else {
+                $('.stats__followers__count').text(0);
+            }
         }
         
         firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/moder').once('value').then(function (snapshot) {
@@ -166,16 +176,17 @@ $(function () {
             }
             
             if (groups.match(/(beta|admin)/)) {
-                $('.beta_only').show();
+                //$('.beta_only').show();
             }
         });
         
         firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/follow/' + uid).once('value').then(function(snapshot) {
             if (snapshot.val() !== null) {
-                $('#follow').text('Unfollow');
+                $('#follow').text(Localization.getString('profile.follow.unfollow', 'Unfollow'));
                 $('#follow').data('action', 'unfollow');
             } else {
                 $('#follow').data('action', 'follow');
+                $('#follow').text(Localization.getString('profile.follow.follow', 'Follow'));
             }
             $('#follow').show();
         })
@@ -931,14 +942,14 @@ $(function () {
         var currUid = ""
         if (fbProfile.ifAuth()) currUid = firebase.auth().currentUser.uid;
         var control = "<div class='post__control'><span class='post__control__delete'><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></span></div>";
-        var HTMLpost = "<li class='user-posts__post animated flipInX' data-key=\"" + key + "\">" + "<div class='post__header'>" + "<img src=\"" + post.authorAvatar + "\" class='post__header__img' data-uid='" + post.uidFrom + "'>" + "<div class='post__header__meta'>" + "<span class='post__meta__author' data-uid='" + post.uidFrom + "'>" + post.author + "</span>" + "<span class='post__meta__date'>" + moment(date).fromNow() + "</span>" + "</div>" + (currUid == post.uidFrom ? control : '') + "</div>" + "<div class='post__text'>" + post.text + "</div></li>";
+        var HTMLpost = "<li class='user-posts__post animated flipInX' data-key=\"" + key + "\" id='" + key + "'>" + "<div class='post__header'>" + "<img src=\"" + avatarUrl(post.authorAvatar) + "\" class='post__header__img' data-uid='" + post.uidFrom + "'>" + "<div class='post__header__meta'>" + "<span class='post__meta__author' data-uid='" + post.uidFrom + "'>" + XSSreplace(post.author) + "</span>" + "<span class='post__meta__date'>" + moment(date).fromNow() + "</span>" + "</div>" + (currUid == post.uidFrom ? control : '') + "</div>" + "<div class='post__text'>" + post.text + "</div></li>";
         $(".posts__user-posts").prepend(HTMLpost);
     }
 
     function sendPost(uidFrom, uidTo, date, text) {
         var userPostsRef = firebase.database().ref('users/' + uidTo + '/posts');
-        var author = firebase.auth().currentUser.displayName;
-        var authorAvatar = firebase.auth().currentUser.photoURL;
+        var author = Player.nickname;
+        var authorAvatar = Player.avatar;
         //if (uidFrom != firebase.auth().currentUser.uid) {}
         userPostsRef.push({
             uidFrom: uidFrom

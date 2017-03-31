@@ -894,6 +894,14 @@ var Translation = {
                 text: 'Профиль',
                 en: 'Profile'
             },
+            follow: {
+                follow: {
+                    text: 'Подписаться',
+                },
+                unfollow: {
+                    text: 'Отписаться'
+                }
+            },
             stats: {
                 level: {
                     text: 'Уровень',
@@ -902,6 +910,9 @@ var Translation = {
                 inventory: {
                     text: 'Инвентарь',
                     en: 'Inventory'
+                },
+                followers: {
+                    text: 'Подписчиков'
                 },
                 reputation: {
                     text: 'Репутация',
