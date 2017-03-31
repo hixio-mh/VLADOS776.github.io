@@ -275,9 +275,9 @@ Weapon.prototype.toLi = function(config) {
     var type = this.specialText() + this.type
     
     li += '<div class="weaponInfo ' + this.rarity + '">\
-            <div class="type' + (config.ticker && type.length >= ticker_limit ? ' text-ticker' : '') + '">\
+            <div class="type' + (Settings.scroll_names && config.ticker && type.length >= ticker_limit ? ' text-ticker' : '') + '">\
                 <span>' + type + '</span>\
-            </div><div class="name' + (config.ticker && this.name.length >= ticker_limit ? ' text-ticker' : '') + '">\
+            </div><div class="name' + (Settings.scroll_names && config.ticker && this.name.length >= ticker_limit ? ' text-ticker' : '') + '">\
                 <span>' + this.name + '</span>\
             </div>\
            </div>';

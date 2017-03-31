@@ -192,6 +192,12 @@
                         <select class="form-control input-sm" id="language"></select>
                     </div>
                 </div>
+                <div class='option inline'> <span data-loc="scroll">Scroll name if it doesn't fit</span>
+                    <label class='switch-label'>
+                        <input type="checkbox" name='scroll' class='hide' />
+                        <div class='switch' data-target='switch-scroll'></div>
+                    </label>
+                </div>
                 <div class='option inline'> <span data-loc="sound">Sound</span>
                     <label class='switch-label'>
                         <input type="checkbox" name='sounds' class='hide' />
@@ -274,6 +280,10 @@
                 if (Settings.drop == true) {
                     $('input[name="drop"]').prop('checked', true);
                     $('.switch[data-target="switch-drop"]').addClass('switchOn');
+                }
+                if (Settings.scroll_names == true) {
+                    $('input[name="scroll"]').prop('checked', true);
+                    $('.switch[data-target="switch-scroll"]').addClass('switchOn');
                 }
                 
                 Player.isVip = false;
@@ -474,7 +484,10 @@
                 Settings.language = lang;
                 Settings.sounds = $('input[name="sounds"]').prop('checked');
                 Settings.drop = $('input[name="drop"]').prop('checked');
+                Settings.scroll_names = $('input[name="scroll"]').prop('checked');
+                
                 saveStatistic('settings_language', Settings.language);
+                saveStatistic('settings_scroll', Settings.scroll_names);
                 saveStatistic('settings_sounds', Settings.sounds);
                 saveStatistic('settings_drop', Settings.drop);
                 try {

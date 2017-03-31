@@ -31,6 +31,7 @@ if (isNaN(Player.points)) Player.points = 1;
 Settings.language = getStatistic("settings_language", 'EN');
 Settings.sounds = getStatistic("settings_sounds", 'true') === 'true';
 Settings.drop = getStatistic("settings_drop", 'false') === 'true';
+Settings.scroll_names = getStatistic("settings_scroll", 'true') === 'true';
 
 function avatarUrl(avatar) {
     avatar = avatar || Player.avatar;
