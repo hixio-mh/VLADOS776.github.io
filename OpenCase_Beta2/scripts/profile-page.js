@@ -68,6 +68,14 @@ $(function () {
             $(this).text(Localization.getString('profile.follow.unfollow', 'Unfollow'));
             $(this).data('action', 'unfollow');
             $('.stats__followers__count').text(parseInt($('.stats__followers__count').text()) + 1);
+            
+            LOG.log({
+                action: 'Follow user',
+                followed: {
+                    uid: uid,
+                    nickname: $('.profile__name').text()
+                }
+            })
         } else {
             firebase.database().ref('/followers/' + uid + '/' + currentUID).remove();
             firebase.database().ref('/users/' + currentUID + '/follow/' + uid).remove();
@@ -75,6 +83,14 @@ $(function () {
             $(this).text(Localization.getString('profile.follow.follow', 'Follow'));
             $(this).data('action', 'follow');
             $('.stats__followers__count').text(parseInt($('.stats__followers__count').text()) - 1);
+            
+            LOG.log({
+                action: 'Unfollow user',
+                followed: {
+                    uid: uid,
+                    nickname: $('.profile__name').text()
+                }
+            })
         }
     })
     
