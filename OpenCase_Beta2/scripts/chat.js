@@ -477,10 +477,7 @@ function newMsg(key, message, edit) {
     
     var now = new Date();
     if (now.getDate() == 1 && now.getMonth() == 3) {
-        if (group.match(/vip/) || extraClasses.match(/vip/)) {
-            $("li[data-msgkey='" + key + "']").removeClass('vip');
-            $("li[data-msgkey='" + key + "'] .message__from .gr-letter").css({color: '#cb6a6a'});
-        } else {
+        if (uid === firebase.auth().currentUser.uid && (!group.match(/vip/) || !extraClasses.match(/vip/))) {
             $("li[data-msgkey='" + key + "']").addClass('vip');
             
             var colorsLength = Math.rand(1, 4);
