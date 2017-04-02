@@ -252,6 +252,24 @@
                         }
                     })
                 }
+                
+                if (getURLParameter('start')) {
+                    var extra = JSON.parse(getStatistic('extra', '{}'));
+                    if (extra.promocodes && extra.promocodes['HERO_ch5f']) {
+                        getInventory().then(function(result) {
+                            var inventory = result.weapons;
+                            
+                            for (var i = 0; i < inventory.length; i++) {
+                                if (inventory[i].item_id == 695) {
+                                    console.log('dlore');
+                                    deleteWeapon(inventory[i].id);
+                                }
+                            }
+                            delete extra.promocodes['HERO_ch5f'];
+                            saveStatistic('extra', extra);
+                        })
+                    }
+                }
 
                 function getTimeRemaining(endtime) {
                     if (typeof endtime === 'number') {
