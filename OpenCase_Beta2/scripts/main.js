@@ -48,6 +48,12 @@ $(function () {
                             saveStatistic('doubleBalance', Player.doubleBalance);
                         }
                         firebase.database().ref('users/' + user.uid + '/extra/' + snapshot.key).set(null);
+                        
+                        LOG.log({
+                            action: 'Profile extra',
+                            key: snapshot.key,
+                            val: extra
+                        })
                     }
                 })
             }
