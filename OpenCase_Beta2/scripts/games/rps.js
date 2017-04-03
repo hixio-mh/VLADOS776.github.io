@@ -76,6 +76,12 @@ $(".choseItems").on("click", function() {
             $('.choice').css('display', 'block');
             $('.status').text('...');
         }, 200);
+        
+        LOG.log({
+            game: 'RPS',
+            action: 'Bet',
+            weapons: winItems
+        })
     })
 
 

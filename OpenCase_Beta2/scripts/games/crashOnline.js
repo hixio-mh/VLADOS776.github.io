@@ -253,6 +253,14 @@ $(function() {
             
             $('#balance').text(Player.doubleBalance);
             $('#menu_doubleBalance').text(Player.doubleBalance);
+            
+            LOG.log({
+                game: 'Crash',
+                action: 'Cashout',
+                bet: playerInfo.bet,
+                profit: playerInfo.profit,
+                balance: Player.doubleBalance
+            })
         }
         sortBetTable();
     }
@@ -437,6 +445,13 @@ $(function() {
             
             $('#balance').text(Player.doubleBalance);
             $('#menu_doubleBalance').text(Player.doubleBalance);
+            
+            LOG.log({
+                game: 'Crash',
+                action: 'Bet',
+                bet: playerInfo.bet,
+                balance: Player.doubleBalance
+            })
         }
     })
 })

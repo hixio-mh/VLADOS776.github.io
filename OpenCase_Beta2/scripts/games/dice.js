@@ -211,7 +211,8 @@ var Dice = {
                 profit: profit,
             });
             LOG.log({
-                action: 'Dice end game',
+                game: 'Dice',
+                action: 'End game',
                 bet: bet,
                 payout: parseFloat($('#oddsPayout').text()),
                 condition: condition,

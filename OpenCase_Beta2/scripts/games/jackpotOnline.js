@@ -27,6 +27,7 @@ var Jackpot = {
     roomsPreview: null,
     countdownTimer: null,
     newGameTimer: null,
+    //socket: io('192.168.1.205:8020'),
     socket: io('https://kvmde40-10035.fornex.org/', {path: '/jackpot/socket.io'}),
     room: {
         players: {},
@@ -122,6 +123,12 @@ var Jackpot = {
                     items[i] = new Item(items[i]);
                 }
                 saveWeapons(items);
+                LOG.log({
+                    game: 'Jackpot online',
+                    action: 'Items back',
+                    weapons: items,
+                    room: Jackpot.roomID
+                })
             })
             
             Jackpot.socket.on('chances', function(chances) {
@@ -147,6 +154,13 @@ var Jackpot = {
                 }
                 saveWeapons(weapons);
                 Level.addEXP(2);
+                
+                LOG.log({
+                    game: 'Jackpot online',
+                    action: 'Win',
+                    weapons: win.weapons,
+                    room: Jackpot.roomID
+                })
             })
             
             Jackpot.socket.on('new_game', function(timer) {
@@ -238,6 +252,13 @@ var Jackpot = {
                         }
                         
                         $(".closeInventory").click();
+                        
+                        LOG.log({
+                            game: 'Jackpot online',
+                            action: 'Bet',
+                            weapons: betWeapons,
+                            room: Jackpot.roomID
+                        })
                     })
                 }
             })

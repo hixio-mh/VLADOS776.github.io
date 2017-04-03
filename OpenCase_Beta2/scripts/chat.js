@@ -481,7 +481,6 @@ function newMsg(key, message, edit) {
             $("li[data-msgkey='" + key + "']").addClass('vip');
             
             var colorsLength = Math.rand(1, 4);
-            
             var colors = [];
             
             for (var i = 0; i < colorsLength; i++) {

@@ -45,6 +45,12 @@ var Minesweeper = (function() {
                     Sound('minesweeper.lose');
                     status = 'game over';
                     gameOver();
+                    
+                    LOG.log({
+                        game: 'Minesweeper',
+                        action: 'Lose',
+                        balance: Player.doubleBalance
+                    })
                 }
                 $('#next_reward').text(calcReward(config.bet, config.mines, config.steps));
                 $('#total_reward').text(config.total_reward);
@@ -110,6 +116,13 @@ var Minesweeper = (function() {
             
             status = 'game over';
             gameOver();
+            
+            LOG.log({
+                game: 'Minesweeper',
+                action: 'Cashout',
+                reward: config.total_reward,
+                balance: Player.doubleBalance
+            })
         })
         
         $('#new_game').on('click', function() {
@@ -150,6 +163,14 @@ var Minesweeper = (function() {
         
         $('#next_reward').text(calcReward(config.bet, config.mines, 0));
         $('#total_reward').text(config.total_reward);
+        
+        LOG.log({
+            game: 'Minesweeper',
+            action: 'New game',
+            bet: config.bet,
+            mines: mines,
+            balance: Player.doubleBalance
+        })
     }
     
     function gameOver() {

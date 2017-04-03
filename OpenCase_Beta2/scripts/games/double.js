@@ -128,6 +128,14 @@ function startGame() {
                             $('#menu_doubleBalance').text(Player.doubleBalance);
                             statisticPlusOne('double-wins');
                             Level.addEXP(2);
+                            
+                            LOG.log({
+                                game: 'Double',
+                                action: 'Win',
+                                bet: playerBet[i].bet,
+                                color: playerBet[i].color,
+                                balance: Player.doubleBalance
+                            })
                         } else {
                             statisticPlusOne('double-loose');
                         }
@@ -241,6 +249,14 @@ $(document).on('click', '.bet-to-color', function() {
     saveStatistic('doubleBalance', Player.doubleBalance, 'Number');
 
     addBet(color, pl);
+    
+    LOG.log({
+        game: 'Double',
+        action: 'Bet',
+        bet: bet,
+        color: color,
+        balance: Player.doubleBalance
+    })
 });
 
 $(document).on('click', '#fillBalance', function() {
