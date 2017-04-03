@@ -80,6 +80,8 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     this.img = this.old.img;
     this.price = this.getPrice();
     
+    this.allPrices = Prices[this.item_id] ? Prices[this.item_id].prices ? Prices[this.item_id].prices : {} : {};
+    
     this.item_id = parseInt(this.item_id);
     this.quality = parseInt(this.quality);
     
@@ -196,31 +198,64 @@ Weapon.prototype.stattrakRandom = function () {
 }
 
 Weapon.prototype.qualityRandom = function (count) {
-    count = count || 0;
-    var sumChanses = 0;
-    var sumWeights = 0;
-    var random = Math.random();
-    for (var i = 0; i < Quality.length; i++) {
-        sumChanses += Quality[i].chance;
-    }
-    for (var i = 0; i < Quality.length; i++) {
-        var weight = Quality[i].chance / sumChanses;
-        Quality[i].weight = weight;
-    }
-    for (var i = 0; i < Quality.length; i++) {
-        sumWeights += Quality[i].weight;
-    }
-    var cursor = 0;
-    for (var i = 0; i < Quality.length; i++) {
-        cursor += Quality[i].weight / sumWeights;
-        if (cursor >= random) {
-            this.quality = i;
-            this.price = this.getPrice();
-            if ((this.price == 0 || this.price == -1) && count < 5)
-                this.qualityRandom(++count);
-            else
-                return i;
+    if (this.allPrices != null) {
+        var prices = this.stattrak ? this.allPrices.stattrak : this.souvenir ? this.allPrices.souvenir : this.allPrices.default;
+        
+        var sorted = Object.keys(prices).sort(function(a,b) {
+            var A = typeof prices[a] == 'number' ? prices[a] : prices[a].market > 0 ? prices[a].market : prices[a].analyst > 0 ? prices[a].analyst : prices[a].opskins;
+            var B = typeof prices[b] == 'number' ? prices[b] : prices[b].market > 0 ? prices[b].market : prices[b].analyst > 0 ? prices[b].analyst : prices[b].opskins;
+            return B - A
+        });
+        
+        var sumChances = (function() {
+            var sum = 0;
+            for (var i = 0; i < sorted.length; i++) {
+                sum += (i+1) * 10;
+            }
+            return sum;
+        })();
+        
+        var random = Math.rand(0, sumChances);
+        var cursor = 0;
+        
+        for (var i = 0; i < sorted.length; i++) {
+            cursor += (i+1) * 10;
+            if (cursor >= random) {
+                this.quality = parseInt(sorted[i]);
+                this.price = this.getPrice();
+                if ((this.price == 0 || this.price == -1) && count < 5)
+                    this.qualityRandom(++count);
+                else
+                    return this.quality;
+            }
+        } 
+    } else {
+        count = count || 0;
+        var sumChanses = 0;
+        var sumWeights = 0;
+        var random = Math.random();
+        for (var i = 0; i < Quality.length; i++) {
+            sumChanses += Quality[i].chance;
         }
+        for (var i = 0; i < Quality.length; i++) {
+            var weight = Quality[i].chance / sumChanses;
+            Quality[i].weight = weight;
+        }
+        for (var i = 0; i < Quality.length; i++) {
+            sumWeights += Quality[i].weight;
+        }
+        var cursor = 0;
+        for (var i = 0; i < Quality.length; i++) {
+            cursor += Quality[i].weight / sumWeights;
+            if (cursor >= random) {
+                this.quality = i;
+                this.price = this.getPrice();
+                if ((this.price == 0 || this.price == -1) && count < 5)
+                    this.qualityRandom(++count);
+                else
+                    return i;
+            }
+        } 
     }
 }
 
