@@ -94,6 +94,57 @@ $(function () {
         }
     })
     
+    $(document).on('click', '.stats__followers', function() {
+        if ($('.stats__followers__count').text() == '0') return;
+        
+        $('#followers-modal').modal();
+        $('#followers-list').empty();
+        
+        //for (var i = 0; i < 10; i++)
+        //$('#followers-template').tmpl({uid: i, avatar: '../images/ava/0.jpg'}).appendTo($('#followers-list'));
+        
+        firebase.database().ref('followers/' + uid).once('value').then(function(snapshot) {
+            var followersUIDs = snapshot.val();
+            var $parent = $('#followers-list');
+            
+            for (var key in followersUIDs) {
+                $('#followers-template').tmpl({uid: key, avatar: '../images/ava/0.jpg'}).addClass('follower-temp').appendTo($parent);
+                
+                fbProfile.profilePublic(key, function(profile) {
+                    profile.avatar = avatarUrl(profile.avatar);
+                    profile.nickname = XSSreplace(profile.nickname);
+                    $('.follower-temp[data-uid="'+profile.uid+'"]').replaceWith($('#followers-template').tmpl(profile));
+                })
+            }
+        })
+    })
+    
+    $(document).on('click', '.iFollow', function() {
+        $('#iFollow-modal').modal();
+        $('#follow-list').empty();
+        
+        firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/follow').once('value').then(function(snapshot) {
+            var followersUIDs = snapshot.val();
+            var $parent = $('#follow-list');
+            
+            for (var key in followersUIDs) {
+                $('#followers-template').tmpl({uid: key, avatar: '../images/ava/0.jpg'}).addClass('follower-temp').appendTo($parent);
+                
+                fbProfile.profilePublic(key, function(profile) {
+                    profile.avatar = avatarUrl(profile.avatar);
+                    profile.nickname = XSSreplace(profile.nickname);
+                    $('.follower-temp[data-uid="'+profile.uid+'"]').replaceWith($('#followers-template').tmpl(profile));
+                })
+            }
+        })
+    })
+    
+    $(document).on('click', '.follower', function() {
+        if ($(this).hasClass('follower-temp')) return;
+        
+        document.location = 'profile.html?uid=' + $(this).data('uid');
+    })
+    
     fbProfile.showProfile(uid, function (userInfo) {
         if (userInfo == null) {
             userNotFound();
@@ -113,7 +164,7 @@ $(function () {
             $('.follow_block').hide();
             $(".posts__new-post").show();
             $('.rep').hide();
-            $(".left-side, .right-side").show();
+            $(".left-side, .right-side, .top_panel").show();
             
             getInventory().then(function(result) {
                 var inventoryRef = firebase.database().ref('inventories/' + firebase.auth().currentUser.uid);

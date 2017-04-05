@@ -47,6 +47,7 @@ $(function () {
                             Player.doubleBalance += extra;
                             saveStatistic('doubleBalance', Player.doubleBalance);
                         }
+                        console.log('extra');
                         firebase.database().ref('users/' + user.uid + '/extra/' + snapshot.key).set(null);
                         
                         LOG.log({

@@ -2,7 +2,21 @@ body {
     color: #fff;
     background: #fff;
 }
-
+.top_panel {
+    padding: 5px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.top_panel i {
+    font-size: 18px;
+    cursor: pointer;
+}
+.top_panel .sign-out {
+    margin-left: auto;
+}
 .left-side,
 .right-side {
     position: absolute;
@@ -157,6 +171,18 @@ body {
 .stat__num {
     font-size: 1.8em;
     color: #1B1B1B;
+}
+
+.stats__followers {
+    border-radius: 5px;
+    border: 1px solid #f1f1f1;
+    box-shadow: 0px 2px 6px #d2d2d2;
+    cursor: pointer;
+}
+
+.stats__followers:hover {
+    background: #e0e0e0;
+    border: 1px solid #cecece;
 }
 
 .rep-container {
@@ -661,6 +687,49 @@ ul.posts__user-posts {
 }
 .user_uid:before {
   content: 'ID: ';
+}
+
+/* == Followers == */
+ul#followers-list, ul#follow-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+li.follower {
+    margin: 9px;
+    display: inline-block;
+    text-align: center;
+    width: 70px;
+    overflow: hidden;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+li.follower:hover {
+    transform: scale(1.2);
+}
+
+li.follower img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+li.follower span {
+    margin-top: 10px;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.follower-temp img {
+    background: #a9a9a9;
+}
+.follower.follower-temp span:empty {
+    width: 79px;
+    background: #a9a9a9;
+    display: block;
+    height: 1em;
 }
 
 /* == VIP === */
