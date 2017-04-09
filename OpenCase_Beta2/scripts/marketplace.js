@@ -292,13 +292,13 @@ function getAllWeaponInfo(type, name, stattrak, souvenir) {
         for (var i = 0; i < 5; i++) {
             info.push(new Weapon(item_id, i, true, false));
         }
-    if (souvenir)
+    if (souvenir && weapon.can.souvenir)
         for (var i = 0; i < 5; i++) {
             info.push(new Weapon(item_id, i, false, true));
         }
     
     for (var i = 0; i < info.length; i++) {
-        if (info[i].price === 0) {
+        if (info[i].price === 0 || info[i].price == null) {
             info.splice(i,1);
             i--;
         }
