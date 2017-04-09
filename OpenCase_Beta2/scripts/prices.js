@@ -39062,36 +39062,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 21
+                    "market": 41
                 },
                 "1": {
-                    "market": 34
+                    "market": 54
                 },
                 "2": {
-                    "market": 66.5
+                    "market": 86.5
                 },
                 "3": {
-                    "market": 97.11
+                    "market": 117.11
                 },
                 "4": {
-                    "market": 144.54
+                    "market": 184.54
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 67
+                    "market": 87
                 },
                 "1": {
-                    "market": 85.52
+                    "market": 105.52
                 },
                 "2": {
-                    "market": 102.42
+                    "market": 132.42
                 },
                 "3": {
-                    "market": 131.43
+                    "market": 161.43
                 },
                 "4": {
-                    "market": 195
+                    "market": 225
                 }
             },
             "souvenir": {}
@@ -39104,36 +39104,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.56
+                    "market": 1.56
                 },
                 "1": {
-                    "market": 0.87
+                    "market": 3.87
                 },
                 "2": {
-                    "market": 0.99
+                    "market": 5.99
                 },
                 "3": {
-                    "market": 1.12
+                    "market": 7.12
                 },
                 "4": {
-                    "market": 2.1
+                    "market": 10.1
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 1.67
+                    "market": 3.67
                 },
                 "1": {
-                    "market": 2.01
+                    "market": 5.01
                 },
                 "2": {
-                    "market": 2.75
+                    "market": 7.75
                 },
                 "3": {
-                    "market": 3.66
+                    "market": 10.66
                 },
                 "4": {
-                    "market": 5.21
+                    "market": 12.21
                 }
             },
             "souvenir": {}
@@ -39146,36 +39146,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.87
+                    "market": 2.87
                 },
                 "1": {
-                    "market": 1.22
+                    "market": 4.22
                 },
                 "2": {
-                    "market": 1.25
+                    "market": 5.25
                 },
                 "3": {
-                    "market": 2.17
+                    "market": 6.17
                 },
                 "4": {
-                    "market": 3.54
+                    "market": 10.54
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 4.33
+                    "market": 7.33
                 },
                 "1": {
-                    "market": 5.21
+                    "market": 8.21
                 },
                 "2": {
-                    "market": 5.99
+                    "market": 9.99
                 },
                 "3": {
-                    "market": 6.22
+                    "market": 12.22
                 },
                 "4": {
-                    "market": 8.33
+                    "market": 16.33
                 }
             },
             "souvenir": {}
@@ -39188,24 +39188,24 @@ var Prices = {
         "prices": {
             "default": {
                 "2": {
-                    "market": 10.3
+                    "market": 25.3
                 },
                 "3": {
-                    "market": 15.23
+                    "market": 30.23
                 },
                 "4": {
-                    "market": 26.21
+                    "market": 38.21
                 }
             },
             "stattrak": {
                 "2": {
-                    "market": 23.41
+                    "market": 30.41
                 },
                 "3": {
-                    "market": 32.12
+                    "market": 48.12
                 },
                 "4": {
-                    "market": 61.2
+                    "market": 96.2
                 }
             },
             "souvenir": {}
@@ -39218,30 +39218,30 @@ var Prices = {
         "prices": {
             "default": {
                 "1": {
-                    "market": 5.02
+                    "market": 10.02
                 },
                 "2": {
-                    "market": 2.96
+                    "market": 18.96
                 },
                 "3": {
-                    "market": 4.99
+                    "market": 23.99
                 },
                 "4": {
-                    "market": 8.65
+                    "market": 28.65
                 }
             },
             "stattrak": {
                 "1": {
-                    "market": 14.2
+                    "market": 19.2
                 },
                 "2": {
-                    "market": 8.21
+                    "market": 23.21
                 },
                 "3": {
-                    "market": 16.3
+                    "market": 30.3
                 },
                 "4": {
-                    "market": 28
+                    "market": 46
                 }
             },
             "souvenir": {}
@@ -39254,24 +39254,24 @@ var Prices = {
         "prices": {
             "default": {
                 "2": {
-                    "market": 0.35
+                    "market": 1.35
                 },
                 "3": {
-                    "market": 0.4
+                    "market": 1.9
                 },
                 "4": {
-                    "market": 0.49
+                    "market": 2.49
                 }
             },
             "stattrak": {
                 "2": {
-                    "market": 1.03
+                    "market": 2.03
                 },
                 "3": {
-                    "market": 1.42
+                    "market": 2.42
                 },
                 "4": {
-                    "market": 2.02
+                    "market": 3.02
                 }
             },
             "souvenir": {}
@@ -39284,36 +39284,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.89
+                    "market": 3.89
                 },
                 "1": {
-                    "market": 0.99
+                    "market": 9.99
                 },
                 "2": {
-                    "market": 1.12
+                    "market": 12.12
                 },
                 "3": {
-                    "market": 1.84
+                    "market": 19.84
                 },
                 "4": {
-                    "market": 2.57
+                    "market": 23.57
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 4.12
+                    "market": 8.12
                 },
                 "1": {
-                    "market": 4.47
+                    "market": 13.47
                 },
                 "2": {
-                    "market": 4.5
+                    "market": 21.5
                 },
                 "3": {
-                    "market": 6.2
+                    "market": 28.2
                 },
                 "4": {
-                    "market": 10.34
+                    "market": 35.34
                 }
             },
             "souvenir": {}
@@ -39356,10 +39356,10 @@ var Prices = {
         "prices": {
             "default": {
                 "2": {
-                    "market": 16
+                    "market": 24
                 },
                 "3": {
-                    "market": 18.12
+                    "market": 29.12
                 },
                 "4": {
                     "market": 85
@@ -39367,10 +39367,10 @@ var Prices = {
             },
             "stattrak": {
                 "2": {
-                    "market": 47.48
+                    "market": 67.48
                 },
                 "3": {
-                    "market": 64.12
+                    "market": 88.12
                 }
             },
             "souvenir": {}
@@ -39383,36 +39383,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.21
+                    "market": 1.21
                 },
                 "1": {
-                    "market": 0.31
+                    "market": 1.31
                 },
                 "2": {
-                    "market": 0.34
+                    "market": 1.34
                 },
                 "3": {
-                    "market": 0.88
+                    "market": 1.88
                 },
                 "4": {
-                    "market": 2.43
+                    "market": 3.43
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 0.75
+                    "market": 1.75
                 },
                 "1": {
-                    "market": 0.79
+                    "market": 1.79
                 },
                 "2": {
-                    "market": 0.8
+                    "market": 1.8
                 },
                 "3": {
-                    "market": 1.89
+                    "market": 2.89
                 },
                 "4": {
-                    "market": 9.88
+                    "market": 13.88
                 }
             },
             "souvenir": {}
@@ -39425,24 +39425,24 @@ var Prices = {
         "prices": {
             "default": {
                 "2": {
-                    "market": 0.41
+                    "market": 5.41
                 },
                 "3": {
-                    "market": 0.45
+                    "market": 7.45
                 },
                 "4": {
-                    "market": 0.54
+                    "market": 9.54
                 }
             },
             "stattrak": {
                 "2": {
-                    "market": 0.92
+                    "market": 7.92
                 },
                 "3": {
-                    "market": 1.01
+                    "market": 10.01
                 },
                 "4": {
-                    "market": 1.38
+                    "market": 13.38
                 }
             },
             "souvenir": {}
@@ -39455,36 +39455,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.15
+                    "market": 1.15
                 },
                 "1": {
-                    "market": 0.17
+                    "market": 1.17
                 },
                 "2": {
-                    "market": 0.18
+                    "market": 1.18
                 },
                 "3": {
-                    "market": 0.21
+                    "market": 1.21
                 },
                 "4": {
-                    "market": 0.38
+                    "market": 1.38
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 0.4
+                    "market": 2.4
                 },
                 "1": {
-                    "market": 0.47
+                    "market": 2.47
                 },
                 "2": {
-                    "market": 0.58
+                    "market": 2.58
                 },
                 "3": {
-                    "market": 0.62
+                    "market": 2.62
                 },
                 "4": {
-                    "market": 1.82
+                    "market": 3.82
                 }
             },
             "souvenir": {}
@@ -40389,56 +40389,46 @@ var Prices = {
         }
     },
     "815": {
-    "item_id": 815,
-    "type": "★ Huntsman Knife",
-    "skinName": "Damascus Steel",
-    "prices": {
-      "default": {
-        "0": {
-          "market": 289.57
-        },
-        "1": {
-          "market": 295.45
-        },
-        "2": {
-          "market": 359.27
-        },
-        "3": {
-          "market": 238.22
-        },
-        "4": {
-          "market": 202.86
+        "item_id": 815,
+        "type": "★ Huntsman Knife",
+        "skinName": "Damascus Steel",
+        "prices": {
+          "default": {
+            "1": {
+              "market": 210
+            },
+            "2": {
+              "market": 162.72
+            },
+            "3": {
+              "market": 189.99
+            },
+            "4": {
+              "market": 255.03
+            }
+          },
+          "stattrak": {},
+          "souvenir": {}
         }
-      },
-      "stattrak": {},
-      "souvenir": {}
-    }
-  },
+    },
     "816": {
-        "item_id": 816,
+         "item_id": 816,
         "type": "★ Butterfly Knife",
         "skinName": "Damascus Steel",
         "prices": {
-            "default": {
-                "0": {
-                    "market": 227.2
-                },
-                "1": {
-                    "market": 269.29
-                },
-                "2": {
-                    "market": 320.66
-                }
+          "default": {
+            "1": {
+              "market": 178.99
             },
-            "stattrak": {
-                "0": {
-                    "market": 287.5
-                },
-                "1": {
-                    "market": 400
-                }
+            "2": {
+              "market": 195.12
             },
-            "souvenir": {}
+            "3": {
+              "market": 245.14
+            }
+          },
+          "stattrak": {},
+          "souvenir": {}
         }
     },
     "817": {
@@ -40446,19 +40436,25 @@ var Prices = {
         "type": "★ Bowie Knife",
         "skinName": "Damascus Steel",
         "prices": {
-            "default": {
-                "2": {
-                    "market": 176.95
-                },
-                "3": {
-                    "market": 214.49
-                },
-                "4": {
-                    "market": 368.93
-                }
+          "default": {
+            "0": {
+              "market": 135.99
             },
-            "stattrak": {},
-            "souvenir": {}
+            "1": {
+              "market": 152.56
+            },
+            "2": {
+              "market": 158.04
+            },
+            "3": {
+              "market": 200
+            },
+            "4": {
+              "market": 225.88
+            }
+          },
+          "stattrak": {},
+          "souvenir": {}
         }
     },
     "818": {
@@ -40466,26 +40462,29 @@ var Prices = {
         "type": "★ Falchion Knife",
         "skinName": "Damascus Steel",
         "prices": {
-            "default": {
-                "2": {
-                    "market": 119.99
-                },
-                "3": {
-                    "market": 159
-                },
-                "4": {
-                    "market": 255.37
-                }
+          "default": {
+            "0": {
+              "market": 92.2
             },
-            "stattrak": {
-                "1": {
-                    "market": 345
-                },
-                "2": {
-                    "market": 172.62
-                }
+            "2": {
+              "market": 117.77
             },
-            "souvenir": {}
+            "3": {
+              "market": 105.55
+            },
+            "4": {
+              "market": 110.1
+            }
+          },
+          "stattrak": {
+            "1": {
+              "market": 345
+            },
+            "2": {
+              "market": 172.62
+            }
+          },
+          "souvenir": {}
         }
     },
     "819": {
@@ -40661,157 +40660,157 @@ var Prices = {
             "souvenir": {}
         }
     },
-     "829": {
-    "item_id": 829,
-    "type": "★ Shadow Daggers",
-    "skinName": "Tiger Tooth",
-    "prices": {
-      "default": {
-        "4": {
-          "market": 252.03
+    "829": {
+        "item_id": 829,
+        "type": "★ Shadow Daggers",
+        "skinName": "Tiger Tooth",
+        "prices": {
+            "default": {
+                "4": {
+                    "market": 252.03
+                }
+            },
+            "stattrak": {},
+            "souvenir": {}
         }
-      },
-      "stattrak": {},
-      "souvenir": {}
-    }
-  },
+    },
     "830": {
-    "item_id": 830,
-    "type": "★ Falchion Knife",
-    "skinName": "Tiger Tooth",
-    "prices": {
-      "default": {
-        "4": {
-          "market": 274.54
+        "item_id": 830,
+        "type": "★ Falchion Knife",
+        "skinName": "Tiger Tooth",
+        "prices": {
+            "default": {
+                "4": {
+                    "market": 274.54
+                }
+            },
+            "stattrak": {},
+            "souvenir": {}
         }
-      },
-      "stattrak": {},
-      "souvenir": {}
-    }
-  },
-     "831": {
-    "item_id": 831,
-    "type": "★ Falchion Knife",
-    "skinName": "Ultraviolet",
-    "prices": {
-      "default": {
-        "0": {
-          "market": 79.72
-        },
-        "2": {
-          "market": 91.45
-        },
-        "3": {
-          "market": 161
+    },
+    "831": {
+        "item_id": 831,
+        "type": "★ Falchion Knife",
+        "skinName": "Ultraviolet",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 79.72
+                },
+                "2": {
+                    "market": 91.45
+                },
+                "3": {
+                    "market": 161
+                }
+            },
+            "stattrak": {
+                "2": {
+                    "market": 222.25
+                }
+            },
+            "souvenir": {}
         }
-      },
-      "stattrak": {
-        "2": {
-          "market": 222.25
+    },
+    "832": {
+        "item_id": 832,
+        "type": "★ Huntsman Knife",
+        "skinName": "Ultraviolet",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 98.46
+                },
+                "1": {
+                    "market": 88.63
+                },
+                "2": {
+                    "market": 80.16
+                },
+                "3": {
+                    "market": 308.32
+                }
+            },
+            "stattrak": {
+                "2": {
+                    "market": 126.5
+                }
+            },
+            "souvenir": {}
         }
-      },
-      "souvenir": {}
-    }
-  },
-     "832": {
-    "item_id": 832,
-    "type": "★ Huntsman Knife",
-    "skinName": "Ultraviolet",
-    "prices": {
-      "default": {
-        "0": {
-          "market": 98.46
-        },
-        "1": {
-          "market": 88.63
-        },
-        "2": {
-          "market": 80.16
-        },
-        "3": {
-          "market": 308.32
-        }
-      },
-      "stattrak": {
-        "2": {
-          "market": 126.5
-        }
-      },
-      "souvenir": {}
-    }
-  },
+    },
     "833": {
-    "item_id": 833,
-    "type": "★ Bowie Knife",
-    "skinName": "Ultraviolet",
-    "prices": {
-      "default": {
-        "0": {
-          "market": 130
-        },
-        "1": {
-          "market": 140
-        },
-        "2": {
-          "market": 171.6
-        },
-        "3": {
-          "market": 276
+        "item_id": 833,
+        "type": "★ Bowie Knife",
+        "skinName": "Ultraviolet",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 130
+                },
+                "1": {
+                    "market": 140
+                },
+                "2": {
+                    "market": 171.6
+                },
+                "3": {
+                    "market": 276
+                }
+            },
+            "stattrak": {},
+            "souvenir": {}
         }
-      },
-      "stattrak": {},
-      "souvenir": {}
-    }
-  },
+    },
     "834": {
-    "item_id": 834,
-    "type": "★ Shadow Daggers",
-    "skinName": "Ultraviolet",
-    "prices": {
-      "default": {
-        "0": {
-          "market": 91.16
-        },
-        "1": {
-          "market": 150
-        },
-        "2": {
-          "market": 123.47
+        "item_id": 834,
+        "type": "★ Shadow Daggers",
+        "skinName": "Ultraviolet",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 91.16
+                },
+                "1": {
+                    "market": 150
+                },
+                "2": {
+                    "market": 123.47
+                }
+            },
+            "stattrak": {
+                "2": {
+                    "market": 400
+                }
+            },
+            "souvenir": {}
         }
-      },
-      "stattrak": {
-        "2": {
-          "market": 400
+    },
+    "835": {
+        "item_id": 835,
+        "type": "★ Butterfly Knife",
+        "skinName": "Ultraviolet",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 117.96
+                },
+                "1": {
+                    "market": 149.98
+                },
+                "2": {
+                    "market": 159.8
+                },
+                "3": {
+                    "market": 386.08
+                }
+            },
+            "stattrak": {
+                "2": {
+                    "market": 249.98
+                }
+            },
+            "souvenir": {}
         }
-      },
-      "souvenir": {}
     }
-  },
-     "835": {
-    "item_id": 835,
-    "type": "★ Butterfly Knife",
-    "skinName": "Ultraviolet",
-    "prices": {
-      "default": {
-        "0": {
-          "market": 117.96
-        },
-        "1": {
-          "market": 149.98
-        },
-        "2": {
-          "market": 159.8
-        },
-        "3": {
-          "market": 386.08
-        }
-      },
-      "stattrak": {
-        "2": {
-          "market": 249.98
-        }
-      },
-      "souvenir": {}
-    }
-  }
 }
