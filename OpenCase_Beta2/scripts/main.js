@@ -1115,6 +1115,8 @@ function XSSreplace (text) {
         //allowed html tags
         text = text.replace(/&lt;/g, '<');
         text = text.replace(/&gt;/g, '>');
+        text = text.replace(/&quot;/g, '"');
+        text = text.replace(/&#x27;/g, "'");
         text = text.replace(/&amp;/g, '&');
         for (var i = 0; i < allowedTags.length; i++) {
             text = rpls(text, allowedTags[i]);
