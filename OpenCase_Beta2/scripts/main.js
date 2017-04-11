@@ -639,10 +639,10 @@ function updateItem(item) {
         if (isAndroid()) {
             if (item.itemType == 'weapon') {
                 var extra = {
-                    hash: weapon.hash()
-                };
-                if (weapon.nameTag != null)
-                    extra.nameTag = weapon.nameTag;
+                    hash: item.hash()
+                }; 
+                if (item.nameTag != null)
+                    extra.nameTag = item.nameTag;
                 var rowID = client.updateWeapon(
                     item.id, 
                     item.item_id, 
