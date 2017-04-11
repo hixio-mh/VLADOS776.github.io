@@ -209,7 +209,7 @@
         $(document).on('click', '#renameWeapon', function() {
             var newName = $('#newName').val();
             if (newName.length > 20) newName = newName.match(/.{1,20}/g)[0];
-            newName = XSSreplace(newName);
+            //newName = XSSreplace(newName);
             
             getItem($('#weaponInfoContainer').data('id')).then(function(item) {
                 var lg = {
@@ -227,8 +227,8 @@
                 updateItem(item);
                 $('#rename-weapon-modal').modal('hide');
                 
-                $('#weaponName').text(item.titleText());
-                $('.weapon[data-id=' + $('#weaponInfoContainer').data('id') + ']').find('.name span').text(item.getName());
+                $('#weaponName').html(XSSreplace(item.titleText()));
+                $('.weapon[data-id=' + $('#weaponInfoContainer').data('id') + ']').find('.name span').html(XSSreplace(item.getName()));
                 
                 Player.doubleBalance -= 1000;
                 saveStatistic('doubleBalance', Player.doubleBalance);
