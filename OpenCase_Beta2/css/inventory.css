@@ -23,7 +23,7 @@
 .inventoryList {
     padding: 45px 0 15px 0;
 }
-@media (max-width:341px) {
+@media (max-width:420px) {
 	.inventoryList {
 		padding-top: 70px;
 	}
