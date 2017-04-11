@@ -765,6 +765,9 @@ var Translation = {
                 sell: {
                     text: 'Продать',
                     en: 'Sell'
+                },
+                rename: {
+                    text: 'Переименовать ${1}'
                 }
             },
             trade_up_contract: {

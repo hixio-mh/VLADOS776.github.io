@@ -34,13 +34,16 @@ function fillInventory(selector, action, opt) {
         
         $(".js-loading-inventory").remove();
         var need_save = false;
+        
+        if (typeof opt.price == 'undefined') opt.price = true;
+        if (typeof opt.nameTag == 'undefined') opt.nameTag = true;
 
         for(var i = 0; i < inventory.length; i++) {
             var weapon = inventory[i];
             
             if (action != "" && typeof weapon.can[action] != 'undefined' && weapon.can[action] == false) continue
             
-            var $weaponInfo = $(weapon.toLi({price: true}));
+            var $weaponInfo = $(weapon.toLi(opt));
             
             $weaponInfo.data('id', weapon.id);
             $weaponInfo.data('weapon_obj', JSON.stringify(weapon.saveObject()));

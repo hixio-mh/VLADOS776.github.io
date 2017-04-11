@@ -577,12 +577,13 @@ function setHash(ids) {
             var id = that.ids[that.counter];
             var request = store.get(id);
             request.onsuccess = function(event) {
-                var weapon = new Weapon(request.result.item_id, request.result.quality, request.result.stattrak, request.result.souvenir);
+                var weapon = new Weapon(request.result);
                 weapon.id = id;
                 weapon.new = request.result.new || false;
                 var saveObj = weapon.saveObject();
                 saveObj.id = id;
                 saveObj.hash = weapon.hash();
+                if (weapon.nameTag != null) saveObj.nameTag = weapon.nameTag;
                 store.put(saveObj);
                 if (that.counter < that.ids.length - 1) {
                     ++that.counter;
@@ -599,6 +600,11 @@ function updateWeapon(weapon) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
         if (isAndroid()) {
+            var extra = {
+                hash: weapon.hash()
+            };
+            if (weapon.nameTag != null)
+                extra.nameTag = weapon.nameTag;
             var rowID = client.updateWeapon(
                 weapon.id, 
                 weapon.item_id, 
@@ -606,7 +612,7 @@ function updateWeapon(weapon) {
                 weapon.stattrak, 
                 weapon.souvenir, 
                 weapon['new'], 
-                '{"hash": "' + weapon.hash() + '"}'
+                JSON.stringify(extra)
             );
             resolver(rowID);
         } else {
@@ -618,6 +624,7 @@ function updateWeapon(weapon) {
                     var saveObj = weapon.saveObject();
                     saveObj.id = weapon.id;
                     saveObj.hash = weapon.hash();
+                    if (weapon.nameTag != null) saveObj.nameTag = weapon.nameTag;
                     store.put(saveObj);
                     resolver(true);
                 }
@@ -630,7 +637,12 @@ function updateItem(item) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
         if (isAndroid()) {
-            if (item.itemType == 'weapon')
+            if (item.itemType == 'weapon') {
+                var extra = {
+                    hash: weapon.hash()
+                };
+                if (weapon.nameTag != null)
+                    extra.nameTag = weapon.nameTag;
                 var rowID = client.updateWeapon(
                     item.id, 
                     item.item_id, 
@@ -638,9 +650,9 @@ function updateItem(item) {
                     item.stattrak, 
                     item.souvenir, 
                     item['new'], 
-                    '{"hash": "' + item.hash() + '"}'
+                    JSON.stringify(extra)
                 );
-            else if (item.itemType == 'sticker')
+            } else if (item.itemType == 'sticker') {
                 var rowID = client.updateWeapon(
                     item.id, 
                     item.item_id, 
@@ -650,6 +662,7 @@ function updateItem(item) {
                     item['new'], 
                     '{"hash": "' + item.hash() + '"}'
                 );
+            }
             resolver(rowID);
         } else {
             connectDB(function(db) {
@@ -660,6 +673,7 @@ function updateItem(item) {
                     var saveObj = item.saveObject();
                     saveObj.id = item.id;
                     saveObj.hash = item.hash();
+                    if (item.nameTag != null) saveObj.nameTag = item.nameTag;
                     store.put(saveObj);
                     resolver(true);
                 }
@@ -688,7 +702,7 @@ function getWeapon(id) {
 
                 var request = store.get(id);
                 request.onsuccess = function(event) {
-                    var weapon = new Weapon(request.result.item_id, request.result.quality, request.result.stattrak, request.result.souvenir);
+                    var weapon = new Weapon(request.result);
                     weapon.id = id;
                     if (typeof request.result.hash != 'undefined') {
                         if (weapon.hashCompare(request.result.hash)) {
@@ -720,14 +734,13 @@ function getItem(id) {
 
                 var request = store.get(id);
                 request.onsuccess = function(event) {
-                    var item = new Item({
-                        item_id: request.result.item_id, 
-                        quality: request.result.quality,
-                        stattrak: request.result.stattrak,
-                        souvenir: request.result.souvenir
-                    });
+                    var item = new Item(request.result);
                     item.id = id;
-                    resolver(item);
+                    if (request.result.hash != 'undefined') {
+                        if (item.hashCompare(request.result.hash)) {
+                            resolver(item);
+                        }
+                    }
                 }
             })
         }
@@ -750,36 +763,6 @@ function getWeapons(ids) {
             }
         }
     })
-        
-        /*if (isAndroid()) {
-            var wpns = [];
-            for (var i = 0; i < ids.length; i++) {
-                var wp = $.parseJSON(client.getWeaponById(ids[i]))[0];
-                wpns.push(new Weapon(wp));
-            }
-            resolver(wpns);
-        } else {
-             connectDB(function(db) {
-                var tx = db.transaction('weapons', 'readonly');
-                var store = tx.objectStore('weapons');
-                
-                var wpns = [];
-                
-                for (var i = 0; i < ids.length; i++) {
-                    var id = ids[i];
-                    
-                    var request = store.get(id);
-                    request.onsuccess = function(event) {
-                        var weapon = new Weapon(request.result.item_id, request.result.quality, request.result.stattrak, request.result.souvenir);
-                        weapon.id = id;
-                        wpns.push(weapon);
-                        
-                    }
-                }
-                resolver(wpns);
-            })
-        }
-    })*/
 }
 
 function deleteWeapon(id) {

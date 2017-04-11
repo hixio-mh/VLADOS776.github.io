@@ -152,7 +152,7 @@ var CoinFlip = {
 
             for (var i = 0; i < CoinFlip.PlayerBet.weapons.length; i++) {
                 var weapon = CoinFlip.PlayerBet.weapons[i];
-                var weaponInfo = "<tr><td class='inv_price currency dollar'>" + weapon.price + "</td><td><span class='inv_type'>" + weapon.type + "</span><span class='inv_name'>" + weapon.name + "</span></td><td class='" + weapon.rarity + "-color inv_rarity'></td></tr>";
+                var weaponInfo = "<tr><td class='inv_price currency dollar'>" + weapon.price + "</td><td><span class='inv_type'>" + weapon.type + "</span><span class='inv_name'>" + weapon.getName() + "</span></td><td class='" + weapon.rarity + "-color inv_rarity'></td></tr>";
                 $('.player-inventory').append(weaponInfo);
             }
             $('.game__start').css('display', 'block');
@@ -185,7 +185,7 @@ var CoinFlip = {
             for (var i = 0; i < CoinFlip.Games[game_id].player.weapons.length; i++) {
                 var weapon = CoinFlip.Games[game_id].player.weapons[i];
 
-                var weaponInfo = "<tr><td class='inv_price currency dollar'>" + weapon.price + "</td><td><span class='inv_type'>" + weapon.type + "</span><span class='inv_name'>" + weapon.name + "</span></td><td class='" + weapon.rarity + "-color inv_rarity'></td></tr>";
+                var weaponInfo = "<tr><td class='inv_price currency dollar'>" + weapon.price + "</td><td><span class='inv_type'>" + weapon.type + "</span><span class='inv_name'>" + weapon.getName() + "</span></td><td class='" + weapon.rarity + "-color inv_rarity'></td></tr>";
                 $('.player-inventory').append(weaponInfo);
             }
         }

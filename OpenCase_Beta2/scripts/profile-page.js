@@ -100,9 +100,7 @@ $(function () {
         $('#followers-modal').modal();
         $('#followers-list').empty();
         
-        //for (var i = 0; i < 10; i++)
-        //$('#followers-template').tmpl({uid: i, avatar: '../images/ava/0.jpg'}).appendTo($('#followers-list'));
-        
+        $('#followers-modal').find('.modal-title').text('Followers');
         firebase.database().ref('followers/' + uid).once('value').then(function(snapshot) {
             var followersUIDs = snapshot.val();
             var $parent = $('#followers-list');
@@ -120,12 +118,14 @@ $(function () {
     })
     
     $(document).on('click', '.iFollow', function() {
-        $('#iFollow-modal').modal();
-        $('#follow-list').empty();
+        $('#followers-modal').modal();
+        $('#followers-list').empty();
+        
+        $('#followers-modal').find('.modal-title').text('You follow');
         
         firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/follow').once('value').then(function(snapshot) {
             var followersUIDs = snapshot.val();
-            var $parent = $('#follow-list');
+            var $parent = $('#followers-list');
             
             for (var key in followersUIDs) {
                 $('#followers-template').tmpl({uid: key, avatar: '../images/ava/0.jpg'}).addClass('follower-temp').appendTo($parent);
@@ -425,7 +425,7 @@ $(function () {
         else {
             $('.my-trades').hide();
             $('.send-trade-window').show();
-            fillInventory('.inventory', 'trade');
+            fillInventory('.inventory', 'trade', {price: true, nameTag: true});
         }
         $($('.trade__menu__item')[0]).click();
     })
@@ -666,7 +666,7 @@ $(function () {
                     if (typeof weapon == 'string') weapon = JSON.parse(weapon);
                     weapon = new Weapon(weapon);
                     var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
-                    $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi()).data('weapon_obj', weaponJSON));
+                    $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi({price: true, nameTag: true, nameTagIcon: true})).data('weapon_obj', weaponJSON));
                 }
             }
         })
@@ -704,7 +704,7 @@ $(function () {
                         var weapon = Trade_weapons[i];
                         if (typeof weapon == 'undefined') continue;
                         weapon = new Weapon(weapon);
-                        $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append( weapon.toLi());
+                        $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append(weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
                     }
                     $('#my-trades__other-offer').effect('highlight');
                     $('li[data-tradeid="' + fbProfile.currentTrade.id + '"] .trade__other .give-to-you').text(Trade_weapons.length);
@@ -787,7 +787,7 @@ $(function () {
         }
         $(".my-trades .trade__weapons__summ").hide();
         $('.trade__weapons__chang-your-weapons').show();
-        fillInventory('.inventory', 'trade');
+        fillInventory('.inventory', 'trade', {price: true, nameTag: true});
     })
     $(document).on('click', '#add-weapons', function () {
         var tradeWeapons = [];
@@ -825,7 +825,7 @@ $(function () {
             for (var i = 0; i < convertedWeapons.length; i++) {
                 var weapon = new Weapon(convertedWeapons[i]);
                 var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
-                var $li = $(weapon.toLi());
+                var $li = $(weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
                 $li.data('weapon_obj', weaponJSON);
                 $($parent).append($li);
             }
@@ -1098,7 +1098,7 @@ $(function () {
                     if (typeof weapon == 'string') weapon = JSON.parse(weapon);
                     weapon = new Weapon(weapon);
                     var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
-                    $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi()).data('weapon_obj', weaponJSON));
+                    $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi({price: true, nameTag: true, nameTagIcon: true})).data('weapon_obj', weaponJSON));
                 }
             }
             tradeInfoRef.on('child_changed', changed);
@@ -1137,7 +1137,7 @@ $(function () {
                             var weapon = Trade_weapons[i];
                             if (typeof weapon == 'undefined') continue;
                             weapon = new Weapon(weapon);
-                            $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append( weapon.toLi());
+                            $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append( weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
                         }
                         $('#my-trades__other-offer').effect('highlight');
                         $('li[data-tradeid="' + fbProfile.currentTrade.id + '"] .trade__other .give-to-you').text(Trade_weapons.length);

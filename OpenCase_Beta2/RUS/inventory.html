@@ -38,15 +38,9 @@
 	<div class="navigationBar" data-menu-EN="Inventory" data-menu-RU="Мой инвентарь" style="box-shadow: none !important;"></div>
 	<div class="sort">
 		<span class="sort-money" id="sort-type"></span>
-		<div class="dropdown">
-			<select class="dropdown-select" id="sort-special"></select>
-		</div>
-		<div class="dropdown">
-			<select class="dropdown-select" id="sort-weapon"></select>
-		</div>
-		<div class="dropdown">
-			<select class="dropdown-select" id="sort-quality"></select>
-		</div>
+        <select class="form-control input-sm input-sort" id="sort-special"></select>
+        <select class="form-control input-sm input-sort" id="sort-weapon"></select>
+        <select class="form-control input-sm input-sort" id="sort-quality"></select>
 	</div>
 	<div class="inventoryList">
 		<span id="intentory-Player"></span>
@@ -79,7 +73,8 @@
 				</tr>
 			</table>
 			<button class='button_black' id='startContract' data-loc="trade_up_contract">Trade Up Contract</button>
-			<button class='button_black' id='sellWeapon' data-loc="sell">Продать</button>
+			<button class='button_black' id='sellWeapon' data-loc="sell">Sell</button>
+			<button class='button_black' data-loc="rename" data-toggle='modal' data-target='#rename-weapon-modal' data-loc-var='{"1": "1000<i class=\"double-icon\"></i>"}' id='rename_button'>Rename 1000<i class="double-icon"></i></button>
 			<span id='weaponRarity' style='display:none;'></span>
 		</div>
 	</div>
@@ -92,6 +87,21 @@
 	<div class="statistic" data-loc-group="statistic">
 		<span class="stat"><span data-loc="worth">Worth:</span> <span id="stat-sum" class='currency dollar'>0</span></span>
 		<span class="stat"><span data-loc="count">Count:</span> <span id="stat-count"></span></span>
+		<span class='pull-right menu-bar'><div class="dropup">
+		    <i class="fa fa-bars dropdown-toggle" aria-hidden="true" data-toggle="dropdown"></i>
+		    <ul class="dropdown-menu dropdown-menu-right">
+		        <li><a href="#">Sell all</a></li>
+		    </ul>
+		  </div></span>
+	</div>
+	
+	<div class="modal fade" id="rename-weapon-modal">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-body"><input type="text" class="form-control" maxlength="20" id='newName'></div>
+	            <div class="modal-footer"><button class="btn btn-success" id='renameWeapon'>Rename</button><button class="btn btn-default" data-dismiss='modal'>Cancel</button></div>
+	        </div>
+	    </div>
 	</div>
 
 	<script>
@@ -160,8 +170,9 @@
                 $("#weaponInfoContainer").css("display", "block");
                 $(".fullWeaponInfo").removeClass("info-closed");
                 $("#weaponImg").attr("src", getImgUrl(item.img, 1));
-                $("#weaponName").html(item.specialText() + item.type + " " + item.name);
+                $("#weaponName").html(item.titleText());
                 $("#weaponPrice").html(item.price);
+                
                 if (item.itemType == 'weapon') {
                     $("#weaponQuality").parent().show();
                     $("#weaponQuality").html(item.qualityText());
@@ -169,7 +180,9 @@
                 } else {
                     $("#weaponQuality").parent().hide();
                 }
-
+                
+                $('#newName').val(item.getName().replace(/(^"|"$)/g, ''));
+                
                 $("#weaponLoadingImg").show();
                 $("#weaponImg").hide();
                 $("#weaponImg").on('load', function() {
@@ -181,10 +194,49 @@
                 $('#startContract').css('display', 'none');
                 if (item.can.contract)
                     $('#startContract').css('display', 'inline-block');
-
-                $("#statTrakImg").css("display", (item.stattrak ? "block" : "none"))
+                
+                $("#statTrakImg").css("display", (item.stattrak ? "block" : "none"));
+                
+                if (Player.doubleBalance < 1000) {
+                    $('#rename_button').prop('disabled', true);
+                } else {
+                    $('#rename_button').prop('disabled', false);
+                }
             })
+            
 		})
+
+        $(document).on('click', '#renameWeapon', function() {
+            var newName = $('#newName').val();
+            if (newName.length > 20) newName = newName.match(/.{1,20}/g)[0];
+            newName = XSSreplace(newName);
+            
+            getItem($('#weaponInfoContainer').data('id')).then(function(item) {
+                var lg = {
+                    action: 'Rename weapon',
+                    old: item.titleText()
+                }
+                if (item.nameTag && newName == '') {
+                    item.nameTag = null;
+                } else if (item.name == newName || item.nameOrig == newName) {
+                    $('#rename-weapon-modal').modal('hide');
+                    return;
+                } else {
+                    item.nameTag = newName;
+                }
+                updateItem(item);
+                $('#rename-weapon-modal').modal('hide');
+                
+                $('#weaponName').text(item.titleText());
+                $('.weapon[data-id=' + $('#weaponInfoContainer').data('id') + ']').find('.name span').text(item.getName());
+                
+                Player.doubleBalance -= 1000;
+                saveStatistic('doubleBalance', Player.doubleBalance);
+                
+                lg.new = item.titleText();
+                LOG.log(lg);
+            })
+        })
 
 		$(document).on("click", ".glassBlur, .fullWeaponInfo-close", function() {
 			$(".fullWeaponInfo").addClass("info-closed");
@@ -227,6 +279,12 @@
 			$(".fullWeaponInfo-close").click();
             
             $('#stat-count').text($('li.weapon').length);
+            
+            LOG.log({
+                action: 'Sell weapon',
+                price: price,
+                balance: Player.doubleBalance
+            })
             
             var sum = 0;
             $('li.weapon').each(function(i, item) {
@@ -528,7 +586,7 @@
                 
 				/*var weaponInfo = "<i class='currency dollar'>" + weapon.price + "</i><img src=\"" + img + "\"><div class='weaponInfo " + weapon.rarity + "'><div class='type'><span>" + weapon.specialText() + weapon.type + "</span></div><div class='name " + (weapon.name.length > ticker_limit ? "text-ticker" : '') + "'><span>" + weapon.name + "</span></div></div>";*/
                 
-                var weaponInfo = weapon.toLi({price: true});
+                var weaponInfo = weapon.toLi({price: true, nameTag: true, new: true});
                 
 				$(".inventory").append(weaponInfo);
 

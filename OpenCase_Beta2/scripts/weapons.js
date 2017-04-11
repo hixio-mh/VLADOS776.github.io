@@ -51,14 +51,18 @@ function Item(config, type) {
 
 function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     if (typeof item_id == 'object') {
-        quality = item_id.quality || 0;
-        stattrak = item_id.stattrak || item_id.statTrak || false;
-        souvenir = item_id.souvenir || false;
-        isNew = item_id.new || false;
+        var quality = item_id.quality || 0;
+        var stattrak = item_id.stattrak || item_id.statTrak || false;
+        var souvenir = item_id.souvenir || false;
+        var isNew = item_id.new || false;
+        var nameTag = item_id.nameTag ? item_id.nameTag : item_id.extra ? item_id.extra.nameTag : null;
         item_id = item_id.item_id || 0;
     }
     if (item_id > Items.weapons.length)
         item_id = 0;
+    
+    if (nameTag && nameTag.length > 20) 
+        nameTag = nameTag.match(/.{1,20}/g)[0].trim();
     
     // Const
     this.itemType = 'weapon';
@@ -77,6 +81,7 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     this.type = this.old.type;
     this.nameOrig = this.old.skinName;
     this.name = getSkinName(this.nameOrig, Settings.language);
+    this.nameTag = XSSreplace(nameTag);
     this.img = this.old.img;
     this.price = this.getPrice();
     
@@ -132,13 +137,15 @@ Weapon.prototype.collection = function () {
 }
 
 Weapon.prototype.saveObject = function () {
-    return {
+    var saveObj = {
         item_id: this.item_id,
         quality: this.quality,
         stattrak: this.stattrak,
         souvenir: this.souvenir,
         new: this.new
     }
+    if (this.nameTag) saveObj.nameTag = this.nameTag
+    return saveObj
 }
 
 Weapon.prototype.tradeObject = function () {
@@ -148,7 +155,7 @@ Weapon.prototype.tradeObject = function () {
     };
     if (this.stattrak) trObj.stattrak = this.stattrak;
     if (this.souvenir) trObj.souvenir = this.souvenir;
-
+    if (this.nameTag) trObj.nameTag = this.nameTag;
     return trObj;
 }
 
@@ -274,7 +281,11 @@ Weapon.prototype.specialText = function () {
 }
 
 Weapon.prototype.titleText = function () {
-    return this.specialText() + this.type + " | " + this.name
+    return this.specialText() + this.type + " | " + (this.nameTag ? '"'+this.nameTag+'"' : this.name)
+}
+
+Weapon.prototype.getName = function() {
+    return this.nameTag ? '"' + this.nameTag + '"' : this.name;
 }
 
 Weapon.prototype.hash = function(id) {
@@ -294,10 +305,16 @@ Weapon.prototype.hash = function(id) {
 
 Weapon.prototype.toLi = function(config) {
     config = config || {};
+    config.new = typeof config.new === 'undefined' ? true : config.new;
+    config.nameTagIcon = typeof config.nameTagIcon === 'undefined' ? true : config.nameTagIcon;
+    
     config.ticker = typeof config.ticker === 'undefined' ? true : config.ticker;
     var ticker_limit = config.ticker_limit || window.innerWidth <= 433 ? 16 : 20;
     
-    var li = '<li class="weapon" data-item_id=' + this.item_id + ' '+ (this.id ? 'data-id='+this.id : '') +'>';
+    var li = '<li class="weapon' + (config.new && this.new ? ' new-weapon' : '') + '" data-item_id=' + this.item_id + ' '+ (this.id ? 'data-id='+this.id : '') +'>';
+    if (config.nameTagIcon && this.nameTag) {
+        li += '<div class="weapon_nameTagIcon"></div>'
+    }
     if (config.price) {
         li += '<i class="currency dollar">' + this.price + '</i>';
     }
@@ -307,13 +324,14 @@ Weapon.prototype.toLi = function(config) {
         li += '<img src="' + this.getImgUrl() + '" />';
     }
     
-    var type = this.specialText() + this.type
+    var type = this.specialText() + this.type;
+    var name = config.nameTag == true && this.nameTag ? '"' + this.nameTag + '"' : this.name
     
     li += '<div class="weaponInfo ' + this.rarity + '">\
             <div class="type' + (Settings.scroll_names && config.ticker && type.length >= ticker_limit ? ' text-ticker' : '') + '">\
                 <span>' + type + '</span>\
             </div><div class="name' + (Settings.scroll_names && config.ticker && this.name.length >= ticker_limit ? ' text-ticker' : '') + '">\
-                <span>' + this.name + '</span>\
+                <span>' + name + '</span>\
             </div>\
            </div>';
     li += '</li>'

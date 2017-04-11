@@ -302,7 +302,12 @@ function itemsList(fromName, fromImg, tickets, itemsCost, weaponsList) {
         var weapon = weaponsList[i];
         var img = getImgUrl(weapon.img);
 
-        var newItem = "<div class='bet-items__item'><img src='" + img + "'><div class='bet-items__item__rarity " + weapon.rarity + "'></div><span class='bet-items__item__price'>$" + weapon.price + "</span></div>";
+        var newItem = "<div class='bet-items__item'>\
+            " + (weapon.nameTag != null ? '<div class="weapon_nameTagIcon"></div>' : '') + "\
+            <img src='" + img + "'>\
+            <div class='bet-items__item__rarity " + weapon.rarity + "'></div>\
+            <span class='bet-items__item__price'>$" + weapon.price + "</span>\
+        </div>";
         bet += newItem;
 
         var item = weapon;

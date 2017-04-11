@@ -670,6 +670,23 @@ h3.lines {
     left: 100%;
     margin-left: .5em; }
 
+.weapon_nameTagIcon {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: #A94847;
+  border-radius: 50%;
+  color: #fff;
+  border: 1px solid #e0807f;
+  top: 5px;
+  font-size: 13px;
+  left: 5px;
+  text-align: center; }
+  .weapon_nameTagIcon:before {
+    content: '!';
+    font-weight: bold; }
+
 i.double-icon {
   width: 15px;
   height: 15px;
@@ -683,5 +700,8 @@ i.double-icon {
 
 .beta_only {
   display: none; }
+
+.btn-empty {
+  background-color: transparent; }
 
 /*# sourceMappingURL=main.css.map */
