@@ -40812,5 +40812,33 @@ var Prices = {
             },
             "souvenir": {}
         }
+    },
+    "836": {
+        "item_id": 836,
+        "type": "M4A1-S",
+        "skinName": "Froststorm",
+        "prices": {
+            "default": {
+                "0": {
+                    market: 5763.33
+                },
+                "1": {
+                    market: 6135.21
+                },
+                "2": {
+                    market: 6744.95
+                },
+                "3": {
+                    market: 7845
+                },
+                "4": {
+                    market: 10000
+                }
+            },
+            stattrak: {
+                
+            },
+            souvenir: {}
+        }
     }
 }

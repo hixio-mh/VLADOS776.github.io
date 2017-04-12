@@ -6044,6 +6044,17 @@ var Items = {
         "inCase": true,
         "specialCase": true
       }
+    }, {
+        "id": 836,
+        "type": "M4A1-S",
+        "skinName": "Froststorm",
+        "rarity": "covert",
+        "img": "Other/M4A4-S-Froststorm.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false
+        }
     }
     ],
     
