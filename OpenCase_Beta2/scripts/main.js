@@ -274,6 +274,7 @@ function ifStatInFbDifferent(currStat, savedStat, fbPath, child) {
     child = child || "";
     if (firebase.auth().currentUser != null) {
         var saved = getStatistic(savedStat, 0);
+        if (saved == 'no auth') return;
         if (saved != currStat) {
             var pathRef = firebase.database().ref(fbPath);
             if (child != "")
@@ -1124,7 +1125,7 @@ function XSSreplace (text) {
     
         //XSS replace
         text = text.replace(/<.*?>(.*?)<\/.*?>/g, '$1');
-        
+    
         text = text.replace(/&/g, '&amp;');
         text = text.replace(/</g, '&lt;');
         text = text.replace(/>/g, '&gt;');

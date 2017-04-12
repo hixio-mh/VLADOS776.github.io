@@ -247,6 +247,9 @@ var fbProfile = (function (module) {
         if (email == "" || password == "") {
             return false;
         }
+        saveStatistic('fbDouble', 'no auth');
+        saveStatistic('fbEXP', 'no auth');
+        
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(function(user) {
             //'use strict';
@@ -279,6 +282,9 @@ var fbProfile = (function (module) {
                     saveStatistic('settings_sounds', Settings.sounds);
                     saveStatistic('settings_drop', Settings.drop);
                     
+                    saveStatistic('fbDouble', Player.doubleBalance);
+                    saveStatistic('fbEXP', Player.points);
+                    
                     // change in Menu
                     $('.menu_ava').attr('src', Player.avatar);
                     $('.menu_playerInfo_name').text(Player.nickname);
@@ -291,6 +297,32 @@ var fbProfile = (function (module) {
             $("#login-status").text(error.message);
         });
         module.saveAuthToPhone();
+    }
+    module.logout = function() {
+        firebase.auth().signOut();
+        
+        Player.doubleBalance = 10000;
+        Player.avatar = '../images/ava/0.jpg';
+        Player.nickname = 'Player';
+        Player.points = 0;
+
+        saveStatistic("playerNickname", Player.nickname);
+        saveStatistic("doubleBalance", Player.doubleBalance);
+        saveStatistic("playerAvatar", Player.avatar);
+        saveStatistic('playerPoints', Player.points);
+
+        Settings.drop = false;
+        Settings.sound = true;
+        
+        saveStatistic('settings_sounds', Settings.sounds);
+        saveStatistic('settings_drop', Settings.drop);
+        
+        saveStatistic('fbDouble', 'no auth');
+        saveStatistic('fbEXP', 'no auth');
+
+        // change in Menu
+        $('.menu_ava').attr('src', Player.avatar);
+        $('.menu_playerInfo_name').text(Player.nickname);
     }
     module.newTrade = function (uidTo, weapons, accepted, callback) {
         if (!module.ifAuth) return false;

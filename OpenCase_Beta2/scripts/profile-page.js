@@ -899,7 +899,8 @@ $(function () {
         })
     })
     $(document).on('click', '.sign-out', function () {
-        firebase.auth().signOut();
+        fbProfile.logout();
+        
         window.location = 'chat.html';
     })
     $(document).on('click', '.edit-profile', function () {
