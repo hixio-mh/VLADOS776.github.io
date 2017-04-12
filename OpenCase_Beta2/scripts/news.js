@@ -607,4 +607,68 @@ var news = [{
         "RU": " - [Исправлено] Исправлены ошибки в трейдах<br> - [Новое] Уведомление при новом предложении обмена<br> - [Новое] Убран нижний банер с рекламой для VIP",
         "EN": " - [Fixed] Trade bugs<br> - [New] Notification on new trade offer<br> - [New] No banner ad for VIP"
     }
+}, {
+    "day": 24,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Исправлено] Цены на новые ножи<br> - [Новое] Градиентные ники у VIP",
+        "EN": " - [Fixed] Prices for new knives<br> - [New] Gradient nickname for VIP"
+    }
+}, {
+    "day": 26,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Исправлено] Баг с двойным профитом в мини-игре Кости",
+        "EN": " - [Fixed] Bug in Dice mini-game"
+    }
+}, {
+    "day": 29,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Подписки для бета тестеров",
+        "EN": " - [New] Followers on beta test"
+    }
+}, {
+    "day": 31,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Промо коды<br> - [Новое] Релиз Подписок<br> - [Новое] Название скина прокручивается, если не помещается полностью",
+        "EN": " - [New] Promo codes<br> - [New] 'Followers' system release"
+    }
+}, {
+    "day": 03,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Изменено] Новый алгоритм выбора качества для предмета.<br> - [Новое] Получайте 3% от открытия вашего кейса",
+        "EN": " - [Changed] New random quality algorithm<br> - [New] Earn coins from your custom case"
+    }
+}, {
+    "day": 03,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Просмотр своих подписок и подписчиков",
+        "EN": " - [New] You can see list of who you follow and list of your followers"
+    }
+}, {
+    "day": 11,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Возможность переименовывать скины!",
+        "EN": " - [New] Name tags!"
+    }
+}, {
+    "day": 12,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Новый скин M4A1-S | Froststorm<br> - [Новое] Баланс и уровень теперь привязаны к аккаунту.",
+        "EN": " - [New] New skin M4A1-S | Froststorm"
+    }
 }, ];
