@@ -1,163 +1,224 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Статистика</title>
+    <title>Статистика</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
-<script src="../scripts/build/libs.js"></script>
-<script src="../scripts/bootstrap.min.js"></script>
-<script src="../scripts/main.js"></script>
-<script src="../scripts/settings.js"></script>
-<script src="../scripts/cases2.js"></script>
-
-<script src="../scripts/navigationMenu.js"></script>
-<link rel="stylesheet" href="../css/navigationMenu.css">
-
-<script src="../scripts/localization.js"></script>
-<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../css/fonts.css">
-<link rel="stylesheet" type="text/css" href="../css/main.css">
-<link rel="stylesheet" type="text/css" href="../css/winter.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navigationMenu.css">
+    <link rel="stylesheet" type="text/css" href="../css/winter.css">
 </head>
 <style>
-body {
-	color: #fff;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-    padding: 0 5px;
-}
-td:nth-child(2n) {
-    text-align: right;
-}
-td {
-    padding: 1px 5px;
-}
-tr {
-    line-height: 1.6em;
-}
-tr:nth-child(2n) {
-    background: rgba(255, 255, 255, 0.1);
-}
-.container {
-    font-family: LatoRegular;
-}
-.buttons-div {
-    text-align: center;
-    margin-top: 5px;
-}
-.button {
-    background: #296ca5;
-    display: inline-block;
-    padding: 10px;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #fff;
-}
+    body {
+        color: #fff;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        padding: 0 5px;
+    }
+    
+    td:nth-child(2n) {
+        text-align: right;
+    }
+    
+    td {
+        padding: 1px 5px;
+    }
+    
+    tr {
+        line-height: 1.6em;
+    }
+    
+    tr:nth-child(2n) {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .container {
+        font-family: LatoRegular;
+    }
+    
+    .buttons-div {
+        text-align: center;
+        margin-top: 5px;
+    }
+    
+    .button {
+        background: #296ca5;
+        display: inline-block;
+        padding: 10px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        color: #fff;
+    }
+
 </style>
+
 <body data-localization='statistic'>
-	<div class="site-overlay"></div>
-	<div id="container">
-<div class="navigationBar" data-menu-EN="Statistic" data-menu-RU="Статистика"></div>
-<table>
-<tr><td id="caseOpened-text" data-loc="total_opened">Total cases opened</td><td id="caseOpened"></td></tr>
-<tr><td id="stattrak-text" data-loc="stattrak">StatTrak</td><td id="stattrak"></td></tr>
-<tr><td id="white-text" data-loc="white">White</td><td id="white"></td></tr>
-<tr><td id="industrial-text" data-loc="light_blue">Light-blue</td><td id="industrial"></td></tr>
-<tr><td id="blue-text" data-loc="blue">Blue</td><td id="blue"></td></tr>
-<tr><td id="restricted-text" data-loc="purpule">Purpule</td><td id="restricted"></td></tr>
-<tr><td id="classified-text" data-loc="pink">Pink</td><td id="classified"></td></tr>
-<tr><td id="covert-text" data-loc="red">Red</td><td id="covert"></td></tr>
-<tr><td id="knife-text" data-loc="gold">Knives/Gloves</td><td id="knife"></td></tr>
-<tr><td id="contract-text" data-loc="contracts">Trade up contracts</td><td id="contract"></td></tr>
-<tr><td id="rulet-text" data-loc="jackpot_win_lose">Jackpot win/lose</td><td id="rulet"></td></tr>
-<tr><td id="rulet-max-win-text" data-loc="jackpot_max">Jackpot max money won</td><td id="rulet-max-win"></td></tr>
-<tr><td id="rps-text" data-loc="rps_win_lose">Rock-Paper-Scissors win/lose</td><td id="rps"></td></tr>
-<tr><td id="coinflip-text" data-loc="coinflip_win_lose">Coinflip win/lose</td><td id="coinflip"></td></tr>
-<tr><td id="coinflip-max-win-text" data-loc="coinflip_max">Coinflip max money won</td><td id="coinflip-max-win"></td></tr>
-<tr><td id="double-text" data-loc="double_win_lose">Double win/lose</td><td id="double"></td></tr>
-</table>
-<!--<div class='buttons-div'>
+    <div class="site-overlay"></div>
+    <div id="container">
+        <div class="navigationBar" data-menu-EN="Statistic" data-menu-RU="Статистика"></div>
+        <table>
+            <tr>
+                <td id="caseOpened-text" data-loc="total_opened">Total cases opened</td>
+                <td id="caseOpened"></td>
+            </tr>
+            <tr>
+                <td id="stattrak-text" data-loc="stattrak">StatTrak</td>
+                <td id="stattrak"></td>
+            </tr>
+            <tr>
+                <td id="white-text" data-loc="white">White</td>
+                <td id="white"></td>
+            </tr>
+            <tr>
+                <td id="industrial-text" data-loc="light_blue">Light-blue</td>
+                <td id="industrial"></td>
+            </tr>
+            <tr>
+                <td id="blue-text" data-loc="blue">Blue</td>
+                <td id="blue"></td>
+            </tr>
+            <tr>
+                <td id="restricted-text" data-loc="purpule">Purpule</td>
+                <td id="restricted"></td>
+            </tr>
+            <tr>
+                <td id="classified-text" data-loc="pink">Pink</td>
+                <td id="classified"></td>
+            </tr>
+            <tr>
+                <td id="covert-text" data-loc="red">Red</td>
+                <td id="covert"></td>
+            </tr>
+            <tr>
+                <td id="knife-text" data-loc="gold">Knives/Gloves</td>
+                <td id="knife"></td>
+            </tr>
+            <tr>
+                <td id="contract-text" data-loc="contracts">Trade up contracts</td>
+                <td id="contract"></td>
+            </tr>
+            <tr>
+                <td id="rulet-text" data-loc="jackpot_win_lose">Jackpot win/lose</td>
+                <td id="rulet"></td>
+            </tr>
+            <tr>
+                <td id="rulet-max-win-text" data-loc="jackpot_max">Jackpot max money won</td>
+                <td id="rulet-max-win"></td>
+            </tr>
+            <tr>
+                <td id="rps-text" data-loc="rps_win_lose">Rock-Paper-Scissors win/lose</td>
+                <td id="rps"></td>
+            </tr>
+            <tr>
+                <td id="coinflip-text" data-loc="coinflip_win_lose">Coinflip win/lose</td>
+                <td id="coinflip"></td>
+            </tr>
+            <tr>
+                <td id="coinflip-max-win-text" data-loc="coinflip_max">Coinflip max money won</td>
+                <td id="coinflip-max-win"></td>
+            </tr>
+            <tr>
+                <td id="double-text" data-loc="double_win_lose">Double win/lose</td>
+                <td id="double"></td>
+            </tr>
+        </table>
+        <!--<div class='buttons-div'>
 	<a href='ranks.html' class='button'>Ранги</a>
 </div>-->
-</div>
-<script>
-$(function(){
-	if (isAndroid()) {
-		if (client.getStatistic('is-tryed-to-convert-statistic') == '0')
-			convertStatistic();
-		console.log('Try to convert = '+client.getStatistic('is-tryed-to-convert-statistic'));
-	}
-	var i = cases.length;
-	var opened = 0;
-	while (i--) {
-		if (typeof getStatistic('case-'+cases[i].name) != "undefined")
-			opened += parseInt(getStatistic('case-'+cases[i].name));
-	}
+    </div>
+    <script src="../scripts/build/libs.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/cases2.js"></script>
 
-	$("#caseOpened").text(opened);
+    <script src="../scripts/navigationMenu.js"></script>
 
-	stat("white", getStatistic('weapon-consumer'));
-	stat("industrial", getStatistic('weapon-industrial'));
-	stat("blue", getStatistic('weapon-milspec'));
-	stat("restricted", getStatistic('weapon-restricted'));
-	stat("classified", getStatistic('weapon-classified'));
-	stat("covert", getStatistic('weapon-covert'));
-	stat("contract", getStatistic('contracts'));
-	stat('rulet', getStatistic('rulet-wins')+"/"+getStatistic('rulet-loose'));
-	stat('rps', getStatistic('rps-wins')+"/"+getStatistic('rps-loose'));
-	stat('rulet-max-win', '$'+getStatistic('rulet-max-win'));
-	stat('knife', getStatistic('weapon-rare'));
-	stat("stattrak", getStatistic('statTrak'));
-	stat("double", getStatistic('double-wins')+'/'+getStatistic('double-loose'));
-	stat("coinflip", getStatistic('coinflip-wins')+'/'+getStatistic('coinflip-loose'));
-	stat("coinflip-max-win", getStatistic('coinflip-max-win'));
-})
+    <script src="../scripts/localization.js"></script>
+    <script>
+        $(function() {
+            if (isAndroid()) {
+                if (client.getStatistic('is-tryed-to-convert-statistic') == '0')
+                    convertStatistic();
+                console.log('Try to convert = ' + client.getStatistic('is-tryed-to-convert-statistic'));
+            }
+            var i = cases.length;
+            var opened = 0;
+            while (i--) {
+                if (typeof getStatistic('case-' + cases[i].name) != "undefined")
+                    opened += parseInt(getStatistic('case-' + cases[i].name));
+            }
 
-function stat(selector, text) {
-	if (typeof text == "undefined")	text = "undefined";
-	if (typeof text == 'string') text = text.replace(/undefined/gi, '0');
+            $("#caseOpened").text(opened);
 
-	document.getElementById(selector).textContent = text;
-}
+            stat("white", getStatistic('weapon-consumer'));
+            stat("industrial", getStatistic('weapon-industrial'));
+            stat("blue", getStatistic('weapon-milspec'));
+            stat("restricted", getStatistic('weapon-restricted'));
+            stat("classified", getStatistic('weapon-classified'));
+            stat("covert", getStatistic('weapon-covert'));
+            stat("contract", getStatistic('contracts'));
+            stat('rulet', getStatistic('rulet-wins') + "/" + getStatistic('rulet-loose'));
+            stat('rps', getStatistic('rps-wins') + "/" + getStatistic('rps-loose'));
+            stat('rulet-max-win', '$' + getStatistic('rulet-max-win'));
+            stat('knife', getStatistic('weapon-rare'));
+            stat("stattrak", getStatistic('statTrak'));
+            stat("double", getStatistic('double-wins') + '/' + getStatistic('double-loose'));
+            stat("coinflip", getStatistic('coinflip-wins') + '/' + getStatistic('coinflip-loose'));
+            stat("coinflip-max-win", getStatistic('coinflip-max-win'));
+        })
 
-function convertStatistic() {
-	var i = cases.length;
-	var opened = 0;
-	while (i--) {
-		if (typeof $.cookie('case-'+cases[i].name) != "undefined")
-			client.saveStatistic('case-'+cases[i].name, $.cookie('case-'+cases[i].name))
-	}
+        function stat(selector, text) {
+            if (typeof text == "undefined") text = "undefined";
+            if (typeof text == 'string') text = text.replace(/undefined/gi, '0');
 
-	client.saveStatistic("weapon-consumer", $.cookie('weapon-consumer', Number));
-	client.saveStatistic("weapon-industrial", $.cookie('weapon-industrial', Number));
-	client.saveStatistic("weapon-milspec", $.cookie('weapon-milspec', Number));
-	client.saveStatistic("weapon-restricted", $.cookie('weapon-restricted', Number));
-	client.saveStatistic("weapon-classified", $.cookie('weapon-classified', Number));
-	client.saveStatistic("weapon-covert", $.cookie('weapon-covert', Number));
-	client.saveStatistic("contracts", $.cookie('contracts', Number));
-	client.saveStatistic('rulet-wins', $.cookie('rulet-wins', Number));
-	client.saveStatistic('rulet-loose', $.cookie('rulet-loose', Number));
-	client.saveStatistic('rps-wins', $.cookie('rps-wins', Number));
-	client.saveStatistic('rps-loose', $.cookie('rps-loose', Number));
-	client.saveStatistic('rulet-max-win', $.cookie('rulet-max-win', Number));
-	client.saveStatistic('weapon-rare', $.cookie('weapon-rare', Number));
-	client.saveStatistic("statTrak", $.cookie('statTrak', Number));
-	client.saveStatistic('is-tryed-to-convert-statistic', 1);
-	console.log('converted');
-}
+            document.getElementById(selector).textContent = text;
+        }
 
-function isAndroid() {
-	try {
-		var a = client.isAndroid();
-		return true;
-	} catch (e) {
-		return false;
-	}
-}
-</script>
+        function convertStatistic() {
+            var i = cases.length;
+            var opened = 0;
+            while (i--) {
+                if (typeof $.cookie('case-' + cases[i].name) != "undefined")
+                    client.saveStatistic('case-' + cases[i].name, $.cookie('case-' + cases[i].name))
+            }
+
+            client.saveStatistic("weapon-consumer", $.cookie('weapon-consumer', Number));
+            client.saveStatistic("weapon-industrial", $.cookie('weapon-industrial', Number));
+            client.saveStatistic("weapon-milspec", $.cookie('weapon-milspec', Number));
+            client.saveStatistic("weapon-restricted", $.cookie('weapon-restricted', Number));
+            client.saveStatistic("weapon-classified", $.cookie('weapon-classified', Number));
+            client.saveStatistic("weapon-covert", $.cookie('weapon-covert', Number));
+            client.saveStatistic("contracts", $.cookie('contracts', Number));
+            client.saveStatistic('rulet-wins', $.cookie('rulet-wins', Number));
+            client.saveStatistic('rulet-loose', $.cookie('rulet-loose', Number));
+            client.saveStatistic('rps-wins', $.cookie('rps-wins', Number));
+            client.saveStatistic('rps-loose', $.cookie('rps-loose', Number));
+            client.saveStatistic('rulet-max-win', $.cookie('rulet-max-win', Number));
+            client.saveStatistic('weapon-rare', $.cookie('weapon-rare', Number));
+            client.saveStatistic("statTrak", $.cookie('statTrak', Number));
+            client.saveStatistic('is-tryed-to-convert-statistic', 1);
+            console.log('converted');
+        }
+
+        function isAndroid() {
+            try {
+                var a = client.isAndroid();
+                return true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+    </script>
 </body>
+
 </html>

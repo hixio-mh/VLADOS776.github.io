@@ -1,72 +1,85 @@
 <!DOCTYPE html>
 <html>
-	<head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
-		<title>Обновления</title>
-		<script src="../scripts/build/libs.js"></script>
-		<script src="../scripts/bootstrap.min.js"></script>
-		<script src="../scripts/main.js"></script>
-		<script src="../scripts/settings.js"></script>
 
-		<script src="../scripts/navigationMenu.js"></script>
-		<link rel="stylesheet" href="../css/navigationMenu.css" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
+    <title>Обновления</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/navigationMenu.css" />
+    <link rel="stylesheet" type="text/css" href="../css/winter.css">
+</head>
+<style>
+    body {
+        color: #fff;
+    }
+    
+    ul.history-list {
+        padding: 0 10px;
+        list-style: none;
+    }
+    
+    .history-list li {
+        margin: 15px 0;
+    }
+    
+    .date {
+        text-transform: uppercase;
+        background: #688798;
+        display: inline-block;
+        padding: 5px 8px;
+        border-radius: 5px 5px 0 0;
+        text-shadow: 0px 0px 2px RGBA(0, 0, 0, 0.27);
+    }
+    
+    .new {
+        background: #ededed;
+        display: block;
+        padding: 9px;
+        border-radius: 0 5px 5px 5px;
+        color: #000;
+    }
 
-		<script src="../scripts/localization.js"></script>
-		<script src="../scripts/news.js"></script>
-        <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="../css/fonts.css" />
-		<link rel="stylesheet" type="text/css" href="../css/main.css" />
-        <link rel="stylesheet" type="text/css" href="../css/winter.css">
-	</head>
-	<style>
-		body {
-		color: #fff;
-		}
-		ul.history-list {
-		padding: 0 10px;
-		list-style: none;
-		}
-		.history-list li {
-		margin: 15px 0;
-		}
-		.date {
-		text-transform: uppercase;
-		background: #688798;
-		display: inline-block;
-		padding: 5px 8px;
-		border-radius: 5px 5px 0 0;
-		text-shadow: 0px 0px 2px RGBA(0, 0, 0, 0.27);
-		}
-		.new {
-		background: #ededed;
-		display: block;
-		padding: 9px;
-		border-radius: 0 5px 5px 5px;
-		color: #000;
-		}
-	</style>
-	<body data-localization='updates'>
-		<div class="site-overlay"></div>
-		<div id='container'>
-		<div class="navigationBar"></div>
-			<ul class='history-list'>
-			</ul>
-		</div>
-		<script>
-			$(function() {
-				var i = news.length;
-				var options = {year: 'numeric', month: 'numeric', day: 'numeric'};
-				while(i--) {
-					var date = new Date(news[i].year, news[i].month-1, news[i].day);
-					var currUpdate = "<li><span class='date'>"+date.toLocaleString((Settings.language == 'RU') ? 'ru' : 'en-US', options)+"</span>";
-                    
-                    var currentNews = news[i].update;
-                    currentNews = currentNews[Settings.language] ? currentNews[Settings.language] : currentNews['EN'];
-					currUpdate += "<span class='new'>"+currentNews+"</span>";
-					$('.history-list').append(currUpdate);
-				}
-			});
-		</script>
-	</body>
+</style>
+
+<body data-localization='updates'>
+    <div class="site-overlay"></div>
+    <div id='container'>
+        <div class="navigationBar"></div>
+        <ul class='history-list'>
+        </ul>
+    </div>
+    <script src="../scripts/build/libs.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/settings.js"></script>
+
+    <script src="../scripts/navigationMenu.js"></script>
+
+    <script src="../scripts/localization.js"></script>
+    <script src="../scripts/news.js"></script>
+    <script>
+        $(function() {
+            var i = news.length;
+            var options = {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric'
+            };
+            while (i--) {
+                var date = new Date(news[i].year, news[i].month - 1, news[i].day);
+                var currUpdate = "<li><span class='date'>" + date.toLocaleString((Settings.language == 'RU') ? 'ru' : 'en-US', options) + "</span>";
+
+                var currentNews = news[i].update;
+                currentNews = currentNews[Settings.language] ? currentNews[Settings.language] : currentNews['EN'];
+                currUpdate += "<span class='new'>" + currentNews + "</span>";
+                $('.history-list').append(currUpdate);
+            }
+        });
+
+    </script>
+</body>
+
 </html>
