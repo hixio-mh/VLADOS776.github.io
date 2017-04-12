@@ -19,7 +19,7 @@ $(document).on('click', '#registerButton', function () {
     }
 });
 var fbProfile = (function (module) {
-    'use strict';
+    //'use strict';
     module = module || {};
     module.register = function () {
         var email = $("#email").val() || "";
@@ -247,7 +247,45 @@ var fbProfile = (function (module) {
         if (email == "" || password == "") {
             return false;
         }
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+        firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(function(user) {
+            //'use strict';
+            if (user.uid) {
+                
+                Promise.all([
+                    firebase.database().ref('users/' + user.uid + '/public').once('value'),
+                    firebase.database().ref('users/' + user.uid + '/private').once('value'),
+                    firebase.database().ref('users/' + user.uid + '/settings').once('value')
+                ]).then(function(results) {
+                    var public = results[0].val();
+                    var private = results[1].val();
+                    var settings = results[2].val();
+                    
+                    Player.doubleBalance = private.double;
+                    Player.avatar = public.avatar;
+                    Player.nickname = public.nickname;
+                    Player.points = public.points;
+                    
+                    saveStatistic("playerNickname", Player.nickname);
+                    saveStatistic("doubleBalance", Player.doubleBalance);
+                    saveStatistic("playerAvatar", Player.avatar);
+                    saveStatistic('playerPoints', Player.points);
+                    
+                    Settings.drop = settings.drop;
+                    Settings.language = settings.language;
+                    Settings.sound = settings.sound;
+                    
+                    saveStatistic('settings_language', Settings.language);
+                    saveStatistic('settings_sounds', Settings.sounds);
+                    saveStatistic('settings_drop', Settings.drop);
+                    
+                    // change in Menu
+                    $('.menu_ava').attr('src', Player.avatar);
+                    $('.menu_playerInfo_name').text(Player.nickname);
+                })
+            }
+        })            
+        .catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             $("#login-status").text(error.message);
