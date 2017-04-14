@@ -26,6 +26,13 @@ var CustomCases = {
                     $('#openCaseWindow').hide();
                     $('.topPanel').hide();
                 }
+                $('.casesCarusel').empty();
+                $('.casesCarusel').css({
+                    'transition': '',
+                    'margin-left': '0px'
+                })
+
+                CustomCases.caseOpening = false;
             } catch (e) {};
         }, false);
         
