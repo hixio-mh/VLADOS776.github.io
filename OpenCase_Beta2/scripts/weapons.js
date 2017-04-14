@@ -118,12 +118,16 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     if (this.souvenir || this.rarity == 'rare' || this.rarity == 'covert' || this.rarity == 'extraordinary')
         this.can.contract = false;
     
-    if (Object.keys(Prices[this.item_id].prices.souvenir).length > 0) {
-        this.can.souvenir = true;
-        this.can.stattrak = false;
-    } else if (Object.keys(Prices[this.item_id].prices.souvenir).length == 0 && Object.keys(Prices[this.item_id].prices.stattrak).length == 0) {
-        this.can.souvenir = false;
-        this.can.stattrak = false;
+    try {
+        if (Object.keys(Prices[this.item_id].prices.souvenir).length > 0) {
+            this.can.souvenir = true;
+            this.can.stattrak = false;
+        } else if (Object.keys(Prices[this.item_id].prices.souvenir).length == 0 && Object.keys(Prices[this.item_id].prices.stattrak).length == 0) {
+            this.can.souvenir = false;
+            this.can.stattrak = false;
+        }
+    } catch (e) {
+        throw new Error('Prices is undefined. Weapon ' + this.item_id);
     }
 } 
 
