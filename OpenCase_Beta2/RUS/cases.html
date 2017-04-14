@@ -222,7 +222,7 @@
                 $(document).on('localizationloaded', function () {
                     if (isAndroid()) {
                         var version = client.getCurrentAppVersionCode();
-                        if (parseFloat(version) < 13) {
+                        if (parseInt(version) < 14) {
                             $('body').append('<div class="new-version"><b>' + Localization.getString('other.new_version.new_version') + '</b><span class="new-version__button" id="new-version__later">' + Localization.getString('other.new_version.later') + '</span><span class="new-version__button" id="new-version__update">' + Localization.getString('other.new_version.update') + '</span></div>');
                         }
                     }
@@ -251,24 +251,6 @@
                             })
                         }
                     })
-                }
-                
-                if (getURLParameter('start')) {
-                    var extra = JSON.parse(getStatistic('extra', '{}'));
-                    if (extra.promocodes && extra.promocodes['HERO_ch5f']) {
-                        getInventory().then(function(result) {
-                            var inventory = result.weapons;
-                            
-                            for (var i = 0; i < inventory.length; i++) {
-                                if (inventory[i].item_id == 695) {
-                                    console.log('dlore');
-                                    deleteWeapon(inventory[i].id);
-                                }
-                            }
-                            delete extra.promocodes['HERO_ch5f'];
-                            saveStatistic('extra', extra);
-                        })
-                    }
                 }
 
                 function getTimeRemaining(endtime) {
