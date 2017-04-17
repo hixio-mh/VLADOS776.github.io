@@ -27,6 +27,13 @@
         body {
             background: #19212b;
         }
+        .bottom_ad {
+            position: absolute;
+            bottom: 0;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
     </style>
     
 </head>
@@ -40,19 +47,26 @@
             </div>
             <div id="aCanvas">
                 <div class="casesCarusel" id='casesCarusel'> </div>
-                <div class='js_sound_element' style='display:none;'></div>
             </div>
         </div>
-        <div class="win" style="display: none;"> <span id='win_youWon' data-loc="you_won">You won</span> <span class="win_name"></span> <span class="win_quality"></span> <span class="win_price currency dollar"></span> <img src="" class="win_img">
+        <div class="win" style="display: none;"> 
+           <!--<span id='win_youWon' data-loc="you_won">You won</span> <span class="win_name"></span> <span class="win_quality"></span> <span class="win_price currency dollar"></span> <img src="" class="win_img">
             <div class="win_sell_div">
                 <h3 id="win_sell_text" class="lines"><span data-loc="sell">Sell</span></h3>
                 <button class="btn btn-primary" id="double_sell_button"></button>
-            </div>
+            </div>-->
         </div>
+        <select id='linesCount' class='form-control' style='display: inline-block; width: 55px;'>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+        </select>
         <button class="openCase btn btn-success" data-loc="open_case">Open Case</button>
         <div><span id="opened-text" data-loc="opened">Opened:</span> <span id="opened">0</span></div>
         <button id='what-i-can-win-Button' class='btn btn-info btn-sm' data-loc="what_in_case">What's in the case?</button>
-        <div id="youCanWin" style='display:none' data-loc="you_can_win">You can win one of those items from collection</div>
+        <div id="youCanWin" style='display:none' data-loc="you_can_win">You can win one of those items from collection ${1}</div>
         <ul class="weaponsList" style='display:none'> </ul>
     </div>
     <div id="caseID" style="display:none;"></div>
@@ -60,8 +74,33 @@
     <script src="../scripts/localization.js"></script>
     <script src="../scripts/openCase.js"></script>
     <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+    
+    <!--
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Open Case in Case -
+    <ins class="adsbygoogle bottom_ad"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-9624392621060703"
+         data-ad-slot="9937278679"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>-->
     <script>
         openCase.init();
+    </script>
+    
+    <script id='win_template'>
+        <div class='win_block'>
+            <span data-loc="you_won">${you_won}</span>
+            <span class="win_name">${name}</span>
+            <span class="win_quality">${quality}</span>
+            <span class="win_price currency dollar">${price}</span>
+            <img src="${img}" class="win_img">
+            <div class="win_sell_div">
+                <h3 class="lines"><span data-loc="sell">${sell}</span></h3>
+                <button class="btn btn-primary double_sell" data-id=${inventory_id}>${price_coins}<i class="double-icon"></i></button>
+            </div>
+        </div>
     </script>
 </body>
 
