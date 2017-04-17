@@ -42,6 +42,10 @@ var openCase = {
                 try {
                     openCase.special = openCase.caseInfo.type == "Special";
                     openCase.souvenir = param.souvenir ? param.souvenir[0] == 'true' : false;
+                    
+                    if (getURLParameter('fromAd') == '1' || openCase.isFree()) {
+                        $('#linesCount').prop('disabled', true);
+                    }
                 } catch(e) {}
                 $("#youCanWin").data('loc-var', {1: openCase.caseInfo.name})
  
