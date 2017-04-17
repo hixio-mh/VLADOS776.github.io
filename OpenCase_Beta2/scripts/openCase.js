@@ -432,7 +432,7 @@ var openCase = {
         }
         
         $(".openCase").text(Localization.getString('open_case.try_again', 'Open again'));
-        $(".openCase").append(' $' + (openCase.casePrice() * openCase.linesCount / 100).toFixed(2));
+        $(".openCase").append(' $' + (openCase.casePrice() / 100).toFixed(2));
         //$(".win").slideDown("fast");
         $('.win').show();
         openCase.caseOpening = false;
