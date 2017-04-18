@@ -441,7 +441,8 @@ var openCase = {
         $('.win').show();
         openCase.caseOpening = false;
         $(".openCase").prop("disabled", false);
-        $("#linesCount").prop("disabled", false);
+        if (openCase.caseInfo.type != 'Special')
+            $("#linesCount").prop("disabled", false);
         
         openCase.scrollToElement(".win");
         
