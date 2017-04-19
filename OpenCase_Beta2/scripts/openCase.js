@@ -297,7 +297,8 @@ var openCase = {
             }
             el += $item.wrap('<p/>').parent().html();;
         })
-
+        
+        caseItems.all[winNumber].qualityRandom();
         openCase.win[selector] = caseItems.all[winNumber];
         $(selector).html(el);
         $(selector).css("margin-left", "0px");
