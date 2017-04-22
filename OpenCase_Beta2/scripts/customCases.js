@@ -1,4 +1,6 @@
 var CustomCases = {
+    //socket: io('http://192.168.1.205/', {path: '/customcases/socket.io'}),
+    //socket: io('http://192.168.1.205:8005/'),
     socket: io('https://kvmde40-10035.fornex.org/', {path: '/customcases/socket.io'}),
     caseOpening: false,
     caseId: 0,
@@ -599,12 +601,12 @@ var CustomCases = {
         
         CustomCases.caseOpening = true;
 
-        $(".win_name").html(CustomCases.win.titleText());
+        /*$(".win_name").html(CustomCases.win.titleText());
         $(".win_quality").html(CustomCases.win.qualityText());
         $(".win_price").html(CustomCases.win.price);
         $(".win_img").attr("src", CustomCases.win.getImgUrl(true));
         $(".openCase").prop("disabled", true);
-        $("#double_sell_button").html((CustomCases.win.price * 100).toFixed(0) + '<i class="double-icon"></i>');
+        $("#double_sell_button").html((CustomCases.win.price * 100).toFixed(0) + '<i class="double-icon"></i>');*/
         
         saveStatistic('doubleBalance', Player.doubleBalance);
     },
@@ -615,9 +617,20 @@ var CustomCases = {
 
         $("#double_sell_button").prop("disabled", false);
         CustomCases.win['new'] = true;
+        $('.win').empty();
         saveWeapon(CustomCases.win).then(function(result) {
             console.log(result);
-            $("#double_sell_button").data('id', result);
+            //$("#double_sell_button").data('id', result);
+            $('#win_template').tmpl({
+                you_won: Localization.getString('open_case.you_won', "You won"),
+                sell: Localization.getString('open_case.sell', "Sell"),
+                name: CustomCases.win.titleText(),
+                quality: CustomCases.win.qualityText(),
+                img: CustomCases.win.getImgUrl(),
+                price: CustomCases.win.price,
+                price_coins: Math.round(CustomCases.win.price * 100),
+                inventory_id: result
+            }).appendTo('.win');
         });
         Sound("close", "play", 5);
         

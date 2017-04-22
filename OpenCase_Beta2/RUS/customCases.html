@@ -299,6 +299,19 @@
         })
     </script>
     <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+    <script id='win_template'>
+        <div class='win_block'>
+            <span data-loc="you_won">${you_won}</span>
+            <span class="win_name">${name}</span>
+            <span class="win_quality">${quality}</span>
+            <span class="win_price currency dollar">${price}</span>
+            <img src="${img}" class="win_img">
+            <div class="win_sell_div">
+                <h3 class="lines"><span data-loc="sell">${sell}</span></h3>
+                <button class="btn btn-primary double_sell" data-id=${inventory_id}>${price_coins}<i class="double-icon"></i></button>
+            </div>
+        </div>
+    </script>
 </body>
 
 </html>
