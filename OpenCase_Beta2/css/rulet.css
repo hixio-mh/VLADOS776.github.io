@@ -291,6 +291,7 @@ td p {
 .win__title {
     background: RGBA(0, 0, 0, 0.51);
     padding: 3px;
+    display: block;
 }
 
 .win__nick {
