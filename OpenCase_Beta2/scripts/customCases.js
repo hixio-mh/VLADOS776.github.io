@@ -387,15 +387,15 @@ var CustomCases = {
             CustomCases.resetCasePrice();
         })
         
-        $(document).on("click", "#double_sell_button", function() {
-            var id = $("#double_sell_button").data('id');
+        $(document).on("click", ".double_sell", function() {
+            var id = $(this).data('id');
             deleteWeapon(id);
 
-            var doublePoints = parseInt($("#double_sell_button").text());
+            var doublePoints = parseInt($(this).text());
             Player.doubleBalance += doublePoints;
             saveStatistic('doubleBalance', Player.doubleBalance);
-            $("#double_sell_button").prop("disabled", true);
-            $(".win").addClass("sold-out big");
+            $(this).prop("disabled", true);
+            $(this).parent().parent().addClass("sold-out big");
             Sound("buy");
             if (isAndroid()) {
                 client.sendToAnalytics("Open case", "Selling weapon", "Player has sold weapon for double points", doublePoints + " double points");
@@ -724,8 +724,10 @@ var CustomCases = {
     calcOdds: function() {
         var totalOdds = 0;
         $('.items_odds').each(function() {
-            var curr = parseFloat($(this).val());
-            totalOdds += isNaN(curr) ? 0 : curr;
+            var curr = parseInt($(this).val());
+            curr = isNaN(curr) ? 0 : curr;
+            totalOdds += curr;
+            $(this).val(curr);
         })
         $('#total_odds').text(totalOdds + '%');
     },
