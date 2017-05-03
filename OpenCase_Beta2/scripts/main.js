@@ -464,10 +464,6 @@ function saveWeapon(weapon) {
                 var tx = db.transaction('weapons', 'readwrite');
                 var store = tx.objectStore('weapons');
 
-                if (typeof weapon.item_id == 'undefined') {
-                    var item_id = getWeaponId(weapon.type, weapon.skinName);
-                    weapon = new Weapon(item_id, weapon.quality, weapon.statTrak, /(souvenir|сувенир)/.test(weapon.type));
-                }
                 var request = store.add(weapon.saveObject());
                 request.onsuccess = function (e) {
                     weapon.id = e.target.result;
@@ -486,10 +482,18 @@ function saveItem(item) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
         if (isAndroid()) {
-            if (item.itemType == 'weapon')
-                var rowID = client.saveWeapon(item.item_id, item.quality, item.stattrak, item.souvenir, item['new'], "{}");
-            else if (item.itemType == 'sticker')
+            if (item.itemType == 'weapon') {
+                var extra = {
+                    hash: item.hash()
+                };
+                if (item.pattern != null) extra.pattern = item.pattern;
+                if (item.nameTag) extra.nameTag = item.nameTag;
+            
+                var rowID = client.saveWeapon(item.item_id, item.quality, item.stattrak, item.souvenir, item['new'], JSON.stringify(extra));
+                
+            } else if (item.itemType == 'sticker') {
                 var rowID = client.saveWeapon(item.item_id, 5, null, null, item['new'], '{}');
+            }
             item.id = rowID;
             updateItem(item);
             resolver(rowID);
@@ -498,10 +502,6 @@ function saveItem(item) {
                 var tx = db.transaction('weapons', 'readwrite');
                 var store = tx.objectStore('weapons');
 
-                if (typeof item.item_id == 'undefined') {
-                    var item_id = getWeaponId(weapon.type, weapon.skinName);
-                    weapon = new Weapon(item_id, weapon.quality, weapon.statTrak, /(souvenir|сувенир)/.test(weapon.type));
-                }
                 var request = store.add(item.saveObject());
                 request.onsuccess = function (e) {
                     item.id = e.target.result;
@@ -538,10 +538,7 @@ function saveWeapons(weapons) {
 
                     for (var i = 0; i < weapons.length; i++) {
                         var weapon = weapons[i];
-                        if (typeof weapon.item_id == 'undefined') {
-                            var item_id = getWeaponId(weapon.type, weapon.skinName);
-                            weapon = new Weapon(item_id, weapon.quality, weapon.statTrak, /(souvenir|сувенир)/.test(weapon.type));
-                        }
+
                         var saveObj = weapon.saveObject()
                         var request = store.add(saveObj);
                         request.onsuccess = function (e) {
@@ -585,6 +582,7 @@ function setHash(ids) {
                 saveObj.id = id;
                 saveObj.hash = weapon.hash();
                 if (weapon.nameTag != null) saveObj.nameTag = weapon.nameTag;
+                //if (weapon.pattern != null) saveObj.pattern = weapon.pattern;
                 store.put(saveObj);
                 if (that.counter < that.ids.length - 1) {
                     ++that.counter;
@@ -606,6 +604,8 @@ function updateWeapon(weapon) {
             };
             if (weapon.nameTag != null)
                 extra.nameTag = weapon.nameTag;
+            if (weapon.pattern != null)
+                extra.pattern = weapon.pattern;
             var rowID = client.updateWeapon(
                 weapon.id, 
                 weapon.item_id, 
@@ -625,7 +625,6 @@ function updateWeapon(weapon) {
                     var saveObj = weapon.saveObject();
                     saveObj.id = weapon.id;
                     saveObj.hash = weapon.hash();
-                    if (weapon.nameTag != null) saveObj.nameTag = weapon.nameTag;
                     store.put(saveObj);
                     resolver(true);
                 }
@@ -644,6 +643,8 @@ function updateItem(item) {
                 }; 
                 if (item.nameTag != null)
                     extra.nameTag = item.nameTag;
+                if (item.pattern != null)
+                    extra.pattern = item.pattern;
                 var rowID = client.updateWeapon(
                     item.id, 
                     item.item_id, 
@@ -674,7 +675,6 @@ function updateItem(item) {
                     var saveObj = item.saveObject();
                     saveObj.id = item.id;
                     saveObj.hash = item.hash();
-                    if (item.nameTag != null) saveObj.nameTag = item.nameTag;
                     store.put(saveObj);
                     resolver(true);
                 }

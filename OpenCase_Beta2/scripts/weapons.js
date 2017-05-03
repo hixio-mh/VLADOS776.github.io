@@ -56,6 +56,8 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
         var souvenir = item_id.souvenir || false;
         var isNew = item_id.new || false;
         var nameTag = item_id.nameTag ? item_id.nameTag : item_id.extra ? item_id.extra.nameTag : null;
+        var pattern = item_id.pattern != null ? item_id.pattern : item_id.extra != null ?
+            item_id.extra.pattern : null;
         item_id = item_id.item_id || 0;
     }
     if (item_id > Items.weapons.length)
@@ -87,14 +89,25 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     
     this.allPrices = Prices[this.item_id] ? Prices[this.item_id].prices ? Prices[this.item_id].prices : {} : {};
     
+    this.allPrices.default = this.allPrices.default || {};
+    this.allPrices.stattrak = this.allPrices.stattrak || {};
+    this.allPrices.souvenir = this.allPrices.souvenir || {};
+    
     this.item_id = parseInt(this.item_id);
     this.quality = parseInt(this.quality);
     
     if (isNaN(this.item_id)) this.item_id = 0;
     if (isNaN(this.quality)) this.quality = 0;
+    
+    this.priceType = this.stattrak ? 'stattrak' : this.souvenir ? 'souvenir' : 'default';
 
     if ((this.price == 0 || this.price == -1) && qualityNotSet)
         this.qualityRandom();
+    
+    if (pattern != null) {
+        this.pattern = pattern;
+        this.img = this.old.patterns[this.pattern].img
+    }
 
     //this.can.inCase - 
     //Для оружия, которое удалили из коллекции. Например Howl в Huntsman.
@@ -157,9 +170,10 @@ Weapon.prototype.saveObject = function () {
         stattrak: this.stattrak,
         souvenir: this.souvenir,
         new: this.new
-    }
-    if (this.nameTag) saveObj.nameTag = this.nameTag
-    return saveObj
+    };
+    if (this.nameTag) saveObj.nameTag = this.nameTag;
+    if (this.pattern != null) saveObj.pattern = this.pattern;
+    return saveObj;
 }
 
 Weapon.prototype.tradeObject = function () {
@@ -198,7 +212,7 @@ Weapon.prototype.getPrice = function () {
 }
 
 Weapon.prototype.stattrakRandom = function () {
-    if (this.type.souvenir || this.can.stattrak == false) {
+    if (this.type.souvenir || this.can.stattrak == false || Object.keys(this.allPrices.stattrak).length == 0) {
         this.stattrak = false;
         return false;
     }
@@ -219,6 +233,7 @@ Weapon.prototype.stattrakRandom = function () {
 }
 
 Weapon.prototype.qualityRandom = function (count) {
+    count = count || 0;
     if (this.allPrices != null) {
         var prices = this.stattrak ? this.allPrices.stattrak : this.souvenir ? this.allPrices.souvenir : this.allPrices.default;
         
@@ -247,11 +262,16 @@ Weapon.prototype.qualityRandom = function (count) {
                 if ((this.price == 0 || this.price == -1) && count < 5)
                     this.qualityRandom(++count);
                 else
+                    if (this.old.chances && this.old.chances[this.priceType] && this.old.chances[this.priceType][this.quality]) {
+                        var rnd = Math.rand(0, 100);
+                        if (rnd > this.old.chances[this.priceType][this.quality]) {
+                            return this.qualityRandom(++count);
+                        }
+                    }
                     return this.quality;
             }
         } 
     } else {
-        count = count || 0;
         var sumChanses = 0;
         var sumWeights = 0;
         var random = Math.random();
@@ -317,6 +337,14 @@ Weapon.prototype.hash = function(id) {
     return hex_md5(JSON.stringify(hash_obj))
 }
 
+Weapon.prototype.getExtra = function() {
+    var extra = {};
+    extra.hash = this.hash();
+    if (this.nameTag != null) extra.nameTag = this.nameTag;
+    if (this.pattern != null) extra.pattern = this.pattern;
+    return extra;
+}
+
 Weapon.prototype.toLi = function(config) {
     config = config || {};
     config.new = typeof config.new === 'undefined' ? true : config.new;
@@ -344,13 +372,46 @@ Weapon.prototype.toLi = function(config) {
     li += '<div class="weaponInfo ' + this.rarity + '">\
             <div class="type' + (Settings.scroll_names && config.ticker && type.length >= ticker_limit ? ' text-ticker' : '') + '">\
                 <span>' + type + '</span>\
-            </div><div class="name' + (Settings.scroll_names && config.ticker && this.name.length >= ticker_limit ? ' text-ticker' : '') + '">\
+            </div><div class="name' + (Settings.scroll_names && config.ticker && name.length >= ticker_limit ? ' text-ticker' : '') + '">\
                 <span>' + name + '</span>\
             </div>\
            </div>';
     li += '</li>'
     
     return li;
+}
+
+Weapon.prototype.patternRandom = function() {
+    if (this.old.patternChance) {
+        var rnd = Math.rand(0, 100);
+        if (rnd < this.old.patternChance) {
+            return this.changePattern();
+        }
+    }
+    return null;
+}
+
+Weapon.prototype.changePattern = function(id) {
+    if (typeof id == 'undefined') {
+        var sumChances = this.old.patterns.reduce(function(sum, curr) {
+            return sum + curr.chance;
+        }, 0);
+        var rnd = Math.rand(0, sumChances);
+        
+        var cursor = 0;
+        for (var i = 0; i < this.old.patterns.length; i++) {
+            cursor += this.old.patterns[i].chance;
+            if (cursor >= rnd) {
+                this.pattern = i;
+                this.img = this.old.patterns[i].img;
+                return i;
+            }
+        }
+    } else {
+        this.pattern = id;
+        this.img = this.old.patterns[id].img;
+        return id;
+    }
 }
 
 // === Functions ===
@@ -363,12 +424,13 @@ function getRandomWeapon(opt) {
     souvenir = opt.souvenir || false;
 
     opt = {
+        item_id: item_id,
         quality: quality,
         stattrak: stattrak,
         souvenir: souvenir
     };
 
-    var weapon = new Weapon(item_id, quality, stattrak, souvenir);
+    var weapon = new Weapon(opt);
     if (weapon.price === 0) {
         var newPrice = getPriceWithNewQuality(item_id, opt);
         if (newPrice.price != 0) {
@@ -529,8 +591,45 @@ function getStickerById(id) {
     }
 }
 
-// === Items ===
+/*
+Item object
+ {
+    id: 0 - Item id
+    type: "AWP" - Item type
+    skinName: "BOOM" - Item name
+    rarity: "consumer" - Item raryty
+    img: "asdf.png" - Item image
+    "can": {
+        "buy": false, - Can you buy item in market
+        "sell": true, - Can you sell item
+        "trade": true, - Can you trade item
+        "contract": true, - Can you use item in trade up contract
+        "bot": true, - Can bots use item
+        "stattrak": true, - Can item be StatTrak
+        "souvenir": false, - Can item be Souvenir
+        "inCase": true, - Can item be in case
+        "specialCase": true - Can item be in special case
+      }
+    chances: { - Slef chances for item
+        default: { - If item is default
+            4: 20 - Chance for Factory New item
+        },
+        stattrak: { - If item is StatTrak
+            4: 10 - Chance for Factory New item
+        }
+    }
+    patternChance: 35 - Chance for change default pattern
+    patterns: [ - Different patterns for item
+        {
+            img: 'sff.png' - Pattern img
+            chance: 20 - Pattern chance
+        }
+    ]
+ }
 
+*/
+
+// === Items ===
 var Items = {
     weapons: [{
         id: 0,
@@ -5999,8 +6098,152 @@ var Items = {
         "can": {
             "buy": false,
             "souvenir": false,
-            "specialCase": false
+            "specialCase": false,
+            "trade": false
         }
+    }, {
+        "id": 837,
+        "type": "P250",
+        "skinName": "Zipper",
+        "rarity": "milspec",
+        "img": "Workshop3/P250-Zipper.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 838,
+        "type": "Sawed-Off",
+        "skinName": "Purple Maniac",
+        "rarity": "restricted",
+        "img": "Workshop3/Sawed-Off-Purple-Maniac.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 839,
+        "type": "M4A4",
+        "skinName": "Demon Attack",
+        "rarity": "restricted",
+        "img": "Workshop3/M4A4-Demon-Attack.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 840,
+        "type": "Five-SeveN",
+        "skinName": "Bad Queen",
+        "rarity": "milspec",
+        "img": "Workshop3/Five-seven-Bad-Queen.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 841,
+        "type": "Desert-Eagle",
+        "skinName": "Trigger Happy",
+        "rarity": "classified",
+        "img": "Workshop3/Desert-Eagle-Trigger-Happy.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 842,
+        "type": "AWP",
+        "skinName": "White Boom",
+        "rarity": "covert",
+        "img": "Workshop3/AWP-White-Boom.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 843,
+        "type": "★ Huntsman Knife",
+        "skinName": "PurpNYellow",
+        "rarity": "rare",
+        "img": "Workshop3/Huntsman-PurpNYellow.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        },
+        chances: {
+            default: {
+                4: 20
+            },
+            stattrak: {
+                4: 10
+            }
+        }
+    }, {
+        "id": 844,
+        "type": "Karambit",
+        "skinName": "Soul",
+        "rarity": "rare",
+        "img": "Workshop3/Karambit-Soul.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        },
+        chances: {
+            default: {
+                4: 20
+            },
+            stattrak: {
+                4: 10
+            }
+        }
+    }, {
+        "id": 845,
+        "type": "Five-SeveN",
+        "skinName": "Celtic Wyvern",
+        "rarity": "restricted",
+        "img": "Workshop3/Five-seven-Celtic-Wyvern.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        },
+        patternChance: 20,
+        patterns: [
+            {
+                img: 'Workshop3/Five-seven-Celtic-Wyvern-(Green).png',
+                chance: 20
+            }, {
+                img: 'Workshop3/Five-seven-Celtic-Wyvern-(Blue).png',
+                chance: 50
+            }
+        ]
     }
     ],
     

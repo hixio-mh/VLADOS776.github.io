@@ -31444,7 +31444,7 @@ var Prices = {
             },
             "stattrak": {
                 "3": {
-                    "market": -1,
+                    "market": 549.99,
                     "analyst": -1,
                     "opskins": 549.99
                 },
@@ -40839,6 +40839,234 @@ var Prices = {
                 
             },
             souvenir: {}
+        }
+    },
+    "837": {
+        "item_id": 837,
+        "type": "P250",
+        "skinName": "Zipper",
+        "prices": {
+            "default": {
+                "0": {
+                    market: 1.3
+                },
+                "1": {
+                    market: 1.9
+                },
+                "2": {
+                    market: 2.8
+                },
+                "3": {
+                    market: 3.22
+                },
+                "4": {
+                    market: 4.53
+                }
+            }
+        }
+    },
+    "838": {
+        "item_id": 838,
+        "type": "Sawed-Off",
+        "skinName": "Purple Maniac",
+        "prices": {
+            "default": {
+                "0": {
+                    market: 2.47
+                },
+                "1": {
+                    market: 2.98
+                },
+                "2": {
+                    market: 3.46
+                },
+                "3": {
+                    market: 4.15
+                },
+                "4": {
+                    market: 6.74
+                }
+            }
+        }
+    },
+    "839": {
+        "item_id": 839,
+        "type": "M4A4",
+        "skinName": "Demon Attack",
+        "prices": {
+            "default": {
+                "0": {
+                    market: 4.14
+                },
+                "1": {
+                    market: 4.90
+                },
+                "2": {
+                    market: 5.34
+                },
+                "3": {
+                    market: 6.4
+                },
+                "4": {
+                    market: 8.15
+                }
+            }
+        }
+    },
+    "840": {
+        "item_id": 840,
+        "type": "Five-SeveN",
+        "skinName": "Bad Queen",
+        "prices": {
+            "default": {
+                "0": {
+                    market: 1.74
+                },
+                "1": {
+                    market: 2.34
+                },
+                "2": {
+                    market: 2.67
+                },
+                "3": {
+                    market: 4.8
+                },
+                "4": {
+                    market: 7.22
+                }
+            }
+        }
+    },
+    "841": {
+        "item_id": 841,
+        "type": "Desert Eagle",
+        "skinName": "Trigger Happy",
+        "prices": {
+            "default": {
+                "0": {
+                    market: 3.14
+                },
+                "1": {
+                    market: 3.90
+                },
+                "2": {
+                    market: 4.34
+                },
+                "3": {
+                    market: 6.4
+                },
+                "4": {
+                    market: 9.15
+                }
+            }
+        }
+    },
+    "842": {
+        "item_id": 842,
+        "type": "AWP",
+        "skinName": "White Boom",
+        "prices": {
+            "default": {
+                "2": {
+                    "market": 23.28
+                },
+                "3": {
+                    "market": 28.50
+                },
+                "4": {
+                    "market": 115.82
+                }
+            },
+            "stattrak": {
+                "2": {
+                    "market": 65.01
+                },
+                "3": {
+                    "market": 99.54
+                },
+                "4": {
+                    "market": 220
+                }
+            },
+        }
+    },
+    "843": {
+        "item_id": 843,
+        "type": "★ Huntsman Knife",
+        "skinName": "PurplNYellow",
+        "prices": {
+            "default": {
+                "2": {
+                    "market": 200.15
+                },
+                "3": {
+                    "market": 215.41
+                },
+                "4": {
+                    "market": 320.21
+                }
+            },
+            "stattrak": {
+                "2": {
+                    "market": 276.14
+                },
+                "3": {
+                    "market": 399.22
+                },
+                "4": {
+                    "market": 465
+                }
+            },
+        }
+    },
+    "844": {
+        "item_id": 844,
+        "type": "★ Karambit",
+        "skinName": "Soul",
+        "prices": {
+            "default": {
+                "2": {
+                    "market": 215
+                },
+                "3": {
+                    "market": 233
+                },
+                "4": {
+                    "market": 347
+                }
+            },
+            "stattrak": {
+                "2": {
+                    "market": 322.14
+                },
+                "3": {
+                    "market": 387
+                },
+                "4": {
+                    "market": 510
+                }
+            },
+        }
+    },
+    "845": {
+        "item_id": 845,
+        "type": "Five-SeveN",
+        "skinName": "Celtic Wyvern",
+        "prices": {
+            "default": {
+                "1": {
+                    market: 2.12
+                },
+                "2": {
+                    "market": 2.76
+                },
+                "3": {
+                    "market": 3.43
+                },
+                "4": {
+                    "market": 4.12
+                }
+            }
         }
     }
 }

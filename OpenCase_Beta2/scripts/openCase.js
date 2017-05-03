@@ -286,6 +286,8 @@ var openCase = {
         }
         
         var el = '';
+        caseItems.all[winNumber].qualityRandom();
+        caseItems.all[winNumber].patternRandom();
         caseItems.all.forEach(function(item, index) {
             
             var $item = $(item.toLi({ticker: false}));
@@ -298,7 +300,6 @@ var openCase = {
             el += $item.wrap('<p/>').parent().html();;
         })
         
-        caseItems.all[winNumber].qualityRandom();
         openCase.win[selector] = caseItems.all[winNumber];
         $(selector).html(el);
         $(selector).css("margin-left", "0px");
@@ -316,6 +317,16 @@ var openCase = {
             $(".openCase").text(Localization.getString('open_case.open_case', 'Open case'));
             return false;
         }
+        
+        if (Player.doubleBalance < openCase.casePrice()) {
+            $.notify({
+                message: Localization.getString('open_case.not-enough-money', 'Not enough money')
+            }, {
+                type: 'danger'
+            })
+            return false;
+        }
+        
         $(".openCase").text(Localization.getString('open_case.opening', 'Opening...'));
         $(".openCase").attr("disabled", "disabled");
         
@@ -385,38 +396,6 @@ var openCase = {
             }
             this.next();
         })()
-        
-        /*for (var key in openCase.win) {
-            $('#win_template').tmpl({
-                you_won: Localization.getString('open_case.you_won', "You won"),
-                sell: Localization.getString('open_case.sell', "Sell"),
-                name: openCase.win[key].titleText(),
-                quality: openCase.win[key].qualityText(),
-                img: openCase.win[key].getImgUrl(),
-                price: openCase.win[key].price,
-                price_coins: openCase.win[key].price * 100
-            }).appendTo('.win');
-            
-            openCase.win[key].new = true;
-            if (openCase.caseType == 'weapons') {
-                saveWeapon(openCase.win[key]).then(function(result) {
-                    console.log(result);
-                    $("#double_sell_button").data('id', result);
-                });
-            } else {
-                saveItem(openCase.win[key]).then(function(result) {
-                    console.log(result);
-                    $("#double_sell_button").data('id', result);
-                });
-            }
-        }*/
-
-        /*$(".win_name").html(openCase.win.titleText());
-        $(".win_quality").html(openCase.win.qualityText());
-        $(".win_price").html(price);
-        $(".win_img").attr("src", openCase.win.getImgUrl(true));
-        $(".openCase").prop("disabled", true);
-        $("#double_sell_button").html((price * 100).toFixed(0) + '<i class="double-icon"></i>');*/
 
         var anim = document.getElementById('casesCarusel');
         anim.addEventListener("transitionend", openCase.endScroll, false);

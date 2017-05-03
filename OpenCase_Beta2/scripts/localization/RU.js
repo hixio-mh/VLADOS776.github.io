@@ -217,6 +217,9 @@ var Translation = {
             you_can_win: {
                 text: 'Вы можете выиграть один из данных предметов из коллекции ${1}',
                 en: 'You can win one of those items from collection ${1}'
+            },
+            'not-enough-money': {
+                text: 'Не хватает денег'
             }
         },
         custom_cases: {
