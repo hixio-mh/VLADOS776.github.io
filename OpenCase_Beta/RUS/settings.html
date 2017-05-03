@@ -9,16 +9,11 @@
     <link rel="stylesheet" type="text/css" href="../css/fonts.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/loading.css">
     <link rel="stylesheet" type="text/css" href="../css/lobibox.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/winter.css">
-    <!--<link rel="stylesheet" type="text/css" href="../css/slick.css">-->
-    <script src="../scripts/build/libs.js"></script>
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/settings.js"></script>
-    <script src="../scripts/jackpotBots.js"></script>
-    <script src="../scripts/navigationMenu.js"></script>
     <link rel="stylesheet" href="../css/navigationMenu.css">
-    <script src="../scripts/localization.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/colorpicker.css">
     <style>
         body {
             color: #fff;
@@ -126,6 +121,26 @@
         .film_roll_child.active > img {
             border: 5px solid #F0E50E;
         }
+        
+        .color_box, .add_color {
+            width: 50px;
+            height: 50px;
+            background: #fff;
+            border-radius: 5px;
+            margin: 3px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            line-height: 50px;
+            color: #7b7b7b;
+            font-weight: bold;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        
+        #color_example {
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -146,16 +161,29 @@
                 <div class='option'><span data-loc="avatar">Avatar</span>
                     <div id="avatar"></div>
                 </div>
-                <div class='option' id='custom_avatar_opt' style='display:none;'><span data-loc="custom_avatar">Custom Avatar (184px x 184px)</span>
-                    <input id="custom_avatar" class='form-control input-sm' placeholder="URL">
-                </div>
             </div>
             <div class='option-block' data-loc-group="beta"> <span class='option-block__name' id='local-beta' data-loc="group_title">Beta</span>
-                <div class='option inline'><span data-loc="exchange">Exchange</span>
+                <div class='option inline'><span data-loc="exchange">Trades</span>
                     <label class='switch-label'>
                         <input type="checkbox" name='trades' class='hide' />
                         <div class='switch' data-target='switch-trades'></div>
                     </label>
+                </div>
+                <div class='option inline'><span data-loc="trade_notif">Trade notifications</span>
+                    <label class='switch-label'>
+                        <input type="checkbox" name='trade_notif' class='hide' />
+                        <div class='switch' data-target='switch-trade_notif'></div>
+                    </label>
+                </div>
+            </div>
+            <div class='option-block' data-loc-group="vip" id='vip_block' style='display:none;'> <span class='option-block__name' data-loc="vip_title">VIP</span>
+                <div class='option' id='custom_avatar_opt'><span data-loc="custom_avatar">Custom Avatar (184px x 184px)</span>
+                    <input id="custom_avatar" class='form-control input-sm' placeholder="URL"> </div>
+                <div class='option' id='nickname_color'><span data-loc="custom_avatar">Nickname color</span>
+                    <div>
+                        <div class='add_color'>+</div>
+                        <div id='color_example'></div>
+                    </div>
                 </div>
             </div>
             <div class='option-block' data-loc-group="interface"> <span class='option-block__name' data-loc="group_title">Interface</span>
@@ -163,6 +191,12 @@
                     <div class="dropdown">
                         <select class="form-control input-sm" id="language"></select>
                     </div>
+                </div>
+                <div class='option inline'> <span data-loc="scroll">Scroll name if it doesn't fit</span>
+                    <label class='switch-label'>
+                        <input type="checkbox" name='scroll' class='hide' />
+                        <div class='switch' data-target='switch-scroll'></div>
+                    </label>
                 </div>
                 <div class='option inline'> <span data-loc="sound">Sound</span>
                     <label class='switch-label'>
@@ -178,16 +212,51 @@
                 </div>
             </div>
             <div style='margin: 10px 0; text-align:center'>
+                <button class='btn btn-primary' data-loc='promocode' data-toggle='modal' data-target='#modal_promocode'>Activate a promo code</button>
+            </div>
+            <div style='margin: 10px 0; text-align:center'>
                 <button id='submit' class='btn btn-success' data-loc='save'>Save</button>
                 <button id='reset' class='btn btn-danger' data-loc='reset'>Full reset</button>
             </div>
         </div>
+        
+        <div id='modal_promocode' class='modal fade' role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content" data-loc-group='promo_modal'>
+                    <div class="modal-body">
+                       <div class="form-group">
+                           <label for="promocode" data-loc='enter'>Enter promocode:</label>
+                           <input type="text" class='form-control' id='promocode'>
+                       </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" id='activate_promocode' data-loc='activate'>Activate</button>
+                        <button class="btn btn-default" data-dismiss='modal' data-loc='close'>Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="../scripts/build/libs.js"></script>
+        <script src="../scripts/bootstrap.min.js"></script>
+        <script src="../scripts/main.js"></script>
+        <script src="../scripts/settings.js"></script>
+        <script src="../scripts/weapons.js"></script>
+        <script src="../scripts/skinNames.js"></script>
+        <script src="../scripts/prices.js"></script>
+        <script src="../scripts/jackpotBots.js"></script>
+        <script src="../scripts/navigationMenu.js"></script>
+        <script src="../scripts/localization.js"></script>
+        <script src="../scripts/settings/colorpicker.js"></script>
+        <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
         <script>
             $(function () {
+                
                 /* Languages */
                 for (var i = 0; i < Localization.supportedLanguages.names.full.length; i++) {
                     $('#language').append('<option value="' + Localization.supportedLanguages.names.short[i] + '">' + Localization.supportedLanguages.names.full[i] + '</option>')
                 }
+                
                 /*Ava*/
                 var i = Bot.images.length;
                 var html = "";
@@ -203,10 +272,10 @@
                 });
                 
                 $('#custom_avatar').val(Player.avatar);
-                
                 var correctImg = false;
                 
                 $("#nickname").val(Player.nickname);
+                
                 $('select option[value=' + Settings.language + ']').attr('selected', 'true');
                 if (Settings.sounds == true) {
                     $('input[name="sounds"]').prop('checked', true);
@@ -216,29 +285,155 @@
                     $('input[name="drop"]').prop('checked', true);
                     $('.switch[data-target="switch-drop"]').addClass('switchOn');
                 }
+                if (Settings.scroll_names == true) {
+                    $('input[name="scroll"]').prop('checked', true);
+                    $('.switch[data-target="switch-scroll"]').addClass('switchOn');
+                }
+                
+                Player.isVip = false;
+                
                 firebase.auth().onAuthStateChanged(function (user) {
                     if (firebase.auth().currentUser != null) {
                         var uid = firebase.auth().currentUser.uid;
                         firebase.database().ref('users/' + uid + '/public/betaTrade').once('value', function (data) {
-                            if (data.val()) {
-                                $('input[name="trades"]').prop('checked', true);
+                            if (data.val() == true) {
+                                $('input[name="trade"]').prop('checked', true);
                                 $('.switch[data-target="switch-trades"]').addClass('switchOn');
-                            } else {
+                            }
+                            else {
                                 $('input[name="trades"]').prop('checked', false);
                             }
                         })
-                        firebase.database().ref('users/'+uid+'/moder/group').once('value', function(data) {
+                        firebase.database().ref('users/' + uid + '/private/tradeNotification').once('value', function (data) {
+                            if (data.val() == false) {
+                                $('input[name="trade_notif"]').prop('checked', false);
+                            }
+                            else {
+                                $('input[name="trade_notif"]').prop('checked', true);
+                                $('.switch[data-target="switch-trade_notif"]').addClass('switchOn');
+                            }
+                        })
+                        
+                        // if User is VIP.
+                        firebase.database().ref('users/' + uid + '/moder/group').once('value', function (data) {
                             var group = data.val();
                             if (group && group.match(/(vip|admin)/)) {
-                                $('#custom_avatar_opt').show();
+                                $('#vip_block').show();
+                                Player.isVip = true;
+                                
+                                // Load user nickname color
+                                firebase.database().ref('users/' + uid + '/vip/nicknameColor').once('value', function (data) {
+                                    var colors = data.val(); // String
+                                    if (!colors) return;
+                                    colors = colors.split(','); // Array
+                                    for (var i = 0; i < colors.length; i++) {
+                                        $('.add_color').click();
+                                    }
+                                    for (var i = 0; i < colors.length; i++) {
+                                        var $el = $('.color_box:eq('+i+')');
+                                        $el.css('background-color', colors[i]);
+                                        $el.data('color', colors[i]);
+                                        
+                                        $el.ColorPickerSetColor(colors[i]);
+                                    }
+                                    nicknameColorChange();
+                                })
                             }
                         })
                     }
                 })
-            });
+                
+                $('#activate_promocode').on('click', function() {
+                    var promocode = $('#promocode').val();
+                    if (promocode.length < 3) return;
+                    
+                    var extra = JSON.parse(getStatistic('extra', '{}'));
+                    if (extra.promocodes && extra.promocodes[promocode] != null) {
+                        $.notify({
+                            message: Localization.getString('other.promocode.used', 'You already used this code.')
+                        }, {
+                            type: 'danger'
+                        })
+                        $('#modal_promocode').modal('hide');
+                        return;
+                    }
 
-            $('#custom_avatar').change(function() {
-                getMeta($(this).val(), function(size) {
+                    $(this).addClass('m-progress');
+                    
+                    $.ajax({
+                        url: 'http://localhost:3000/api/promocode?code=' + promocode,
+                        //url: 'https://kvmde40-10035.fornex.org/api/promocode?code=' + promocode,
+                        jsonp: 'callback',
+                        dataType: 'jsonp',
+                        success: function(response) {
+                            $('#modal_promocode').modal('hide');
+                            $('#activate_promocode').removeClass('m-progress');
+                            
+                            if (response != null) {
+                                if (response.action) {
+                                    eval(response.action);
+                                }
+                                if (response.comment) {
+                                    $.notify({
+                                        message: response.comment
+                                    }, {
+                                        type: 'success'
+                                    })
+                                }
+                                if (!extra.promocodes) extra.promocodes = {};
+                                extra.promocodes[promocode] = true;
+                                saveStatistic('extra', extra);
+                                
+                                LOG.log({
+                                    action: 'Activate promo code',
+                                    code: promocode
+                                })
+                            } else {
+                                $.notify({
+                                    message: Localization.getString('other.promocode.wrong', 'Wrong promo code.')
+                                }, {
+                                    type: 'danger'
+                                })
+                            }                            
+                        }
+                    })
+                })
+            });
+            
+            $('.add_color').on('click', function() {
+                
+                $('<div class="color_box" data-color="#ffffff"></div>').insertBefore('.add_color');
+                
+                $('.color_box').each(function() {
+                    var that = this;
+                    $(that).ColorPicker({
+                        onChange: function(hsb, hex, rgb) {
+                            $(that).css('background', '#' + hex);
+                            $(that).data('color', '#' + hex);
+                            nicknameColorChange();
+                        }
+                    })
+                })
+                
+                if ($('.color_box').length == 4)
+                    $('.add_color').remove();
+            })
+
+            function nicknameColorChange() {
+                var nickname = $('#nickname').val();
+                $('#color_example').html(nickname);
+                
+                var colors = [];
+                $('.color_box').each(function() {
+                    colors.push($(this).data('color'));
+                })
+                
+                $('#color_example').gradientText({
+                    colors: colors
+                });
+            }
+            $('#custom_avatar').change(function () {
+                getMeta($(this).val(), function (size) {
                     if (size && size.width != size.heigth && size.width != 184) {
                         Lobibox.notify('error', {
                             pauseDelayOnHover: false
@@ -254,12 +449,12 @@
                             , msg: 'Image must be 184px x 184px'
                         });
                         correctImg = false;
-                    } else {
+                    }
+                    else {
                         correctImg = true;
                     }
                 })
             })
-
             $(document).on('localizationloaded', function () {
                 $('#translator').text(Translation.info.author);
                 $('#translation_date').text(Translation.info.date);
@@ -289,12 +484,14 @@
                     return false;
                 }
                 var lang = $('#language option:selected').val();
-                if (Settings.language != lang) 
-                    Localization.changeLanguage(lang);
+                if (Settings.language != lang) Localization.changeLanguage(lang);
                 Settings.language = lang;
                 Settings.sounds = $('input[name="sounds"]').prop('checked');
                 Settings.drop = $('input[name="drop"]').prop('checked');
+                Settings.scroll_names = $('input[name="scroll"]').prop('checked');
+                
                 saveStatistic('settings_language', Settings.language);
+                saveStatistic('settings_scroll', Settings.scroll_names);
                 saveStatistic('settings_sounds', Settings.sounds);
                 saveStatistic('settings_drop', Settings.drop);
                 try {
@@ -313,18 +510,25 @@
                 Settings.language = lang;
                 try {
                     var userRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
-                    
                     userRef.child('/public/betaTrade').set($('input[name="trades"]').prop('checked'));
+                    userRef.child('/private/tradeNotification').set($('input[name="trade_notif"]').prop('checked'));
                     userRef.child('/public/avatar').set(avatarUrl(avatar));
                     userRef.child('/public/nickname').set(XSSreplace(Player.nickname));
                     userRef.child('/settings/language').set(Settings.language);
                     userRef.child('/settings/drop').set(Settings.drop);
                     userRef.child('/settings/sounds').set(Settings.sounds);
+                    
+                    if (Player.isVip) {
+                        var colors = [];
+                        $('.color_box').each(function() {
+                            colors.push($(this).data('color'));
+                        })
+                        userRef.child('/vip/nicknameColor').set(colors.join(','));
+                    }
                 }
                 catch (e) {
                     console.log(e);
                 }
-                
                 LOG.log({
                     action: 'Change settings'
                 })
@@ -372,10 +576,8 @@
                                 , hideClass: 'fadeOutUp'
                                 , msg: Localization.getString('settings.notification.reset_done')
                             });
-                            
                             try {
                                 var userRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
-
                                 userRef.child('/settings/drop').set(false);
                                 userRef.child('/settings/sounds').set(true);
                                 userRef.child('/private/double').set(0);
@@ -428,17 +630,11 @@
                     , action: 'client.showSplashScreen();'
                     , description: 'Go to local web server.'
     }, {
-                    simpleCode: 'Jackpot Online'
+                    simpleCode: 'CusCas'
                     , code: ''
                     , multiply: true
-                    , action: 'location="https://vlados776.github.io/OpenCase_Beta2/RUS/jackpot-Online.html";'
-                    , description: 'Jackpot Online'
-    }, {
-                    simpleCode: 'Polski'
-                    , code: ''
-                    , multiply: true
-                    , action: 'saveStatistic("settings_language", "PL");'
-                    , description: 'Language changed to Polski.'
+                    , action: 'location="https://vlados776.github.io/OpenCase_Beta2/RUS/customCases.html";'
+                    , description: 'Fus ro dah'
     }];
                 var code = $('#code-input').val();
                 if (code == "") {
@@ -474,16 +670,16 @@
                     , msg: msg
                 });
             })
-            
-            function getMeta(url, callback){
-                $("<img/>",{
-                    load : function(){ 
+
+            function getMeta(url, callback) {
+                $("<img/>", {
+                    load: function () {
                         callback({
-                            width: this.width,
-                            height: this.height
-                        }); 
-                    },
-                    src  : url
+                            width: this.width
+                            , height: this.height
+                        });
+                    }
+                    , src: url
                 });
             }
         </script>

@@ -36,39 +36,6 @@
   border-right: 2px solid;
   border-bottom: 2px solid;
 }
-button.button_glass {
-    font-size: 1.1em;
-    /*background: rgba(0, 0, 0, 0.1);
-    border: 2px solid #23699a;*/
-    background: url(../images/main/button_blue_bg.png);
-    background-size: cover;
-    border:none;
-    color: #A0ECFF;
-    /*box-shadow: 0 0px 10px rgba(24, 135, 177, 0.53) inset;*/
-    padding: 5px;
-    position: relative;
-    min-width: 165px;
-    min-height: 45px;
-    cursor: pointer;
-    overflow: hidden;
-    white-space: nowrap;
-    -webkit-transition-duration: 0.3s;
-            transition-duration: 0.3s;
-    outline: none;
-}
-button.button_glass:hover {
-    /*box-shadow: 0 0px 10px rgb(24, 135, 177) inset;*/
-    background: url(../images/main/button_blue_hover.png);
-    background-size: cover;
-    text-shadow: 0 0 3px rgba(255, 255, 255, 0.75);
-}
-button.button_glass:active {
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5) inset;
-}
-.button_glass:disabled {
-    -webkit-filter: grayscale(1);
-    opacity: 0.5;
-}
 .button_black {
     position: relative;
     border: none;

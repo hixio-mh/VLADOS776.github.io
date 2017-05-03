@@ -2,7 +2,11 @@ $(function () {
     $(".site-overlay").hide();
     var bar = $('.navigationBar');
     var barHTML = '<img src="../images/navigation/hamburger.png" class="navigationBar_hamburger menu-btn"><span data-loc="page_name"></span>';
+    var defPageName = bar.text();
     bar.html(barHTML);
+    
+    if (defPageName != '')
+        $('span[data-loc="page_name"]').text(defPageName);
     $(document.body).prepend('<div class="left-menu closed" data-loc-group="menu"></div>');
     var menu = $('.left-menu');
     var rank = getRank();
@@ -26,8 +30,9 @@ $(function () {
             <a href="' + link + '" data-profileLink="true"><img src="' + avatarUrl() + '" class="menu_ava"></a> \
             <div id="menu_playerInfo_info_text"> \
                 <a href="' + link + '" data-profileLink="true"><span id="menu_playerInfo_name"></span></a> \
-                <span id="menu_doubleBalance">' + Player.doubleBalance + '</span><i class="double-icon"></i> \
-            </div> \
+                <span id="menu_doubleBalance">' + Player.doubleBalance + '</span><i class="double-icon"></i>\
+                ' + (isAndroid() ? '<button href="#" class="btn btn-xs btn-default more_coins" data-toggle="modal" data-target="#more_coins_modal" data-loc="more_coins">Get more coins</button>' : '') +'\
+            </div>\
         </div> \
         <div class="menu_rank"> \
             <div class="menu_rank__top"> \
@@ -45,7 +50,11 @@ $(function () {
     </div>';
     
     menuHTML += '<ul> \
-        <li class="pushy-link"><a href="cases.html"><span class="icon icon-key2"></span><span data-loc="open_case">Open Cases</span></a></li> \
+        <li class="submenu closed"><a href="#"><i class="icon icon-key2"></i><span data-loc="open_case">Open Cases</span></a>\
+        <ul data-loc-group="cases_menu">\
+            <li class="pushy-link"><a href="cases.html"><span class="icon icon-key2"></span><span data-loc="official">Official cases</span></a></li>\
+            <li class="pushy-link"><a href="customCases.html"><span class="icon icon-key2"></span><span data-loc="custom">Custom cases</span> <sup class="beta">beta</sup></a></li>\
+        </ul></li>\
         <li class="submenu closed" data-podmenu="games"><a href="#"><span class="icon icon-pacman"></span><span data-loc="games">Games</span></a> \
         <ul data-loc-group="games_list"> \
             <li class="pushy-link"><a href="rulet.html"><span class="icon icon-spinner5"></span><span data-loc="jackpot">Jackpot</span></a></li>\
@@ -53,6 +62,7 @@ $(function () {
             <li class="pushy-link"><a href="coinflip.html"><span class="icon icon-coin-dollar"></span><span data-loc="coinflip">CoinFlip</span></a></li> \
             <li class="pushy-link"><a href="double.html"><span class="icon icon-make-group"></span><span data-loc="double">Double</span></a></li> \
             <li class="pushy-link"><a href="Dice.html"><span class="icon icon-dice"></span><span data-loc="dice">Roll Dice</span></a></li> \
+            <li class="pushy-link"><a href="minesweeper.html"><span class="icon fa fa-bomb"></span><span data-loc="minesweeper">Minesweeper</span></a></li> \
         </ul></li> \
         <li class="submenu closed"><a href="#"><i class="icon icon-pacman"></i><span data-loc="online_games">Online games</span></a> \
         <ul data-loc-group="games_list"> \
@@ -70,13 +80,22 @@ $(function () {
         <li class="pushy-link"><a href="about.html"><span class="icon icon-info"></span><span data-loc="about">About</span></a></li> \
         <li class="pushy-link"><a href="apps.html"><span class="icon icon-star-full"></span><span data-loc="other_apps">Other Apps</span></a></li> \
         </ul>';
+    
+    if (!isAndroid()) {
+        menuHTML += '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>\
+                    <!-- Open Case menu block -->\
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-9624392621060703" data-ad-slot="6439402276"></ins>\
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>'
+    }        
+    
     $(menu).html(menuHTML);
     $(document.body).addClass("menuClose");
     $(document).on('click', '.leftMenu ul a', function () {
         Sound("click", "play");
     });
     $(document).on('click', '.submenu', function () {
-        $(this).toggleClass("closed opened"); //, 200, "easeOutSine");
+        $(this).toggleClass("closed opened");
+        Sound('interface.wind');
     })
     $(document).on('click', '.navigationBar_hamburger, .site-overlay', function () {
         Sound("menuclick", "play");
@@ -87,10 +106,48 @@ $(function () {
         }
     })
     
-    $(function() {
-        $('#menu_playerInfo_name').text(Player.nickname)
-    })
+    //More coins modal
+    if (isAndroid()) {
+        $(document.body).append('<div class="modal fade" id="more_coins_modal" role="dialog" data-loc-group="more_coins_modal">\
+            <div class="modal-dialog">\
+                <div class="modal-content">\
+                    <div class="modal-header">\
+                        <button class="close" data-dismiss="modal">&times;</button>\
+                        <h4 class="modal-title" data-loc="title">Get more coins</h4>\
+                    </div>\
+                    <div class="modal-body">\
+                        <p data-loc="body">\
+                           If you have no coins, you can watch the ad and get 1000 <i class="double-icon"></i>\
+                        </p>\
+                    </div>\
+                    <div class="modal-footer">\
+                        <button class="btn btn-success" id="watch_ad_for_coins" data-dismiss="modal" data-loc="watch">Watch the ad</button>\
+                        <button class="btn btn-default" data-dismiss="modal" data-loc="cancel">Cancel</button>\
+                    </div>\
+                </div>\
+            </div>\
+        </div>');
+
+        $(document).on('click', '#watch_ad_for_coins', function() {
+            client.showVideoAd('javascript:$(document).trigger("coins_for_ad-watched")');
+            LOG.log({
+                action: 'Watch ad for coins'
+            })
+        })
+
+        $(document).on('coins_for_ad-watched', function() {
+            $.notify({
+                message: '+1000<i class="double-icon"></i>'
+            }, {
+                type: 'success',
+                delay: 1000
+            })
+            Player.doubleBalance+=1000;
+            saveStatistic("doubleBalance", Player.doubleBalance);
+        })
+    }
     
+    $('#menu_playerInfo_name').text(Player.nickname);
     $(document).on('expchanged', function() {
         $('.menu_rank__exp').text(Level.myEXP() + ' EXP');
         $('.lvl-current').text(Level.myLvl());

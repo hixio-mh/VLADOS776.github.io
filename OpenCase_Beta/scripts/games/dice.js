@@ -125,6 +125,21 @@ var Dice = {
                 }
             })
         })
+        
+        firebase.auth().onAuthStateChanged(function (user) {
+        // Once authenticated, instantiate Firechat with the logged in user
+            if (user != null) {
+                firebase.database().ref('users/'+user.uid+'/moder/group').once('value')
+                .then(function(snapshot) {
+                    var group = snapshot.val();
+                    if (!group) {
+                        return
+                    } else if (group.match(/vip/)) {
+                        Dice.betLimit = 100000;
+                    }
+                })
+            }
+        })
     },
     recount: function(config) {
         if (config.payout) {
@@ -154,7 +169,7 @@ var Dice = {
         var condition = $('#oddsOverUnder').text();
         var playerWin = condition[0] == '>' ? number > parseInt(condition.replace('>', '')) : number < parseInt(condition.replace('<', ''));
 
-        if (playerWin && Math.rand(0, 100) > 50 && counter < 3) {
+        if (playerWin && Math.rand(0, 100) > 40 && counter < 4) {
             Dice.startGame(++counter);
             return;
         }
@@ -173,8 +188,10 @@ var Dice = {
 
             var profit = 0;
             if (playerWin) {
-                profit = parseInt(bet * parseFloat($('#oddsPayout').text()));
+                profit = parseInt(bet * parseFloat($('#oddsPayout').text())) - bet;
                 Player.doubleBalance += profit;
+                
+                Level.addEXP(2);
             } else {
                 profit = bet;
                 Player.doubleBalance -= bet;
@@ -194,7 +211,8 @@ var Dice = {
                 profit: profit,
             });
             LOG.log({
-                action: 'Dice end game',
+                game: 'Dice',
+                action: 'End game',
                 bet: bet,
                 payout: parseFloat($('#oddsPayout').text()),
                 condition: condition,

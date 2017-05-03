@@ -39,12 +39,15 @@ $(function() {
                 clearInterval(reconnectTimer);
                 reconnectTimer = 0;
             }
+            $('#place-bet').prop('disabled', false);
         }
 
         socket.onclose = function(event) {
             if (!reconnectTimer) {
                 reconnectTimer = setInterval(function(){checkConnection()}, reconnectDelay);
             }
+            
+            $('#place-bet').prop('disabled', true);
             
             onlineGames.chatMessage({from:'', message: 'Connection lost. Trying to reconnect...', specialType: 'warning'});
            
@@ -245,8 +248,19 @@ $(function() {
             playerInfo.bet = 0;
             saveStatistic('doubleBalance', Player.doubleBalance, 'Number');
             
+            if (message.profit > playerInfo.bet)
+                Level.addEXP(2);
+            
             $('#balance').text(Player.doubleBalance);
             $('#menu_doubleBalance').text(Player.doubleBalance);
+            
+            LOG.log({
+                game: 'Crash',
+                action: 'Cashout',
+                bet: playerInfo.bet,
+                profit: playerInfo.profit,
+                balance: Player.doubleBalance
+            })
         }
         sortBetTable();
     }
@@ -407,26 +421,37 @@ $(function() {
             }))
             $('#place-bet').prop('disabled', true);
         } else {
-            playerInfo.bet = parseInt($('#bet').val());
-            if (playerInfo.bet <= 0 || playerInfo.bet > Player.doubleBalance || isNaN(playerInfo.bet)) return;
+            var bet = parseInt($('#bet').val());
+            
+            if (bet <= 0 || bet > Player.doubleBalance || isNaN(bet)) return;
             
             if (socket && socket.readyState == 1)
                 socket.send(JSON.stringify({
                     type: 'addBet',
                     player: Player.nickname,
-                    bet: playerInfo.bet,
+                    bet: bet,
                     id: playerInfo.id,
                 }))
             else
                 return false;
+            playerInfo.bet = bet;
             Player.doubleBalance -= playerInfo.bet;
             saveStatistic('doubleBalance', Player.doubleBalance, 'Number');
+            
+            $(document).trigger('doublechanged');
             
             $("#place-bet").text(Localization.getString('crash.bet.betting'));
             $('#place-bet').prop('disabled', true);
             
             $('#balance').text(Player.doubleBalance);
             $('#menu_doubleBalance').text(Player.doubleBalance);
+            
+            LOG.log({
+                game: 'Crash',
+                action: 'Bet',
+                bet: playerInfo.bet,
+                balance: Player.doubleBalance
+            })
         }
     })
 })

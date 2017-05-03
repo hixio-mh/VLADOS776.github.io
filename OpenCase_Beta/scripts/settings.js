@@ -31,6 +31,7 @@ if (isNaN(Player.points)) Player.points = 1;
 Settings.language = getStatistic("settings_language", 'EN');
 Settings.sounds = getStatistic("settings_sounds", 'true') === 'true';
 Settings.drop = getStatistic("settings_drop", 'false') === 'true';
+Settings.scroll_names = getStatistic("settings_scroll", 'false') === 'true';
 
 function avatarUrl(avatar) {
     avatar = avatar || Player.avatar;
@@ -198,7 +199,8 @@ var Level = (function(module) {
     }
     
     module.calcLvl = function(exp) {
-        exp = exp || isNaN(Player.points) ? 5 : Player.points;
+        exp = exp || Player.points;
+        exp = isNaN(exp) ? 5 : exp;
         var i = 1;
         while (true) {
             if (exp < module.lvlEXP(i))

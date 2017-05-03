@@ -7,7 +7,8 @@
   text-align: center;
   position: relative;
   box-sizing: content-box;
-  cursor: pointer; }
+  cursor: pointer;
+  white-space: normal; }
 
 .case .countdown, .capsule .countdown {
   position: absolute;
@@ -41,21 +42,14 @@
   width: 30px;
   height: 30px; }
 
-#caruselOver:before, #caruselOver:after {
-  content: '';
-  width: 100px;
-  height: 137px;
-  position: absolute;
-  display: block;
-  background: url(../images/Weapons/shadow.png); }
-
 body {
   background: #19212b;
   background: linear-gradient(to right, #19212b, #222d3b, #1c212a, #19212b);
   background-size: cover; }
 
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  margin: 1px; }
 
 #container {
   padding-top: 40px;
@@ -72,6 +66,11 @@ body {
   -ms-transform: translate(270px, -10px);
   -webkit-transform: translate(270px, -10px);
   transform: translate(270px, -10px); }
+
+.casesBlock-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap; }
 
 .cases {
   text-align: center;
@@ -159,7 +158,6 @@ body {
   position: absolute;
   width: 140px;
   top: 33px;
-  z-index: -1;
   left: -3px;
   height: 65px; }
 
@@ -288,14 +286,34 @@ body {
     font-size: 8pt;
     color: #f8ffb4;
     font-family: LatoLight; }
+  .weapon .type, .weapon .name {
+    background-size: cover;
+    font-size: 11px;
+    display: inline-block;
+    font-family: LatoRegular;
+    line-height: 14px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.84);
+    margin-top: 1px;
+    padding: 1px 5px;
+    white-space: nowrap;
+    display: block; }
+  .weapon .weaponInfo {
+    text-align: left;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; }
+  .weapon .text-ticker span {
+    padding-left: 100%;
+    display: inline-block;
+    animation: marquee 7s linear infinite; }
 
-.weaponInfo {
-  text-align: left;
-  overflow: hidden;
-  position: absolute;
-  bottom: 0;
-  left: 0; }
-
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(-101%, 0); } }
 .new-weapon {
   border: 2px solid #54b335;
   margin: 3px 2px;
@@ -310,47 +328,54 @@ body {
     bottom: 0;
     right: 0; }
 
-.type {
-  background-size: cover;
-  font-size: 11px;
-  width: 125px;
-  display: inline-block;
-  font-family: LatoRegular;
-  line-height: 14px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.84);
-  margin-top: 1px;
-  padding: 3px 5px;
-  white-space: nowrap; }
-
 .scrollerContainer {
   margin: 10px 0; }
 
 #caruselLine {
   position: absolute;
   width: 2px;
-  height: 137px;
+  height: 100%;
   background: #bd6e20;
   left: 50%;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 7px black;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 7px black;
   z-index: 2; }
 
 #caruselOver {
   position: absolute;
   width: 384px;
-  height: 137px;
+  height: 140px;
   left: calc(50% - 193px);
   border: 1px solid #242424;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 7px black;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 7px black;
-  z-index: 2; }
+  z-index: 2;
+  transition-duration: 0.2s; }
   #caruselOver:before {
+    content: '';
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    display: block;
+    background: url(../images/Weapons/shadow.png);
     left: 0; }
   #caruselOver:after {
+    content: '';
+    width: 100px;
+    height: 100%;
+    position: absolute;
+    display: block;
+    background: url(../images/Weapons/shadow.png);
     right: 0;
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
 
 #aCanvas {
   width: 383px;
-  height: 136px;
+  min-height: 136px;
   background: #111;
   overflow: hidden;
   padding-top: 2px;
@@ -361,18 +386,26 @@ body {
   #aCanvas:before {
     content: '';
     width: 124px;
-    height: 136px;
+    height: 137px;
     background: linear-gradient(45deg, rgba(255, 255, 255, 0.29), transparent, transparent);
     display: block;
     position: absolute;
-    margin-left: 106px;
+    left: 150px;
+    -moz-transform: rotate(66deg);
+    -o-transform: rotate(66deg);
+    -ms-transform: rotate(66deg);
+    -webkit-transform: rotate(66deg);
     transform: rotate(66deg);
-    margin-top: -55px;
+    top: -55px;
     z-index: 50; }
 
 .casesCarusel {
   width: 15000px;
-  text-align: left; }
+  text-align: left;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+  .casesCarusel .weapon {
+    margin-bottom: 1px; }
 
 @media (max-width: 433px) {
   /*.case {
@@ -430,12 +463,18 @@ body {
 
 .win {
   background: rgba(0, 0, 0, 0.5);
-  padding-top: 15px;
+  padding: 15px 0;
   position: relative;
   font-family: LatoRegular; }
-  .win > span {
-    color: #ffcd48;
-    display: block; }
+  .win > .win_block {
+    position: relative;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 5px;
+    margin: 5px; }
+    .win > .win_block > span {
+      color: #ffcd48;
+      display: block; }
 
 .win_quality {
   color: #fff !important; }
@@ -656,15 +695,38 @@ h3.lines {
     left: 100%;
     margin-left: .5em; }
 
+.weapon_nameTagIcon {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: #A94847;
+  border-radius: 50%;
+  color: #fff;
+  border: 1px solid #e0807f;
+  top: 5px;
+  font-size: 13px;
+  left: 5px;
+  text-align: center; }
+  .weapon_nameTagIcon:before {
+    content: '!';
+    font-weight: bold; }
+
 i.double-icon {
   width: 15px;
   height: 15px;
   display: inline-block;
-  background-image: url(../images/double/coin-white.png);
+  background-image: url(../images/double/coin_new.png);
   background-size: cover;
   vertical-align: middle;
   margin: 2px;
   position: relative;
   top: -2px; }
+
+.beta_only {
+  display: none; }
+
+.btn-empty {
+  background-color: transparent; }
 
 /*# sourceMappingURL=main.css.map */

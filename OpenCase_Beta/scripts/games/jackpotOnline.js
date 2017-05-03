@@ -123,6 +123,12 @@ var Jackpot = {
                     items[i] = new Item(items[i]);
                 }
                 saveWeapons(items);
+                LOG.log({
+                    game: 'Jackpot online',
+                    action: 'Items back',
+                    weapons: items,
+                    room: Jackpot.roomID
+                })
             })
             
             Jackpot.socket.on('chances', function(chances) {
@@ -147,6 +153,14 @@ var Jackpot = {
                     weapons[i].new = true;
                 }
                 saveWeapons(weapons);
+                Level.addEXP(2);
+                
+                LOG.log({
+                    game: 'Jackpot online',
+                    action: 'Win',
+                    weapons: win.weapons,
+                    room: Jackpot.roomID
+                })
             })
             
             Jackpot.socket.on('new_game', function(timer) {
@@ -238,6 +252,13 @@ var Jackpot = {
                         }
                         
                         $(".closeInventory").click();
+                        
+                        LOG.log({
+                            game: 'Jackpot online',
+                            action: 'Bet',
+                            weapons: betWeapons,
+                            room: Jackpot.roomID
+                        })
                     })
                 }
             })
@@ -478,7 +499,9 @@ function itemsList(newBet/*fromName, fromImg, tickets, itemsCost, weaponsList*/)
         var weapon = new Weapon(newBet.weapons[i]);
         var img = getImgUrl(weapon.img);
 
-        var newItem = "<div class='bet-items__item'><img src='" + img + "'><div class='bet-items__item__rarity " + weapon.rarity + "'></div><span class='bet-items__item__price'>$" + weapon.price + "</span></div>";
+        var newItem = "<div class='bet-items__item'>\
+            " + (weapon.nameTag ? '<div class="weapon_nameTagIcon"></div>' : '') + "\
+            <img src='" + img + "'><div class='bet-items__item__rarity " + weapon.rarity + "'></div><span class='bet-items__item__price'>$" + weapon.price + "</span></div>";
         bet += newItem;
     }
     bet += "</div></div>";

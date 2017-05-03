@@ -11,6 +11,10 @@ var Translation = {
     
     translation: {
         menu: {
+            more_coins: {
+                text: 'Получить монеты',
+                en: 'Get more coins'
+            },
             to_next_level: {
                 text: '${1} до следующего уровня',
                 en: '${1} to next level'
@@ -18,6 +22,16 @@ var Translation = {
             open_case: {
                 text: 'Открыть кейсы',
                 en: 'Open Case'
+            },
+            cases_menu: {
+                official: {
+                    text: 'Стандартные кейсы',
+                    en: 'Official cases'
+                },
+                custom: {
+                    text: 'Кейсы игроков',
+                    en: 'Custom cases'
+                }
             },
             games: {
                 text: 'Игры',
@@ -51,6 +65,10 @@ var Translation = {
                 dice: {
                     text: 'Кости',
                     en: 'Dice'
+                },
+                minesweeper: {
+                    text: 'Сапер',
+                    en: 'Minesweeper'
                 }
             },
             inventory: {
@@ -88,11 +106,29 @@ var Translation = {
             other_apps: {
                 text: 'Другие приложения',
                 en: 'Other apps'
+            },
+            more_coins_modal: {
+                title: {
+                    text: 'Получить монеты',
+                    en: 'Get more coins'
+                },
+                body: {
+                    text: 'Если вам не хватает монет, вы можете посмотреть рекламу и получить 1000<i class="double-icon"></i>',
+                    en: 'If you have no coins, you can watch the ad and get 1000 <i class="double-icon"></i>'
+                },
+                watch: {
+                    text: 'Смотреть рекламу',
+                    en: 'Watch the ad'
+                },
+                cancel: {
+                    text: 'Закрыть',
+                    en: 'Cancel'
+                }
             }
         },
         cases: {
             news: {
-                text: 'Проголосуйте за следующее обновление <a href="https://www.patreon.com/posts/8183213" target="_blank">ЗДЕСЬ</a>'
+                text: '<p>Теперь, если вы кликните на нижний банер, он будет спрятан до конца дня.</p><p>Открывайте до 5 кейсов за раз (может лагать).'
             },
             page_name: {
                 text: 'Открыть кейсы',
@@ -139,6 +175,14 @@ var Translation = {
                     text: 'Как повысить уровень?',
                     en: 'How to level up?'
                 }
+            },
+            awards_modal: {
+                head: {
+                    text: 'Награды'
+                },
+                body: {
+                    text: "<p>Теперь в профиле появились награды!</p><p>Правда, пока что они даются только за созданные кейсы. Но в планах награды для краша/дабла/джекпота.</p> <p>Список доступных наград на данный момент:</p><ul class='list-unstyled'><li><img src='../images/awards/1k.png' width='50px'> — 1000+ открытий созданного кейса</li><li><img src='../images/awards/2k.png' width='50px'> — 2000+ открытий созданного кейса</li><li><img src='../images/awards/3k.png' width='50px'> — 3000+ открытий созданного кейса</li><li><img src='../images/awards/4k.png' width='50px'> — 4000+ открытий созданного кейса</li><li><img src='../images/awards/5k.png' width='50px'> — 5000+ открытий созданного кейса</li></ul><p>Изображения наград - временные. Потом они будут перерисованы.</p>"
+                }
             }
         },
         open_case: {
@@ -173,6 +217,115 @@ var Translation = {
             you_can_win: {
                 text: 'Вы можете выиграть один из данных предметов из коллекции ${1}',
                 en: 'You can win one of those items from collection ${1}'
+            },
+            'not-enough-money': {
+                text: 'Не хватает денег'
+            }
+        },
+        custom_cases: {
+            page_name: {
+                text: 'Кейсы игроков',
+                en: 'Custom cases'
+            },
+            create_case: {
+                text: 'Создать кейс',
+                en: 'Create case'
+            },
+            recent: {
+                text: 'Недавно созданные',
+                en: 'Recent'
+            },
+            popular: {
+                text: 'Популярные',
+                en: 'Popular'
+            },
+            popular_time: {
+                24: {
+                    text: '24 часа',
+                    en: '24 hours'
+                },
+                48: {
+                    text: '48 часов',
+                    en: '48 hours'
+                },
+                week: {
+                    text: '7 дней',
+                    en: '7 days'
+                },
+            },
+            hide_search: {
+                text: 'Убрать результаты поиска',
+                en: 'Hide search result'
+            },
+            you_won: {
+                text: 'Вы выиграли',
+                en: 'You won'
+            },
+            sell: {
+                text: 'Продать',
+                en: 'Sell'
+            },
+            opened: {
+                text: 'Открыт:',
+                en: 'Opened:'
+            },
+            case_by: {
+                text: 'Кейс сделал',
+                en: 'Case by'
+            },
+            what_in_case: {
+                text: 'Что в кейсе?',
+                en: 'What\'s in the case?'
+            },
+            you_can_win: {
+                text: 'Вы можете выиграть один из данных предметов из кейса "${1}"',
+                en: 'You can win one of those items from the "${1}" case'
+            },
+            create: {
+                name: {
+                    text: 'Название',
+                    en: 'Name'
+                },
+                picture: {
+                    text: 'Выберите изображение кейса',
+                    en: 'Choose case picture'
+                },
+                items: {
+                    text: 'Выберите предметы для кейса',
+                    en: 'Select items'
+                },
+                odds: {
+                    text: 'Укажите шансы на выпадение',
+                    en: 'Choose Roll Chance'
+                },
+                total_odds: {
+                    text: 'Сумма шансов: ${1}',
+                    en: 'Total odds: ${1}'
+                },
+                case_price: {
+                    text: 'Цена кейса: ${1}',
+                    en: 'Case price: ${1}'
+                },
+                calc_price: {
+                    text: 'Посчитать стоимость',
+                    en: 'Calc Price'
+                },
+                
+            },
+            beta_modal: {
+                text: '<p>Данная страница находится в Бета тесте.<br>\
+                    Это значит, что тут могут быть ошибки, созданные кейсы могут быть удалены и изменены без предупреждения.</p>\
+                    <p>После релиза, все кейсы, созданные во время бета теста, могут быть удалены.</p>',
+                en: '<p>Current page is on Beta test.<br>\
+                        That means that there can be bugs and cases that you created can be deleted or changed without warning.</p>\
+                        <p>After release all custom cases can be deleted.</p>'
+            },
+            boost_modal: {
+                text: '<h5>Как это работает?</h5>\
+                       <p>Вы смотрите рекламу за это ваш кейс попадает в "Популярное за 24 часа" на 10 минут.</p><p>Если на данный момент в популярном уже есть забущенный кейс, ваш кейс будет добавлен в очередь на показ.</p>',
+                en: '<h5>How it works?</h5>\
+                        <p>You watch the ad then your case will be in first place in "Popular 24h" for 10 minutes.</p>\
+                        <p>If the "Popular" already have a boosted case, your case will get in line.</p>'
             }
         },
         jackpot: {
@@ -550,6 +703,50 @@ var Translation = {
                 }
             }
         },
+        minesweeper: {
+            page_name: {
+                text: 'Сапер',
+                en: 'Minesweeper'
+            },
+            game: {
+                bet: {
+                    $placeholder: {
+                        text: 'Ставка',
+                        en: 'Bet'
+                    }
+                },
+                mines: {
+                    $placeholder: {
+                        text: 'Кол-во мин',
+                        en: 'Mines Amount'
+                    }
+                },
+                start_game: {
+                    text: 'Начать',
+                    en: 'Confirm'
+                },
+                next: {
+                    text: 'Следующий ход:',
+                    en: 'Next:'
+                },
+                total: {
+                    text: 'Всего:',
+                    en: 'Total:'
+                },
+                cashout: {
+                    text: 'Забрать',
+                    en: 'Cashout'
+                },
+                new_game: {
+                    text: 'Новая игра',
+                    en: 'New game'
+                }
+            },
+            history: {
+                text: 'История',
+                en: 'History'
+            }
+        },
         inventory: {
             page_name: {
                 text: 'Инвентарь',
@@ -571,6 +768,9 @@ var Translation = {
                 sell: {
                     text: 'Продать',
                     en: 'Sell'
+                },
+                rename: {
+                    text: 'Переименовать ${1}'
                 }
             },
             trade_up_contract: {
@@ -702,6 +902,14 @@ var Translation = {
                 text: 'Профиль',
                 en: 'Profile'
             },
+            follow: {
+                follow: {
+                    text: 'Подписаться',
+                },
+                unfollow: {
+                    text: 'Отписаться'
+                }
+            },
             stats: {
                 level: {
                     text: 'Уровень',
@@ -711,10 +919,17 @@ var Translation = {
                     text: 'Инвентарь',
                     en: 'Inventory'
                 },
+                followers: {
+                    text: 'Подписчиков'
+                },
                 reputation: {
                     text: 'Репутация',
                     en: 'Reputation'
                 }
+            },
+            user_cases: {
+                text: 'Показать кейсы пользователя',
+                en: 'Show user cases'
             },
             text_field: {
                 text: 'Что нового?',
@@ -807,7 +1022,7 @@ var Translation = {
                         en: 'Check this box when ready to trade.'
                     },
                     gift: {
-                        text: 'Это порадрок',
+                        text: 'Это подарок',
                         en: 'It\'s a gift.'
                     }
                 },
@@ -1097,6 +1312,10 @@ var Translation = {
                     en: 'Fast drop (x2)'
                 }
             },
+            promocode: {
+                text: 'Активировать промокод',
+                en: 'Activate a promo code'
+            },
             reset: {
                 text: 'Полный сброс',
                 en: 'Full reset'
@@ -1104,6 +1323,20 @@ var Translation = {
             save: {
                 text: 'Сохранить',
                 en: 'Save'
+            },
+            promo_modal: {
+                enter: {
+                    text: 'Введите промокод:',
+                    en: 'Enter promocode:'
+                },
+                activate: {
+                    text: 'Активировать',
+                    en: 'Activate'
+                },
+                close: {
+                    text: 'Отмена',
+                    en: 'Close'
+                }
             },
             notification: {
                 title: {
@@ -1200,6 +1433,16 @@ var Translation = {
             sum_text: {
                 text: 'Сумма: ',
                 en: 'Worth: '
+            },
+            promocode: {
+                wrong: {
+                    text: 'Неправильный промокод',
+                    en: 'Wrong promo code.'
+                },
+                used: {
+                    text: 'Вы уже использовали этот код',
+                    en: 'You already used this code.'
+                }
             },
             empty_inventory: {
                 text: 'Инвентарь пуст. Чтобы пополнить его, <a href="cases.html">откройте пару кейсов.</a>',

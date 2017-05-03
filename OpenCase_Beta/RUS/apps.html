@@ -1,66 +1,76 @@
 <html>
-	<head>
-		<title>Другие приложения</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
-		<script src="../scripts/build/libs.js"></script>
-		<script src="../scripts/main.js"></script>
-		<script src="../scripts/settings.js"></script>
-		<script src="../../android/apps.js"></script>
 
-		<script src="../scripts/navigationMenu.js"></script>
-		<link rel="stylesheet" href="../css/navigationMenu.css" />
+<head>
+    <title>Другие приложения</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/navigationMenu.css" />
+    <link rel="stylesheet" type="text/css" href="../css/winter.css">
+</head>
+<style>
+    body {
+        color: #fff;
+    }
+    
+    .apps {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .apps li {
+        height: 125px;
+        line-height: 125px;
+        width: 100%;
+        vertical-align: middle;
+        background-size: cover !important;
+        font-size: 1.5em;
+        overflow-x: hidden;
+    }
+    
+    .apps li a {
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding-left: 10px;
+        font-family: LatoLight;
+        text-shadow: 1px 1px 0px #000, 2px 1px 0px RGBA(0, 0, 0, 0.23);
+        white-space: nowrap;
+    }
 
-		<script src="../scripts/localization.js"></script>
+</style>
 
-		<link rel="stylesheet" type="text/css" href="../css/fonts.css" />
-		<link rel="stylesheet" type="text/css" href="../css/main.css" />
-        <link rel="stylesheet" type="text/css" href="../css/winter.css">
-	</head>
-	<style>
-		body {
-		color: #fff;
-		}
-		.apps {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		}
-		.apps li {
-		height: 125px;
-		line-height: 125px;
-		width: 100%;
-		vertical-align: middle;
-		background-size: cover !important;
-		font-size: 1.5em;
-		overflow-x: hidden;
-		}
-		.apps li a {
-		display: block;
-		color: #fff;
-		text-decoration: none;
-		padding-left: 10px;
-		font-family: LatoLight;
-		text-shadow: 1px 1px 0px #000, 2px 1px 0px RGBA(0, 0, 0, 0.23);
-		white-space: nowrap;
-		}
-	</style>
-	<body data-localization='apps'>
-		<div class="site-overlay"></div>
-		<div id='container'>
-			<div class="navigationBar" data-menu-EN="Other apps" data-menu-RU="Другие приложения"></div>
-			<ul class='apps'>
+<body data-localization='apps'>
+    <div class="site-overlay"></div>
+    <div id='container'>
+        <div class="navigationBar" data-menu-EN="Other apps" data-menu-RU="Другие приложения"></div>
+        <ul class='apps'>
 
-			</ul>
-		</div>
-		<script>
-			var list = '';
-			for (var i = 0; i < appList.length; i++) {
-                var app = appList[i];
-                var app_name = appList[i].name[Settings.language] ? appList[i].name[Settings.language] : appList[i].name['EN']
-                if (appList[i].enable == true && typeof app_name != 'undefined')
-                list += '<li style="background: url(\'../../android/' + appList[i].img + '\') left"><a href="' + appList[i].url + '">' + app_name+ '</a></li>';
-            }
-            $('.apps').html(list);
-				</script>
-			</body>
-		</html>
+        </ul>
+    </div>
+
+    <script src="../scripts/build/libs.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../../android/apps.js"></script>
+
+    <script src="../scripts/navigationMenu.js"></script>
+
+    <script src="../scripts/localization.js"></script>
+    <script>
+        var list = '';
+        for (var i = 0; i < appList.length; i++) {
+            var app = appList[i];
+            var app_name = appList[i].name[Settings.language] ? appList[i].name[Settings.language] : appList[i].name['EN']
+            if (appList[i].enable == true && typeof app_name != 'undefined')
+                list += '<li style="background: url(\'../../android/' + appList[i].img + '\') left"><a href="' + appList[i].url + '">' + app_name + '</a></li>';
+        }
+        $('.apps').html(list);
+
+    </script>
+</body>
+
+</html>

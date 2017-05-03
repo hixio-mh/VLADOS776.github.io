@@ -176,6 +176,14 @@ $(function() {
         $('#balance').text(Player.doubleBalance);
         $('#menu_doubleBalance').text(Player.doubleBalance);
         saveStatistic('doubleBalance', Player.doubleBalance, 'Number');
+        
+        LOG.log({
+            game: 'Double online',
+            action: 'Bet',
+            bet: bet,
+            color: color,
+            balance: Player.doubleBalance
+        })
 
         //addBet(color, pl);
     });
@@ -300,6 +308,13 @@ function startGame(win, duration) {
                             $('#menu_doubleBalance').text(Player.doubleBalance);
                             statisticPlusOne('double-wins');
                             Level.addEXP(2);
+                            LOG.log({
+                                game: 'Double online',
+                                action: 'Win',
+                                bet: playerBet[i].bet,
+                                color: playerBet[i].color,
+                                balance: Player.doubleBalance
+                            })
                         } else {
                             statisticPlusOne('double-loose');
                         }

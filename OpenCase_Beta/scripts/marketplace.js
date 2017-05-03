@@ -2,7 +2,8 @@
 var Sales = [],
     weaponsOnSale = 6,
     minPriceForSale = 15,
-    discount = 15;
+    showSales = false,
+    discount = 0;
 
 $(function() {
     $("#buy_count").change(function() {
@@ -66,7 +67,7 @@ $(document).ready(function() {
         }
     }
 
-    if (Sales.length) {
+    if (Sales.length && showSales) {
         var SalesHTML = "";
         for (var i = 0; i < Sales.length; i++) {
             SalesHTML += "<div class='sales-weapon animated zoomIn " + (Sales[i].soldOut ? "sold-out" : "") + "' data-weapon-info-json='" + JSON.stringify(Sales[i].saveObject()) + "' data-sales-id='" + i + "' data-discount='" + discount + "'><span class='sales-discount'>" + discount + "%</span><img src=\"" + getImgUrl(Sales[i].img, 1) + "\"><span class='sales-weapon-name'>" + Sales[i].type + " | " + Sales[i].name + "</span><div class='prices'><span class='prices_old-price currency dollar'>" + Sales[i].price + "</span> <span class='prices_new-price currency dollar'>" + (Sales[i].price * (100 - discount) / 100).toFixed(2) + "</span></div></div>";
@@ -165,8 +166,8 @@ $(document).on('click', '#buy-double', function() {
     if (!weapon.can.buy) return;
     weapon.new = true;
     
-    var price = parseInt($("#buy-double span").text());
     var count = parseInt($("#buy_count").val());
+    var price = weapon.price * count * 100;
     
     if (Player.doubleBalance < price) {
         $('#weaponPrice').addClass('animated flash');
@@ -190,7 +191,7 @@ $(document).on('click', '#buy-double', function() {
         soldOut = true;
     }
     Sound("buy", "play");
-    Player.doubleBalance -= parseInt((price).toFixed(0));
+    Player.doubleBalance -= price;
     saveStatistic('doubleBalance', Player.doubleBalance);
     $("#playerBalance").html(Player.doubleBalance + ' <i class="double-icon"></i>');
 
@@ -291,13 +292,13 @@ function getAllWeaponInfo(type, name, stattrak, souvenir) {
         for (var i = 0; i < 5; i++) {
             info.push(new Weapon(item_id, i, true, false));
         }
-    if (souvenir)
+    if (souvenir && weapon.can.souvenir)
         for (var i = 0; i < 5; i++) {
             info.push(new Weapon(item_id, i, false, true));
         }
     
     for (var i = 0; i < info.length; i++) {
-        if (info[i].price === 0) {
+        if (info[i].price === 0 || info[i].price == null) {
             info.splice(i,1);
             i--;
         }

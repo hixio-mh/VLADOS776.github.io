@@ -68,6 +68,7 @@ body {
     flex-direction: row;
     margin-top: 10px;
     flex-wrap: wrap;
+    flex-shrink: 0;
 }
 .chat__rooms__room {
     display: -webkit-box;
@@ -236,6 +237,8 @@ li.chat__message a img[data-userid] {
     word-break: break-all;
     height: auto;
     min-height: 30px;
+    max-height: 100px;
+    overflow-y: auto;
 }
 #login-status {
     font-size: 0.9em;

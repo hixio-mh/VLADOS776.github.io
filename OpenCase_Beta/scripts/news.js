@@ -501,7 +501,7 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Новое] Возможность вставлять изображения в чат<br> - [Новое] Добавлен перевод на Польский язык.<br> - [Изменено] Улучшены уведомления.",
-        "EN": "- [New] You can send images in chat.<br> - [New] Tranlsation to Polish.<br> - [Changed] Improved notification."
+        "EN": " - [New] You can send images in chat.<br> - [New] Tranlsation to Polish.<br> - [Changed] Improved notification."
     }
 }, {
     "day": 6,
@@ -509,14 +509,174 @@ var news = [{
     "year": 2017,
     "update": {
         "RU": " - [Исправлено] Улучшена защита от взломов.",
-        "EN": "- [Fixed] Improved anti-hack protection."
+        "EN": " - [Fixed] Improved anti-hack protection."
     }
 }, {
     "day": 7,
     "month": 2,
     "year": 2017,
     "update": {
-        "RU": " - [Исправлено] Исправлена ошибка, когда при запуске не появлялись кейсы и ничего не нажималось. Кстати, если у вас была эта ошибка, кране рекомендую обновить Android.",
-        "EN": "- [Fixed] Bug when cases doesn't show up in main page and you can't click on anything."
+        "RU": " - [Исправлено] Исправлена ошибка, когда при запуске не появлялись кейсы и ничего не нажималось. Кстати, если у вас была эта ошибка, крайне рекомендую обновить Android.",
+        "EN": " - [Fixed] Bug when cases doesn't show up in main page and you can't click on anything."
+    }
+}, {
+    "day": 14,
+    "month": 2,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Новая онлайн игра - Джекпот онлайн.",
+        "EN": " - [New] Jackpot online release."
+    }
+}, {
+    "day": 16,
+    "month": 2,
+    "year": 2017,
+    "update": {
+        "RU": " - [Интерфейс] Изменён выбор аватара в настройках",
+        "EN": " - [UI] Avatars carousel in settings."
+    }
+}, {
+    "day": 24,
+    "month": 2,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Кейсы за деньги",
+        "EN": " - [New] RIP free cases"
+    }
+}, {
+    "day": 28,
+    "month": 2,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Перевод на турецкий",
+        "EN": " - [New] Turkish translation (by Mirac)"
+    }
+}, {
+    "day": 11,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Кейсы игроков - открытый бета тест",
+        "EN": " - [New] Custom cases - Open beta test"
+    }
+}, {
+    "day": 12,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Кейсы игрока в профиле<br> - [Новое] Награды в профиле",
+        "EN": " - [New] User cases in profile<br> - [New] Awards in the profile"
+    }
+}, {
+    "day": 16,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Кейс Spectrum!",
+        "EN": " - [New] Spectrum Case!"
+    }
+}, {
+    "day": 17,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Обновлены цены на предметы.",
+        "EN": " - [New] The prices database was updated"
+    }
+}, {
+    "day": 18,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Изменено] Обновлен перевод на турецкий.",
+        "EN": " - [Changed] Turkish translation was updated"
+    }
+}, {
+    "day": 21,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Новая мини-игра Сапер!<br> - [UI] Новые звуки для меню",
+        "EN": " - [New] New game - Minesweeper!<br> - [UI] New sounds for menu"
+    }
+}, {
+    "day": 23,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Исправлено] Исправлены ошибки в трейдах<br> - [Новое] Уведомление при новом предложении обмена<br> - [Новое] Убран нижний банер с рекламой для VIP",
+        "EN": " - [Fixed] Trade bugs<br> - [New] Notification on new trade offer<br> - [New] No banner ad for VIP"
+    }
+}, {
+    "day": 24,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Исправлено] Цены на новые ножи<br> - [Новое] Градиентные ники у VIP",
+        "EN": " - [Fixed] Prices for new knives<br> - [New] Gradient nickname for VIP"
+    }
+}, {
+    "day": 26,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Исправлено] Баг с двойным профитом в мини-игре Кости",
+        "EN": " - [Fixed] Bug in Dice mini-game"
+    }
+}, {
+    "day": 29,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Подписки для бета тестеров",
+        "EN": " - [New] Followers on beta test"
+    }
+}, {
+    "day": 31,
+    "month": 3,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Промо коды<br> - [Новое] Релиз Подписок<br> - [Новое] Название скина прокручивается, если не помещается полностью",
+        "EN": " - [New] Promo codes<br> - [New] 'Followers' system release"
+    }
+}, {
+    "day": 03,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Изменено] Новый алгоритм выбора качества для предмета.<br> - [Новое] Получайте 3% от открытия вашего кейса",
+        "EN": " - [Changed] New random quality algorithm<br> - [New] Earn coins from your custom case"
+    }
+}, {
+    "day": 03,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Просмотр своих подписок и подписчиков",
+        "EN": " - [New] You can see list of who you follow and list of your followers"
+    }
+}, {
+    "day": 11,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Возможность переименовывать скины!",
+        "EN": " - [New] Name tags!"
+    }
+}, {
+    "day": 12,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Новый скин M4A1-S | Froststorm<br> - [Новое] Баланс и уровень теперь привязаны к аккаунту.",
+        "EN": " - [New] New skin M4A1-S | Froststorm"
+    }
+}, {
+    "day": 17,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Открывайте до 5 кейсов за раз. Может лагать на слабых устройствах.",
+        "EN": " - [New] New skin M4A1-S | Froststorm"
     }
 }, ];

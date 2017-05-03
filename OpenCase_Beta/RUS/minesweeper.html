@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Minesweeper</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
+<!-- Стили -->
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../css/fonts.css">
+<link rel="stylesheet" type="text/css" href="../css/animate.css">
+<link rel="stylesheet" type="text/css" href="../css/winter.css">
+<link rel="stylesheet" type="text/css" href="../css/minesweeper.css">
+<link rel="stylesheet" href="../css/navigationMenu.css">
+</head>
+    
+<body data-localization="minesweeper" data-page_name="Minesweeper" data-inventory='no-load'>
+	<div class="site-overlay"></div>
+<div id="container">
+    <div class="navigationBar" data-menu-EN="Minesweeper">Minesweeper</div>
+    <div class="panel panel-default">
+        <div class="panel-heading"><span data-loc='page_name'>Minesweeper</span>
+            <button id="hot-to-play" class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#how-to-play-modal" data-loc='how_to_play' style='display:none'>How to play</button>
+        </div>
+        <div class="panel-body" data-loc-group="game">
+            <div class="game_field">Loading...</div>
+            <div class="form-group config">
+                <input type="number" min='100' class='form-control input-sm' placeholder='Bet' id='bet' data-loc='bet'>
+                <input type="number" min='1' max='24' class='form-control input-sm' placeholder='Mines Amount' id='mines' data-loc='mines'>
+                <button class="btn btn-success btn-sm" id='start_game' data-loc='start_game'>Confirm</button>
+            </div>
+            <div class="status" style='display:none;'>
+                <div>
+                    <p><span data-loc='next'>Next:</span> <span id='next_reward'>200</span><i class='double-icon'></i></p>
+                    <p><span data-loc='total'>Total:</span> <span id='total_reward'>500</span><i class="double-icon"></i></p>
+                </div>
+                <button class="btn btn-warning" id='cashout' data-loc='cashout'>Cashout</button>
+                <button class="btn btn-primary" id='new_game' style='display: none;' data-loc='new_game'>New Game</button>
+            </div>
+        </div>
+            
+    </div>
+    
+    <div class="panel panel-default">
+        <div class="panel-heading" data-loc='history'>History</div>
+        <div class='panel-body' id='history'>
+        </div>
+    </div>
+</div>
+    
+<div class="modal fade" id='how-to-play-modal' role='dialog' data-loc-group='how_to_play_modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" data-loc='title'>How to play</h4>
+            </div>
+            <div class="modal-body" data-loc='body'>
+                <p>Before you start the game you can change roll determiner, payout and win chance.</p>
+                <p>Then you input a bet amount and tap on the "Roll dice" button.</p>
+                <p>When you click on "Roll dice" button it will generate a random number. And if this number is satisfies the condition you will get your bet multiply by payout.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class='button btn btn-default' data-dismiss="modal" data-loc='close'>Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Скрипты -->
+<script src="../scripts/build/libs.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/settings.js"></script>
+<script src="../scripts/bootstrap.min.js"></script>
+<script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+
+<script src="../scripts/navigationMenu.js"></script>
+
+<script src="../scripts/localization.js"></script>
+<!-- Скрипт игры -->
+<script src="../scripts/games/minesweeper.js"></script>
+<script>
+    $(document).on('localizationloaded', function() {
+        Minesweeper.init();
+    })
+</script>
+</body>
+</html>

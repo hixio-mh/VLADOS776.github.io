@@ -43,14 +43,17 @@
         <div class="navigationBar" data-menu-EN="Chat" data-menu-RU="Чат"></div>
         <div id="login" style='display: none;' data-loc-group="login">
             <div class='input-group input-group-sm'>
-                <span class='input-group-addon'><i class='glyphicon glyphicon-user'></i></span>
+                <span class='input-group-addon'><i class='glyphicon glyphicon-envelope'></i></span>
                 <input type="text" class="form-control" placeholder="Email" id="email"></input>
             </div>
             <div class='input-group input-group-sm'>
                 <span class='input-group-addon'><i class='glyphicon glyphicon-lock'></i></span>
                 <input type="password" class="form-control" placeholder="Password" id="password"></input>
             </div>
-            <input type="text" placeholder="Nickname" id="nickname" class="input-text" style='display: none;'></input>
+            <div class='input-group input-group-sm' id='nickname-group' style='display: none;'>
+                <span class='input-group-addon'><i class='glyphicon glyphicon-user'></i></span>
+                <input type="text" placeholder="Nickname" id="nickname" class="form-control"></input>
+            </div>
             <span id="login-status" class='text-danger'></span>
             <div id="login__buttons">
                 <div id='login-buttons-container'><button class="btn btn-primary btn-sm" onclick="fbProfile.login();" id="loginButton" data-loc="sign_in">Sign in</button>
@@ -87,6 +90,23 @@
             </div>
         </div>
     </div>
+    
+    <!-- Modal -->
+    <div id="moder_modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc7d2U53Cdqk3zSB6OfNkewCKhwRdOObrwuf5DR1SIdM22dPg/viewform?embedded=true" width="100%" frameborder="0" marginheight="0" marginwidth="0" style='min-height:400px' id='moder_iframe'>Загрузка...</iframe>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <script>
         $(function() {
@@ -97,7 +117,7 @@
                 $('attach_img').click();
             })
             $('#attach_img').unsigned_cloudinary_upload('chat_images', 
-                { cloud_name: 'dii8kvogi' }, //dxcleuhqp //dhf3u3m2h
+                { cloud_name: 'dr9oq5tir' },
                 { multiply: true })
                 .bind('cloudinarydone', function(e, data) {
                     $('#chat__new-message').append(data.result.secure_url);
@@ -106,6 +126,17 @@
                 .bind('cloudinaryprogress', function(e, data) {
                     console.log('load');
             })
+            var Test = {
+                rusLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc6YLq7P6OMpQWsx4XlzYEiXAtnAnpgWAE-nTa-MwsZ9JM0jw/viewform?embedded=true',
+                engLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc7d2U53Cdqk3zSB6OfNkewCKhwRdOObrwuf5DR1SIdM22dPg/viewform?embedded=true',
+                init: function() {
+                    if (Settings.language === 'RU') {
+                        $('#moder_iframe').attr('src', Test.rusLink);
+                    }
+                }
+            }
+            
+            Test.init();
         })
     </script>
 </body>

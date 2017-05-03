@@ -183,6 +183,7 @@ div#countdown-timer {
     background: rgba(0, 0, 0, 0.14);
     margin: 4px;
     box-shadow: 1px 1px 2px RGBA(0, 0, 0, 0.4);
+    position: relative;
 }
 
 .bet-items__item img {
@@ -290,6 +291,7 @@ td p {
 .win__title {
     background: RGBA(0, 0, 0, 0.51);
     padding: 3px;
+    display: block;
 }
 
 .win__nick {

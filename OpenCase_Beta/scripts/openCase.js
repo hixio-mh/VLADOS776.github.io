@@ -3,20 +3,24 @@ var openCase = {
     caseType: 'weapons',
     souvenir: false,
     caseOpening: false,
-    win: null,
+    win: {},
     status: 'init',
     casesCarusel: null,
     scrollSoundOpt: null,
     items: [],
     caseInfo: {},
     special: false,
-    isFree: function() {
+    linesCount: 1,
+    isFree: function () {
         var freeCase = parseInt(getStatistic('free-case-opening', -1));
         
         return this.caseId === freeCase;
     },
     casePrice: function() {
-        return cases[this.caseId].price || parseFloat(getCasePrice(openCase.caseId, openCase.souvenir))*100;
+        var casePrice = cases[this.caseId].price || parseFloat(getCasePrice(openCase.caseId, openCase.souvenir))*100;
+        
+        casePrice *= this.linesCount;
+        return casePrice;
     },
     rareItemsRegExp: new RegExp('(rare|extraordinary)' ,'i'),
     init: function() {
@@ -38,6 +42,10 @@ var openCase = {
                 try {
                     openCase.special = openCase.caseInfo.type == "Special";
                     openCase.souvenir = param.souvenir ? param.souvenir[0] == 'true' : false;
+                    
+                    if (getURLParameter('fromAd') == '1' || openCase.isFree()) {
+                        $('#linesCount').prop('disabled', true);
+                    }
                 } catch(e) {}
                 $("#youCanWin").data('loc-var', {1: openCase.caseInfo.name})
  
@@ -84,24 +92,23 @@ var openCase = {
                 })
             }
             
-            
             $('#what-i-can-win-Button').on('click', function(){openCase.whatInCase()});
             
-            $(document).on("click", "#double_sell_button", function() {
-                var id = $("#double_sell_button").data('id');
+            $(document).on("click", ".double_sell", function() {
+                var id = $(this).data('id');
                 deleteWeapon(id);
 
-                var doublePoints = parseInt($("#double_sell_button").text());
+                var doublePoints = parseInt($(this).text());
                 Player.doubleBalance += doublePoints;
                 saveStatistic('doubleBalance', Player.doubleBalance);
-                $("#double_sell_button").prop("disabled", true);
-                $(".win").addClass("sold-out big");
+                $(this).prop("disabled", true);
+                $(this).parent().parent().addClass("sold-out big");
                 Sound("buy");
                 if (isAndroid()) {
-                    client.sendToAnalytics("Open case", "Selling weapon", "Player has sold weapon for  double points", doublePoints + " double points");
+                    client.sendToAnalytics("Open case", "Selling weapon", "Player has sold weapon for double points", doublePoints + " double points");
                 }
                 
-                if (Player.doubleBalance > openCase.casePrice()) {
+                if (Player.doubleBalance > openCase.casePrice() && !openCase.special) {
                     $(".openCase").prop("disabled", false);
                 }
                 
@@ -120,6 +127,13 @@ var openCase = {
                     balance: Player.doubleBalance
                 })
             });
+            
+            $('#linesCount').change(function() {
+                if ($('.win').is(':visible')) {
+                    openCase.backToZero(false);
+                }
+                openCase.setLines(parseInt($(this).val()));
+            })
             
             $(document).on("click", ".openCase", function() {
                 openCase.openCase();
@@ -176,14 +190,15 @@ var openCase = {
             window.location.replace("open.html?capsuleId=" + caseId);
         }
     },
-    fillCarusel: function(caseId) {
+    fillCarusel: function(caseId, selector) {
         caseId = caseId || openCase.caseId;
+        selector = selector || "#casesCarusel";
         var itemArray = openCase.items;
         
         var caseItems = {
             win: {},
             weight: {
-                rare:       5,      // exotic для стикеров
+                rare:       2,      // exotic для стикеров
                 covert:     10,     
                 classified: 15,     // remarkable для стикеров
                 restricted: 25,
@@ -271,27 +286,23 @@ var openCase = {
         }
         
         var el = '';
+        caseItems.all[winNumber].qualityRandom();
+        caseItems.all[winNumber].patternRandom();
         caseItems.all.forEach(function(item, index) {
-            var img = item.getImgUrl();
-            var type = item.specialText() + item.type;
-            var name = item.name;
+            
+            var $item = $(item.toLi({ticker: false}));
 
             if (openCase.rareItemsRegExp.test(item.rarity)) {
-                type = '★ Rare Special Item ★';
-                name = '&nbsp;';
-                img = '../images/Weapons/rare.png';
+                $item.find('.type span').text('★ Rare Special Item ★');
+                $item.find('.name span').html('&nbsp;');
+                $item.find('img').attr('src', '../images/Weapons/rare.png');
             }
-            if (item.rarity == 'rare')
-                img = '../images/Weapons/rare.png';
-            el += '<div class="weapon">' +
-                '<img src="' + img + '" />' +
-                '<div class="weaponInfo ' + item.rarity + '"><span class="type">' + type + '<br>' + name + '</span></div>' +
-                '</div>'
+            el += $item.wrap('<p/>').parent().html();;
         })
-
-        openCase.win = caseItems.all[winNumber];
-        $(".casesCarusel").html(el);
-        $(".casesCarusel").css("margin-left", "0px");
+        
+        openCase.win[selector] = caseItems.all[winNumber];
+        $(selector).html(el);
+        $(selector).css("margin-left", "0px");
     },
     openCase: function() {
         if (openCase.caseOpening || $(".openCase").text() == Localization.getString('open_case.opening', 'Opening...')) {
@@ -299,17 +310,31 @@ var openCase = {
         };
                 
         $(".win").removeClass("sold-out");
+        
         $(".win").slideUp("slow");
         if ($(".openCase").text().match(Localization.getString('open_case.try_again', 'Open again'))) {
             openCase.backToZero();
             $(".openCase").text(Localization.getString('open_case.open_case', 'Open case'));
             return false;
         }
+        
+        if (Player.doubleBalance < openCase.casePrice()) {
+            $.notify({
+                message: Localization.getString('open_case.not-enough-money', 'Not enough money')
+            }, {
+                type: 'danger'
+            })
+            return false;
+        }
+        
         $(".openCase").text(Localization.getString('open_case.opening', 'Opening...'));
         $(".openCase").attr("disabled", "disabled");
         
-        if (!openCase.isFree())
+        $("#linesCount").prop("disabled", true);
+        
+        if (!openCase.isFree()) {
             Player.doubleBalance -= openCase.casePrice();
+        } 
         
         Player.doubleBalance = Player.doubleBalance > 0 ? Player.doubleBalance : 0;
         
@@ -318,7 +343,7 @@ var openCase = {
         openCase.startScroll();
     },
     startScroll: function() {
-        $(".weapons").scrollTop(0);
+        this.scrollToElement("#aCanvas");
         var a = 127 * winNumber;
         var l = 131;
         var d = 0,
@@ -335,21 +360,42 @@ var openCase = {
         openCase.status = 'scrolling';
         openCase.scrollSound(marginLeft, (duration*1000));
         
-        var type = openCase.win.type;
-        //var statTrak = openCase.souvenir ? false : openCase.win.stattrakRandom();
-        //openCase.win.souvenir = openCase.souvenir ? true : false;
-        
-        var quality = openCase.win.qualityRandom();
-        openCase.caseOpening = true;
-
-        var price = openCase.win.getPrice();
-
-        $(".win_name").html(openCase.win.titleText());
-        $(".win_quality").html(openCase.win.qualityText());
-        $(".win_price").html(price);
-        $(".win_img").attr("src", openCase.win.getImgUrl(true));
-        $(".openCase").prop("disabled", true);
-        $("#double_sell_button").text((price * 100).toFixed(0));
+        (function() {
+            this.count = 0;
+            
+            this.next = function() {
+                var currItem = openCase.win[Object.keys(openCase.win)[this.count]];
+                
+                currItem.new = true;
+                saveItem(currItem).then(function(result) {
+                    $('#win_template').tmpl({
+                        you_won: Localization.getString('open_case.you_won', "You won"),
+                        sell: Localization.getString('open_case.sell', "Sell"),
+                        name: currItem.titleText(),
+                        quality: currItem.qualityText(),
+                        img: currItem.getImgUrl(),
+                        price: currItem.price,
+                        price_coins: Math.round(currItem.price * 100),
+                        inventory_id: result
+                    }).appendTo('.win');
+                    
+                    statisticPlusOne('weapon-' + currItem.rarity);
+                    if (currItem.stattrak)
+                        statisticPlusOne('statTrak');
+                    
+                    Level.addEXP(1);
+                    statisticPlusOne('case-' + cases[openCase.caseId].name);
+                    
+                    this.count++;
+                    if (this.count < openCase.linesCount) 
+                        this.next();
+                    else
+                        return;
+                });
+                
+            }
+            this.next();
+        })()
 
         var anim = document.getElementById('casesCarusel');
         anim.addEventListener("transitionend", openCase.endScroll, false);
@@ -361,18 +407,6 @@ var openCase = {
         $("#opened").text(parseInt($("#opened").text()) + 1);                        
 
         $("#double_sell_button").prop("disabled", false);
-        openCase.win['new'] = true;
-        if (openCase.caseType == 'weapons') {
-            saveWeapon(openCase.win).then(function(result) {
-                console.log(result);
-                $("#double_sell_button").data('id', result);
-            });
-        } else {
-            saveItem(openCase.win).then(function(result) {
-                console.log(result);
-                $("#double_sell_button").data('id', result);
-            });
-        }
         Sound("close", "play", 5);
         
         if (openCase.isFree()) {
@@ -382,12 +416,15 @@ var openCase = {
         }
         
         $(".openCase").text(Localization.getString('open_case.try_again', 'Open again'));
-        $(".openCase").append(' $' + (openCase.casePrice()/100));
+        $(".openCase").append(' $' + (openCase.casePrice() / 100).toFixed(2));
         //$(".win").slideDown("fast");
         $('.win').show();
         openCase.caseOpening = false;
         $(".openCase").prop("disabled", false);
-        $(".weapons").scrollTop(160);
+        if (openCase.caseInfo.type != 'Special')
+            $("#linesCount").prop("disabled", false);
+        
+        openCase.scrollToElement(".win");
         
         openCase.status = 'endScroll';
         
@@ -400,7 +437,8 @@ var openCase = {
             action: 'Open Case',
             case: {
                 name: cases[openCase.caseId].name,
-                id: openCase.caseId
+                id: openCase.caseId,
+                free: openCase.isFree()
             },
             item: {
                 item_id: openCase.win.item_id,
@@ -410,13 +448,7 @@ var openCase = {
         })
 
         //Statistic
-        Level.addEXP(1);
-
-        statisticPlusOne('case-' + cases[openCase.caseId].name);
-        statisticPlusOne('weapon-' + openCase.win.rarity);
-        if (openCase.win.stattrak)
-            statisticPlusOne('statTrak');
-
+        
         var param = parseURLParams(window.location.href);
         if (typeof param != "undefined") {
             var fromAd = 0;
@@ -439,17 +471,27 @@ var openCase = {
             statisticPlusOne('specialCases');
         }
     },
-    backToZero: function() {
+    backToZero: function(open) {
+        open = typeof open == 'undefined' ? true : open;
         openCase.status = 'scrollBack';
         $(".casesCarusel").children(".weapon").addClass("animated fadeOutDown");
         $('.casesCarusel').css({
             'transition': 'all 0.9s cubic-bezier(0.07, 0.49, 0.39, 1)',
             'margin-left': '0px'
         });
+        $(".win").slideUp("slow");
+        $('.openCase').prop("disabled", true);
+        $('#linesCount').prop("disabled", true);
         openCase.sleep(1000).then(function(){
             $(".casesCarusel").empty();
+            $('.win').empty();
             openCase.fillCarusel();
-            openCase.openCase();
+            for (var i = 1; i < openCase.linesCount; i++) {
+                openCase.fillCarusel(false, '#casesCarusel-'+i);
+            }
+            $('.openCase').prop("disabled", false);
+            $('#linesCount').prop("disabled", false);
+            if (open) openCase.openCase();
         })
     },
     scrollSound: function (offset, speed) {
@@ -479,6 +521,31 @@ var openCase = {
         }
         
     },
+    setLines: function(count) {
+        count = count || 1;
+        if (count > 5) count = 5;
+        
+        var $parent = $('#casesCarusel');
+        $('.casesCarusel').not(':first').remove();
+        
+        this.win = {};
+        
+        this.fillCarusel();
+        
+        for (var i = 1; i < count; i++) {
+            var $newLine = $parent.clone();
+            $newLine.attr('id', 'casesCarusel-'+i);
+            $newLine.addClass("animated fadeIn");
+            
+            $('#aCanvas').append($newLine);
+            this.fillCarusel(false, '#casesCarusel-'+i);
+        }
+        $('#caruselOver').css('height', 137*count + 3 * count);
+        this.linesCount = count;
+        
+        $(".openCase").text(Localization.getString('open_case.open_case', 'Open Case'));
+        $(".openCase").append(' $' + (openCase.casePrice() / 100).toFixed(2));
+    },
     whatInCase: function(caseId) {
         caseId = caseId || openCase.caseId;
         var rare = false;
@@ -489,19 +556,17 @@ var openCase = {
             if (openCase.rareItemsRegExp.test(item.rarity) && rare == true)
                 continue;
             var img = item.getImgUrl();
+            
+            var $weaponInfo = $(item.toLi());
 
-            var type = item.type;
-            var name = item.name;
-
-            var name = item.name;
             if (openCase.rareItemsRegExp.test(item.rarity)) {
-                type = '★ Rare Special Item ★';
-                name = '&nbsp;';
-                img = '../images/Weapons/rare.png';
                 rare = true;
+                $weaponInfo.find('.type span').text('★ Rare Special Item ★');
+                $weaponInfo.find('.name span').html('&nbsp;');
+                $weaponInfo.find('img').attr('src', '../images/Weapons/rare.png');
             }
-            var weaponInfo = "<img src=\"" + img + "\"><div class='weaponInfo " + item.rarity + "'><span class='type'>" + type + "<br>" + name + "</span></div>";
-            $(".weaponsList").append("<li class='weapon animated fadeInDown'>" + weaponInfo + "</li>");
+            
+            $(".weaponsList").append($weaponInfo);
         }
         $(".weaponsList").css("display", "block");
         $("#youCanWin").css("display", "block");
@@ -511,5 +576,13 @@ var openCase = {
         return new Promise(function(resolve) {
             setTimeout(resolve, time)
         });
+    },
+    scrollToElement: function(selector) {
+        var offset = $(selector).get(0).offsetTop;
+        if (offset == 0) return;
+
+        $('.weapons').animate({
+            scrollTop: offset
+        }, 200);
     }
 }

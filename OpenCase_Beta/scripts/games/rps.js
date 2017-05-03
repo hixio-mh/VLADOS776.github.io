@@ -62,7 +62,7 @@ $(".choseItems").on("click", function() {
 
         var html = "<ul>";
         for (var i = 0; i < winItems.length; i++)
-            html += '<li>' + winItems[i].type + ' | ' + winItems[i].name + ' (<span class="currency dollar">' + winItems[i].price + '</span>)<b class=' + winItems[i].rarity + '></b>';
+            html += '<li>' + winItems[i].type + ' | ' + winItems[i].getName() + ' (<span class="currency dollar">' + winItems[i].price + '</span>)<b class=' + winItems[i].rarity + '></b>';
         $('.your-bet .panel-body').empty().html(html+'</ul>');
         
         $('.status').html('<li id="js-loading-inventory" data-from="1"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></li>');
@@ -76,6 +76,12 @@ $(".choseItems").on("click", function() {
             $('.choice').css('display', 'block');
             $('.status').text('...');
         }, 200);
+        
+        LOG.log({
+            game: 'RPS',
+            action: 'Bet',
+            weapons: winItems
+        })
     })
 
 
@@ -136,8 +142,12 @@ function botAddWeapon(itemsCost) {
                 botWeapons.push(weapon);
             if (wpLength == botWeapons.length) canContinue = true;
         }
-        if (new Date() - oldDate > 7000) {
-            botWeapons = winItems.slice();
+        if (new Date() - oldDate > 4000) {
+            botWeapons = [];
+            for (var i = 0; i < winItems.length; i++) {
+                botWeapons.push(new Weapon(winItems[i]));
+                botWeapons[i].nameTag = null;
+            }
             canContinue = true;
             break;
         }

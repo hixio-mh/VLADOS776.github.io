@@ -42,8 +42,14 @@
     <div id="container">
         <div class="navigationBar" data-menu-EN="Profile" data-menu-RU="Профиль"></div>
         <div class="top__bg"><div class="blured_img"><img src="" class="profile__img"></div></div>
+        <div class='top_panel' style="display:none;">
+            <i class="iFollow fa fa-users" aria-hidden="true"></i>
+            <i class="sign-out fa fa-sign-out" aria-hidden="true"></i>
+        </div>
+        <!--
         <div class="left-side" style="display:none;"> <i class="edit-profile fa fa-pencil-square-o" aria-hidden="true"></i> <i class="save-profile fa fa-floppy-o" aria-hidden="true" style="display:none"></i> </div>
         <div class="right-side" style="display:none;"><i class="sign-out fa fa-sign-out" aria-hidden="true"></i></div>
+        -->
         <div class="top">
             <div class="top__profile">
                 <h1 class="profile__name">Loading...</h1>
@@ -54,15 +60,23 @@
                 <div class="top__trade disabled" disabled="true"><i class="fa fa-exchange" aria-hidden="true"></i></div>
             </div>
         </div>
+        <div class='follow_block text-center'>
+            <button class="btn btn-primary btn-sm" id='follow' style='display: none;'>Follow</button>
+        </div>
         <div class="stats" data-loc-group="stats">
             <div class="stats__rank stats__block">
-                <div class="stats__rank__rank stat__num"></div>
+                <div class="stats__rank__rank stat__num">?</div>
                 <div data-loc="level">Level</div>
             </div>
             <div class="stats__line"></div>
             <div class="stats__inventory stats__block">
                 <div class="stats__inventory__count stat__num">?</div>
                 <div data-loc="inventory">Inventory</div>
+            </div>
+            <div class="stats__line"></div>
+            <div class="stats__followers stats__block">
+                <div class="stats__followers__count stat__num">0</div>
+                <div data-loc="followers">Followers</div>
             </div>
             <div class="stats__line"></div>
             <div class="stats__inventory stats__block">
@@ -74,10 +88,21 @@
                 <div data-loc="reputation">Reputation</div>
             </div>
         </div>
+        
+        <ul class='awards' style="display:none;">
+        </ul>
+        
+        <div class='user_cases'>
+           <div class="well well-sm">
+                <button id="load_user_cases" class="btn btn-primary btn-sm" data-loc='user_cases'>Show user cases</button>
+           </div>
+        </div>
+        
         <div class="moder-menu" style="display: none" data-loc-group="moderator">
             <div class='block-container'><button class="btn btn-primary" data-block='chat' data-loc="chat_ban" data-toggle='modal' data-target='#moder-ban-modal'>Chat ban</button><div class='block-reason' id='block-chat-reason' data-loc="no_ban">Chat doesn't banned</div></div>
             <div class='block-container'><button class="btn btn-primary" data-block='trade' data-loc='trade_ban' data-toggle='modal' data-target='#moder-ban-modal'>Trade ban</button><div class='block-reason' id='block-trade-reason' data-loc="no_ban">Trades doesn't banned</div></div>
         </div>
+        
         <div class="posts">
             <div class="posts__new-post">
                 <div class="new-post__text" contenteditable="true" placeholder="Sup?"></div>
@@ -212,6 +237,17 @@
                             <label><input type='checkbox' id='moder-ban-other_checkbox'> <span data-loc='other'>Other</span></label>
                             <input type='text' class='form-control input-sm' id='moder-ban-other_input' disabled>
                         </div>
+                        <div class='input-group'>
+                           <input type='number' id='moder-ban_time' class='form-control input-sm' value='1'>
+                            <span class="input-group-addon" style="width:0px; padding-left:0px; padding-right:0px; border:none;"></span>
+                            <select id='moder-ban_time-type' class='form-control input-sm'>
+                                <option mult='60000'>min</option>
+                                <option mult='3600000'>hour</option>
+                                <option mult='86400000'>day</option>
+                                <option mult='604800000'>week</option>
+                                <option mult='31536000000'>year</option>
+                            </select>
+                        </div>
                     </div>
                     <div class='modal-footer'>
                         <button class='btn btn-danger' type='button' id='ban_user'>Confirm</button>
@@ -236,7 +272,43 @@
                 </div>
             </div>
         </div>
+        
+        <div id="followers-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Followers</h4>
+                    </div>
+                    <div class="modal-body">
+                       <input type="text" class='form-control input-sm' placeholder="Search..." style='display: none;'>
+                        <ul id="followers-list"></ul>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-default" data-dismiss='modal'>Close</button></div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="pm-modal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <ul id="follow-list"></ul>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-default" data-dismiss='modal'>Close</button></div>
+                </div>
+            </div>
+        </div>
     </div>
+    
+    
+    <!-- TEMPLATES -->
+    <script id="followers-template">
+        <li class='follower' data-uid='${uid}'>
+            <img src="${avatar}">
+            <span>${nickname}</span>
+        </li>
+    </script>
 </body>
 
 </html>

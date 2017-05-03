@@ -5,6 +5,9 @@
     <title>Список кейсов</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
+    <meta property='og:image' content='https://vlados776.github.io/OpenCase_Beta2/images/BigLogo.png'>
+    <meta property='og:title' content='Open Case Simulator'>
+    <meta property='og:description' content='Открывай кейсы, создавай кейсы, собери инвентарь!'>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/rarity.css">
@@ -25,6 +28,7 @@
     <script src="../scripts/quality.js"></script>
     <script src="../scripts/openCase.js"></script>
     <script src="../scripts/navigationMenu.js"></script>
+    
     <link rel="stylesheet" href="../css/navigationMenu.css">
     <style>
         body {
@@ -47,8 +51,11 @@
         <span class='js-secretField' style='display: none'></span>
         
         <div class='news well well-sm'> <span data-loc='news'>
-            Vote for next update <a href="https://www.patreon.com/posts/8183213" target="_blank">HERE</a>
-        </span> </div>
+            <p>Now bottom banner will hide till the end of the day after click.</p>
+            <p>Open up to 5 cases at a time (can lag).</p>
+        </span>
+        </div>
+        
         <div class="cases">
             <div id="Default" class="casesBlock opened">
                 <h1 data-loc="cases">Кейсы</h1></div>
@@ -66,6 +73,30 @@
         <div class="capsules" style='display: none;'>
             <div id="Capsules_default" class="casesBlock">
                 <h1>Капсулы</h1></div>
+        </div>
+        
+        <div id="awards_modal" class="modal fade" role="dialog" data-loc-group='awards_modal'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" data-loc='head'>Awards</div>
+                    <div class="modal-body" data-loc='body'>
+                        <p>Now we have awards in the profile!</p>
+                        <p>However, so far the only for the custom cases. But in the future will be awards for the crash / double / jackpot.</p>
+                        <p>The list of currently available awards:</p>
+                        <ul class='list-unstyled'>
+                            <li><img src='../images/awards/1k.png' width='50px'> — 1000+ open of your case</li>
+                            <li><img src='../images/awards/2k.png' width='50px'> — 2000+ open of your case</li>
+                            <li><img src='../images/awards/3k.png' width='50px'> — 3000+ open of your case</li>
+                            <li><img src='../images/awards/4k.png' width='50px'> — 4000+ open of your case</li>
+                            <li><img src='../images/awards/5k.png' width='50px'> — 5000+ open of your case</li>
+                        </ul>
+                        <p>Current icons are temporary. Then they will be redrawn.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div id="modal-rank" class="modal fade" role="dialog" data-loc-group='special_popup'>
@@ -189,13 +220,13 @@
                         })
                     }, 1000)
                 }
-                if (isAndroid()) {
-                    var version = client.getCurrentAppVersionName();
-                    if (parseFloat(version) < 1.9) {
-                        $('body').append('<div class="new-version"><b>' + Localization.getString('other.new_version.new_version') + '</b><span class="new-version__button" id="new-version__later">' + Localization.getString('other.new_version.later') + '</span><span class="new-version__button" id="new-version__update">' + Localization.getString('other.new_version.update') + '</span></div>');
-                    }
-                }
                 $(document).on('localizationloaded', function () {
+                    if (isAndroid()) {
+                        var version = client.getCurrentAppVersionCode();
+                        if (parseInt(version) < 14) {
+                            $('body').append('<div class="new-version"><b>' + Localization.getString('other.new_version.new_version') + '</b><span class="new-version__button" id="new-version__later">' + Localization.getString('other.new_version.later') + '</span><span class="new-version__button" id="new-version__update">' + Localization.getString('other.new_version.update') + '</span></div>');
+                        }
+                    }
                     checkReward();
                     var $prices = $('.case-price');
                     $prices.each(function () {
@@ -206,6 +237,22 @@
                         }
                     })
                 })
+                
+                if (getURLParameter('start') && isAndroid() && client.getCurrentAppVersionCode() >= 12) {
+                    firebase.auth().onAuthStateChanged(function (user) {
+                        if (user) {
+                            firebase.database().ref('users/' + user.uid + '/private/firebaseToken').set(client.getFirebaseID());
+                            LOG.log('Set firebaseToken');
+                            
+                            firebase.database().ref('users/' + user.uid + '/moder/group').once('value')
+                            .then(function(group) {
+                                if(group.val() != null && group.val().match(/vip/)) {
+                                    client.hideAd();
+                                }
+                            })
+                        }
+                    })
+                }
 
                 function getTimeRemaining(endtime) {
                     if (typeof endtime === 'number') {
@@ -239,7 +286,7 @@
                         // вчера или раньше
                         Level.addEXP(DAILY_REWARD_POINTS);
                         Player.doubleBalance += Level.doubleBonus();
-                        var msg = Localization.getString('other.daily_reward.message');
+                        var msg = Localization.getString('other.daily_reward.message', 'You get daily reward!<br>+${1} EXP | +${2} double points.');
                         msg = msg.replace('${1}', DAILY_REWARD_POINTS);
                         msg = msg.replace('${2}', Level.doubleBonus());
                         Lobibox.notify('info', {
@@ -248,7 +295,7 @@
                             , width: $(window).width()
                             , position: 'top center'
                             , icon: false
-                            , title: Localization.getString('other.daily_reward.title')
+                            , title: Localization.getString('other.daily_reward.title', 'Reward!')
                             , size: 'mini'
                             , showClass: 'fadeInDown'
                             , hideClass: 'fadeOutUp'
@@ -264,7 +311,7 @@
                     if ($(this).hasClass('disabled')) return false;
                     if ($(this).data('case-id') === 'free') {
                         var caseId = parseInt(getStatistic('free-case-opening', -1));
-                        while (caseId == -1) {
+                        while (caseId == -1 && (typeof cases[caseId] === 'undefined' || typeof cases[caseId].show === 'undefined' || !cases[caseId].show)) {
                             caseId = Math.rand(0, cases.length);
                             if (cases[caseId].minLvl || cases[caseId].casesToOpen) caseId = -1;
                         }
@@ -278,27 +325,6 @@
                 $(document).on('click', '#closePopup', function () {
                     $('.popup').css('display', 'none');
                 });
-                if (getStatistic('hash', 0) == 0) {
-                    getInventory().then(function (inventory) {
-                        for (var i = 0; i < inventory.weapons.length; i++) {
-                            updateWeapon(inventory.weapons[i]);
-                        }
-                        var balance = getStatistic('doubleBalance', 0, false);
-                        var exp = getStatistic('playerPoints', 0, false);
-                        saveStatistic('hash', 1);
-                        saveStatistic('doubleBalance', balance, 'Number', true);
-                        saveStatistic('playerPoints', exp, 'Number', true);
-                        try {
-                            LOG.log({
-                                action: 'Inventory updated'
-                                , inventoryCount: inventory.count
-                            })
-                        }
-                        catch (e) {
-                            console.log(e);
-                        }
-                    })
-                }
             });
             $(document).on('click', '#new-version__update', function () {
                 location = 'https://play.google.com/store/apps/details?id=csgo.opencase';

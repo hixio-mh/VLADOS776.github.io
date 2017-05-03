@@ -4,6 +4,9 @@ var item_proto = {
         prefix = window.location.protocol == "http:" ? prefix.replace("https", "http") : prefix;
         var postfix = "/124fx124f";
         var postfixBig = "/383fx383f";
+
+        if (this.img.indexOf('http') != -1) return this.img;
+        
         if (typeof this.img == 'undefined') return "../images/none.png";
         if (this.img.indexOf("images/") != -1)
             if (typeof big != "undefined") {
@@ -48,14 +51,20 @@ function Item(config, type) {
 
 function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     if (typeof item_id == 'object') {
-        quality = item_id.quality || 0;
-        stattrak = item_id.stattrak || item_id.statTrak || false;
-        souvenir = item_id.souvenir || false;
-        isNew = item_id.new || false;
+        var quality = item_id.quality || 0;
+        var stattrak = item_id.stattrak || item_id.statTrak || false;
+        var souvenir = item_id.souvenir || false;
+        var isNew = item_id.new || false;
+        var nameTag = item_id.nameTag ? item_id.nameTag : item_id.extra ? item_id.extra.nameTag : null;
+        var pattern = item_id.pattern != null ? item_id.pattern : item_id.extra != null ?
+            item_id.extra.pattern : null;
         item_id = item_id.item_id || 0;
     }
     if (item_id > Items.weapons.length)
         item_id = 0;
+    
+    if (nameTag && nameTag.length > 20) 
+        nameTag = nameTag.match(/.{1,20}/g)[0].trim();
     
     // Const
     this.itemType = 'weapon';
@@ -74,17 +83,31 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     this.type = this.old.type;
     this.nameOrig = this.old.skinName;
     this.name = getSkinName(this.nameOrig, Settings.language);
+    this.nameTag = XSSreplace(nameTag);
     this.img = this.old.img;
     this.price = this.getPrice();
+    
+    this.allPrices = Prices[this.item_id] ? Prices[this.item_id].prices ? Prices[this.item_id].prices : {} : {};
+    
+    this.allPrices.default = this.allPrices.default || {};
+    this.allPrices.stattrak = this.allPrices.stattrak || {};
+    this.allPrices.souvenir = this.allPrices.souvenir || {};
     
     this.item_id = parseInt(this.item_id);
     this.quality = parseInt(this.quality);
     
     if (isNaN(this.item_id)) this.item_id = 0;
     if (isNaN(this.quality)) this.quality = 0;
+    
+    this.priceType = this.stattrak ? 'stattrak' : this.souvenir ? 'souvenir' : 'default';
 
     if ((this.price == 0 || this.price == -1) && qualityNotSet)
         this.qualityRandom();
+    
+    if (pattern != null) {
+        this.pattern = pattern;
+        this.img = this.old.patterns[this.pattern].img
+    }
 
     //this.can.inCase - 
     //Для оружия, которое удалили из коллекции. Например Howl в Huntsman.
@@ -107,7 +130,21 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
         this.can.stickers = false;
     if (this.souvenir || this.rarity == 'rare' || this.rarity == 'covert' || this.rarity == 'extraordinary')
         this.can.contract = false;
-}
+    
+    try {
+        if (Prices[this.item_id].prices.souvenir) {
+            if (Object.keys(Prices[this.item_id].prices.souvenir).length > 0) {
+                this.can.souvenir = true;
+                this.can.stattrak = false;
+            } else if (Object.keys(Prices[this.item_id].prices.souvenir).length == 0 && Object.keys(Prices[this.item_id].prices.stattrak).length == 0) {
+                this.can.souvenir = false;
+                this.can.stattrak = false;
+            }
+        }
+    } catch (e) {
+        throw new Error('Prices is undefined. Weapon ' + this.item_id);
+    }
+} 
 
 // === Prototypes ===
 
@@ -127,13 +164,16 @@ Weapon.prototype.collection = function () {
 }
 
 Weapon.prototype.saveObject = function () {
-    return {
+    var saveObj = {
         item_id: this.item_id,
         quality: this.quality,
         stattrak: this.stattrak,
         souvenir: this.souvenir,
         new: this.new
-    }
+    };
+    if (this.nameTag) saveObj.nameTag = this.nameTag;
+    if (this.pattern != null) saveObj.pattern = this.pattern;
+    return saveObj;
 }
 
 Weapon.prototype.tradeObject = function () {
@@ -143,7 +183,7 @@ Weapon.prototype.tradeObject = function () {
     };
     if (this.stattrak) trObj.stattrak = this.stattrak;
     if (this.souvenir) trObj.souvenir = this.souvenir;
-
+    if (this.nameTag) trObj.nameTag = this.nameTag;
     return trObj;
 }
 
@@ -172,7 +212,7 @@ Weapon.prototype.getPrice = function () {
 }
 
 Weapon.prototype.stattrakRandom = function () {
-    if (this.type.souvenir || this.can.stattrak == false) {
+    if (this.type.souvenir || this.can.stattrak == false || Object.keys(this.allPrices.stattrak).length == 0) {
         this.stattrak = false;
         return false;
     }
@@ -194,30 +234,69 @@ Weapon.prototype.stattrakRandom = function () {
 
 Weapon.prototype.qualityRandom = function (count) {
     count = count || 0;
-    var sumChanses = 0;
-    var sumWeights = 0;
-    var random = Math.random();
-    for (var i = 0; i < Quality.length; i++) {
-        sumChanses += Quality[i].chance;
-    }
-    for (var i = 0; i < Quality.length; i++) {
-        var weight = Quality[i].chance / sumChanses;
-        Quality[i].weight = weight;
-    }
-    for (var i = 0; i < Quality.length; i++) {
-        sumWeights += Quality[i].weight;
-    }
-    var cursor = 0;
-    for (var i = 0; i < Quality.length; i++) {
-        cursor += Quality[i].weight / sumWeights;
-        if (cursor >= random) {
-            this.quality = i;
-            this.price = this.getPrice();
-            if ((this.price == 0 || this.price == -1) && count < 5)
-                this.qualityRandom(++count);
-            else
-                return i;
+    if (this.allPrices != null) {
+        var prices = this.stattrak ? this.allPrices.stattrak : this.souvenir ? this.allPrices.souvenir : this.allPrices.default;
+        
+        var sorted = Object.keys(prices).sort(function(a,b) {
+            var A = typeof prices[a] == 'number' ? prices[a] : prices[a].market > 0 ? prices[a].market : prices[a].analyst > 0 ? prices[a].analyst : prices[a].opskins;
+            var B = typeof prices[b] == 'number' ? prices[b] : prices[b].market > 0 ? prices[b].market : prices[b].analyst > 0 ? prices[b].analyst : prices[b].opskins;
+            return B - A
+        });
+        
+        var sumChances = (function() {
+            var sum = 0;
+            for (var i = 0; i < sorted.length; i++) {
+                sum += (i+1) * 10;
+            }
+            return sum;
+        })();
+        
+        var random = Math.rand(0, sumChances);
+        var cursor = 0;
+        
+        for (var i = 0; i < sorted.length; i++) {
+            cursor += (i+1) * 10;
+            if (cursor >= random) {
+                this.quality = parseInt(sorted[i]);
+                this.price = this.getPrice();
+                if ((this.price == 0 || this.price == -1) && count < 5)
+                    this.qualityRandom(++count);
+                else
+                    if (this.old.chances && this.old.chances[this.priceType] && this.old.chances[this.priceType][this.quality]) {
+                        var rnd = Math.rand(0, 100);
+                        if (rnd > this.old.chances[this.priceType][this.quality]) {
+                            return this.qualityRandom(++count);
+                        }
+                    }
+                    return this.quality;
+            }
+        } 
+    } else {
+        var sumChanses = 0;
+        var sumWeights = 0;
+        var random = Math.random();
+        for (var i = 0; i < Quality.length; i++) {
+            sumChanses += Quality[i].chance;
         }
+        for (var i = 0; i < Quality.length; i++) {
+            var weight = Quality[i].chance / sumChanses;
+            Quality[i].weight = weight;
+        }
+        for (var i = 0; i < Quality.length; i++) {
+            sumWeights += Quality[i].weight;
+        }
+        var cursor = 0;
+        for (var i = 0; i < Quality.length; i++) {
+            cursor += Quality[i].weight / sumWeights;
+            if (cursor >= random) {
+                this.quality = i;
+                this.price = this.getPrice();
+                if ((this.price == 0 || this.price == -1) && count < 5)
+                    this.qualityRandom(++count);
+                else
+                    return i;
+            }
+        } 
     }
 }
 
@@ -236,7 +315,11 @@ Weapon.prototype.specialText = function () {
 }
 
 Weapon.prototype.titleText = function () {
-    return this.specialText() + this.type + " | " + this.name
+    return this.specialText() + this.type + " | " + (this.nameTag ? '"'+this.nameTag+'"' : this.name)
+}
+
+Weapon.prototype.getName = function() {
+    return this.nameTag ? '"' + this.nameTag + '"' : this.name;
 }
 
 Weapon.prototype.hash = function(id) {
@@ -254,6 +337,83 @@ Weapon.prototype.hash = function(id) {
     return hex_md5(JSON.stringify(hash_obj))
 }
 
+Weapon.prototype.getExtra = function() {
+    var extra = {};
+    extra.hash = this.hash();
+    if (this.nameTag != null) extra.nameTag = this.nameTag;
+    if (this.pattern != null) extra.pattern = this.pattern;
+    return extra;
+}
+
+Weapon.prototype.toLi = function(config) {
+    config = config || {};
+    config.new = typeof config.new === 'undefined' ? true : config.new;
+    config.nameTagIcon = typeof config.nameTagIcon === 'undefined' ? true : config.nameTagIcon;
+    
+    config.ticker = typeof config.ticker === 'undefined' ? true : config.ticker;
+    var ticker_limit = config.ticker_limit || window.innerWidth <= 433 ? 16 : 20;
+    
+    var li = '<li class="weapon' + (config.new && this.new ? ' new-weapon' : '') + '" data-item_id=' + this.item_id + ' '+ (this.id ? 'data-id='+this.id : '') +'>';
+    if (config.nameTagIcon && this.nameTag) {
+        li += '<div class="weapon_nameTagIcon"></div>'
+    }
+    if (config.price) {
+        li += '<i class="currency dollar">' + this.price + '</i>';
+    }
+    if (config.lazy_load) {
+        li += '<img data-src="' + this.getImgUrl() + '" />';
+    } else {
+        li += '<img src="' + this.getImgUrl() + '" />';
+    }
+    
+    var type = this.specialText() + this.type;
+    var name = config.nameTag == true && this.nameTag ? '"' + this.nameTag + '"' : this.name
+    
+    li += '<div class="weaponInfo ' + this.rarity + '">\
+            <div class="type' + (Settings.scroll_names && config.ticker && type.length >= ticker_limit ? ' text-ticker' : '') + '">\
+                <span>' + type + '</span>\
+            </div><div class="name' + (Settings.scroll_names && config.ticker && name.length >= ticker_limit ? ' text-ticker' : '') + '">\
+                <span>' + name + '</span>\
+            </div>\
+           </div>';
+    li += '</li>'
+    
+    return li;
+}
+
+Weapon.prototype.patternRandom = function() {
+    if (this.old.patternChance) {
+        var rnd = Math.rand(0, 100);
+        if (rnd < this.old.patternChance) {
+            return this.changePattern();
+        }
+    }
+    return null;
+}
+
+Weapon.prototype.changePattern = function(id) {
+    if (typeof id == 'undefined') {
+        var sumChances = this.old.patterns.reduce(function(sum, curr) {
+            return sum + curr.chance;
+        }, 0);
+        var rnd = Math.rand(0, sumChances);
+        
+        var cursor = 0;
+        for (var i = 0; i < this.old.patterns.length; i++) {
+            cursor += this.old.patterns[i].chance;
+            if (cursor >= rnd) {
+                this.pattern = i;
+                this.img = this.old.patterns[i].img;
+                return i;
+            }
+        }
+    } else {
+        this.pattern = id;
+        this.img = this.old.patterns[id].img;
+        return id;
+    }
+}
+
 // === Functions ===
 
 function getRandomWeapon(opt) {
@@ -264,12 +424,13 @@ function getRandomWeapon(opt) {
     souvenir = opt.souvenir || false;
 
     opt = {
+        item_id: item_id,
         quality: quality,
         stattrak: stattrak,
         souvenir: souvenir
     };
 
-    var weapon = new Weapon(item_id, quality, stattrak, souvenir);
+    var weapon = new Weapon(opt);
     if (weapon.price === 0) {
         var newPrice = getPriceWithNewQuality(item_id, opt);
         if (newPrice.price != 0) {
@@ -430,8 +591,45 @@ function getStickerById(id) {
     }
 }
 
-// === Items ===
+/*
+Item object
+ {
+    id: 0 - Item id
+    type: "AWP" - Item type
+    skinName: "BOOM" - Item name
+    rarity: "consumer" - Item raryty
+    img: "asdf.png" - Item image
+    "can": {
+        "buy": false, - Can you buy item in market
+        "sell": true, - Can you sell item
+        "trade": true, - Can you trade item
+        "contract": true, - Can you use item in trade up contract
+        "bot": true, - Can bots use item
+        "stattrak": true, - Can item be StatTrak
+        "souvenir": false, - Can item be Souvenir
+        "inCase": true, - Can item be in case
+        "specialCase": true - Can item be in special case
+      }
+    chances: { - Slef chances for item
+        default: { - If item is default
+            4: 20 - Chance for Factory New item
+        },
+        stattrak: { - If item is StatTrak
+            4: 10 - Chance for Factory New item
+        }
+    }
+    patternChance: 35 - Chance for change default pattern
+    patterns: [ - Different patterns for item
+        {
+            img: 'sff.png' - Pattern img
+            chance: 20 - Pattern chance
+        }
+    ]
+ }
 
+*/
+
+// === Items ===
 var Items = {
     weapons: [{
         id: 0,
@@ -5432,7 +5630,624 @@ var Items = {
             specialCase: false
         },
         img: "Other/AK-47-Ganesha.png"
-    }],
+    }, {
+        id: 798,
+        type: "P250",
+        skinName: "Ripple",
+        rarity: "milspec",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhh3szYI2gS08-mgZSFnvzLP7LWnn8fu50m3L-Uptys3wG1qhJoY2n1cNLEdVc8ZV3T-QDtwLzvgMe67puYwWwj5Hf4p3Uhrg"
+    }, {
+        id: 799,
+        type: "Sawed-Off",
+        skinName: "Zander",
+        rarity: "milspec",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3cCx9_92hkYSEkfHLKbrfkm5Duvp9g-7J4cKg2QCy_BBqMG_zIoScdA49aQ7V_FG8webogsK7u5vLmndqvnRx4S2JgVXp1gGJxOF0"
+    }, {
+        id: 800,
+        type: "MP7",
+        skinName: "Akoben",
+        rarity: "milspec",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6ryFBRw7P7YJgJW_tW0lYy0jvL4P7TGqWdY781lxLjCpdnx2gPg80Q6Njv2cI6XJw4_Z13X-FC3xey61JXtupqczyAyuSM8pSGKG3rzCmA"
+    }, {
+        id: 801,
+        type: "PP-Bizon",
+        skinName: "Jungle Slipstream",
+        rarity: "milspec",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotLO_JAlf2-r3czRY49KJgI-ZmcjzIb7UmFRd4cJ5nqeQ9I2l3wKxrxZqMmv2JYfHJAA5Zw6GqFDtxL_s0Mfq78zOyCFmsnEk-z-DyIQLMxpA"
+    }, {
+        id: 802,
+        type: "SCAR-20",
+        skinName: "Blueprint",
+        rarity: "milspec",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbmkOVUw7PDdTj9O-dmmhomFg8jnMLrDqWdY781lxLDAot3w0AXt-hBuMWvzLIfDd1BqYlDY_ge7xrjmhJ-6up6by3Q27yU8pSGKGwiMA-c"
+    }, {
+        id: 803,
+        type: "Five-SeveN",
+        skinName: "Capillary",
+        rarity: "milspec",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goWYkuHxPYTHk2Jf18l4jeHVu9ij3FG3_UptMWqgJ9WcIQ48aQmB-wC2leq6h8S8u5udmCNn6Cdz4SnD30vgWlTck20"
+    }, {
+        id: 804,
+        type: "Desert Eagle",
+        skinName: "Oxide Blaze",
+        rarity: "milspec",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposr-kLAtl7PDdTjlH_9mkgL-OlvD4NoTSmXlD58F0hNbN_Iv9nBrhrRc5YTqgJdWcIA48M1iF81m8wurrgMW76s_LmydguSRwtn3VmUThn1gSOZyN_0a1"
+    }, {
+        id: 805,
+        type: "MAC-10",
+        skinName: "Last Dive",
+        rarity: "restricted",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7umeldf0vL3fDxBvYyJgIiOqPv1IK_ukmJH7fp9g-7J4cLwiQDm_RdpMGjxI9OXdQ5oYw2F_Vjsw-u715futZ2cyXFmv3EksS3fgVXp1layEcKi"
+    }, {
+        id: 806,
+        type: "UMP-45",
+        skinName: "Scaffold",
+        rarity: "restricted",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo7e1f1Jf1OD3ZDBS0920jZOYqPv9NLPF2D4EsZQh2LCZ9Nr3jQ22-0RtYmz1cdCUdQBvYlmE-Fe-wem7jJTovMvXiSw0GHO1Iuc"
+    }, {
+        id: 807,
+        type: "XM1014",
+        skinName: "Seasons",
+        rarity: "restricted",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgporrf0e1Y07PLZTiVP09CzlYa0kfbwNoTdn2xZ_It33byS99333wXkqktsYWqmJo-cJgc3YFCDq1C7wbzrh5K0v86YyCE3pGB8sheESime"
+    }, {
+        id: 808,
+        type: "M249",
+        skinName: "Emerald Poison Dart",
+        rarity: "restricted",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-jxcjhzw8zFI2kb09qkm4e0mOX9NLLfl2du5Mx2gv2Pot-m2VG2-BdqZG-mdtLDelJoZlmBrgO7ybzrhsfp7ZvKz3Rj7Ccq4GGdwUJpddwSYA"
+    }, {
+        id: 809,
+        type: "Galil AR",
+        skinName: "Crimson Tsunami",
+        rarity: "restricted",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbupIgthwczbYQJF7dC_mL-cluHxDLfYkWNFppVw3r6XpIn3igLi-0duazj0I9eTcAQ2aV3Q_1XrwL3rgcXqvJ7AzHt9-n51xe-nTf0"
+    }, {
+        id: 810,
+        type: "CZ75-Auto",
+        skinName: "Xiangliu",
+        rarity: "classified",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotaDyfgZf1OD3cid9_9K3n4WYqOfhIavdk1Rd4cJ5nqfApdqg0Q2yqhFtN27wJ4OXJFI3ZliGqVG9xOi8h5e575jJmiNk7ylz-z-DyEHqwXVj"
+    }, {
+        id: 811,
+        type: "AWP",
+        skinName: "Fever Dream",
+        rarity: "classified",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJS_8W1nI-bluP8DLfYkWNFppQgj7yV9Nqi2Fbj_Eo5Ym72I9XGJwc2NAnS_1Pqxu6615W575uYznd9-n51iddPieY"
+    }, {
+        id: 812,
+        type: "M4A1-S",
+        skinName: "Decimator",
+        rarity: "classified",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uOxh7-Gw_alDL_UlWJc6dF-mNbN_Iv9nBrhqhVkYTz6LYSScVBtMliB_gDqwuu9h5-7vc_PynVrvXV37HfUyxPmn1gSOa-1kwUB"
+    }, {
+        id: 813,
+        type: "AK-47",
+        skinName: "Bloodsport",
+        rarity: "covert",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV0966m4-PhOf7Ia_ummJW4NFOhujT8om73ASy-0RqNW-hLYTAcg5vMgvT_Vm4wefthpO_v8yYwHVlsicr4C3fzQv330_79eypFA"
+    }, {
+        id: 814,
+        type: "USP-S",
+        skinName: "Neo-Noir",
+        rarity: "covert",
+        img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh-TLPbTYhFRd4cJ5nqfE8dzz3Abg_hBtMWDzJ4fGdFI6YFjT-lHtlOi70Jfqvcifm3Vmvigj-z-DyA8aEmbE"
+    },{
+      "id": 815,
+      "type": "★ Huntsman Knife",
+      "skinName": "Damascus Steel",
+      "rarity": "rare",
+      "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJfx_LLZTRB7dCJlZG0k_b5MqjSg3husZVOhuDG_ZjKhFWmrBZyNWHycNPDdg43Z17Rq1C2kLvogZfvuJTJyHM3vSB05HnemhC10kwfO_sv26Ix5Gf1Rg",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    },{
+      "id": 816,
+      "type": "★ Butterfly Knife",
+      "skinName": "Damascus Steel",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_aq_damascus_90_light_large.f6eecc56e9d69742d80ad0bf59695a89cb8d9684.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 817,
+      "type": "★ Bowie Knife",
+      "skinName": "Damascus Steel",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_aq_damascus_90_light_large.b53066882790815ba15f508ac268f29cd6cedf2a.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 818,
+      "type": "★ Falchion Knife",
+      "skinName": "Damascus Steel",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aq_damascus_90_light_large.9bd7e0f1d32a177ab01bc8c52a51dac9ad61e5a9.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 819,
+      "type": "★ Shadow Daggers",
+      "skinName": "Damascus Steel",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_aq_damascus_90_light_large.682e0e63f745ebea76a093e8ff4f7cdb17d5d093.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 820,
+      "type": "★ Falchion Knife",
+      "skinName": "Doppler",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_am_doppler_phase2_light_large.40d335a80eef9b10c695e9907aabe7da9b7d704c.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 821,
+      "type": "★ Shadow Daggers",
+      "skinName": "Doppler",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_am_doppler_phase2_b_light_large.516d6cf5e16c964cd35b839a2b8b6f62ad564083.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 822,
+      "type": "★ Shadow Daggers",
+      "skinName": "Marble Fade",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_am_marble_fade_light_large.fce3f43a307394dcfa71988787dbb5d2ef6a3611.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 823,
+      "type": "★ Falchion Knife",
+      "skinName": "Marble Fade",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_am_marble_fade_light_large.6702e01c69bbdd050ed27964385eaf57fd96d579.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 824,
+      "type": "★ Huntsman Knife",
+      "skinName": "Rust Coat",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_aq_steel_knife_light_large.1e93732da4a5534deaa88e65c22274c57f2cd924.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 825,
+      "type": "★ Bowie Knife",
+      "skinName": "Rust Coat",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_aq_steel_knife_light_large.3a61b0cf23bfa737be1cac012f4cdcde14347921.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 826,
+      "type": "★ Falchion Knife",
+      "skinName": "Rust Coat",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aq_steel_knife_light_large.6d5b1f9bbc924ae1335175a262a69b1587448ccc.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 827,
+      "type": "★ Butterfly Knife",
+      "skinName": "Rust Coat",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_aq_steel_knife_light_large.033e7505158efd2a1758a7144ccccfb554fcf576.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 828,
+      "type": "★ Shadow Daggers",
+      "skinName": "Rust Coat",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_aq_steel_knife_light_large.2753f1bc2008c99c34103b2b247801d3eb881d20.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 829,
+      "type": "★ Shadow Daggers",
+      "skinName": "Tiger Tooth",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_an_tiger_orange_light_large.dc3ed0014b7b2024a7fbcaaaca1fbbfae3331735.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 830,
+      "type": "★ Falchion Knife",
+      "skinName": "Tiger Tooth",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_an_tiger_orange_light_large.c467ce8f738dd9bce8cd7af54610f9186dadd362.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 831,
+      "type": "★ Falchion Knife",
+      "skinName": "Ultraviolet",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_so_purple_falchion_light_large.010830e050576efeb80b3e046d9dccf6ee21c31b.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 832,
+      "type": "★ Huntsman Knife",
+      "skinName": "Ultraviolet",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_cu_purple_huntsman_light_large.3d9355c0a0c0c170d10856ebc2492fef61832fbc.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 833,
+      "type": "★ Bowie Knife",
+      "skinName": "Ultraviolet",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_so_purple_light_large.af202da5d81b8667477667b6db332769a96bf80e.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": false,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 834,
+      "type": "★ Shadow Daggers",
+      "skinName": "Ultraviolet",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_so_purple_light_large.af1841afc5146b836e87e6afab49f9a78d90ed1b.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+      "id": 835,
+      "type": "★ Butterfly Knife",
+      "skinName": "Ultraviolet",
+      "rarity": "rare",
+      "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_so_purple_light_large.116c48bf6a4a33f56d11b3204919422aa58f9337.png",
+      "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+      }
+    }, {
+        "id": 836,
+        "type": "M4A1-S",
+        "skinName": "Froststorm",
+        "rarity": "covert",
+        "img": "Other/M4A4-S-Froststorm.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false
+        }
+    }, {
+        "id": 837,
+        "type": "P250",
+        "skinName": "Zipper",
+        "rarity": "milspec",
+        "img": "Workshop3/P250-Zipper.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 838,
+        "type": "Sawed-Off",
+        "skinName": "Purple Maniac",
+        "rarity": "restricted",
+        "img": "Workshop3/Sawed-Off-Purple-Maniac.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 839,
+        "type": "M4A4",
+        "skinName": "Demon Attack",
+        "rarity": "restricted",
+        "img": "Workshop3/M4A4-Demon-Attack.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 840,
+        "type": "Five-SeveN",
+        "skinName": "Bad Queen",
+        "rarity": "milspec",
+        "img": "Workshop3/Five-seven-Bad-Queen.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 841,
+        "type": "Desert-Eagle",
+        "skinName": "Trigger Happy",
+        "rarity": "classified",
+        "img": "Workshop3/Desert-Eagle-Trigger-Happy.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 842,
+        "type": "AWP",
+        "skinName": "White Boom",
+        "rarity": "covert",
+        "img": "Workshop3/AWP-White-Boom.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        }
+    }, {
+        "id": 843,
+        "type": "★ Huntsman Knife",
+        "skinName": "PurpNYellow",
+        "rarity": "rare",
+        "img": "Workshop3/Huntsman-PurpNYellow.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        },
+        chances: {
+            default: {
+                4: 20
+            },
+            stattrak: {
+                4: 10
+            }
+        }
+    }, {
+        "id": 844,
+        "type": "Karambit",
+        "skinName": "Soul",
+        "rarity": "rare",
+        "img": "Workshop3/Karambit-Soul.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        },
+        chances: {
+            default: {
+                4: 20
+            },
+            stattrak: {
+                4: 10
+            }
+        }
+    }, {
+        "id": 845,
+        "type": "Five-SeveN",
+        "skinName": "Celtic Wyvern",
+        "rarity": "restricted",
+        "img": "Workshop3/Five-seven-Celtic-Wyvern.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "trade": false,
+            "bot": false
+        },
+        patternChance: 20,
+        patterns: [
+            {
+                img: 'Workshop3/Five-seven-Celtic-Wyvern-(Green).png',
+                chance: 20
+            }, {
+                img: 'Workshop3/Five-seven-Celtic-Wyvern-(Blue).png',
+                chance: 50
+            }
+        ]
+    }
+    ],
+    
+    /* ===== STICKERS ===== */
     stickers: [{
         id: 0,
         name: "Skull Troop",

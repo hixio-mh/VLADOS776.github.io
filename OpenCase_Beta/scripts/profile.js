@@ -1,7 +1,8 @@
 $(document).on('click', '#registerButton', function () {
     if ($(this).hasClass('empty')) {
-        $('#nickname').show();
+        $('#nickname-group').show();
         $(this).removeClass('empty');
+        $(this).removeClass('text-primary');
         $('#loginButton').hide();
         $('#nickname').val(Player.nickname);
     }
@@ -18,13 +19,13 @@ $(document).on('click', '#registerButton', function () {
     }
 });
 var fbProfile = (function (module) {
-    'use strict';
+    //'use strict';
     module = module || {};
     module.register = function () {
         var email = $("#email").val() || "";
         var password = $("#password").val() || "";
         
-        var androidID = "nope";
+        var androidID = null;
         if (isAndroid())
             androidID = client.getAndroidID();
         
@@ -116,11 +117,16 @@ var fbProfile = (function (module) {
         }
         firebase.database().ref('users/'+uid+'/private/androidID').once('value').then(function(snapshot) {
             callback(snapshot.val());
-        })        
+        })
     }
     module.setAndroidID = function() {
-        if (isAndroid() && module.ifAuth && parseFloat(client.getCurrentAppVersionName()) >= 1.6) {
+        if (isAndroid() && module.ifAuth) {
             firebase.database().ref('users/'+currUid()+'/private/androidID').set(client.getAndroidID());
+        }
+    }
+    module.setFirebaseToken = function() {
+        if (isAndroid() && module.ifAuth) {
+            firebase.database().ref('users/' + currUid() + '/private/firebaseToken').set(client.getFirebaseID());
         }
     }
     module.ifValidNickname = function (nick) {
@@ -144,24 +150,41 @@ var fbProfile = (function (module) {
         })
     }
     module.showProfile = function (uid, callback) {
-        var userInfoRef = firebase.database().ref('users/' + uid + '/public');
-        userInfoRef.once('value').then(function (snapshot) {
-            var userInfo = snapshot.val();
+        var userInfoRef = firebase.database().ref('users/' + uid);
+        userInfoRef.child('public').once('value').then(function (snapshot) {
+            
+            var userInfo = {
+                public: snapshot.val()
+            }
             userInfo.uid = uid;
             return userInfo;
         }).then(function(userInfo) {
-            return firebase.database().ref('users/' + uid + '/moder').once('value').then(function(snapshot) {
-                var info = snapshot.val();
-                userInfo.moder = info || {};
-                return userInfo;
+            return userInfoRef.child('moder').once('value').then(function(data) {
+                userInfo.moder = data.val();
+                return userInfo
             })
         }).then(function(userInfo) {
-            callback(userInfo);
+            userInfoRef.child('auto').once('value').then(function(data) {
+                userInfo.auto = data.val();
+                callback(userInfo);
+                //return userInfo
+            })
         }).catch(function(err) {
             console.log(err);
             callback(null);
         })
         if (isAndroid()) client.sendToAnalytics('Profile', 'Show profile', "User open profile", 'none');
+    }
+    module.profilePublic = function (uid, callback) {
+        var userInfoRef = firebase.database().ref('users/' + uid + '/public');
+        userInfoRef.once('value').then(function (snapshot) {
+            var userInfo = snapshot.val();
+            userInfo.uid = uid;
+            callback(userInfo);
+        }).catch(function(err) {
+            console.log(err);
+            callback(null);
+        })
     }
     module.showRep = function (uid, callback) {
         var userInfoRef = firebase.database().ref('users/' + uid + '/outside/rep');
@@ -224,12 +247,82 @@ var fbProfile = (function (module) {
         if (email == "" || password == "") {
             return false;
         }
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+        saveStatistic('fbDouble', 'no auth');
+        saveStatistic('fbEXP', 'no auth');
+        
+        firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(function(user) {
+            //'use strict';
+            if (user.uid) {
+                
+                Promise.all([
+                    firebase.database().ref('users/' + user.uid + '/public').once('value'),
+                    firebase.database().ref('users/' + user.uid + '/private').once('value'),
+                    firebase.database().ref('users/' + user.uid + '/settings').once('value')
+                ]).then(function(results) {
+                    var public = results[0].val();
+                    var private = results[1].val();
+                    var settings = results[2].val();
+                    
+                    Player.doubleBalance = private.double;
+                    Player.avatar = public.avatar;
+                    Player.nickname = public.nickname;
+                    Player.points = public.points;
+                    
+                    saveStatistic("playerNickname", Player.nickname);
+                    saveStatistic("doubleBalance", Player.doubleBalance);
+                    saveStatistic("playerAvatar", Player.avatar);
+                    saveStatistic('playerPoints', Player.points);
+                    
+                    Settings.drop = settings.drop;
+                    Settings.language = settings.language;
+                    Settings.sound = settings.sound;
+                    
+                    saveStatistic('settings_language', Settings.language);
+                    saveStatistic('settings_sounds', Settings.sounds);
+                    saveStatistic('settings_drop', Settings.drop);
+                    
+                    saveStatistic('fbDouble', Player.doubleBalance);
+                    saveStatistic('fbEXP', Player.points);
+                    
+                    // change in Menu
+                    $('.menu_ava').attr('src', Player.avatar);
+                    $('.menu_playerInfo_name').text(Player.nickname);
+                })
+            }
+        })            
+        .catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
             $("#login-status").text(error.message);
         });
         module.saveAuthToPhone();
+    }
+    module.logout = function() {
+        firebase.auth().signOut();
+        
+        Player.doubleBalance = 10000;
+        Player.avatar = '../images/ava/0.jpg';
+        Player.nickname = 'Player';
+        Player.points = 0;
+
+        saveStatistic("playerNickname", Player.nickname);
+        saveStatistic("doubleBalance", Player.doubleBalance);
+        saveStatistic("playerAvatar", Player.avatar);
+        saveStatistic('playerPoints', Player.points);
+
+        Settings.drop = false;
+        Settings.sound = true;
+        
+        saveStatistic('settings_sounds', Settings.sounds);
+        saveStatistic('settings_drop', Settings.drop);
+        
+        saveStatistic('fbDouble', 'no auth');
+        saveStatistic('fbEXP', 'no auth');
+
+        // change in Menu
+        $('.menu_ava').attr('src', Player.avatar);
+        $('.menu_playerInfo_name').text(Player.nickname);
     }
     module.newTrade = function (uidTo, weapons, accepted, callback) {
         if (!module.ifAuth) return false;
@@ -381,7 +474,7 @@ var fbProfile = (function (module) {
             var weapons = data.val();
             if (weapons != null) {
                 for (var i = 0; i < weapons.length; i++) {
-                    var wp = fbInventory.reverseConvert(weapons[i]);
+                    var wp = new Weapon(weapons[i]);
                     wp.new = true;
                     saveWeapon(wp);
                 }
@@ -430,4 +523,186 @@ var fbProfile = (function (module) {
         }
     }
     return module;
-}(fbProfile || {}))
+}(fbProfile || {}));
+
+var Trades = (function(module) {
+    module = module || {};
+    
+    module.currentTrade = {};
+    
+    module.getTrade = function(tradeID, opt, callback) {
+        if (typeof opt === 'function') {
+            callback = opt;
+            opt = {
+                setCurrent: true
+            };
+        }
+        firebase.database().ref('/trades/' + tradeID).once('value', function(snapshot) {
+            var trade = snapshot.val();
+            
+            var result = {
+                isDone: false,
+                isCanceled: false,
+                tradeID: tradeID
+            };
+            
+            result.Player1 = {
+                uid: trade.tradeInfo.Player1,
+                ready: false,
+                items: [],
+                getWeapons: false
+            };
+            result.Player2 = {
+                uid: trade.tradeInfo.Player2,
+                ready: false,
+                items: [],
+                getWeapons: false
+            };
+            
+            if (trade[result.Player1.uid]) {
+                result.Player1.items = trade[result.Player1.uid]
+            }
+            if (trade[result.Player2.uid]) {
+                result.Player2.items = trade[result.Player2.uid]
+            }
+            
+            if (trade.tradeInfo[result.Player1.uid]) {
+                if (trade.tradeInfo[result.Player1.uid].accepted != null) {
+                    result.Player1.ready = trade.tradeInfo[result.Player1.uid].accepted == false ? false : true;
+                    result.Player1.readyTime = trade.tradeInfo[result.Player1.uid].accepted
+                    result.Player1.watched = true;
+                } else {
+                    result.Player1.ready = false;
+                    result.Player1.watched = false;
+                }
+                if (trade.tradeInfo[result.Player1.uid].getWeapons != null) {
+                    result.Player1.getWeapons = true;
+                    result.Player1.getWeaponsTime = trade.tradeInfo[result.Player1.uid].getWeapons;
+                }
+            }
+            if (trade.tradeInfo[result.Player2.uid]) {
+                if (trade.tradeInfo[result.Player2.uid].accepted != null) {
+                    result.Player2.ready = trade.tradeInfo[result.Player2.uid].accepted == false ? false : true;
+                    result.Player2.readyTime = trade.tradeInfo[result.Player2.uid].accepted
+                    result.Player2.watched = true;
+                } else {
+                    result.Player2.ready = false;
+                    result.Player2.watched = false;
+                }
+                if (trade.tradeInfo[result.Player2.uid].getWeapons != null) {
+                    result.Player2.getWeapons = true;
+                    result.Player2.getWeaponsTime = trade.tradeInfo[result.Player2.uid].getWeapons;
+                }
+            }
+            
+            if (trade.tradeInfo.status != null) {
+                result.status = trade.tradeInfo.status;
+                if (trade.tradeInfo.status == 'done') {
+                    result.isDone = true;
+                } else if (trade.tradeInfo.status == 'canceled') {
+                    result.isCanceled = true;
+                }
+            }
+            
+            result.Player1.itemsCount = result.Player1.items.length;
+            result.Player2.itemsCount = result.Player2.items.length;
+            
+            if (result.Player1.uid == firebase.auth().currentUser.uid) {
+                result.you = result.Player1;
+                result.other = result.Player2;
+            } else if (result.Player2.uid == firebase.auth().currentUser.uid) {
+                result.you = result.Player2;
+                result.other = result.Player1;
+            }
+            
+            if (opt.setCurrent) {
+                module.currentTrade = result;
+            }
+            
+            if (result.other) {
+                fbProfile.profilePublic(result.other.uid, function(otherUser) {
+                    result.other.public = otherUser;
+                    callback(result);
+                })
+            } else {
+                result.other.public = {};
+                callback(result);
+            }
+        })
+    }
+    
+    module.tradeInfo = function(tradeID, callback) {
+        firebase.database().ref('trades/' + tradeID + '/tradeInfo').once('value').then(function (snapshot) {
+            var tradeInfo = snapshot.val();
+            var trade = {
+                tradeInfo: tradeInfo
+            }
+            
+            var result = {
+                isDone: false,
+                isCanceled: false,
+                tradeID: tradeID
+            };
+            
+            result.Player1 = {
+                uid: tradeInfo.Player1,
+                ready: false,
+                getWeapons: false
+            };
+            result.Player2 = {
+                uid: tradeInfo.Player2,
+                ready: false,
+                getWeapons: false
+            };
+            
+            if (trade.tradeInfo[result.Player1.uid]) {
+                if (trade.tradeInfo[result.Player1.uid].accepted != null) {
+                    result.Player1.ready = true
+                    result.Player1.readyTime = trade.tradeInfo[result.Player1.uid].accepted
+                }
+                if (trade.tradeInfo[result.Player1.uid].getWeapons != null) {
+                    result.Player1.getWeapons = true;
+                    result.Player1.getWeaponsTime = trade.tradeInfo[result.Player1.uid].getWeapons;
+                }
+            }
+            if (trade.tradeInfo[result.Player2.uid]) {
+                if (trade.tradeInfo[result.Player2.uid].accepted != null) {
+                    result.Player2.ready = true;
+                    result.Player2.readyTime = trade.tradeInfo[result.Player2.uid].accepted
+                }
+                if (trade.tradeInfo[result.Player2.uid].getWeapons != null) {
+                    result.Player2.getWeapons = true;
+                    result.Player2.getWeaponsTime = trade.tradeInfo[result.Player2.uid].getWeapons;
+                }
+            }
+            
+            if (trade.tradeInfo.status != null) {
+                result.status = trade.tradeInfo.status;
+                if (trade.tradeInfo.status == 'done') {
+                    result.isDone = true;
+                } else if (trade.tradeInfo.status == 'canceled') {
+                    result.isCanceled = true;
+                }
+            }
+            
+            if (result.Player1.uid == firebase.auth().currentUser.uid) {
+                result.you = result.Player1;
+                result.other = result.Player2;
+            } else if (result.Player2.uid == firebase.auth().currentUser.uid) {
+                result.you = result.Player2;
+                result.other = result.Player1;
+            }
+            
+            if (result.other) {
+                fbProfile.profilePublic(result.other.uid, function(otherUser) {
+                    result.other.public = otherUser;
+                    callback(result);
+                })
+            } else {
+                callback(result);
+            }
+        })
+    }
+    
+    return module;
+})(Trades || {});

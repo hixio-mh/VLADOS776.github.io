@@ -19,8 +19,8 @@ var Localization = (function (module) {
     
     module.supportedLanguages = {
         names: {
-            short: ['RU', 'EN', 'FR', 'PL'],
-            full: ['Русский', 'English', 'Français', 'Polski']
+            short: ['RU', 'EN', 'FR', 'PL', 'TR'],
+            full: ['Русский', 'English', 'Français', 'Polski', 'Türkçe']
         },
         skinNames: {
             arr: ['RU', 'EN'],
@@ -91,14 +91,24 @@ var Localization = (function (module) {
                         locElement($element[z], block[keys[i]].text);
                 } else {
                     var $parent = $('[data-loc-group="' + keys[i] + '"]');
-                    if ($parent && $parent.length)
+                    if ($parent && $parent.length) {
                         for (var z = 0; z < $parent.length; z++)
                             locBlock(block[keys[i]], $($parent)[z]);
+                    } else {
+                        for (var key in block[keys[i]]) {
+                            if (key.indexOf('$') != -1) {
+                                var $element = $(parent).find('[data-loc="' + keys[i] + '"]');
+                                if (!$element || $element.length === 0) continue;
+                                for (var z = 0; z < $element.length; z++)
+                                    locElement($element[z], block[keys[i]][key].text, key.replace('$', ''));
+                            }
+                        }
+                    }
                 }
             }
         }
 
-        function locElement($element, tr) {
+        function locElement($element, tr, attr) {
             var varTest = /\$\{\d+\}/gi;
             if (varTest.test(tr) && $($element).data('loc-var')) {
                 var vars = $($element).data('loc-var');
@@ -107,12 +117,16 @@ var Localization = (function (module) {
                     tr = tr.replace(rg, vars[i]);
                 }
             }
-            $($element).html(tr);
+            if (!attr) {
+                $($element).html(tr);
+            } else {
+                $($element).attr(attr, tr);
+            }
         }
     }
     
     module.getString = function(path, defaultText, original) {
-        defaultText = defaultText || null;
+        defaultText = defaultText || '';
         original = original || false;
         try{
             var paths = path.split('.'),
@@ -120,7 +134,7 @@ var Localization = (function (module) {
                 i;
             for (i = 0; i < paths.length; ++i) {
                 if (current[paths[i]] == undefined) {
-                    return '';
+                    return defaultText;
                 } else {
                     current = current[paths[i]];
                 }
@@ -129,8 +143,7 @@ var Localization = (function (module) {
                 current = original ? current.en : current.text
             return current;
         } catch (e) {
-            if (defaultText)
-                return defaultText
+            return defaultText
         }
     }
     

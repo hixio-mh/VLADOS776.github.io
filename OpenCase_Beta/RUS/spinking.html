@@ -1,69 +1,107 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>SpinKing</title>
-<!-- Стили -->
-<meta charset="utf-8">
+    <title>SpinKing</title>
+    <!-- Стили -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
-<link rel="stylesheet" type="text/css" href="../css/rarity.css">
-<link rel="stylesheet" type="text/css" href="../css/main.css">
-<link rel="stylesheet" type="text/css" href="../css/fonts.css">
-<link rel="stylesheet" type="text/css" href="../css/loading.css">
-<link rel="stylesheet" type="text/css" href="../css/spinking.css">
-<link rel="stylesheet" type="text/css" href="../css/animate.css">
-<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
-<link rel="stylesheet" href="../css/lobibox.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/rarity.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/loading.css">
+    <link rel="stylesheet" type="text/css" href="../css/spinking.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/lobibox.min.css">
 
-<!-- Скрипты -->
-<script src="../scripts/build/libs.js"></script>
-<script src="../scripts/main.js"></script>
-<script src="../scripts/settings.js"></script>
-<script src="../scripts/cases2.js"></script>
-<script src="../scripts/skinNames.js"></script>
-<script src="../scripts/quality.js"></script>
-<script src="../scripts/prices.js"></script>
-<!-- <script src="../scripts/inventory.js"></script> -->
-<script src="../scripts/build/common.js"></script>
-<script src="../scripts/build/spinking.js"></script>
-<script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
-
-<script src="../scripts/navigationMenu.js"></script>
-<link rel="stylesheet" href="../css/navigationMenu.css">
-
-<script src="../scripts/localization.js"></script>
-
+    <link rel="stylesheet" href="../css/navigationMenu.css">
 </head>
+
 <body data-localization="spinking" data-inventory='no-load'>
-<div class="site-overlay"></div>
-<div id="container">
-<div class="navigationBar" data-menu-EN="Spinking" data-menu-RU="Spinking"></div>
+    <div class="site-overlay"></div>
+    <div id="container">
+        <div class="navigationBar" data-menu-EN="Spinking" data-menu-RU="Spinking"></div>
 
-<div class="scrollerContainer">
-	<div id="caruselOver"><div id="caruselLine"></div></div>
-	<div id="aCanvas">
-		<div class="casesCarusel">
-		</div>
-	</div>
-</div>
-<span id='balance-text' class='margin-left-body'>Balance:</span> <span id='balance'>0</span><br>
-<div class="bets">
-<span class='add-to-bet' data-bet='clear'>0</span><span data-bet='1' class='add-to-bet'>+1</span><span data-bet='10' class='add-to-bet'>+10</span><span data-bet='100' class='add-to-bet'>+100</span><span data-bet='1000' class='add-to-bet'>+1000</span><span data-bet='1/2' class='add-to-bet'>1/2</span><span data-bet='x2' class='add-to-bet'>x2</span><span data-bet='max' class='add-to-bet'>Max</span>
-</div>
-<input type="text" id="bet" maxlength='7' pattern="^[0-9]+$"/>
-<div class='buttons'>
-	<button id="addItems">Внести предметы</button>
-	<button id="spin" onclick="return;spinking.buttonSpin();" disabled="true">Spin</button>
-</div>
-<ul class="winList"></ul>
+        <div class="scrollerContainer">
+            <div id="caruselOver">
+                <div id="caruselLine"></div>
+            </div>
+            <div id="aCanvas">
+                <div class="casesCarusel">
+                </div>
+            </div>
+        </div>
+        <div class="game__body__bet">
+            <div class="btn-group bets">
+                <button type="button" class="btn" data-bet='clear'>0</button>
+                <button type="button" class="btn" data-bet='10'>+10</button>
+                <button type="button" class="btn" data-bet='100'>+100</button>
+                <button type="button" class="btn" data-bet='1000'>+1000</button>
+                <button type="button" class="btn" data-bet='1/2'>1/2</button>
+                <button type="button" class="btn" data-bet='x2'>x2</button>
+                <button type="button" class="btn" data-bet='max'>Max</button>
+            </div>
+            <div class="input-group mb-5">
+                <input id="bet" type="text" class="form-control" name="bet" placeholder="Bet Amount" pattern="[0-9]*">
+                <span class='input-group-addon'>/ <span id='balance'></span> <i class='double-icon'></i></span>
+            </div>
+        </div>
+        <div class='buttons'>
+            <button id="spin" class='btn btn-primary' onclick="SpinKing.buttonSpin();">Spin</button>
+            <button id="addItems" class='btn btn-success btn-empty'>Внести предметы</button>
+        </div>
+        <ul class="winList"></ul>
 
-<!-- Инвентарь -->
-<div class="inventoryList" style="display: none;">
-<span id="intentory-Player"></span>
-<div class="closeInventory"></div>
-<ul class="inventory inv-price-counter"></ul>
-<button class="choseItems">Внести</button>
-</div>
-<div id='icons-copyright'>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a>, <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="http://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-</div>
+        <!-- Инвентарь -->
+        <div class="inventoryList" style="display: none;">
+            <span id="intentory-Player"></span>
+            <div class="closeInventory"></div>
+            <ul class="inventory inv-price-counter"></ul>
+            <button class="choseItems">Внести</button>
+        </div>
+
+        <div id='icons-copyright'>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a>, <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="http://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="../scripts/build/libs.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/localization.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/weapons.js"></script>
+    <script src="../scripts/skinNames.js"></script>
+    <script src="../scripts/quality.js"></script>
+    <script src="../scripts/prices.js"></script>
+    <!-- <script src="../scripts/inventory.js"></script> -->
+    <script src="../scripts/spinking.js"></script>
+    <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+
+    <script src="../scripts/navigationMenu.js"></script>
+    <script>
+        $(function() {
+            SpinKing.init();
+        })
+
+    </script>
+    
+    <!-- === TEMPLATES === -->
+    <script id='spinkingItem-template'>
+        <div class='spinking-item bg-${rarity} animated fadeInDown' data-id='${id}'>
+            <div class='img-holder'>
+                <img src='../images/spinking/icons/${img}' style='${imgStyles}'>
+            </div>
+            {{if typeof xCounter != 'undefined'}}
+                <span class='xCounter'>${xCounter}</span>
+            {{/if}}
+            <div class='weaponInfo'>
+                <span class='spinking-item-name'>${name[Settings.language]}</span>
+                <span class='spinking-item-descr'>                    ${description[Settings.language]}</span>
+            </div>
+        </div>
+    </script>
 </body>
+
 </html>

@@ -5,6 +5,7 @@
     <title>Бан-лист</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/fonts.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/animate.css">
@@ -12,15 +13,6 @@
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/lobibox.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/winter.css">
-    <script src="../scripts/build/libs.js"></script>
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/fb-inventory.js"></script>
-    <script src="../scripts/settings.js"></script>
-    <script src="../scripts/profile.js"></script>
-    <script src="../scripts/navigationMenu.js"></script>
-    <link rel="stylesheet" href="../css/navigationMenu.css">
-    <script src="../scripts/localization.js"></script>
-    <script src="../scripts/inventory.js"></script>
     
     <style>
     .banlist {
@@ -72,7 +64,16 @@
         
         <ul class="banlist"></ul>
     </div>
-    
+    <script src="../scripts/build/libs.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/fb-inventory.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/profile.js"></script>
+    <script src="../scripts/navigationMenu.js"></script>
+    <link rel="stylesheet" href="../css/navigationMenu.css">
+    <script src="../scripts/localization.js"></script>
+    <script src="../scripts/inventory.js"></script>
     <script>
         $(function(){
             firebase.database().ref('bans').once('value')
@@ -85,7 +86,7 @@
                     if (typeof banList[bannedUid].chatban == 'undefined') banList[bannedUid].chatban = '';
                     $('.banlist').prepend('<li class="banlist__ban" data-bannedUid="'+bannedUid+'"><div class="ban__user-info"><a href="profile.html?uid='+bannedUid+'"><img src="" class="ban__avatar"></a><span class="ban__nickname"></span></div><div class="ban__ban-info"><span class="ban__chatban">'+banList[bannedUid].chatban+'</span><span class="ban__tradeban">'+banList[bannedUid].tradeban+'</span></div>');
                     
-                    fbProfile.showProfile(bannedUid, function(userInfo) {
+                    fbProfile.profilePublic(bannedUid, function(userInfo) {
                         var $parent = $('li[data-bannedUid="'+userInfo.uid+'"]');
                         $($parent).find('.ban__avatar').attr('src', userInfo.avatar);
                         $($parent).find('.ban__nickname').text(userInfo.nickname);

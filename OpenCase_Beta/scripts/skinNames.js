@@ -1377,5 +1377,4 @@ var skinNames = [{
 	"RU" : "Ручная роспись",
 	"EN" : "Freehand",
 },
-
 ]

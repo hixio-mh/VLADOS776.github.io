@@ -4,7 +4,6 @@ var cases = [{
     "img": "none.png",
     "type": "Default",
     "specialClass": "workshop-text christmas",
-    
     show: false,
     deadline: '2017-01-08',
     weapons: [779,783,784,785,775,776,780,777,778,782,774,781]
@@ -154,31 +153,33 @@ var cases = [{
     "type": "Collection",
     weapons: [268,269,270,271,272,273]
 }, {
+    "name": "Spectrum",
+    "img": "spectrum.png",
+    "type": "Default",
+    weapons:[798,799,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814],
+    knives: [815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835]
+}, {
     "name": "Glove",
     "img": "glove.png",
     "type": "Default",
-    
     weapons:[749,750,751,752,753,754,755,756,757,758,759,760,761,762,763,764,765],
     knives: [766,767,768,769,770,771,772,773,786,787,788,789,790,791,792,793,794,795,796]
 }, {
     "name": "Gamma 2",
     "img": "gamma2.png",
     "type": "Default",
-    
     weapons:[274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290],
     knives: [609,587,590,611,613,612,591,592]
 }, {
     "name": "Gamma",
     "img": "gamma.png",
     "type": "Default",
-    
     weapons: [291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307],
     knives: [609,587,590,611,613,612,591,592]
 }, {
     "name": "Chroma 3",
     "img": "chroma3.png",
     "type": "Default",
-    
     weapons: [308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324],
     knives: [380,381,382]
 }, {
@@ -393,6 +394,13 @@ var cases = [{
     "specialClass": "workshop-text",
     weapons: [718,719,720,721,722,723,724,725,726,727,728,729,730],
     knives: [731,732,733,734]
+}, {
+    "name": "Workshop 3",
+    "img": "Workshop3.png",
+    "type": "Workshop",
+    "specialClass": "workshop-text",
+    weapons: [837,840,838,839,845,841,842],
+    knives: [843,844]
 }, {
     "name": "Steach case",
     "img": "SteachCase.png",

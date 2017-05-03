@@ -5,10 +5,11 @@ $(document).on('localizationloaded', function() {
 })
 
 $(function () {
-    var param = parseURLParams(window.location.href);
-    if (typeof param == "undefined") return false;
-    uid = param.uid[0];
-    if (typeof uid == 'undefined') return false;
+    var uid = getURLParameter('uid');
+    if (uid == null ) return false;
+    
+    var showTradeID = getURLParameter('trade');
+    
     $(".posts__new-post").hide();
     moment.locale(Settings.language);
     
@@ -21,66 +22,218 @@ $(function () {
         }
     })
     
+    $(document).on('click', '#load_user_cases', function() {
+        $(this).addClass('m-progress');
+        
+        $.getScript("../scripts/socket.io.js", function(data, status) {
+            console.log('socket.io loading status', status);
+
+            var socket = io('https://kvmde40-10035.fornex.org/', {path: '/customcases/socket.io'});
+            
+            socket.emit('userCases', uid);
+            
+            socket.on('userCases', function(cases) {
+                if (cases.length > 0) {
+                    var usrCases = '';
+                    cases.forEach(function(cas) {
+                        usrCases += "<a href='customCases.html?caseid=" + cas._id + "'><div class='case' data-case-id=" + cas._id + ">\
+                            <img class='case-card' src='../images/Cases/casecard2.png'>\
+                            <img class='case-img' src='../images/Cases/customCases/" + XSSreplace(cas.img) + "'>\
+                            <span class='case-price currency dollar'>" + cas.price + "</span>\
+                            <span class='case-name'>" + XSSreplace(cas.name) + "</span>\
+                        </div></a>";
+                    });
+                    $('.user_cases .well').html('<div class="casesBlock-scroll">' + usrCases + '</div>')
+                } else {
+                    $('.user_cases .well').html("This user doesn't created any case.")
+                }
+            })
+        })
+    })
+    
+    $(document).on('click', '#follow', function() {
+        var currentUID = firebase.auth().currentUser.uid;
+        //if (!currentUID || uid === currentUID) return;
+        
+        var setVar = true;
+        
+        if (isAndroid() && client.getCurrentAppVersionCode() >= 12) {
+            setVar = client.getFirebaseID();
+        }
+        
+        if ($(this).data('action') === 'follow') {
+            firebase.database().ref('/followers/' + uid + '/' + currentUID).set(setVar);
+            firebase.database().ref('/users/' + currentUID + '/follow/' + uid).set(setVar);
+            
+            $(this).text(Localization.getString('profile.follow.unfollow', 'Unfollow'));
+            $(this).data('action', 'unfollow');
+            $('.stats__followers__count').text(parseInt($('.stats__followers__count').text()) + 1);
+            
+            LOG.log({
+                action: 'Follow user',
+                followed: {
+                    uid: uid,
+                    nickname: $('.profile__name').text()
+                }
+            })
+        } else {
+            firebase.database().ref('/followers/' + uid + '/' + currentUID).remove();
+            firebase.database().ref('/users/' + currentUID + '/follow/' + uid).remove();
+            
+            $(this).text(Localization.getString('profile.follow.follow', 'Follow'));
+            $(this).data('action', 'follow');
+            $('.stats__followers__count').text(parseInt($('.stats__followers__count').text()) - 1);
+            
+            LOG.log({
+                action: 'Unfollow user',
+                followed: {
+                    uid: uid,
+                    nickname: $('.profile__name').text()
+                }
+            })
+        }
+    })
+    
+    $(document).on('click', '.stats__followers', function() {
+        if ($('.stats__followers__count').text() == '0') return;
+        
+        $('#followers-modal').modal();
+        $('#followers-list').empty();
+        
+        $('#followers-modal').find('.modal-title').text('Followers');
+        firebase.database().ref('followers/' + uid).once('value').then(function(snapshot) {
+            var followersUIDs = snapshot.val();
+            var $parent = $('#followers-list');
+            
+            for (var key in followersUIDs) {
+                $('#followers-template').tmpl({uid: key, avatar: '../images/ava/0.jpg'}).addClass('follower-temp').appendTo($parent);
+                
+                fbProfile.profilePublic(key, function(profile) {
+                    profile.avatar = avatarUrl(profile.avatar);
+                    profile.nickname = XSSreplace(profile.nickname);
+                    $('.follower-temp[data-uid="'+profile.uid+'"]').replaceWith($('#followers-template').tmpl(profile));
+                })
+            }
+        })
+    })
+    
+    $(document).on('click', '.iFollow', function() {
+        $('#followers-modal').modal();
+        $('#followers-list').empty();
+        
+        $('#followers-modal').find('.modal-title').text('You follow');
+        
+        firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/follow').once('value').then(function(snapshot) {
+            var followersUIDs = snapshot.val();
+            var $parent = $('#followers-list');
+            
+            for (var key in followersUIDs) {
+                $('#followers-template').tmpl({uid: key, avatar: '../images/ava/0.jpg'}).addClass('follower-temp').appendTo($parent);
+                
+                fbProfile.profilePublic(key, function(profile) {
+                    profile.avatar = avatarUrl(profile.avatar);
+                    profile.nickname = XSSreplace(profile.nickname);
+                    $('.follower-temp[data-uid="'+profile.uid+'"]').replaceWith($('#followers-template').tmpl(profile));
+                })
+            }
+        })
+    })
+    
+    $(document).on('click', '.follower', function() {
+        if ($(this).hasClass('follower-temp')) return;
+        
+        document.location = 'profile.html?uid=' + $(this).data('uid');
+    })
+    
     fbProfile.showProfile(uid, function (userInfo) {
         if (userInfo == null) {
             userNotFound();
             return false;
         }
-        $(".profile__img").attr('src', userInfo.avatar);
-        $(".other-user-profile-img").attr('src', userInfo.avatar);
-        $(".post__header__img").attr('src', userInfo.avatar);
-        $(".profile__name").text(userInfo.nickname);
-        $(".stats__rank__rank").text(Level.calcLvl(userInfo.points));
+        $(".profile__img").attr('src', userInfo.public.avatar);
+        $(".other-user-profile-img").attr('src', userInfo.public.avatar);
+        $(".post__header__img").attr('src', userInfo.public.avatar);
+        $(".profile__name").text(userInfo.public.nickname);
+        $(".stats__rank__rank").text(Level.calcLvl(userInfo.public.points));
         $('.user_uid').text(uid);
         
         if (uid != firebase.auth().currentUser.uid) {
             $(".posts__new-post").hide();
             $('.rep').show();
-        }
-        else {
+        } else {
+            $('.follow_block').hide();
             $(".posts__new-post").show();
             $('.rep').hide();
-            $(".left-side, .right-side").show();
+            $(".left-side, .right-side, .top_panel").show();
             
             getInventory().then(function(result) {
                 var inventoryRef = firebase.database().ref('inventories/' + firebase.auth().currentUser.uid);
                 inventoryRef.child('inventory_count').set(result.count);
                 
             })
+            
+            if (showTradeID != null) {
+                $(document).on('trade_allowed', function() {
+                    showTrade(showTradeID);
+                })
+            }
         }
-        if (userInfo.bigBG && fbProfile.ifValidImg(userInfo.bigBG)) {
-            //$('.top__bg').attr('style', 'background-image:url('+userInfo.bigBG+'); background-size: cover;');
-            $('.top__bg').css('background-image', 'url(' + userInfo.bigBG + ')');
+        if (userInfo.public.bigBG && fbProfile.ifValidImg(userInfo.public.bigBG)) {
+            $('.top__bg').css('background-image', 'url(' + userInfo.public.bigBG + ')');
         }
-        else if (userInfo.colorBG) {
-            $('.top__bg').attr('style', 'background:' + userInfo.colorBG);
+        else if (userInfo.public.colorBG) {
+            $('.top__bg').attr('style', 'background:' + userInfo.public.colorBG);
         }
         
         // Меняем профиль в зависимости от группы пользователя
-        if (userInfo.moder.group)
+        if (userInfo.moder != null && userInfo.moder.group != null)
             $('#container').addClass(userInfo.moder.group);
         
-        if (typeof userInfo.betaTrade != "undefined" && userInfo.betaTrade == true) {
+        if (typeof userInfo.public.betaTrade != "undefined" && userInfo.public.betaTrade == true) {
             firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/public/betaTrade').once('value', function (snapshot) {
                 try {
                     if (snapshot.val() == true) $(".top__trade").removeClass("disabled");
+                    $(document).trigger('trade_allowed');
                 }
-                catch (e) {}
+                catch (e) {
+                    $(document).trigger('trade_disallowed');
+                }
             })
         }
+        
+        if (userInfo.auto !== null) {
+            if (userInfo.auto.awards !== null) {
+                var awards = '';
+                for (var key in userInfo.auto.awards) {
+                    awards += '<li data-toggle="tooltip" title="' + userInfo.auto.awards[key].case_name + '" class="award award_' + userInfo.auto.awards[key].award + '">';
+                }
+                $('.awards').show();
+                $('.awards').html(awards);
+                $('[data-toggle="tooltip"]').tooltip(); 
+            }
+            if (userInfo.auto.followers_count !== null) {
+                var followers_count = parseInt(userInfo.auto.followers_count);
+                if (isNaN(followers_count)) followers_count = 0;
+                $('.stats__followers__count').text(followers_count);
+            } else {
+                $('.stats__followers__count').text(0);
+            }
+        }
+        
         firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/moder').once('value').then(function (snapshot) {
-            var data = snapshot.val();
-            if (data == null) return;
-            if (data.group.match(/(moder|admin)/)) {
+            var groups = snapshot.val() != null ? snapshot.val().group : null;
+            if (!groups) return
+            
+            if (groups.match(/(moder|admin)/)) {
                 $(".moder-menu").show();
                 firebase.database().ref('users/' + uid + '/moder').once('value').then(function (snapshot) {
                     var data = snapshot.val();
                     if (data == null) return;
                     if (typeof data.tradeban != 'undefined') {
-                        $('#block-trade-reason').text(data.tradeban);
+                        $('#block-trade-reason').html(data.tradeban.reason + (data.tradeban.from ? '<br>' + banLength(data.tradeban.from, data.tradeban.to) : ''));
                     }
                     if (typeof data.chatban != 'undefined') {
-                        $('#block-chat-reason').text(data.chatban);
+                        $('#block-chat-reason').html(data.chatban.reason + (data.chatban.from ?'<br>' + banLength(data.chatban.from, data.chatban.to) : '' ));
                     }
                 }).then(function() {
                     firebase.database().ref('users/' + uid + '/private').once('value').then(function(snapshot) {
@@ -88,6 +241,21 @@ $(function () {
                     })
                 })
             }
+            
+            if (groups.match(/(beta|admin)/)) {
+                //$('.beta_only').show();
+            }
+        });
+        
+        firebase.database().ref('users/' + firebase.auth().currentUser.uid + '/follow/' + uid).once('value').then(function(snapshot) {
+            if (snapshot.val() !== null) {
+                $('#follow').text(Localization.getString('profile.follow.unfollow', 'Unfollow'));
+                $('#follow').data('action', 'unfollow');
+            } else {
+                $('#follow').data('action', 'follow');
+                $('#follow').text(Localization.getString('profile.follow.follow', 'Follow'));
+            }
+            $('#follow').show();
         })
     });
     fbProfile.repVal(uid, function (rep, userRep) {
@@ -116,7 +284,7 @@ $(function () {
     $('#moder-ban-modal').on('show.bs.modal', function(e) {
         $(this).find('.btn-danger').data('block', $(e.relatedTarget).data('block'));
         
-        var banReasons = $(e.relatedTarget).next('.block-reason').text();
+        var banReasons = $(e.relatedTarget).next('.block-reason').html().split('<br>')[0];
         
         $('#moder-ban-modal .modal-content input').each(function(){
             var current = $(this).parent('label').text().trim();
@@ -140,6 +308,20 @@ $(function () {
         }
     })
     
+    $('#moder-ban_time').on('change', function() {
+        var time = parseInt($(this).val());
+        if (isNaN(time) || time <= 0) {
+            time = 1;
+            $('#moder-ban_time').val(time);
+        } else if (time > 60) {
+            time = 60;
+            $('#moder-ban_time').val(time);
+        }
+        var multiply = parseInt($('#moder-ban_time-type option:selected').attr('mult'));
+        if (isNaN(multiply))
+            multiply = 60000;
+    })
+    
     $(document).on('click', '#ban_user', function() {
         var banReason = (function(){
             var reason = '';
@@ -158,12 +340,34 @@ $(function () {
         var ban = 'chatban';
         if ($(this).data('block') === 'trade') ban = 'tradeban';
         
+        var banTime = (function() {
+            var time = parseInt($('#moder-ban_time').val());
+            if (isNaN(time) || time <= 0) {
+                time = 1;
+                $('#moder-ban_time').val(time);
+            } else if (time > 60) {
+                time = 60;
+                $('#moder-ban_time').val(time);
+            }
+            var multiply = parseInt($('#moder-ban_time-type option:selected').attr('mult'));
+            if (isNaN(multiply))
+                multiply = 60000;
+            
+            return time * multiply;
+        })()
+        
         if (banReason !== '') {
-            firebase.database().ref('users/' + uid + '/moder/' + ban).set(banReason);
+            var banObj = {
+                reason: banReason,
+                to: banTime,
+                from: firebase.database.ServerValue.TIMESTAMP
+            }
+            firebase.database().ref('users/' + uid + '/moder/' + ban).set(banObj);
             firebase.database().ref('bans/' + uid + '/' + ban).set(banReason);
-            if (user_androidID)
-                firebase.database().ref('androidIDBans/' + user_androidID + '/' + ban).set(banReason);
-            $('#block-' + $(this).data('block') + '-reason').text(banReason);
+            if (user_androidID) {
+                firebase.database().ref('androidIDBans/' + user_androidID + '/' + ban).set(banObj);
+            }
+            $('#block-' + $(this).data('block') + '-reason').html(banReason + '<br>' + banLength(Date.now(), banTime));
             
             if (isAndroid()) client.sendToAnalytics('Profile', 'Модератор', "Модератор заблокировал " + $(this).data('block'), Player.nickname + ' заблокировал ' + $(".profile__name").text());
             LOG.warn({
@@ -173,14 +377,16 @@ $(function () {
                     user: {
                         uid: uid,
                         name: $(".profile__name").text()
-                    }
+                    },
+                    time: banTime
                 }
             })
         } else if (banReason === '') {
             firebase.database().ref('users/' + uid + '/moder/'+ban).remove();
             firebase.database().ref('bans/' + uid + '/'+ban).remove();
-            if (user_androidID)
+            if (user_androidID) {
                 firebase.database().ref('androidIDBans/' + user_androidID + '/'+ban).remove();
+            }
             $('#block-' + $(this).data('block') + '-reason').text("Doesn't banned");
             
             if (isAndroid()) client.sendToAnalytics('Profile', 'Модератор', "Модератор разблокировал " + $(this).data('block'), Player.nickname + ' разблокировал ' + $(".profile__name").text());
@@ -219,7 +425,7 @@ $(function () {
         else {
             $('.my-trades').hide();
             $('.send-trade-window').show();
-            fillInventory('.inventory', 'trade');
+            fillInventory('.inventory', 'trade', {price: true, nameTag: true});
         }
         $($('.trade__menu__item')[0]).click();
     })
@@ -322,7 +528,7 @@ $(function () {
             for (var i = 0; i < trades.length; i++) {
                 var tradesList = JSON.stringify(trades[i].trades).replace(/'/g, "\\'");
                 $('.my-trades-list').prepend("<li class='my-trades-list__tradeWith' data-uid='" + trades[i].tradeWith.uid + "' data-trades='" + tradesList + "'><div class='tradeWith__img-container'><img src='../images/ava/0.jpg'></div>" + "<div class='tradeWith__text-container'><span class='tradeWith__nickname'>Loading...</span><span class='tradeWith__tradeCount'>" + Localization.getString('profile.exchange.exchange_offers') + trades[i].trades.length + "</span></div><div class='tradeWith__controls'><i aria-hidden='true' class='fa fa-times delete-trade'></i></div></li>");
-                fbProfile.showProfile(trades[i].tradeWith.uid, function (plInfo) {
+                fbProfile.profilePublic(trades[i].tradeWith.uid, function (plInfo) {
                     var $parent = $('.my-trades-list__tradeWith[data-uid="' + plInfo.uid + '"]');
                     $($parent.find('img')[0]).attr('src', plInfo.avatar);
                     $($parent.find('.tradeWith__nickname')[0]).text(plInfo.nickname);
@@ -400,8 +606,11 @@ $(function () {
     $(document).on('click', '.trades-with-user__trade', function () {
         $(".my-trades .trade__weapons__summ").show();
         $('.my-trades__trades-with-user').hide();
+        
         var otherAva = $(this).find('.trade__other img').attr('src');
         $('.other-user-profile-img').attr('src', otherAva);
+        $('.user-profile-img').attr('src', avatarUrl(Player.avatar));
+        
         fbProfile.currentTrade = {
             id: $(this).data('tradeid')
             , otherUid: $(this).data('otherUid')
@@ -454,9 +663,10 @@ $(function () {
                 for (var i = 0; i < myWeapons.length; i++) {
                     var weapon = myWeapons[i];
                     if (typeof weapon == 'undefined') continue;
+                    if (typeof weapon == 'string') weapon = JSON.parse(weapon);
                     weapon = new Weapon(weapon);
                     var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
-                    $('#my-trades__your-offer').find(".trade__info__weapons.your").append("<li class='weapon' data-weapon_obj='" + weaponJSON + "'>" + weapon.toLi() + "</li>");
+                    $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi({price: true, nameTag: true, nameTagIcon: true})).data('weapon_obj', weaponJSON));
                 }
             }
         })
@@ -494,7 +704,7 @@ $(function () {
                         var weapon = Trade_weapons[i];
                         if (typeof weapon == 'undefined') continue;
                         weapon = new Weapon(weapon);
-                        $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append("<li class='weapon'>" + weapon.toLi() + "</li>");
+                        $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append(weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
                     }
                     $('#my-trades__other-offer').effect('highlight');
                     $('li[data-tradeid="' + fbProfile.currentTrade.id + '"] .trade__other .give-to-you').text(Trade_weapons.length);
@@ -510,6 +720,7 @@ $(function () {
             }
         };
     })
+    
     $(document).on('click', '#you-ready-to-trade', function () {
         var tradeID = $(this).data('tradeid');
         var status = $('#you-ready-to-trade').is(':checked');
@@ -529,6 +740,9 @@ $(function () {
             action: 'Ready to trade',
             tradeID: tradeID
         })
+        try {
+            Trades.currentTrade.you.ready = $('#you-ready-to-trade').is(':checked');
+        } catch (e) {}
     })
     $(document).on('click', '.trade-back', function () {
         if ($('.my-trades__trades-with-user').is(':visible')) {
@@ -554,7 +768,7 @@ $(function () {
     $(document).on('click', '#change-weapons-trade', function () {
         var oldWp = [];
         $('#my-trades__your-offer .trade__info__weapons.your li').each(function () {
-            oldWp.push($(this).data('weapon_obj'));
+            oldWp.push(JSON.parse($(this).data('weapon_obj')));
         });
         if (oldWp.length >= maxItems) {
             Lobibox.notify('error', {
@@ -573,14 +787,14 @@ $(function () {
         }
         $(".my-trades .trade__weapons__summ").hide();
         $('.trade__weapons__chang-your-weapons').show();
-        fillInventory('.inventory', 'trade');
+        fillInventory('.inventory', 'trade', {price: true, nameTag: true});
     })
     $(document).on('click', '#add-weapons', function () {
         var tradeWeapons = [];
         var ids = [];
         var oldWp = [];
         $('#my-trades__your-offer .trade__info__weapons.your li').each(function () {
-            oldWp.push($(this).data('weapon_obj'));
+            oldWp.push(JSON.parse($(this).data('weapon_obj')));
         });
         if (oldWp.length >= maxItems) {
             Lobibox.notify('error', {
@@ -599,7 +813,7 @@ $(function () {
         }
         $('.inventoryItemSelected').each(function () {
             ids.push(parseInt($(this).data('id')));
-            var wp = $(this).data('weapon_obj');
+            var wp = JSON.parse($(this).data('weapon_obj'));
             tradeWeapons.push(wp);
             $(this).clone().removeClass('inventoryItemSelected').appendTo('#my-trades__your-offer .trade__info__weapons.your').data('weapon_obj', wp).find('i').remove();
         });
@@ -611,7 +825,9 @@ $(function () {
             for (var i = 0; i < convertedWeapons.length; i++) {
                 var weapon = new Weapon(convertedWeapons[i]);
                 var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
-                $($parent).append("<li class='weapon' data-weapon_obj='" + weaponJSON + "'>" + weapon.toLi() + "</li>");
+                var $li = $(weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
+                $li.data('weapon_obj', weaponJSON);
+                $($parent).append($li);
             }
             fbProfile.setChangeOfferTime($('#you-ready-to-trade').data('tradeid'));
             if (isAndroid()) client.sendToAnalytics('Profile', 'Trades', 'Trade changed', "Player changed trade. tradeID: " + $('#you-ready-to-trade').data('tradeid'));
@@ -652,6 +868,7 @@ $(function () {
     })
     $(document).on('click', '#make-trade', function () {
         var tradeID = $(this).data('tradeid');
+        $('#make-trade').prop('disabled', true);
         fbProfile.tradeInfo(tradeID, function (tradeInfo) {
             if (tradeInfo.otherPlayer.accepted && tradeInfo.player.accepted && !tradeInfo.player.getWeapons && tradeInfo.status != 'done' && tradeInfo.status != 'canceled') {
                 fbProfile.setTradeStatus(tradeID, 'done');
@@ -682,7 +899,8 @@ $(function () {
         })
     })
     $(document).on('click', '.sign-out', function () {
-        firebase.auth().signOut();
+        fbProfile.logout();
+        
         window.location = 'chat.html';
     })
     $(document).on('click', '.edit-profile', function () {
@@ -794,14 +1012,14 @@ $(function () {
         var currUid = ""
         if (fbProfile.ifAuth()) currUid = firebase.auth().currentUser.uid;
         var control = "<div class='post__control'><span class='post__control__delete'><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></span></div>";
-        var HTMLpost = "<li class='user-posts__post animated flipInX' data-key=\"" + key + "\">" + "<div class='post__header'>" + "<img src=\"" + post.authorAvatar + "\" class='post__header__img' data-uid='" + post.uidFrom + "'>" + "<div class='post__header__meta'>" + "<span class='post__meta__author' data-uid='" + post.uidFrom + "'>" + post.author + "</span>" + "<span class='post__meta__date'>" + moment(date).fromNow() + "</span>" + "</div>" + (currUid == post.uidFrom ? control : '') + "</div>" + "<div class='post__text'>" + post.text + "</div></li>";
+        var HTMLpost = "<li class='user-posts__post animated flipInX' data-key=\"" + key + "\" id='" + key + "'>" + "<div class='post__header'>" + "<img src=\"" + avatarUrl(post.authorAvatar) + "\" class='post__header__img' data-uid='" + post.uidFrom + "'>" + "<div class='post__header__meta'>" + "<span class='post__meta__author' data-uid='" + post.uidFrom + "'>" + XSSreplace(post.author) + "</span>" + "<span class='post__meta__date'>" + moment(date).fromNow() + "</span>" + "</div>" + (currUid == post.uidFrom ? control : '') + "</div>" + "<div class='post__text'>" + post.text + "</div></li>";
         $(".posts__user-posts").prepend(HTMLpost);
     }
 
     function sendPost(uidFrom, uidTo, date, text) {
         var userPostsRef = firebase.database().ref('users/' + uidTo + '/posts');
-        var author = firebase.auth().currentUser.displayName;
-        var authorAvatar = firebase.auth().currentUser.photoURL;
+        var author = Player.nickname;
+        var authorAvatar = Player.avatar;
         //if (uidFrom != firebase.auth().currentUser.uid) {}
         userPostsRef.push({
             uidFrom: uidFrom
@@ -820,5 +1038,126 @@ $(function () {
                 text: text
             }
         })
+    }
+    
+    function showTrade(tradeID) {
+        if (!$('.trade-window').is(':visible')) 
+            $('.trade-window').show();
+        
+        $('.my-trades-list').hide();
+        $(".my-trades .trade__weapons__summ").show();
+        $('.my-trades__trades-with-user').hide();
+        
+        Trades.getTrade(tradeID, function(trade) {
+            $('.other-user-profile-img').attr('src', avatarUrl(trade.other.public.avatar));
+            $('.user-profile-img').attr('src', avatarUrl(Player.avatar));
+
+            $('#my-trades__your-offer').empty();
+            $('#my-trades__other-offer').empty();
+            
+            $("#make-trade").prop('disabled', true);
+            $("#cancel-trade").data('tradeid', trade.tradeID);
+            $("#make-trade").data('tradeid', trade.tradeID);
+            $("#you-ready-to-trade").data('tradeid', trade.tradeID);
+            
+            if (trade.you.ready) $("#you-ready-to-trade").prop('checked', true);
+            else $("#you-ready-to-trade").prop('checked', false);
+            
+            if (trade.other.ready) {
+                $(".other-player-ready").text(Localization.getString('profile.exchange.status.ready'));
+                $(".other-player-ready").addClass('ready');
+            }
+            else {
+                $(".other-player-ready").text(Localization.getString('profile.exchange.status.not_ready'));
+                $(".other-player-ready").removeClass('ready');
+            }
+            if (trade.you.ready && trade.other.ready) {
+                $('#make-trade').prop('disabled', false);
+            }
+            if (trade.isCanceled || trade.isDone) {
+                $("#cancel-trade").hide();
+                $("#make-trade").hide();
+                $("#change-weapons-trade").hide();
+            }
+            else {
+                $("#cancel-trade").show();
+                $("#make-trade").show();
+                $("#change-weapons-trade").show();
+            }
+            if (!trade.you.watched) {
+                firebase.database().ref('trades/' + trade.tradeID + '/tradeInfo/' + firebase.auth().currentUser.uid + '/accepted').set(false);
+            }
+            $('<ul class="trade__info__weapons inv-no-select summ-inventory your"></ul>').appendTo('#my-trades__your-offer');
+            $('<ul class="trade__info__weapons inv-no-select summ-inventory to-you"></ul>').appendTo('#my-trades__other-offer');
+
+            var tradeInfoRef = firebase.database().ref('trades/' + trade.tradeID + '/tradeInfo/' + trade.other.uid);
+
+            if (trade.you.itemsCount > 0) {
+                for (var i = 0; i < trade.you.itemsCount; i++) {
+                    var weapon = trade.you.items[i];
+                    if (typeof weapon == 'undefined') continue;
+                    if (typeof weapon == 'string') weapon = JSON.parse(weapon);
+                    weapon = new Weapon(weapon);
+                    var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
+                    $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi({price: true, nameTag: true, nameTagIcon: true})).data('weapon_obj', weaponJSON));
+                }
+            }
+            tradeInfoRef.on('child_changed', changed);
+            tradeInfoRef.on('child_added', changed);
+
+            function changed(data) {
+                console.log('changed');
+                if (data.key == 'accepted') {
+                    console.log('Other player Ready!');
+                    //Если другой пользователь нажал на галочку "Готов трейдиться"
+                    Trades.currentTrade.other.ready = data.val();
+                    if (Trades.currentTrade.other.ready) {
+                        $(".other-player-ready").text(Localization.getString('profile.exchange.status.ready'));
+                        $(".other-player-ready").addClass('ready');
+                    }
+                    else {
+                        $(".other-player-ready").text(Localization.getString('profile.exchange.status.not_ready'));
+                        $(".other-player-ready").removeClass('ready');
+                    }
+                    if (Trades.currentTrade.you.ready && Trades.currentTrade.other.ready) {
+                        $('#make-trade').prop('disabled', false);
+                    }
+                    else {
+                        $('#make-trade').prop('disabled', true);
+                    }
+                }
+                else if (data.key == 'weapons') {
+                    //Если другой пользователь именил своё предложение
+                    // TODO: переделать это. Возможно не надо получать еще раз
+                    
+                    firebase.database().ref('trades/' + Trades.currentTrade.tradeID + '/' + Trades.currentTrade.other.uid).once('value').then(function (data) {
+                        var Trade_weapons = data.val();
+                        if (Trade_weapons == null) Trade_weapons = [];
+                        $('#my-trades__other-offer').find(".trade__info__weapons.to-you").empty();
+                        for (var i = 0; i < Trade_weapons.length; i++) {
+                            var weapon = Trade_weapons[i];
+                            if (typeof weapon == 'undefined') continue;
+                            weapon = new Weapon(weapon);
+                            $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append( weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
+                        }
+                        $('#my-trades__other-offer').effect('highlight');
+                        $('li[data-tradeid="' + fbProfile.currentTrade.id + '"] .trade__other .give-to-you').text(Trade_weapons.length);
+                    });
+                }
+                else if (data.key == 'getWeapons') {
+                    fbProfile.tradeInfoShort(Trades.currentTrade.tradeID, function (tradeInfo) {
+                        if (typeof tradeInfo.player.getWeapons != 'undefined') return;
+                        fbProfile.getTradeWeapons(tradeInfo.tradeID, tradeInfo.status == 'done' ? tradeInfo.otherPlayer.id : tradeInfo.player.id)
+                        $('.trade-back').click();
+                        $('li[data-tradeid="' + tradeInfo.tradeID + '"]').addClass(tradeInfo.status);
+                    })
+                }
+            };
+        })
+    }
+    
+    function banLength(from, to) {
+        var total = parseInt(from) + parseInt(to);
+        return new Date(total).toLocaleString()
     }
 })

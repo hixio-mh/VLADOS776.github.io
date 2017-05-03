@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Messages</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
+<!-- Стили -->
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../css/fonts.css">
+<link rel="stylesheet" type="text/css" href="../css/animate.css">
+<link rel="stylesheet" type="text/css" href="../css/winter.css">
+<link rel="stylesheet" href="../css/navigationMenu.css">
+</head>
+    
+<body data-localization="messages" data-page_name="Messages">
+	<div class="site-overlay"></div>
+<div id="container">
+    <div class="navigationBar" data-menu-EN="Messages">Messages</div>
+    
+
+<!-- Скрипты -->
+<script src="../scripts/build/libs.js"></script>
+<script src="../scripts/bootstrap.min.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/settings.js"></script>
+<script src="../scripts/navigationMenu.js"></script>
+<script src="../scripts/localization.js"></script>
+<script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+
+<!-- Скрипт сообщений -->
+<script src="../scripts/messages.js"></script>
+<script>
+    $(document).on('localizationloaded', function() {
+        Messages.init();
+    })
+</script>
+</body>
+</html>

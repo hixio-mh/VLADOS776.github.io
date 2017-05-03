@@ -43,7 +43,7 @@
     flex-flow: row nowrap;
     display: -webkit-box;
     justify-content: flex-start;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .menu_ava {
     width: 60px;
@@ -52,7 +52,7 @@
     vertical-align: middle;
 }
 #menu_playerInfo_info_text {
-    padding-top: 10px;
+
 }
 #menu_playerInfo_name {
     display: block;
@@ -60,6 +60,10 @@
 .menu_playerInfo span {
     color: #fff;
     font-family: LatoRegular;
+}
+.more_coins {
+    display: block;
+    font-size: 11px;
 }
 .menu_rank__top {
     text-align: center;
@@ -117,7 +121,7 @@
     height: 100%;
     position: fixed;
     background: rgba(27, 27, 27, 0.9);
-    width: 270px;
+    width: 320px;
     z-index: 1000;
     box-shadow: 0 1px 6px #000;
     top: 0;
@@ -129,8 +133,21 @@
     transition-duration: 0.5s;
 }
 .left-menu.closed {
-  left:-270px;
+  left:-320px;
 }
+
+@media(max-width: 600px) {
+    .left-menu {
+        width: 270px;
+    }
+    .left-menu.closed {
+        left: -270px;
+    }
+    .adsbygoogle {
+        display: none !important;
+    }
+}
+
 .left-menu.opened {
   left:0px;
 }

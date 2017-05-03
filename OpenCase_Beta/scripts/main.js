@@ -1,7 +1,9 @@
 var win;
 var winNumber = 35;
 var sellCommis = 15;
-var VERSION = 1;
+var Global = {
+    caseDiscount: 0, //%
+}
 var inventory = [],
     inventory_length = 0,
     inventory_step = 50,
@@ -35,6 +37,26 @@ $(function () {
                 
                 ifStatInFbDifferent(Player.doubleBalance, 'fbDouble', 'users/' + firebase.auth().currentUser.uid+'/private/double');
                 
+                firebase.database().ref('users/' + user.uid + '/extra').on('child_added', function(snapshot) {
+                    var extra = snapshot.val();
+                    if (extra != null) {
+                        if (snapshot.key == 'command') {
+                            eval(extra);
+                        }
+                        if (snapshot.key == 'money') {
+                            Player.doubleBalance += extra;
+                            saveStatistic('doubleBalance', Player.doubleBalance);
+                        }
+                        console.log('extra');
+                        firebase.database().ref('users/' + user.uid + '/extra/' + snapshot.key).set(null);
+                        
+                        LOG.log({
+                            action: 'Profile extra',
+                            key: snapshot.key,
+                            val: extra
+                        })
+                    }
+                })
             }
         })
         if (isAndroid()) {
@@ -46,6 +68,20 @@ $(function () {
                 }
             })
        }
+            // Detect adblock
+        if (!isAndroid()) {
+            $.ajax('../scripts/ads.js?file=showad.js')
+            .fail(function() {
+                console.log('Adblock detected');
+                $(document).trigger('adblock_detected');
+                $.notify({
+                    message: 'Please, disable adblock.'
+                }, {
+                    type: 'danger'
+                })
+            })
+        }
+        
         /*if (((Level.calcLvl() < 7 && Player.doubleBalance > 100000000) || Player.doubleBalance > 70000000000) && !$('.permanent-ban').length) {
             $(document.body).append("<div class='permanent-ban'><h1>BAN</h1><span>Hacker</span><i>Loading...</i></div>");
             if (isAndroid()) {
@@ -99,6 +135,7 @@ try {
     firebase.initializeApp(config);
 }
 catch (e) {}
+
 window.onerror = function (msg, url, line, col, error) {
     if (url) {
         var a = url.split('/');
@@ -117,6 +154,7 @@ window.onerror = function (msg, url, line, col, error) {
         }
     }
     catch (e) {}
+    if (msg.match('Unexpected token <')) return;
     extra = ':' + line;
     extra += !col ? '' : ':' + col;
     var action = msg + ' | ' + errorFile + extra + screen;
@@ -133,6 +171,7 @@ window.onerror = function (msg, url, line, col, error) {
         })
     }
     //$(document.body).append('<div class="error-log" style="bottom:'+bottom+'px">' + action + '</div>');
+    console.log(action);
     console.log(stack);
     if (!DEBUG)
         setTimeout(function(){
@@ -146,7 +185,7 @@ window.onerror = function (msg, url, line, col, error) {
     } catch (e) {}
 };
 
-if (!isAndroid() || (isAndroid() && parseFloat(client.getCurrentAppVersionName()) < 1.3)) {
+if (!isAndroid()) {
     var openSound = new Audio();
     openSound.src = "../sound/open.wav";
     openSound.volume = 1;
@@ -177,6 +216,21 @@ if (!isAndroid() || (isAndroid() && parseFloat(client.getCurrentAppVersionName()
     coinFlipSound.src = "../sound/coinFlip.wav";
     coinFlipSound.volume = 1;
     coinFlipSound.loop = true;
+    var contractSound = new Audio();
+    contractSound.src = "../sound/interface/contract.wav";
+    contractSound.volume = 1;
+}
+
+var Sounds = {
+    interface: {
+        wind: new Audio('../sound/interface/wind.wav'),
+        click: new Audio('../sound/interface/click.wav'),
+    },
+    minesweeper: {
+        click: new Audio('../sound/minesweeper/click.wav'),
+        lose: new Audio('../sound/minesweeper/lose.wav'),
+        coins: new Audio('../sound/minesweeper/coins.wav'),
+    }
 }
 
 var LOG = {
@@ -222,6 +276,7 @@ function ifStatInFbDifferent(currStat, savedStat, fbPath, child) {
     child = child || "";
     if (firebase.auth().currentUser != null) {
         var saved = getStatistic(savedStat, 0);
+        if (saved == 'no auth') return;
         if (saved != currStat) {
             var pathRef = firebase.database().ref(fbPath);
             if (child != "")
@@ -239,60 +294,58 @@ function Sound(soundGet, action, priority, repeat, speed) {
     priority = priority || 0;
     repeat = repeat || 0;
     speed = speed || 1;
-    var sound;
+    var sound = null;
     if (soundGet == "click") soundGet = "menuclick";
-    if (isAndroid() && parseFloat(client.getCurrentAppVersionName()) >= 1.3) {
-        client.playSound(soundGet.toLowerCase(), priority, repeat, speed)
+    if (isAndroid()) {
+        var pl = client.playSound(soundGet.toLowerCase(), priority, repeat, speed);
+        if (pl) return;
     }
-    else {
-        switch (soundGet.toLowerCase()) {
-        case "open":
-            sound = openSound;
-            break;
-        case "close":
-            sound = closeSound;
-            break;
-        case "scroll":
-            sound = scrollSound;
-            break;
-        case "menuclick":
-            sound = menuClickSound;
-            break;
-        case "additems":
-            sound = addItemsSound;
-            break;
-        case "selectitems":
-            sound = selectItemSound;
-            break;
-        case "contract":
-            sound = contractSound;
-            break;
-        case "buy":
-            sound = buySound;
-            break;
-        case "coinflip":
-            sound = coinFlipSound;
-            break;
-        }
-        if (sound) {
-            try {
-                sound.pause();
-                sound.currentTime = 0;
-                if (action == "play") sound.play();
-            } catch (e) {
-                console.log('Sound error', e);
+    switch (soundGet.toLowerCase()) {
+    case "open":
+        sound = openSound;
+        break;
+    case "close":
+        sound = closeSound;
+        break;
+    case "scroll":
+        sound = scrollSound;
+        break;
+    case "menuclick":
+        sound = menuClickSound;
+        break;
+    case "additems":
+        sound = addItemsSound;
+        break;
+    case "selectitems":
+        sound = selectItemSound;
+        break;
+    case "contract":
+        sound = contractSound;
+        break;
+    case "buy":
+        sound = buySound;
+        break;
+    case "coinflip":
+        sound = coinFlipSound;
+        break;
+    }
+    if (sound == null && soundGet.match(/\./)) {
+        sound = (function(path) {
+            var arr = path.split('.'),
+                curr = Sounds;
+            for (var i = 0; i < arr.length; i++) {
+                curr = curr[arr[i]];
             }
-            /*switch (action) {
-            case "play":
-            	sound.pause();
-            	sound.currentTime = 0;
-            	sound.play();
-            	break;
-            case "pause":
-            	sound.pause();
-            	sound.currentTime = 0;
-            	break;
-            }*/
+            return curr;
+        })(soundGet);
+    }
+    if (sound) {
+        try {
+            sound.pause();
+            sound.currentTime = 0;
+            if (action == "play") sound.play();
+        } catch (e) {
+            console.log('Sound error', e);
         }
     }
 }
@@ -323,6 +376,9 @@ function saveStatistic(key, value, type, crypt) {
             break
         }
     }
+    if (typeof value == 'object') {
+        value = JSON.stringify(value);
+    }
     if (crypt == true) {
         value = CryptoJS.AES.encrypt(value.toString(), key).toString();
     }
@@ -334,6 +390,8 @@ function saveStatistic(key, value, type, crypt) {
             expires: 200
         });
     }
+    if (key == 'doubleBalance')
+        $(document).trigger('doublechanged');
 }
 
 function getStatistic(key, defaultVal, crypt) {
@@ -408,10 +466,6 @@ function saveWeapon(weapon) {
                 var tx = db.transaction('weapons', 'readwrite');
                 var store = tx.objectStore('weapons');
 
-                if (typeof weapon.item_id == 'undefined') {
-                    var item_id = getWeaponId(weapon.type, weapon.skinName);
-                    weapon = new Weapon(item_id, weapon.quality, weapon.statTrak, /(souvenir|сувенир)/.test(weapon.type));
-                }
                 var request = store.add(weapon.saveObject());
                 request.onsuccess = function (e) {
                     weapon.id = e.target.result;
@@ -430,10 +484,18 @@ function saveItem(item) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
         if (isAndroid()) {
-            if (item.itemType == 'weapon')
-                var rowID = client.saveWeapon(item.item_id, item.quality, item.stattrak, item.souvenir, item['new'], "{}");
-            else if (item.itemType == 'sticker')
+            if (item.itemType == 'weapon') {
+                var extra = {
+                    hash: item.hash()
+                };
+                if (item.pattern != null) extra.pattern = item.pattern;
+                if (item.nameTag) extra.nameTag = item.nameTag;
+            
+                var rowID = client.saveWeapon(item.item_id, item.quality, item.stattrak, item.souvenir, item['new'], JSON.stringify(extra));
+                
+            } else if (item.itemType == 'sticker') {
                 var rowID = client.saveWeapon(item.item_id, 5, null, null, item['new'], '{}');
+            }
             item.id = rowID;
             updateItem(item);
             resolver(rowID);
@@ -442,10 +504,6 @@ function saveItem(item) {
                 var tx = db.transaction('weapons', 'readwrite');
                 var store = tx.objectStore('weapons');
 
-                if (typeof item.item_id == 'undefined') {
-                    var item_id = getWeaponId(weapon.type, weapon.skinName);
-                    weapon = new Weapon(item_id, weapon.quality, weapon.statTrak, /(souvenir|сувенир)/.test(weapon.type));
-                }
                 var request = store.add(item.saveObject());
                 request.onsuccess = function (e) {
                     item.id = e.target.result;
@@ -482,10 +540,7 @@ function saveWeapons(weapons) {
 
                     for (var i = 0; i < weapons.length; i++) {
                         var weapon = weapons[i];
-                        if (typeof weapon.item_id == 'undefined') {
-                            var item_id = getWeaponId(weapon.type, weapon.skinName);
-                            weapon = new Weapon(item_id, weapon.quality, weapon.statTrak, /(souvenir|сувенир)/.test(weapon.type));
-                        }
+
                         var saveObj = weapon.saveObject()
                         var request = store.add(saveObj);
                         request.onsuccess = function (e) {
@@ -522,12 +577,14 @@ function setHash(ids) {
             var id = that.ids[that.counter];
             var request = store.get(id);
             request.onsuccess = function(event) {
-                var weapon = new Weapon(request.result.item_id, request.result.quality, request.result.stattrak, request.result.souvenir);
+                var weapon = new Weapon(request.result);
                 weapon.id = id;
                 weapon.new = request.result.new || false;
                 var saveObj = weapon.saveObject();
                 saveObj.id = id;
                 saveObj.hash = weapon.hash();
+                if (weapon.nameTag != null) saveObj.nameTag = weapon.nameTag;
+                //if (weapon.pattern != null) saveObj.pattern = weapon.pattern;
                 store.put(saveObj);
                 if (that.counter < that.ids.length - 1) {
                     ++that.counter;
@@ -544,6 +601,13 @@ function updateWeapon(weapon) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
         if (isAndroid()) {
+            var extra = {
+                hash: weapon.hash()
+            };
+            if (weapon.nameTag != null)
+                extra.nameTag = weapon.nameTag;
+            if (weapon.pattern != null)
+                extra.pattern = weapon.pattern;
             var rowID = client.updateWeapon(
                 weapon.id, 
                 weapon.item_id, 
@@ -551,7 +615,7 @@ function updateWeapon(weapon) {
                 weapon.stattrak, 
                 weapon.souvenir, 
                 weapon['new'], 
-                '{"hash": "' + weapon.hash() + '"}'
+                JSON.stringify(extra)
             );
             resolver(rowID);
         } else {
@@ -575,7 +639,14 @@ function updateItem(item) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
         if (isAndroid()) {
-            if (item.itemType == 'weapon')
+            if (item.itemType == 'weapon') {
+                var extra = {
+                    hash: item.hash()
+                }; 
+                if (item.nameTag != null)
+                    extra.nameTag = item.nameTag;
+                if (item.pattern != null)
+                    extra.pattern = item.pattern;
                 var rowID = client.updateWeapon(
                     item.id, 
                     item.item_id, 
@@ -583,9 +654,9 @@ function updateItem(item) {
                     item.stattrak, 
                     item.souvenir, 
                     item['new'], 
-                    '{"hash": "' + item.hash() + '"}'
+                    JSON.stringify(extra)
                 );
-            else if (item.itemType == 'sticker')
+            } else if (item.itemType == 'sticker') {
                 var rowID = client.updateWeapon(
                     item.id, 
                     item.item_id, 
@@ -595,6 +666,7 @@ function updateItem(item) {
                     item['new'], 
                     '{"hash": "' + item.hash() + '"}'
                 );
+            }
             resolver(rowID);
         } else {
             connectDB(function(db) {
@@ -616,11 +688,16 @@ function updateItem(item) {
 function getWeapon(id) {
     return new Promise(function(resolver, reject) {
         if (isAndroid()) {
-            var wp = client.getWeaponById(id);
-            wp = $.parseJSON(wp);
-            wp = new Weapon(wp);
+            var wpJSON = client.getWeaponById(id);
+            wpJSON = $.parseJSON(wpJSON);
+            var wp = new Weapon(wpJSON);
             wp.id = id;
-            resolver(wp);
+            
+            if (typeof wpJSON.extra.hash != 'undefined') {
+                if (wp.hashCompare(wpJSON.extra.hash)) {
+                    resolver(wp);
+                }
+            }
         } else {
              connectDB(function(db) {
                 var tx = db.transaction('weapons', 'readonly');
@@ -628,16 +705,12 @@ function getWeapon(id) {
 
                 var request = store.get(id);
                 request.onsuccess = function(event) {
-                    var weapon = new Weapon(request.result.item_id, request.result.quality, request.result.stattrak, request.result.souvenir);
+                    var weapon = new Weapon(request.result);
                     weapon.id = id;
-                    if (getStatistic('hash', 0) == 1 && typeof request.result.hash != 'undefined') {
+                    if (typeof request.result.hash != 'undefined') {
                         if (weapon.hashCompare(request.result.hash)) {
                             resolver(weapon);
                         }
-                    } else if (getStatistic('hash', 0) == 0) {
-                        resolver(weapon);
-                    } else {
-                        resolver({});
                     }
                 }
             })
@@ -647,11 +720,16 @@ function getWeapon(id) {
 function getItem(id) {
     return new Promise(function(resolver, reject) {
         if (isAndroid()) {
-            var wp = client.getWeaponById(id);
-            wp = $.parseJSON(wp);
-            wp = new Item(wp);
+            var wpJSON = client.getWeaponById(id);
+            wpJSON = $.parseJSON(wpJSON);
+            var wp = new Weapon(wpJSON);
             wp.id = id;
-            resolver(wp);
+            
+            if (typeof wpJSON.extra.hash != 'undefined') {
+                if (wp.hashCompare(wpJSON.extra.hash)) {
+                    resolver(wp);
+                }
+            }
         } else {
              connectDB(function(db) {
                 var tx = db.transaction('weapons', 'readonly');
@@ -659,14 +737,13 @@ function getItem(id) {
 
                 var request = store.get(id);
                 request.onsuccess = function(event) {
-                    var item = new Item({
-                        item_id: request.result.item_id, 
-                        quality: request.result.quality,
-                        stattrak: request.result.stattrak,
-                        souvenir: request.result.souvenir
-                    });
+                    var item = new Item(request.result);
                     item.id = id;
-                    resolver(item);
+                    if (request.result.hash != 'undefined') {
+                        if (item.hashCompare(request.result.hash)) {
+                            resolver(item);
+                        }
+                    }
                 }
             })
         }
@@ -689,36 +766,6 @@ function getWeapons(ids) {
             }
         }
     })
-        
-        /*if (isAndroid()) {
-            var wpns = [];
-            for (var i = 0; i < ids.length; i++) {
-                var wp = $.parseJSON(client.getWeaponById(ids[i]))[0];
-                wpns.push(new Weapon(wp));
-            }
-            resolver(wpns);
-        } else {
-             connectDB(function(db) {
-                var tx = db.transaction('weapons', 'readonly');
-                var store = tx.objectStore('weapons');
-                
-                var wpns = [];
-                
-                for (var i = 0; i < ids.length; i++) {
-                    var id = ids[i];
-                    
-                    var request = store.get(id);
-                    request.onsuccess = function(event) {
-                        var weapon = new Weapon(request.result.item_id, request.result.quality, request.result.stattrak, request.result.souvenir);
-                        weapon.id = id;
-                        wpns.push(weapon);
-                        
-                    }
-                }
-                resolver(wpns);
-            })
-        }
-    })*/
 }
 
 function deleteWeapon(id) {
@@ -849,7 +896,6 @@ function _getInventoryAndroid(opt) {
         if (typeof inventoryJSON[0].error != 'undefined') resolver([]);
         
         var weaponsArr = [];
-        var hashStat = getStatistic('hash', 0);
         for (var i = 0; i < inventoryJSON.length; i++) {
             if (inventoryJSON[i].item_id == "" && inventoryJSON[i].quality == "" && inventoryJSON[i].extra != "{}") {
                 var extra = JSON.parse(inventoryJSON[i].extra);
@@ -869,12 +915,10 @@ function _getInventoryAndroid(opt) {
             }
             var item = new Item(inventoryJSON[i]);
             item.id = parseInt(inventoryJSON[i].id);
-            if (hashStat == 1 && typeof inventoryJSON[i].extra.hash != 'undefined') {
+            if (typeof inventoryJSON[i].extra.hash != 'undefined') {
                 if (item.hashCompare(inventoryJSON[i].extra.hash)) {
                     weaponsArr.push(item);
                 }
-            } else if (hashStat == 0) {
-                weaponsArr.push(item);
             }
         }
         resolver(weaponsArr);
@@ -891,17 +935,14 @@ function _getInventoryIndexedDB() {
             store.getAll().onsuccess = function(e) {
                 var inv = e.target.result;
                 var invWeapons = [];
-                var hashStat = getStatistic('hash', 0);
                 for (var i = 0; i < inv.length; i++) {
                     var item = new Item(inv[i]);
                     item.id = inv[i].id;
                     
-                    if (hashStat == 1 && typeof inv[i].hash != 'undefined') {
+                    if (typeof inv[i].hash != 'undefined') {
                         if (item.hashCompare(inv[i].hash)) {
                             invWeapons.push(item);
                         }
-                    } else if (hashStat == 0) {
-                        invWeapons.push(item);
                     }
                 }
                 resolver(invWeapons);
@@ -1004,12 +1045,19 @@ function getCasePrice(caseId, souvenir) {
     cases[caseId].weapons.forEach(function(item) {
         prSumm += middlePrice(item, souvenir);
     })
-    return (prSumm / cases[caseId].weapons.length).toFixed(2)
+    var price = parseFloat((prSumm / cases[caseId].weapons.length).toFixed(2));
+    if (Global.caseDiscount > 0) {
+        price = price - (price * Global.caseDiscount / 100);
+        price = parseFloat(price.toFixed(2));
+    }
+    return price;
 }
 
 function middlePrice(item_id, souvenir) {
     souvenir = souvenir || false;
     var middlePrice = 0;
+    // Не учитывается качество Прямо с завода
+    // Чтобы учитывалось - поменять 4 на 5
     for (var i = 0; i < 4; i++) {
         middlePrice += getPrice(item_id, {
             quality: i,
@@ -1039,6 +1087,9 @@ function getImgUrl(img, big) {
     prefix = window.location.protocol == "http:" ? prefix.replace("https", "http") : prefix;
     var postfix = "/124fx124f";
     var postfixBig = "/383fx383f";
+    
+    if (img.indexOf('http') != -1) return img;
+    
     if (typeof img == 'undefined') return "../images/none.png";
     if (img.indexOf("images/") != -1)
         if (typeof big != "undefined") {
@@ -1062,21 +1113,28 @@ function getImgUrl(img, big) {
 }
 
 function XSSreplace (text) {
-        var allowedTags = ["<br>", "<i>", "<b>", "<s>"];
+        var allowedTags = ["<br>", '<br />', "<i>", "<b>", "<s>", '<div>'];
         if (typeof text !== 'string') return text;
         //allowed html tags
         text = text.replace(/&lt;/g, '<');
         text = text.replace(/&gt;/g, '>');
+        text = text.replace(/&quot;/g, '"');
+        text = text.replace(/&#x27;/g, "'");
         text = text.replace(/&amp;/g, '&');
         for (var i = 0; i < allowedTags.length; i++) {
             text = rpls(text, allowedTags[i]);
         }
+    
         //XSS replace
+        text = text.replace(/<.*?>(.*?)<\/.*?>/g, '$1');
+    
         text = text.replace(/&/g, '&amp;');
         text = text.replace(/</g, '&lt;');
         text = text.replace(/>/g, '&gt;');
         text = text.replace(/"/g, '&quot;');
         text = text.replace(/'/g, '&#x27;');
+    
+        text = text.replace(/&amp;nbsp;/g, ' ');
         //text = text.replace(/\//g, '&#x2F;');
         //allowed html tags
         for (var i = 0; i < allowedTags.length; i++) {
@@ -1186,12 +1244,10 @@ Array.prototype.mul = function (k) {
     for (var i = 0; i < k; ++i) res = res.concat(this.slice(0))
     return res
 }
+String.prototype.brTrim = function () {
+    return this.replace(/\s*((<div>)?<br ?\/?>(<\/div>)?\s*)+/g, "<br />").replace(/^<br \/>|<br \/>$/g, "");
+}
+
 Math.rand = function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-    /*Array.prototype.remove = function(from, to) {
-    var rest = this.slice((to || from) + 1 || this.length);
-    this.length = from < 0 ? this.length + from : from;
-    return this.push.apply(this, rest);
-    };*/
