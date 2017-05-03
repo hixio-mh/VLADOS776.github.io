@@ -395,6 +395,13 @@ var cases = [{
     weapons: [718,719,720,721,722,723,724,725,726,727,728,729,730],
     knives: [731,732,733,734]
 }, {
+    "name": "Workshop 3",
+    "img": "Workshop3.png",
+    "type": "Workshop",
+    "specialClass": "workshop-text",
+    weapons: [837,840,838,839,845,841,842],
+    knives: [843,844]
+}, {
     "name": "Steach case",
     "img": "SteachCase.png",
     "type": "Workshop",
