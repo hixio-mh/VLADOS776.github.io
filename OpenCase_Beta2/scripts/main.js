@@ -135,6 +135,7 @@ try {
     firebase.initializeApp(config);
 }
 catch (e) {}
+
 window.onerror = function (msg, url, line, col, error) {
     if (url) {
         var a = url.split('/');
@@ -153,6 +154,7 @@ window.onerror = function (msg, url, line, col, error) {
         }
     }
     catch (e) {}
+    if (msg.match('Unexpected token <')) return;
     extra = ':' + line;
     extra += !col ? '' : ':' + col;
     var action = msg + ' | ' + errorFile + extra + screen;
