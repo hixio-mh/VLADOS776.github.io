@@ -392,7 +392,7 @@ function newMsg(key, message, edit) {
         vip = message.vip || {};
     edit = edit || false;
     
-    if (!/^\.\.\/images\/ava\/.{1,5}\.\w{3}$/i.test(img) && !/(admin|moder|vip)/i.test(group)) {
+    if (!/^\.\.\/images\/ava\/.{1,5}\.\w{3}$/i.test(img) && !/(admin|vip)/i.test(group)) {
         img = '../images/ava/0.jpg';
     }
     

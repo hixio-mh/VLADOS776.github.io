@@ -23,6 +23,10 @@ Player.avatar = getStatistic("playerAvatar", '../images/ava/0.jpg');
 Player.points = parseInt(getStatistic('playerPoints', 0));
 Player.doubleBalance = parseInt(getStatistic('doubleBalance', 0));
 
+if (Player.nickname.length == 0) {
+    Player.nickname = 'Player';
+}
+
 //isNaN check
 if (isNaN(Player.doubleBalance)) Player.doubleBalance = 10000;
 if (isNaN(Player.points)) Player.points = 1;
