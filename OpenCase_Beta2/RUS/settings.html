@@ -37,11 +37,11 @@
             padding: 15px 0;
         }
         
-        .option > *:nth-child(1) {
+        .option>*:nth-child(1) {
             margin-top: 0;
         }
         
-        .inline > * {
+        .inline>* {
             display: inline-block;
         }
         
@@ -118,11 +118,12 @@
             color: #000;
         }
         
-        .film_roll_child.active > img {
+        .film_roll_child.active>img {
             border: 5px solid #F0E50E;
         }
         
-        .color_box, .add_color {
+        .color_box,
+        .add_color {
             width: 50px;
             height: 50px;
             background: #fff;
@@ -141,6 +142,7 @@
         #color_example {
             font-weight: bold;
         }
+
     </style>
 </head>
 
@@ -160,6 +162,9 @@
                     <input type="text" id="nickname" class="form-control input-sm" size="20" /> </div>
                 <div class='option'><span data-loc="avatar">Avatar</span>
                     <div id="avatar"></div>
+                </div>
+                <div class="option hidden" id='profile-option'>
+                    <button class="btn btn-primary" data-loc='change-email' data-toggle='modal' data-target='#change-mail-modal'>Change email</button>
                 </div>
             </div>
             <div class='option-block' data-loc-group="beta"> <span class='option-block__name' id='local-beta' data-loc="group_title">Beta</span>
@@ -219,15 +224,15 @@
                 <button id='reset' class='btn btn-danger' data-loc='reset'>Full reset</button>
             </div>
         </div>
-        
+
         <div id='modal_promocode' class='modal fade' role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content" data-loc-group='promo_modal'>
                     <div class="modal-body">
-                       <div class="form-group">
-                           <label for="promocode" data-loc='enter'>Enter promocode:</label>
-                           <input type="text" class='form-control' id='promocode'>
-                       </div>
+                        <div class="form-group">
+                            <label for="promocode" data-loc='enter'>Enter promocode:</label>
+                            <input type="text" class='form-control' id='promocode'>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button class="btn btn-success" id='activate_promocode' data-loc='activate'>Activate</button>
@@ -236,7 +241,26 @@
                 </div>
             </div>
         </div>
-        
+
+        <div id='change-mail-modal' class='modal fade' role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content" data-loc-group='change_mail_modal'>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="password" data-loc='password'>Password:</label>
+                            <input type="password" class='form-control' id='password'>
+                            <label for="mail" data-loc='new'>New email address:</label>
+                            <input type="email" class='form-control' id='mail'>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" id='change-mail' data-loc='change'>Change</button>
+                        <button class="btn btn-default" data-dismiss='modal' data-loc='close'>Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="../scripts/build/libs.js"></script>
         <script src="../scripts/bootstrap.min.js"></script>
         <script src="../scripts/main.js"></script>
@@ -250,13 +274,13 @@
         <script src="../scripts/settings/colorpicker.js"></script>
         <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
         <script>
-            $(function () {
-                
+            $(function() {
+
                 /* Languages */
                 for (var i = 0; i < Localization.supportedLanguages.names.full.length; i++) {
                     $('#language').append('<option value="' + Localization.supportedLanguages.names.short[i] + '">' + Localization.supportedLanguages.names.full[i] + '</option>')
                 }
-                
+
                 /*Ava*/
                 var i = Bot.images.length;
                 var html = "";
@@ -265,17 +289,17 @@
                 }
                 $("#avatar").html(html);
                 fn = new FilmRoll({
-                    container: '#avatar'
-                    , pager: false
-                    , scroll: false
-                    , start_index: $("#avatar div[data-img='" + Player.avatar + "']").index()
+                    container: '#avatar',
+                    pager: false,
+                    scroll: false,
+                    start_index: $("#avatar div[data-img='" + Player.avatar + "']").index()
                 });
-                
+
                 $('#custom_avatar').val(Player.avatar);
                 var correctImg = false;
-                
+
                 $("#nickname").val(Player.nickname);
-                
+
                 $('select option[value=' + Settings.language + ']').attr('selected', 'true');
                 if (Settings.sounds == true) {
                     $('input[name="sounds"]').prop('checked', true);
@@ -289,40 +313,40 @@
                     $('input[name="scroll"]').prop('checked', true);
                     $('.switch[data-target="switch-scroll"]').addClass('switchOn');
                 }
-                
+
                 Player.isVip = false;
-                
-                firebase.auth().onAuthStateChanged(function (user) {
+
+                firebase.auth().onAuthStateChanged(function(user) {
                     if (firebase.auth().currentUser != null) {
+                        $('#profile-option').removeClass('hidden');
+
                         var uid = firebase.auth().currentUser.uid;
-                        firebase.database().ref('users/' + uid + '/public/betaTrade').once('value', function (data) {
+                        firebase.database().ref('users/' + uid + '/public/betaTrade').once('value', function(data) {
                             if (data.val() == true) {
                                 $('input[name="trade"]').prop('checked', true);
                                 $('.switch[data-target="switch-trades"]').addClass('switchOn');
-                            }
-                            else {
+                            } else {
                                 $('input[name="trades"]').prop('checked', false);
                             }
                         })
-                        firebase.database().ref('users/' + uid + '/private/tradeNotification').once('value', function (data) {
+                        firebase.database().ref('users/' + uid + '/private/tradeNotification').once('value', function(data) {
                             if (data.val() == false) {
                                 $('input[name="trade_notif"]').prop('checked', false);
-                            }
-                            else {
+                            } else {
                                 $('input[name="trade_notif"]').prop('checked', true);
                                 $('.switch[data-target="switch-trade_notif"]').addClass('switchOn');
                             }
                         })
-                        
+
                         // if User is VIP.
-                        firebase.database().ref('users/' + uid + '/moder/group').once('value', function (data) {
+                        firebase.database().ref('users/' + uid + '/moder/group').once('value', function(data) {
                             var group = data.val();
                             if (group && group.match(/(vip|admin)/)) {
                                 $('#vip_block').show();
                                 Player.isVip = true;
-                                
+
                                 // Load user nickname color
-                                firebase.database().ref('users/' + uid + '/vip/nicknameColor').once('value', function (data) {
+                                firebase.database().ref('users/' + uid + '/vip/nicknameColor').once('value', function(data) {
                                     var colors = data.val(); // String
                                     if (!colors) return;
                                     colors = colors.split(','); // Array
@@ -330,10 +354,10 @@
                                         $('.add_color').click();
                                     }
                                     for (var i = 0; i < colors.length; i++) {
-                                        var $el = $('.color_box:eq('+i+')');
+                                        var $el = $('.color_box:eq(' + i + ')');
                                         $el.css('background-color', colors[i]);
                                         $el.data('color', colors[i]);
-                                        
+
                                         $el.ColorPickerSetColor(colors[i]);
                                     }
                                     nicknameColorChange();
@@ -342,11 +366,11 @@
                         })
                     }
                 })
-                
+
                 $('#activate_promocode').on('click', function() {
                     var promocode = $('#promocode').val();
                     if (promocode.length < 3) return;
-                    
+
                     var extra = JSON.parse(getStatistic('extra', '{}'));
                     if (extra.promocodes && extra.promocodes[promocode] != null) {
                         $.notify({
@@ -359,16 +383,16 @@
                     }
 
                     $(this).addClass('m-progress');
-                    
+
                     $.ajax({
-                        //url: 'http://localhost:3000/api/promocode?code=' + promocode,
-                        url: 'https://kvmde40-10035.fornex.org/api/promocode?code=' + promocode,
+                        url: 'http://localhost:3000/api/promocode?code=' + promocode,
+                        //url: 'https://kvmde40-10035.fornex.org/api/promocode?code=' + promocode,
                         jsonp: 'callback',
                         dataType: 'jsonp',
                         success: function(response) {
                             $('#modal_promocode').modal('hide');
                             $('#activate_promocode').removeClass('m-progress');
-                            
+
                             if (response != null) {
                                 if (response.action) {
                                     eval(response.action);
@@ -383,7 +407,7 @@
                                 if (!extra.promocodes) extra.promocodes = {};
                                 extra.promocodes[promocode] = true;
                                 saveStatistic('extra', extra);
-                                
+
                                 LOG.log({
                                     action: 'Activate promo code',
                                     code: promocode
@@ -394,16 +418,72 @@
                                 }, {
                                     type: 'danger'
                                 })
-                            }                            
+                            }
                         }
                     })
                 })
+                
+                // Change email
+                $(document).on('click', '#change-mail', function() {
+                    $(this).addClass('m-progress');
+                    var pass = $('#password').val();
+                    
+                    var user = firebase.auth().currentUser;
+                    var credential = firebase.auth.EmailAuthProvider.credential(
+                        user.email,
+                        pass
+                    )
+                    
+                    var newMail = $('#mail').val();
+                    if (!/.*@.*\..{1,5}$/.test(newMail)) {
+                        $.notify({
+                            message: 'Wrong email'
+                        }, {
+                            type: 'danger'
+                        });
+                        return
+                    }
+                    
+                    user.reauthenticate(credential).then(function() {
+                        firebase.auth().currentUser.updateEmail(newMail).then(function() {
+                            $.notify({
+                                message: 'OK!'
+                            }, {
+                                type: 'success'
+                            })
+                            $('#change-mail-modal').modal('hide');
+                            $('#change-mail').removeClass('m-progress');
+                        }, function(error) {
+                            $.notify({
+                                message: error.message
+                            }, {
+                                type: 'danger'
+                            })
+                            console.log(error);
+
+                            $('#change-mail-modal').modal('hide');
+                            $('#change-mail').removeClass('m-progress');
+
+                            LOG.err({
+                                action: 'Error on email changing',
+                                error: error
+                            })
+                        })
+                        
+                    }, function(error) {
+                        $.notify({
+                            message: 'Wrong password'
+                        }, {
+                            type: 'danger'
+                        })
+                    })            
+                })
             });
-            
+
             $('.add_color').on('click', function() {
-                
+
                 $('<div class="color_box" data-color="#ffffff"></div>').insertBefore('.add_color');
-                
+
                 $('.color_box').each(function() {
                     var that = this;
                     $(that).ColorPicker({
@@ -414,7 +494,7 @@
                         }
                     })
                 })
-                
+
                 if ($('.color_box').length == 4)
                     $('.add_color').remove();
             })
@@ -422,64 +502,62 @@
             function nicknameColorChange() {
                 var nickname = $('#nickname').val();
                 $('#color_example').html(nickname);
-                
+
                 var colors = [];
                 $('.color_box').each(function() {
                     colors.push($(this).data('color'));
                 })
-                
+
                 $('#color_example').gradientText({
                     colors: colors
                 });
             }
-            $('#custom_avatar').change(function () {
-                getMeta($(this).val(), function (size) {
+            $('#custom_avatar').change(function() {
+                getMeta($(this).val(), function(size) {
                     if (size && size.width != size.heigth && size.width != 184) {
                         Lobibox.notify('error', {
-                            pauseDelayOnHover: false
-                            , continueDelayOnInactiveTab: false
-                            , width: $(window).width()
-                            , position: 'top center'
-                            , icon: false
-                            , title: 'Image size'
-                            , delay: 4000
-                            , size: 'mini'
-                            , showClass: 'fadeInDown'
-                            , hideClass: 'fadeOutUp'
-                            , msg: 'Image must be 184px x 184px'
+                            pauseDelayOnHover: false,
+                            continueDelayOnInactiveTab: false,
+                            width: $(window).width(),
+                            position: 'top center',
+                            icon: false,
+                            title: 'Image size',
+                            delay: 4000,
+                            size: 'mini',
+                            showClass: 'fadeInDown',
+                            hideClass: 'fadeOutUp',
+                            msg: 'Image must be 184px x 184px'
                         });
                         correctImg = false;
-                    }
-                    else {
+                    } else {
                         correctImg = true;
                     }
                 })
             })
-            $(document).on('localizationloaded', function () {
+            $(document).on('localizationloaded', function() {
                 $('#translator').text(Translation.info.author);
                 $('#translation_date').text(Translation.info.date);
             })
-            $("#submit").on("click", function () {
+            $("#submit").on("click", function() {
                 var nick = $("#nickname").val();
                 var validation = /^[a-zA-Zа-яёА-ЯЁ0-9_-]+$/;
                 var illicitNick = /((a|а|о|o)(d|д)(m|м)(i|\||и|n)(n|и|н)|(VL(A|а)D(O|о)(S|c|с)(?:776)?))/ig;
                 if (nick != "" && validation.test(nick) && !illicitNick.test(nick)) {
                     saveStatistic("playerNickname", nick)
                     Player.nickname = nick;
-                }
-                else {
+                } else {
                     Lobibox.notify('error', {
-                        pauseDelayOnHover: false
-                        , continueDelayOnInactiveTab: false
-                        , width: $(window).width()
-                        , position: 'top center'
-                        , icon: false
-                        , title: Localization.getString('settings.notification.invalid_nick_title')
-                        , delay: 4000
-                        , size: 'mini'
-                        , showClass: 'fadeInDown'
-                        , hideClass: 'fadeOutUp'
-                        , msg: Localization.getString('settings.notification.invalid_nick')
+                        pauseDelayOnHover: false,
+                        continueDelayOnInactiveTab: false,
+                        width: $(window).width(),
+                        position: 'top center',
+                        icon: false,
+                        title: Localization.getString('settings.notification.invalid_nick_title'),
+                        delay: 4000,
+                        size: 'mini',
+                        showClass: 'fadeInDown',
+                        hideClass: 'fadeOutUp',
+                        msg: Localization.getString('settings.notification.invalid_nick')
                     });
                     return false;
                 }
@@ -489,15 +567,14 @@
                 Settings.sounds = $('input[name="sounds"]').prop('checked');
                 Settings.drop = $('input[name="drop"]').prop('checked');
                 Settings.scroll_names = $('input[name="scroll"]').prop('checked');
-                
+
                 saveStatistic('settings_language', Settings.language);
                 saveStatistic('settings_scroll', Settings.scroll_names);
                 saveStatistic('settings_sounds', Settings.sounds);
                 saveStatistic('settings_drop', Settings.drop);
                 try {
                     var avatar = $('.film_roll_child.active img').attr('src').match(/\/[0-9a-z-_]+\.\w{3}$/i)[0].replace('/', '');
-                }
-                catch (e) {
+                } catch (e) {
                     var avatar = '0.jpg';
                 }
                 var customAvatar = $('#custom_avatar').val();
@@ -517,7 +594,7 @@
                     userRef.child('/settings/language').set(Settings.language);
                     userRef.child('/settings/drop').set(Settings.drop);
                     userRef.child('/settings/sounds').set(Settings.sounds);
-                    
+
                     if (Player.isVip) {
                         var colors = [];
                         $('.color_box').each(function() {
@@ -525,38 +602,36 @@
                         })
                         userRef.child('/vip/nicknameColor').set(colors.join(','));
                     }
-                }
-                catch (e) {
+                } catch (e) {
                     console.log(e);
                 }
                 LOG.log({
                     action: 'Change settings'
                 })
                 Lobibox.notify('info', {
-                    pauseDelayOnHover: false
-                    , continueDelayOnInactiveTab: false
-                    , width: $(window).width()
-                    , position: 'top center'
-                    , icon: false
-                    , title: Localization.getString('settings.notification.title')
-                    , delay: 2000
-                    , size: 'mini'
-                    , showClass: 'fadeInDown'
-                    , hideClass: 'fadeOutUp'
-                    , msg: Localization.getString('settings.notification.saved')
+                    pauseDelayOnHover: false,
+                    continueDelayOnInactiveTab: false,
+                    width: $(window).width(),
+                    position: 'top center',
+                    icon: false,
+                    title: Localization.getString('settings.notification.title'),
+                    delay: 2000,
+                    size: 'mini',
+                    showClass: 'fadeInDown',
+                    hideClass: 'fadeOutUp',
+                    msg: Localization.getString('settings.notification.saved')
                 });
             });
-            $('#reset').on('click', function () {
+            $('#reset').on('click', function() {
                 Lobibox.confirm({
-                    iconSource: 'fontAwesome'
-                    , title: Localization.getString('settings.notification.reset_confirm_title')
-                    , msg: Localization.getString('settings.notification.reset_confirm')
-                    , callback: function ($tihs, type, ev) {
+                    iconSource: 'fontAwesome',
+                    title: Localization.getString('settings.notification.reset_confirm_title'),
+                    msg: Localization.getString('settings.notification.reset_confirm'),
+                    callback: function($tihs, type, ev) {
                         if (type == 'yes') {
                             if (isAndroid()) {
                                 client.deleteAllInventory();
-                            }
-                            else {
+                            } else {
                                 localStorage.clear();
                                 window.indexedDB.deleteDatabase('Inventory');
                             }
@@ -564,17 +639,17 @@
                             saveStatistic('doubleBalance', 0);
                             saveStatistic('playerPoints', 0);
                             Lobibox.notify('info', {
-                                pauseDelayOnHover: false
-                                , continueDelayOnInactiveTab: false
-                                , width: $(window).width()
-                                , position: 'top center'
-                                , icon: false
-                                , title: Localization.getString('settings.notification.reset_confirm_title')
-                                , delay: 2000
-                                , size: 'mini'
-                                , showClass: 'fadeInDown'
-                                , hideClass: 'fadeOutUp'
-                                , msg: Localization.getString('settings.notification.reset_done')
+                                pauseDelayOnHover: false,
+                                continueDelayOnInactiveTab: false,
+                                width: $(window).width(),
+                                position: 'top center',
+                                icon: false,
+                                title: Localization.getString('settings.notification.reset_confirm_title'),
+                                delay: 2000,
+                                size: 'mini',
+                                showClass: 'fadeInDown',
+                                hideClass: 'fadeOutUp',
+                                msg: Localization.getString('settings.notification.reset_done')
                             });
                             try {
                                 var userRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
@@ -582,15 +657,14 @@
                                 userRef.child('/settings/sounds').set(true);
                                 userRef.child('/private/double').set(0);
                                 userRef.child('/public/points').set(0);
-                            }
-                            catch (e) {
+                            } catch (e) {
                                 console.log(e);
                             }
                         }
                     }
                 });
             })
-            $('.switch').click(function () {
+            $('.switch').click(function() {
                 $(this).toggleClass("switchOn");
             });
 
@@ -603,43 +677,43 @@
                     document.cookie = name + "=;";
                 }
             }
-            $(document).on('click', '[data-loc-group="interface"] .option-block__name[data-loc="group_title"]', function () {
+            $(document).on('click', '[data-loc-group="interface"] .option-block__name[data-loc="group_title"]', function() {
                 $('#code').toggle();
             })
-            $(document).on('click', '#code-confirm', function () {
+            $(document).on('click', '#code-confirm', function() {
                 var codesList = [{
-                    code: 'f8d6dd190baff0de491c8fae6399cd64'
-                    , multiply: false
-                    , action: 'saveStatistic("doubleBalance", Player.doubleBalance+=183875)'
-                    , description: '+183875 double credits'
-    }, {
-                    code: 'fe63765176c7bd5b069d4e6c7eee3d34'
-                    , multiply: false
-                    , action: 'saveStatistic("doubleBalance", Player.doubleBalance+=50000)'
-                    , description: '+50000 double credits'
-    }, {
-                    simpleCode: 'localServer'
-                    , code: ''
-                    , multiply: true
-                    , action: 'location="http://192.168.1.205:8080"'
-                    , description: 'Go to local web server.'
-    }, {
-                    simpleCode: 'Splash'
-                    , code: ''
-                    , multiply: true
-                    , action: 'client.showSplashScreen();'
-                    , description: 'Go to local web server.'
-    }, {
-                    simpleCode: 'CusCas'
-                    , code: ''
-                    , multiply: true
-                    , action: 'location="https://vlados776.github.io/OpenCase_Beta2/RUS/customCases.html";'
-                    , description: 'Fus ro dah'
-    }];
+                    code: 'f8d6dd190baff0de491c8fae6399cd64',
+                    multiply: false,
+                    action: 'saveStatistic("doubleBalance", Player.doubleBalance+=183875)',
+                    description: '+183875 double credits'
+                }, {
+                    code: 'fe63765176c7bd5b069d4e6c7eee3d34',
+                    multiply: false,
+                    action: 'saveStatistic("doubleBalance", Player.doubleBalance+=50000)',
+                    description: '+50000 double credits'
+                }, {
+                    simpleCode: 'localServer',
+                    code: '',
+                    multiply: true,
+                    action: 'location="http://192.168.1.205:8080"',
+                    description: 'Go to local web server.'
+                }, {
+                    simpleCode: 'Splash',
+                    code: '',
+                    multiply: true,
+                    action: 'client.showSplashScreen();',
+                    description: 'Go to local web server.'
+                }, {
+                    simpleCode: 'CusCas',
+                    code: '',
+                    multiply: true,
+                    action: 'location="https://vlados776.github.io/OpenCase_Beta2/RUS/customCases.html";',
+                    description: 'Fus ro dah'
+                }];
                 var code = $('#code-input').val();
                 if (code == "") {
                     $("#code-input").addClass("animated shake");
-                    setTimeout(function () {
+                    setTimeout(function() {
                         $("#code-input").removeClass("animated shake");
                     }, 1000);
                     return false
@@ -653,35 +727,36 @@
                             saveStatistic('code-' + code, 'activated');
                             msg = codesList[i].description;
                         }
-                        else {
-                            msg = 'Code already activated.';
-                        }
+                else {
+                    msg = 'Code already activated.';
+                }
                 Lobibox.notify('info', {
-                    pauseDelayOnHover: false
-                    , continueDelayOnInactiveTab: false
-                    , width: $(window).width()
-                    , position: 'top center'
-                    , icon: false
-                    , title: "Code activation"
-                    , delay: 2000
-                    , size: 'mini'
-                    , showClass: 'fadeInDown'
-                    , hideClass: 'fadeOutUp'
-                    , msg: msg
+                    pauseDelayOnHover: false,
+                    continueDelayOnInactiveTab: false,
+                    width: $(window).width(),
+                    position: 'top center',
+                    icon: false,
+                    title: "Code activation",
+                    delay: 2000,
+                    size: 'mini',
+                    showClass: 'fadeInDown',
+                    hideClass: 'fadeOutUp',
+                    msg: msg
                 });
             })
 
             function getMeta(url, callback) {
                 $("<img/>", {
-                    load: function () {
+                    load: function() {
                         callback({
-                            width: this.width
-                            , height: this.height
+                            width: this.width,
+                            height: this.height
                         });
-                    }
-                    , src: url
+                    },
+                    src: url
                 });
             }
+
         </script>
         <script src="../scripts/jquery.film_roll.min.js"></script>
         <script src="../scripts/jquery.touchSwipe.min.js"></script>

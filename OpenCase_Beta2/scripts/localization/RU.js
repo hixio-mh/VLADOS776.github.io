@@ -1282,6 +1282,10 @@ var Translation = {
                 avatar: {
                     text: 'Аватарка',
                     en: 'Avatar'
+                },
+                'change-email': {
+                    text: 'Сменить Email',
+                    en: 'Change email'
                 }
             },
             beta: {
@@ -1336,6 +1340,20 @@ var Translation = {
                 close: {
                     text: 'Отмена',
                     en: 'Close'
+                }
+            },
+            change_mail_modal: {
+                password: {
+                    text: 'Пароль:'
+                },
+                new: {
+                    text: 'Введите новый Email:'
+                },
+                change: {
+                    text: 'Сменить'
+                },
+                close: {
+                    text: 'Отмена'
                 }
             },
             notification: {
