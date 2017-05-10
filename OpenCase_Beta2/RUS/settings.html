@@ -385,8 +385,8 @@
                     $(this).addClass('m-progress');
 
                     $.ajax({
-                        url: 'http://localhost:3000/api/promocode?code=' + promocode,
-                        //url: 'https://kvmde40-10035.fornex.org/api/promocode?code=' + promocode,
+                        //url: 'http://localhost:3000/api/promocode?code=' + promocode,
+                        url: 'https://kvmde40-10035.fornex.org/api/promocode?code=' + promocode,
                         jsonp: 'callback',
                         dataType: 'jsonp',
                         success: function(response) {
