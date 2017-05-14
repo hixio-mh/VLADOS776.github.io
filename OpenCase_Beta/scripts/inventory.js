@@ -5,17 +5,17 @@ $(function() {
 	
 		$('.inventoryList').on('scroll', function() {
             if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight-80 && $('.js-loading-inventory').length) {
-                fillInventory(".inventory", "bet", {loadMore: true});
+                fillInventory({ loadMore: true, action: 'game' });
             }
         });
 	}
 })
 
-function fillInventory(selector, action, opt) {
-	inventory_loading = true;
-    selector = selector || ".inventory";
-    action = action || "";
+function fillInventory(opt) {
     opt = opt || {};
+	inventory_loading = true;
+    selector = opt.selector || ".inventory";
+    action = opt.action || "";
 	if ($('.js-loading-inventory').length == 0){
         if ($(selector+' .weapon').length != 0) {
             $(selector+" .weapon").remove();

@@ -32,7 +32,7 @@ $('#add-items').on('click', function() {
     
     $('.js-loading-inventory').remove();
 
-    fillInventory();
+    fillInventory({ action: 'game' });
 });
 
 $(".choseItems").on("click", function() {

@@ -166,6 +166,24 @@ $(document).on('click', '#buy-double', function() {
     if (!weapon.can.buy) return;
     weapon.new = true;
     
+    if (!PricesBACKUP.checkPrice(weapon)) {
+        $.notify({
+            message: 'Price has been modified!'
+        }, {
+            type: 'danger'
+        })
+        LOG.log({
+            action: 'hack',
+            type: 'Change price',
+            item: {
+                id: weapon.item_id,
+                name: weapon.titleText(),
+                price: weapon.price
+            }
+        })
+        return false;
+    }
+    
     var count = parseInt($("#buy_count").val());
     var price = weapon.price * count * 100;
     

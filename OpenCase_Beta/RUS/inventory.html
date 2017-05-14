@@ -37,7 +37,6 @@
 	<div id="container">
 	<div class="navigationBar" data-menu-EN="Inventory" data-menu-RU="Мой инвентарь" style="box-shadow: none !important;"></div>
 	<div class="sort">
-		<span class="sort-money" id="sort-type"></span>
         <select class="form-control input-sm input-sort" id="sort-special"></select>
         <select class="form-control input-sm input-sort" id="sort-weapon"></select>
         <select class="form-control input-sm input-sort" id="sort-quality"></select>
@@ -61,6 +60,9 @@
 			<span id="weaponName"></span>
 			<img src="../images/stattrak.png" id="statTrakImg">
 			<img src="" id="weaponImg">
+			<button class="btn btn-primary lock" id='lock'>
+			    <i class="fa fa-unlock" aria-hidden="true"></i>
+			</button>
 			<div id="weaponLoadingImg"><i class="fa fa-refresh fa-spin" aria-hidden="true"></i></div>
 			<table id="weaponInfoTable">
 				<tr>
@@ -79,9 +81,15 @@
 		</div>
 	</div>
 
-	<div class='contractButtons' style='display: none' data-loc-group="trade_up_contract">
-		<button class='button_resetContract' data-loc="close">Close contract</button>
-		<button class='button_contract' data-loc="proceed">Proceed...</button>
+	<div class='bottomBar' id='tradeBar' style='display: none' data-loc-group="trade_up_contract">
+		<button class='btn btn-danger' id='cancelContract' data-loc="close">Close contract</button>
+		<button class='btn btn-success' id='finishContract' data-loc="proceed">Proceed...</button>
+	</div>
+	
+	<div class='bottomBar' id='selectBar' style='display: none' data-loc-group="select">
+		<button class='btn btn-primary' id='sellSelected' data-loc="sell">Sell selected</button>
+		<button class='btn btn-info' id='selectAll' data-loc="select">Select all</button>
+		<button class='btn btn-info' id='unselect' data-loc="unselect">Unselect all</button>
 	</div>
 </div>
 	<div class="statistic" data-loc-group="statistic">
@@ -105,14 +113,589 @@
 	</div>
 
 	<script>
+        var Inventory = (function(module) {
+            'use strict';
+            
+            var qualitySort = [
+                ".*",
+                "consumer",
+                "industrial",
+                "milspec",
+                "restricted",
+                "classified",
+                "(covert|extraordinary)",
+                "rare"
+            ];
+            var weaponsSort = [
+                " ",
+                ".*USP|P250|Tec|Five|Revolver|Desert|Glock|CZ75|Dual|P2000.*",
+                ".*Galil|AK|SG 5|FAMAS|M4A4|M4A1|AUG.*",
+                ".*AWP|SSG|G3SG1|SCAR.*",
+                ".*MAC|MP7|UMP|PP|P90|MP9.*",
+                ".*Nova|XM1|Sawed|MAG.*",
+                ".*M249|Negev.*",
+                "^★.*(Karambit|Bayonet|Knife).*",
+                "^★.*(Gloves|Hand Wraps).*"
+            ]
+            
+            module.init = function() {
+                $(document).on("click", ".weapon", module.list.click);
+                $(document).bind('taphold', module.list.longtap);
+                $('ul.inventory').bind('contextmenu', module.list.longtap);
+                $('#sellWeapon').on('click', sellItem);
+                $('#renameWeapon').on('click', renameWeapon);
+                $('#lock').on('click', lockToggle);
+                $(".glassBlur, .fullWeaponInfo-close").on("click", function() { hideItem(true) });
+                
+                $('#startContract').on('click', startContract);
+                $('#finishContract').on('click', finishContract);
+                $('#cancelContract').on('click', cancelContract);
+                
+                $("select").change(filterChanged);
+                $(document).on('click', '#js-loading-inventory', checkForLoadMore);
+                
+                $('#unselect').on('click', unselect);
+                $('#selectAll').on('click', selectAll);
+                $('#sellSelected').on('click', sellSelected);
+            }
+            
+            module.list = {};
+            module.list.status = 'default';
+            module.list.selectedClass = 'inventoryItemSelected';
+            
+            module.list.longtap = function(event) {
+                if (Inventory.list.status !== 'select') {
+                    var $target = $(event.target);
+                    var $this = $target.closest('li.weapon');
+                    if ($this.length !== 1) return;
+
+                    $this.addClass('inventoryItemSelected');
+
+                    Inventory.list.status = 'select';
+                    showSelectBar();
+                    event.preventDefault();
+                }
+            }
+            module.list.click = function(event) {
+                Sound("selectitems", "play");
+                var self = this;
+                getItem($(this).data('id')).then(function(item) {
+                    if (Inventory.list.status === 'contract') {
+                        if (item.souvenir || !item.can.contract)
+                            return false;
+                        if ($('.inventoryItemSelected').size() < 10 || $(self).hasClass('inventoryItemSelected'))
+                            $(self).toggleClass("inventoryItemSelected");
+                        if ($('.inventoryItemSelected').size() == 10)
+                            $('#finishContract').prop('disabled', false);
+                        else
+                            $('#finishContract').prop('disabled', true);
+                        return false;
+                    } else if (Inventory.list.status === 'select') {
+                        $(self).toggleClass(Inventory.list.selectedClass);
+                        
+                        if ($('.'+Inventory.list.selectedClass).length === 0) {
+                            Inventory.list.status = 'default';
+                            hideSelectBar();
+                        }
+                        
+                        return false;
+                    }
+                    showItem(item);
+                })
+            }
+
+            // Functions
+            function showItem(item) {
+                $(".fullWeaponInfo button").prop("disabled", false);
+                $("#weaponInfoContainer").data('id', item.id);
+                $("#weaponInfoContainer").data('item', item.saveObject( { id: true } ));
+
+                $("#weaponInfoContainer").css("display", "block");
+                $(".fullWeaponInfo").removeClass("info-closed");
+                $("#weaponImg").attr("src", getImgUrl(item.img, 1));
+                $("#weaponName").html(item.titleText());
+                $("#weaponPrice").html(item.price);
+
+                if (item.itemType == 'weapon') {
+                    $("#weaponQuality").parent().show();
+                    $("#weaponQuality").html(item.qualityText());
+                    $('#weaponRarity').text(item.rarity);
+                } else {
+                    $("#weaponQuality").parent().hide();
+                }
+
+                $('#newName').val(item.getName().replace(/(^"|"$)/g, ''));
+
+                $("#weaponLoadingImg").show();
+                $("#weaponImg").hide();
+                $("#weaponImg").on('load', function() {
+                    $("#weaponLoadingImg").hide();
+                    $("#weaponImg").show();
+                })
+
+                $("#statTrakImg").css("display", (item.stattrak ? "block" : "none"));
+
+                if (Player.doubleBalance < 1000) {
+                    $('#rename_button').prop('disabled', true);
+                } else {
+                    $('#rename_button').prop('disabled', false);
+                }
+                
+                $('#startContract').hide();
+                if (item.locked) {
+                    $('#lock .fa').removeClass('fa-unlock').addClass('fa-lock');
+                    $('#sellWeapon').hide();
+                    $('#rename_button').hide();
+                } else {
+                    $('#lock .fa').removeClass('fa-lock').addClass('fa-unlock');
+                    $('#sellWeapon').show();
+                    $('#rename_button').show();
+                    if (item.can.contract)
+                        $('#startContract').show();
+                }
+            }
+            function hideItem(animation) {
+                if (animation) {
+                    $(".fullWeaponInfo").addClass("info-closed");
+                    setTimeout(function() {
+                        $("#weaponInfoContainer").css("display", "none");
+                    }, 1000);
+                } else {
+                    $("#weaponInfoContainer").css("display", "none");
+                }
+            }
+            function openedWeaponInfo() {
+                var wp = new Weapon($("#weaponInfoContainer").data('item'));
+                wp.id = $("#weaponInfoContainer").data('item').id;
+                return wp;
+            }
+            function sellItem(item) {
+                hideItem(true);
+                var wp = openedWeaponInfo();
+                if (!PricesBACKUP.checkPrice(wp)) {
+                    $.notify({
+                        message: 'Price has been modified!'
+                    }, {
+                        type: 'danger'
+                    })
+                    LOG.log({
+                        action: 'hack',
+                        type: 'Change price',
+                        item: {
+                            id: wp.item_id,
+                            name: wp.titleText(),
+                            price: wp.price
+                        }
+                    })
+                    return false;
+                }
+                var price = wp.price * 100;
+                if (typeof sellCommis != 'undefined') {
+                    price = parseInt((price*(100-sellCommis)/100).toFixed(0));
+                }
+                if (isNaN(price)) {
+                    $.notifyt({
+                        message: Localization.getString('inventory.sell_error')
+                    }, {
+                        type: 'danger'
+                    })
+                    return false;
+                }
+                deleteWeapon(wp.id);
+                $('[data-id="'+wp.id+'"]').remove();
+                Sound("buy");
+                Player.doubleBalance += price;
+                saveStatistic('doubleBalance', Player.doubleBalance);
+
+                $('#stat-count').text($('li.weapon').length);
+
+                LOG.log({
+                    action: 'Sell weapon',
+                    price: price,
+                    balance: Player.doubleBalance
+                })
+
+                var sum = 0;
+                $('li.weapon').each(function(i, item) {
+                    sum += parseFloat($(item).find('i').text());
+                })
+                $('#stat-sum').text(sum.toFixed(2));
+            }
+            function renameWeapon() {
+                var newName = $('#newName').val();
+                if (newName.length > 20) newName = newName.match(/.{1,20}/g)[0];
+
+                getItem($('#weaponInfoContainer').data('id')).then(function(item) {
+                    var lg = {
+                        action: 'Rename weapon',
+                        old: item.titleText()
+                    }
+                    if (item.nameTag && newName == '') {
+                        item.nameTag = null;
+                    } else if (item.name == newName || item.nameOrig == newName) {
+                        $('#rename-weapon-modal').modal('hide');
+                        return;
+                    } else {
+                        item.nameTag = newName;
+                    }
+                    updateItem(item);
+                    $('#rename-weapon-modal').modal('hide');
+
+                    $('#weaponName').html(XSSreplace(item.titleText()));
+                    $('.weapon[data-id=' + $('#weaponInfoContainer').data('id') + ']').find('.name span').html(XSSreplace(item.getName()));
+
+                    Player.doubleBalance -= 1000;
+                    saveStatistic('doubleBalance', Player.doubleBalance);
+
+                    lg.new = item.titleText();
+                    LOG.log(lg);
+                })
+            }
+            function lockToggle() {
+                $(this).find('.fa').toggleClass('fa-lock fa-unlock');
+                var wp = openedWeaponInfo();
+                wp.locked = $(this).find('.fa').hasClass('fa-lock');
+                updateItem(wp);
+                
+                if (wp.locked) {
+                    $('#sellWeapon').hide();
+                    $('#startContract').hide();
+                    $('#rename_button').hide();
+                    $('.weapon[data-id=' + wp.id + ']').append('<div class="lock lock-li"><span class="fa fa-lock"></span></div>');
+                } else {
+                    $('#sellWeapon').show();
+                    $('#rename_button').show();
+                    if (wp.can.contract)
+                        $('#startContract').show();
+                    $('.weapon[data-id=' + wp.id + '] .lock-li').remove()
+                }
+            }
+            
+            function startContract() {
+                var rarity = $('#weaponRarity').text();
+                var statTrak = ($('#statTrakImg').css('display') == 'block') ? true : false;
+
+                for (var i = 1; i < qualitySort.length; i++) {
+                    if (RegExp(qualitySort[i]).test(rarity))
+                        $('#sort-quality :nth-child(' + (i + 1) + ')').prop('selected', 'true').change();
+                }
+                var spec = (statTrak ? 3 : 7);
+                $('#sort-special :nth-child(' + spec + ')').prop('selected', 'true').change();
+
+                hideItem(true);
+                $('#tradeBar').css('display', 'block');
+                $('#finishContract').prop('disabled', true);
+                $('.inventoryList').css('padding-bottom', '65px');
+                $('#sort-special').prop('disabled', true);
+                $('#sort-quality').prop('disabled', true);
+                Inventory.list.status = 'contract';
+
+                setTimeout(function(){
+                    $('li[data-id="' + $("#weaponInfoContainer").data('id') + '"]').addClass(Inventory.list.selectedClass);
+                }, 500);
+            }
+            function finishContract() {
+                var rnd = $('.'+Inventory.list.selectedClass)[Math.rand(0, 9)];
+                getWeapon($(rnd).data('id')).then(function(weapon) {
+                    if (weapon.collection() != -1) {
+                        var nextRarity = "";
+                        for (var i = qualitySort.length - 1; i > 0; --i) {
+                            if (new RegExp(qualitySort[i]).test(weapon.rarity) && i + 1 < qualitySort.length - 1) {
+                                nextRarity = qualitySort[i+1];
+                                break;
+                            }
+                        }
+
+                        if (nextRarity == '')
+                            return false;
+
+                        var nextRarityWeapons = [];
+                        var collectionWeapons = getWeaponsById(weapon.collection().weapons);
+
+                        for (var i = 0; i < collectionWeapons.length; i++)
+                            if (new RegExp(nextRarity).test(collectionWeapons[i].rarity))
+                                nextRarityWeapons.push(collectionWeapons[i]);
+                        var newWeapon = nextRarityWeapons[Math.rand(0, nextRarityWeapons.length - 1)];
+                    }
+
+                    if (typeof newWeapon == 'undefined') {
+                        $.notify({
+                            message: Localization.getString('inventory.trade_up_contract.contract_error.message')
+                        }, {
+                            type: 'danger'
+                        })
+                        return false;
+                    }
+
+                    newWeapon.quality = weapon.quality;
+                    newWeapon.stattrak = weapon.stattrak;
+                    newWeapon.item_id = newWeapon.id;
+
+                    newWeapon = new Weapon(newWeapon);
+
+                    if (newWeapon.price == 0)
+                        newWeapon.qualityRandom();
+
+                    newWeapon.new = true;
+
+                    $("."+Inventory.list.selectedClass).each(function() {
+                        deleteWeapon(parseInt($(this).data('id')));
+                    })
+
+                    saveWeapon(newWeapon).then(function(result) {
+                        newWeapon.id = result;
+                        showItem(newWeapon);
+                    });
+
+                    statisticPlusOne('contracts');
+                    Sound("contract", "play");
+                    $('.button_resetContract').click();
+                })
+            }
+            function cancelContract() {
+                $('#tradeBar').css('display', 'none');
+                $('#sort-special :nth-child(1)').prop('selected', 'true').change();
+                $('#sort-quality :nth-child(1)').prop('selected', 'true').change();
+                $('#sort-weapon :nth-child(1)').prop('selected', 'true').change();
+                $('.inventoryList').css('padding-bottom', '15px');
+
+                $('#sort-special').removeAttr('disabled');
+                $('#sort-quality').removeAttr('disabled');
+
+                Inventory.list.status = 'default';
+            }
+            
+            function fillInventory(currInventory, sumPr, count) {
+                var wp_from = parseInt($('#js-loading-inventory').data('from'));
+                $('#js-loading-inventory').remove();
+                if (!Array.isArray(currInventory)) return false;
+
+                //var ticker_limit = window.innerWidth <= 433 ? 16 : 20;
+
+                for (var i = 0; i < currInventory.length; i++) {
+                    var weapon = currInventory[i];
+                    var img = getImgUrl(weapon.img);
+
+                    var weaponInfo = weapon.toLi({price: true, nameTag: true, new: true, locked: true});
+
+                    $(".inventory").append(weaponInfo);
+
+                    if (weapon.new == true) {
+                        currInventory[i].new = false;
+                        updateWeapon(currInventory[i]);
+                    }
+                }
+
+                $("#stat-sum").html(sumPr.toFixed(2));
+                $("#stat-count").html(count);
+                inventory_loading = false;
+
+                if (currInventory.length == 0) {
+                    $(".inventory").append("<li id='empty-inventory'>" + Localization.getString('other.empty_inventory') + "</li>");
+                    return false;
+                }
+                if ((wp_from + inventory_step) < count) {
+                    $('.inventory').append('<li id="js-loading-inventory" data-from="' + (wp_from + inventory_step) + '"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></li>');
+
+                    if($(window).scrollTop() + $(window).height() >= $(document).height() - 80)
+                        checkForLoadMore();
+                }
+            }
+            function checkForLoadMore() {
+                if ($(window).scrollTop() + $(window).height() > $(document).height() - 80 && $('#js-loading-inventory').length) {
+                    var wp_from = parseInt($('#js-loading-inventory').data('from'));
+                    if (isNaN(wp_from)) wp_from = 1;
+                    if (!inventory_loading)
+                        loadMore(wp_from);
+                }
+            }
+            function loadMore(wp_from) {
+                inventory_loading = true;
+
+                getInventory(wp_from, wp_from + inventory_step - 1, {loadMore: true}).then(function(result) {
+                    Inventory.fillInventory(result.weapons, result.worth, result.count);
+                });
+            }
+            function filterChanged() {
+                var special = $("#sort-special :selected").val();
+                var weapon = $("#sort-weapon :selected").val();
+                var quality = $("#sort-quality :selected").val();
+
+                var wp_from = parseInt($("#js-loading-inventory").data('from'));
+                
+                var sortedInventory = {};
+
+                $(document.body).scrollTop(0);
+                getInventory().then(function(result) {
+                    var inventory = result.weapons;
+                    switch (parseInt(special)) {
+                        case 0:
+                            sortedInventory = inventory;
+                            break
+                        case 1:
+                            sortedInventory = sortInventory(inventory, "new", true);
+                            break
+                        case 2:
+                            sortedInventory = sortInventory(inventory, "stattrak", true);
+                            break
+                        case 3:
+                            sortedInventory = sortInventory(inventory, "stattrak", false);
+                            break
+                        case 4:
+                            sortedInventory = sortInventory(inventory, "souvenir", true);
+                            break
+                        case 5:
+                            sortedInventory = sortInventory(inventory, "souvenir", false);
+                            break
+                        case 6:
+                            sortedInventory = sortInventory(inventory, "souvenir", false);
+                            sortedInventory = sortInventory(sortedInventory, "stattrak", false);
+                            break
+                        default:
+                            sortedInventory = inventory
+                            break
+                    }
+                    if (parseInt(weapon) != 0) {
+                        sortedInventory = sortInventory(sortedInventory, "type", RegExp(weaponsSort[parseInt(weapon)]))
+                    }
+                    if (parseInt(quality) != 0) {
+                        sortedInventory = sortInventory(sortedInventory, "rarity", RegExp(qualitySort[parseInt(quality)]))
+                    }
+                    INVENTORY.weapons = sortedInventory;
+                    INVENTORY.count = sortedInventory.length;
+                    INVENTORY.worth = sortedInventory.reduce(function(sum, cur) {
+                        return sum + cur.price;
+                    }, 0)
+
+                    if (sortedInventory.length > 50)
+                        sortedInventory = sortedInventory.slice(0, 50);
+                    return {
+                        weapons: sortedInventory,
+                        count: INVENTORY.count,
+                        worth: INVENTORY.worth
+                    }
+                }).then(function(result) {
+                    $(".inventory li").remove();
+                    $('.inventory').append('<li id="js-loading-inventory" data-from="1"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></li>');
+                    return fillInventory(result.weapons, result.worth, result.count);
+                }).then(function() {
+                    if ($('#empty-inventory').length > 0)
+                        $("#empty-inventory").remove();
+                })
+            }
+            function sortInventory(currInventory, attr, value) {
+                var sorted = [];
+                for (var i = 0; i < currInventory.length; i++) {
+                    if (value.constructor != RegExp) {
+                        if (currInventory[i][attr] == value)
+                            sorted.push(currInventory[i]);
+                    } else {
+                        if (value.test(currInventory[i][attr])) {
+                            sorted.push(currInventory[i]);
+                        }
+                    }
+                }
+                return sorted;
+            }
+            
+            function showSelectBar() {
+                $('#selectBar').show();
+            }
+            function hideSelectBar() {
+                $('#selectBar').hide();
+            }
+            function unselect() {
+                $('.'+Inventory.list.selectedClass).removeClass(Inventory.list.selectedClass);
+                
+                module.list.status = 'default';
+                hideSelectBar();
+            }
+            function selectAll() {
+                $('li.weapon:not(.'+Inventory.list.selectedClass+')').addClass(Inventory.list.selectedClass);
+            }
+            function sellSelected() {
+                $('#selectBar > *').prop('disabled', true);
+                var selectedID = [];
+                $('.' + Inventory.list.selectedClass).each(function(i, item) {
+                    selectedID.push($(item).data('id'));
+                })
+                
+                getWeapons(selectedID).then(function(weapons) {
+                    var cancelSell = false;
+                    weapons.forEach(function(wp, i) {
+                        if (!wp.can.sell) {
+                            selectedID[i] = null;
+                            weapons[i] = null;
+                        }
+                        if (!PricesBACKUP.checkPrice(wp)) {
+                            $.notify({
+                                message: 'Price has been modified!'
+                            }, {
+                                type: 'danger'
+                            })
+                            LOG.log({
+                                action: 'hack',
+                                type: 'Change price',
+                                item: {
+                                    id: wp.item_id,
+                                    name: wp.titleText(),
+                                    price: wp.price
+                                }
+                            })
+                            cancelSell = true;
+                        }
+                    })
+                    if (cancelSell) {
+                        $('#selectBar > *').prop('disabled', false);
+                        return false;
+                    }
+                    
+                    var totalPrice = weapons.reduce(function(sum, curr) {
+                        if (curr)
+                            return sum + curr.price;
+                        else
+                            return sum
+                    }, 0) * 100;
+                    
+                    if (typeof sellCommis != 'undefined') {
+                        totalPrice = parseInt((totalPrice*(100-sellCommis)/100).toFixed(0));
+                    }
+                    
+                    selectedID.forEach(function(id) {
+                        if (id) {
+                            deleteWeapon(id);
+                            $('[data-id="'+id+'"]').remove();
+                        }
+                    })
+                    
+                    Player.doubleBalance += totalPrice;
+                    saveStatistic('doubleBalance', Player.doubleBalance);
+                    
+                    Sound("buy");
+                    
+                    $('#selectBar > *').prop('disabled', false);
+                    unselect();
+                })
+            }
+            
+            module.fillInventory = fillInventory;
+            module.checkForLoadMore = checkForLoadMore;
+            return module;
+        })(Inventory || {});
+
+        $(function() {
+            Inventory.init();
+        })
+
 		$(document).on('localizationloaded', function() {
 			getInventory(1, 50)
             .then(function(result) {
-                fillInventory(result.weapons, result.worth, result.count);
+                Inventory.fillInventory(result.weapons, result.worth, result.count);
             })
 		});
+
 		$(window).scroll(function() {
-			checkForLoadMore();
+			Inventory.checkForLoadMore();
 		});
 
         $(document).on('localizationloaded', function() {
@@ -133,484 +716,6 @@
                 $("#sort-quality").append("<option value='" + i + "'>" + sortQuality[i] + "</option>");
             }
         })
-        
-        var qualitySort = [
-            ".*",
-            "consumer",
-            "industrial",
-            "milspec",
-            "restricted",
-            "classified",
-            "(covert|extraordinary)",
-            "rare"
-        ];
-        var contractMode = false;
-
-
-		$(document).on("click", ".weapon", function() {
-			Sound("selectitems", "play");
-            
-            var self = this;
-            getItem($(this).data('id')).then(function(item) {
-                if (contractMode) {
-                    if (item.souvenir)
-                        return false;
-                    if ($('.inventoryItemSelected').size() < 10 || $(self).hasClass('inventoryItemSelected'))
-                        $(self).toggleClass("inventoryItemSelected");
-                    if ($('.inventoryItemSelected').size() == 10)
-                        $('.button_contract').removeAttr('disabled');
-                    else
-                        $('.button_contract').prop('disabled', true);
-                    return false;
-                }
-                $(".fullWeaponInfo button").prop("disabled", false);
-
-                $("#weaponInfoContainer").data('id', item.id);
-
-                $("#weaponInfoContainer").css("display", "block");
-                $(".fullWeaponInfo").removeClass("info-closed");
-                $("#weaponImg").attr("src", getImgUrl(item.img, 1));
-                $("#weaponName").html(item.titleText());
-                $("#weaponPrice").html(item.price);
-                
-                if (item.itemType == 'weapon') {
-                    $("#weaponQuality").parent().show();
-                    $("#weaponQuality").html(item.qualityText());
-                    $('#weaponRarity').text(item.rarity);
-                } else {
-                    $("#weaponQuality").parent().hide();
-                }
-                
-                $('#newName').val(item.getName().replace(/(^"|"$)/g, ''));
-                
-                $("#weaponLoadingImg").show();
-                $("#weaponImg").hide();
-                $("#weaponImg").on('load', function() {
-                    $("#weaponLoadingImg").hide();
-                    $("#weaponImg").show();
-                })
-
-                $('#sellWeapon').show();
-                $('#startContract').css('display', 'none');
-                if (item.can.contract)
-                    $('#startContract').css('display', 'inline-block');
-                
-                $("#statTrakImg").css("display", (item.stattrak ? "block" : "none"));
-                
-                if (Player.doubleBalance < 1000) {
-                    $('#rename_button').prop('disabled', true);
-                } else {
-                    $('#rename_button').prop('disabled', false);
-                }
-            })
-            
-		})
-
-        $(document).on('click', '#renameWeapon', function() {
-            var newName = $('#newName').val();
-            if (newName.length > 20) newName = newName.match(/.{1,20}/g)[0];
-            //newName = XSSreplace(newName);
-            
-            getItem($('#weaponInfoContainer').data('id')).then(function(item) {
-                var lg = {
-                    action: 'Rename weapon',
-                    old: item.titleText()
-                }
-                if (item.nameTag && newName == '') {
-                    item.nameTag = null;
-                } else if (item.name == newName || item.nameOrig == newName) {
-                    $('#rename-weapon-modal').modal('hide');
-                    return;
-                } else {
-                    item.nameTag = newName;
-                }
-                updateItem(item);
-                $('#rename-weapon-modal').modal('hide');
-                
-                $('#weaponName').html(XSSreplace(item.titleText()));
-                $('.weapon[data-id=' + $('#weaponInfoContainer').data('id') + ']').find('.name span').html(XSSreplace(item.getName()));
-                
-                Player.doubleBalance -= 1000;
-                saveStatistic('doubleBalance', Player.doubleBalance);
-                
-                lg.new = item.titleText();
-                LOG.log(lg);
-            })
-        })
-
-		$(document).on("click", ".glassBlur, .fullWeaponInfo-close", function() {
-			$(".fullWeaponInfo").addClass("info-closed");
-			setTimeout($.proxy(function() {
-				$("#weaponInfoContainer").css("display", "none");
-			}, this), 1000);
-		});
-
-		$('#sellWeapon').on('click', function() {
-            $(this).hide();
-			var price = parseFloat($("#weaponPrice").text());
-			price *= 100;
-            if (typeof sellCommis != 'undefined') {
-                price = parseInt((price*(100-sellCommis)/100).toFixed(0));
-            }
-			price = parseInt(price.toFixed(0));
-			if (isNaN(price)) {
-				Lobibox.notify('error', {
-					pauseDelayOnHover: false,
-					continueDelayOnInactiveTab: false,
-					width: $(window).width(),
-					position: 'top center',
-					icon: false,
-					title: Localization.getString('inventory.trade_up_contract.contract_error.title'),
-					size: 'mini',
-					showClass: 'fadeInDown',
-					hideClass: 'fadeOutUp',
-					msg: Localization.getString('inventory.sell_error')
-				});
-				return false;
-			}
-            
-			var weaponId = parseInt($("#weaponInfoContainer").data("id"));
-            deleteWeapon(weaponId);
-            $('[data-id="'+weaponId+'"]').remove();
-			Sound("buy");
-			Player.doubleBalance += price;
-			$("#menu_doubleBalance").text(Player.doubleBalance);
-			saveStatistic('doubleBalance', Player.doubleBalance);
-			$(".fullWeaponInfo-close").click();
-            
-            $('#stat-count').text($('li.weapon').length);
-            
-            LOG.log({
-                action: 'Sell weapon',
-                price: price,
-                balance: Player.doubleBalance
-            })
-            
-            var sum = 0;
-            $('li.weapon').each(function(i, item) {
-                sum += parseFloat($(item).find('i').text());
-            })
-            $('#stat-sum').text(sum.toFixed(2));
-		});
-
-		$('#startContract').on('click', function() {
-			var rarity = $('#weaponRarity').text();
-			var statTrak = ($('#statTrakImg').css('display') == 'block') ? true : false;
-
-			for (var i = 1; i < qualitySort.length; i++) {
-				if (RegExp(qualitySort[i]).test(rarity))
-					$('#sort-quality :nth-child(' + (i + 1) + ')').prop('selected', 'true').change();
-			}
-			var spec = (statTrak ? 3 : 7);
-			$('#sort-special :nth-child(' + spec + ')').prop('selected', 'true').change();
-
-			$("#weaponInfoContainer").css("display", "none");
-			$('.contractButtons').css('display', 'block');
-			$('.button_contract').prop('disabled', true);
-			$('.inventoryList').css('padding-bottom', '65px');
-			$('#sort-special').prop('disabled', true);
-			$('#sort-quality').prop('disabled', true);
-			contractMode = true;
-            
-            setTimeout(function(){
-                $('li[data-id="' + $("#weaponInfoContainer").data('id') + '"]').addClass("inventoryItemSelected");
-            }, 200);
-		})
-
-		$('.button_contract').on('click', function() {
-			var rnd = $('.inventoryItemSelected')[Math.rand(0, 9)];
-			getWeapon($(rnd).data('id')).then(function(weapon) {
-
-                if (weapon.collection() != -1) {
-                    var nextRarity = "";
-                    for (var i = qualitySort.length - 1; i > 0; --i) {
-                        if (new RegExp(qualitySort[i]).test(weapon.rarity) && i + 1 < qualitySort.length - 1) {
-                            nextRarity = qualitySort[i+1];
-                            break;
-                        }
-                    }
-                    
-                    if (nextRarity == '')
-                        return false;
-                        
-                    var nextRarityWeapons = [];
-                    var collectionWeapons = getWeaponsById(weapon.collection().weapons);
-                    
-                    for (var i = 0; i < collectionWeapons.length; i++)
-                        if (new RegExp(nextRarity).test(collectionWeapons[i].rarity))
-                            nextRarityWeapons.push(collectionWeapons[i]);
-                    var newWeapon = nextRarityWeapons[Math.rand(0, nextRarityWeapons.length - 1)];
-                }
-
-                if (typeof newWeapon == 'undefined') {
-                    Lobibox.notify('error', {
-                        pauseDelayOnHover: false,
-                        continueDelayOnInactiveTab: false,
-                        width: $(window).width(),
-                        position: 'top center',
-                        icon: false,
-                        title: Localization.getString('inventory.trade_up_contract.contract_error.title'),
-                        size: 'mini',
-                        showClass: 'fadeInDown',
-                        hideClass: 'fadeOutUp',
-                        msg: Localization.getString('inventory.trade_up_contract.contract_error.message')
-                    });
-                    return false;
-                }
-                
-                newWeapon.quality = weapon.quality;
-                newWeapon.stattrak = weapon.stattrak;
-                newWeapon.item_id = newWeapon.id;
-                
-                newWeapon = new Weapon(newWeapon);
-                
-                if (newWeapon.price == 0)
-                    newWeapon.qualityRandom();
-                
-                newWeapon.new = true;
-
-                $("#weaponInfoContainer").css("display", "block");
-                $("#weaponImg").attr("src", getImgUrl(newWeapon.img, 1));
-                $("#weaponName").html(newWeapon.specialText() + newWeapon.type + " " + newWeapon.name);
-                $("#weaponPrice").html(newWeapon.price);
-                $("#weaponQuality").html(newWeapon.qualityText());
-                $('#weaponRarity').text(newWeapon.rarity);
-                $('#startContract').css('display', 'none');
-                $('#sellWeapon').hide();
-
-                $(".inventoryItemSelected").each(function() {
-                    deleteWeapon(parseInt($(this).data('id')));
-                })
-
-                saveWeapon(newWeapon);
-                
-                statisticPlusOne('contracts');
-                Sound("contract", "play");
-                $('.button_resetContract').click();
-            })
-		})
-
-		$('.button_resetContract').on('click', function() {
-			$('.contractButtons').css('display', 'none');
-			$('#sort-special :nth-child(1)').prop('selected', 'true').change();
-			$('#sort-quality :nth-child(1)').prop('selected', 'true').change();
-			$('#sort-weapon :nth-child(1)').prop('selected', 'true').change();
-			$('.inventoryList').css('padding-bottom', '15px');
-
-			$('#sort-special').removeAttr('disabled');
-			$('#sort-quality').removeAttr('disabled');
-
-			contractMode = false;
-		})
-
-		$("select").change(function() {
-			var special = $("#sort-special :selected").val();
-			var weapon = $("#sort-weapon :selected").val();
-			var quality = $("#sort-quality :selected").val();
-
-			var wp_from = parseInt($("#js-loading-inventory").data('from'));
-
-			var weaponsSort = [
-				" ",
-				".*USP|P250|Tec|Five|Revolver|Desert|Glock|CZ75|Dual|P2000.*",
-				".*Galil|AK|SG 5|FAMAS|M4A4|M4A1|AUG.*",
-				".*AWP|SSG|G3SG1|SCAR.*",
-				".*MAC|MP7|UMP|PP|P90|MP9.*",
-				".*Nova|XM1|Sawed|MAG.*",
-				".*M249|Negev.*",
-				"^★.*(Karambit|Bayonet|Knife).*",
-                "^★.*(Gloves|Hand Wraps).*"
-			]
-
-
-			var sortedInventory = {};
-
-            $(document.body).scrollTop(0);
-            getInventory().then(function(result) {
-                var inventory = result.weapons;
-                switch (parseInt(special)) {
-                    case 0:
-                        sortedInventory = inventory;
-                        break
-                    case 1:
-                        sortedInventory = sortInventory(inventory, "new", true);
-                        break
-                    case 2:
-                        sortedInventory = sortInventory(inventory, "stattrak", true);
-                        break
-                    case 3:
-                        sortedInventory = sortInventory(inventory, "stattrak", false);
-                        break
-                    case 4:
-                        sortedInventory = sortInventory(inventory, "souvenir", true);
-                        break
-                    case 5:
-                        sortedInventory = sortInventory(inventory, "souvenir", false);
-                        break
-                    case 6:
-                        sortedInventory = sortInventory(inventory, "souvenir", false);
-                        sortedInventory = sortInventory(sortedInventory, "stattrak", false);
-                        break
-                    default:
-                        sortedInventory = inventory
-                        break
-                }
-                if (parseInt(weapon) != 0) {
-                    sortedInventory = sortInventory(sortedInventory, "type", RegExp(weaponsSort[parseInt(weapon)]))
-                }
-                if (parseInt(quality) != 0) {
-                    sortedInventory = sortInventory(sortedInventory, "rarity", RegExp(qualitySort[parseInt(quality)]))
-                }
-                INVENTORY.weapons = sortedInventory;
-                INVENTORY.count = sortedInventory.length;
-                INVENTORY.worth = sortedInventory.reduce(function(sum, cur) {
-                    return sum + cur.price;
-                }, 0)
-                
-                if (sortedInventory.length > 50)
-                    sortedInventory = sortedInventory.slice(0, 50);
-                return {
-                    weapons: sortedInventory,
-                    count: INVENTORY.count,
-                    worth: INVENTORY.worth
-                }
-            }).then(function(result) {
-                $(".inventory li").remove();
-                $('.inventory').append('<li id="js-loading-inventory" data-from="1"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></li>');
-                return fillInventory(result.weapons, result.worth, result.count);
-            }).then(function() {
-                if ($('#empty-inventory').length > 0)
-                    $("#empty-inventory").remove();
-            })
-		});
-
-		/*function getSpecialSQL() {
-			var specialSQL = "";
-			var special = $("#sort-special :selected").val();
-			var weapon = $("#sort-weapon :selected").val();
-			var quality = $("#sort-quality :selected").val();
-
-			var weaponsSortSQL = [
-				"",
-				"type LIKE 'USP' OR type LIKE 'P250' OR type LIKE 'Tec' OR type LIKE 'Five' OR type LIKE 'Revolver' OR type LIKE 'Desert' OR type LIKE 'Glock' OR type LIKE 'CZ75' OR type LIKE 'Dual' OR type LIKE 'P2000'",
-				"type LIKE 'Galil' OR type LIKE 'AK' OR type LIKE 'SG 5' OR type LIKE 'FAMAS' OR type LIKE 'M4A4' OR type LIKE 'M4A1' OR type LIKE 'AUG'",
-				"type LIKE 'AWP' OR type LIKE 'SSG' OR type LIKE 'G3SG1' OR type LIKE 'SCAR'",
-				"type LIKE 'MAC' OR type LIKE 'MP7' OR type LIKE 'UMP' OR type LIKE 'PP' OR type LIKE 'P90' OR type LIKE 'MP9'",
-				"type LIKE 'Nova' OR type LIKE 'XM1' OR type LIKE 'Sawed' OR type LIKE 'MAG'",
-				"type LIKE 'M249' OR type LIKE 'Negev'",
-				"rarity LIKE 'rare'",
-                "rarity LIKE 'extraordinary'"
-			]
-
-			switch (parseInt(special)) {
-				case 1:
-					specialSQL = "WHERE isNew = 'true'";
-					break
-				case 2:
-					specialSQL = "WHERE statTrak = 'true'";
-					break
-				case 3:
-					specialSQL = "WHERE statTrak = 'false'";
-					break
-				case 4:
-					specialSQL = "WHERE (type LIKE '%Souvenir%' OR type LIKE '%Сувенир%')";
-					break
-				case 5:
-					specialSQL = "WHERE (type NOT LIKE '%Souvenir%' AND type NOT LIKE '%Сувенир%')";
-					break
-				case 6:
-					specialSQL = "WHERE (type NOT LIKE '%Souvenir%' AND type NOT LIKE '%Сувенир%' AND statTrak = 'false')";
-					break
-				default:
-					specialSQL = "";
-					break
-			}
-			if (parseInt(weapon) != 0) {
-				if (specialSQL == "")
-					specialSQL = "WHERE (" + weaponsSortSQL[parseInt(weapon)] + ")";
-				else
-					specialSQL += " AND (" + weaponsSortSQL[parseInt(weapon)] + ")";
-			}
-			if (parseInt(quality) != 0) {
-				if (specialSQL == "")
-					specialSQL = "WHERE rarity = '" + qualitySort[parseInt(quality)] + "'";
-				else
-					specialSQL += " AND rarity = '" + qualitySort[parseInt(quality)] + "'";
-			}
-			//getInventory(wp_from, wp_from + inventory_step, specialSQL);
-			//sortedInventory = inventory;
-			return specialSQL;
-		}*/
-
-		function sortInventory(currInventory, attr, value) {
-			var sorted = [];
-			for (var i = 0; i < currInventory.length; i++) {
-				if (value.constructor != RegExp) {
-					if (currInventory[i][attr] == value)
-						sorted.push(currInventory[i]);
-				} else {
-					if (value.test(currInventory[i][attr])) {
-						sorted.push(currInventory[i]);
-					}
-				}
-			}
-			return sorted;
-		}
-
-		function inventoryLoadMore(wp_from) {
-			inventory_loading = true;
-
-			getInventory(wp_from, wp_from + inventory_step - 1, {loadMore: true}).then(function(result) {
-                fillInventory(result.weapons, result.worth, result.count);
-            });
-		} 
-		function checkForLoadMore() {
-			if ($(window).scrollTop() + $(window).height() > $(document).height() - 80 && $('#js-loading-inventory').length) {
-				var wp_from = parseInt($('#js-loading-inventory').data('from'));
-				if (isNaN(wp_from)) wp_from = 1;
-				if (!inventory_loading)
-					inventoryLoadMore(wp_from);
-			}
-		}
-
-		function fillInventory(currInventory, sumPr, count) {
-			var wp_from = parseInt($('#js-loading-inventory').data('from'));
-            $('#js-loading-inventory').remove();
-            if (!Array.isArray(currInventory)) return false;
-            
-            //var ticker_limit = window.innerWidth <= 433 ? 16 : 20;
-
-			for (var i = 0; i < currInventory.length; i++) {
-				var weapon = currInventory[i];
-				var img = getImgUrl(weapon.img);
-                
-				/*var weaponInfo = "<i class='currency dollar'>" + weapon.price + "</i><img src=\"" + img + "\"><div class='weaponInfo " + weapon.rarity + "'><div class='type'><span>" + weapon.specialText() + weapon.type + "</span></div><div class='name " + (weapon.name.length > ticker_limit ? "text-ticker" : '') + "'><span>" + weapon.name + "</span></div></div>";*/
-                
-                var weaponInfo = weapon.toLi({price: true, nameTag: true, new: true});
-                
-				$(".inventory").append(weaponInfo);
-
-				if (weapon.new == true) {
-					currInventory[i].new = false;
-					updateWeapon(currInventory[i]);
-				}
-			}
-
-			$("#stat-sum").html(sumPr.toFixed(2));
-			$("#stat-count").html(count);
-			inventory_loading = false;
-
-			if (currInventory.length == 0) {
-				$(".inventory").append("<li id='empty-inventory'>" + Localization.getString('other.empty_inventory') + "</li>");
-				return false;
-			}
-			if ((wp_from + inventory_step) < count) {
-				$('.inventory').append('<li id="js-loading-inventory" data-from="' + (wp_from + inventory_step) + '"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></li>');
-                
-                if($(window).scrollTop() + $(window).height() >= $(document).height() - 80)
-                    checkForLoadMore();
-			}
-		}
 	</script>
 </body>
 </html>

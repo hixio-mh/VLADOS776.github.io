@@ -485,13 +485,8 @@ function saveItem(item) {
         INVENTORY.changed = true;
         if (isAndroid()) {
             if (item.itemType == 'weapon') {
-                var extra = {
-                    hash: item.hash()
-                };
-                if (item.pattern != null) extra.pattern = item.pattern;
-                if (item.nameTag) extra.nameTag = item.nameTag;
             
-                var rowID = client.saveWeapon(item.item_id, item.quality, item.stattrak, item.souvenir, item['new'], JSON.stringify(extra));
+                var rowID = client.saveWeapon(item.item_id, item.quality, item.stattrak, item.souvenir, item['new'], item.getExtra(true));
                 
             } else if (item.itemType == 'sticker') {
                 var rowID = client.saveWeapon(item.item_id, 5, null, null, item['new'], '{}');
@@ -580,11 +575,7 @@ function setHash(ids) {
                 var weapon = new Weapon(request.result);
                 weapon.id = id;
                 weapon.new = request.result.new || false;
-                var saveObj = weapon.saveObject();
-                saveObj.id = id;
-                saveObj.hash = weapon.hash();
-                if (weapon.nameTag != null) saveObj.nameTag = weapon.nameTag;
-                //if (weapon.pattern != null) saveObj.pattern = weapon.pattern;
+                var saveObj = weapon.saveObject( { id: true, hash: true} );
                 store.put(saveObj);
                 if (that.counter < that.ids.length - 1) {
                     ++that.counter;
@@ -601,13 +592,6 @@ function updateWeapon(weapon) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
         if (isAndroid()) {
-            var extra = {
-                hash: weapon.hash()
-            };
-            if (weapon.nameTag != null)
-                extra.nameTag = weapon.nameTag;
-            if (weapon.pattern != null)
-                extra.pattern = weapon.pattern;
             var rowID = client.updateWeapon(
                 weapon.id, 
                 weapon.item_id, 
@@ -615,7 +599,7 @@ function updateWeapon(weapon) {
                 weapon.stattrak, 
                 weapon.souvenir, 
                 weapon['new'], 
-                JSON.stringify(extra)
+                weapon.getExtra(true)
             );
             resolver(rowID);
         } else {
@@ -624,9 +608,7 @@ function updateWeapon(weapon) {
                 var store = tx.objectStore('weapons');
 
                 if (typeof weapon.item_id != 'undefined' && typeof weapon.id != 'undefined') {
-                    var saveObj = weapon.saveObject();
-                    saveObj.id = weapon.id;
-                    saveObj.hash = weapon.hash();
+                    var saveObj = weapon.saveObject( { id: true, hash: true } );
                     store.put(saveObj);
                     resolver(true);
                 }
@@ -640,13 +622,6 @@ function updateItem(item) {
         INVENTORY.changed = true;
         if (isAndroid()) {
             if (item.itemType == 'weapon') {
-                var extra = {
-                    hash: item.hash()
-                }; 
-                if (item.nameTag != null)
-                    extra.nameTag = item.nameTag;
-                if (item.pattern != null)
-                    extra.pattern = item.pattern;
                 var rowID = client.updateWeapon(
                     item.id, 
                     item.item_id, 
@@ -654,7 +629,7 @@ function updateItem(item) {
                     item.stattrak, 
                     item.souvenir, 
                     item['new'], 
-                    JSON.stringify(extra)
+                    item.getExtra(true)
                 );
             } else if (item.itemType == 'sticker') {
                 var rowID = client.updateWeapon(
@@ -674,9 +649,7 @@ function updateItem(item) {
                 var store = tx.objectStore('weapons');
 
                 if (typeof item.item_id != 'undefined' && typeof item.id != 'undefined') {
-                    var saveObj = item.saveObject();
-                    saveObj.id = item.id;
-                    saveObj.hash = item.hash();
+                    var saveObj = item.saveObject( { id: true, hash: true } );
                     store.put(saveObj);
                     resolver(true);
                 }

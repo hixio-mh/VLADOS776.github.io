@@ -78,7 +78,7 @@ function newGame() {
 $("#addItems").on("click", function() {
     Sound("additems", "play");
     $('.js-loading-inventory').remove();
-    fillInventory();
+    fillInventory( { action: 'game' } );
 });
 
 $('#diffuculty').change(function() {
