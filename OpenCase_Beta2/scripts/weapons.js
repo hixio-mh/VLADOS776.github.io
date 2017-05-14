@@ -58,6 +58,7 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
         var nameTag = item_id.nameTag ? item_id.nameTag : item_id.extra ? item_id.extra.nameTag : null;
         var pattern = item_id.pattern != null ? item_id.pattern : item_id.extra != null ?
             item_id.extra.pattern : null;
+        var locked = item_id.locked ? item_id.locked : item_id.extra && item_id.extra.locked ? item_id.extra.locked : false;
         item_id = item_id.item_id || 0;
     }
     if (item_id > Items.weapons.length)
@@ -120,6 +121,7 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     this.can.trade = typeof this.old.can.trade != 'undefined' ? this.old.can.trade : true;
     this.can.contract = typeof this.old.can.contract != 'undefined' ? this.old.can.contract : true;
     this.can.bot = typeof this.old.can.bot != 'undefined' ? this.old.can.bot : true;
+    this.can.game = typeof this.old.can.game != 'undefined' ? this.old.can.game : true;
     this.can.inCase = typeof this.old.can.inCase != 'undefined' ? this.old.can.inCase : true;
     this.can.stattrak = typeof this.old.can.stattrak != 'undefined' ? this.old.can.stattrak : true;
     this.can.souvenir = typeof this.old.can.souvenir != 'undefined' ? this.old.can.souvenir : false;
@@ -144,6 +146,15 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     } catch (e) {
         throw new Error('Prices is undefined. Weapon ' + this.item_id);
     }
+    
+    // Lock weapon
+    this.locked = locked || false;
+    if (this.locked) {
+        this.can.sell = false;
+        this.can.trade = false;
+        this.can.game = false;
+        this.can.contract = false;
+    }
 } 
 
 // === Prototypes ===
@@ -163,7 +174,8 @@ Weapon.prototype.collection = function () {
     return -1;
 }
 
-Weapon.prototype.saveObject = function () {
+Weapon.prototype.saveObject = function (opt) {
+    opt = opt || {};
     var saveObj = {
         item_id: this.item_id,
         quality: this.quality,
@@ -171,8 +183,11 @@ Weapon.prototype.saveObject = function () {
         souvenir: this.souvenir,
         new: this.new
     };
+    if (opt.id && this.id) saveObj.id = this.id;
+    if (opt.hash) saveObj.hash = this.hash();
     if (this.nameTag) saveObj.nameTag = this.nameTag;
     if (this.pattern != null) saveObj.pattern = this.pattern;
+    if (this.locked) saveObj.locked = this.locked;
     return saveObj;
 }
 
@@ -337,25 +352,30 @@ Weapon.prototype.hash = function(id) {
     return hex_md5(JSON.stringify(hash_obj))
 }
 
-Weapon.prototype.getExtra = function() {
+Weapon.prototype.getExtra = function(isString) {
     var extra = {};
     extra.hash = this.hash();
     if (this.nameTag != null) extra.nameTag = this.nameTag;
     if (this.pattern != null) extra.pattern = this.pattern;
-    return extra;
+    if (this.locked) extra.locked = this.locked;
+    return isString ? JSON.stringify(extra) : extra;
 }
 
 Weapon.prototype.toLi = function(config) {
     config = config || {};
     config.new = typeof config.new === 'undefined' ? true : config.new;
     config.nameTagIcon = typeof config.nameTagIcon === 'undefined' ? true : config.nameTagIcon;
+    config.locked = typeof config.locked === 'undefined' ? false : config.locked;
     
     config.ticker = typeof config.ticker === 'undefined' ? true : config.ticker;
     var ticker_limit = config.ticker_limit || window.innerWidth <= 433 ? 16 : 20;
     
     var li = '<li class="weapon' + (config.new && this.new ? ' new-weapon' : '') + '" data-item_id=' + this.item_id + ' '+ (this.id ? 'data-id='+this.id : '') +'>';
     if (config.nameTagIcon && this.nameTag) {
-        li += '<div class="weapon_nameTagIcon"></div>'
+        li += '<div class="weapon_nameTagIcon"></div>';
+    }
+    if (config.locked && this.locked) {
+        li += '<div class="lock lock-li"><span class="fa fa-lock" aria-hidden="true"></span></div>';
     }
     if (config.price) {
         li += '<i class="currency dollar">' + this.price + '</i>';

@@ -63,7 +63,7 @@ var CoinFlip = {
                 CoinFlip.PlayerInGame = $(this).data('game-id');
                 Sound("click", "play");
                 $('.js-loading-inventory').remove();
-                fillInventory();
+                fillInventory( { action: 'game' } );
             });
             
             $(document).on('click', ".closeInventory", function() {

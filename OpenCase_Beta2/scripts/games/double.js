@@ -260,7 +260,7 @@ $(document).on('click', '.bet-to-color', function() {
 });
 
 $(document).on('click', '#fillBalance', function() {
-    fillInventory();
+    fillInventory( { action: 'game' } );
 });
 
 $(document).on("click", ".choseItems", function() {

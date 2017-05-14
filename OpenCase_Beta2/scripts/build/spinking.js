@@ -250,7 +250,7 @@ webpackJsonp_name_([0,1],[
 	            return false;
 	        }
 	        inventory.push(weapon);
-	        if (isAndroid()) saveWeapon(weapon);else saveInventory();
+	        saveWeapon(weapon)
 	        Lobibox.alert("success", {
 	            title: "Random Knife",
 	            iconSource: 'fontAwesome',
@@ -278,9 +278,8 @@ webpackJsonp_name_([0,1],[
 	            }
 	            msg += weapon.type + " | " + getSkinName(weapon.skinName, Settings.language) + " (" + weapon.quality + ")<br>";
 	            inventory.push(weapon);
-	            if (isAndroid()) saveWeapon(weapon);
+	            saveWeapon(weapon);
 	        }
-	        if (!isAndroid()) saveInventory();
 	        Lobibox.alert("success", {
 	            title: "Random Weapon",
 	            iconSource: 'fontAwesome',
@@ -317,7 +316,7 @@ webpackJsonp_name_([0,1],[
 	        }
 	        var msg = weapon.type + " | " + getSkinName(weapon.skinName, Settings.language) + " (" + weapon.quality + ")";
 	        inventory.push(weapon);
-	        if (isAndroid()) saveWeapon(weapon);else saveInventory();
+	        saveWeapon(weapon)
 	        Lobibox.alert("success", {
 	            title: "Weapon",
 	            iconSource: 'fontAwesome',

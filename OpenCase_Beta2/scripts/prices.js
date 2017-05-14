@@ -30,6 +30,79 @@ function getPrice(item_id, opt) {
     return price;
 }
 
+$(function() {
+    PricesBACKUP.init();
+})
+
+var PricesBACKUP = (function(module) {
+    var Prices2 = null;
+    
+    module.init = function() {
+        Prices2 = $.extend(true, {}, Prices);
+        
+        for (var key in Prices2) {
+            var item = Prices2[key];
+            if (item.prices) {
+                for (var pricesType in item.prices) {
+                    if (item.prices[pricesType] && Object.keys(item.prices[pricesType]).length > 0) {
+                        var pr = item.prices[pricesType];
+                        for (var qual in pr) {
+                            if (pr[qual].market > 0) {
+                                pr[qual].market = hex_md5(''+pr[qual].market);
+                            } else if (pr[qual].analyst > 0) {
+                                pr[qual].analyst = hex_md5(''+pr[qual].analyst);
+                            } else if (pr[qual].opskins > 0) {
+                                pr[qual].opskins = hex_md5(''+pr[qual].opskins);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    module.checkPrice = function(item, opt) {
+        var itemEnc = Prices2[item.item_id];
+        if (!itemEnc) return false;
+        
+        for (var pricesType in item.allPrices) {
+            var pricesNormal = item.allPrices[pricesType];
+            var pricesEnc = itemEnc.prices[pricesType];
+            
+            for (var qual in pricesNormal) {
+                if (pricesNormal[qual].market > 0 && hex_md5(''+pricesNormal[qual].market) === pricesEnc[qual].market) {
+                    continue;
+                } else if (pricesNormal[qual].analyst > 0 && hex_md5(''+pricesNormal[qual].analyst) === pricesEnc[qual].analyst) {
+                    continue;
+                } else if (pricesNormal[qual].opskins > 0 && hex_md5(''+pricesNormal[qual].opskins) === pricesEnc[qual].opskins) {
+                    continue;
+                } else {
+                    return false;
+                }
+            }
+        }
+        
+        var priceSource = 'market';
+        if (item.price === item.allPrices[item.priceType][item.quality].market) {
+            
+        } else if (item.price === item.allPrices[item.priceType][item.quality].analyst) {
+            priceSource = 'analyst';
+        } else if (item.price === item.allPrices[item.priceType][item.quality].opskins) {
+            priceSource = 'opskins';
+        } else {
+            return false;
+        }
+        
+        if (hex_md5(''+item.price) !== itemEnc.prices[item.priceType][item.quality][priceSource]) {
+            return false;
+        }
+        
+        return true;
+    }
+    
+    return module;
+})(PricesBACKUP || {})
+
 function getPriceWithNewQuality(item_id, opt) {
     opt = opt || {};
     var price = getPrice(item_id, opt);

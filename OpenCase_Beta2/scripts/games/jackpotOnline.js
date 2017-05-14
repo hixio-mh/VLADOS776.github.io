@@ -482,11 +482,12 @@ var DEBUG = false;
 $("#addItems").on("click", function() {
     Sound("additems", "play");
     $('.inventory').empty();
-    fillInventory(".inventory", "", {
+    fillInventory({
         limits: {
             min: Jackpot.room.limits.min,
             max: Jackpot.room.limits.max
-        }
+        },
+        action: 'game'
     });
 });
 

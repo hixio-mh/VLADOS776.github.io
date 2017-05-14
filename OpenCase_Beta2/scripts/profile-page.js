@@ -425,7 +425,7 @@ $(function () {
         else {
             $('.my-trades').hide();
             $('.send-trade-window').show();
-            fillInventory('.inventory', 'trade', {price: true, nameTag: true});
+            fillInventory({ price: true, nameTag: true, action: 'trade' });
         }
         $($('.trade__menu__item')[0]).click();
     })
@@ -787,7 +787,7 @@ $(function () {
         }
         $(".my-trades .trade__weapons__summ").hide();
         $('.trade__weapons__chang-your-weapons').show();
-        fillInventory('.inventory', 'trade', {price: true, nameTag: true});
+        fillInventory({ price: true, nameTag: true, action: 'trade' });
     })
     $(document).on('click', '#add-weapons', function () {
         var tradeWeapons = [];
@@ -852,7 +852,6 @@ $(function () {
                     for (var i = 0; i < convertedWeapons.length; i++) {
                         saveWeapon(convertedWeapons[i]);
                     }
-                    if (!isAndroid()) saveInventory();
                     fbProfile.setTradeGetWeaponsStatus(tradeID, true);
                     checkInventoryForNotification();
                     $('.trades-with-user__trade[data-tradeid="' + tradeInfo.tradeID + '"]').addClass('canceled');

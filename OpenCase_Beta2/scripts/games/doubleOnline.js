@@ -391,7 +391,7 @@ $(document).on('click', 'button[data-bet]', function() {
 });
 
 $(document).on('click', '#fillBalance', function() {
-    fillInventory();
+    fillInventory( { action: 'game' } );
 });
 
 $(document).on("click", ".choseItems", function() {

@@ -224,162 +224,17 @@
 	}
 }
 
-.contractButtons {
+.bottomBar {
     position: fixed;
     bottom: 25px;
     width: 100%;
     display: block;
     text-align: center;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     padding: 5px 0;
 }
 
 /* Buttons */
-.button_startContract {
-   border: 1px solid #000000;
-   background: #34688a;
-   background: -webkit-gradient(linear, left top, left bottom, from(#5286bd), to(#34688a));
-   background: -webkit-linear-gradient(top, #5286bd, #34688a);
-   background: -moz-linear-gradient(top, #5286bd, #34688a);
-   background: -ms-linear-gradient(top, #5286bd, #34688a);
-   background: -o-linear-gradient(top, #5286bd, #34688a);
-   background-image: -ms-linear-gradient(top, #5286bd 0%, #34688a 100%);
-   padding: 8.5px 17px;
-   -webkit-border-radius: 0px;
-   -moz-border-radius: 0px;
-   border-radius: 0px;
-   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-   text-shadow: #000000 0 1px 0;
-   color: #ffffff;
-   font-size: 14px;
-   font-family: helvetica, serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-.button_startContract:hover {
-   border: 1px solid #0a3c59;
-   text-shadow: #1e4158 0 1px 0;
-   background: #3e779d;
-   background: -webkit-gradient(linear, left top, left bottom, from(#65a9d7), to(#3e779d));
-   background: -webkit-linear-gradient(top, #65a9d7, #3e779d);
-   background: -moz-linear-gradient(top, #65a9d7, #3e779d);
-   background: -ms-linear-gradient(top, #65a9d7, #3e779d);
-   background: -o-linear-gradient(top, #65a9d7, #3e779d);
-   background-image: -ms-linear-gradient(top, #65a9d7 0%, #3e779d 100%);
-   color: #fff;
-   }
-.button_startContract:active {
-   text-shadow: #1e4158 0 1px 0;
-   border: 1px solid #0a3c59;
-   background: #5286bd;
-   background: -webkit-gradient(linear, left top, left bottom, from(#34688a), to(#3e779d));
-   background: -webkit-linear-gradient(top, #34688a, #5286bd);
-   background: -moz-linear-gradient(top, #34688a, #5286bd);
-   background: -ms-linear-gradient(top, #34688a, #5286bd);
-   background: -o-linear-gradient(top, #34688a, #5286bd);
-   background-image: -ms-linear-gradient(top, #34688a 0%, #5286bd 100%);
-   color: #fff;
-  }
-
-.button_resetContract {
-   border: 1px solid #0a3c59;
-   background: #1e597d;
-   background: -webkit-gradient(linear, left top, left bottom, from(#316294), to(#1e597d));
-   background: -webkit-linear-gradient(top, #316294, #1e597d);
-   background: -moz-linear-gradient(top, #316294, #1e597d);
-   background: -ms-linear-gradient(top, #316294, #1e597d);
-   background: -o-linear-gradient(top, #316294, #1e597d);
-   background-image: -ms-linear-gradient(top, #316294 0%, #1e597d 100%);
-   padding: 8px 16px;
-   -webkit-border-radius: 0px;
-   -moz-border-radius: 0px;
-   border-radius: 0px;
-   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   text-shadow: #000000 0 1px 0;
-   color: #ffffff;
-   font-size: 14px;
-   font-family: helvetica, serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-.button_resetContract:hover {
-   border: 1px solid #0a3c59;
-   text-shadow: #1e4158 0 1px 0;
-   background: #1e597d;
-   background: -webkit-gradient(linear, left top, left bottom, from(#3c73ab), to(#1e597d));
-   background: -webkit-linear-gradient(top, #3c73ab, #1e597d);
-   background: -moz-linear-gradient(top, #3c73ab, #1e597d);
-   background: -ms-linear-gradient(top, #3c73ab, #1e597d);
-   background: -o-linear-gradient(top, #3c73ab, #1e597d);
-   background-image: -ms-linear-gradient(top, #3c73ab 0%, #1e597d 100%);
-   color: #fff;
-   }
-.button_resetContract:active {
-   text-shadow: #1e4158 0 1px 0;
-   border: 1px solid #0a3c59;
-   background: #316294;
-   background: -webkit-gradient(linear, left top, left bottom, from(#1e597d), to(#1e597d));
-   background: -webkit-linear-gradient(top, #1e597d, #316294);
-   background: -moz-linear-gradient(top, #1e597d, #316294);
-   background: -ms-linear-gradient(top, #1e597d, #316294);
-   background: -o-linear-gradient(top, #1e597d, #316294);
-   background-image: -ms-linear-gradient(top, #1e597d 0%, #316294 100%);
-   color: #fff;
-   }
-.button_contract {
-   border: 1px solid #0a3c59;
-   background: #367d1e;
-   background: -webkit-gradient(linear, left top, left bottom, from(#36a339), to(#367d1e));
-   background: -webkit-linear-gradient(top, #36a339, #367d1e);
-   background: -moz-linear-gradient(top, #36a339, #367d1e);
-   background: -ms-linear-gradient(top, #36a339, #367d1e);
-   background: -o-linear-gradient(top, #36a339, #367d1e);
-   background-image: -ms-linear-gradient(top, #36a339 0%, #367d1e 100%);
-   padding: 8px 16px;
-   -webkit-border-radius: 0px;
-   -moz-border-radius: 0px;
-   border-radius: 0px;
-   -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 0px 0;
-   text-shadow: #000000 0 1px 0;
-   color: #ffffff;
-   font-size: 14px;
-   font-family: helvetica, serif;
-   text-decoration: none;
-   vertical-align: middle;
-   }
-.button_contract:hover {
-   border: 1px solid #0a3c59;
-   text-shadow: #000000 0 1px 0;
-   background: #367d1e;
-   background: -webkit-gradient(linear, left top, left bottom, from(#58d65a), to(#367d1e));
-   background: -webkit-linear-gradient(top, #58d65a, #367d1e);
-   background: -moz-linear-gradient(top, #58d65a, #367d1e);
-   background: -ms-linear-gradient(top, #58d65a, #367d1e);
-   background: -o-linear-gradient(top, #58d65a, #367d1e);
-   background-image: -ms-linear-gradient(top, #58d65a 0%, #367d1e 100%);
-   color: #fff;
-   }
-.button_contract:active {
-   text-shadow: #000000 0 1px 0;
-   border: 1px solid #0a3c59;
-   background: #36a339;
-   background: -webkit-gradient(linear, left top, left bottom, from(#367d1e), to(#367d1e));
-   background: -webkit-linear-gradient(top, #367d1e, #36a339);
-   background: -moz-linear-gradient(top, #367d1e, #36a339);
-   background: -ms-linear-gradient(top, #367d1e, #36a339);
-   background: -o-linear-gradient(top, #367d1e, #36a339);
-   background-image: -ms-linear-gradient(top, #367d1e 0%, #36a339 100%);
-   color: #fff;
-   }
-.button_contract:disabled {
-    opacity: 0.5;
-}
 button.update_price {
     border: none;
     background: transparent;
@@ -389,4 +244,18 @@ button.update_price {
     padding: 0;
     box-shadow: 0 0 6px #005DFF;
     vertical-align: middle;
+}
+.lock {
+    position: absolute;
+    top: 37px;
+    left: 0;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+.lock-li {
+    top:0;
+    padding: 2px 5px;
 }
