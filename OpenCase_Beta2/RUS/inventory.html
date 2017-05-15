@@ -271,55 +271,62 @@
             }
             function sellItem(item) {
                 hideItem(true);
-                var wp = openedWeaponInfo();
-                if (!PricesBACKUP.checkPrice(wp)) {
-                    $.notify({
-                        message: 'Price has been modified!'
-                    }, {
-                        type: 'danger'
-                    })
+                getItem(openedWeaponInfo().id).then(function(wp) {
+                    if (!PricesBACKUP.checkPrice(wp)) {
+                        $.notify({
+                            message: 'Price has been modified!'
+                        }, {
+                            type: 'danger'
+                        })
+                        LOG.log({
+                            action: 'hack',
+                            type: 'Change price',
+                            item: {
+                                id: wp.item_id,
+                                name: wp.titleText(),
+                                price: wp.price
+                            }
+                        })
+                        return false;
+                    }
+                    var price = wp.price * 100;
+                    if (typeof sellCommis != 'undefined') {
+                        price = parseInt((price*(100-sellCommis)/100).toFixed(0));
+                    }
+                    if (isNaN(price)) {
+                        $.notify({
+                            message: Localization.getString('inventory.sell_error')
+                        }, {
+                            type: 'danger'
+                        })
+                        return false;
+                    }
+                    deleteWeapon(wp.id);
+                    $('[data-id="'+wp.id+'"]').remove();
+                    Sound("buy");
+                    Player.doubleBalance += price;
+                    saveStatistic('doubleBalance', Player.doubleBalance);
+
+                    $('#stat-count').text($('li.weapon').length);
+
                     LOG.log({
-                        action: 'hack',
-                        type: 'Change price',
-                        item: {
-                            id: wp.item_id,
-                            name: wp.titleText(),
-                            price: wp.price
-                        }
+                        action: 'Sell weapon',
+                        price: price,
+                        balance: Player.doubleBalance
                     })
-                    return false;
-                }
-                var price = wp.price * 100;
-                if (typeof sellCommis != 'undefined') {
-                    price = parseInt((price*(100-sellCommis)/100).toFixed(0));
-                }
-                if (isNaN(price)) {
-                    $.notifyt({
-                        message: Localization.getString('inventory.sell_error')
+
+                    var sum = 0;
+                    $('li.weapon').each(function(i, item) {
+                        sum += parseFloat($(item).find('i').text());
+                    })
+                    $('#stat-sum').text(sum.toFixed(2));
+                }).catch(function(err) {
+                    $.notify({
+                        message: 'Can\'t find this item'
                     }, {
                         type: 'danger'
                     })
-                    return false;
-                }
-                deleteWeapon(wp.id);
-                $('[data-id="'+wp.id+'"]').remove();
-                Sound("buy");
-                Player.doubleBalance += price;
-                saveStatistic('doubleBalance', Player.doubleBalance);
-
-                $('#stat-count').text($('li.weapon').length);
-
-                LOG.log({
-                    action: 'Sell weapon',
-                    price: price,
-                    balance: Player.doubleBalance
                 })
-
-                var sum = 0;
-                $('li.weapon').each(function(i, item) {
-                    sum += parseFloat($(item).find('i').text());
-                })
-                $('#stat-sum').text(sum.toFixed(2));
             }
             function renameWeapon() {
                 var newName = $('#newName').val();
