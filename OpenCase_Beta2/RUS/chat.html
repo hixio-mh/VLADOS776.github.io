@@ -126,7 +126,6 @@
             })
             
             $('#attach_img').on('change', function(event) {
-                console.log(event);
                 var files = event.target.files;
                 
                 if (files && files[0]) {
@@ -152,9 +151,8 @@
                     render.readAsDataURL(files[0]);
                     
                     $('#preview_img').parent().addClass('m-progress');
-
-                    $.ajax({
-                        url: 'http://uploads.ru/api?upload',
+                    /*$.ajax({
+                        url: 'https://api.mobypicture.com/2.0/upload.format',
                         type: 'POST',
                         data: data,
                         cache: false,
@@ -186,7 +184,7 @@
                                 type: 'danger'
                             })
                         }
-                    })
+                    })*/
                 }
             });
             
@@ -201,16 +199,27 @@
             })
             
             
-            /*$('#attach_img').unsigned_cloudinary_upload('chat_images', 
+            $('#attach_img').unsigned_cloudinary_upload('chat_images', 
                 { cloud_name: 'dr9oq5tir' },
                 { multiply: true })
                 .bind('cloudinarydone', function(e, data) {
-                    $('#chat__new-message').append(data.result.secure_url);
-                    $('#chat__send-new-message').click();
+                    var url = data.result.secure_url;
+                    //var thumb = url;
+                    $('#preview_img').parent().removeClass('m-progress');
+
+                    $('#preview_img').data('url', url);
+                    //$('#preview_img').data('thumb', thumb);
                 })
                 .bind('cloudinaryprogress', function(e, data) {
                     console.log('load');
-            })*/
+                })
+                .bind('fileuploadfail', function() {
+                    $.notify({
+                        message: 'Can\'t load image to server'
+                    }, {
+                        type: 'danger'
+                    })
+                })
         })
     </script>
 </body>
