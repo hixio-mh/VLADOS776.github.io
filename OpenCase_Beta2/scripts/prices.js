@@ -76,6 +76,8 @@ var PricesBACKUP = (function(module) {
                     continue;
                 } else if (pricesNormal[qual].opskins > 0 && hex_md5(''+pricesNormal[qual].opskins) === pricesEnc[qual].opskins) {
                     continue;
+                } else if (pricesNormal[qual].market === -1 && ((pricesNormal[qual].analyst === -1 && pricesNormal[qual].opskins === -1) || (!pricesNormal[qual].analyst && !pricesNormal[qual].opskins))) {
+                    continue;
                 } else {
                     return false;
                 }
