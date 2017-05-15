@@ -284,7 +284,7 @@ var fbChat = (function (module) {
             }
             
             // Attachments
-            if ($('#attach_img').val() !== '') {
+            if ($('#preview_img').attr('src') !== '#') {
                 if ($('.attach-preview-wrap').hasClass('m-progress')) {
                     return false;
                 }
