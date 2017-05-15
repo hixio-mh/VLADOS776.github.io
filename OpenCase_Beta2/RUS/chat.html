@@ -86,7 +86,15 @@
                             <i class='glyphicon glyphicon-send'></i>
                         </button>
                     </div>
+                    
                 </div>
+                <div class="attach-preview hidden">
+                    <div class="attach-preview-wrap">
+                        <img id="preview_img" src='#'>
+                        <div id='attach-remove' class='attach-remove'>
+                            <i class='fa fa-times'></i>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -116,7 +124,84 @@
                 
                 $('attach_img').click();
             })
-            $('#attach_img').unsigned_cloudinary_upload('chat_images', 
+            
+            $('#attach_img').on('change', function(event) {
+                console.log(event);
+                var files = event.target.files;
+                
+                if (files && files[0]) {
+                    $('.attach-preview').removeClass('hidden');
+                    
+                    var data = new FormData();
+                    $.each(files, function(key, val) {
+                        data.append(key, val);
+                    })
+                    
+                    // File preview
+                    var render = new FileReader();
+                    render.onload = function(e) {
+                        $('#preview_img').attr('src', e.target.result);
+                        setTimeout(function() {
+                            $('.chat__messages').css('padding-bottom', $('.chat__write').outerHeight() - 15);
+                            $("#container").animate({
+                                scrollTop: $('#chat').height()
+                            }, 200);
+                        }, 100)
+                    }
+                    
+                    render.readAsDataURL(files[0]);
+                    
+                    $('#preview_img').parent().addClass('m-progress');
+
+                    $.ajax({
+                        url: 'http://uploads.ru/api?upload',
+                        type: 'POST',
+                        data: data,
+                        cache: false,
+                        dataType: 'json',
+                        processData: false,
+                        contentType: false,
+                        success: function(data, textStatus, jqXHR) {
+                            console.log(data);
+                            if (data.status_code === 200) {
+                                var url = data.data.img_url;
+                                var thumb = data.data.thumb_url;
+                                $('#preview_img').parent().removeClass('m-progress');
+                                
+                                $('#preview_img').data('url', url);
+                                $('#preview_img').data('thumb', thumb);
+                            } else {
+                                $.notify({
+                                    message: 'Can\'t load image to server'
+                                }, {
+                                    type: 'danger'
+                                })
+                            }
+                        },
+                        error: function(jqXHR, textStatus, error) {
+                            console.log('ERROR:', textStatus);
+                            $.notify({
+                                message: 'Can\'t load image to server'
+                            }, {
+                                type: 'danger'
+                            })
+                        }
+                    })
+                }
+            });
+            
+            $(document).on('click', '#attach-remove', function() {
+                $('#preview_img').data('url', '');
+                $('#preview_img').data('thumb', '');
+                $('#preview_img').attr('src', '#');
+                $('.attach-preview').addClass('hidden');
+                
+                $('#attach_img').val('');
+                $('.chat__messages').css('padding-bottom', '30px');
+            })
+            
+            
+            /*$('#attach_img').unsigned_cloudinary_upload('chat_images', 
                 { cloud_name: 'dr9oq5tir' },
                 { multiply: true })
                 .bind('cloudinarydone', function(e, data) {
@@ -125,18 +210,7 @@
                 })
                 .bind('cloudinaryprogress', function(e, data) {
                     console.log('load');
-            })
-            var Test = {
-                rusLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc6YLq7P6OMpQWsx4XlzYEiXAtnAnpgWAE-nTa-MwsZ9JM0jw/viewform?embedded=true',
-                engLink: 'https://docs.google.com/forms/d/e/1FAIpQLSc7d2U53Cdqk3zSB6OfNkewCKhwRdOObrwuf5DR1SIdM22dPg/viewform?embedded=true',
-                init: function() {
-                    if (Settings.language === 'RU') {
-                        $('#moder_iframe').attr('src', Test.rusLink);
-                    }
-                }
-            }
-            
-            Test.init();
+            })*/
         })
     </script>
 </body>

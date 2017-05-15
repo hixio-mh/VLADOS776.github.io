@@ -283,6 +283,23 @@ var fbChat = (function (module) {
                 }
             }
             
+            // Attachments
+            if ($('#attach_img').val() !== '') {
+                if ($('.attach-preview-wrap').hasClass('m-progress')) {
+                    return false;
+                }
+                if (msg.text === '') {
+                    msg.text = $('#preview_img').data('url');
+                } else {
+                    msg.attach = {};
+
+                    msg.attach.url = $('#preview_img').data('url');
+                    msg.attach.thumb = $('#preview_img').data('thumb');
+                }
+                
+                $('#attach-remove').click();
+                
+            }
             
             fbChat.chatRef.push(msg);
         })
@@ -389,6 +406,7 @@ function newMsg(key, message, edit) {
         group = message.group || "",
         country = message.country || "",
         extraClasses = message.extra || '',
+        attach = message.attach || {},
         vip = message.vip || {};
     edit = edit || false;
     
@@ -414,7 +432,7 @@ function newMsg(key, message, edit) {
     
     text = uid == "TrgkhCFTfVWdgOhZVUEAwxKyIo33" ? text : XSSreplace(text.brTrim());
     
-    text = text.replace(imgRegExp, '<img src="$1" style="width: 400px; max-width:100%; display: block;">');
+    text = text.replace(imgRegExp, '<img src="$1" class="message-img">');
     
     if (/vip/.test(group)) {
         text = text.replace(youtubeRegExp, '<iframe width="100%" height="auto" src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>');
@@ -425,7 +443,6 @@ function newMsg(key, message, edit) {
     text = text.replace(/@(.*?)[, ]/gi, '<b class="player-nickname">@$1</b>, ');
     
     var moderBlock = "";
-    
     if (fbChat.isModerator || (fbChat.isVip)) {
         var allow = {
             delete: fbChat.isModerator ? '' : fbChat.isVip ? myMessage ? '' : 'display: none;' : 'display: none;',
@@ -443,6 +460,11 @@ function newMsg(key, message, edit) {
                     </div>";
     }
     
+    var attachments = '';
+    if (attach.url) {
+        attachments = '<img src="' + attach.url + '" class="message-img">'
+    }
+    
     var msg = "<li class='" + (!edit ? "animated bounceIn " : "") + "chat__message" + (myMessage ? " my_message" : "") + (toMe ? " msgToMe" : "") + " " + group + " " + extraClasses + "' data-msgkey='" + key + "'>\
         <a href='profile.html?uid="+uid+"'>\
             <img src='" + img + "' data-userID='" + uid + "'>\
@@ -454,7 +476,7 @@ function newMsg(key, message, edit) {
                 <span class='message__time'>" + time + "</span>\
                 " + moderBlock + "\
             </div>\
-        <span class='message__text'>" + text + "</span>\
+        <span class='message__text'>" + text + attachments + "</span>\
         </div></li>";
     
     if (edit) {
@@ -515,7 +537,7 @@ function removeMsg(key) {
 }
 $(document).on('click', '#chat__send-new-message', function () {
     var msg = $('#chat__new-message').html().brTrim();
-    if (msg.length == 0) return false;
+    if (msg.length == 0 && $('#preview_img').attr('src') === '#') return false;
     fbChat.sendMsg(Player.nickname, msg, Player.avatar, Player.country);
     $('#chat__new-message').empty();
 });
