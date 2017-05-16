@@ -6119,7 +6119,6 @@ var Items = {
             "buy": false,
             "souvenir": false,
             "specialCase": false,
-            "trade": false
         }
     }, {
         "id": 837,
@@ -6131,7 +6130,6 @@ var Items = {
             "buy": false,
             "souvenir": false,
             "specialCase": false,
-            "trade": false,
             "bot": false
         }
     }, {
@@ -6144,7 +6142,6 @@ var Items = {
             "buy": false,
             "souvenir": false,
             "specialCase": false,
-            "trade": false,
             "bot": false
         }
     }, {
@@ -6157,7 +6154,6 @@ var Items = {
             "buy": false,
             "souvenir": false,
             "specialCase": false,
-            "trade": false,
             "bot": false
         }
     }, {
@@ -6170,7 +6166,6 @@ var Items = {
             "buy": false,
             "souvenir": false,
             "specialCase": false,
-            "trade": false,
             "bot": false
         }
     }, {
@@ -6183,7 +6178,6 @@ var Items = {
             "buy": false,
             "souvenir": false,
             "specialCase": false,
-            "trade": false,
             "bot": false
         }
     }, {
@@ -6196,7 +6190,6 @@ var Items = {
             "buy": false,
             "souvenir": false,
             "specialCase": false,
-            "trade": false,
             "bot": false
         }
     }, {
@@ -6209,7 +6202,6 @@ var Items = {
             "buy": false,
             "souvenir": false,
             "specialCase": false,
-            "trade": false,
             "bot": false
         },
         chances: {
@@ -6230,7 +6222,6 @@ var Items = {
             "buy": false,
             "souvenir": false,
             "specialCase": false,
-            "trade": false,
             "bot": false
         },
         chances: {
@@ -6251,7 +6242,6 @@ var Items = {
             "buy": false,
             "souvenir": false,
             "specialCase": false,
-            "trade": false,
             "bot": false
         },
         patternChance: 20,

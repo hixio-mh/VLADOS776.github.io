@@ -164,6 +164,12 @@
                     <div id="avatar"></div>
                 </div>
                 <div class="option hidden" id='profile-option'>
+                    <div>
+                        <span data-loc='email_status'>Email status:</span>
+                        <span id='email-status' class='text-danger' data-loc='email_not_verified'>Not verified</span>
+                        <p id="relogin-text"><span data-loc='already-verified'>Already verified?</span> <b><a href='#' data-toggle='modal' data-target='#relogin-modal' data-loc='click-here'>Click here</a></b></p>
+                    </div>
+                    <button class="btn btn-success" id="verify-email" data-loc='verify-email'>Verify email</button>
                     <button class="btn btn-primary" data-loc='change-email' data-toggle='modal' data-target='#change-mail-modal'>Change email</button>
                 </div>
             </div>
@@ -261,6 +267,23 @@
             </div>
         </div>
 
+        <div id='relogin-modal' class='modal fade' role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content" data-loc-group='change_mail_modal'>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="password2" data-loc='password'>Password:</label>
+                            <input type="password" class='form-control' id='password2'>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" id='relogin'>OK</button>
+                        <button class="btn btn-default" data-dismiss='modal' data-loc='close'>Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="../scripts/build/libs.js"></script>
         <script src="../scripts/bootstrap.min.js"></script>
         <script src="../scripts/main.js"></script>
@@ -319,8 +342,17 @@
                 firebase.auth().onAuthStateChanged(function(user) {
                     if (firebase.auth().currentUser != null) {
                         $('#profile-option').removeClass('hidden');
+                        
+                        var user = firebase.auth().currentUser;
+                        
+                        // If email is verified
+                        if (user.emailVerified) {
+                            $('#verify-email').hide();
+                            $('#relogin-text').hide();
+                            $('#email-status').text(_t('settings.profile.email_verified', 'Verified')).removeClass('text-danger').addClass('text-success');
+                        }
 
-                        var uid = firebase.auth().currentUser.uid;
+                        var uid = user.uid;
                         firebase.database().ref('users/' + uid + '/public/betaTrade').once('value', function(data) {
                             if (data.val() == true) {
                                 $('input[name="trade"]').prop('checked', true);
@@ -374,7 +406,7 @@
                     var extra = JSON.parse(getStatistic('extra', '{}'));
                     if (extra.promocodes && extra.promocodes[promocode] != null) {
                         $.notify({
-                            message: Localization.getString('other.promocode.used', 'You already used this code.')
+                            message: _t('other.promocode.used', 'You already used this code.')
                         }, {
                             type: 'danger'
                         })
@@ -414,12 +446,65 @@
                                 })
                             } else {
                                 $.notify({
-                                    message: Localization.getString('other.promocode.wrong', 'Wrong promo code.')
+                                    message: _t('other.promocode.wrong', 'Wrong promo code.')
                                 }, {
                                     type: 'danger'
                                 })
                             }
                         }
+                    })
+                })
+                
+                // Verify email
+                $(document).on('click', '#verify-email', function() {
+                    firebase.auth().currentUser.sendEmailVerification().then(function() {
+                        $.notify({
+                            message: _t('settings.email-sent', 'Check your email')
+                        }, {
+                            type: 'success'
+                        })
+                        
+                        LOG.log({
+                            action: 'Send verification mail'
+                        })
+                    }, function (error) {
+                        $.noticy({
+                            message: error.message
+                        }, {
+                            type: 'danger'
+                        })
+                        console.log(error);
+                    })
+                })
+                
+                $(document).on('click', '#relogin', function() {
+                    $(this).addClass('m-progress');
+                    var pass = $('#password2').val();
+                    
+                    var user = firebase.auth().currentUser;
+                    var credential = firebase.auth.EmailAuthProvider.credential(
+                        user.email,
+                        pass
+                    )
+                    
+                    user.reauthenticate(credential).then(function() {
+                        if (firebase.auth().currentUser.emailVerified) {
+                            $('#relogin-text').hide();
+                            $('#verify-email').hide();
+                            $('#email-status').text(_t('settings.profile.email_verified', 'Verified')).removeClass('text-danger').addClass('text-success');
+                            
+                            LOG.log({
+                                action: 'Email virified'
+                            })
+                        }
+                        $('#relogin-modal').modal('hide');
+                        $('#relogin').removeClass('m-progress');
+                    }, function(error) {
+                        $.notify({
+                            message: error.message
+                        }, {
+                            type: 'danger'
+                        })
                     })
                 })
                 
@@ -546,19 +631,11 @@
                     saveStatistic("playerNickname", nick)
                     Player.nickname = nick;
                 } else {
-                    Lobibox.notify('error', {
-                        pauseDelayOnHover: false,
-                        continueDelayOnInactiveTab: false,
-                        width: $(window).width(),
-                        position: 'top center',
-                        icon: false,
-                        title: Localization.getString('settings.notification.invalid_nick_title'),
-                        delay: 4000,
-                        size: 'mini',
-                        showClass: 'fadeInDown',
-                        hideClass: 'fadeOutUp',
-                        msg: Localization.getString('settings.notification.invalid_nick')
-                    });
+                    $.notify({
+                        message: _t('settings.notification.invalid_nick')
+                    }, {
+                        type: 'danger'
+                    })
                     return false;
                 }
                 var lang = $('#language option:selected').val();
@@ -608,25 +685,17 @@
                 LOG.log({
                     action: 'Change settings'
                 })
-                Lobibox.notify('info', {
-                    pauseDelayOnHover: false,
-                    continueDelayOnInactiveTab: false,
-                    width: $(window).width(),
-                    position: 'top center',
-                    icon: false,
-                    title: Localization.getString('settings.notification.title'),
-                    delay: 2000,
-                    size: 'mini',
-                    showClass: 'fadeInDown',
-                    hideClass: 'fadeOutUp',
-                    msg: Localization.getString('settings.notification.saved')
-                });
+                $.notify({
+                    message: _t('settings.notification.saved', 'Saved')
+                }, {
+                    type: 'success'
+                })
             });
             $('#reset').on('click', function() {
                 Lobibox.confirm({
                     iconSource: 'fontAwesome',
-                    title: Localization.getString('settings.notification.reset_confirm_title'),
-                    msg: Localization.getString('settings.notification.reset_confirm'),
+                    title: _t('settings.notification.reset_confirm_title'),
+                    msg: _t('settings.notification.reset_confirm'),
                     callback: function($tihs, type, ev) {
                         if (type == 'yes') {
                             if (isAndroid()) {
@@ -638,19 +707,11 @@
                             deleteAllCookies();
                             saveStatistic('doubleBalance', 0);
                             saveStatistic('playerPoints', 0);
-                            Lobibox.notify('info', {
-                                pauseDelayOnHover: false,
-                                continueDelayOnInactiveTab: false,
-                                width: $(window).width(),
-                                position: 'top center',
-                                icon: false,
-                                title: Localization.getString('settings.notification.reset_confirm_title'),
-                                delay: 2000,
-                                size: 'mini',
-                                showClass: 'fadeInDown',
-                                hideClass: 'fadeOutUp',
-                                msg: Localization.getString('settings.notification.reset_done')
-                            });
+                            $.notify({
+                                message: _t('settings.notification.reset_done')
+                            }, {
+                                type: 'success'
+                            })
                             try {
                                 var userRef = firebase.database().ref('users/' + firebase.auth().currentUser.uid);
                                 userRef.child('/settings/drop').set(false);

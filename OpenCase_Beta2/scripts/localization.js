@@ -150,6 +150,9 @@ var Localization = (function (module) {
     return module;
 }(Localization || {}));
 
+// Shortcut
+var _t = Localization.getString;
+
 
 function localizate_old(category) {
     var lng = Settings.language;

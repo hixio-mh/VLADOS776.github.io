@@ -1286,6 +1286,18 @@ var Translation = {
                 'change-email': {
                     text: 'Сменить Email',
                     en: 'Change email'
+                },
+                'verify-email': {
+                    text: 'Подтвердить Email'
+                },
+                'email_status': {
+                    text: 'Статус Email:'
+                },
+                'email_verified': {
+                    text: 'Подтвержден'
+                },
+                'email_not_verified': {
+                    text: 'Не подтвержден'
                 }
             },
             beta: {
@@ -1385,6 +1397,15 @@ var Translation = {
                     text: 'В имени могут быть только буквы и цифры.',
                     en: 'Wrong name. Only letters and numbers are available.'
                 }
+            },
+            'email-sent': {
+                text: 'Письмо отправлено.'
+            },
+            'already-verified': {
+                text: 'Уже подтвердили?'
+            },
+            'click-here': {
+                text: 'Нажмите сюда'
             }
         },
         about: {
@@ -1437,6 +1458,9 @@ var Translation = {
                     text: 'Позже',
                     en: 'Later'
                 }
+            },
+            'verify-email': {
+                text: 'Сначала подтвердите почту в настройках'
             },
             daily_reward: {
                 title: {

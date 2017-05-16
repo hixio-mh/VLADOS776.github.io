@@ -38,7 +38,13 @@ $(document).ready(function() {
     }
 
     $("#search_text").autocomplete({
-        source: autocompleteTags
+        source: function( request, response ) {
+            var matcher = new RegExp( $.ui.autocomplete.escapeRegex( request.term ), "i" );
+            response( $.grep( autocompleteTags, function( value ) {
+                value = value.label || value.value || value;
+                return matcher.test( value ) || matcher.test( value.replace(' | ', ' ') );
+            }) );
+        }
     })
 
     var lastSalesUpdate = getStatistic('lastSalesUpdate', 0);
