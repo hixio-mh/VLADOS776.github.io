@@ -350,7 +350,7 @@
                             $('#verify-email').hide();
                             $('#relogin-text').hide();
                             if (Localization.isLoaded) {
-                                $('#email-status').text(_t('settings.profile.email_verified', 'Verified')).removeClass('text-danger').addClass('text-success');
+                                changeEmailStatus();
                             }
                         }
 
@@ -626,7 +626,7 @@
                 $('#translation_date').text(Translation.info.date);
                 
                 if (firebase.auth().currentUser.emailVerified) {
-                    $('#email-status').text(_t('settings.profile.email_verified', 'Verified')).removeClass('text-danger').addClass('text-success');
+                    changeEmailStatus();
                 }
             })
             $("#submit").on("click", function() {
@@ -734,6 +734,14 @@
             $('.switch').click(function() {
                 $(this).toggleClass("switchOn");
             });
+
+            function changeEmailStatus() {
+                if (firebase.auth().currentUser.emailVerified) {
+                    $('#email-status').text(_t('settings.profile.email_verified', 'Verified')).removeClass('text-danger').addClass('text-success');
+                } else {
+                    $('#email-status').text(_t('settings.profile.email_not_verified', 'Not verified'));
+                }
+            }
 
             function deleteAllCookies() {
                 var cookies = document.cookie.split(";");
