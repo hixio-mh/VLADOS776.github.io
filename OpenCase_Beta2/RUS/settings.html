@@ -166,7 +166,7 @@
                 <div class="option hidden" id='profile-option'>
                     <div>
                         <span data-loc='email_status'>Email status:</span>
-                        <span id='email-status' class='text-danger' data-loc='email_not_verified'>Not verified</span>
+                        <span id='email-status' class='text-danger'>Not verified</span>
                         <p id="relogin-text"><span data-loc='already-verified'>Already verified?</span> <b><a href='#' data-toggle='modal' data-target='#relogin-modal' data-loc='click-here'>Click here</a></b></p>
                     </div>
                     <button class="btn btn-success" id="verify-email" data-loc='verify-email'>Verify email</button>
@@ -625,7 +625,7 @@
                 $('#translator').text(Translation.info.author);
                 $('#translation_date').text(Translation.info.date);
                 
-                if (firebase.auth().currentUser.emailVerified) {
+                if (firebase.auth().currentUser) {
                     changeEmailStatus();
                 }
             })
