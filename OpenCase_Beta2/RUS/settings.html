@@ -349,7 +349,9 @@
                         if (user.emailVerified) {
                             $('#verify-email').hide();
                             $('#relogin-text').hide();
-                            $('#email-status').text(_t('settings.profile.email_verified', 'Verified')).removeClass('text-danger').addClass('text-success');
+                            if (Localization.isLoaded) {
+                                $('#email-status').text(_t('settings.profile.email_verified', 'Verified')).removeClass('text-danger').addClass('text-success');
+                            }
                         }
 
                         var uid = user.uid;
@@ -622,6 +624,10 @@
             $(document).on('localizationloaded', function() {
                 $('#translator').text(Translation.info.author);
                 $('#translation_date').text(Translation.info.date);
+                
+                if (firebase.auth().currentUser.emailVerified) {
+                    $('#email-status').text(_t('settings.profile.email_verified', 'Verified')).removeClass('text-danger').addClass('text-success');
+                }
             })
             $("#submit").on("click", function() {
                 var nick = $("#nickname").val();
