@@ -9,19 +9,19 @@ var item_proto = {
         
         if (typeof this.img == 'undefined') return "../images/none.png";
         if (this.img.indexOf("images/") != -1)
-            if (typeof big != "undefined") {
+            if (big) {
                 return this.img.replace(postfix, postfixBig);
             }
             else {
                 return this.img;
             }
-        else if (this.img.indexOf(".png") != -1) return "../images/Weapons/" + this.img;
+        else if (this.img.indexOf(".png") != -1 || this.img.indexOf(".webp") != -1) return "../images/Weapons/" + this.img;
         else if (this.img.indexOf("steamcommunity") == -1) {
             if (typeof big != "undefined") return prefix + this.img + postfixBig;
             else return prefix + this.img + postfix;
         }
         else
-        if (typeof big != "undefined") {
+        if (big) {
             return this.img.replace(postfix, postfixBig);
         }
         else {
@@ -106,8 +106,12 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
         this.qualityRandom();
     
     if (pattern != null) {
-        this.pattern = pattern;
-        this.img = this.old.patterns[this.pattern].img
+        try {
+            this.pattern = pattern;
+            this.img = this.old.patterns[this.pattern].img
+        } catch (e) {
+            console.log('Cant find pattern for', this.type, ' | ', this.name, ' - ', this.pattern);
+        }
     }
 
     //this.can.inCase - 
@@ -199,6 +203,7 @@ Weapon.prototype.tradeObject = function () {
     if (this.stattrak) trObj.stattrak = this.stattrak;
     if (this.souvenir) trObj.souvenir = this.souvenir;
     if (this.nameTag) trObj.nameTag = this.nameTag;
+    if (this.pattern != null) trObj.pattern = this.pattern;
     return trObj;
 }
 
