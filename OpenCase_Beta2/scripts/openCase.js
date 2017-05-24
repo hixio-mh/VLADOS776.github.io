@@ -318,7 +318,7 @@ var openCase = {
             return false;
         }
         
-        if (Player.doubleBalance < openCase.casePrice()) {
+        if (Player.doubleBalance < openCase.casePrice() && !openCase.isFree()) {
             $.notify({
                 message: Localization.getString('open_case.not-enough-money', 'Not enough money')
             }, {
