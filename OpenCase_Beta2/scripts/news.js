@@ -676,7 +676,55 @@ var news = [{
     "month": 4,
     "year": 2017,
     "update": {
-        "RU": " - [Новое] Открывайте до 5 кейсов за раз. Может лагать на слабых устройствах.",
-        "EN": " - [New] New skin M4A1-S | Froststorm"
+        "RU": " - [Новое] Открывайте до 5 кейсов за раз. Может лагать на слабых устройствах.<br> - [Изменено] Скины из Spectrum кейса теперь можно купить в магазине и использовать в Своих кейсах.",
+        "EN": " - [New] Open 5 cases at once!<br> - [Changed] Skins from Spectrum case available for buying and Custom cases."
+    }
+}, {
+    "day": 18,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Исправлено] Исправлены ошибки связанные с открытием нескольких специальных кейсов одновременно.",
+        "EN": " - [Fixed] Fixed bugs with multiple opening special cases!"
+    }
+}, {
+    "day": 03,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Новый кейс Workshop 3!",
+        "EN": " - [New] Workshop 3 case!"
+    }
+}, {
+    "day": 09,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Возможность сменить Email в настройках.",
+        "EN": " - [New] You can change your email in settings."
+    }
+}, {
+    "day": 14,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Обновление инвентаря. Возможность выделять предметы долгим нажатием и продавать несколько предметов за раз",
+        "EN": " - [New] Inventory update. Now you can select items by long tap and sell selected skins."
+    }
+}, {
+    "day": 15,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Изменено] Улучшено прикрепление изображений в чате.",
+        "EN": " - [Changed] Improved attachment of images in the chat"
+    }
+}, {
+    "day": 24,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Добавлен кейс Hydra!",
+        "EN": " - [New] Hydra case!"
     }
 }, ];
