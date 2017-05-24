@@ -11,13 +11,11 @@ var cases = [{
     "name": "Alpha", 
     "img": "alpha.png",
     "type": "Collection",
-    
     weapons: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 }, {
     "name": "Assault",
     "img": "assault.png",
     "type": "Collection",
-    
     weapons: [16,17,18,20,19,22,21]
 }, {
     "name": "Aztec",
@@ -152,6 +150,12 @@ var cases = [{
     "canBeStatTrak": false,
     "type": "Collection",
     weapons: [268,269,270,271,272,273]
+}, {
+    "name": "Hydra",
+    "img": "hydra.png",
+    "type": "Default",
+    weapons:[847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863],
+    knives: [815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835]
 }, {
     "name": "Spectrum",
     "img": "spectrum.png",

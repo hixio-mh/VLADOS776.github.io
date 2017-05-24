@@ -96,9 +96,10 @@
 		<span class="stat"><span data-loc="worth">Worth:</span> <span id="stat-sum" class='currency dollar'>0</span></span>
 		<span class="stat"><span data-loc="count">Count:</span> <span id="stat-count"></span></span>
 		<span class='pull-right menu-bar'><div class="dropup">
-		    <i class="fa fa-bars dropdown-toggle" aria-hidden="true" data-toggle="dropdown"></i>
+		    <i class="fa fa-question dropdown-toggle" aria-hidden="true" data-toggle="dropdown"></i>
 		    <ul class="dropdown-menu dropdown-menu-right">
-		        <li><a href="#">Sell all</a></li>
+                <li class='dropdown-header'>How to</li>
+		        <li><a href="#" data-toggle='modal' data-target='#help-sell'>Sell multiply items</a></li>
 		    </ul>
 		  </div></span>
 	</div>
@@ -108,6 +109,22 @@
 	        <div class="modal-content">
 	            <div class="modal-body"><input type="text" class="form-control" maxlength="20" id='newName'></div>
 	            <div class="modal-footer"><button class="btn btn-success" id='renameWeapon'>Rename</button><button class="btn btn-default" data-dismiss='modal'>Cancel</button></div>
+	        </div>
+	    </div>
+	</div>
+	
+	<div class="modal fade" id="help-sell" data-loc-group='help'>
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-body" data-loc='sell'>
+                    <ul>
+	                    <li>Go to select mode. Tap and hold on any item.</li>
+	                    <li>Now you can select items that you want to sell.</li>
+	                    <li>Click on the "Sell selected" button.</li>
+                    </ul>
+                    <p>Note: locked items won't be sold.</p>
+	            </div>
+	            <div class="modal-footer"><button class="btn btn-default" data-dismiss='modal'>Cancel</button></div>
 	        </div>
 	    </div>
 	</div>
@@ -212,7 +229,7 @@
 
                 $("#weaponInfoContainer").css("display", "block");
                 $(".fullWeaponInfo").removeClass("info-closed");
-                $("#weaponImg").attr("src", getImgUrl(item.img, 1));
+                $("#weaponImg").attr("src", item.getImgUrl(true));
                 $("#weaponName").html(item.titleText());
                 $("#weaponPrice").html(item.price);
 
@@ -231,6 +248,11 @@
                 $("#weaponImg").on('load', function() {
                     $("#weaponLoadingImg").hide();
                     $("#weaponImg").show();
+                    if ($('#weaponImg').height() < 360) {
+                        $('#weaponImg').css('padding', (360 - $('#weaponImg').height()) / 2 + 'px 0')
+                    } else {
+                        $('#weaponImg').css('padding', '0')
+                    }
                 })
 
                 $("#statTrakImg").css("display", (item.stattrak ? "block" : "none"));

@@ -276,7 +276,7 @@ body {
   .weapon img {
     margin: 0 auto;
     width: 113px;
-    height: 105px;
+    max-height: 105px;
     display: block; }
   .weapon i {
     font-style: normal;

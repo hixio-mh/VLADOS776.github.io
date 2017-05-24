@@ -182,7 +182,7 @@
 	}
 	.weapon img {
 		width: 86px;
-		height: 91px;
+		max-height: 91px;
 	}
 	.type {
 		font-size: 9px;

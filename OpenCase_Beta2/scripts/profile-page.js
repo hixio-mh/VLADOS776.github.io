@@ -55,6 +55,17 @@ $(function () {
         var currentUID = firebase.auth().currentUser.uid;
         //if (!currentUID || uid === currentUID) return;
         
+        if (!firebase.auth().currentUser.emailVerified) {
+            
+            $.notify({
+                message: Localization.getString('other.verify-email', 'You must verify your email in settings first.')
+            }, {
+                type: 'danger'
+            })
+            
+            return false;
+        }
+        
         var setVar = true;
         
         if (isAndroid() && client.getCurrentAppVersionCode() >= 12) {
@@ -964,6 +975,16 @@ $(function () {
     })
     $(document).on('click', '.rep', function () {
         var currRepRef = firebase.database().ref('users/' + uid + '/outside/rep');
+        if (!firebase.auth().currentUser.emailVerified) {
+            
+            $.notify({
+                message: Localization.getString('other.verify-email', 'You must verify your email in settings first.')
+            }, {
+                type: 'danger'
+            })
+            
+            return false;
+        }
         var val = 0;
         if ($(this).hasClass('rep-plus')) {
             val = 1;
@@ -980,7 +1001,11 @@ $(function () {
             fbProfile.setRep(uid, firebase.auth().currentUser.uid, (val > 0 ? '+' : '-'));
         }
         fbProfile.repVal(uid, function (rep, userRep) {
-            var $active = $('.active');
+            LOG.log({
+                action: 'Change rep',
+                old: $(".stats__rate__count").text(),
+                new: rep
+            })
             $(".stats__rate__count").text(rep);
             if (parseInt(rep) < 0) $(".stats__rate__count").addClass('bad-rep');
         });

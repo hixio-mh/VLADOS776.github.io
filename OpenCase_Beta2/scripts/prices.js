@@ -30,16 +30,16 @@ function getPrice(item_id, opt) {
     return price;
 }
 
-$(function() {
+$(function () {
     PricesBACKUP.init();
 })
 
-var PricesBACKUP = (function(module) {
+var PricesBACKUP = (function (module) {
     var Prices2 = null;
-    
-    module.init = function() {
+
+    module.init = function () {
         Prices2 = $.extend(true, {}, Prices);
-        
+
         for (var key in Prices2) {
             var item = Prices2[key];
             if (item.prices) {
@@ -48,11 +48,11 @@ var PricesBACKUP = (function(module) {
                         var pr = item.prices[pricesType];
                         for (var qual in pr) {
                             if (pr[qual].market > 0) {
-                                pr[qual].market = hex_md5(''+pr[qual].market);
+                                pr[qual].market = hex_md5('' + pr[qual].market);
                             } else if (pr[qual].analyst > 0) {
-                                pr[qual].analyst = hex_md5(''+pr[qual].analyst);
+                                pr[qual].analyst = hex_md5('' + pr[qual].analyst);
                             } else if (pr[qual].opskins > 0) {
-                                pr[qual].opskins = hex_md5(''+pr[qual].opskins);
+                                pr[qual].opskins = hex_md5('' + pr[qual].opskins);
                             }
                         }
                     }
@@ -60,21 +60,21 @@ var PricesBACKUP = (function(module) {
             }
         }
     }
-    
-    module.checkPrice = function(item, opt) {
+
+    module.checkPrice = function (item, opt) {
         var itemEnc = Prices2[item.item_id];
         if (!itemEnc) return false;
-        
+
         for (var pricesType in item.allPrices) {
             var pricesNormal = item.allPrices[pricesType];
             var pricesEnc = itemEnc.prices[pricesType];
-            
+
             for (var qual in pricesNormal) {
-                if (pricesNormal[qual].market > 0 && hex_md5(''+pricesNormal[qual].market) === pricesEnc[qual].market) {
+                if (pricesNormal[qual].market > 0 && hex_md5('' + pricesNormal[qual].market) === pricesEnc[qual].market) {
                     continue;
-                } else if (pricesNormal[qual].analyst > 0 && hex_md5(''+pricesNormal[qual].analyst) === pricesEnc[qual].analyst) {
+                } else if (pricesNormal[qual].analyst > 0 && hex_md5('' + pricesNormal[qual].analyst) === pricesEnc[qual].analyst) {
                     continue;
-                } else if (pricesNormal[qual].opskins > 0 && hex_md5(''+pricesNormal[qual].opskins) === pricesEnc[qual].opskins) {
+                } else if (pricesNormal[qual].opskins > 0 && hex_md5('' + pricesNormal[qual].opskins) === pricesEnc[qual].opskins) {
                     continue;
                 } else if (pricesNormal[qual].market === -1 && ((pricesNormal[qual].analyst === -1 && pricesNormal[qual].opskins === -1) || (!pricesNormal[qual].analyst && !pricesNormal[qual].opskins))) {
                     continue;
@@ -83,10 +83,10 @@ var PricesBACKUP = (function(module) {
                 }
             }
         }
-        
+
         var priceSource = 'market';
         if (item.price === item.allPrices[item.priceType][item.quality].market) {
-            
+
         } else if (item.price === item.allPrices[item.priceType][item.quality].analyst) {
             priceSource = 'analyst';
         } else if (item.price === item.allPrices[item.priceType][item.quality].opskins) {
@@ -94,14 +94,14 @@ var PricesBACKUP = (function(module) {
         } else {
             return false;
         }
-        
-        if (hex_md5(''+item.price) !== itemEnc.prices[item.priceType][item.quality][priceSource]) {
+
+        if (hex_md5('' + item.price) !== itemEnc.prices[item.priceType][item.quality][priceSource]) {
             return false;
         }
-        
+
         return true;
     }
-    
+
     return module;
 })(PricesBACKUP || {})
 
@@ -39572,10 +39572,16 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 135.87
+                    "market": 219.76
+                },
+                "1": {
+                    "market": 345.19
                 },
                 "2": {
-                    "market": 295.08
+                    "market": 395.67
+                },
+                "3": {
+                    "market": 676.57
                 }
             },
             "stattrak": {},
@@ -39589,13 +39595,13 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 149
+                    "market": 202.26
                 },
                 "1": {
-                    "market": 191.75
+                    "market": 287.89
                 },
                 "2": {
-                    "market": 226.64
+                    "market": 264.3
                 }
             },
             "stattrak": {},
@@ -39818,36 +39824,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.56
+                    "market": 0.09
                 },
                 "1": {
-                    "market": 0.5
+                    "market": 0.12
                 },
                 "2": {
-                    "market": 0.62
+                    "market": 0.09
                 },
                 "3": {
-                    "market": 0.69
+                    "market": 0.09
                 },
                 "4": {
-                    "market": 1.07
+                    "market": 0.17
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 1.35
+                    "market": 0.3
                 },
                 "1": {
-                    "market": 1.18
+                    "market": 0.37
                 },
                 "2": {
-                    "market": 1.39
+                    "market": 0.28
                 },
                 "3": {
-                    "market": 2.92
+                    "market": 0.5
                 },
                 "4": {
-                    "market": 3.14
+                    "market": 0.95
                 }
             },
             "souvenir": {}
@@ -39860,36 +39866,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.56
+                    "market": 0.09
                 },
                 "1": {
-                    "market": 0.53
+                    "market": 0.09
                 },
                 "2": {
-                    "market": 0.41
+                    "market": 0.08
                 },
                 "3": {
-                    "market": 0.74
+                    "market": 0.11
                 },
                 "4": {
-                    "market": 1.13
+                    "market": 0.25
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 0.91
+                    "market": 0.21
                 },
                 "1": {
-                    "market": 1
+                    "market": 0.13
                 },
                 "2": {
-                    "market": 1.46
+                    "market": 0.25
                 },
                 "3": {
-                    "market": 1.38
+                    "market": 0.23
                 },
                 "4": {
-                    "market": 10.72
+                    "market": 1.56
                 }
             },
             "souvenir": {}
@@ -39902,36 +39908,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.49
+                    "market": 0.07
                 },
                 "1": {
-                    "market": 0.57
+                    "market": 0.1
                 },
                 "2": {
-                    "market": 0.6
+                    "market": 0.08
                 },
                 "3": {
-                    "market": 0.69
+                    "market": 0.09
                 },
                 "4": {
-                    "market": 0.96
+                    "market": 0.14
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 0.83
+                    "market": 0.23
                 },
                 "1": {
-                    "market": 1.65
+                    "market": 0.58
                 },
                 "2": {
-                    "market": 0.85
+                    "market": 0.35
                 },
                 "3": {
-                    "market": 1.99
+                    "market": 0.38
                 },
                 "4": {
-                    "market": 2.3
+                    "market": 0.61
                 }
             },
             "souvenir": {}
@@ -39944,36 +39950,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.68
+                    "market": 0.09
                 },
                 "1": {
-                    "market": 0.69
+                    "market": 0.1
                 },
                 "2": {
-                    "market": 0.67
+                    "market": 0.07
                 },
                 "3": {
-                    "market": 0.74
+                    "market": 0.09
                 },
                 "4": {
-                    "market": 0.75
+                    "market": 0.15
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 2.03
+                    "market": 0.24
                 },
                 "1": {
-                    "market": 2
+                    "market": 0.28
                 },
                 "2": {
-                    "market": 1.32
+                    "market": 0.25
                 },
                 "3": {
-                    "market": 0.74
+                    "market": 0.32
                 },
                 "4": {
-                    "market": 2.32
+                    "market": 0.61
                 }
             },
             "souvenir": {}
@@ -39986,36 +39992,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.55
+                    "market": 0.08
                 },
                 "1": {
-                    "market": 0.67
+                    "market": 0.12
                 },
                 "2": {
-                    "market": 0.61
+                    "market": 0.08
                 },
                 "3": {
-                    "market": 0.9
+                    "market": 0.11
                 },
                 "4": {
-                    "market": 1.05
+                    "market": 0.2
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 0.75
+                    "market": 0.2
                 },
                 "1": {
-                    "market": 3.19
+                    "market": 0.55
                 },
                 "2": {
-                    "market": 1.15
+                    "market": 0.32
                 },
                 "3": {
-                    "market": 2.3
+                    "market": 0.5
                 },
                 "4": {
-                    "market": 4.92
+                    "market": 1.15
                 }
             },
             "souvenir": {}
@@ -40028,36 +40034,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 0.8
+                    "market": 0.1
                 },
                 "1": {
-                    "market": 1.7
+                    "market": 0.2
                 },
                 "2": {
-                    "market": 1.33
+                    "market": 0.09
                 },
                 "3": {
-                    "market": 2.42
+                    "market": 0.24
                 },
                 "4": {
-                    "market": 4.22
+                    "market": 0.42
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 3.62
+                    "market": 0.59
                 },
                 "1": {
-                    "market": 3
+                    "market": 0.99
                 },
                 "2": {
-                    "market": 3.5
+                    "market": 0.6
                 },
                 "3": {
-                    "market": 7.31
+                    "market": 1.1
                 },
                 "4": {
-                    "market": 9.15
+                    "market": 2.94
                 }
             },
             "souvenir": {}
@@ -40070,36 +40076,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 1.52
+                    "market": 0.22
                 },
                 "1": {
-                    "market": 2.69
+                    "market": 0.36
                 },
                 "2": {
-                    "market": 2.3
+                    "market": 0.34
                 },
                 "3": {
-                    "market": 6.33
+                    "market": 0.78
                 },
                 "4": {
-                    "market": 7.48
+                    "market": 0.98
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 8.58
+                    "market": 1.3
                 },
                 "1": {
-                    "market": 4.19
+                    "market": 1.65
                 },
                 "2": {
-                    "market": 11
+                    "market": 1.39
                 },
                 "3": {
-                    "market": 15.78
+                    "market": 3.27
                 },
                 "4": {
-                    "market": 25.36
+                    "market": 4.52
                 }
             },
             "souvenir": {}
@@ -40112,36 +40118,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 3.92
+                    "market": 0.66
                 },
                 "1": {
-                    "market": 4.29
+                    "market": 0.74
                 },
                 "2": {
-                    "market": 4.05
+                    "market": 0.63
                 },
                 "3": {
-                    "market": 4.5
+                    "market": 0.88
                 },
                 "4": {
-                    "market": 5
+                    "market": 1.34
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 5.78
+                    "market": 2.16
                 },
                 "1": {
-                    "market": 5.99
+                    "market": 1.43
                 },
                 "2": {
-                    "market": 7.98
+                    "market": 2.03
                 },
                 "3": {
-                    "market": 13.94
+                    "market": 2.76
                 },
                 "4": {
-                    "market": 16.48
+                    "market": 3.67
                 }
             },
             "souvenir": {}
@@ -40154,33 +40160,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 3.16
+                    "market": 0.62
                 },
                 "1": {
-                    "market": 3.55
+                    "market": 0.76
                 },
                 "2": {
-                    "market": 4.07
+                    "market": 0.82
                 },
                 "3": {
-                    "market": 6.16
+                    "market": 1.77
                 },
                 "4": {
-                    "market": 13.28
+                    "market": 4.16
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 5.35
+                    "market": 2.19
                 },
                 "1": {
-                    "market": 7.37
+                    "market": 2.69
                 },
                 "2": {
-                    "market": 13.46
+                    "market": 3.79
                 },
                 "3": {
-                    "market": 20.7
+                    "market": 5.33
+                },
+                "4": {
+                    "market": 15.48
                 }
             },
             "souvenir": {}
@@ -40193,36 +40202,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 4
+                    "market": 0.65
                 },
                 "1": {
-                    "market": 4.03
+                    "market": 0.73
                 },
                 "2": {
-                    "market": 3.59
+                    "market": 0.66
                 },
                 "3": {
-                    "market": 7.25
+                    "market": 0.93
                 },
                 "4": {
-                    "market": 4.7
+                    "market": 1.14
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 7.97
+                    "market": 1.29
                 },
                 "1": {
-                    "market": 5.37
+                    "market": 2.87
                 },
                 "2": {
-                    "market": 6.65
+                    "market": 2.25
                 },
                 "3": {
-                    "market": 15
+                    "market": 3.2
                 },
                 "4": {
-                    "market": 17.16
+                    "market": 3.97
                 }
             },
             "souvenir": {}
@@ -40235,30 +40244,30 @@ var Prices = {
         "prices": {
             "default": {
                 "1": {
-                    "market": 2.5
+                    "market": 0.74
                 },
                 "2": {
-                    "market": 3.57
+                    "market": 0.61
                 },
                 "3": {
-                    "market": 4.33
+                    "market": 0.93
                 },
                 "4": {
-                    "market": 4.79
+                    "market": 1.16
                 }
             },
             "stattrak": {
                 "1": {
-                    "market": 4.29
+                    "market": 2.17
                 },
                 "2": {
-                    "market": 6.85
+                    "market": 2.48
                 },
                 "3": {
-                    "market": 10.63
+                    "market": 2.59
                 },
                 "4": {
-                    "market": 11.5
+                    "market": 3.95
                 }
             },
             "souvenir": {}
@@ -40271,36 +40280,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 3
+                    "market": 0.52
                 },
                 "1": {
-                    "market": 3.6
+                    "market": 0.7
                 },
                 "2": {
-                    "market": 3.75
+                    "market": 0.72
                 },
                 "3": {
-                    "market": 4.03
+                    "market": 0.9
                 },
                 "4": {
-                    "market": 5.36
+                    "market": 1.12
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 5.35
+                    "market": 3.2
                 },
                 "1": {
-                    "market": 13.05
+                    "market": 1.29
                 },
                 "2": {
-                    "market": 7.5
+                    "market": 1.8
                 },
                 "3": {
-                    "market": 9.62
+                    "market": 2.74
                 },
                 "4": {
-                    "market": 17.08
+                    "market": 2.99
                 }
             },
             "souvenir": {}
@@ -40313,30 +40322,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 10.6
+                    "market": 4.66
                 },
                 "1": {
-                    "market": 11.23
+                    "market": 4.49
                 },
                 "2": {
-                    "market": 10
+                    "market": 3.15
                 },
                 "3": {
-                    "market": 11.36
+                    "market": 4.61
                 },
                 "4": {
-                    "market": 23
+                    "market": 5.54
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 225
+                    "market": 13.62
+                },
+                "1": {
+                    "market": 8.53
                 },
                 "2": {
-                    "market": 39.99
+                    "market": 11.22
+                },
+                "3": {
+                    "market": 20
                 },
                 "4": {
-                    "market": 50
+                    "market": 25.02
                 }
             },
             "souvenir": {}
@@ -40349,33 +40364,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 24.64
+                    "market": 7.96
                 },
                 "1": {
-                    "market": 43.99
+                    "market": 10.32
                 },
                 "2": {
-                    "market": 33.48
+                    "market": 10.95
                 },
                 "3": {
-                    "market": 66.85
+                    "market": 13.39
                 },
                 "4": {
-                    "market": 85.99
+                    "market": 17.24
                 }
             },
             "stattrak": {
                 "0": {
-                    "market": 42.14
+                    "market": 29.18
                 },
                 "1": {
-                    "market": 106.14
+                    "market": 38.17
                 },
                 "2": {
-                    "market": 74.99
+                    "market": 28.14
+                },
+                "3": {
+                    "market": 38.71
                 },
                 "4": {
-                    "market": 205.01
+                    "market": 51.75
                 }
             },
             "souvenir": {}
@@ -40388,27 +40406,36 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 33.33
+                    "market": 9.2
                 },
                 "1": {
-                    "market": 45
+                    "market": 10.16
                 },
                 "2": {
-                    "market": 50.98
+                    "market": 11.23
                 },
                 "3": {
-                    "market": 66.5
+                    "market": 14.47
                 },
                 "4": {
-                    "market": 84.64
+                    "market": 21.69
                 }
             },
             "stattrak": {
+                "0": {
+                    "market": 28.06
+                },
                 "1": {
-                    "market": 396.75
+                    "market": 41
+                },
+                "2": {
+                    "market": 30.97
                 },
                 "3": {
-                    "market": 260.26
+                    "market": 40.45
+                },
+                "4": {
+                    "market": 78
                 }
             },
             "souvenir": {}
@@ -40421,19 +40448,23 @@ var Prices = {
         "prices": {
             "default": {
                 "1": {
-                    "market": 85.79
+                    "market": 49.38
                 },
                 "2": {
-                    "market": 105.77
+                    "market": 54.44
                 },
                 "3": {
-                    "market": 106.5
+                    "market": 59.96
                 },
                 "4": {
-                    "market": 137.9
+                    "market": 71.33
                 }
             },
-            "stattrak": {},
+            "stattrak": {
+                "2": {
+                    "market": 132.2
+                }
+            },
             "souvenir": {}
         }
     },
@@ -40444,22 +40475,38 @@ var Prices = {
         "prices": {
             "default": {
                 "0": {
-                    "market": 22.25
+                    "market": 13.02
                 },
                 "1": {
-                    "market": 52.52
+                    "market": 24.24
                 },
                 "2": {
-                    "market": 49.04
+                    "market": 21.93
                 },
                 "3": {
-                    "market": 92.66
+                    "market": 37.41
                 },
                 "4": {
-                    "market": 134
+                    "market": 56.11
                 }
             },
-            "stattrak": {},
+            "stattrak": {
+                "0": {
+                    "market": 29.97
+                },
+                "1": {
+                    "market": 74.07
+                },
+                "2": {
+                    "market": 70
+                },
+                "3": {
+                    "market": 96.65
+                },
+                "4": {
+                    "market": 170.17
+                }
+            },
             "souvenir": {}
         }
     },
@@ -40468,42 +40515,42 @@ var Prices = {
         "type": "★ Huntsman Knife",
         "skinName": "Damascus Steel",
         "prices": {
-          "default": {
-            "1": {
-              "market": 210
+            "default": {
+                "1": {
+                    "market": 210
+                },
+                "2": {
+                    "market": 162.72
+                },
+                "3": {
+                    "market": 189.99
+                },
+                "4": {
+                    "market": 255.03
+                }
             },
-            "2": {
-              "market": 162.72
-            },
-            "3": {
-              "market": 189.99
-            },
-            "4": {
-              "market": 255.03
-            }
-          },
-          "stattrak": {},
-          "souvenir": {}
+            "stattrak": {},
+            "souvenir": {}
         }
     },
     "816": {
-         "item_id": 816,
+        "item_id": 816,
         "type": "★ Butterfly Knife",
         "skinName": "Damascus Steel",
         "prices": {
-          "default": {
-            "1": {
-              "market": 178.99
+            "default": {
+                "1": {
+                    "market": 178.99
+                },
+                "2": {
+                    "market": 195.12
+                },
+                "3": {
+                    "market": 245.14
+                }
             },
-            "2": {
-              "market": 195.12
-            },
-            "3": {
-              "market": 245.14
-            }
-          },
-          "stattrak": {},
-          "souvenir": {}
+            "stattrak": {},
+            "souvenir": {}
         }
     },
     "817": {
@@ -40511,25 +40558,25 @@ var Prices = {
         "type": "★ Bowie Knife",
         "skinName": "Damascus Steel",
         "prices": {
-          "default": {
-            "0": {
-              "market": 135.99
+            "default": {
+                "0": {
+                    "market": 135.99
+                },
+                "1": {
+                    "market": 152.56
+                },
+                "2": {
+                    "market": 158.04
+                },
+                "3": {
+                    "market": 200
+                },
+                "4": {
+                    "market": 225.88
+                }
             },
-            "1": {
-              "market": 152.56
-            },
-            "2": {
-              "market": 158.04
-            },
-            "3": {
-              "market": 200
-            },
-            "4": {
-              "market": 225.88
-            }
-          },
-          "stattrak": {},
-          "souvenir": {}
+            "stattrak": {},
+            "souvenir": {}
         }
     },
     "818": {
@@ -40537,29 +40584,29 @@ var Prices = {
         "type": "★ Falchion Knife",
         "skinName": "Damascus Steel",
         "prices": {
-          "default": {
-            "0": {
-              "market": 92.2
+            "default": {
+                "0": {
+                    "market": 92.2
+                },
+                "2": {
+                    "market": 117.77
+                },
+                "3": {
+                    "market": 105.55
+                },
+                "4": {
+                    "market": 110.1
+                }
             },
-            "2": {
-              "market": 117.77
+            "stattrak": {
+                "1": {
+                    "market": 345
+                },
+                "2": {
+                    "market": 172.62
+                }
             },
-            "3": {
-              "market": 105.55
-            },
-            "4": {
-              "market": 110.1
-            }
-          },
-          "stattrak": {
-            "1": {
-              "market": 345
-            },
-            "2": {
-              "market": 172.62
-            }
-          },
-          "souvenir": {}
+            "souvenir": {}
         }
     },
     "819": {
@@ -40911,7 +40958,7 @@ var Prices = {
                 }
             },
             stattrak: {
-                
+
             },
             souvenir: {}
         }
@@ -41142,6 +41189,741 @@ var Prices = {
                     "market": 4.12
                 }
             }
+        }
+    },
+    "846": {
+        "item_id": 846,
+        "type": "USP-S",
+        "skinName": "Orion",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 50.23
+                },
+                "1": {
+                    "market": 15.8
+                },
+                "2": {
+                    "market": 9.85
+                },
+                "3": {
+                    "market": 10.23
+                },
+                "4": {
+                    "market": 13.54
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 177.53
+                },
+                "1": {
+                    "market": 53.24
+                },
+                "2": {
+                    "market": 31.44
+                },
+                "3": {
+                    "market": 38
+                },
+                "4": {
+                    "market": 60.9
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "847": {
+        "item_id": 847,
+        "type": "MAC-10",
+        "skinName": "Aloha",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.34
+                },
+                "1": {
+                    "market": 0.38
+                },
+                "2": {
+                    "market": 0.4
+                },
+                "3": {
+                    "market": 0.43
+                },
+                "4": {
+                    "market": 0.63
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 1.23
+                },
+                "1": {
+                    "market": 2.13
+                },
+                "2": {
+                    "market": 1.24
+                },
+                "3": {
+                    "market": 2.42
+                },
+                "4": {
+                    "market": 3.46
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "848": {
+        "item_id": 848,
+        "type": "UMP-45",
+        "skinName": "Metal Flowers",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.34
+                },
+                "1": {
+                    "market": 0.62
+                },
+                "2": {
+                    "market": 0.46
+                },
+                "3": {
+                    "market": 0.47
+                },
+                "4": {
+                    "market": 0.77
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 1.56
+                },
+                "1": {
+                    "market": 2.08
+                },
+                "2": {
+                    "market": 1.09
+                },
+                "3": {
+                    "market": 2.19
+                },
+                "4": {
+                    "market": 3.38
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "849": {
+        "item_id": 849,
+        "type": "FAMAS",
+        "skinName": "Macabre",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.37
+                },
+                "1": {
+                    "market": 0.39
+                },
+                "2": {
+                    "market": 0.37
+                },
+                "3": {
+                    "market": 0.38
+                },
+                "4": {
+                    "market": 0.53
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 1.46
+                },
+                "1": {
+                    "market": 3.54
+                },
+                "2": {
+                    "market": 1.38
+                },
+                "3": {
+                    "market": 1.56
+                },
+                "4": {
+                    "market": 3.1
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "850": {
+        "item_id": 850,
+        "type": "MAG-7",
+        "skinName": "Hard Water",
+        "prices": {
+            "default": {
+                "1": {
+                    "market": 0.37
+                },
+                "2": {
+                    "market": 0.35
+                },
+                "3": {
+                    "market": 0.5
+                },
+                "4": {
+                    "market": 0.64
+                }
+            },
+            "stattrak": {
+                "1": {
+                    "market": 4.31
+                },
+                "2": {
+                    "market": 1.45
+                },
+                "3": {
+                    "market": 1.34
+                },
+                "4": {
+                    "market": 2.8
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "851": {
+        "item_id": 851,
+        "type": "Tec-9",
+        "skinName": "Cut Out",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.46
+                },
+                "1": {
+                    "market": 0.41
+                },
+                "2": {
+                    "market": 0.36
+                },
+                "3": {
+                    "market": 0.57
+                },
+                "4": {
+                    "market": 1.68
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 1.86
+                },
+                "1": {
+                    "market": 1.07
+                },
+                "2": {
+                    "market": 1.34
+                },
+                "3": {
+                    "market": 2.26
+                },
+                "4": {
+                    "market": 8.74
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "852": {
+        "item_id": 852,
+        "type": "M4A1-S",
+        "skinName": "Briefing",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 1.1
+                },
+                "1": {
+                    "market": 2.24
+                },
+                "2": {
+                    "market": 1.16
+                },
+                "3": {
+                    "market": 2.47
+                },
+                "4": {
+                    "market": 4.84
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 4.69
+                },
+                "1": {
+                    "market": 8.48
+                },
+                "2": {
+                    "market": 4.5
+                },
+                "3": {
+                    "market": 7.29
+                },
+                "4": {
+                    "market": 32.55
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "853": {
+        "item_id": 853,
+        "type": "USP-S",
+        "skinName": "Blueprint",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 1.69
+                },
+                "1": {
+                    "market": 2.25
+                },
+                "2": {
+                    "market": 2.25
+                },
+                "3": {
+                    "market": 4.08
+                },
+                "4": {
+                    "market": 11.01
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 4.5
+                },
+                "1": {
+                    "market": 7.15
+                },
+                "2": {
+                    "market": 5.8
+                },
+                "3": {
+                    "market": 13.39
+                },
+                "4": {
+                    "market": 67.5
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "854": {
+        "item_id": 854,
+        "type": "P2000",
+        "skinName": "Woodsman",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 1.12
+                },
+                "1": {
+                    "market": 1.61
+                },
+                "2": {
+                    "market": 1
+                },
+                "3": {
+                    "market": 1.46
+                },
+                "4": {
+                    "market": 2.7
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 5
+                },
+                "1": {
+                    "market": 4.33
+                },
+                "2": {
+                    "market": 3.5
+                },
+                "3": {
+                    "market": 8.06
+                },
+                "4": {
+                    "market": 16.1
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "855": {
+        "item_id": 855,
+        "type": "P90",
+        "skinName": "Death Grip",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 1.12
+                },
+                "1": {
+                    "market": 1.19
+                },
+                "2": {
+                    "market": 1.56
+                },
+                "3": {
+                    "market": 1.87
+                },
+                "4": {
+                    "market": 3.48
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 5.15
+                },
+                "1": {
+                    "market": 3.88
+                },
+                "2": {
+                    "market": 3.61
+                },
+                "3": {
+                    "market": 6.95
+                },
+                "4": {
+                    "market": 15.58
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "856": {
+        "item_id": 856,
+        "type": "SSG 08",
+        "skinName": "Death's Head",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 1.28
+                },
+                "1": {
+                    "market": 1.49
+                },
+                "2": {
+                    "market": 1.28
+                },
+                "3": {
+                    "market": 2.77
+                },
+                "4": {
+                    "market": 2.99
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 9
+                },
+                "1": {
+                    "market": 8.76
+                },
+                "2": {
+                    "market": 5.14
+                },
+                "3": {
+                    "market": 15
+                },
+                "4": {
+                    "market": 14.6
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "857": {
+        "item_id": 857,
+        "type": "P250",
+        "skinName": "Red Rock",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.72
+                },
+                "1": {
+                    "market": 1.12
+                },
+                "2": {
+                    "market": 1.2
+                },
+                "3": {
+                    "market": 2.03
+                },
+                "4": {
+                    "market": 5.4
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 3.8
+                },
+                "1": {
+                    "market": 7.9
+                },
+                "2": {
+                    "market": 7.2
+                },
+                "3": {
+                    "market": 10.5
+                },
+                "4": {
+                    "market": 35
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "858": {
+        "item_id": 858,
+        "type": "AK-47",
+        "skinName": "Orbit Mk01",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 9
+                },
+                "1": {
+                    "market": 10.35
+                },
+                "2": {
+                    "market": 10.9
+                },
+                "3": {
+                    "market": 11.79
+                },
+                "4": {
+                    "market": 15.48
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 32.49
+                },
+                "1": {
+                    "market": 29.16
+                },
+                "2": {
+                    "market": 30.89
+                },
+                "3": {
+                    "market": 38.71
+                },
+                "4": {
+                    "market": 54.99
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "859": {
+        "item_id": 859,
+        "type": "Galil AR",
+        "skinName": "Sugar Rush",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 5.07
+                },
+                "1": {
+                    "market": 6.5
+                },
+                "2": {
+                    "market": 4.45
+                },
+                "3": {
+                    "market": 8.3
+                },
+                "4": {
+                    "market": 7.85
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 35.57
+                },
+                "1": {
+                    "market": 29.99
+                },
+                "2": {
+                    "market": 53.99
+                },
+                "3": {
+                    "market": 48.24
+                },
+                "4": {
+                    "market": 62.26
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "860": {
+        "item_id": 860,
+        "type": "Dual Berettas",
+        "skinName": "Cobra Strike",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 6.23
+                },
+                "1": {
+                    "market": 7.45
+                },
+                "2": {
+                    "market": 4.62
+                },
+                "3": {
+                    "market": 8.4
+                },
+                "4": {
+                    "market": 11.1
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 22.4
+                },
+                "2": {
+                    "market": 27.46
+                },
+                "3": {
+                    "market": 90.33
+                },
+                "4": {
+                    "market": 280.61
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "861": {
+        "item_id": 861,
+        "type": "M4A4",
+        "skinName": "Hellfire",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 9.98
+                },
+                "1": {
+                    "market": 18.53
+                },
+                "2": {
+                    "market": 12.97
+                },
+                "3": {
+                    "market": 38.5
+                },
+                "4": {
+                    "market": 42.64
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 38.61
+                },
+                "1": {
+                    "market": 146.05
+                },
+                "2": {
+                    "market": 53.37
+                },
+                "3": {
+                    "market": 112.01
+                },
+                "4": {
+                    "market": 179.55
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "862": {
+        "item_id": 862,
+        "type": "Five-SeveN",
+        "skinName": "Hyper Beast",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 13.46
+                },
+                "1": {
+                    "market": 20.83
+                },
+                "2": {
+                    "market": 31.43
+                },
+                "3": {
+                    "market": 59
+                },
+                "4": {
+                    "market": 83.88
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 113.92
+                },
+                "1": {
+                    "market": 67.33
+                },
+                "2": {
+                    "market": 145.89
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "863": {
+        "item_id": 863,
+        "type": "AWP",
+        "skinName": "Oni Taiji",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 33.54
+                },
+                "1": {
+                    "market": 63.96
+                },
+                "2": {
+                    "market": 48.24
+                },
+                "3": {
+                    "market": 112.21
+                },
+                "4": {
+                    "market": 106.45
+                }
+            },
+            "stattrak": {
+                "2": {
+                    "market": 179.55
+                },
+                "3": {
+                    "market": 314.09
+                },
+                "4": {
+                    "market": 323.91
+                }
+            },
+            "souvenir": {}
         }
     }
 }
