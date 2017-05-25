@@ -4251,19 +4251,19 @@ var Items = {
                     chance: 50
             },
                 {
-                    img: 'Phases/Bayonet-Gamma-Doppler/p2.png',
+                    img: 'Phases/Bayonet-Gamma-Doppler/p2.webp',
                     chance: 30
             },
                 {
-                    img: 'Phases/Bayonet-Gamma-Doppler/p3.png',
+                    img: 'Phases/Bayonet-Gamma-Doppler/p3.webp',
                     chance: 50
             },
                 {
-                    img: 'Phases/Bayonet-Gamma-Doppler/p3.png',
+                    img: 'Phases/Bayonet-Gamma-Doppler/p3.webp',
                     chance: 20
             },
                 {
-                    img: 'Phases/Bayonet-Gamma-Doppler/p5.png',
+                    img: 'Phases/Bayonet-Gamma-Doppler/p5.webp',
                     chance: 10
             },
         ]
