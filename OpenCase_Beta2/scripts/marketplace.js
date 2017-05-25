@@ -32,20 +32,35 @@ $(document).ready(function() {
 
     var autocompleteTags = [];
     for (var i = 0; i < Items.weapons.length; i++) {
-        var tp = Items.weapons[i].type;
-        var name = getSkinName(Items.weapons[i].skinName, Settings.language);
-        if ($.inArray(tp + ' | ' + name, autocompleteTags) == -1) autocompleteTags.push(tp + ' | ' + name);
+        var wp = new Weapon(Items.weapons[i].id);
+        var tp = wp.type;
+        var name = wp.name;
+        if ($.inArray(tp + ' | ' + name, autocompleteTags) == -1)
+            autocompleteTags.push({
+                type: wp.type,
+                name: wp.name,
+                nameOrig: wp.nameOrig
+            })
+            //autocompleteTags.push(tp + ' | ' + name);
     }
 
     $("#search_text").autocomplete({
         source: function( request, response ) {
-            var matcher = new RegExp( $.ui.autocomplete.escapeRegex( request.term ), "i" );
+            var matcher = new RegExp( $.ui.autocomplete.escapeRegex( request.term.replace(' | ', ' ') ), "i" );
             response( $.grep( autocompleteTags, function( value ) {
-                value = value.label || value.value || value;
-                return matcher.test( value ) || matcher.test( value.replace(' | ', ' ') );
+                return matcher.test( value.type + ' ' + value.name ) || matcher.test( value.type + ' ' + value.nameOrig );
             }) );
+        },
+        select: function(event, ui) {
+            $("#search_text").val(ui.item.type + ' | ' + ui.item.name);
+            $('#search_button').click();
+            return false;
         }
-    })
+    }).autocomplete('instance')._renderItem = function(ul, item) {
+        return $("<li>")
+            .append("<div>" + item.type + ' | ' + item.name + '</div>')
+            .appendTo(ul);
+    }
 
     var lastSalesUpdate = getStatistic('lastSalesUpdate', 0);
     var now = new Date();
@@ -129,6 +144,14 @@ $(document).on('click', '.item, .sales-weapon', function() {
     $("#weaponName").html(weapon.specialText() + weapon.type + " | " + weapon.name);
     $("#weaponPrice").html(weapon.price);
     $("#weaponQuality").html(weapon.qualityText());
+    
+    $("#weaponImg").on('load', function() {
+        if ($('#weaponImg').height() < 360) {
+            $('#weaponImg').css('padding', (360 - $('#weaponImg').height()) / 2 + 'px 0')
+        } else {
+            $('#weaponImg').css('padding', '0')
+        }
+    })
 
     $("#buy_count").val(1);
     $('#buy-double span').html((parseFloat(weapon.price) * 100).toFixed(0));
