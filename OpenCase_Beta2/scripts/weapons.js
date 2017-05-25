@@ -4259,7 +4259,7 @@ var Items = {
                     chance: 50
             },
                 {
-                    img: 'Phases/Bayonet-Gamma-Doppler/p3.webp',
+                    img: 'Phases/Bayonet-Gamma-Doppler/p4.webp',
                     chance: 20
             },
                 {
