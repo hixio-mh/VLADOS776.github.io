@@ -6493,7 +6493,7 @@ var Items = {
         "type": "P250",
         "skinName": "Red Rock",
         "rarity": "restricted",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p250_cu_p250_axiom_light_large.a9b34e0a93dbaa8fa60dfdb080827b919938d9f6.png",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhjxszYI2gS092unY-GqPv9NLPF2GoI6pYlj7nArN_xilW18xU9ZWmnctLHcg4-aVrXqFi_yOfsjcK16pvXiSw0GYfq61U",
         "can": {
             "buy": false,
             "sell": true,
@@ -6509,7 +6509,7 @@ var Items = {
         "type": "AK-47",
         "skinName": "Orbit Mk01",
         "rarity": "restricted",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_gs_ak_colony01_red_light_large.b688da7615b6e76fa34f775e200914dc44d5336c.png",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJegJB49C5mpnbxsjmNr_ummJW4NE_iL-ZrYj03wLl_hFqNm71cteWdlA5Zl2F-FG-yO_r0cW4uMnMynFl6T5iuyjnxSwaOw",
         "can": {
             "buy": false,
             "sell": true,
@@ -6525,7 +6525,7 @@ var Items = {
         "type": "Galil AR",
         "skinName": "Sugar Rush",
         "rarity": "classified",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_galilar_cu_galil_candychaos_light_large.70c1dba6c2de996ec666a260b604c760e01bb20d.png",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbupIgthwczLZAJF7dC_mL-IlvnwKrjZl2RC18l4jeHVu9uliwWwqRJqMGuncY-cdFNtZ17Wq1O4wbzphZLvu5vJnHJi6HIg5SvD30vgL7LkLAY",
         "can": {
             "buy": false,
             "sell": true,
@@ -6541,7 +6541,7 @@ var Items = {
         "type": "Dual Berettas",
         "skinName": "Cobra Strike",
         "rarity": "classified",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_elite_gs_dualberettas_cobra_light_large.0c2576234d95cb12089d9fdad47d1f7eed7f56c8.png",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpos7asPwJf1OD3dShD4N6zhoWfg_bnDLjelHlQ18l4jeHVu9z22gHj_UFvZz36IdXHcwQ-aVGE8wfqkLrrgsK96pqcnCZk7CUktnfD30vg2qddNKU",
         "can": {
             "buy": false,
             "sell": true,
@@ -6557,7 +6557,7 @@ var Items = {
         "type": "M4A4",
         "skinName": "Hellfire",
         "rarity": "classified",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_cu_m4a4_hellfire_light_large.d3675840da1d60e19ba26fc11539e9351a0ec892.png",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09SzmIyNnuXxDLfYkWNFpsEi3L6UrdiljFXlr0VsNmj6dteXdFBtYFnV-VjryO3qhMe86c7BwHB9-n51JK1M_qQ",
         "can": {
             "buy": false,
             "sell": true,
@@ -6573,7 +6573,7 @@ var Items = {
         "type": "Five-SeveN",
         "skinName": "Hyper Beast",
         "rarity": "covert",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_cu_fiveseven_hyperbeast_light_large.d2ef18b57b0b821624e42830ee4c47e241ed4476.png",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goWYkuHxPYTZj3tU-sd0i_rVyoD8j1yg5RduNj_yLNSQdVQ-M1DS-1e8xbvrh56_vMiczSFnvXUg4X6IyxGzhh5SLrs4rcs7-T4",
         "can": {
             "buy": false,
             "sell": true,
@@ -6589,7 +6589,7 @@ var Items = {
         "type": "AWP",
         "skinName": "Oni Taiji",
         "rarity": "covert",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_cu_awp_hannya_light_large.ed3c0ec0e7ea85781983f7aba5d358c260c6749b.png",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJK7dK4jYG0m_7zO6-fk28C65V0ibnEoon00AHj80Jla2qlI9fHIwNqYl3YqVO4wb3pgpK17oOJlyWSYujjQg",
         "can": {
             "buy": false,
             "sell": true,
