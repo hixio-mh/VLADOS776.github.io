@@ -6692,7 +6692,7 @@ var Items = {
             "id": 865,
             "type": "★ Bayonet",
             "skinName": "Lore",
-            "rarity": "covert",
+            "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_cu_bayonet_lore_light_large.372c7e0ec654f3be5d53e87cbbac3ab160c8c76e.png",
             "can": {
                 "buy": false,
