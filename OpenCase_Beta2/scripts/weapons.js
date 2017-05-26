@@ -174,7 +174,6 @@ Weapon.prototype.collection = function () {
     }
     return -1;
 }
-
 Weapon.prototype.saveObject = function (opt) {
     opt = opt || {};
     var saveObj = {
@@ -191,7 +190,6 @@ Weapon.prototype.saveObject = function (opt) {
     if (this.locked) saveObj.locked = this.locked;
     return saveObj;
 }
-
 Weapon.prototype.tradeObject = function () {
     var trObj = {
         item_id: this.item_id,
@@ -203,7 +201,6 @@ Weapon.prototype.tradeObject = function () {
     if (this.pattern != null) trObj.pattern = this.pattern;
     return trObj;
 }
-
 Weapon.prototype.toOldObject = function (isNew) {
     isNew = isNew || false;
     var tp = this.souvenir ? Localization.getString('other.souvenir') + ' ' + this.type : this.type;
@@ -219,7 +216,6 @@ Weapon.prototype.toOldObject = function (isNew) {
     };
     return oldObj;
 }
-
 Weapon.prototype.getPrice = function () {
     return getPrice(this.item_id, {
         quality: this.quality,
@@ -227,7 +223,6 @@ Weapon.prototype.getPrice = function () {
         souvenir: this.souvenir
     })
 }
-
 Weapon.prototype.stattrakRandom = function () {
     if (this.type.souvenir || this.can.stattrak == false || Object.keys(this.allPrices.stattrak).length == 0) {
         this.stattrak = false;
@@ -248,7 +243,6 @@ Weapon.prototype.stattrakRandom = function () {
         this.stattrak = false;
     return this.stattrak;
 }
-
 Weapon.prototype.qualityRandom = function (count) {
     count = count || 0;
     if (this.allPrices != null) {
@@ -316,12 +310,10 @@ Weapon.prototype.qualityRandom = function (count) {
         }
     }
 }
-
 Weapon.prototype.qualityText = function () {
     var lang = Localization.supportedLanguages.quality.regExp.test(Settings.language) ? Settings.language : 'EN';
     return Quality[this.quality].names[lang];
 }
-
 Weapon.prototype.specialText = function () {
     if (this.stattrak)
         return 'StatTrak™ '
@@ -330,15 +322,12 @@ Weapon.prototype.specialText = function () {
     else
         return ''
 }
-
 Weapon.prototype.titleText = function () {
     return this.specialText() + this.type + " | " + (this.nameTag ? '"' + this.nameTag + '"' : this.name)
 }
-
 Weapon.prototype.getName = function () {
     return this.nameTag ? '"' + this.nameTag + '"' : this.name;
 }
-
 Weapon.prototype.hash = function (id) {
     id = id || this.id || -1;
     if (id === -1) return ''
@@ -353,7 +342,6 @@ Weapon.prototype.hash = function (id) {
 
     return hex_md5(JSON.stringify(hash_obj))
 }
-
 Weapon.prototype.getExtra = function (isString) {
     var extra = {};
     extra.hash = this.hash();
@@ -362,7 +350,6 @@ Weapon.prototype.getExtra = function (isString) {
     if (this.locked) extra.locked = this.locked;
     return isString ? JSON.stringify(extra) : extra;
 }
-
 Weapon.prototype.toLi = function (config) {
     config = config || {};
     config.new = typeof config.new === 'undefined' ? true : config.new;
@@ -402,7 +389,6 @@ Weapon.prototype.toLi = function (config) {
 
     return li;
 }
-
 Weapon.prototype.patternRandom = function () {
     if (this.old.patternChance) {
         var rnd = Math.rand(0, 100);
@@ -412,7 +398,6 @@ Weapon.prototype.patternRandom = function () {
     }
     return null;
 }
-
 Weapon.prototype.changePattern = function (id) {
     if (typeof id == 'undefined') {
         var sumChances = this.old.patterns.reduce(function (sum, curr) {
@@ -542,8 +527,8 @@ function Sticker(config) {
     this.rarity = this.raw.rarity || 'high';
     this.tournament = this.raw.tournament || null;
 }
-Sticker.prototype = Object.create(item_proto);
 
+Sticker.prototype = Object.create(item_proto);
 Sticker.prototype.saveObject = function () {
     return {
         item_id: this.item_id,
@@ -553,7 +538,6 @@ Sticker.prototype.saveObject = function () {
         new: this.new
     }
 }
-
 Sticker.prototype.hash = function (id) {
     id = id || this.id || -1;
     if (id === -1) return ''
@@ -565,7 +549,6 @@ Sticker.prototype.hash = function (id) {
 
     return hex_md5(JSON.stringify(hash_obj))
 }
-
 Sticker.prototype.specialText = function () {
     return '';
 }
@@ -614,6 +597,94 @@ function getStickerById(id) {
         return null;
     }
 }
+
+// === Skins carusel ===
+
+function SkinsCarusel(opt) {
+    opt = opt || {};
+    this.opt = {
+        width: opt.width || 250,
+        height: opt.height || 200,
+        style: opt.style || null
+    };
+    this.count = 0;
+    this.items = [];
+
+    if (opt.items) {
+        this.items = opt.items;
+    }
+    if (opt.ids) {
+        var items = [];
+        opt.ids.forEach(function (id) {
+            items.push(new Weapon(id));
+        })
+        this.items = items;
+    }
+    if (opt.idFrom) {
+        var limit = opt.idTo ? opt.idTo - opt.idFrom + 1 : 10;
+
+        for (var i = 0; i < limit; i++) {
+            this.items.push(new Weapon(i + opt.idFrom));
+        }
+    }
+    this.count = this.items.length;
+}
+SkinsCarusel.prototype.add = function (item) {
+    this.items.push(item);
+    this.count++;
+}
+SkinsCarusel.prototype.carusel = function (opt) {
+    var style = '';
+    this.opt.style ? style = this.opt.style : '';
+
+    var ret = $('<div/>', {
+        class: 'skinsCarusel',
+        style: style
+    });
+    var wrap = $('<div/>', {
+        class: 'skinsCarusel-wrap',
+        style: 'width: ' + this.items.length * this.opt.width + 'px'
+    });
+
+    this.items.forEach(function (item, i) {
+        var itemHTML = '<div class="skinsCarusel-item"><img src="' + item.getImgUrl(true) + '" class="skinsCarusel-img"><span class="skinsCarusel-title">' + item.type + ' | <span class=' + item.rarity + '-text>' + item.name + '</span></span></div>';
+        wrap.append(itemHTML);
+    })
+
+    wrap.children().first().addClass('skinsCarusel-selected');
+
+    var controls = $('<div/>', {
+        class: "skinsCarusel-controls"
+    });
+    controls.append('<div class="skinsCarusel-prev"><</div>');
+    controls.append('<div class="skinsCarusel-next">></div>');
+
+    ret.append(wrap);
+
+    if (this.items.length > 1) ret.append(controls);
+
+    return ret;
+}
+
+$(document).on('click', '.skinsCarusel-prev, .skinsCarusel-next', function () {
+    var $wrap = $(this).parent().prev();
+    var width = parseInt($wrap.parent().width());
+    var offset = 0;
+    var selected = $wrap.children('.skinsCarusel-item').index($wrap.find('.skinsCarusel-selected'));
+
+    if ($(this).hasClass('skinsCarusel-next'))
+        selected++;
+    else
+        selected--;
+
+    if (selected > ($wrap.children().length - 1) || selected < 0) return false;
+    offset = selected * width * -1;
+
+    $wrap.children('.skinsCarusel-item').removeClass('skinsCarusel-selected');
+    $wrap.children('.skinsCarusel-item').eq(selected).addClass('skinsCarusel-selected');
+
+    $wrap.css('margin-left', offset);
+})
 
 /*
 Item object
@@ -6349,7 +6420,7 @@ var Items = {
             "type": "UMP-45",
             "skinName": "Metal Flowers",
             "rarity": "milspec",
-            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_aq_ump45_flameflower_light_large.9c5aedb21ad6461f0761375c53b50f030fa0e10c.png",
+            "img": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo7e1f1Jf0uL3ZDBSuImJkoyKmvLyP7TGk3lu5Mx2gv2PrI-giVGwqUFtMj31IICUJAY5Z1nT_VTtxO29gJbqvJ7JnyNj7yEitmGdwULd1U8dAw",
             "can": {
                 "buy": false,
                 "sell": true,
@@ -6365,7 +6436,7 @@ var Items = {
             "type": "FAMAS",
             "skinName": "Macabre",
             "rarity": "milspec",
-            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_sp_famas_macabre_light_large.7582150e24a69922b814d6b56004327e2219890d.png",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRfwOP3dzxP7c-JmYGIlvXmNoTdn2xZ_Ism37GTpNmljQbgqkVlamvxdo6UdlI4M13W-lG6wuzo0JS-vZTBwHI3pGB8svCrsedC",
             "can": {
                 "buy": false,
                 "sell": true,
@@ -6381,7 +6452,7 @@ var Items = {
             "type": "MAG-7",
             "skinName": "Hard Water",
             "rarity": "milspec",
-            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_am_mag7_caustic_light_large.133bbfa9f3cf8220f8eb5556d4d54a766cf1c9e0.png",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7uifDhh3szFcDoV09-3gZOfnvTLP7LWnn8fuZYiiOvH9NXz21ey80FuYz_7cdSQdwM4NVyE_1Xvxujp1sC975ScyWwj5HeAY-I7KQ",
             "can": {
                 "buy": false,
                 "sell": true,
@@ -6393,214 +6464,718 @@ var Items = {
                 "specialCase": true
             }
     }, {
-        "id": 851,
-        "type": "Tec-9",
-        "skinName": "Cut Out",
-        "rarity": "milspec",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_aq_tec9_chalk_pattern_light_large.e0425d0a56ca5a2240b71495a5ef2bc4af0e9331.png",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 851,
+            "type": "Tec-9",
+            "skinName": "Cut Out",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoor-mcjhhwszcdD4b09--lYyAqOf1J6_UhGVu5Mx2gv2P8Nyh2gGw-xJpZTqiIdeXcAI-M1_R_li7kOu605Tu75mYn3I2syMh5GGdwULq_VC6dg",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 852,
-        "type": "M4A1-S",
-        "skinName": "Briefing",
-        "rarity": "milspec",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_silencer_cu_m4a1s_metritera_light_large.ec9c5f86d6788402519be7bd51b849355fbf93ee.png",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 852,
+            "type": "M4A1-S",
+            "skinName": "Briefing",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITck39D4dF0mOj--YXygED6rhBlMGylLIDBdAE2aVzQ-FS_yLy6gsTouZybwXZquSUnsy2Llhbi1AYMMLKLissC3Q",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 853,
-        "type": "USP-S",
-        "skinName": "Blueprint",
-        "rarity": "milspec",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_cu_usps_blueprint_light_large.e4195098bb3a105e6545d32c4d72888f673bd761.png",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 853,
+            "type": "USP-S",
+            "skinName": "Blueprint",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh-TLMbfEk3tD4ctlteXI8oThxlHg-kppY2D7dtSWIwc-ZA3W_1W7le3t1pLou5_BwXo1vCchtyvamRSpwUYbl4sQs20",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 854,
-        "type": "P2000",
-        "skinName": "Woodsman",
-        "rarity": "restricted",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_cu_p2000_hunter_light_large.57f4ea5be4f9bece6a3b71521a370d9afb4abb1f.png",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 854,
+            "type": "P2000",
+            "skinName": "Woodsman",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovrG1eVcwg8zLZAJSvozmxL-DgvngNqnummJW4NE_377HoYn03Vax_xVlMTygcYDEcVQ5YF3S-wC9xu67jMfq7pmYmyBi7D5iuyhbjmQOcg",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 855,
-        "type": "P90",
-        "skinName": "Death Grip",
-        "rarity": "restricted",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_hy_p90_barebones_blue_light_large.c908d6fc6d53cb2f4168a64b9a32e4b6b5479fc8.png",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 855,
+            "type": "P90",
+            "skinName": "Death Grip",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopuP1FA957OORIQJA7c6zlo-FkuTLMbfEk1Rd4cJ5nqfCrNytjAKyqEU4ZmqgdoTDdgc4aQnW_gO3kO3t0JLuus_MzXVq7HMq-z-DyDp1RLqf",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 856,
-        "type": "SSG 08",
-        "skinName": "Death's Head",
-        "rarity": "restricted",
-        "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ssg08_cu_ssg08_deathshead_light_large.78676bc5fce74af519abdccae4d119727c392faf.png",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 856,
+            "type": "SSG 08",
+            "skinName": "Death's Head",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopamie19f0Ob3Yi5FvISJkIWKg__nO77QklRd4cJ5nqeWrdqi3la3_hU_Nm73ddCQcw9vMwyDqQDrxbruhJ-7vpqaynth7HF0-z-DyAzfVpYm",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 857,
-        "type": "P250",
-        "skinName": "Red Rock",
-        "rarity": "restricted",
-        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhjxszYI2gS092unY-GqPv9NLPF2GoI6pYlj7nArN_xilW18xU9ZWmnctLHcg4-aVrXqFi_yOfsjcK16pvXiSw0GYfq61U",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 857,
+            "type": "P250",
+            "skinName": "Red Rock",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhjxszYI2gS092unY-GqPv9NLPF2GoI6pYlj7nArN_xilW18xU9ZWmnctLHcg4-aVrXqFi_yOfsjcK16pvXiSw0GYfq61U",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 858,
-        "type": "AK-47",
-        "skinName": "Orbit Mk01",
-        "rarity": "restricted",
-        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJegJB49C5mpnbxsjmNr_ummJW4NE_iL-ZrYj03wLl_hFqNm71cteWdlA5Zl2F-FG-yO_r0cW4uMnMynFl6T5iuyjnxSwaOw",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 858,
+            "type": "AK-47",
+            "skinName": "Orbit Mk01",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJegJB49C5mpnbxsjmNr_ummJW4NE_iL-ZrYj03wLl_hFqNm71cteWdlA5Zl2F-FG-yO_r0cW4uMnMynFl6T5iuyjnxSwaOw",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 859,
-        "type": "Galil AR",
-        "skinName": "Sugar Rush",
-        "rarity": "classified",
-        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbupIgthwczLZAJF7dC_mL-IlvnwKrjZl2RC18l4jeHVu9uliwWwqRJqMGuncY-cdFNtZ17Wq1O4wbzphZLvu5vJnHJi6HIg5SvD30vgL7LkLAY",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 859,
+            "type": "Galil AR",
+            "skinName": "Sugar Rush",
+            "rarity": "classified",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbupIgthwczLZAJF7dC_mL-IlvnwKrjZl2RC18l4jeHVu9uliwWwqRJqMGuncY-cdFNtZ17Wq1O4wbzphZLvu5vJnHJi6HIg5SvD30vgL7LkLAY",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 860,
-        "type": "Dual Berettas",
-        "skinName": "Cobra Strike",
-        "rarity": "classified",
-        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpos7asPwJf1OD3dShD4N6zhoWfg_bnDLjelHlQ18l4jeHVu9z22gHj_UFvZz36IdXHcwQ-aVGE8wfqkLrrgsK96pqcnCZk7CUktnfD30vg2qddNKU",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 860,
+            "type": "Dual Berettas",
+            "skinName": "Cobra Strike",
+            "rarity": "classified",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpos7asPwJf1OD3dShD4N6zhoWfg_bnDLjelHlQ18l4jeHVu9z22gHj_UFvZz36IdXHcwQ-aVGE8wfqkLrrgsK96pqcnCZk7CUktnfD30vg2qddNKU",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 861,
-        "type": "M4A4",
-        "skinName": "Hellfire",
-        "rarity": "classified",
-        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09SzmIyNnuXxDLfYkWNFpsEi3L6UrdiljFXlr0VsNmj6dteXdFBtYFnV-VjryO3qhMe86c7BwHB9-n51JK1M_qQ",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 861,
+            "type": "M4A4",
+            "skinName": "Hellfire",
+            "rarity": "classified",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09SzmIyNnuXxDLfYkWNFpsEi3L6UrdiljFXlr0VsNmj6dteXdFBtYFnV-VjryO3qhMe86c7BwHB9-n51JK1M_qQ",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 862,
-        "type": "Five-SeveN",
-        "skinName": "Hyper Beast",
-        "rarity": "covert",
-        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goWYkuHxPYTZj3tU-sd0i_rVyoD8j1yg5RduNj_yLNSQdVQ-M1DS-1e8xbvrh56_vMiczSFnvXUg4X6IyxGzhh5SLrs4rcs7-T4",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 862,
+            "type": "Five-SeveN",
+            "skinName": "Hyper Beast",
+            "rarity": "covert",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goWYkuHxPYTZj3tU-sd0i_rVyoD8j1yg5RduNj_yLNSQdVQ-M1DS-1e8xbvrh56_vMiczSFnvXUg4X6IyxGzhh5SLrs4rcs7-T4",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
     }, {
-        "id": 863,
-        "type": "AWP",
-        "skinName": "Oni Taiji",
-        "rarity": "covert",
-        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJK7dK4jYG0m_7zO6-fk28C65V0ibnEoon00AHj80Jla2qlI9fHIwNqYl3YqVO4wb3pgpK17oOJlyWSYujjQg",
-        "can": {
-            "buy": false,
-            "sell": true,
-            "trade": true,
-            "contract": true,
-            "bot": true,
-            "stattrak": true,
-            "inCase": true,
-            "specialCase": true
-        }
+            "id": 863,
+            "type": "AWP",
+            "skinName": "Oni Taiji",
+            "rarity": "covert",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJK7dK4jYG0m_7zO6-fk28C65V0ibnEoon00AHj80Jla2qlI9fHIwNqYl3YqVO4wb3pgpK17oOJlyWSYujjQg",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "inCase": true,
+                "specialCase": true
+            }
+    }, {
+            "id": 864,
+            "type": "★ Bayonet",
+            "skinName": "Autotronic",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_gs_bayonet_autotronic_light_large.4b7f809f4ee434dff8f270b041100012f39c5ebe.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+    }, {
+            "id": 865,
+            "type": "★ Bayonet",
+            "skinName": "Lore",
+            "rarity": "covert",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_cu_bayonet_lore_light_large.372c7e0ec654f3be5d53e87cbbac3ab160c8c76e.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+    }, {
+            "id": 866,
+            "type": "★ Bayonet",
+            "skinName": "Black Laminate",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_cu_bayonet_stonewash_light_large.0f931ca831c405927983d5b2ca3120aa9363d7d3.png",
+            "can": {
+                "buy": true,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": true,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 867,
+            "type": "★ Bayonet",
+            "skinName": "Bright Water",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_hy_ocean_knife_light_large.d262ade9c249afcfbeeacf19deef49ccb0049c1a.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 868,
+            "type": "★ Bayonet",
+            "skinName": "Freehand",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_am_marked_up_light_large.c2a4dbca9338c1a5ffaa246715696f92168a49bc.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 869,
+            "type": "★ Bayonet",
+            "skinName": "Marble Fade",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_am_marble_fade_light_large.adc286f39c98a9630620a97831ca2e5050229dff.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 870,
+            "type": "★ Bayonet",
+            "skinName": "Ultraviolet",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_so_purple_light_large.c7f08cb18f5cc792a27e186ee630614b93c35200.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 871,
+            "type": "★ Bayonet",
+            "skinName": "Tiger Tooth",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_an_tiger_orange_light_large.780ff3a58d01a73d4d7d755adbdca46483d13faf.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 872,
+            "type": "★ Bayonet",
+            "skinName": "Damascus Steel",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_damascus_light_large.bd2b3b3fcd70fdec736a782fa5108ea9286d86a8.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 873,
+            "type": "★ Bayonet",
+            "skinName": "Rust Coat",
+            "rarity": "rare",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotLu8JAllx8zJYAJR-NmzmL-Amf7yNoTZk2pH8fp9i_vG8MLx2wTs-RU5YmmhIoaUdQ49NV3Q8li-wLzthZ7utMjNwSRjuSJw53ragVXp1ir4a_TV",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 874,
+            "type": "★ Bayonet",
+            "skinName": "Urban Masked",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_sp_tape_urban_light_large.81c4d2a06c2d8c271a2b6de4bc47f0cb0d3f32be.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 875,
+            "type": "★ Bayonet",
+            "skinName": "Fade",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aa_fade_light_large.5ac4f422043b48b47e4453cc250c79fda3e78855.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 876,
+            "type": "★ Bayonet",
+            "skinName": "Slaughter",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_am_zebra_light_large.2234064362204e87ea5ce3f997dc691d844d9168.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 877,
+            "type": "★ Bayonet",
+            "skinName": "Blue Steel",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_blued_light_large.40905736c36dbdb9d08077ddaebb06cbb237f583.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 878,
+            "type": "★ Bayonet",
+            "skinName": "Crimson Web",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_hy_webs_light_large.9246001fd8c8b0c077dc2836ea7271a4a020750b.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 879,
+            "type": "★ Bayonet",
+            "skinName": "Case Hardened",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_oiled_light_large.920866e2a1f17fda7702e0b4cb95f45a8a8c0070.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 880,
+            "type": "★ Bayonet",
+            "skinName": "Stained",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_forced_light_large.460998cd194f90f65aec10ccaea8644b42430fc0.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 881,
+            "type": "★ Bayonet",
+            "skinName": "Night",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_so_night_light_large.11b2117af2e0f240111305857ab93e0091e347ed.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 882,
+            "type": "★ Bayonet",
+            "skinName": "Forest DDPAT",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_hy_ddpat_light_large.f53cb47d0ef8b431116008ec3896f8cedb712fb5.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 883,
+            "type": "★ Bayonet",
+            "skinName": "Boreal Forest",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_hy_forest_boreal_light_large.4ecbfdb740d7345cb38430c1a4da15cec468b5ce.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 884,
+            "type": "★ Bayonet",
+            "skinName": "Scorched",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_sp_dapple_light_large.5c6962d79b65eb2053770a887facae88b361fcfe.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 885,
+            "type": "★ Bayonet",
+            "skinName": "Safari Mesh",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_sp_mesh_tan_light_large.f0c1b71fd210b74b42dbf78253556e7ba9a99d15.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 886,
+            "type": "★ Bowie Knife",
+            "skinName": "Marble Fade",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_am_marble_fade_light_large.ee64f39331b11b42f6ef7e00f570bc0da09cf0ee.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 887,
+            "type": "★ Bowie Knife",
+            "skinName": "Doppler",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_am_doppler_phase2_light_large.7a45d59ff8f1e6ac362d26a044b5628b53935d35.png",
+            patternChance: 20,
+            patterns: [
+                {
+                    img: 'Phases/Bowie-Doppler/p1.webp',
+                    chance: 50
+    }, {
+                    img: 'Phases/Bowie-Doppler/p2.webp',
+                    chance: 50
+    }, {
+                    img: 'Phases/Bowie-Doppler/p3.webp',
+                    chance: 50
+    }, {
+                    img: 'Phases/Bowie-Doppler/p4.webp',
+                    chance: 50
+    }, {
+                    img: 'Phases/Bowie-Doppler/p4.webp',
+                    chance: 50
+    }, {
+                    img: 'Phases/Bowie-Doppler/ruby.webp',
+                    chance: 10
+    }, {
+                    img: 'Phases/Bowie-Doppler/sapphire.webp',
+                    chance: 10
+    }, {
+                    img: 'Phases/Bowie-Doppler/black-pearl.webp',
+                    chance: 5
     }
+    ],
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+            "id": 888,
+            "type": "★ Bowie Knife",
+            "skinName": "Tiger Tooth",
+            "rarity": "rare",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_an_tiger_orange_light_large.a8cf2f4214c950f59798f15d0013f7a33e6972fa.png",
+            "can": {
+                "buy": false,
+                "sell": true,
+                "trade": true,
+                "contract": true,
+                "bot": true,
+                "stattrak": true,
+                "souvenir": false,
+                "inCase": true,
+                "specialCase": true
+            }
+}, {
+    "id": 889,
+    "type": "★ Bowie Knife",
+    "skinName": "Fade",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_aa_fade_light_large.fd85e3d9fbd875ca2551b3758f5374e33d167fbf.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 890,
+    "type": "★ Bowie Knife",
+    "skinName": "Crimson Web",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_hy_webs_light_large.d03e755f33f66df9ee9d8b1cf50b633ff458978b.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 891,
+    "type": "★ Bowie Knife",
+    "skinName": "Safari Mesh",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_sp_mesh_tan_light_large.360aa198bded3bec8d3c051bd1d6dc7270b3b91f.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}
     ],
 
     /* ===== STICKERS ===== */

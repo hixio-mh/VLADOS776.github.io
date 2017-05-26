@@ -64,16 +64,22 @@
 			    <i class="fa fa-unlock" aria-hidden="true"></i>
 			</button>
 			<div id="weaponLoadingImg"><i class="fa fa-refresh fa-spin" aria-hidden="true"></i></div>
-			<table id="weaponInfoTable">
-				<tr>
-					<td data-loc="price">Price</td>
-					<td id="weaponPrice" class='currency dollar'></td>
-				</tr>
-				<tr>
-					<td data-loc="quality">Quality</td>
-					<td id="weaponQuality" colspan=2></td>
-				</tr>
-			</table>
+			<div class='weapon-infoBlock'>
+                <table id="weaponInfoTable">
+                    <tr>
+                        <td data-loc="price">Price</td>
+                        <td id="weaponPrice" class='currency dollar'></td>
+                    </tr>
+                    <tr>
+                        <td data-loc="quality">Quality</td>
+                        <td id="weaponQuality"></td>
+                    </tr>
+                    <tr>
+                        <td data-loc="phase">Phase</td>
+                        <td id="weaponPhase"></td>
+                    </tr>
+                </table>
+			</div>
 			<button class='button_black' id='startContract' data-loc="trade_up_contract">Trade Up Contract</button>
 			<button class='button_black' id='sellWeapon' data-loc="sell">Sell</button>
 			<button class='button_black' data-loc="rename" data-toggle='modal' data-target='#rename-weapon-modal' data-loc-var='{"1": "1000<i class=\"double-icon\"></i>"}' id='rename_button'>Rename 1000<i class="double-icon"></i></button>
@@ -158,6 +164,10 @@
             module.init = function() {
                 $(document).on("click", ".weapon", module.list.click);
                 $(document).bind('taphold', module.list.longtap);
+                $(document).on('swipeleft swiperight', '.fullWeaponInfo', function(event) {
+                    var dir = event.type == 'swipeleft' ? 'next' : 'prev';
+                    swipeItem(dir);
+                })
                 $('ul.inventory').bind('contextmenu', module.list.longtap);
                 $('#sellWeapon').on('click', sellItem);
                 $('#renameWeapon').on('click', renameWeapon);
@@ -232,6 +242,13 @@
                 $("#weaponImg").attr("src", item.getImgUrl(true));
                 $("#weaponName").html(item.titleText());
                 $("#weaponPrice").html(item.price);
+                
+                if (item.pattern != null) {
+                    $('#weaponPhase').parent().show();
+                    $('#weaponPhase').text(item.pattern + 1);
+                } else {
+                    $('#weaponPhase').parent().hide();
+                }
 
                 if (item.itemType == 'weapon') {
                     $("#weaponQuality").parent().show();
@@ -281,10 +298,42 @@
                     $(".fullWeaponInfo").addClass("info-closed");
                     setTimeout(function() {
                         $("#weaponInfoContainer").css("display", "none");
-                    }, 1000);
+                    }, 400);
                 } else {
                     $("#weaponInfoContainer").css("display", "none");
                 }
+            }
+            function swipeItem(direction) {
+                var opened = $('#weaponInfoContainer').data('id');
+                
+                if (direction == 'prev')
+                    var nextWeapon = $('.weapon[data-id='+opened+']').prev('.weapon');
+                else
+                    var nextWeapon = $('.weapon[data-id='+opened+']').next('.weapon');
+                    
+                if (nextWeapon.length == 0) return false;
+                
+                var animElement = $('.fullWeaponInfo');
+                
+                getItem(nextWeapon.data('id')).then(function(item) {
+                    if (direction == 'prev')
+                        animElement.css({ left: '100%', opacity: 0});
+                    else
+                        animElement.css({ left: 0, opacity: 0});
+                    setTimeout(function() {
+                        hideItem();
+                        if (direction == 'prev') {
+                            animElement.css({ left: 0, 'transition-duration': '0s' });
+                        } else {
+                            animElement.css({ left: '100%', 'transition-duration': '0s' });
+                        }
+                        showItem(item);
+                        animElement.removeAttr('style');
+                        
+                    }, 500)
+                    
+                })
+                
             }
             function openedWeaponInfo() {
                 var wp = new Weapon($("#weaponInfoContainer").data('item'));
@@ -709,6 +758,7 @@
             
             module.fillInventory = fillInventory;
             module.checkForLoadMore = checkForLoadMore;
+            module.swipeItem = swipeItem;
             return module;
         })(Inventory || {});
 

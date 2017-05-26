@@ -128,7 +128,7 @@ var Translation = {
         },
         cases: {
             news: {
-                text: '<p>Кейс Hydra!<br>Так же были обновлены цены на скины из Spectrum кейса.<br> И добавлены фазы для ножей Bayonet Волны и Bayonet Гамма-волны</p>'
+                text: '<p>Кейс Hydra!<br>Обновлены цены на скины из Spectrum кейса.<br> Добавлены фазы для ножей Bayonet Волны и Bayonet Гамма-волны</p><p>Новые  ножи <a href="#" data-toggle="modal" data-target="#modal-knives">здесь</a>. Могут выпасть с Chroma кейсов.</p><p>Инветарь:<br>Нажмите на предмет и держите, чтобы зайди в режим выделения.<br>Свайпните в лево или в право, чтобы увидеть другие предметы</p>'
             },
             page_name: {
                 text: 'Открыть кейсы',
@@ -792,6 +792,17 @@ var Translation = {
                         en: 'Try another weapon'
                     }
                 },
+            },
+            select: {
+                sell: {
+                    text: 'Продать'
+                },
+                select: {
+                    text: 'Выбрать всё'
+                },
+                unselect: {
+                    text: 'Снять выделение'
+                }
             },
             sell_error: {
                 text: 'Что-то не так с ценой',

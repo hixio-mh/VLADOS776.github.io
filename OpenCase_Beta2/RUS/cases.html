@@ -40,6 +40,35 @@
             color: #fff;
             font-size: 1.1em;
             font-weight: bolder;
+            max-height: 80px;
+            overflow: hidden;
+            position: relative;
+            transition-duration: 0.5s;
+        }
+        .news-closed:before {
+            background-image: linear-gradient(transparent 64%, #000 100%);
+            content: '';
+            width: 100%;
+            position: absolute;
+            height: 50px;
+            bottom: 0;
+            left: 0;
+        }
+        .news-overflow {
+            position: absolute;
+            bottom: -5px;
+            background: #151515;
+            padding: 3px 10px;
+            border-radius: 5px;
+            border: 1px solid #656565;
+            cursor: pointer;
+            margin-left: -30px;
+            font-size: 12px;
+            font-weight: normal;
+            left: 0;
+            right: 0;
+            width: 50px;
+            margin: auto;
         }
     </style>
 </head>
@@ -52,6 +81,9 @@
         
         <div class='news well well-sm'> <span data-loc='news'>
             <p>Hydra case! Also updated prices for Spectrum case. And added phases for Bayonet Doppler & Bayonet Gamma Doppler.</p>
+            <p>New knives <a href="#" data-toggle='modal' data-target='#modal-knives'>here</a>. Can be dropped from Chroma cases</p>
+            <p>Tap and hold on item in inventory to enter select mode.</p>
+            <p>Swipe to the left or to the right to see next item.</p>
         </span>
         </div>
         
@@ -88,6 +120,19 @@
             </div>
         </div>
         
+        <div id="modal-knives" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id='knives'></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div id="modal-special" class="modal fade" role="dialog" data-loc-group='special_popup'>
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -112,13 +157,13 @@
                         collection += ' disabled';
                     }
                     var curCase = "<div class='case " + collection + "' data-case-id=" + i + " data-souvenir='false'>\
-            " + (cases[i].deadline ? "<span class='countdown' data-deadline='" + cases[i].deadline + "'></span>" : "") + "\
-            <img class='case-card' src='../images/Cases/casecard2.png'>\
-            " + (cases[i].minLvl ? '<span class="case-min_lvl">' + cases[i].minLvl + '</span>' : '') + "\
-            <img class='case-img' src='../images/Cases/cases/" + cases[i].img + "'>\
-            <span class='case-price currency dollar'>" + casePrice + "</span>\
-            <span class='case-name " + specialClass + "'>" + cases[i].name + "</span>\
-        </div>";
+                        " + (cases[i].deadline ? "<span class='countdown' data-deadline='" + cases[i].deadline + "'></span>" : "") + "\
+                        <img class='case-card' src='../images/Cases/casecard2.png'>\
+                        " + (cases[i].minLvl ? '<span class="case-min_lvl">' + cases[i].minLvl + '</span>' : '') + "\
+                        <img class='case-img' src='../images/Cases/cases/" + cases[i].img + "'>\
+                        <span class='case-price currency dollar'>" + casePrice + "</span>\
+                        <span class='case-name " + specialClass + "'>" + cases[i].name + "</span>\
+                    </div>";
                     if (typeof cases[i].show != 'undefined' && cases[i].show === false) continue;
                     if (cases[i].deadline) {
                         var t = getTimeRemaining(cases[i].deadline);
@@ -211,6 +256,22 @@
                             $parent.removeClass('disabled');
                         }
                     })
+                    
+                    if ($('.news')[0].scrollHeight >  $('.news').innerHeight()) {
+                        $('.news').append('<div class="news-overflow">↓ ↓ ↓</div>');
+                        $('.news').addClass('news-closed');
+                    }
+                })
+                
+                $(document).on('click', '.news-overflow', function() {
+                    $('.news').toggleClass('news-opened news-closed');
+                    if ($('.news').hasClass('news-opened')) {
+                        $('.news-overflow').text('↑ ↑ ↑');
+                        $('.news').css({ 'max-height': $('.news')[0].scrollHeight });
+                    } else {
+                        $('.news-overflow').text('↓ ↓ ↓');
+                        $('.news').removeAttr('style');
+                    }
                 })
                 
                 if (getURLParameter('start') && isAndroid() && client.getCurrentAppVersionCode() >= 12) {
@@ -228,6 +289,8 @@
                         }
                     })
                 }
+                
+                new SkinsCarusel({idFrom: 864, idTo: 891, style: "margin: auto;" }).carusel().appendTo('#knives');
 
                 function getTimeRemaining(endtime) {
                     if (typeof endtime === 'number') {

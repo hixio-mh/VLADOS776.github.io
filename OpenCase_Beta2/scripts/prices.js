@@ -41925,5 +41925,905 @@ var Prices = {
             },
             "souvenir": {}
         }
+    },
+    "864": {
+        "item_id": 864,
+        "type": "★ Bayonet",
+        "skinName": "Autotronic",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 223.72
+                },
+                "1": {
+                    "market": 267.34
+                },
+                "2": {
+                    "market": 245.99
+                },
+                "3": {
+                    "market": 312.07
+                },
+                "4": {
+                    "market": 678.59
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 299.99
+                },
+                "2": {
+                    "market": 324.16
+                },
+                "3": {
+                    "market": 650
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "865": {
+        "item_id": 865,
+        "type": "★ Bayonet",
+        "skinName": "Lore",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 279.63
+                },
+                "1": {
+                    "market": 283.43
+                },
+                "2": {
+                    "market": 286.31
+                },
+                "3": {
+                    "market": 475
+                },
+                "4": {
+                    "market": 804.97
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 368
+                },
+                "2": {
+                    "market": 425.07
+                },
+                "3": {
+                    "market": 824
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "866": {
+        "item_id": 866,
+        "type": "★ Bayonet",
+        "skinName": "Black Laminate",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 149.64
+                },
+                "1": {
+                    "market": 147
+                },
+                "2": {
+                    "market": 150
+                },
+                "3": {
+                    "market": 160.63
+                },
+                "4": {
+                    "market": 802.26
+                }
+            },
+            "stattrak": {
+                "1": {
+                    "market": 177.34
+                },
+                "2": {
+                    "market": 188.55
+                },
+                "3": {
+                    "market": 203
+                },
+                "4": {
+                    "market": 1
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "867": {
+        "item_id": 867,
+        "type": "★ Bayonet",
+        "skinName": "Bright Water",
+        "prices": {
+            "default": {
+                "1": {
+                    "market": 102.9
+                },
+                "2": {
+                    "market": 106.26
+                },
+                "3": {
+                    "market": 140
+                },
+                "4": {
+                    "market": 165.8
+                }
+            },
+            "stattrak": {
+                "2": {
+                    "market": 147.93
+                },
+                "3": {
+                    "market": 159.99
+                },
+                "4": {
+                    "market": 526.02
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "868": {
+        "item_id": 868,
+        "type": "★ Bayonet",
+        "skinName": "Freehand",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 174.22
+                },
+                "1": {
+                    "market": 180.66
+                },
+                "2": {
+                    "market": 134.98
+                },
+                "3": {
+                    "market": 178.32
+                },
+                "4": {
+                    "market": 218.5
+                }
+            },
+            "stattrak": {
+                "1": {
+                    "market": 175
+                },
+                "2": {
+                    "market": 188
+                },
+                "3": {
+                    "market": 276.5
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "869": {
+        "item_id": 869,
+        "type": "★ Bayonet",
+        "skinName": "Marble Fade",
+        "prices": {
+            "default": {
+                "3": {
+                    "market": 274.91
+                },
+                "4": {
+                    "market": 335
+                }
+            },
+            "stattrak": {
+                "3": {
+                    "market": 1
+                },
+                "4": {
+                    "market": 505.5
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "870": {
+        "item_id": 870,
+        "type": "★ Bayonet",
+        "skinName": "Ultraviolet",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 80
+                },
+                "1": {
+                    "market": 88.68
+                },
+                "2": {
+                    "market": 81.55
+                },
+                "3": {
+                    "market": 143.29
+                },
+                "4": {
+                    "market": 488
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 192.94
+                },
+                "1": {
+                    "market": 420.74
+                },
+                "2": {
+                    "market": 106.75
+                },
+                "3": {
+                    "market": 189.71
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "871": {
+        "item_id": 871,
+        "type": "★ Bayonet",
+        "skinName": "Tiger Tooth",
+        "prices": {
+            "default": {
+                "3": {
+                    "market": 266.7
+                },
+                "4": {
+                    "market": 261.55
+                }
+            },
+            "stattrak": {
+                "4": {
+                    "market": 341.16
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "872": {
+        "item_id": 872,
+        "type": "★ Bayonet",
+        "skinName": "Damascus Steel",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 119.99
+                },
+                "1": {
+                    "market": 120.75
+                },
+                "2": {
+                    "market": 120
+                },
+                "3": {
+                    "market": 130.2
+                },
+                "4": {
+                    "market": 145.42
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 443.39
+                },
+                "1": {
+                    "market": 109.25
+                },
+                "2": {
+                    "market": 154.99
+                },
+                "3": {
+                    "market": 184
+                },
+                "4": {
+                    "market": 228
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "873": {
+        "item_id": 873,
+        "type": "★ Bayonet",
+        "skinName": "Rust Coat",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 91.72
+                },
+                "1": {
+                    "market": 110
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 129.55
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "874": {
+        "item_id": 874,
+        "type": "★ Bayonet",
+        "skinName": "Urban Masked",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 77.52
+                },
+                "1": {
+                    "market": 83.79
+                },
+                "2": {
+                    "market": 78.31
+                },
+                "3": {
+                    "market": 93.41
+                },
+                "4": {
+                    "market": 205.81
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 75.58
+                },
+                "2": {
+                    "market": 89.7
+                },
+                "3": {
+                    "market": 122.74
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "875": {
+        "item_id": 875,
+        "type": "★ Bayonet",
+        "skinName": "Fade",
+        "prices": {
+            "default": {
+                "3": {
+                    "market": 302.03
+                },
+                "4": {
+                    "market": 232.26
+                }
+            },
+            "stattrak": {
+                "3": {
+                    "market": 396.41
+                },
+                "4": {
+                    "market": 345
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "876": {
+        "item_id": 876,
+        "type": "★ Bayonet",
+        "skinName": "Slaughter",
+        "prices": {
+            "default": {
+                "2": {
+                    "market": 163.33
+                },
+                "3": {
+                    "market": 190.15
+                },
+                "4": {
+                    "market": 241.21
+                }
+            },
+            "stattrak": {
+                "3": {
+                    "market": 285
+                },
+                "4": {
+                    "market": 333.59
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "877": {
+        "item_id": 877,
+        "type": "★ Bayonet",
+        "skinName": "Blue Steel",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 110.29
+                },
+                "1": {
+                    "market": 112.64
+                },
+                "2": {
+                    "market": 118
+                },
+                "3": {
+                    "market": 129.53
+                },
+                "4": {
+                    "market": 189.94
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 134.8
+                },
+                "1": {
+                    "market": 134.98
+                },
+                "2": {
+                    "market": 136.34
+                },
+                "3": {
+                    "market": 162.98
+                },
+                "4": {
+                    "market": 489.5
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "878": {
+        "item_id": 878,
+        "type": "★ Bayonet",
+        "skinName": "Crimson Web",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 107.3
+                },
+                "1": {
+                    "market": 125
+                },
+                "2": {
+                    "market": 111.73
+                },
+                "3": {
+                    "market": 223.85
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 149.5
+                },
+                "1": {
+                    "market": 235.41
+                },
+                "2": {
+                    "market": 164.26
+                },
+                "3": {
+                    "market": 417.62
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "879": {
+        "item_id": 879,
+        "type": "★ Bayonet",
+        "skinName": "Case Hardened",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 129.46
+                },
+                "1": {
+                    "market": 128.63
+                },
+                "2": {
+                    "market": 128.63
+                },
+                "3": {
+                    "market": 148.7
+                },
+                "4": {
+                    "market": 217.96
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 188
+                },
+                "1": {
+                    "market": 201.36
+                },
+                "2": {
+                    "market": 190.15
+                },
+                "3": {
+                    "market": 300
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "880": {
+        "item_id": 880,
+        "type": "★ Bayonet",
+        "skinName": "Stained",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 95.19
+                },
+                "1": {
+                    "market": 95.06
+                },
+                "2": {
+                    "market": 100.85
+                },
+                "3": {
+                    "market": 108.51
+                },
+                "4": {
+                    "market": 143.75
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 132.14
+                },
+                "1": {
+                    "market": 120.81
+                },
+                "2": {
+                    "market": 130
+                },
+                "3": {
+                    "market": 134.23
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "881": {
+        "item_id": 881,
+        "type": "★ Bayonet",
+        "skinName": "Night",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 91.97
+                },
+                "1": {
+                    "market": 120.34
+                },
+                "2": {
+                    "market": 83.89
+                },
+                "3": {
+                    "market": 134.98
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 127.88
+                },
+                "1": {
+                    "market": 111.87
+                },
+                "2": {
+                    "market": 219.99
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "882": {
+        "item_id": 882,
+        "type": "★ Bayonet",
+        "skinName": "Forest DDPAT",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 79.15
+                },
+                "1": {
+                    "market": 79.65
+                },
+                "2": {
+                    "market": 72.72
+                },
+                "3": {
+                    "market": 87.25
+                },
+                "4": {
+                    "market": 334.21
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 97.77
+                },
+                "1": {
+                    "market": 156.93
+                },
+                "2": {
+                    "market": 91.28
+                },
+                "3": {
+                    "market": 134.98
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "883": {
+        "item_id": 883,
+        "type": "★ Bayonet",
+        "skinName": "Boreal Forest",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 79.43
+                },
+                "1": {
+                    "market": 81.58
+                },
+                "2": {
+                    "market": 72.71
+                },
+                "3": {
+                    "market": 103.16
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 96.48
+                },
+                "1": {
+                    "market": 145.41
+                },
+                "2": {
+                    "market": 95.08
+                },
+                "3": {
+                    "market": 189.75
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "884": {
+        "item_id": 884,
+        "type": "★ Bayonet",
+        "skinName": "Scorched",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 80.54
+                },
+                "1": {
+                    "market": 78.31
+                },
+                "2": {
+                    "market": 73.17
+                },
+                "3": {
+                    "market": 95.91
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 84.22
+                },
+                "1": {
+                    "market": 230
+                },
+                "2": {
+                    "market": 86.25
+                },
+                "3": {
+                    "market": 140.85
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "885": {
+        "item_id": 885,
+        "type": "★ Bayonet",
+        "skinName": "Safari Mesh",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 70.15
+                },
+                "1": {
+                    "market": 74.75
+                },
+                "2": {
+                    "market": 69.69
+                },
+                "3": {
+                    "market": 80
+                },
+                "4": {
+                    "market": 107.82
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 83.61
+                },
+                "2": {
+                    "market": 85.8
+                },
+                "3": {
+                    "market": 125
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "886": {
+    "item_id": 886,
+    "type": "★ Bowie Knife",
+    "skinName": "Marble Fade",
+    "prices": {
+        "default": {
+            "4": {
+                "market": 460
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 636.71
+            }
+        },
+        "souvenir": {}
     }
+},
+    "887": {
+    "item_id": 887,
+    "type": "★ Bowie Knife",
+    "skinName": "Doppler",
+    "prices": {
+        "default": {
+            "3": {
+                "market": 568.71
+            },
+            "4": {
+                "market": 363.54
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 537.45
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "888": {
+    "item_id": 888,
+    "type": "★ Bowie Knife",
+    "skinName": "Tiger Tooth",
+    "prices": {
+        "default": {
+            "4": {
+                "market": 346.77
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 388.18
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "889": {
+    "item_id": 889,
+    "type": "★ Bowie Knife",
+    "skinName": "Fade",
+    "prices": {
+        "default": {
+            "3": {
+                "market": 257.04
+            },
+            "4": {
+                "market": 254.29
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 443.39
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "890": {
+    "item_id": 890,
+    "type": "Bowie Knife",
+    "skinName": "Crimson Web",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 99.85
+            },
+            "1": {
+                "market": 134.98
+            },
+            "2": {
+                "market": 143.98
+            },
+            "3": {
+                "market": 306.62
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 443.39
+            },
+            "1": {
+                "market": 164.27
+            },
+            "2": {
+                "market": 217
+            },
+            "3": {
+                "market": 414.53
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "891": {
+    "item_id": 891,
+    "type": "★ Bowie Knife",
+    "skinName": "Safari Mesh",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 61.98
+            },
+            "1": {
+                "market": 59.06
+            },
+            "2": {
+                "market": 59.95
+            },
+            "3": {
+                "market": 65.8
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 89.55
+            },
+            "1": {
+                "market": 106.27
+            },
+            "2": {
+                "market": 77.17
+            },
+            "3": {
+                "market": 578.86
+            }
+        },
+        "souvenir": {}
+    }
+}
 }
