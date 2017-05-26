@@ -201,6 +201,7 @@ var CustomCases = {
         
         CustomCases.socket.on('openCase', function(winItem) {
             CustomCases.win = new Weapon(winItem.win);
+            CustomCases.win.patternRandom();
             CustomCases.startRoll(CustomCases.win);
         })
         
