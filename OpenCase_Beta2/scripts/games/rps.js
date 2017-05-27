@@ -137,7 +137,7 @@ function botAddWeapon(itemsCost) {
         }
 
         if (price >= minPrice && price <= maxPrice) {
-            weapon = new Item(weapon.item_id, i);
+            weapon = new Weapon(weapon.item_id, i);
             if (weapon.can.bot)
                 botWeapons.push(weapon);
             if (wpLength == botWeapons.length) canContinue = true;
