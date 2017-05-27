@@ -130,7 +130,7 @@ var CustomCases = {
             CustomCases.a(caseInfo.price * 100);
             
             CustomCases.itemsInCase = caseInfo.weapons.map(function(item) {
-                return new Weapon(item);
+                return new Item(item);
             })
             
             var itemsInCaseText = '';
@@ -200,7 +200,7 @@ var CustomCases = {
         })
         
         CustomCases.socket.on('openCase', function(winItem) {
-            CustomCases.win = new Weapon(winItem.win);
+            CustomCases.win = new Item(winItem.win);
             CustomCases.win.patternRandom();
             CustomCases.startRoll(CustomCases.win);
         })
@@ -423,7 +423,7 @@ var CustomCases = {
         
         var elem = '';
         for (var i = 0; i < Items.weapons.length; i++) {
-            var item = new Weapon(i);
+            var item = new Item(i);
             if (item.can && item.can.buy)
                 elem += item.toLi({lazy_load: true});
         }

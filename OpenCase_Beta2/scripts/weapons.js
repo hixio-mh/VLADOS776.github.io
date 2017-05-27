@@ -34,13 +34,17 @@ var item_proto = {
 }
 
 function Item(config, type) {
-    if (!type && config.quality == 5)
+    if (!type && (config.quality == 5 || config.itemType == 'sticker'))
         return new Sticker(config);
-    type = type || 'Weapon';
+    if (!type && (config.quality == 6 || config.itemType == 'graffiti'))
+        return new Graffiti(config);
+    type = type || config.itemType || 'Weapon';
     if (type.match(/weapons?/i))
         type = 'Weapon';
     else if (type.match(/(sticker|capsule)s?/i))
-        type = 'Sticker'
+        type = 'Sticker';
+    else if (type.match(/graffiti/i))
+        type = 'Graffiti';
     if (!window[type])
         return null;
     return new window[type](config);
@@ -85,7 +89,7 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     this.img = this.old.img;
     this.price = this.getPrice();
 
-    this.allPrices = Prices[this.item_id] ? Prices[this.item_id].prices ? Prices[this.item_id].prices : {} : {};
+    this.allPrices = Prices[this.item_id] && Prices[this.item_id].prices ? Prices[this.item_id].prices : {};
 
     this.allPrices.default = this.allPrices.default || {};
     this.allPrices.stattrak = this.allPrices.stattrak || {};
@@ -113,21 +117,24 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
 
     //this.can.inCase - 
     //Для оружия, которое удалили из коллекции. Например Howl в Huntsman.
-
-    this.can = {};
+    
+    var canDefault = {
+        sell: true,
+        buy: true,
+        trade: true,
+        contract: true,
+        bot: true,
+        game: true,
+        inCase: true,
+        stattrak: true,
+        souvenir: false,
+        specialCase: true,
+        stickers: true,
+        rename: true
+    }
+    
+    this.can = $.extend(true, canDefault, this.old.can || {});;
     this.rarity = this.old.rarity;
-    this.old.can = this.old.can || {};
-    this.can.sell = typeof this.old.can.sell != 'undefined' ? this.old.can.sell : true;
-    this.can.buy = typeof this.old.can.buy != 'undefined' ? this.old.can.buy : true;
-    this.can.trade = typeof this.old.can.trade != 'undefined' ? this.old.can.trade : true;
-    this.can.contract = typeof this.old.can.contract != 'undefined' ? this.old.can.contract : true;
-    this.can.bot = typeof this.old.can.bot != 'undefined' ? this.old.can.bot : true;
-    this.can.game = typeof this.old.can.game != 'undefined' ? this.old.can.game : true;
-    this.can.inCase = typeof this.old.can.inCase != 'undefined' ? this.old.can.inCase : true;
-    this.can.stattrak = typeof this.old.can.stattrak != 'undefined' ? this.old.can.stattrak : true;
-    this.can.souvenir = typeof this.old.can.souvenir != 'undefined' ? this.old.can.souvenir : false;
-    this.can.specialCase = typeof this.old.can.specialCase != 'undefined' ? this.old.can.specialCase : true;
-    this.can.stickers = typeof this.old.can.stickers != 'undefined' ? this.old.can.stickers : true;
 
     if (this.rarity == 'rare' || this.rarity == 'extraordinary')
         this.can.stickers = false;
@@ -437,7 +444,7 @@ function getRandomWeapon(opt) {
         souvenir: souvenir
     };
 
-    var weapon = new Weapon(opt);
+    var weapon = new Item(opt);
     if (weapon.price === 0) {
         var newPrice = getPriceWithNewQuality(item_id, opt);
         if (newPrice.price != 0) {
@@ -448,7 +455,6 @@ function getRandomWeapon(opt) {
 
     return weapon;
 }
-
 function getWeaponById(id) {
     try {
         if (id > Items.weapons.length) return null;
@@ -466,7 +472,6 @@ function getWeaponById(id) {
         return null;
     }
 }
-
 function getWeaponsById(weaponsIDs) {
     var weapons = [];
     for (var i = 0; i < weaponsIDs.length; i++) {
@@ -474,7 +479,6 @@ function getWeaponsById(weaponsIDs) {
     }
     return weapons;
 }
-
 function getWeaponId(type, name) {
     var nameEN = getSkinName(name).toLowerCase();
     for (var i = 0; i < Items.weapons.length; i++) {
@@ -484,7 +488,6 @@ function getWeaponId(type, name) {
         }
     }
 };
-
 function getQualityNum(quality) {
     var Quality = [{
         "name": ["Battle-Scarred", "Закалённое в боях"],
@@ -505,6 +508,8 @@ function getQualityNum(quality) {
     return 0;
 }
 
+
+// ==== Sticker ====
 function Sticker(config) {
     this.itemType = 'sticker';
 
@@ -512,11 +517,10 @@ function Sticker(config) {
         config = {
             item_id: config
         };
-
     this.item_id = config.item_id || 0;
     this.type = config.type || 'Sticker';
     this.new = config.new || false;
-    this.price = 0;
+    this.price = this.getPrice();
     this.raw = getStickerById(this.item_id);
     if (this.raw == null) {
         return
@@ -526,17 +530,35 @@ function Sticker(config) {
     this.quality = this.raw.quality || '';
     this.rarity = this.raw.rarity || 'high';
     this.tournament = this.raw.tournament || null;
+    
+    var canDefault = {
+        trade: true,
+        buy: true,
+        contract: false,
+        sell: true,
+        bot: true,
+        game: true,
+        inCase: true,
+        specialCase: false,
+        rename: false
+    }
+    
+    this.can = $.extend(true, canDefault, this.raw.can || {});
 }
 
 Sticker.prototype = Object.create(item_proto);
-Sticker.prototype.saveObject = function () {
-    return {
+Sticker.prototype.saveObject = function (opt) {
+    opt = opt || {};
+    var saveObj = {
         item_id: this.item_id,
         quality: 5,
-        stattrak: null,
-        souvenir: null,
-        new: this.new
-    }
+        new: this.new,
+        itemType: 'sticker'
+    };
+    if (opt.id && this.id) saveObj.id = this.id;
+    if (opt.hash) saveObj.hash = this.hash();
+    if (this.locked) saveObj.locked = this.locked;
+    return saveObj;
 }
 Sticker.prototype.hash = function (id) {
     id = id || this.id || -1;
@@ -552,6 +574,44 @@ Sticker.prototype.hash = function (id) {
 Sticker.prototype.specialText = function () {
     return '';
 }
+Sticker.prototype.toLi = function (config) {
+    config = config || {};
+    config.new = typeof config.new === 'undefined' ? true : config.new;
+    config.locked = typeof config.locked === 'undefined' ? false : config.locked;
+    config.ticker = typeof config.ticker === 'undefined' ? true : config.ticker;
+    var ticker_limit = config.ticker_limit || window.innerWidth <= 433 ? 16 : 20;
+
+    var li = '<li class="weapon' + (config.new && this.new ? ' new-weapon' : '') + '" data-item_id=' + this.item_id + ' ' + (this.id ? 'data-id=' + this.id : '') + ' data-itemType="sticker">';
+    if (config.locked && this.locked) {
+        li += '<div class="lock lock-li"><span class="fa fa-lock" aria-hidden="true"></span></div>';
+    }
+    if (config.price) {
+        li += '<i class="currency dollar">' + this.price + '</i>';
+    }
+    if (config.lazy_load) {
+        li += '<img data-src="' + this.getImgUrl() + '" />';
+    } else {
+        li += '<img src="' + this.getImgUrl() + '" />';
+    }
+
+    li += '<div class="weaponInfo ' + this.rarity + '">\
+            <div class="type">\
+                <span>Sticker</span>\
+            </div><div class="name' + (Settings.scroll_names && config.ticker && this.name.length >= ticker_limit ? ' text-ticker' : '') + '">\
+                <span>' + this.name + '</span>\
+            </div>\
+           </div>';
+    li += '</li>'
+
+    return li;
+}
+Sticker.prototype.getPrice = function() {
+    return ItemPrices.stickers[this.item_id] || 0;
+}
+Sticker.prototype.titleText = function() {
+    return _t('other.sticker', 'Sticker') + ' | ' + this.name;
+}
+Sticker.prototype.getName = function() { return this.name };
 
 function getItemsByID(IDs, type) {
     var result = [];
@@ -564,7 +624,6 @@ function getItemsByID(IDs, type) {
     }
     return result;
 }
-
 function getItemByID(id, type) {
     type = type || 'weapons';
 
@@ -578,17 +637,140 @@ function getItemByID(id, type) {
 
     return window[func](id);
 }
-
 function getStickerById(id) {
     if (typeof id != 'number') return null;
     if (id > Items.stickers.length) return null;
     try {
-        if (Items.stickers[id].id == id) {
+        if (Items.stickers[id].item_id == id) {
             return Items.stickers[id]
         } else {
             for (var i = 0; i < Items.stickers.length; i++)
-                if (Items.stickers[i].id === id) {
+                if (Items.stickers[i].item_id === id) {
                     return Items.stickers[i];
+                    break;
+                }
+            return null;
+        }
+    } catch (e) {
+        return null;
+    }
+}
+
+// ==== Graffiti ====
+
+function Graffiti(config) {
+    this.itemType = 'graffiti';
+    this.type = 'Graffiti';
+    
+    if (typeof config === 'number')
+        config = { item_id: config };
+    
+    this.item_id = config.item_id || 0;
+    this.raw = getGraffitiById(this.item_id);
+    if (this.raw == null) return null;
+    
+    this.colorNum = config.colorNum || 0;
+    this.name = this.raw.name;
+    this.rarity = this.raw.rarity;
+    this.color = this.raw.colors && this.raw.colors.length > this.colorNum ? this.raw.colors[this.colorNum] : null;
+    this.img = this.color ? this.color.img : this.raw.img;
+    this.price = this.getPrice();
+    this.new = config.new || false;
+    
+    var canDefault = {
+        trade: true,
+        buy: true,
+        contract: false,
+        sell: true,
+        bot: true,
+        game: true,
+        inCase: true,
+        specialCase: false,
+        rename: false
+    }
+    
+    this.can = $.extend(true, canDefault, this.raw.can || {});
+}
+Graffiti.prototype = Object.create(item_proto);
+Graffiti.prototype.saveObject = function (opt) {
+    opt = opt || {};
+    var saveObj = {
+        item_id: this.item_id,
+        quality: 6,
+        new: this.new,
+        itemType: 'graffiti',
+        colorNum: this.colorNum
+    };
+    if (opt.id && this.id) saveObj.id = this.id;
+    if (opt.hash) saveObj.hash = this.hash();
+    if (this.locked) saveObj.locked = this.locked;
+    return saveObj;
+}
+Graffiti.prototype.hash = function (id) {
+    id = id || this.id || -1;
+    if (id === -1) return ''
+
+    var hash_obj = {
+        id: id,
+        item_id: this.item_id
+    }
+
+    return hex_md5(JSON.stringify(hash_obj))
+}
+Graffiti.prototype.specialText = function() {
+    return '';
+}
+Graffiti.prototype.toLi = function(config) {
+    config = config || {};
+    config.new = typeof config.new === 'undefined' ? true : config.new;
+    config.nameTagIcon = typeof config.nameTagIcon === 'undefined' ? true : config.nameTagIcon;
+    config.locked = typeof config.locked === 'undefined' ? false : config.locked;
+
+    config.ticker = typeof config.ticker === 'undefined' ? true : config.ticker;
+    var ticker_limit = config.ticker_limit || window.innerWidth <= 433 ? 16 : 20;
+
+    var li = '<li class="weapon graffiti' + (config.new && this.new ? ' new-weapon' : '') + '" data-item_id=' + this.item_id + ' ' + (this.id ? 'data-id=' + this.id : '') + ' data-itemType="graffiti">';
+    if (config.locked && this.locked) {
+        li += '<div class="lock lock-li"><span class="fa fa-lock" aria-hidden="true"></span></div>';
+    }
+    if (config.price) {
+        li += '<i class="currency dollar">' + this.price + '</i>';
+    }
+    if (config.lazy_load) {
+        li += '<img data-src="' + this.getImgUrl() + '" />';
+    } else {
+        li += '<img src="' + this.getImgUrl() + '" />';
+    }
+
+    li += '<div class="weaponInfo ' + this.rarity + '">\
+            <div class="type">\
+                <span>Graffiti</span>\
+            </div><div class="name' + (Settings.scroll_names && config.ticker && this.name.length >= ticker_limit ? ' text-ticker' : '') + '">\
+                <span>' + this.name + '</span>\
+            </div>\
+           </div>';
+    li += '</li>'
+
+    return li;
+}
+Graffiti.prototype.getPrice = function() {
+    return ItemPrices.graffiti[this.item_id] || 0;
+}
+Graffiti.prototype.titleText = function() {
+    return _t('other.graffity', 'Graffiti') + ' | ' + this.name;
+}
+Graffiti.prototype.getName = function() { return this.name };
+
+function getGraffitiById(id) {
+    if (typeof id != 'number') return null;
+    if (id > Items.graffiti.length) return null;
+    try {
+        if (Items.graffiti[id].item_id == id) {
+            return Items.graffiti[id]
+        } else {
+            for (var i = 0; i < Items.graffiti.length; i++)
+                if (Items.graffiti[i].item_id === id) {
+                    return Items.graffiti[i];
                     break;
                 }
             return null;
@@ -616,7 +798,7 @@ function SkinsCarusel(opt) {
     if (opt.ids) {
         var items = [];
         opt.ids.forEach(function (id) {
-            items.push(new Weapon(id));
+            items.push(new Item(id));
         })
         this.items = items;
     }
@@ -624,7 +806,7 @@ function SkinsCarusel(opt) {
         var limit = opt.idTo ? opt.idTo - opt.idFrom + 1 : 10;
 
         for (var i = 0; i < limit; i++) {
-            this.items.push(new Weapon(i + opt.idFrom));
+            this.items.push(new Item(i + opt.idFrom));
         }
     }
     this.count = this.items.length;
@@ -726,7 +908,8 @@ Item object
 
 // === Items ===
 var Items = {
-    weapons: [{
+    weapons: [
+        {
             id: 0,
             type: "M249",
             skinName: "Jungle DDPAT",
@@ -4311,7 +4494,7 @@ var Items = {
             img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-Kmsj5Mqnak29u_dVO07n--InxgUG5lB89IT6mOtXAIwE4YlnW8lW7yebp05Tpv5rJmCQ26Scl7HfanBfjhkkaZrNph_GACQLJ_Utp8Mc"
     }, {
             id: 592,
-            type: "★ M9 Bayonet",
+            type: "★ Bayonet",
             skinName: "Gamma Doppler",
             rarity: "rare",
             img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-KmsjxPr7Dl2dV18hwmOvN8IXvjVCLpxo7Oy2ceNfXJVMgZAyB_lDqlL--15G97Z7AyyZividw5i6MyUeygBpEPLM90PDPHArKBrsJQvdXl_RMjw",
@@ -7179,20 +7362,64 @@ var Items = {
     ],
 
     /* ===== STICKERS ===== */
-    stickers: [{
-        id: 0,
+    stickers: [
+        {
+        item_id: 0,
         name: "Skull Troop",
         rarity: 'high',
         img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7Ng9CurajPhNy3PzHYQJO7c6xkc7fwvagMr-DwTIB7Z0g3bjA9Nrz3ATj_RI6Y26hJI6RdQ82Zl2B_lC8366x0gyLUcSS'
     }, {
-        id: 1,
+        item_id: 1,
         name: 'Bombsquad',
         rarity: 'high',
         img: 'https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7IApRo4WnJApiwOLdcDl94N2kk4XFkfKmNr-Izz4C68B1ieyS9NuijFGyr0s-ZjymJNfBIFA2NV6B_FLqlfCv28HBhzn9xA/360fx360f'
     }, {
-        id: 2,
+        item_id: 2,
         name: 'Unicorn (Holo)',
         rarity: 'remarkable',
         img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7MApetbW3JTho3P_HTjFD_tuz2oaNwK_3ZeqIwj0FusEn3OuX89-j0Q3lrkM-N2HzLYGVJgRqYwnRqwWggbC42qqHM58'
-    }]
+    }],
+    
+    /* ===== GRAFFITI ===== */
+    graffiti: [
+        {
+            item_id: 0,
+            name: 'Rage Mode',
+            rarity: 'base',
+            img: 'IzMF03bi9WpSBq-S-ekoE33L-iLqGFHVaU25ZzQNQcXdB2ozio1RrlIWFK3UfvMYB8UsvjiMXojflsZalyxSh31CIyHz2GZ-KuFpPsrTzBG0pPSEEEvycTL7IyDLG1smRLBfZDvRr2ejs7iWRTDJF-h4FQpQKKsC8GZLaZ-IbBA-hYUJrjbvxAptEBFuccpKfx2233gHOK0p0XxFfZIGnCfhr92MQQ',
+            colors: [
+                {
+                    img: 'IzMF03bi9WpSBq-S-ekoE33L-iLqGFHVaU25ZzQNQcXdB2ozio1RrlIWFK3UfvMYB8UsvjiMXojflsZalyxSh31CIyHz2GZ-KuFpPsrTzBG0pPSEEEvycTL7IyDLG1smRLBfZDvRr2ejs7iWRTDJF-h4FQpQKKsC8GZLaZ-IbBA-hYUJrjbvxAptEBFuccpKfx2233gHOK0p0XxFfZIGnCfhr92MQQ',
+                    name: 'Battle Green'
+                },
+                {
+                    img: 'IzMF03bi9WpSBq-S-ekoE33L-iLqGFHVaU25ZzQNQcXdB2ozio1RrlIWFK3UfvMYB8UsvjiMXojflsZalyxSh31CIyHz2GZ-KuFpPsrTzBG0pPSEEEvycTL7IyDLG1smRLBfZDvRr2ejs7iWRTDJF-h4FQpQKKsC8GZLaZ-IbBA-hYUJrjbvxAptEBFuccpKfx2233gHOK0p0XwQJJ1ayybIdwjwZg',
+                    name: 'Bazooka Pink'
+                },
+                {
+                    img: 'IzMF03bi9WpSBq-S-ekoE33L-iLqGFHVaU25ZzQNQcXdB2ozio1RrlIWFK3UfvMYB8UsvjiMXojflsZalyxSh31CIyHz2GZ-KuFpPsrTzBG0pPSEEEvycTL7IyDLG1smRLBfZDvRr2ejs7iWRTDJF-h4FQpQKKsC8GZLaZ-IbBA-hYUJrjbvxAptEBFuccpKfx2233gHOK0p0XwQdJ8GnXAiAu6ebw',
+                    name: 'Blood Red'
+                }
+            ]
+        }, {
+            item_id: 1,
+            name: 'Ninja',
+            rarity: 'base',
+            img: 'IzMF03bi9WpSBq-S-ekoE33L-iLqGFHVaU25ZzQNQcXdB2ozio1RrlIWFK3UfvMYB8UsvjiMXojflsZalyxSh31CIyHz2GZ-KuFpPsrTzBG0pO-CI3r-Zj3FEC3YDlltU-UKN2rd9zSj4-_FFm3JFOskFw9SdfRR9WBKaJyNOhdpgdIP8me8xBMzDhgvNMZJfACpx2EfJbQ1xDhPcpNbzSHzK9A71Go',
+            colors: [
+                {
+                    img: 'IzMF03bi9WpSBq-S-ekoE33L-iLqGFHVaU25ZzQNQcXdB2ozio1RrlIWFK3UfvMYB8UsvjiMXojflsZalyxSh31CIyHz2GZ-KuFpPsrTzBG0pO-CI3r-Zj3FEC3YDlltU-UKN2rd9zSj4-_FFm3JFOskFw9SdfRR9WBKaJyNOhdpgdIP8me8xBMzDhgvNMZJfACpx2EfJbQ1xDhPcpNbzSHzK9A71Go',
+                    name: 'Battle Green'
+                },
+                {
+                    img: 'IzMF03bi9WpSBq-S-ekoE33L-iLqGFHVaU25ZzQNQcXdB2ozio1RrlIWFK3UfvMYB8UsvjiMXojflsZalyxSh31CIyHz2GZ-KuFpPsrTzBG0pO-CI3r-Zj3FEC3YDlltU-UKN2rd9zSj4-_FFm3JFOskFw9SdfRR9WBKaJyNOhdpgdIP8me8xBMzDhgvNMZJfACpx2EfJbQ1xDhPJ8pUkXbyvAL_lmw',
+                    name: 'Bazooka Pink'
+                },
+                {
+                    img: 'IzMF03bi9WpSBq-S-ekoE33L-iLqGFHVaU25ZzQNQcXdB2ozio1RrlIWFK3UfvMYB8UsvjiMXojflsZalyxSh31CIyHz2GZ-KuFpPsrTzBG0pO-CI3r-Zj3FEC3YDlltU-UKN2rd9zSj4-_FFm3JFOskFw9SdfRR9WBKaJyNOhdpgdIP8me8xBMzDhgvNMZJfACpx2EfJbQ1xDhPJ5pWzSCkPqRFLYg',
+                    name: 'Blood Red'
+                }
+            ]
+        },
+    ]
 }

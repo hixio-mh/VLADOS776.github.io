@@ -230,6 +230,10 @@ var Sounds = {
         click: new Audio('../sound/minesweeper/click.wav'),
         lose: new Audio('../sound/minesweeper/lose.wav'),
         coins: new Audio('../sound/minesweeper/coins.wav'),
+    },
+    spray: {
+        shake: new Audio('../sound/spraycan_shake.wav'),
+        spray: new Audio('../sound/spraycan_spray.wav'),
     }
 }
 
@@ -421,38 +425,6 @@ function getStatistic(key, defaultVal, crypt) {
     
     return value;
 }
-
-function saveInventory() {
-    if (typeof localStorage != 'undefined' && localStorage != null) {
-        var i = 0;
-        for (var key in localStorage) {
-            if (/^firebase/.test(key)) {
-                saveStatistic('firebase-key ' + i, '' + key);
-                saveStatistic('firebase-value ' + i, '' + localStorage[key]);
-                i++;
-            }
-        }
-        localStorage.clear();
-        var fbKey1 = getStatistic('firebase-key 0', "");
-        var fbKey2 = getStatistic('firebase-key 1', "");
-        var fbVal1 = getStatistic('firebase-value 0', "");
-        var fbVal2 = getStatistic('firebase-value 1', "");
-        localStorage[fbKey1] = fbVal1;
-        localStorage[fbKey2] = fbVal2;
-    }
-    localStorage["inventory.count"] = inventory.length;
-    for (var i = 0; i < inventory.length; i++) {
-        localStorage["inventory.item." + i + ".type"] = inventory[i].type;
-        localStorage["inventory.item." + i + ".skinName"] = inventory[i].skinName;
-        localStorage["inventory.item." + i + ".rarity"] = inventory[i].rarity;
-        localStorage["inventory.item." + i + ".img"] = inventory[i].img;
-        localStorage["inventory.item." + i + ".quality"] = inventory[i].quality;
-        localStorage["inventory.item." + i + ".statTrak"] = inventory[i].statTrak;
-        localStorage["inventory.item." + i + ".price"] = inventory[i].price;
-        localStorage["inventory.item." + i + ".new"] = inventory[i]['new'];
-    }
-}
-
 function saveWeapon(weapon) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
@@ -479,17 +451,16 @@ function saveWeapon(weapon) {
         }
     })
 }
-
 function saveItem(item) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
         if (isAndroid()) {
             if (item.itemType == 'weapon') {
-            
                 var rowID = client.saveWeapon(item.item_id, item.quality, item.stattrak, item.souvenir, item['new'], item.getExtra(true));
-                
             } else if (item.itemType == 'sticker') {
-                var rowID = client.saveWeapon(item.item_id, 5, null, null, item['new'], '{}');
+                var rowID = client.saveWeapon(item.item_id, 5, null, null, item['new'], item.getExtra());
+            } else if (item.itemType == 'graffiti') {
+                var rowID = client.saveWeapon(item.item_id, 6, null, null, item['new'], item.getExtra());
             }
             item.id = rowID;
             updateItem(item);
@@ -572,7 +543,7 @@ function setHash(ids) {
             var id = that.ids[that.counter];
             var request = store.get(id);
             request.onsuccess = function(event) {
-                var weapon = new Weapon(request.result);
+                var weapon = new Item(request.result);
                 weapon.id = id;
                 weapon.new = request.result.new || false;
                 var saveObj = weapon.saveObject( { id: true, hash: true} );
@@ -639,7 +610,17 @@ function updateItem(item) {
                     null, 
                     null, 
                     item['new'], 
-                    '{"hash": "' + item.hash() + '"}'
+                    item.getExtra(true)
+                );
+            } else if (item.itemType == 'graffiti') {
+                var rowID = client.updateWeapon(
+                    item.id, 
+                    item.item_id, 
+                    6, 
+                    null, 
+                    null, 
+                    item['new'], 
+                    item.getExtra(true)
                 );
             }
             resolver(rowID);
@@ -695,7 +676,7 @@ function getItem(id) {
         if (isAndroid()) {
             var wpJSON = client.getWeaponById(id);
             wpJSON = $.parseJSON(wpJSON);
-            var wp = new Weapon(wpJSON);
+            var wp = new Item(wpJSON);
             wp.id = id;
             
             if (typeof wpJSON.extra.hash != 'undefined') {
@@ -722,7 +703,6 @@ function getItem(id) {
         }
     })
 }
-
 function getWeapons(ids) {
     return new Promise(function(resolver, reject) {
         var wpns = [];
@@ -740,7 +720,6 @@ function getWeapons(ids) {
         }
     })
 }
-
 function deleteWeapon(id) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
@@ -984,33 +963,6 @@ function deleteMenuNotification(items) {
     }
 }
 
-function getCollection(type, name) {
-    if (name == "Man-o") name = "Man-o'-war";
-    if (name == "Chantico") name = "Chantico's fire";
-    try {
-        var param = parseURLParams(window.location.href);
-        if (typeof param != "undefined") {
-            var caseId = param.caseId[0];
-            return cases[parseInt(caseId)]
-        }
-    }
-    catch (e) {
-        //Error
-    }
-    var collection = "";
-    type = $.trim(type.replace(/(Souvenir|Сувенир)/g, ''));
-    
-    for (var i = 0; i < cases.length; i++) {
-        for (var z = 0; z < cases[i].weapons.length; z++)
-            if ((cases[i].weapons[z].type == type) && (getSkinName(cases[i].weapons[z].skinName, "EN") == getSkinName(name))) {
-                collection = cases[i];
-                break;
-            }
-        if (typeof collection != 'undefined' && collection != '') break;
-    }
-    return collection;
-}
-
 function getCasePrice(caseId, souvenir) {
     var prSumm = 0;
 
@@ -1040,19 +992,6 @@ function middlePrice(item_id, souvenir) {
     }
     middlePrice /= 5;
     return parseFloat(middlePrice.toFixed(2));
-}
-
-function getWeaponRarity(type, name) {
-    name = getSkinName(name);
-    type = $.trim(type.replace(/(Souvenir|Сувенир)/g, ''));
-    var coll = getCollection(type, name);
-    if (typeof coll.weapons == 'undefined' && isAndroid()) {
-        client.sendToAnalytics("Error", "Error", "Cant find collection for " + type + " | " + name, "main.js");
-        return "milspic";
-    }
-    for (var i = 0; i < coll.weapons.length; i++) {
-        if (coll.weapons[i].type == type && getSkinName(coll.weapons[i].skinName) == name) return coll.weapons[i].rarity;
-    }
 }
 
 function getImgUrl(img, big) {

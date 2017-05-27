@@ -465,6 +465,21 @@ function newMsg(key, message, edit) {
         attachments = '<img src="' + attach.url + '" class="message-img">'
     }
     
+    var graffitiRegExp = /^!\(graffiti\|(\d+)\|(\d+)\)$/;
+    if (graffitiRegExp.test(text)) {
+        var grafID = parseInt(text.match(graffitiRegExp)[1]);
+        var grafColor = parseInt(text.match(graffitiRegExp)[2]);
+        
+        var graffiti = new Graffiti({ item_id: grafID, colorNum: grafColor });
+        
+        text = "<img src=" + graffiti.getImgUrl() + ">";
+        attachments = "";
+        extraClasses += ' message__graffiti';
+        if (!edit) {
+            Sound('spray.shake');
+            setTimeout(function() { Sound('spray.spray'); }, 1000);
+        }
+    }
     var msg = "<li class='" + (!edit ? "animated bounceIn " : "") + "chat__message" + (myMessage ? " my_message" : "") + (toMe ? " msgToMe" : "") + " " + group + " " + extraClasses + "' data-msgkey='" + key + "'>\
         <a href='profile.html?uid="+uid+"'>\
             <img src='" + img + "' data-userID='" + uid + "'>\

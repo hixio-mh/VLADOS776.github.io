@@ -114,6 +114,11 @@
     background: -webkit-radial-gradient(at top, #86AEF6, #284271);
     background: radial-gradient(at top, #86AEF6, #284271);
 }
+.graffiti #weaponImg, .graffiti #weaponLoadingImg {
+    background: url(../images/Cases/graffitibg.jpg);
+    background-size: 100% 100%;
+}
+
 #weaponLoadingImg {
     color: #fff;
     font-size: 2em;

@@ -83,7 +83,7 @@ $(document).ready(function() {
     } else {
         for (var i = 0; i < parseInt(getStatistic("market-sales-count")); i++) {
             var raw = JSON.parse(getStatistic("market-sales-weapon-" + i));
-            Sales.push(new Weapon(raw));
+            Sales.push(new Item(raw));
             Sales[i].soldOut = raw.soldOut;
         }
     }
@@ -104,7 +104,7 @@ $(document).on('click', '.item, .sales-weapon', function() {
     $("#buy-double").prop('disabled', false);
     if ($(this).hasClass('sold-out')) return false;
     var saleId = -1;
-    if (typeof $(this).data('weapon-info-json') != 'undefined') var weapon = new Weapon($(this).data("weapon-info-json"));
+    if (typeof $(this).data('weapon-info-json') != 'undefined') var weapon = new Item($(this).data("weapon-info-json"));
     if (typeof $(this).data('sales-id') != 'undefined') saleId = $(this).data("sales-id");
     if (typeof $(this).data('discount') != 'undefined') var discount = $(this).data("discount");
 
@@ -191,7 +191,7 @@ $(document).on('click', '#buy-double', function() {
         stattrak: $("#weaponInfoContainer").data('stattrak'),
         souvenir: $("#weaponInfoContainer").data('souvenir')
     }
-    var weapon = new Weapon(wp);
+    var weapon = new Item(wp);
     if (!weapon.can.buy) return;
     weapon.new = true;
     
@@ -330,18 +330,18 @@ function getAllWeaponInfo(type, name, stattrak, souvenir) {
     souvenir = souvenir || false;
     var info = [];
     var item_id = getWeaponId(type, name);
-    var weapon = new Weapon(item_id);
+    var weapon = new Item(item_id);
     
     for (var i = 0; i < 5; i++) {
-        info.push(new Weapon(item_id, i, false, false));
+        info.push(new Item(item_id, i, false, false));
     }
     if (stattrak)
         for (var i = 0; i < 5; i++) {
-            info.push(new Weapon(item_id, i, true, false));
+            info.push(new Item(item_id, i, true, false));
         }
     if (souvenir && weapon.can.souvenir)
         for (var i = 0; i < 5; i++) {
-            info.push(new Weapon(item_id, i, false, true));
+            info.push(new Item(item_id, i, false, true));
         }
     
     for (var i = 0; i < info.length; i++) {

@@ -675,7 +675,7 @@ $(function () {
                     var weapon = myWeapons[i];
                     if (typeof weapon == 'undefined') continue;
                     if (typeof weapon == 'string') weapon = JSON.parse(weapon);
-                    weapon = new Weapon(weapon);
+                    weapon = new Item(weapon);
                     var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
                     $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi({price: true, nameTag: true, nameTagIcon: true})).data('weapon_obj', weaponJSON));
                 }
@@ -714,7 +714,7 @@ $(function () {
                     for (var i = 0; i < Trade_weapons.length; i++) {
                         var weapon = Trade_weapons[i];
                         if (typeof weapon == 'undefined') continue;
-                        weapon = new Weapon(weapon);
+                        weapon = new Item(weapon);
                         $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append(weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
                     }
                     $('#my-trades__other-offer').effect('highlight');
@@ -834,7 +834,7 @@ $(function () {
             var $parent = $('li[data-tradeid="' + $('#you-ready-to-trade').data('tradeid') + '"] .trade__info__hidden .trade__info__weapons.your');
             $($parent).empty();
             for (var i = 0; i < convertedWeapons.length; i++) {
-                var weapon = new Weapon(convertedWeapons[i]);
+                var weapon = new Item(convertedWeapons[i]);
                 var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
                 var $li = $(weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
                 $li.data('weapon_obj', weaponJSON);
@@ -856,7 +856,7 @@ $(function () {
                     var convertedWeapons = [];
                     for (var i = 0; i < Trade_weapons.length; i++) {
                         //var wp = fbInventory.reverseConvert(weapons[i]);
-                        wp = new Weapon(Trade_weapons[i]);
+                        wp = new Item(Trade_weapons[i]);
                         wp.new = true;
                         convertedWeapons.push(wp);
                     }
@@ -886,7 +886,7 @@ $(function () {
                 var convertedWeapons = [];
                 for (var i = 0; i < Trade_weapons.length; i++) {
                     //var wp = fbInventory.reverseConvert(weapons[i]);
-                    wp = new Weapon(Trade_weapons[i]);
+                    wp = new Item(Trade_weapons[i]);
                     wp.new = true;
                     convertedWeapons.push(wp);
                 }
@@ -1121,7 +1121,7 @@ $(function () {
                     var weapon = trade.you.items[i];
                     if (typeof weapon == 'undefined') continue;
                     if (typeof weapon == 'string') weapon = JSON.parse(weapon);
-                    weapon = new Weapon(weapon);
+                    weapon = new Item(weapon);
                     var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
                     $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi({price: true, nameTag: true, nameTagIcon: true})).data('weapon_obj', weaponJSON));
                 }
@@ -1161,7 +1161,7 @@ $(function () {
                         for (var i = 0; i < Trade_weapons.length; i++) {
                             var weapon = Trade_weapons[i];
                             if (typeof weapon == 'undefined') continue;
-                            weapon = new Weapon(weapon);
+                            weapon = new Item(weapon);
                             $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append( weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
                         }
                         $('#my-trades__other-offer').effect('highlight');

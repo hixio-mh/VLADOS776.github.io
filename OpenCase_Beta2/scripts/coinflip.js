@@ -238,7 +238,7 @@ var CoinFlip = {
             }
 
             if (price > CoinFlip.priceRange[difficulty].min && price < CoinFlip.priceRange[difficulty].max) {
-                weapon = new Weapon(weapon);
+                weapon = new Item(weapon);
                 if (weapon.can.bot) {
                     bot.weapons.push(weapon);
                     bot.items_cost += price;

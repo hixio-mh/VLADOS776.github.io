@@ -399,7 +399,7 @@ body {
     padding: 18px 1px;
 }
 
-.weapon {
+.weapon, .item {
     display: inline-block;
     background: $url_item_bg $color_woodsmoke_approx;
     color: $white;
@@ -450,6 +450,10 @@ body {
         display: inline-block;
         animation: marquee 7s linear infinite;
     }
+}
+.graffiti {
+    background: url(../images/Cases/graffitibg.jpg) #111;
+    background-size: 100%;
 }
 
 @keyframes marquee {

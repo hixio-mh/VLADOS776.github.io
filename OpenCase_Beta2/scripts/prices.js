@@ -42827,3 +42827,15 @@ var Prices = {
     }
 }
 }
+
+var ItemPrices = {
+    stickers: {
+        0: 0.46,
+        1: 0.61,
+        2: 3.17
+    },
+    graffiti: {
+        0: 0.03,
+        1: 0.03
+    }
+}

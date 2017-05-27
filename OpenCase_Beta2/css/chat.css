@@ -370,3 +370,9 @@ img.message-img {
   -webkit-filter: grayscale(50%);
   filter: grayscale(50%);
 }
+
+.message__graffiti .message__info {
+    background: url(../images/Cases/graffitibg.jpg);
+    background-size: cover;
+    text-align: center;
+}

@@ -137,7 +137,7 @@ function botAddWeapon(itemsCost) {
         }
 
         if (price >= minPrice && price <= maxPrice) {
-            weapon = new Weapon(weapon.item_id, i);
+            weapon = new Item(weapon.item_id, i);
             if (weapon.can.bot)
                 botWeapons.push(weapon);
             if (wpLength == botWeapons.length) canContinue = true;
@@ -145,7 +145,7 @@ function botAddWeapon(itemsCost) {
         if (new Date() - oldDate > 4000) {
             botWeapons = [];
             for (var i = 0; i < winItems.length; i++) {
-                botWeapons.push(new Weapon(winItems[i]));
+                botWeapons.push(new Item(winItems[i]));
                 botWeapons[i].nameTag = null;
             }
             canContinue = true;

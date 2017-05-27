@@ -243,6 +243,10 @@
                 $("#weaponName").html(item.titleText());
                 $("#weaponPrice").html(item.price);
                 
+                // Прячем здесь. В дальнейшем идут проверки на показ
+                $('#sellWeapon').hide();
+                $('#rename_button').hide();
+                
                 if (item.pattern != null) {
                     $('#weaponPhase').parent().show();
                     $('#weaponPhase').text(item.pattern + 1);
@@ -271,6 +275,11 @@
                         $('#weaponImg').css('padding', '0')
                     }
                 })
+                
+                $('.fullWeaponInfo').removeClass('graffiti sticker');
+                
+                if (item.itemType === 'sticker') $('.fullWeaponInfo').addClass('sticker');
+                if (item.itemType === 'graffiti') $('.fullWeaponInfo').addClass('graffiti');
 
                 $("#statTrakImg").css("display", (item.stattrak ? "block" : "none"));
 
@@ -287,8 +296,9 @@
                     $('#rename_button').hide();
                 } else {
                     $('#lock .fa').removeClass('fa-lock').addClass('fa-unlock');
-                    $('#sellWeapon').show();
-                    $('#rename_button').show();
+                    
+                    if (item.can.sell) $('#sellWeapon').show();
+                    if (item.can.rename) $('#rename_button').show();
                     if (item.can.contract)
                         $('#startContract').show();
                 }
@@ -336,7 +346,7 @@
                 
             }
             function openedWeaponInfo() {
-                var wp = new Weapon($("#weaponInfoContainer").data('item'));
+                var wp = new Item($("#weaponInfoContainer").data('item'));
                 wp.id = $("#weaponInfoContainer").data('item').id;
                 return wp;
             }
@@ -441,10 +451,9 @@
                     $('#rename_button').hide();
                     $('.weapon[data-id=' + wp.id + ']').append('<div class="lock lock-li"><span class="fa fa-lock"></span></div>');
                 } else {
-                    $('#sellWeapon').show();
-                    $('#rename_button').show();
-                    if (wp.can.contract)
-                        $('#startContract').show();
+                    if (wp.can.sell) $('#sellWeapon').show();
+                    if (wp.can.rename) $('#rename_button').show();
+                    if (wp.can.contract) $('#startContract').show();
                     $('.weapon[data-id=' + wp.id + '] .lock-li').remove()
                 }
             }
@@ -509,7 +518,7 @@
                     newWeapon.stattrak = weapon.stattrak;
                     newWeapon.item_id = newWeapon.id;
 
-                    newWeapon = new Weapon(newWeapon);
+                    newWeapon = new Item(newWeapon);
 
                     if (newWeapon.price == 0)
                         newWeapon.qualityRandom();
