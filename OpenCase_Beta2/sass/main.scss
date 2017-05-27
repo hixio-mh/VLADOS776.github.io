@@ -399,7 +399,7 @@ body {
     padding: 18px 1px;
 }
 
-.weapon, .item {
+.weapon, .weapon.item {
     display: inline-block;
     background: $url_item_bg $color_woodsmoke_approx;
     color: $white;

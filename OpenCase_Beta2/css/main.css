@@ -263,7 +263,7 @@ body {
   margin: 0;
   padding: 18px 1px; }
 
-.weapon, .item {
+.weapon, .weapon.item {
   display: inline-block;
   background: url(../images/Cases/itembg.png) #111;
   color: #fff;
@@ -273,12 +273,12 @@ body {
   text-align: right;
   overflow: hidden;
   position: relative; }
-  .weapon img, .item img {
+  .weapon img, .weapon.item img {
     margin: 0 auto;
     width: 113px;
     max-height: 105px;
     display: block; }
-  .weapon i, .item i {
+  .weapon i, .weapon.item i {
     font-style: normal;
     top: 2px;
     position: absolute;
@@ -286,7 +286,7 @@ body {
     font-size: 8pt;
     color: #f8ffb4;
     font-family: LatoLight; }
-  .weapon .type, .weapon .name, .item .type, .item .name {
+  .weapon .type, .weapon .name, .weapon.item .type, .weapon.item .name {
     background-size: cover;
     font-size: 11px;
     display: inline-block;
@@ -297,14 +297,14 @@ body {
     padding: 1px 5px;
     white-space: nowrap;
     display: block; }
-  .weapon .weaponInfo, .item .weaponInfo {
+  .weapon .weaponInfo, .weapon.item .weaponInfo {
     text-align: left;
     overflow: hidden;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%; }
-  .weapon .text-ticker span, .item .text-ticker span {
+  .weapon .text-ticker span, .weapon.item .text-ticker span {
     padding-left: 100%;
     display: inline-block;
     animation: marquee 7s linear infinite; }
