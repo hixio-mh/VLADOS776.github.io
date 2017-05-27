@@ -333,15 +333,15 @@ function getAllWeaponInfo(type, name, stattrak, souvenir) {
     var weapon = new Item(item_id);
     
     for (var i = 0; i < 5; i++) {
-        info.push(new Item(item_id, i, false, false));
+        info.push(new Weapon(item_id, i, false, false));
     }
     if (stattrak)
         for (var i = 0; i < 5; i++) {
-            info.push(new Item(item_id, i, true, false));
+            info.push(new Weapon(item_id, i, true, false));
         }
     if (souvenir && weapon.can.souvenir)
         for (var i = 0; i < 5; i++) {
-            info.push(new Item(item_id, i, false, true));
+            info.push(new Weapon(item_id, i, false, true));
         }
     
     for (var i = 0; i < info.length; i++) {
