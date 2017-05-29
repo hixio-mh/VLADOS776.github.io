@@ -1,6 +1,7 @@
 var GraffitiList = [];
 $(function () {
     var MESSAGE_LIMIT = parseInt($("#chat__new-message").attr("max"));
+    var GRAFFITI_KD = 15000;
     
     $(document).on('localizationloaded', function() {
         $('#chat__send-new-message').attr('value', Localization.getString('chat.send_message'))
@@ -39,25 +40,51 @@ $(function () {
         title: 'Graffiti',
         content: '<div id="graffitiList"><div class="m-progress" style="padding:20px"></div></div>'
     }).on('show.bs.popover', function() {
-        if (GraffitiList.length === 0) {
-            //$('#graffitiList').html();
-            getInventory().then(function(inv) {
-                GraffitiList = inv.weapons.filter(function(item) { return item.itemType === 'graffiti' });
-                if (GraffitiList.length == 0) {
-                    $('#graffitiList').html('<i class="fa fa-times" style="font-size:20px; padding:10px"></i>');
-                    return false;
-                }
-                var content = '';
-                GraffitiList.forEach(function(item) {
-                    content += item.toLi();
+        var lastUse = parseInt(getStatistic('chat-graffiti-use-time', '0'))
+        if (lastUse + GRAFFITI_KD > Date.now()) {
+            graffitiPopover.attr('data-content', '<div id="graffiti-kd"></div>');
+            countDownGraffiti();
+            GraffitiList = [];
+        } else {
+            if (GraffitiList.length === 0) {
+                //$('#graffitiList').html();
+                getInventory().then(function(inv) {
+                    GraffitiList = inv.weapons.filter(function(item) { return item.itemType === 'graffiti' });
+                    if (GraffitiList.length == 0) {
+                        $('#graffitiList').html('<i class="fa fa-times" style="font-size:20px; padding:10px"></i>');
+                        return false;
+                    }
+                    var content = '';
+                    GraffitiList.forEach(function(item) {
+                        content += item.toLi();
+                    })
+
+                    graffitiPopover.attr('data-content', content);
+                    graffitiPopover.popover('hide');
+                    setTimeout(function() { graffitiPopover.popover('show') }, 200);
                 })
-                
-                graffitiPopover.attr('data-content', content);
-                graffitiPopover.popover('hide');
-                setTimeout(function() { graffitiPopover.popover('show') }, 200);
-            })
+            }
         }
     });
+    
+    function countDownGraffiti() {
+        var time = parseInt(parseInt(getStatistic('chat-graffiti-use-time', '0'))) + GRAFFITI_KD;
+        var t = time - Date.now()
+        if (t > 0) {
+            var s = (t/1000).toFixed(0);
+            $('#graffiti-kd').text(s);
+            graffitiPopover.attr('data-content', '<div id="graffiti-kd">'+s+'</div>');
+        }
+        
+        if (t > 1000) {
+            setTimeout(function() { countDownGraffiti() }, 1000);
+        } else {
+            setTimeout(function() {
+                graffitiPopover.popover('hide');
+                setTimeout(function() { graffitiPopover.popover('show') }, 200);
+            }, 1000);
+        }
+    }
     
     var goToChat = false;
     
@@ -210,6 +237,8 @@ $(function () {
         getItem(graffitiID).then(function(graffiti) {
             var msg = '!(graffiti|'+graffiti.item_id+'|'+graffiti.colorNum+')';
             fbChat.sendMsg(Player.nickname, msg, Player.avatar, Player.country);
+            
+            saveStatistic('chat-graffiti-use-time', Date.now());
             
             var content = '';
             GraffitiList.forEach(function(item) {
