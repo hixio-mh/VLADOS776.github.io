@@ -30,7 +30,7 @@ function getPrice(item_id, opt) {
     return price;
 };
 
-if (typeof $ !== 'undefined') {
+if (typeof $ !== 'undefined' && typeof document !== 'undefined') {
     $(function() {
         PricesBACKUP.init();
     });
