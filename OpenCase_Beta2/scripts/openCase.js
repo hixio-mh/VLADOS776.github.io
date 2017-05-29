@@ -317,7 +317,7 @@ var openCase = {
         }
         
         var el = '';
-        if (openCase.caseType === 'weapon') {
+        if (caseItems.all[winNumber].itemType === 'weapon') {
             caseItems.all[winNumber].qualityRandom();
             caseItems.all[winNumber].patternRandom();
         }
