@@ -2,15 +2,15 @@ var DEBUG = false;
 
 function getPrice(item_id, opt) {
     opt = opt || {};
-    var quality = typeof opt.quality !== 'undefined' ? opt.quality : 0;
-    var stattrak = typeof opt.stattrak !== 'undefined' ? opt.stattrak : false;
-    var souvenir = typeof opt.souvenir !== 'undefined' ? opt.souvenir : false;
-    var type = typeof opt.type !== 'undefined' ? opt.type : "";
-    var name = typeof opt.name !== 'undefined' ? opt.name : "";
-    var cat = stattrak == true ? 'stattrak' : souvenir == true ? 'souvenir' : 'default';
-    var item = Prices[item_id];
-    if (typeof item == 'undefined') {
-        if (type != '' && name != '') {
+    var quality = typeof opt.quality !== 'undefined' ? opt.quality : 0,
+        stattrak = typeof opt.stattrak !== 'undefined' ? opt.stattrak : false,
+        souvenir = typeof opt.souvenir !== 'undefined' ? opt.souvenir : false,
+        type = typeof opt.type !== 'undefined' ? opt.type : "",
+        name = typeof opt.name !== 'undefined' ? opt.name : "",
+        cat = stattrak === true ? 'stattrak' : souvenir === true ? 'souvenir' : 'default',
+        item = Prices[item_id];
+    if (typeof item === 'undefined') {
+        if (type !== '' && name !== '') {
             for (var key in Prices) {
                 if (Prices[key].item_id == item_id || (Prices[key].type == type && Prices[key].skinName == name)) {
                     item = Prices[key]
@@ -28,11 +28,13 @@ function getPrice(item_id, opt) {
     else if (prices.analyst != -1) price = prices.analyst;
     else if (prices.opskins != -1) price = prices.opskins
     return price;
-}
+};
 
-document.addEventListener('DOMContentLoaded', function() {
-    PricesBACKUP.init();
-})
+if (typeof $ !== 'undefined') {
+    $(function() {
+        PricesBACKUP.init();
+    });
+}
 
 var PricesBACKUP = (function (module) {
     var Prices2 = null;
@@ -103,7 +105,7 @@ var PricesBACKUP = (function (module) {
     }
 
     return module;
-})(PricesBACKUP || {})
+})(PricesBACKUP || {});
 
 function getPriceWithNewQuality(item_id, opt) {
     opt = opt || {};
@@ -119,7 +121,7 @@ function getPriceWithNewQuality(item_id, opt) {
         price: price,
         quality: opt.quality
     };
-}
+};
 var Prices = {
     "0": {
         "item_id": 0,
