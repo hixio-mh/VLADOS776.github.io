@@ -177,7 +177,7 @@ body {
     }
 }
 
-.case {
+.case, .capsule, .graffiti_box {
     @extend %extend_1;
     &:after {
         content: '';
@@ -252,13 +252,6 @@ body {
             @include translate(0, -10px);
             //transform: translateY(-10px);
         }
-    }
-}
-
-.capsule {
-    @extend %extend_1;
-    .countdown {
-        @extend %extend_2;
     }
 }
 
@@ -423,6 +416,16 @@ body {
         font-size: 8pt;
         color: $color_pale_prim_approx;
         font-family: $font_light;
+    }
+    i.graffiti-limit {
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: block;
+        width: 16px;
+        text-align: center;
+        font-weight: bold;
+        color: #fff;
     }
     .type, .name {
         background-size: cover;
@@ -666,6 +669,10 @@ body {
 .win_img {
     max-width: 100%;
     width: 200px;
+}
+
+.item-graffiti .win_img {
+    width: auto;
 }
 
 .win_name {
@@ -946,6 +953,9 @@ h3.lines {
         content: '!';
         font-weight: bold;
     }
+}
+.wp-locked .weapon_nameTagIcon {
+    left: 20px;
 }
 
 i.double-icon {

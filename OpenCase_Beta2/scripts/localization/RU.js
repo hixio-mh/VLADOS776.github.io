@@ -128,7 +128,7 @@ var Translation = {
         },
         cases: {
             news: {
-                text: '<p>Кейс Hydra!<br>Обновлены цены на скины из Spectrum кейса.<br> Добавлены фазы для ножей Bayonet Волны и Bayonet Гамма-волны</p><p>Новые  ножи <a href="#" data-toggle="modal" data-target="#modal-knives">здесь</a>. Могут выпасть с Chroma кейсов.</p><p>Инветарь:<br>Нажмите на предмет и держите, чтобы зайди в режим выделения.<br>Свайпните в лево или в право, чтобы увидеть другие предметы</p>'
+                text: '<p>Кейс Hydra!<br>Обновлены цены на скины из Spectrum кейса.<br> Добавлены фазы для ножей Bayonet Волны и Bayonet Гамма-волны</p><p>Новые  ножи <a href="#" data-toggle="modal" data-target="#modal-knives">здесь</a>. Могут выпасть с Chroma кейсов.</p><p>Инвентарь:<br>Нажмите на предмет и держите, чтобы зайти в режим выделения.<br>Свайпните в лево или в право, чтобы увидеть другие предметы</p>'
             },
             page_name: {
                 text: 'Открыть кейсы',
@@ -820,8 +820,8 @@ var Translation = {
             },
             sort: {
                 special: {
-                    text: ["Все типы", "Новое", "StatTrak", "Не StatTrak", "Сувениры", "Не сувениры", "Обычное"],
-                    en: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal"]
+                    text: ["Все типы", "Новое", "StatTrak", "Не StatTrak", "Сувениры", "Не сувениры", "Обычное", "Граффити"],
+                    en: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal", "Graffiti"]
                 },
                 types: {
                     text: ["Все оружия", "Пистолеты", "Винтовки", "Снайперские винтовки", "SMG", "Дробовики", "Пулеметы", "Ножи", "Перчатки"],

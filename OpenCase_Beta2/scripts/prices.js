@@ -42121,7 +42121,7 @@ var Prices = {
             },
             "stattrak": {
                 "3": {
-                    "market": 1
+                    "market": 1612.8
                 },
                 "4": {
                     "market": 505.5
@@ -42836,6 +42836,141 @@ var ItemPrices = {
     },
     graffiti: {
         0: 0.03,
-        1: 0.03
+        1: 0.03,
+        2: 0.03,
+        3: 0.03,
+        4: 0.03,
+        5: 0.03,
+        6: 0.03,
+        7: 0.03,
+        8: 0.03,
+        9: 0.03,
+        10: 0.03,
+        11: 0.03,
+        12: 0.03,
+        13: 0.03,
+        14: 0.03,
+        15: 0.03,
+        16: 0.03,
+        17: 0.03,
+        18: 0.03,
+        19: 0.03,
+        20: 0.03,
+        21: 0.03,
+        22: 0.03,
+        23: 0.03,
+        24: 0.03,
+        25: 0.03,
+        26: 0.03,
+        27: 0.03,
+        28: {
+            price: 0.03,
+            colors: {
+                'Tiger Orange': 0.06
+            }
+        },
+        29: 0.03,
+        30: {
+            price: 0.03,
+            colors: {
+                'Blood Red': 0.06
+            }
+        },
+        31: {
+            price: 0.03,
+            colors: {
+                'Battle Green': 0.04,
+                'Bazooka Pink': 0.04,
+                'Blood Red': 0.06,
+                'Jungle Green': 0.06,
+                'SWAT Blue': 0.04,
+                'Tracer Yellow': 0.04
+            }
+        },
+        32: {
+            price: 0.03,
+            colors: {
+                'Blood Red': 0.06,
+                'Shark White': 0.04,
+                'Tiger Orange': 0.04,
+                'Tracer Yellow': 0.04
+            }
+        },
+        33: {
+            price: 0.03,
+            colors: {
+                'Blood Red': 0.06,
+                'Brick Red': 0.04,
+                'Monarch Blue': 0.04,
+                'Monster Purple': 0.04,
+                'Shark White': 0.08
+            }
+        },
+        34: {
+            price: 0.03,
+            colors: {
+                'Bazooka Pink': 0.04,
+                'Blood Red': 0.06,
+                'Brick Red': 0.04,
+                'Monarch Blue': 0.04,
+                'SWAT Blue': 0.04,
+                'Shark White': 0.04,
+                'Tiger Orange': 0.04,
+                'Tracer Yellow': 0.05,
+                'War Pig Pink': 0.04,
+                'Wire Blue': 0.04,
+            }
+        },
+        35: {
+            price: 0.03,
+            colors: {
+                'Battle Green': 0.04,
+                'Blood Red': 0.05,
+                'Brick Red': 0.04,
+                'Desert Amber': 0.06,
+                'Jungle Green': 0.04,
+                'SWAT Blue': 0.04,
+                'Tracer Yellow': 0.13
+            }
+        },
+        36: 0.04,
+        37: {
+            price: 0.03,
+            colors: {
+                'Battle Green': 0.09,
+                'Cash Green': 0.04,
+                'Frog Green': 0.06,
+                'Jungle Green': 0.17,
+            }
+        },
+        38: {
+            price: 0.03,
+            colors: {
+                'Bazooka Pink': 0.06,
+                'Blood Red': 0.08,
+                'Brick Red': 0.05,
+                'Monster Purple': 0.04,
+                'Princess Pink': 0.06,
+                'War Pig Pink': 0.04
+            }
+        },
+        39: 0.38,
+        40: 0.38,
+        41: 0.41,
+        42: 0.41,
+        43: 0.46,
+        44: 0.5,
+        45: 0.51,
+        46: 0.56,
+        47: 1.62,
+        48: 0.83,
+        49: 0.96,
+        50: 1.12,
+        51: 1.26,
+        52: 1.90,
+        53: 1.85,
+        54: 1.94,
+        55: 3.69,
+        56: 4.45,
     }
 }

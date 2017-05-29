@@ -458,9 +458,9 @@ function saveItem(item) {
             if (item.itemType == 'weapon') {
                 var rowID = client.saveWeapon(item.item_id, item.quality, item.stattrak, item.souvenir, item['new'], item.getExtra(true));
             } else if (item.itemType == 'sticker') {
-                var rowID = client.saveWeapon(item.item_id, 5, null, null, item['new'], item.getExtra());
+                var rowID = client.saveWeapon(item.item_id, 5, false, false, item['new'], item.getExtra(true));
             } else if (item.itemType == 'graffiti') {
-                var rowID = client.saveWeapon(item.item_id, 6, null, null, item['new'], item.getExtra());
+                var rowID = client.saveWeapon(item.item_id, 6, false, false, item['new'], item.getExtra(true));
             }
             item.id = rowID;
             updateItem(item);
@@ -607,8 +607,8 @@ function updateItem(item) {
                     item.id, 
                     item.item_id, 
                     5, 
-                    null, 
-                    null, 
+                    false, 
+                    false, 
                     item['new'], 
                     item.getExtra(true)
                 );
@@ -617,8 +617,8 @@ function updateItem(item) {
                     item.id, 
                     item.item_id, 
                     6, 
-                    null, 
-                    null, 
+                    false, 
+                    false, 
                     item['new'], 
                     item.getExtra(true)
                 );
@@ -691,6 +691,7 @@ function getItem(id) {
 
                 var request = store.get(id);
                 request.onsuccess = function(event) {
+                    if (request.result == null) return null;
                     var item = new Item(request.result);
                     item.id = id;
                     if (request.result.hash != 'undefined') {
@@ -714,6 +715,23 @@ function getWeapons(ids) {
             } else {
                 getWeapon(ids[count]).then(function(weapon) {
                     wpns.push(weapon);
+                    recurs(count+1);
+                })
+            }
+        }
+    })
+}
+function getItems(ids) {
+    return new Promise(function(resolver, reject) {
+        var wpns = [];
+        recurs(0);
+        
+        function recurs(count) {
+            if (count == ids.length) {
+                resolver(wpns);
+            } else {
+                getItem(ids[count]).then(function(item) {
+                    wpns.push(item);
                     recurs(count+1);
                 })
             }
@@ -971,6 +989,21 @@ function getCasePrice(caseId, souvenir) {
         prSumm += middlePrice(item, souvenir);
     })
     var price = parseFloat((prSumm / cases[caseId].weapons.length).toFixed(2));
+    if (Global.caseDiscount > 0) {
+        price = price - (price * Global.caseDiscount / 100);
+        price = parseFloat(price.toFixed(2));
+    }
+    return price;
+}
+
+function getGraffitiBoxPrice(caseId) {
+    var prSumm = 0;
+
+    if (typeof GRAFFITI_BOX[caseId].graffiti === 'undefined') return '0.00';
+    GRAFFITI_BOX[caseId].graffiti.forEach(function(item) {
+        prSumm += new Graffiti(item).price;
+    })
+    var price = parseFloat((prSumm / GRAFFITI_BOX[caseId].graffiti.length).toFixed(2));
     if (Global.caseDiscount > 0) {
         price = price - (price * Global.caseDiscount / 100);
         price = parseFloat(price.toFixed(2));

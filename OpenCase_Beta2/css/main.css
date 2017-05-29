@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.case, .capsule {
+.case, .capsule, .graffiti_box {
   display: inline-block;
   margin: 15px 6px;
   width: 131px;
@@ -10,7 +10,7 @@
   cursor: pointer;
   white-space: normal; }
 
-.case .countdown, .capsule .countdown {
+.case .countdown, .capsule .countdown, .graffiti_box .countdown {
   position: absolute;
   background: rgba(255, 255, 255, 0.2);
   padding: 4px 0;
@@ -80,7 +80,7 @@ body {
   text-align: center;
   padding-left: 5px; }
 
-.case:after {
+.case:after, .capsule:after, .graffiti_box:after {
   content: '';
   position: absolute;
   width: 100%;
@@ -92,20 +92,20 @@ body {
   opacity: 0;
   transition: all 0.25s ease-in-out;
   z-index: 1; }
-.case:hover .case-img {
+.case:hover .case-img, .capsule:hover .case-img, .graffiti_box:hover .case-img {
   position: relative;
   -moz-transform: translate(0, -15px);
   -o-transform: translate(0, -15px);
   -ms-transform: translate(0, -15px);
   -webkit-transform: translate(0, -15px);
   transform: translate(0, -15px); }
-.case:hover:after {
+.case:hover:after, .capsule:hover:after, .graffiti_box:hover:after {
   opacity: 0.8; }
-.case.disabled > * {
+.case.disabled > *, .capsule.disabled > *, .graffiti_box.disabled > * {
   opacity: 0.5; }
-.case.disabled .countdown {
+.case.disabled .countdown, .capsule.disabled .countdown, .graffiti_box.disabled .countdown {
   opacity: 1; }
-.case .case-min_lvl {
+.case .case-min_lvl, .capsule .case-min_lvl, .graffiti_box .case-min_lvl {
   position: absolute;
   top: 33px;
   left: 0;
@@ -121,7 +121,7 @@ body {
   opacity: 0.7;
   padding-left: 5px;
   font-family: LatoBold; }
-  .case .case-min_lvl:after {
+  .case .case-min_lvl:after, .capsule .case-min_lvl:after, .graffiti_box .case-min_lvl:after {
     content: 'LVL';
     display: block;
     line-height: 7px;
@@ -131,18 +131,18 @@ body {
     -webkit-transform: rotateX(15deg);
     transform: rotateX(15deg); }
   @media (max-width: 433px) {
-    .case .case-min_lvl {
+    .case .case-min_lvl, .capsule .case-min_lvl, .graffiti_box .case-min_lvl {
       top: 28px;
       font-size: 17px; } }
 @media (max-width: 433px) {
-  .case {
+  .case, .capsule, .graffiti_box {
     width: 80px;
     height: 110px;
     margin: 8px 6px; }
-    .case:after {
+    .case:after, .capsule:after, .graffiti_box:after {
       height: 30px;
       top: 35px; }
-    .case:hover .case-img {
+    .case:hover .case-img, .capsule:hover .case-img, .graffiti_box:hover .case-img {
       -moz-transform: translate(0, -10px);
       -o-transform: translate(0, -10px);
       -ms-transform: translate(0, -10px);
@@ -286,6 +286,15 @@ body {
     font-size: 8pt;
     color: #f8ffb4;
     font-family: LatoLight; }
+  .weapon i.graffiti-limit, .weapon.item i.graffiti-limit {
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 16px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff; }
   .weapon .type, .weapon .name, .weapon.item .type, .weapon.item .name {
     background-size: cover;
     font-size: 11px;
@@ -486,6 +495,9 @@ body {
 .win_img {
   max-width: 100%;
   width: 200px; }
+
+.item-graffiti .win_img {
+  width: auto; }
 
 .win_name {
   color: #fff !important;
@@ -715,6 +727,9 @@ h3.lines {
   .weapon_nameTagIcon:before {
     content: '!';
     font-weight: bold; }
+
+.wp-locked .weapon_nameTagIcon {
+  left: 20px; }
 
 i.double-icon {
   width: 15px;

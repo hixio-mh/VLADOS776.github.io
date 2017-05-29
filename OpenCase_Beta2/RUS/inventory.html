@@ -353,7 +353,7 @@
             function sellItem(item) {
                 hideItem(true);
                 getItem(openedWeaponInfo().id).then(function(wp) {
-                    if (!PricesBACKUP.checkPrice(wp)) {
+                    if (item.itemType == 'weapon' && !PricesBACKUP.checkPrice(wp)) {
                         $.notify({
                             message: 'Price has been modified!'
                         }, {
@@ -443,7 +443,10 @@
                 $(this).find('.fa').toggleClass('fa-lock fa-unlock');
                 var wp = openedWeaponInfo();
                 wp.locked = $(this).find('.fa').hasClass('fa-lock');
-                updateItem(wp);
+                getItem(wp.id).then(function(item) {
+                    item.locked = wp.locked;
+                    updateItem(item);
+                })
                 
                 if (wp.locked) {
                     $('#sellWeapon').hide();
@@ -569,7 +572,7 @@
 
                     if (weapon.new == true) {
                         currInventory[i].new = false;
-                        updateWeapon(currInventory[i]);
+                        updateItem(currInventory[i]);
                     }
                 }
 
@@ -637,6 +640,9 @@
                         case 6:
                             sortedInventory = sortInventory(inventory, "souvenir", false);
                             sortedInventory = sortInventory(sortedInventory, "stattrak", false);
+                            break
+                        case 7:
+                            sortedInventory = sortInventory(inventory, "itemType", 'graffiti');
                             break
                         default:
                             sortedInventory = inventory
@@ -707,14 +713,14 @@
                     selectedID.push($(item).data('id'));
                 })
                 
-                getWeapons(selectedID).then(function(weapons) {
+                getItems(selectedID).then(function(items) {
                     var cancelSell = false;
-                    weapons.forEach(function(wp, i) {
+                    items.forEach(function(wp, i) {
                         if (!wp.can.sell) {
                             selectedID[i] = null;
                             weapons[i] = null;
                         }
-                        if (!PricesBACKUP.checkPrice(wp)) {
+                        if (wp.itemType == 'weapon' && !PricesBACKUP.checkPrice(wp)) {
                             $.notify({
                                 message: 'Price has been modified!'
                             }, {
@@ -737,7 +743,7 @@
                         return false;
                     }
                     
-                    var totalPrice = weapons.reduce(function(sum, curr) {
+                    var totalPrice = items.reduce(function(sum, curr) {
                         if (curr)
                             return sum + curr.price;
                         else

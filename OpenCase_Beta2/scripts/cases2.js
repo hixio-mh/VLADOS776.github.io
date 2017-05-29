@@ -418,3 +418,10 @@ var CAPSULES = [{
     "type": "Default",
     "stickers": [0, 1, 2]
 }]
+
+var GRAFFITI_BOX = [{
+    name: 'CS:GO Graffiti Box',
+    img: 'graffiti_box.png',
+    type: 'Default',
+    graffiti: [39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56]
+}]

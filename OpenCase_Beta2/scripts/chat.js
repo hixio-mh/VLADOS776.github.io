@@ -1,3 +1,4 @@
+var GraffitiList = [];
 $(function () {
     var MESSAGE_LIMIT = parseInt($("#chat__new-message").attr("max"));
     
@@ -31,6 +32,31 @@ $(function () {
         }
         $this.trigger('change', [event]);
         return $this;
+    });
+    var graffitiPopover = $('.graffiti-attach[data-toggle="popover"]').popover({
+        placement: 'top',
+        html: 'true',
+        title: 'Graffiti',
+        content: '<div id="graffitiList"><div class="m-progress" style="padding:20px"></div></div>'
+    }).on('show.bs.popover', function() {
+        if (GraffitiList.length === 0) {
+            //$('#graffitiList').html();
+            getInventory().then(function(inv) {
+                GraffitiList = inv.weapons.filter(function(item) { return item.itemType === 'graffiti' });
+                if (GraffitiList.length == 0) {
+                    $('#graffitiList').html('<i class="fa fa-times" style="font-size:20px; padding:10px"></i>');
+                    return false;
+                }
+                var content = '';
+                GraffitiList.forEach(function(item) {
+                    content += item.toLi();
+                })
+                
+                graffitiPopover.attr('data-content', content);
+                graffitiPopover.popover('hide');
+                setTimeout(function() { graffitiPopover.popover('show') }, 200);
+            })
+        }
     });
     
     var goToChat = false;
@@ -177,6 +203,29 @@ $(function () {
             fbChat.initChat('.chat__messages');
         }, 2000);
     });
+    
+    $(document).on('click', '.weapon.graffiti', function() {
+        var graffitiID = $(this).data('id');
+        var that = this;
+        getItem(graffitiID).then(function(graffiti) {
+            var msg = '!(graffiti|'+graffiti.item_id+'|'+graffiti.colorNum+')';
+            fbChat.sendMsg(Player.nickname, msg, Player.avatar, Player.country);
+            
+            var content = '';
+            GraffitiList.forEach(function(item) {
+                if (item.id === graffitiID) {
+                    item.limit--;
+                }
+                content += item.toLi();
+            })
+            graffitiPopover.attr('data-content', content);
+            
+            if (graffiti.spray() == 0) {
+                GraffitiList = [];
+            }
+        })
+        graffitiPopover.popover('hide');
+    })
     
     /*$(document).on('click', '.chat__message img', function () {
         var uid = $(this).data('userid');
@@ -465,7 +514,7 @@ function newMsg(key, message, edit) {
         attachments = '<img src="' + attach.url + '" class="message-img">'
     }
     
-    var graffitiRegExp = /^!\(graffiti\|(\d+)\|(\d+)\)$/;
+    var graffitiRegExp = /^!\(graffiti\|(\d+)(?:\|(\d+))?\)$/;
     if (graffitiRegExp.test(text)) {
         var grafID = parseInt(text.match(graffitiRegExp)[1]);
         var grafColor = parseInt(text.match(graffitiRegExp)[2]);

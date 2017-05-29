@@ -52,7 +52,7 @@ function fillInventory(opt) {
 
             if (weapon['new'] == true) {
                 inventory[i]['new'] = false;
-                updateWeapon(inventory[i]);
+                updateItem(inventory[i]);
             }
         }
         if (inventory.length == 0) {

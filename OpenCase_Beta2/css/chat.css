@@ -270,7 +270,7 @@ img.message-img {
     display: block;
 }
 
-.img-attach {
+.msg-attach {
     position: absolute;
     right: 36px;
     z-index: 4;
@@ -278,14 +278,14 @@ img.message-img {
     overflow: hidden;
 }
 
-.img-attach input {
+.msg-attach input {
     position: absolute;
     opacity: .01;
     z-index: 10;
     cursor: pointer;
 }
 
-.img-attach > i {
+.msg-attach > i {
     padding: 6px;
 }
 .attach-preview {
@@ -313,6 +313,27 @@ img.message-img {
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     cursor: pointer;
+}
+
+.msg-attach.graffiti-attach {
+    right: 66px;
+    width: 29px;
+    height: 29px;
+}
+
+i.spray-icon {
+    background: url(../images/chat/spray.svg) center no-repeat;
+    display: block;
+    width: 29px;
+    height: 20px;
+    margin-top: 4px;
+    opacity: 0.5;
+}
+.popover-content {
+    max-height: 200px;
+    overflow: hidden;
+    overflow-y: scroll;
+    text-align: center;
 }
 
 /* === VIP === */

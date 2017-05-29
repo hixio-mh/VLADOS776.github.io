@@ -17,8 +17,10 @@ var openCase = {
         return this.caseId === freeCase;
     },
     casePrice: function() {
-        var casePrice = cases[this.caseId].price || parseFloat(getCasePrice(openCase.caseId, openCase.souvenir))*100;
-        
+        if (openCase.caseType == 'weapons') {
+            var casePrice = cases[this.caseId].price || parseFloat(getCasePrice(openCase.caseId, openCase.souvenir))*100;
+        } else if (openCase.caseType == 'graffiti')
+            var casePrice = GRAFFITI_BOX[this.caseId].price || parseFloat(getGraffitiBoxPrice(openCase.caseId))*100;
         casePrice *= this.linesCount;
         return casePrice;
     },
@@ -38,6 +40,10 @@ var openCase = {
                     openCase.caseId = parseInt(param.capsuleId[0]);
                     openCase.caseType = 'capsules';
                     openCase.caseInfo = CAPSULES[openCase.caseId];
+                } else if (param.graffitiId) {
+                    openCase.caseId = parseInt(param.graffitiId[0]);
+                    openCase.caseType = 'graffiti';
+                    openCase.caseInfo = GRAFFITI_BOX[openCase.caseId];
                 }
                 try {
                     openCase.special = openCase.caseInfo.type == "Special";
@@ -68,6 +74,8 @@ var openCase = {
                         itemArray = itemArray.concat(getItemsByID(openCase.caseInfo.knives));
                     if (openCase.caseInfo.stickers)
                         itemArray = itemArray.concat(getItemsByID(openCase.caseInfo.stickers, 'sticker'));
+                    if (openCase.caseInfo.graffiti)
+                        itemArray = itemArray.concat(getItemsByID(openCase.caseInfo.graffiti, 'graffiti'));
 
                     if (itemArray.length == 0) {
                         if (openCase.caseInfo.regExp) {
@@ -167,6 +175,28 @@ var openCase = {
             window.location.replace("open.html?caseId=" + caseId + ((souvenir) ? "&souvenir=" + souvenir : ''));
         }
     },
+    goToGraffiti: function(caseId, souvenir) {
+        if (typeof GRAFFITI_BOX[caseId].minLvl != 'undefined' && Level.myLvl() < GRAFFITI_BOX[caseId].minLvl) {
+            $("#modal-rank").modal('show');
+            $(".modal-body i").html(GRAFFITI_BOX[caseId].minLvl);
+            return false;
+        }
+        if (GRAFFITI_BOX[caseId].type == "Special") {
+
+            if (parseInt(getStatistic('specialCases', 0)) >= GRAFFITI_BOX[caseId].casesToOpen) {
+                window.location.replace("open.html?caseId=" + caseId + ((souvenir) ? "&souvenir=" + souvenir : ''));
+            } else {
+                $('#modal-special').modal();
+                
+                var needToOpen = GRAFFITI_BOX[caseId].casesToOpen - parseInt(getStatistic('specialCases', 0));
+                $('.modal-body i').text(needToOpen);
+                $('#showVideoAd').data();
+                $('.js-secretField').text(caseId);
+            }
+        } else {
+            window.location.replace("open.html?graffitiId=" + caseId);
+        }
+    },
     goToCapsule: function(caseId, souvenir) {
         $("#rank-popup").css('display', 'none');
         $('#special-popup').css('display', 'none');
@@ -246,7 +276,7 @@ var openCase = {
             return a;
         })(caseItems.weight);
         
-        while (typeof caseItems.win == 'undefined' || typeof caseItems.win.id == 'undefined') {
+        while (typeof caseItems.win == 'undefined' || $.isEmptyObject(caseItems.win)) {
             var rnd = Math.rand(0, total_weights);
             var weight_sum = 0;
 
@@ -275,7 +305,8 @@ var openCase = {
         caseItems.all[winNumber] = caseItems.win;
         
         for(var i = 0; i < caseItems.all.length; i++) {
-            caseItems.all[i] = new Item(caseItems.all[i].id, openCase.caseType);
+            var id = caseItems.all[i].id || caseItems.all[i].item_id || 0;
+            caseItems.all[i] = new Item(id, openCase.caseType);
             if (caseItems.all[i].itemType == 'weapon')
                 if (!openCase.souvenir) {
                     caseItems.all[i].stattrakRandom();
@@ -286,11 +317,13 @@ var openCase = {
         }
         
         var el = '';
-        caseItems.all[winNumber].qualityRandom();
-        caseItems.all[winNumber].patternRandom();
+        if (openCase.caseType === 'weapon') {
+            caseItems.all[winNumber].qualityRandom();
+            caseItems.all[winNumber].patternRandom();
+        }
         caseItems.all.forEach(function(item, index) {
             
-            var $item = $(item.toLi({ticker: false}));
+            var $item = $(item.toLi({ticker: false, limit: false}));
 
             if (openCase.rareItemsRegExp.test(item.rarity)) {
                 $item.find('.type span').text('★ Rare Special Item ★');
@@ -368,15 +401,17 @@ var openCase = {
                 
                 currItem.new = true;
                 saveItem(currItem).then(function(result) {
+                    var quality = currItem.itemType == 'weapon' ? currItem.qualityText() : '';
                     $('#win_template').tmpl({
                         you_won: Localization.getString('open_case.you_won', "You won"),
                         sell: Localization.getString('open_case.sell', "Sell"),
                         name: currItem.titleText(),
-                        quality: currItem.qualityText(),
+                        quality: quality,
                         img: currItem.getImgUrl(),
                         price: currItem.price,
                         price_coins: Math.round(currItem.price * 100),
-                        inventory_id: result
+                        inventory_id: result,
+                        itemType: currItem.itemType
                     }).appendTo('.win');
                     
                     statisticPlusOne('weapon-' + currItem.rarity);
@@ -552,12 +587,12 @@ var openCase = {
         var itemsArray = openCase.items;
         
         for (var i = 0; i < itemsArray.length; i++) {
-            var item = new Item(itemsArray[i].id, openCase.caseType);
+            var item = new Item(itemsArray[i], openCase.caseType);
             if (openCase.rareItemsRegExp.test(item.rarity) && rare == true)
                 continue;
             var img = item.getImgUrl();
             
-            var $weaponInfo = $(item.toLi());
+            var $weaponInfo = $(item.toLi({ limit: false }));
 
             if (openCase.rareItemsRegExp.test(item.rarity)) {
                 rare = true;
