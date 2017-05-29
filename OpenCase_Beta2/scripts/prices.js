@@ -30,7 +30,7 @@ function getPrice(item_id, opt) {
     return price;
 }
 
-$(function () {
+document.addEventListener('DOMContentLoaded', function() {
     PricesBACKUP.init();
 })
 
