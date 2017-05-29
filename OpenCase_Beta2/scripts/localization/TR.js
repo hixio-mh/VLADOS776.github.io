@@ -793,8 +793,8 @@ var Translation = {
             },
             sort: {
                 special: {
-                    text: ["Hepsi", "Yeni", "StatTrak", "StatTrak değil", "Hatıra", "Hatıra değil", "Normal"],
-                    en: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal"]
+                    text: ["Hepsi", "Yeni", "StatTrak", "StatTrak değil", "Hatıra", "Hatıra değil", "Normal", "Graffiti"],
+                    en: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal", "Graffiti"]
                 },
                 types: {
                     text: ["Bütün Silahlar", "Tabancalar", "Tüfekler", "Keskin nişancı tüfekleri", "Hafif Taramalı", "Pompalı", "Ağır silah", "Bıçaklar", "Eldivenler"],

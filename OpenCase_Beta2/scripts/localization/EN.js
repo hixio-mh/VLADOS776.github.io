@@ -543,7 +543,7 @@ var Translation = {
             sort: {
                 special: {
                     rus: ["Все типы", "Новое", "StatTrak", "Не StatTrak", "Сувениры", "Не сувениры", "Обычное"],
-                    text: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal"]
+                    text: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal", "Graffiti"]
                 },
                 types: {
                     rus: ["Все оружия", "Пистолеты", "Винтовки", "Снайперские винтовки", "SMG", "Дробовики", "Пулеметы", "Ножи", "Перчатки"],

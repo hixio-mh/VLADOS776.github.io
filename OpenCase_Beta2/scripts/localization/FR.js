@@ -504,8 +504,8 @@ var Translation = {
             },
             sort: {
                 special: {
-                    en: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal"],
-                    text: ["Tout type", "Nouveaux", "StatTrak", "Non StatTrak", "Souvenir", "Non Souvenir", "Normal"]
+                    en: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal", "Graffiti"],
+                    text: ["Tout type", "Nouveaux", "StatTrak", "Non StatTrak", "Souvenir", "Non Souvenir", "Normal", "Graffiti"]
                 },
                 types: {
                     en: ["All weapons", "Pistols", "Rifles", "Sniper rifles", "SMGs", "Shotguns", "Machineguns", "Knives", "Gloves"],
