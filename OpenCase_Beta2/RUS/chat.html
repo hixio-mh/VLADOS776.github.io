@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../css/chat-flags.css"/>
     <link rel="stylesheet" type="text/css" href="../css/buttons.css">
     <link rel="stylesheet" type="text/css" href="../css/loading.css">
+    <link rel="stylesheet" type="text/css" href="../css/rarity.css">
     <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../css/lobibox.min.css"/>
     <link rel="stylesheet" href="../css/navigationMenu.css">
@@ -78,7 +79,11 @@
                 <div class='input-group input-group-sm'>
                     <div type='text' class="form-control" contenteditable="true" id="chat__new-message" max="120" placeholder="Your message..."></div>
                     
-                    <div class='img-attach'>
+                    <a href='#' class='msg-attach graffiti-attach' data-toggle='popover'>
+                        <i class='spray-icon'></i>
+                    </a>
+                    
+                    <div class='msg-attach img-attach'>
                         <input name='file' type='file' accept='image/jpeg,image/png,image/gif' id='attach_img'>
                         <i class='glyphicon glyphicon-camera'></i>
                     </div>
