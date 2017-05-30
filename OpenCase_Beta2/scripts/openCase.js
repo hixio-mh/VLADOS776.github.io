@@ -431,6 +431,12 @@ var openCase = {
             }
             this.next();
         })()
+        
+        if (openCase.isFree()) {
+            saveStatistic('free-case-opening', '-1');
+            
+            saveStatistic('free-case-timeout', Date.now() + FREE_CASE_INTERVAL_MS);
+        }
 
         var anim = document.getElementById('casesCarusel');
         anim.addEventListener("transitionend", openCase.endScroll, false);
@@ -443,12 +449,6 @@ var openCase = {
 
         $("#double_sell_button").prop("disabled", false);
         Sound("close", "play", 5);
-        
-        if (openCase.isFree()) {
-            saveStatistic('free-case-opening', '-1');
-            
-            saveStatistic('free-case-timeout', Date.now() + FREE_CASE_INTERVAL_MS);
-        }
         
         $(".openCase").text(Localization.getString('open_case.try_again', 'Open again'));
         $(".openCase").append(' $' + (openCase.casePrice() / 100).toFixed(2));
