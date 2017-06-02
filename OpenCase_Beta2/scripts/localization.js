@@ -84,11 +84,13 @@ var Localization = (function (module) {
             var keys = Object.keys(block);
 
             for(var i = 0; i < keys.length; i++) {
-                if (block[keys[i]].text) {
+                if (block[keys[i]].text || typeof block[keys[i]] === 'string') {
                     var $element = $(parent).find('[data-loc="' + keys[i] + '"]');
                     if (!$element || $element.length === 0) continue;
-                    for (var z = 0; z < $element.length; z++)
-                        locElement($element[z], block[keys[i]].text);
+                    var text = block[keys[i]].text || block[keys[i]];
+                    for (var z = 0; z < $element.length; z++) {
+                        locElement($element[z], text);
+                    }
                 } else {
                     var $parent = $('[data-loc-group="' + keys[i] + '"]');
                     if ($parent && $parent.length) {
