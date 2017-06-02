@@ -146,7 +146,7 @@ $(document).on('click', '.item, .sales-weapon', function() {
     $("#weaponQuality").html(weapon.qualityText());
     
     $("#weaponImg").on('load', function() {
-        if ($('#weaponImg').height() < 360) {
+        if ($('#weaponImg').height() < 360 && $(window).height() > 555) {
             $('#weaponImg').css('padding', (360 - $('#weaponImg').height()) / 2 + 'px 0')
         } else {
             $('#weaponImg').css('padding', '0')

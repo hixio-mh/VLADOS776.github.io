@@ -2984,7 +2984,38 @@ var Items = {
             type: "★ Flip Knife",
             skinName: "Doppler",
             rarity: "rare",
-            img: "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz5wOuqzNQhhfg3SPqFTY_E15BjgDDUN-M9iR9LiyLcPLlSr296Xced5LttNSZbQW_XUZ1v7ux4xgvILKcCN8yPo3S3ubjpbXhHuqGwDnu7R7uZ1wjFB8ZY2tGk"
+            img: "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz5wOuqzNQhhfg3SPqFTY_E15BjgDDUN-M9iR9LiyLcPLlSr296Xced5LttNSZbQW_XUZ1v7ux4xgvILKcCN8yPo3S3ubjpbXhHuqGwDnu7R7uZ1wjFB8ZY2tGk",
+            patternChance: 20,
+            patterns: [
+                {
+                    img: 'Phases/Flip-Doppler/p1.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Flip-Doppler/p2.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Flip-Doppler/p3.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Flip-Doppler/p4.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Flip-Doppler/ruby.webp',
+                    chance: 20
+            },
+                {
+                    img: 'Phases/Flip-Doppler/sapphire.webp',
+                    chance: 10
+            },
+                {
+                    img: 'Phases/Flip-Doppler/black-pearl.webp',
+                    chance: 5
+            },
+        ]
     }, {
             id: 338,
             type: "★ Bayonet",
@@ -3011,7 +3042,7 @@ var Items = {
             },
                 {
                     img: 'Phases/Bayonet-Doppler/ruby.webp',
-                    chance: 10
+                    chance: 20
             },
                 {
                     img: 'Phases/Bayonet-Doppler/sapphire.webp',
@@ -4509,7 +4540,38 @@ var Items = {
             type: "★ Gut Knife",
             skinName: "Doppler",
             rarity: "rare",
-            img: "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz5wOuqzNQhgZxD9AK1hWPoq5ATpGxgi4MZwUYOJ-7IBIUiA6NOEZOUyZItNFsWGU6WDMlus60wwhaIIK8fb8XnmiCi9aW4JXBHi_WoByuTV7Kwr3DhWsXJSNg"
+            img: "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz5wOuqzNQhgZxD9AK1hWPoq5ATpGxgi4MZwUYOJ-7IBIUiA6NOEZOUyZItNFsWGU6WDMlus60wwhaIIK8fb8XnmiCi9aW4JXBHi_WoByuTV7Kwr3DhWsXJSNg",
+            patternChance: 20,
+            patterns: [
+                {
+                    img: 'Phases/Gut-Doppler/p1.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Gut-Doppler/p2.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Gut-Doppler/p3.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Gut-Doppler/p4.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Gut-Doppler/ruby.webp',
+                    chance: 20
+            },
+                {
+                    img: 'Phases/Gut-Doppler/sapphire.webp',
+                    chance: 10
+            },
+                {
+                    img: 'Phases/Gut-Doppler/black-pearl.webp',
+                    chance: 5
+            },
+        ]
     }, {
             id: 587,
             type: "★ M9 Bayonet",
@@ -4545,7 +4607,7 @@ var Items = {
             type: "★ Bayonet",
             skinName: "Gamma Doppler",
             rarity: "rare",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-KmsjxPr7Dl2dV18hwmOvN8IXvjVCLpxo7Oy2ceNfXJVMgZAyB_lDqlL--15G97Z7AyyZividw5i6MyUeygBpEPLM90PDPHArKBrsJQvdXl_RMjw",
+            img: "Phases/Bayonet-Gamma-Doppler/p1.png",
             patternChance: 20,
             patterns: [
                 {
@@ -4694,13 +4756,57 @@ var Items = {
             type: "★ Karambit",
             skinName: "Gamma Doppler",
             rarity: "rare",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJlY20kvrxIbrdklRc6ddzhuzI74nxt1i9rBsoDDWiZtHAbFBoMgyGrlLsw-_ohsXv6JvMz3Ix6yF2t3mLnBDm1R4faLdvhvyYTVmAR_seWA9jz4E"
+            img: "Phases/Karambit-Gamma-Doppler/p1.webp",
+            patternChance: 20,
+            patterns: [
+                {
+                    img: 'Phases/Karambit-Gamma-Doppler/p1.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Karambit-Gamma-Doppler/p2.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Karambit-Gamma-Doppler/p3.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Karambit-Gamma-Doppler/p4.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Karambit-Gamma-Doppler/emerald.webp',
+                    chance: 10
+                },
+            ]
     }, {
             id: 614,
             type: "★ Karambit",
             skinName: "Doppler",
             rarity: "rare",
-            img: "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz5wOuqzNQhscxbDDKJXSMo7-TfoBjci5MJxa8e-9qgDeGOz7dWed64tNotMF8HZWvSON1_440Nqh6ZfJ5eP8yi9jivuP2kLWULqrm5VzuWApPI11QoHL2Zy"
+            img: "Phases/Karambit-Doppler/p1.webp",
+            patternChance: 20,
+            patterns: [
+                {
+                    img: 'Phases/Karambit-Doppler/p1.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Karambit-Doppler/p2.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Karambit-Doppler/p3.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Karambit-Doppler/p4.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Karambit-Doppler/ruby.webp',
+                    chance: 20
+                }, {
+                    img: 'Phases/Karambit-Doppler/emerald.webp',
+                    chance: 10
+                }, {
+                    img: 'Phases/Karambit-Doppler/black-pearl.webp',
+                    chance: 5
+                },
+            ]
     }, {
             id: 615,
             type: "★ Karambit",
@@ -4820,7 +4926,30 @@ var Items = {
             type: "★ Flip Knife",
             skinName: "Gamma Doppler",
             rarity: "rare",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf1f_BYQJD4eOzmYWZlvvwDLbQhGld7cxrj-3--YXygECLpxIuNDztJoWcdA5vZV7Q_VfoxOfuh5Dv7s-ayiA3syUrtizfnxzj0kkZa7BogeveFwsRjj-vBQ"
+            img: "Phases/Flip-Gamma-Doppler/p1.webp",
+            patternChance: 20,
+            patterns: [
+                {
+                    img: 'Phases/Flip-Gamma-Doppler/p1.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Flip-Gamma-Doppler/p2.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Flip-Gamma-Doppler/p3.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Flip-Gamma-Doppler/p4.webp',
+                    chance: 50
+            },
+                {
+                    img: 'Phases/Flip-Gamma-Doppler/emerald.webp',
+                    chance: 10
+            },
+                ]
     }, {
             id: 635,
             type: "★ Flip Knife",
@@ -6202,7 +6331,7 @@ var Items = {
             "type": "★ Falchion Knife",
             "skinName": "Doppler",
             "rarity": "rare",
-            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_am_doppler_phase2_light_large.40d335a80eef9b10c695e9907aabe7da9b7d704c.png",
+            "img": "Phases/Falchion-Doppler/p1.webp",
             "can": {
                 "buy": false,
                 "sell": true,
@@ -6213,7 +6342,32 @@ var Items = {
                 "souvenir": false,
                 "inCase": true,
                 "specialCase": true
-            }
+            },
+            patternChance: 20,
+            patterns: [
+                {
+                    img: 'Phases/Falchion-Doppler/p1.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Falchion-Doppler/p2.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Falchion-Doppler/p3.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Falchion-Doppler/p4.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Falchion-Doppler/ruby.webp',
+                    chance: 20
+                }, {
+                    img: 'Phases/Falchion-Doppler/sapphire.webp',
+                    chance: 10
+                }, {
+                    img: 'Phases/Falchion-Doppler/black-pearl.webp',
+                    chance: 5
+                }
+                ]
     }, {
             "id": 821,
             "type": "★ Shadow Daggers",
@@ -6593,27 +6747,27 @@ var Items = {
                 }
             }
     }, {
-            "id": 845,
-            "type": "Five-SeveN",
-            "skinName": "Celtic Wyvern",
-            "rarity": "restricted",
-            "img": "Workshop3/Five-seven-Celtic-Wyvern.png",
-            "can": {
-                "buy": false,
-                "souvenir": false,
-                "specialCase": false,
-                "bot": false
-            },
-            patternChance: 20,
-            patterns: [
-                {
-                    img: 'Workshop3/Five-seven-Celtic-Wyvern-(Green).png',
-                    chance: 20
+        "id": 845,
+        "type": "Five-SeveN",
+        "skinName": "Celtic Wyvern",
+        "rarity": "restricted",
+        "img": "Workshop3/Five-seven-Celtic-Wyvern.png",
+        "can": {
+            "buy": false,
+            "souvenir": false,
+            "specialCase": false,
+            "bot": false
+        },
+        patternChance: 20,
+        patterns: [
+            {
+                img: 'Workshop3/Five-seven-Celtic-Wyvern-(Green).png',
+                chance: 20
             }, {
-                    img: 'Workshop3/Five-seven-Celtic-Wyvern-(Blue).png',
-                    chance: 50
+                img: 'Workshop3/Five-seven-Celtic-Wyvern-(Blue).png',
+                chance: 50
             }
-        ]
+            ]
     }, {
             "id": 846,
             "type": "USP-S",
@@ -7395,6 +7549,680 @@ var Items = {
     "skinName": "Safari Mesh",
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_sp_mesh_tan_light_large.360aa198bded3bec8d3c051bd1d6dc7270b3b91f.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 892,
+    "type": "★ Butterfly Knife",
+    "skinName": "Doppler",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_am_doppler_phase2_b_light_large.13ae18aef1c12378596266b5dc03647d7eee1345.png",
+    "can": {
+        "buy": false,
+        "souvenir": false,
+    },
+    patternChance: 20,
+    patterns: [
+        {
+            img: 'Phases/Butterfly-Doppler/p1.webp',
+            chance: 50
+        }, {
+            img: 'Phases/Butterfly-Doppler/p2.webp',
+            chance: 50
+        }, {
+            img: 'Phases/Butterfly-Doppler/p3.webp',
+            chance: 50
+        }, {
+            img: 'Phases/Butterfly-Doppler/p4.webp',
+            chance: 50
+        }, {
+            img: 'Phases/Butterfly-Doppler/ruby.webp',
+            chance: 20
+        }, {
+            img: 'Phases/Butterfly-Doppler/sapphire.webp',
+            chance: 10
+        }, {
+            img: 'Phases/Butterfly-Doppler/black-pearl.webp',
+            chance: 5
+        },
+    ]
+}, {
+    "id": 893,
+    "type": "★ Butterfly Knife",
+    "skinName": "Marble Fade",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_am_marble_fade_light_large.c9170bcb854e5d3ed0f3a22bae8a4513fd46954a.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 894,
+    "type": "★ Butterfly Knife",
+    "skinName": "Tiger Tooth",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_an_tiger_orange_light_large.2fece0b06a84ce2bb6e15e7cd3a37f400f218940.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 895,
+    "type": "★ Butterfly Knife",
+    "skinName": "Blue Steel",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_aq_blued_light_large.969518ce760404d72095af853f90df7582e7889f.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 896,
+    "type": "★ Butterfly Knife",
+    "skinName": "Boreal Forest",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_hy_forest_boreal_light_large.f817483d1e53b69919a8a11349b075c27d8829b1.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 897,
+    "type": "★ Butterfly Knife",
+    "skinName": "Safari Mesh",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_sp_mesh_tan_light_large.9c30ece5beb38356f406e5c5fa56e7f4056f0757.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 898,
+    "type": "★ Falchion Knife",
+    "skinName": "Fade",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aa_fade_light_large.1db6bc12f4b49677b330382c3e5af21f46d0c124.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 899,
+    "type": "★ Falchion Knife",
+    "skinName": "Slaughter",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_am_zebra_light_large.3cbce2191d2a20b88e610d8180c2f4a9ee0066ca.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 900,
+    "type": "★ Falchion Knife",
+    "skinName": "Crimson Web",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_hy_webs_light_large.9c355c7819b8fd993b543bceec976e798e6e8633.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 901,
+    "type": "★ Falchion Knife",
+    "skinName": "Case Hardened",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aq_oiled_light_large.ddcd8f4a87e08ab50fe3241e6791896125c48e03.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 902,
+    "type": "★ Falchion Knife",
+    "skinName": "Boreal Forest",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_hy_forest_boreal_light_large.9bf4abd73deee0ae82ce0a8670e1056d3a546107.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 903,
+    "type": "★ Falchion Knife",
+    "skinName": "Blue Steel",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aq_blued_light_large.ead09a065b115e707a59aa49689af0ed3dd8d1f3.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 904,
+    "type": "★ Falchion Knife",
+    "skinName": "Forest DDPAT",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_hy_ddpat_light_large.3b2857b99bb2aa1b1337248d8a1ae24aae1bf450.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 905,
+    "type": "★ Falchion Knife",
+    "skinName": "Scorched",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_sp_dapple_light_large.072bd4143a0c769f2d78835eaee88de49c849bd3.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 906,
+    "type": "★ Falchion Knife",
+    "skinName": "Safari Mesh",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_sp_mesh_tan_light_large.eccb7999f574f5e1080dfef159c3903c4e6db0de.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 907,
+    "type": "★ Gut Knife",
+    "skinName": "Black Laminate",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_cu_gut_stonewash_light_large.52a1c223ee5d85ddb2242c75a67c1f2f49b0e0b9.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": true,
+        "inCase": false,
+        "specialCase": true
+    }
+}, {
+    "id": 908,
+    "type": "★ Gut Knife",
+    "skinName": "Autotronic",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_gs_gut_autotronic_light_large.160e79d868da6ebb84c52e835aaf24ab9c6334f1.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 909,
+    "type": "★ Gut Knife",
+    "skinName": "Lore",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_cu_gut_lore_light_large.5cf5a77978675bd3d276a86017e6d1fcacd7bf00.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 910,
+    "type": "★ Gut Knife",
+    "skinName": "Gamma Doppler",
+    "rarity": "rare",
+    "img": "Phases/Gut-Gamma-Doppler/p1.webp",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    },
+    patternChance: 20,
+    patterns: [
+        {
+            img: 'Phases/Gut-Gamma-Doppler/p1.webp',
+            chance: 50
+        },{
+            img: 'Phases/Gut-Gamma-Doppler/p2.webp',
+            chance: 50
+        },{
+            img: 'Phases/Gut-Gamma-Doppler/p3.webp',
+            chance: 50
+        },{
+            img: 'Phases/Gut-Gamma-Doppler/p4.webp',
+            chance: 50
+        },{
+            img: 'Phases/Gut-Gamma-Doppler/emerald.webp',
+            chance: 10
+        },
+    ]
+}, {
+    "id": 911,
+    "type": "★ Gut Knife",
+    "skinName": "Bright Water",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_hy_ocean_knife_light_large.649f890d55e6ee2987e988e44a0f52e1a5020486.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 912,
+    "type": "★ Gut Knife",
+    "skinName": "Freehand",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_am_marked_up_light_large.08dac4cfbf7b626df37bb2b6ffd3d07d2fc86988.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 913,
+    "type": "★ Gut Knife",
+    "skinName": "Marble Fade",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_am_marble_fade_light_large.85f1cad22ba4e6716045d53e9e0cf5459760d152.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 914,
+    "type": "★ Gut Knife",
+    "skinName": "Rust Coat",
+    "rarity": "rare",
+    "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf1ObcTjxT08-ikYWHqPz6Or3UqWNU6dNoteXA54vwxgDlrxdtZjr3J4GXdQI4aA6DrgO_kLzvhp6-vczAyyA36ykk5XeLn0epwUYbYI3sIZ8",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 915,
+    "type": "★ Gut Knife",
+    "skinName": "Ultraviolet",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_so_purple_light_large.dbe6989416501166c43bd1cfb18ee835dbfa0ac7.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 916,
+    "type": "★ Gut Knife",
+    "skinName": "Damascus Steel",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_aq_damascus_light_large.9eaf9c050c3f5dfe5c647d361538a1ea7001f835.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 917,
+    "type": "★ Gut Knife",
+    "skinName": "Safari Mesh",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_sp_mesh_tan_light_large.5f58d777d76148ba031b587fff1b0b3465d2c441.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 918,
+    "type": "★ Gut Knife",
+    "skinName": "Forest DDPAT",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_hy_ddpat_light_large.855f6ca62686c8f365e503d379b07b4c41a8658a.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 919,
+    "type": "★ Gut Knife",
+    "skinName": "Stained",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_aq_forced_light_large.3f5b057c710fc4403f54d3979f482f511eb69d8b.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 920,
+    "type": "★ Gut Knife",
+    "skinName": "Scorched",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_sp_dapple_light_large.657af646f54600080b5c5e79133410eb47397fd6.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 921,
+    "type": "★ Gut Knife",
+    "skinName": "Urban Masked",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_sp_tape_urban_light_large.71f4811888602d3b48f35e030bd39ecbcac7f22e.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 922,
+    "type": "★ Gut Knife",
+    "skinName": "Boreal Forest",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_hy_forest_boreal_light_large.b28a4cfb134cd8be5da39f82db0df407577478e8.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 923,
+    "type": "★ Huntsman Knife",
+    "skinName": "Marble Fade",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_am_marble_fade_light_large.3efc76764c1aa62477fee4b4df1a380b115f5103.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 924,
+    "type": "★ Huntsman Knife",
+    "skinName": "Doppler",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_am_doppler_phase2_light_large.8b1857e53cdda632984e78da3198148f979ba750.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    },
+    patternChance: 20,
+    patterns: [
+        {
+            img: 'Phases/Huntsman-Doppler/p1.webp',
+            chance: 50
+        }, {
+            img: 'Phases/Huntsman-Doppler/p2.webp',
+            chance: 50
+        }, {
+            img: 'Phases/Huntsman-Doppler/p3.webp',
+            chance: 50
+        }, {
+            img: 'Phases/Huntsman-Doppler/p4.webp',
+            chance: 50
+        }, {
+            img: 'Phases/Huntsman-Doppler/ruby.webp',
+            chance: 20
+        }, {
+            img: 'Phases/Huntsman-Doppler/sapphire.webp',
+            chance: 10
+        }, {
+            img: 'Phases/Huntsman-Doppler/black-pearl.webp',
+            chance: 5
+        }, 
+    ]
+}, {
+    "id": 925,
+    "type": "★ Huntsman Knife",
+    "skinName": "Tiger Tooth",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_an_tiger_orange_light_large.961c75c287d5cba0859ef13ed8eb638d707b1129.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 926,
+    "type": "★ Huntsman Knife",
+    "skinName": "Stained",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_aq_forced_light_large.ba0ab23cf7421f130454b3e1816eb3302b588712.png",
+    "can": {
+        "buy": false,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 927,
+    "type": "★ Huntsman Knife",
+    "skinName": "Urban Masked",
+    "rarity": "covert",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_sp_tape_urban_light_large.b1741a783b7017d5bf191ec9ab8f3a5427718294.png",
     "can": {
         "buy": false,
         "sell": true,

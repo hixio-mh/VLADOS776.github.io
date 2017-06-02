@@ -1043,7 +1043,7 @@ function getImgUrl(img, big) {
         else {
             return img;
         }
-    else if (img.indexOf(".png") != -1) return "../images/Weapons/" + img;
+    else if (img.indexOf(".png") != -1 || img.indexOf(".webp") != -1) return "../images/Weapons/" + img;
     else if (img.indexOf("steamcommunity") == -1) {
         if (typeof big != "undefined") return prefix + img + postfixBig;
         else return prefix + img + postfix;

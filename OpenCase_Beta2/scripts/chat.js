@@ -488,7 +488,7 @@ function newMsg(key, message, edit) {
         vip = message.vip || {};
     edit = edit || false;
     
-    if (!/^\.\.\/images\/ava\/.{1,5}\.\w{3}$/i.test(img) && !/(admin|vip)/i.test(group)) {
+    if (!/^\.\.\/images\/ava\/.{1,5}\.\w{3}$/i.test(img) && !/(admin|vip|donor)/i.test(group)) {
         img = '../images/ava/0.jpg';
     }
     
@@ -578,7 +578,7 @@ function newMsg(key, message, edit) {
         $(".chat__messages").append(msg);
     }
     
-    if (group.match(/vip/) || extraClasses.match(/vip/)) {
+    if (group.match(/vip|donor/) || extraClasses.match(/vip/)) {
         if (vip.nickColors) {
             $("li[data-msgkey='" + key + "'] .message__from").gradientText({
                 colors: vip.nickColors.split(',')

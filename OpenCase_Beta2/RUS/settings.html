@@ -375,7 +375,7 @@
                         // if User is VIP.
                         firebase.database().ref('users/' + uid + '/moder/group').once('value', function(data) {
                             var group = data.val();
-                            if (group && group.match(/(vip|admin)/)) {
+                            if (group && group.match(/(vip|admin|donor)/)) {
                                 $('#vip_block').show();
                                 Player.isVip = true;
 

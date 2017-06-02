@@ -42991,5 +42991,1205 @@ var Prices = {
         },
         "souvenir": {}
     }
+},
+    "892": {
+    "item_id": 892,
+    "type": "★ Butterfly Knife",
+    "skinName": "Doppler",
+    "prices": {
+        "default": {
+            "4": {
+                "market": 699.5
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 748
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "893": {
+    "item_id": 893,
+    "type": "Butterfly Knife",
+    "skinName": "Marble Fade",
+    "prices": {
+        "default": {
+            "3": {
+                "market": 435
+            },
+            "4": {
+                "market": 614.99
+            }
+        },
+        "stattrak": {
+            "3": {
+                "market": 706.42
+            },
+            "4": {
+                "market": 778.13
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "894": {
+    "item_id": 894,
+    "type": "★ Butterfly Knife",
+    "skinName": "Tiger Tooth",
+    "prices": {
+        "default": {
+            "3": {
+                "market": 424.98
+            },
+            "4": {
+                "market": 457.94
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 750
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "895": {
+    "item_id": 895,
+    "type": "Butterfly Knife",
+    "skinName": "Blue Steel",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 122.02
+            },
+            "1": {
+                "market": 122.87
+            },
+            "2": {
+                "market": 122.08
+            },
+            "3": {
+                "market": 140.72
+            },
+            "4": {
+                "market": 199.93
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 169.76
+            },
+            "1": {
+                "market": 182.23
+            },
+            "2": {
+                "market": 155.72
+            },
+            "3": {
+                "market": 180
+            },
+            "4": {
+                "market": 1
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "896": {
+    "item_id": 896,
+    "type": "★ Butterfly Knife",
+    "skinName": "Boreal Forest",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 83.11
+            },
+            "1": {
+                "market": 105.61
+            },
+            "2": {
+                "market": 94.94
+            },
+            "3": {
+                "market": 112.82
+            },
+            "4": {
+                "market": 200
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 96.06
+            },
+            "1": {
+                "market": 223.71
+            },
+            "2": {
+                "market": 121.49
+            },
+            "3": {
+                "market": 170.82
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "897": {
+    "item_id": 897,
+    "type": "Butterfly Knife",
+    "skinName": "Safari Mesh",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 81.61
+            },
+            "1": {
+                "market": 82.75
+            },
+            "2": {
+                "market": 80.5
+            },
+            "3": {
+                "market": 90.47
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 140.96
+            },
+            "2": {
+                "market": 106.69
+            },
+            "3": {
+                "market": 167.53
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "898": {
+    "item_id": 898,
+    "type": "★ Falchion Knife",
+    "skinName": "Fade",
+    "prices": {
+        "default": {
+            "3": {
+                "market": 144.36
+            },
+            "4": {
+                "market": 140
+            }
+        },
+        "stattrak": {
+            "3": {
+                "market": 240.39
+            },
+            "4": {
+                "market": 174.58
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "899": {
+    "item_id": 899,
+    "type": "Falchion Knife",
+    "skinName": "Slaughter",
+    "prices": {
+        "default": {
+            "2": {
+                "market": 114.97
+            },
+            "3": {
+                "market": 112.81
+            },
+            "4": {
+                "market": 132.55
+            }
+        },
+        "stattrak": {
+            "2": {
+                "market": 159.13
+            },
+            "3": {
+                "market": 156.9
+            },
+            "4": {
+                "market": 190.99
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "900": {
+    "item_id": 900,
+    "type": "★ Falchion Knife",
+    "skinName": "Crimson Web",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 61
+            },
+            "1": {
+                "market": 84.67
+            },
+            "2": {
+                "market": 86.95
+            },
+            "3": {
+                "market": 127.1
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 161.95
+            },
+            "1": {
+                "market": 134.59
+            },
+            "2": {
+                "market": 106.95
+            },
+            "3": {
+                "market": 199.92
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "901": {
+    "item_id": 901,
+    "type": "Falchion Knife",
+    "skinName": "Case Hardened",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 74.3
+            },
+            "1": {
+                "market": 73.91
+            },
+            "2": {
+                "market": 75.96
+            },
+            "3": {
+                "market": 83.35
+            },
+            "4": {
+                "market": 116.88
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 113.4
+            },
+            "1": {
+                "market": 99.4
+            },
+            "2": {
+                "market": 109.85
+            },
+            "3": {
+                "market": 132.25
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "902": {
+    "item_id": 902,
+    "type": "★ Falchion Knife",
+    "skinName": "Boreal Forest",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 51.55
+            },
+            "1": {
+                "market": 58.05
+            },
+            "2": {
+                "market": 56.39
+            },
+            "3": {
+                "market": 64.8
+            },
+            "4": {
+                "market": 154.13
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 111.4
+            },
+            "1": {
+                "market": 101.69
+            },
+            "2": {
+                "market": 78.2
+            },
+            "3": {
+                "market": 115.59
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "903": {
+    "item_id": 903,
+    "type": "Falchion Knife",
+    "skinName": "Blue Steel",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 66.96
+            },
+            "1": {
+                "market": 70.15
+            },
+            "2": {
+                "market": 70.1
+            },
+            "3": {
+                "market": 70
+            },
+            "4": {
+                "market": 107.55
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 88.21
+            },
+            "1": {
+                "market": 109.25
+            },
+            "2": {
+                "market": 88.22
+            },
+            "3": {
+                "market": 113.36
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "904": {
+    "item_id": 904,
+    "type": "★ Falchion Knife",
+    "skinName": "Forest DDPAT",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 50.23
+            },
+            "1": {
+                "market": 51.35
+            },
+            "2": {
+                "market": 52.4
+            },
+            "3": {
+                "market": 59
+            },
+            "4": {
+                "market": 133.33
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 94.93
+            },
+            "2": {
+                "market": 67.91
+            },
+            "3": {
+                "market": 83.84
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "905": {
+    "item_id": 905,
+    "type": "Falchion Knife",
+    "skinName": "Scorched",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 53.84
+            },
+            "1": {
+                "market": 54.57
+            },
+            "2": {
+                "market": 51.11
+            },
+            "3": {
+                "market": 60.62
+            },
+            "4": {
+                "market": 115.46
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 64.9
+            },
+            "1": {
+                "market": 75.96
+            },
+            "2": {
+                "market": 68.22
+            },
+            "3": {
+                "market": 89.94
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "906": {
+    "item_id": 906,
+    "type": "★ Falchion Knife",
+    "skinName": "Safari Mesh",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 51.15
+            },
+            "1": {
+                "market": 51.2
+            },
+            "2": {
+                "market": 50.56
+            },
+            "3": {
+                "market": 51.36
+            },
+            "4": {
+                "market": 131.1
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 75
+            },
+            "2": {
+                "market": 65.9
+            },
+            "3": {
+                "market": 72.59
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "907": {
+    "item_id": 907,
+    "type": "Gut Knife",
+    "skinName": "Black Laminate",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 81
+            },
+            "1": {
+                "market": 68.14
+            },
+            "2": {
+                "market": 72.56
+            },
+            "3": {
+                "market": 80.3
+            },
+            "4": {
+                "market": 128.43
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 128.43
+            },
+            "1": {
+                "market": 110.53
+            },
+            "3": {
+                "market": 110.9
+            },
+            "4": {
+                "market": 1
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "908": {
+    "item_id": 908,
+    "type": "★ Gut Knife",
+    "skinName": "Autotronic",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 111.14
+            },
+            "1": {
+                "market": 120
+            },
+            "2": {
+                "market": 117.25
+            },
+            "3": {
+                "market": 159.89
+            },
+            "4": {
+                "market": 278.89
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 179.81
+            },
+            "2": {
+                "market": 148.44
+            },
+            "3": {
+                "market": 237.62
+            },
+            "4": {
+                "market": 322
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "909": {
+    "item_id": 909,
+    "type": "Gut Knife",
+    "skinName": "Lore",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 89.35
+            },
+            "1": {
+                "market": 111.7
+            },
+            "2": {
+                "market": 118.36
+            },
+            "3": {
+                "market": 179.28
+            },
+            "4": {
+                "market": 231.33
+            }
+        },
+        "stattrak": {
+            "1": {
+                "market": 89.89
+            },
+            "2": {
+                "market": 170.9
+            },
+            "3": {
+                "market": 242.27
+            },
+            "4": {
+                "market": 295.97
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "910": {
+    "item_id": 910,
+    "type": "★ Gut Knife",
+    "skinName": "Gamma Doppler",
+    "prices": {
+        "default": {
+            "3": {
+                "market": 135.27
+            },
+            "4": {
+                "market": 120.75
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 273.54
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "911": {
+    "item_id": 911,
+    "type": "Gut Knife",
+    "skinName": "Bright Water",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 71.31
+            },
+            "1": {
+                "market": 81.15
+            },
+            "2": {
+                "market": 64.72
+            },
+            "3": {
+                "market": 69
+            },
+            "4": {
+                "market": 71.76
+            }
+        },
+        "stattrak": {
+            "2": {
+                "market": 197.2
+            },
+            "3": {
+                "market": 97.18
+            },
+            "4": {
+                "market": 115.84
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "912": {
+    "item_id": 912,
+    "type": "★ Gut Knife",
+    "skinName": "Freehand",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 62.51
+            },
+            "1": {
+                "market": 75.39
+            },
+            "2": {
+                "market": 69.32
+            },
+            "3": {
+                "market": 78.09
+            },
+            "4": {
+                "market": 87.81
+            }
+        },
+        "stattrak": {
+            "1": {
+                "market": 69
+            },
+            "2": {
+                "market": 92.72
+            },
+            "3": {
+                "market": 122.71
+            },
+            "4": {
+                "market": 102.74
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "913": {
+    "item_id": 913,
+    "type": "Gut Knife",
+    "skinName": "Marble Fade",
+    "prices": {
+        "default": {
+            "3": {
+                "market": 122.6
+            },
+            "4": {
+                "market": 100.53
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 142.22
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "914": {
+    "item_id": 914,
+    "type": "★ Gut Knife",
+    "skinName": "Rust Coat",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 54.74
+            },
+            "1": {
+                "market": 66.47
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 79.63
+            },
+            "1": {
+                "market": 256.87
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "915": {
+    "item_id": 915,
+    "type": "Gut Knife",
+    "skinName": "Ultraviolet",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 55
+            },
+            "1": {
+                "market": 59.16
+            },
+            "2": {
+                "market": 55.92
+            },
+            "3": {
+                "market": 78.01
+            },
+            "4": {
+                "market": 196.48
+            }
+        },
+        "stattrak": {
+            "1": {
+                "market": 109.17
+            },
+            "2": {
+                "market": 76.7
+            },
+            "3": {
+                "market": 105.91
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "916": {
+    "item_id": 916,
+    "type": "★ Gut Knife",
+    "skinName": "Damascus Steel",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 81.3
+            },
+            "1": {
+                "market": 69.99
+            },
+            "2": {
+                "market": 62
+            },
+            "3": {
+                "market": 68.66
+            },
+            "4": {
+                "market": 74.47
+            }
+        },
+        "stattrak": {
+            "1": {
+                "market": 192.4
+            },
+            "2": {
+                "market": 76.66
+            },
+            "3": {
+                "market": 100
+            },
+            "4": {
+                "market": 118.95
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "917": {
+    "item_id": 917,
+    "type": "Gut Knife",
+    "skinName": "Safari Mesh",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 51
+            },
+            "1": {
+                "market": 53.41
+            },
+            "2": {
+                "market": 50.38
+            },
+            "3": {
+                "market": 58.28
+            },
+            "4": {
+                "market": 222.22
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 72.6
+            },
+            "1": {
+                "market": 66.94
+            },
+            "2": {
+                "market": 60.27
+            },
+            "3": {
+                "market": 460
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "918": {
+    "item_id": 918,
+    "type": "★ Gut Knife",
+    "skinName": "Forest DDPAT",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 54
+            },
+            "1": {
+                "market": 72.6
+            },
+            "2": {
+                "market": 50.23
+            },
+            "3": {
+                "market": 65.27
+            },
+            "4": {
+                "market": 200
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 163.54
+            },
+            "1": {
+                "market": 125
+            },
+            "2": {
+                "market": 60.28
+            },
+            "3": {
+                "market": 106.95
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "919": {
+    "item_id": 919,
+    "type": "Gut Knife",
+    "skinName": "Stained",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 57.62
+            },
+            "1": {
+                "market": 57.98
+            },
+            "2": {
+                "market": 59.64
+            },
+            "3": {
+                "market": 60.6
+            },
+            "4": {
+                "market": 128.43
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 73.69
+            },
+            "1": {
+                "market": 81.34
+            },
+            "2": {
+                "market": 67.04
+            },
+            "3": {
+                "market": 81.8
+            },
+            "4": {
+                "market": 170.69
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "920": {
+    "item_id": 920,
+    "type": "★ Gut Knife",
+    "skinName": "Scorched",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 51.36
+            },
+            "1": {
+                "market": 51.37
+            },
+            "2": {
+                "market": 51.93
+            },
+            "3": {
+                "market": 60.31
+            },
+            "4": {
+                "market": 192.66
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 69.55
+            },
+            "1": {
+                "market": 84.89
+            },
+            "2": {
+                "market": 64.22
+            },
+            "3": {
+                "market": 80.77
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "921": {
+    "item_id": 921,
+    "type": "Gut Knife",
+    "skinName": "Urban Masked",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 51.2
+            },
+            "1": {
+                "market": 62.73
+            },
+            "2": {
+                "market": 51.53
+            },
+            "3": {
+                "market": 59.99
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 74.48
+            },
+            "1": {
+                "market": 81.55
+            },
+            "2": {
+                "market": 70.64
+            },
+            "3": {
+                "market": 88.87
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "922": {
+    "item_id": 922,
+    "type": "★ Gut Knife",
+    "skinName": "Boreal Forest",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 51.3
+            },
+            "1": {
+                "market": 50.08
+            },
+            "2": {
+                "market": 51.64
+            },
+            "3": {
+                "market": 60.38
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 72.6
+            },
+            "1": {
+                "market": 94.93
+            },
+            "2": {
+                "market": 69.2
+            },
+            "3": {
+                "market": 88.68
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "923": {
+    "item_id": 923,
+    "type": "★ Huntsman Knife",
+    "skinName": "Marble Fade",
+    "prices": {
+        "default": {
+            "4": {
+                "market": 449.83
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 590.8
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "924": {
+    "item_id": 924,
+    "type": "★ Huntsman Knife",
+    "skinName": "Doppler",
+    "prices": {
+        "default": {
+            "3": {
+                "market": 312.73
+            },
+            "4": {
+                "market": 359.99
+            }
+        },
+        "stattrak": {
+            "3": {
+                "market": 377.2
+            },
+            "4": {
+                "market": 700
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "925": {
+    "item_id": 925,
+    "type": "★ Huntsman Knife",
+    "skinName": "Tiger Tooth",
+    "prices": {
+        "default": {
+            "3": {
+                "market": 333.94
+            },
+            "4": {
+                "market": 336
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 514.89
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "926": {
+    "item_id": 926,
+    "type": "Huntsman Knife",
+    "skinName": "Stained",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 70.04
+            },
+            "1": {
+                "market": 74.11
+            },
+            "2": {
+                "market": 76.5
+            },
+            "3": {
+                "market": 80.58
+            },
+            "4": {
+                "market": 120.84
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 100.52
+            },
+            "1": {
+                "market": 91.79
+            },
+            "2": {
+                "market": 99.29
+            },
+            "3": {
+                "market": 231.19
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "927": {
+    "item_id": 927,
+    "type": "★ Huntsman Knife",
+    "skinName": "Urban Masked",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 65.89
+            },
+            "1": {
+                "market": 64.83
+            },
+            "2": {
+                "market": 66.58
+            },
+            "3": {
+                "market": 79.63
+            },
+            "4": {
+                "market": 204.7
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 95.04
+            },
+            "1": {
+                "market": 128.43
+            },
+            "2": {
+                "market": 88.7
+            },
+            "3": {
+                "market": 93.76
+            }
+        },
+        "souvenir": {}
+    }
 }
 }
