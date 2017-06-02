@@ -232,6 +232,10 @@ $(function () {
     });
     
     $(document).on('click', '.weapon.graffiti', function() {
+        var lastUse = parseInt(getStatistic('chat-graffiti-use-time', '0'))
+        if (lastUse + GRAFFITI_KD > Date.now()) {
+            return false;
+        }
         var graffitiID = $(this).data('id');
         var that = this;
         getItem(graffitiID).then(function(graffiti) {

@@ -727,4 +727,36 @@ var news = [{
         "RU": " - [Новое] Добавлен кейс Hydra!",
         "EN": " - [New] Hydra case!"
     }
+}, {
+    "day": 25,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Добавлен USP | Orion<br> - [Изменено] Улучшен поиск в магазине.",
+        "EN": " - [New] Added USP | Orion.<br> - [Changed] Improved search in the market."
+    }
+}, {
+    "day": 26,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Добавлены ножи с фазами.<br> - [Новое] В инвентаре можно просматривать скины свайпом.",
+        "EN": " - [New] New knives & phases.<br> - [New] Swipe items in inventory."
+    }
+}, {
+    "day": 29,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Граффити! Можно использовать в чате.",
+        "EN": " - [New] Graffiti"
+    }
+}, {
+    "day": 30,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": ' - [Новое] <a href="open.html?graffitiId=1">Community Graffiti Box 1</a>',
+        "EN": ' - [New] <a href="open.html?graffitiId=1">Community Graffiti Box 1</a>'
+    }
 }, ];

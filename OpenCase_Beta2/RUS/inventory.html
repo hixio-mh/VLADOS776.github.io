@@ -249,7 +249,7 @@
                 
                 if (item.pattern != null) {
                     $('#weaponPhase').parent().show();
-                    $('#weaponPhase').text(item.pattern + 1);
+                    $('#weaponPhase').text(item.phaseName());
                 } else {
                     $('#weaponPhase').parent().hide();
                 }

@@ -432,6 +432,27 @@ Weapon.prototype.changePattern = function (id) {
         return id;
     }
 }
+Weapon.prototype.phaseName = function(id) {
+    var phaseID = id != null ? id : this.pattern;
+    if (phaseID == null) return null;
+    if (phaseID >= this.old.patterns.length) return null;
+    if (this.old.patterns[phaseID].name) return this.old.patterns[this.pattern].name;
+    
+    var defaultNames = {
+        ruby: 'Ruby',
+        emerald: 'Emerald',
+        sapphire: 'Sapphire',
+        'black-pearl': 'Black Pearl'
+    }
+    var img = this.old.patterns[phaseID].img;
+    
+    for (var key in defaultNames) {
+        var reg = new RegExp('/' + key + '.', 'i');
+        if (reg.test(img)) return defaultNames[key];
+    }
+    
+    return phaseID + 1;
+}
 
 // === Functions ===
 
@@ -4800,7 +4821,7 @@ var Items = {
                     img: 'Phases/Karambit-Doppler/ruby.webp',
                     chance: 20
                 }, {
-                    img: 'Phases/Karambit-Doppler/emerald.webp',
+                    img: 'Phases/Karambit-Doppler/sapphire.webp',
                     chance: 10
                 }, {
                     img: 'Phases/Karambit-Doppler/black-pearl.webp',
