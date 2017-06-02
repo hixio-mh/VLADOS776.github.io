@@ -151,6 +151,14 @@ var openCase = {
                 window.location.replace("cases.html");
                 caseOpening = false;
             });
+            
+            $(document).on('click', '.weaponsList .weapon', function() {
+                var img = $(this).find('img');
+                if (img && /rare\.png/.test(img.attr('src'))) {
+                    $('.weaponsList').empty();
+                    openCase.whatInCase(false, false);
+                }
+            });
         })
     },
     goToCase: function(caseId, souvenir) {
@@ -581,8 +589,9 @@ var openCase = {
         $(".openCase").text(Localization.getString('open_case.open_case', 'Open Case'));
         $(".openCase").append(' $' + (openCase.casePrice() / 100).toFixed(2));
     },
-    whatInCase: function(caseId) {
+    whatInCase: function(caseId, hideRare) {
         caseId = caseId || openCase.caseId;
+        hideRare = hideRare == null ? true : hideRare;
         var rare = false;
         var itemsArray = openCase.items;
         
@@ -592,9 +601,9 @@ var openCase = {
                 continue;
             var img = item.getImgUrl();
             
-            var $weaponInfo = $(item.toLi({ limit: false }));
+            var $weaponInfo = $(item.toLi({ limit: false })).addClass('animated flipInX');
 
-            if (openCase.rareItemsRegExp.test(item.rarity)) {
+            if (openCase.rareItemsRegExp.test(item.rarity) && hideRare) {
                 rare = true;
                 $weaponInfo.find('.type span').text('★ Rare Special Item ★');
                 $weaponInfo.find('.name span').html('&nbsp;');
