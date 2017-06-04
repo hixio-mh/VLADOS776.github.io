@@ -453,7 +453,7 @@ var openCase = {
     endScroll: function() {
         if (openCase.status == 'scrollBack')
             return false;
-        $("#opened").text(parseInt($("#opened").text()) + 1);                        
+        $("#opened").text((parseInt($("#opened").text()) + openCase.linesCount));                        
 
         $("#double_sell_button").prop("disabled", false);
         Sound("close", "play", 5);
@@ -476,6 +476,15 @@ var openCase = {
             $(".openCase").prop("disabled", true);
         }
         
+        var winItems = Object.keys(openCase.win).map(function(key) {
+            var itm = openCase.win[key];
+            var obj = itm.saveObject();
+            delete obj.new;
+            obj.name = itm.titleText();
+            obj.price = itm.price;
+            return obj;
+        })
+        
         LOG.log({
             action: 'Open Case',
             case: {
@@ -483,11 +492,7 @@ var openCase = {
                 id: openCase.caseId,
                 free: openCase.isFree()
             },
-            item: {
-                item_id: openCase.win.item_id,
-                type: !openCase.caseType || openCase.caseType == 'weapons' ? openCase.win.type : '',
-                name: openCase.win.nameOrig
-            }
+            items: winItems
         })
 
         //Statistic
@@ -501,14 +506,15 @@ var openCase = {
 
             if (openCase.special) {
                 if (!fromAd) {
-                    var need = getStatistic('specialCases', 0) - cases[openCase.caseId].casesToOpen;
+                    var need = parseInt(getStatistic('specialCases', 0)) - cases[openCase.caseId].casesToOpen;
                     need = (need < 0) ? 0 : need;
                     saveStatistic('specialCases', need);
                 }
                 if (getStatistic('specialCases', 0) < cases[openCase.caseId].casesToOpen)
                     $('.openCase').attr("disabled", "disabled");
             } else {
-                statisticPlusOne('specialCases');
+                var need = parseInt(getStatistic('specialCases', 0));
+                saveStatistic('specialCases', (need + openCase.linesCount));
             }
         } else {
             statisticPlusOne('specialCases');
