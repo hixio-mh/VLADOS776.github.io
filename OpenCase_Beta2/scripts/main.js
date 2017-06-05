@@ -1057,50 +1057,49 @@ function getImgUrl(img, big) {
     }
 }
 
-function XSSreplace (text) {
-        var allowedTags = ["<br>", '<br />', "<i>", "<b>", "<s>", '<div>'];
-        if (typeof text !== 'string') return text;
-        //allowed html tags
-        text = text.replace(/&lt;/g, '<');
-        text = text.replace(/&gt;/g, '>');
-        text = text.replace(/&quot;/g, '"');
-        text = text.replace(/&#x27;/g, "'");
-        text = text.replace(/&amp;/g, '&');
-        for (var i = 0; i < allowedTags.length; i++) {
-            text = rpls(text, allowedTags[i]);
-        }
-    
-        //XSS replace
-        text = text.replace(/<.*?>(.*?)<\/.*?>/g, '$1');
-    
-        text = text.replace(/&/g, '&amp;');
-        text = text.replace(/</g, '&lt;');
-        text = text.replace(/>/g, '&gt;');
-        text = text.replace(/"/g, '&quot;');
-        text = text.replace(/'/g, '&#x27;');
-    
-        text = text.replace(/&amp;nbsp;/g, ' ');
-        //text = text.replace(/\//g, '&#x2F;');
-        //allowed html tags
-        for (var i = 0; i < allowedTags.length; i++) {
-            text = rpls(text, allowedTags[i], true);
+function XSSreplace(text) {
+    var allowedTags = ["<br>", '<br />', "<i>", "<b>", "<s>", '<div>'];
+    if (typeof text !== 'string') return text;
+    //allowed html tags
+    text = text.replace(/&lt;/g, '<');
+    text = text.replace(/&gt;/g, '>');
+    text = text.replace(/&quot;/g, '"');
+    text = text.replace(/&#x27;/g, "'");
+    text = text.replace(/&amp;/g, '&');
+    for (var i = 0; i < allowedTags.length; i++) {
+        text = rpls(text, allowedTags[i]);
+    }
+
+    //XSS replace
+    text = text.replace(/<.*?>(.*?)<\/.*?>/g, '$1');
+
+    text = text.replace(/&/g, '&amp;');
+    text = text.replace(/</g, '&lt;');
+    text = text.replace(/>/g, '&gt;');
+    text = text.replace(/"/g, '&quot;');
+    text = text.replace(/'/g, '&#x27;');
+
+    text = text.replace(/&amp;nbsp;/g, ' ');
+    //text = text.replace(/\//g, '&#x2F;');
+    //allowed html tags
+    for (var i = 0; i < allowedTags.length; i++) {
+        text = rpls(text, allowedTags[i], true);
+    }
+    return text;
+
+    function rpls(text, tag, revert) {
+        revert = revert || false;
+        var inTag = tag.replace(/(<|>)/g, '');
+        if (!revert) {
+            var reg = new RegExp('<([/])?' + inTag + '>', 'gi');
+            text = text.replace(reg, '!!$1' + inTag + '!!');
+        } else {
+            var reg = new RegExp('!!([/])?' + inTag + '!!', 'gi');
+            text = text.replace(reg, '<$1' + inTag + '>');
         }
         return text;
-
-        function rpls(text, tag, revert) {
-            revert = revert || false;
-            var inTag = tag.replace(/(<|>)/g, '');
-            if (!revert) {
-                var reg = new RegExp('<([/])?' + inTag + '>', 'gi');
-                text = text.replace(reg, '!!$1' + inTag + '!!');
-            }
-            else {
-                var reg = new RegExp('!!([/])?' + inTag + '!!', 'gi');
-                text = text.replace(reg, '<$1' + inTag + '>');
-            }
-            return text;
-        }
     }
+}
 
 function connectDB(f) {
     if (!window.indexedDB) {

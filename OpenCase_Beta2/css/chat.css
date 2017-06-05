@@ -97,7 +97,15 @@ ul.chat__messages {
     list-style: none;
     background: #e6e6e6;
     margin-top: 0;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
+}
+.typing {
+    position: absolute;
+    top: -20px;
+    color: #000;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
 }
 li.chat__message {
     margin: 15px 0;
@@ -141,6 +149,14 @@ li.chat__message a img[data-userid] {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+.message__info__from-time {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.message__info__from-time > * {
+    margin: 0 2px;
+}
 .message__from {
     color: #cb6a6a;
     font-size: 14px;
@@ -156,8 +172,7 @@ li.chat__message a img[data-userid] {
 .message__time {
     color: #c5c5c5;
     font-size: 14px;
-    float: right;
-    margin-left: 15px;
+    margin-left: auto;
 }
 .message__text {
     color: #656565;
