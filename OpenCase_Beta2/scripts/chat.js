@@ -294,6 +294,7 @@ var fbChat = (function (module) {
     module.chatRef = '';
     module.isModerator = false;
     module.isVip = false;
+    module.isDonor = false;
     module.vip = {};
     module.rooms = [
         {
@@ -357,7 +358,7 @@ var fbChat = (function (module) {
                 , timestamp: firebase.database.ServerValue.TIMESTAMP
             }
             
-            if (fbChat.isVip) {
+            if (fbChat.isVip || /donor/i.test(group)) {
                 msg.vip = {};
                 
                 if (fbChat.vip.nickColors) {
