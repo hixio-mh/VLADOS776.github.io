@@ -130,17 +130,31 @@
             border-radius: 5px;
             margin: 3px;
             display: inline-block;
+            cursor: pointer;
+            position: relative;
+        }
+        .add_color {
             vertical-align: top;
             text-align: center;
             line-height: 50px;
             color: #7b7b7b;
             font-weight: bold;
             font-size: 2em;
-            cursor: pointer;
         }
         
         #color_example {
             font-weight: bold;
+        }
+        .color_box_remove {
+            color: #fff;
+            text-shadow: 1px 1px 2px #000;
+            font-size: 20px;
+            font-weight: bold;
+            width: 20px;
+            height: 18px;
+            line-height: 15px;
+            padding: 0px;
+            text-align: center;
         }
 
     </style>
@@ -569,7 +583,7 @@
 
             $('.add_color').on('click', function() {
 
-                $('<div class="color_box" data-color="#ffffff"></div>').insertBefore('.add_color');
+                $('<div class="color_box" data-color="#ffffff"><div class="color_box_remove">&times;</div></div>').insertBefore('.add_color');
 
                 $('.color_box').each(function() {
                     var that = this;
@@ -583,7 +597,15 @@
                 })
 
                 if ($('.color_box').length == 4)
-                    $('.add_color').remove();
+                    $('.add_color').hide();
+            })
+
+            $(document).on('click', '.color_box_remove', function(e) {
+                $(this).parent().remove();
+                nicknameColorChange();
+                $('.add_color').show();
+                e.preventDefault();
+                e.stopPropagation();
             })
 
             function nicknameColorChange() {
