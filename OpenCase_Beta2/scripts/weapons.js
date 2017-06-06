@@ -4622,30 +4622,7 @@ var Items = {
             type: "★ M9 Bayonet",
             skinName: "Freehand",
             rarity: "rare",
-            img: "Phases/M9-Bayonet-Gamma-Doppler/p1.png",
-            patternChance: 20,
-            patterns: [
-                    {
-                        img: 'Phases/M9-Bayonet-Gamma-Doppler/p1.png',
-                        chance: 50
-                },
-                    {
-                        img: 'Phases/M9-Bayonet-Gamma-Doppler/p2.webp',
-                        chance: 30
-                },
-                    {
-                        img: 'Phases/M9-Bayonet-Gamma-Doppler/p3.webp',
-                        chance: 50
-                },
-                    {
-                        img: 'Phases/M9-Bayonet-Gamma-Doppler/p4.webp',
-                        chance: 20
-                },
-                    {
-                        img: 'Phases/M9-Bayonet-Gamma-Doppler/emerald.webp',
-                        chance: 10
-                },
-            ]
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-Kmsj5Mqnak29u_dVO07n--InxgUG5lB89IT6mOtXAIwE4YlnW8lW7yebp05Tpv5rJmCQ26Scl7HfanBfjhkkaZrNph_GACQLJ_Utp8Mc"
     }, {
             id: 592,
             type: "★ Bayonet",
@@ -4684,7 +4661,7 @@ var Items = {
             patternChance: 20,
             patterns: [
                     {
-                        img: 'Phases/M9-Bayonet-Doppler/p1.png',
+                        img: 'Phases/M9-Bayonet-Doppler/p1.webp',
                         chance: 50
                 },
                     {
