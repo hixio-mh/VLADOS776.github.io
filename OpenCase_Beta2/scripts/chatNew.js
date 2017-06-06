@@ -119,7 +119,8 @@ window.addEventListener('popstate', function(e) {
 }, false);
 
 var Chat = (function(module) {
-    var socket = io('http://91.228.154.72:8050/'),
+    //var socket = io('http://192.168.1.205:8050/'),
+    var socket = io('https://kvmde40-10035.fornex.org/', {path: '/chatserver/socket.io'}),
         reconnected = false;
     
     var isModerator = false,

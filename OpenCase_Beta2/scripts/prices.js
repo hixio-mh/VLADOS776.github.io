@@ -44191,5 +44191,227 @@ var Prices = {
         },
         "souvenir": {}
     }
+},
+    "928": {
+    "item_id": 928,
+    "type": "★ Shadow Daggers",
+    "skinName": "Crimson Web",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 71.55
+            },
+            "1": {
+                "market": 99.65
+            },
+            "2": {
+                "market": 95.76
+            },
+            "3": {
+                "market": 129.33
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 104.65
+            },
+            "1": {
+                "market": 185.41
+            },
+            "2": {
+                "market": 134.15
+            },
+            "3": {
+                "market": 250.14
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "929": {
+    "item_id": 929,
+    "type": "Shadow Daggers",
+    "skinName": "Urban Masked",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 51.68
+            },
+            "1": {
+                "market": 56.19
+            },
+            "2": {
+                "market": 53.38
+            },
+            "3": {
+                "market": 59.54
+            },
+            "4": {
+                "market": 196.27
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 100.58
+            },
+            "1": {
+                "market": 375.78
+            },
+            "2": {
+                "market": 138.47
+            },
+            "3": {
+                "market": 105.02
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "930": {
+    "item_id": 930,
+    "type": "★ Shadow Daggers",
+    "skinName": "Night",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 56.84
+            },
+            "1": {
+                "market": 62.1
+            },
+            "2": {
+                "market": 62.97
+            },
+            "3": {
+                "market": 77.53
+            },
+            "4": {
+                "market": 228.01
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 74.98
+            },
+            "1": {
+                "market": 77.53
+            },
+            "2": {
+                "market": 87.78
+            },
+            "3": {
+                "market": 110
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "931": {
+    "item_id": 931,
+    "type": "Shadow Daggers",
+    "skinName": "Forest DDPAT",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 54.22
+            },
+            "1": {
+                "market": 57.13
+            },
+            "2": {
+                "market": 53.41
+            },
+            "3": {
+                "market": 60.58
+            },
+            "4": {
+                "market": 103.36
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 90
+            },
+            "2": {
+                "market": 74.15
+            },
+            "3": {
+                "market": 83.37
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "932": {
+    "item_id": 932,
+    "type": "★ Shadow Daggers",
+    "skinName": "Scorched",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 52
+            },
+            "1": {
+                "market": 53.94
+            },
+            "2": {
+                "market": 52.97
+            },
+            "3": {
+                "market": 60.3
+            },
+            "4": {
+                "market": 116.29
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 63.09
+            },
+            "1": {
+                "market": 70.62
+            },
+            "2": {
+                "market": 65.32
+            },
+            "3": {
+                "market": 83.75
+            }
+        },
+        "souvenir": {}
+    }
+},
+    "933": {
+    "item_id": 933,
+    "type": "Shadow Daggers",
+    "skinName": "Boreal Forest",
+    "prices": {
+        "default": {
+            "0": {
+                "market": 52.36
+            },
+            "1": {
+                "market": 52.68
+            },
+            "2": {
+                "market": 54.91
+            },
+            "3": {
+                "market": 57.32
+            }
+        },
+        "stattrak": {
+            "0": {
+                "market": 116.29
+            },
+            "2": {
+                "market": 65.85
+            },
+            "3": {
+                "market": 76.51
+            }
+        },
+        "souvenir": {}
+    }
 }
 }

@@ -4622,7 +4622,30 @@ var Items = {
             type: "★ M9 Bayonet",
             skinName: "Freehand",
             rarity: "rare",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-Kmsj5Mqnak29u_dVO07n--InxgUG5lB89IT6mOtXAIwE4YlnW8lW7yebp05Tpv5rJmCQ26Scl7HfanBfjhkkaZrNph_GACQLJ_Utp8Mc"
+            img: "Phases/M9-Bayonet-Gamma-Doppler/p1.png",
+            patternChance: 20,
+            patterns: [
+                    {
+                        img: 'Phases/M9-Bayonet-Gamma-Doppler/p1.png',
+                        chance: 50
+                },
+                    {
+                        img: 'Phases/M9-Bayonet-Gamma-Doppler/p2.webp',
+                        chance: 30
+                },
+                    {
+                        img: 'Phases/M9-Bayonet-Gamma-Doppler/p3.webp',
+                        chance: 50
+                },
+                    {
+                        img: 'Phases/M9-Bayonet-Gamma-Doppler/p4.webp',
+                        chance: 20
+                },
+                    {
+                        img: 'Phases/M9-Bayonet-Gamma-Doppler/emerald.webp',
+                        chance: 10
+                },
+            ]
     }, {
             id: 592,
             type: "★ Bayonet",
@@ -4645,10 +4668,10 @@ var Items = {
             },
                 {
                     img: 'Phases/Bayonet-Gamma-Doppler/p4.webp',
-                    chance: 20
+                    chance: 50
             },
                 {
-                    img: 'Phases/Bayonet-Gamma-Doppler/p5.webp',
+                    img: 'Phases/Bayonet-Gamma-Doppler/emerald.webp',
                     chance: 10
             },
         ]
@@ -4657,7 +4680,38 @@ var Items = {
             type: "★ M9 Bayonet",
             skinName: "Doppler",
             rarity: "rare",
-            img: "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz5wOuqzNQhqKzvAALlRUvAuywnhNiM9-NdvUcWJ57MHOlns296fZOhoX4QdXZeFRP-DMFr46h040vUMeZzYpS-62ny9OmhZWxC68jkAzOWF67Y-gmkeRyOu7bLbz4tHjC8"
+            img: "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz5wOuqzNQhqKzvAALlRUvAuywnhNiM9-NdvUcWJ57MHOlns296fZOhoX4QdXZeFRP-DMFr46h040vUMeZzYpS-62ny9OmhZWxC68jkAzOWF67Y-gmkeRyOu7bLbz4tHjC8",
+            patternChance: 20,
+            patterns: [
+                    {
+                        img: 'Phases/M9-Bayonet-Doppler/p1.png',
+                        chance: 50
+                },
+                    {
+                        img: 'Phases/M9-Bayonet-Doppler/p2.webp',
+                        chance: 30
+                },
+                    {
+                        img: 'Phases/M9-Bayonet-Doppler/p3.webp',
+                        chance: 50
+                },
+                    {
+                        img: 'Phases/M9-Bayonet-Doppler/p4.webp',
+                        chance: 50
+                },
+                    {
+                        img: 'Phases/M9-Bayonet-Doppler/ruby.webp',
+                        chance: 20
+                },
+                    {
+                        img: 'Phases/M9-Bayonet-Doppler/sapphire.webp',
+                        chance: 10
+                },
+                    {
+                        img: 'Phases/M9-Bayonet-Doppler/black-pearl.webp',
+                        chance: 5
+                },
+            ]
     }, {
             id: 594,
             type: "★ M9 Bayonet",
@@ -6394,7 +6448,7 @@ var Items = {
             "type": "★ Shadow Daggers",
             "skinName": "Doppler",
             "rarity": "rare",
-            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_am_doppler_phase2_b_light_large.516d6cf5e16c964cd35b839a2b8b6f62ad564083.png",
+            "img": "Phases/Daggers-Doppler/p1.webp",
             "can": {
                 "buy": false,
                 "sell": true,
@@ -6405,7 +6459,32 @@ var Items = {
                 "souvenir": false,
                 "inCase": true,
                 "specialCase": true
-            }
+            },
+            patternChance: 20,
+            patterns: [
+                {
+                    img: 'Phases/Daggers-Doppler/p1.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Daggers-Doppler/p2.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Daggers-Doppler/p3.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Daggers-Doppler/p4.webp',
+                    chance: 50
+                }, {
+                    img: 'Phases/Daggers-Doppler/ruby.webp',
+                    chance: 20
+                }, {
+                    img: 'Phases/Daggers-Doppler/sapphire.webp',
+                    chance: 10
+                }, {
+                    img: 'Phases/Daggers-Doppler/black-pearl.webp',
+                    chance: 5
+                }
+                ]
     }, {
             "id": 822,
             "type": "★ Shadow Daggers",
@@ -8242,13 +8321,115 @@ var Items = {
     "id": 927,
     "type": "★ Huntsman Knife",
     "skinName": "Urban Masked",
-    "rarity": "covert",
+    "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_sp_tape_urban_light_large.b1741a783b7017d5bf191ec9ab8f3a5427718294.png",
     "can": {
         "buy": false,
         "sell": true,
         "trade": true,
         "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 928,
+    "type": "★ Shadow Daggers",
+    "skinName": "Crimson Web",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_hy_webs_light_large.df749be6007a8df0ed8ee572e42151235ef7cfb8.png",
+    "can": {
+        "buy": true,
+        "sell": true,
+        "trade": true,
+        "contract": false,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 929,
+    "type": "★ Shadow Daggers",
+    "skinName": "Urban Masked",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_sp_tape_urban_light_large.b443359282b2cbc75c2cc765af8c9a00e4b2dfdb.png",
+    "can": {
+        "buy": true,
+        "sell": true,
+        "trade": true,
+        "contract": false,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 930,
+    "type": "★ Shadow Daggers",
+    "skinName": "Night",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_so_night_light_large.6bf4ccf0b4c054ad19beb4d3da884cae5fb2a302.png",
+    "can": {
+        "buy": true,
+        "sell": true,
+        "trade": true,
+        "contract": false,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 931,
+    "type": "★ Shadow Daggers",
+    "skinName": "Forest DDPAT",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_hy_ddpat_light_large.a5821bfe03d91034b78b0aaf1eaa50cf556645b3.png",
+    "can": {
+        "buy": true,
+        "sell": true,
+        "trade": true,
+        "contract": false,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 932,
+    "type": "★ Shadow Daggers",
+    "skinName": "Scorched",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_sp_dapple_light_large.2f7cde55a22c5cd038bceb38533f5397a9fc8252.png",
+    "can": {
+        "buy": true,
+        "sell": true,
+        "trade": true,
+        "contract": false,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    }
+}, {
+    "id": 933,
+    "type": "★ Shadow Daggers",
+    "skinName": "Boreal Forest",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_hy_forest_boreal_light_large.81e69f4bcf6d0cd60f909a0b6722e8bc12b982ca.png",
+    "can": {
+        "buy": true,
+        "sell": true,
+        "trade": true,
+        "contract": false,
         "bot": true,
         "stattrak": true,
         "souvenir": false,
