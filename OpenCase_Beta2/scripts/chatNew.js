@@ -456,15 +456,17 @@ var Chat = (function(module) {
         $('#chat__new-message').empty();
     }
     module.deleteMsg = function(key, msgText, msgAuthor) {
-        if (!isModerator || !isVip) return false;
-        socket.emit('deleteMessage', key);
-        LOG.log({
-            action: 'Moderator delete message',
-            msg: {
-                author: msgAuthor,
-                text: msgText
-            }
-        })
+        if (isModerator || isVip) {
+            socket.emit('deleteMessage', key);
+            LOG.log({
+                action: 'Moderator delete message',
+                msg: {
+                    author: msgAuthor,
+                    text: msgText
+                }
+            })
+            
+        }
     }
     module.extraClasses = function(key, clas) {
         if (key == null || clas == null) return false;
