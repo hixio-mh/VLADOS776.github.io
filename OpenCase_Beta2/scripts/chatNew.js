@@ -544,6 +544,7 @@ var Chat = (function(module) {
             time: time,
             text: text,
             attachments: attachments,
+            myMessage: myMessage,
             type: type,
             group: group,
             flag: flag,
