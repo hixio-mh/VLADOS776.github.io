@@ -47,6 +47,23 @@
         font-size: 16px;
         color: #616161;
     }
+    .online {
+        position: absolute;
+        top: 9px;
+        right: 10px;
+        z-index: 50;
+        font-weight: bold;
+        color: #fff;
+    }
+    .online:after {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #00dc44;
+        margin-left: 5px;
+        border-radius: 50px;
+    }
     </style>
 </head>
 
@@ -54,6 +71,7 @@
     <div class="site-overlay"></div>
     <div id="container">
         <div class="navigationBar" data-menu-EN="Chat" data-menu-RU="Чат"></div>
+        <div class='online' id='online'></div>
         <div id="login" style='display: none;' data-loc-group="login">
             <div class='input-group input-group-sm'>
                 <span class='input-group-addon'><i class='glyphicon glyphicon-envelope'></i></span>
@@ -114,9 +132,9 @@
                             <i class='fa fa-times'></i>
                         </div>
                     </div>
+               </div>
             </div>
         </div>
-    </div>
     
     <!-- Modal -->
     <div id="moder_modal" class="modal fade" role="dialog">

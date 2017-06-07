@@ -165,6 +165,10 @@ var Chat = (function(module) {
             console.log('disconnect');
         })
         
+        socket.on('online', function(count) {
+            $('#online').text(count);
+        })
+        
         socket.on('Need token', function() { sendToken() });
         socket.on('ban', function(ban) {
             var tmp = _t('other.chatban', 'You cant\'t write. You have ban.<br><b>Reason</b>: ${1}.<br><b>End of ban</b>: ${2}');
