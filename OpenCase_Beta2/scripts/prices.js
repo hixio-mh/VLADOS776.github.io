@@ -44413,5 +44413,26 @@ var Prices = {
         },
         "souvenir": {}
     }
+},
+    "934": {
+    "item_id": 934,
+    "type": "★ M9 Bayonet",
+    "skinName": "Gamma Doppler",
+    "prices": {
+        "default": {
+            "3": {
+                "market": 674.7
+            },
+            "4": {
+                "market": 514.98
+            }
+        },
+        "stattrak": {
+            "4": {
+                "market": 848.97
+            }
+        },
+        "souvenir": {}
+    }
 }
 }

@@ -6300,7 +6300,7 @@ var Items = {
             "rarity": "rare",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJfx_LLZTRB7dCJlZG0k_b5MqjSg3husZVOhuDG_ZjKhFWmrBZyNWHycNPDdg43Z17Rq1C2kLvogZfvuJTJyHM3vSB05HnemhC10kwfO_sv26Ix5Gf1Rg",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6317,7 +6317,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_aq_damascus_90_light_large.f6eecc56e9d69742d80ad0bf59695a89cb8d9684.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6334,7 +6334,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_aq_damascus_90_light_large.b53066882790815ba15f508ac268f29cd6cedf2a.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6351,7 +6351,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aq_damascus_90_light_large.9bd7e0f1d32a177ab01bc8c52a51dac9ad61e5a9.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6368,7 +6368,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_aq_damascus_90_light_large.682e0e63f745ebea76a093e8ff4f7cdb17d5d093.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6385,7 +6385,7 @@ var Items = {
             "rarity": "rare",
             "img": "Phases/Falchion-Doppler/p1.webp",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6427,7 +6427,7 @@ var Items = {
             "rarity": "rare",
             "img": "Phases/Daggers-Doppler/p1.webp",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6469,7 +6469,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_am_marble_fade_light_large.fce3f43a307394dcfa71988787dbb5d2ef6a3611.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6486,7 +6486,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_am_marble_fade_light_large.6702e01c69bbdd050ed27964385eaf57fd96d579.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6503,7 +6503,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_aq_steel_knife_light_large.1e93732da4a5534deaa88e65c22274c57f2cd924.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6520,7 +6520,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_aq_steel_knife_light_large.3a61b0cf23bfa737be1cac012f4cdcde14347921.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6537,7 +6537,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aq_steel_knife_light_large.6d5b1f9bbc924ae1335175a262a69b1587448ccc.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6554,7 +6554,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_aq_steel_knife_light_large.033e7505158efd2a1758a7144ccccfb554fcf576.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6571,7 +6571,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_aq_steel_knife_light_large.2753f1bc2008c99c34103b2b247801d3eb881d20.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6588,7 +6588,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_an_tiger_orange_light_large.dc3ed0014b7b2024a7fbcaaaca1fbbfae3331735.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6605,7 +6605,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_an_tiger_orange_light_large.c467ce8f738dd9bce8cd7af54610f9186dadd362.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6622,7 +6622,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_so_purple_falchion_light_large.010830e050576efeb80b3e046d9dccf6ee21c31b.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6639,7 +6639,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_cu_purple_huntsman_light_large.3d9355c0a0c0c170d10856ebc2492fef61832fbc.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6656,7 +6656,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_so_purple_light_large.af202da5d81b8667477667b6db332769a96bf80e.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6673,7 +6673,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_push_so_purple_light_large.af1841afc5146b836e87e6afab49f9a78d90ed1b.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -6690,7 +6690,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_so_purple_light_large.116c48bf6a4a33f56d11b3204919422aa58f9337.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7140,7 +7140,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_gs_bayonet_autotronic_light_large.4b7f809f4ee434dff8f270b041100012f39c5ebe.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7157,7 +7157,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_cu_bayonet_lore_light_large.372c7e0ec654f3be5d53e87cbbac3ab160c8c76e.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7191,7 +7191,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_hy_ocean_knife_light_large.d262ade9c249afcfbeeacf19deef49ccb0049c1a.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7208,7 +7208,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_am_marked_up_light_large.c2a4dbca9338c1a5ffaa246715696f92168a49bc.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7225,7 +7225,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_am_marble_fade_light_large.adc286f39c98a9630620a97831ca2e5050229dff.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7242,7 +7242,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_so_purple_light_large.c7f08cb18f5cc792a27e186ee630614b93c35200.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7259,7 +7259,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_an_tiger_orange_light_large.780ff3a58d01a73d4d7d755adbdca46483d13faf.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7276,7 +7276,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_damascus_light_large.bd2b3b3fcd70fdec736a782fa5108ea9286d86a8.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7293,7 +7293,7 @@ var Items = {
             "rarity": "rare",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotLu8JAllx8zJYAJR-NmzmL-Amf7yNoTZk2pH8fp9i_vG8MLx2wTs-RU5YmmhIoaUdQ49NV3Q8li-wLzthZ7utMjNwSRjuSJw53ragVXp1ir4a_TV",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7310,7 +7310,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_sp_tape_urban_light_large.81c4d2a06c2d8c271a2b6de4bc47f0cb0d3f32be.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7327,7 +7327,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aa_fade_light_large.5ac4f422043b48b47e4453cc250c79fda3e78855.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7344,7 +7344,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_am_zebra_light_large.2234064362204e87ea5ce3f997dc691d844d9168.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7361,7 +7361,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_blued_light_large.40905736c36dbdb9d08077ddaebb06cbb237f583.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7378,7 +7378,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_hy_webs_light_large.9246001fd8c8b0c077dc2836ea7271a4a020750b.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7395,7 +7395,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_oiled_light_large.920866e2a1f17fda7702e0b4cb95f45a8a8c0070.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7412,7 +7412,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_aq_forced_light_large.460998cd194f90f65aec10ccaea8644b42430fc0.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7429,7 +7429,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_so_night_light_large.11b2117af2e0f240111305857ab93e0091e347ed.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7446,7 +7446,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_hy_ddpat_light_large.f53cb47d0ef8b431116008ec3896f8cedb712fb5.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7463,7 +7463,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_hy_forest_boreal_light_large.4ecbfdb740d7345cb38430c1a4da15cec468b5ce.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7480,7 +7480,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_sp_dapple_light_large.5c6962d79b65eb2053770a887facae88b361fcfe.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7497,7 +7497,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_sp_mesh_tan_light_large.f0c1b71fd210b74b42dbf78253556e7ba9a99d15.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7514,7 +7514,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_am_marble_fade_light_large.ee64f39331b11b42f6ef7e00f570bc0da09cf0ee.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7559,7 +7559,7 @@ var Items = {
     }
     ],
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7576,7 +7576,7 @@ var Items = {
             "rarity": "rare",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_an_tiger_orange_light_large.a8cf2f4214c950f59798f15d0013f7a33e6972fa.png",
             "can": {
-                "buy": false,
+                "buy": true,
                 "sell": true,
                 "trade": true,
                 "contract": true,
@@ -7593,7 +7593,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_aa_fade_light_large.fd85e3d9fbd875ca2551b3758f5374e33d167fbf.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7610,7 +7610,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_hy_webs_light_large.d03e755f33f66df9ee9d8b1cf50b633ff458978b.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7627,7 +7627,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_survival_bowie_sp_mesh_tan_light_large.360aa198bded3bec8d3c051bd1d6dc7270b3b91f.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7644,7 +7644,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_am_doppler_phase2_b_light_large.13ae18aef1c12378596266b5dc03647d7eee1345.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "souvenir": false,
     },
     patternChance: 20,
@@ -7679,7 +7679,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_am_marble_fade_light_large.c9170bcb854e5d3ed0f3a22bae8a4513fd46954a.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7696,7 +7696,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_an_tiger_orange_light_large.2fece0b06a84ce2bb6e15e7cd3a37f400f218940.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7713,7 +7713,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_aq_blued_light_large.969518ce760404d72095af853f90df7582e7889f.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7730,7 +7730,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_hy_forest_boreal_light_large.f817483d1e53b69919a8a11349b075c27d8829b1.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7747,7 +7747,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_butterfly_sp_mesh_tan_light_large.9c30ece5beb38356f406e5c5fa56e7f4056f0757.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7764,7 +7764,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aa_fade_light_large.1db6bc12f4b49677b330382c3e5af21f46d0c124.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7781,7 +7781,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_am_zebra_light_large.3cbce2191d2a20b88e610d8180c2f4a9ee0066ca.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7798,7 +7798,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_hy_webs_light_large.9c355c7819b8fd993b543bceec976e798e6e8633.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7815,7 +7815,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aq_oiled_light_large.ddcd8f4a87e08ab50fe3241e6791896125c48e03.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7832,7 +7832,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_hy_forest_boreal_light_large.9bf4abd73deee0ae82ce0a8670e1056d3a546107.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7849,7 +7849,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_aq_blued_light_large.ead09a065b115e707a59aa49689af0ed3dd8d1f3.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7866,7 +7866,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_hy_ddpat_light_large.3b2857b99bb2aa1b1337248d8a1ae24aae1bf450.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7883,7 +7883,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_sp_dapple_light_large.072bd4143a0c769f2d78835eaee88de49c849bd3.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7900,7 +7900,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_falchion_sp_mesh_tan_light_large.eccb7999f574f5e1080dfef159c3903c4e6db0de.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7917,7 +7917,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_cu_gut_stonewash_light_large.52a1c223ee5d85ddb2242c75a67c1f2f49b0e0b9.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7934,7 +7934,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_gs_gut_autotronic_light_large.160e79d868da6ebb84c52e835aaf24ab9c6334f1.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7951,7 +7951,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_cu_gut_lore_light_large.5cf5a77978675bd3d276a86017e6d1fcacd7bf00.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -7968,7 +7968,7 @@ var Items = {
     "rarity": "rare",
     "img": "Phases/Gut-Gamma-Doppler/p1.webp",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8004,7 +8004,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_hy_ocean_knife_light_large.649f890d55e6ee2987e988e44a0f52e1a5020486.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8021,7 +8021,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_am_marked_up_light_large.08dac4cfbf7b626df37bb2b6ffd3d07d2fc86988.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8038,7 +8038,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_am_marble_fade_light_large.85f1cad22ba4e6716045d53e9e0cf5459760d152.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8055,7 +8055,7 @@ var Items = {
     "rarity": "rare",
     "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf1ObcTjxT08-ikYWHqPz6Or3UqWNU6dNoteXA54vwxgDlrxdtZjr3J4GXdQI4aA6DrgO_kLzvhp6-vczAyyA36ykk5XeLn0epwUYbYI3sIZ8",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8072,7 +8072,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_so_purple_light_large.dbe6989416501166c43bd1cfb18ee835dbfa0ac7.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8089,7 +8089,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_aq_damascus_light_large.9eaf9c050c3f5dfe5c647d361538a1ea7001f835.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8106,7 +8106,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_sp_mesh_tan_light_large.5f58d777d76148ba031b587fff1b0b3465d2c441.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8123,7 +8123,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_hy_ddpat_light_large.855f6ca62686c8f365e503d379b07b4c41a8658a.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8140,7 +8140,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_aq_forced_light_large.3f5b057c710fc4403f54d3979f482f511eb69d8b.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8157,7 +8157,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_sp_dapple_light_large.657af646f54600080b5c5e79133410eb47397fd6.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8174,7 +8174,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_sp_tape_urban_light_large.71f4811888602d3b48f35e030bd39ecbcac7f22e.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8191,7 +8191,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_hy_forest_boreal_light_large.b28a4cfb134cd8be5da39f82db0df407577478e8.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8208,7 +8208,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_am_marble_fade_light_large.3efc76764c1aa62477fee4b4df1a380b115f5103.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8225,7 +8225,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_am_doppler_phase2_light_large.8b1857e53cdda632984e78da3198148f979ba750.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8267,7 +8267,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_an_tiger_orange_light_large.961c75c287d5cba0859ef13ed8eb638d707b1129.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8284,7 +8284,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_aq_forced_light_large.ba0ab23cf7421f130454b3e1816eb3302b588712.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8301,7 +8301,7 @@ var Items = {
     "rarity": "rare",
     "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_tactical_sp_tape_urban_light_large.b1741a783b7017d5bf191ec9ab8f3a5427718294.png",
     "can": {
-        "buy": false,
+        "buy": true,
         "sell": true,
         "trade": true,
         "contract": true,
@@ -8413,6 +8413,42 @@ var Items = {
         "inCase": true,
         "specialCase": true
     }
+}, {
+    "id": 934,
+    "type": "★ M9 Bayonet",
+    "skinName": "Gamma Doppler",
+    "rarity": "rare",
+    "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_m9_bayonet_am_gamma_doppler_phase1_light_large.4980cb2bb09e19a48a04ae19a0e6353426e81cce.png",
+    "can": {
+        "buy": true,
+        "sell": true,
+        "trade": true,
+        "contract": true,
+        "bot": true,
+        "stattrak": true,
+        "souvenir": false,
+        "inCase": true,
+        "specialCase": true
+    },
+    patternChance: 20,
+    patterns: [
+        {
+            img: 'Phases/M9-Bayonet-Gamma-Doppler/p1.webp',
+            chance: 50
+        }, {
+            img: 'Phases/M9-Bayonet-Gamma-Doppler/p2.webp',
+            chance: 50
+        }, {
+            img: 'Phases/M9-Bayonet-Gamma-Doppler/p3.webp',
+            chance: 50
+        }, {
+            img: 'Phases/M9-Bayonet-Gamma-Doppler/p4.webp',
+            chance: 50
+        }, {
+            img: 'Phases/M9-Bayonet-Gamma-Doppler/emerald.webp',
+            chance: 20
+        }, 
+    ]
 }
     ],
 
