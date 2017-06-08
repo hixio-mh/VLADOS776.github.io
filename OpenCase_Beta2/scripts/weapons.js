@@ -7545,9 +7545,6 @@ var Items = {
                     img: 'Phases/Bowie-Doppler/p4.webp',
                     chance: 50
     }, {
-                    img: 'Phases/Bowie-Doppler/p4.webp',
-                    chance: 50
-    }, {
                     img: 'Phases/Bowie-Doppler/ruby.webp',
                     chance: 10
     }, {
