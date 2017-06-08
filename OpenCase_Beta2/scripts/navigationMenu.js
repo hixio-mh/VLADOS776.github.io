@@ -72,7 +72,7 @@ $(function () {
         </ul></li> \
         <li class="pushy-link"><a href="inventory.html"><span class="icon icon-list"></span><span data-loc="inventory">Inventory</span></a></li>\
         <li class="pushy-link"><a href="market.html"><span class="icon icon-cart"></span><span data-loc="market">Market</span></a></li> \
-        <li class="pushy-link"><a href="chat.html"><span class="icon icon-bubbles2"></span><span data-loc="chat">Chat</span></a></li> \
+        <li class="pushy-link"><a href="chatNew.html"><span class="icon icon-bubbles2"></span><span data-loc="chat">Chat</span></a></li> \
         <li class="pushy-link"><a href="statistic.html"><span class="icon icon-stats-bars"></span><span data-loc="statistic">Statistic</span></a></li> \
         <li class="pushy-link"><a href="faq.html"><span class="icon icon-question"></span><span data-loc="faq">FAQ</span></a></li> \
         <li class="pushy-link"><a href="news.html"><span class="icon icon-bullhorn"></span><span data-loc="updates">Updates</span></a></li> \
