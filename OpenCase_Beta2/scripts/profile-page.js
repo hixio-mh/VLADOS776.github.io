@@ -430,7 +430,7 @@ $(function () {
             $('.trade-back').hide();
             showMyTrades();
             LOG.log({
-                action: 'Check my trades',
+                action: 'Check my trades'
             })
         }
         else {
@@ -621,6 +621,7 @@ $(function () {
         var otherAva = $(this).find('.trade__other img').attr('src');
         $('.other-user-profile-img').attr('src', otherAva);
         $('.user-profile-img').attr('src', avatarUrl(Player.avatar));
+        $('#cancel-trade').prop('disabled', false);
         
         fbProfile.currentTrade = {
             id: $(this).data('tradeid')
@@ -848,6 +849,7 @@ $(function () {
     })
     $(document).on('click', '#cancel-trade', function () {
         var tradeID = $(this).data('tradeid');
+        $('#cancel-trade').prop('disabled', true);
         fbProfile.tradeStatus(tradeID, function (status) {
             if (status != 'done' && status != 'canceled') {
                 fbProfile.setTradeStatus(tradeID, 'canceled');
