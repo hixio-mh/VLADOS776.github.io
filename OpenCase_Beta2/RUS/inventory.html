@@ -395,6 +395,8 @@
                         price: price,
                         balance: Player.doubleBalance
                     })
+                    
+                    customEvent({ type: 'items', event: 'sell', item_id: wp.item_id })
 
                     var sum = 0;
                     $('li.weapon').each(function(i, item) {
@@ -437,6 +439,7 @@
 
                     lg.new = item.titleText();
                     LOG.log(lg);
+                    customEvent({ type: 'items', event: 'rename', item_id: item.item_id, name: item.nameTag })
                 })
             }
             function lockToggle() {
@@ -453,11 +456,15 @@
                     $('#startContract').hide();
                     $('#rename_button').hide();
                     $('.weapon[data-id=' + wp.id + ']').append('<div class="lock lock-li"><span class="fa fa-lock"></span></div>');
+                    
+                    customEvent({ type: 'items', event: 'lock', item_id: wp.item_id })
                 } else {
                     if (wp.can.sell) $('#sellWeapon').show();
                     if (wp.can.rename) $('#rename_button').show();
                     if (wp.can.contract) $('#startContract').show();
                     $('.weapon[data-id=' + wp.id + '] .lock-li').remove()
+                    
+                    customEvent({ type: 'items', event: 'unlock', item_id: wp.item_id })
                 }
             }
             
@@ -540,6 +547,8 @@
                     statisticPlusOne('contracts');
                     Sound("contract", "play");
                     $('#cancelContract').click();
+                    
+                    customEvent({ type: 'items', event: 'contract', item_id: newWeapon.item_id })
                 })
             }
             function cancelContract() {
@@ -737,6 +746,8 @@
                             })
                             cancelSell = true;
                         }
+                        
+                        customEvent({ type: 'items', event: 'sell', item_id: wp.item_id })
                     })
                     if (cancelSell) {
                         $('#selectBar > *').prop('disabled', false);

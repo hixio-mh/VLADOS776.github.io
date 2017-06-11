@@ -187,6 +187,7 @@ var CustomCases = {
                     action: 'Success Boost',
                     case_id: CustomCases.caseId
                 })
+                customEvent({ type: 'customCase', event: 'boost', case: CustomCases.caseId })
             }
         })
         
@@ -215,6 +216,8 @@ var CustomCases = {
             if (creatingStatus.status === 'success') {
                 CustomCases.socket.emit('caseInfo', creatingStatus.id);
                 $('#caseName').text($('#case_name').val());
+                
+                customEvent({ type: 'customCase', event: 'create', case: creatingStatus.id })
             } else {
                 CustomCases.alert(creatingStatus.msg)
             }
@@ -660,7 +663,7 @@ var CustomCases = {
                 name: CustomCases.win.type + ' | ' + CustomCases.win.nameOrig
             }
         })
-        
+        customEvent({ type: 'customCase', event: 'open', case: CustomCases.caseId, item_id: CustomCases.win.item_id })
         
         //Statistic
         Level.addEXP(1);

@@ -3,7 +3,8 @@ var DAILY_REWARD_POINTS = 5,
     OPEN_CASE_REWARD_POINTS = 1,
     GAME_WIN_REWARD_POINTS = 2,
     //FREE_CASE_INTERVAL_MS = 300000;
-    FREE_CASE_INTERVAL_MS = 1.8e+6; //30 минут
+    FREE_CASE_INTERVAL_MS = 1.8e+6, //30 минут
+    SHOW_LAST_NEWS = 3;
 
 // ===== PLAYER SETTINGS =====
 var Player = {
@@ -50,7 +51,8 @@ function avatarUrl(avatar) {
 }
 
 // ===== RANKS =====
-var Ranks = [{
+var Ranks = [
+    {
     name: 'Silver I',
     points: 0,
     doubleBonus: 50
@@ -282,3 +284,497 @@ var Level = (function(module) {
     }
     return module;
 })(Level || {})
+
+var Rewards = (function() {
+    var module = {};
+    
+    var rewardList = {
+        1: {
+            points: 1000,
+            exp: 1
+        },
+        2: {
+            points: 2000,
+            exp: 3
+        },
+        3: {
+            points: 3000,
+            exp: 5
+        },
+        4: {
+            points: 5000,
+            exp: 8
+        },
+        5: {
+            points: 10000,
+            exp: 12
+        },
+        6: {
+            points: 15000,
+            exp: 16
+        },
+        7: {
+            points: 20000,
+            exp: 20
+        },
+        8: {
+            points: 25000,
+            exp: 24
+        }
+    }
+    
+    module.getDay = function() {
+        var day = parseInt(getStatistic('rewards-day', '1'));
+        var lastReward = parseInt(getStatistic('rewards-last', '0'));
+        if (lastReward === 0) return 1;
+        
+        
+    }
+    
+    //module.get
+    
+    return module;
+})()
+var Missions = (function() {
+    var module = {};
+    var config = {
+        missionsPerDay: 5
+    }
+    var missionsActive = getStatistic('missionsActive', 'false') === 'true';
+    if (!missionsActive) {
+        module.trigger = function() {}
+        return module;
+    }
+    var missions = [
+        {
+            id: 0,
+            type: 'case',
+            event: 'open',
+            description: {
+                RU: 'Открыть кейс 50 раз подряд',
+                EN: 'Open case 50 times in a row'
+            },
+            caseId: 24,
+            times: 50,
+            reward: {
+                exp: 10,
+                money: 10000
+            }
+        }, {
+            id: 1,
+            type: 'case',
+            event: 'open',
+            description: {
+                RU: 'Открыть специальный кейс',
+                EN: 'Open special case'
+            },
+            caseId: [48, 49, 50, 51, 52, 53],
+            times: 1,
+            reward: {
+                exp: 5,
+                money: 500
+            }
+        }, {
+            id: 2,
+            type: 'items',
+            event: 'contract',
+            description: {
+                RU: 'Скрафтить Dragon Lore',
+                EN: 'Craft Dragon Lore'
+            },
+            item: { item_id: 695 },
+            reward: {
+                exp: 20,
+                money: 100000
+            }
+        }, {
+            id: 3,
+            type: 'game',
+            game: 'rps',
+            event: 'win',
+            times: 5,
+            description: {
+                RU: 'Выиграть в КНБ 5 раз',
+                EN: 'Win in RPS 5 times'
+            },
+            reward: {
+                exp: 15,
+                money: 10000
+            }
+        }, {
+            id: 4,
+            type: 'game',
+            game: 'rps',
+            event: 'win',
+            times: 10,
+            description: {
+                RU: 'Выиграть в КНБ 10 раз',
+                EN: 'Win in RPS 10 times'
+            },
+            reward: {
+                exp: 25,
+                money: 20000
+            }
+        }, {
+            id: 5,
+            type: 'game',
+            game: 'rps',
+            event: 'win',
+            times: 5,
+            inARow: true,
+            description: {
+                RU: 'Выиграть в КНБ 5 раз подряд',
+                EN: 'Win in RPS 5 times in a row'
+            },
+            reward: {
+                exp: 25,
+                money: 20000
+            }
+        }, {
+            id: 6,
+            type: 'game',
+            game: 'jackpot',
+            event: 'win',
+            times: 1,
+            description: {
+                RU: 'Выиграть в Джекпот',
+                EN: 'Win in Jackpot'
+            },
+            reward: {
+                exp: 3,
+                money: 2000
+            }
+        }, {
+            id: 7,
+            type: 'game',
+            game: 'double',
+            event: 'win',
+            times: 10,
+            description: {
+                RU: 'Выиграть 10 раз в Дабл',
+                EN: 'Win in Double 10 times'
+            },
+            reward: {
+                exp: 5,
+                money: 5000
+            }
+        }, {
+            id: 8,
+            type: 'game',
+            game: 'double',
+            event: 'win',
+            times: 3,
+            inARow: true,
+            description: {
+                RU: 'Выиграть в Дабл 3 раза подряд',
+                EN: 'Win in Double 3 times in a row'
+            },
+            reward: {
+                exp: 8,
+                money: 8000
+            }
+        }, {
+            id: 9,
+            type: 'items',
+            event: 'sell',
+            times: 10,
+            description: {
+                RU: 'Продать 10 предметов',
+                EN: 'Sell 10 items'
+            },
+            reward: {
+                exp: 3,
+                money: 2000
+            }
+        }, {
+            id: 10,
+            type: 'items',
+            event: 'buy',
+            times: 10,
+            description: {
+                RU: 'Купить 10 предметов',
+                EN: 'Buy 10 items'
+            },
+            reward: {
+                exp: 3,
+                money: 2000
+            }
+        }, {
+            id: 11,
+            type: 'items',
+            event: 'rename',
+            times: 3,
+            description: {
+                RU: 'Переименовать 3 предмета',
+                EN: 'Rename 3 items'
+            },
+            reward: {
+                exp: 2,
+                money: 3000
+            }
+        }, {
+            id: 12,
+            type: 'items',
+            event: 'rename',
+            times: 3,
+            description: {
+                RU: 'Переименовать 3 предмета',
+                EN: 'Rename 3 items'
+            },
+            reward: {
+                exp: 2,
+                money: 3000
+            }
+        }, {
+            id: 13,
+            type: 'case',
+            event: 'open',
+            times: 1,
+            item_id: [766,767,768,769,770,771,772,773,786,787,788,789,790,791,792,793,794,795,796],
+            description: {
+                RU: 'Выбить перчатки из кейса',
+                EN: 'Get gloves from case'
+            },
+            reward: {
+                exp: 5,
+                money: 8000
+            }
+        }, {
+            id: 14,
+            type: 'customCase',
+            event: 'open',
+            times: 10,
+            description: {
+                RU: 'Открыть 10 кейсов игроков',
+                EN: 'Open 10 custom cases'
+            },
+            reward: {
+                exp: 3,
+                money: 3000
+            }
+        }, {
+            id: 15,
+            type: 'game',
+            event: 'coinflip',
+            times: 5,
+            description: {
+                RU: 'Выиграть 5 раз в Монетке',
+                EN: 'Win in Coinflip 5 times'
+            },
+            reward: {
+                exp: 3,
+                money: 10000
+            }
+        }, {
+            id: 16,
+            type: 'game',
+            event: 'coinflip',
+            times: 2,
+            inARow: true,
+            description: {
+                RU: 'Выиграть в Монетке 2 раза подряд',
+                EN: 'Win in Coinflip 5 times in a row'
+            },
+            reward: {
+                exp: 5,
+                money: 15000
+            }
+        }, {
+            id: 17,
+            type: 'game',
+            event: 'minesweeper',
+            times: 3,
+            description: {
+                RU: 'Выиграть в Сапер 3 раза',
+                EN: 'Win in Minesweeper 3 times'
+            },
+            reward: {
+                exp: 5,
+                money: 10000
+            }
+        }, {
+            id: 18,
+            type: 'game',
+            event: 'dice',
+            times: 5,
+            description: {
+                RU: 'Выиграть в Кости 5 раз',
+                EN: 'Win in Dice 5 times'
+            },
+            reward: {
+                exp: 5,
+                money: 10000
+            }
+        }
+    ]
+    var current = [],
+        lastUpdate = null;
+    
+    try { 
+        var storage = JSON.parse(getStatistic('missions', '{}'));
+        
+        if (storage.current) current = storage.current;
+        if (storage.lastUpdate) lastUpdate = storage.lastUpdate;
+            
+        current = current.map(function(miss) { return new Mission(miss) });
+    } catch(e) {}
+    
+    if (current.length === 0 || new Date(lastUpdate).getDate() !== new Date().getDate()) {
+        newMissions();
+    }
+    
+    $(document).on('loading.menu', function() {
+        updateInMenu();
+    })
+    
+    
+    module.getMissions = function() {
+        return missions;
+    }
+    module.getMission = function(id) {
+        id = id || 0;
+        
+        return new Mission(missions[id]);
+    }
+    module.current = function(id) {
+        return current[id];
+    }
+    module.currentMissions = function() {
+        return current;
+    }
+    module.trigger = function(act) {
+        for (var i = 0; i < current.length; i++) {
+            var mission = current[i];
+            if (!mission.isComplete() && mission.raw.type === act.type) {
+                if (act.type === 'game' && mission.raw.game === act.game) {
+                    if (act.event === mission.raw.event) {
+                        mission.step();
+                    } else {
+                        if (mission.raw.inARow && /lose|win/i.test(mission.raw.event) && /lose|win/i.test(act.event) ) {
+                            mission.reset();
+                        }
+                    }
+                } else {
+                    if (act.event === mission.raw.event) {
+                        if (!act.caseId || (typeof mission.raw.caseId === 'number' && act.caseId === mission.raw.caseId) || (Array.isArray(mission.raw.caseId) && mission.raw.caseId.indexOf(act.caseId) !== -1)) {
+                            if (!mission.raw.item_id || (typeof mission.raw.item_id === 'number' && act.item_id === mission.raw.item_id) || (Array.isArray(mission.raw.item_id) && mission.raw.item_id.indexOf(act.item_id) !== -1)) {
+                                mission.step(act.count || 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    function newMissions() {
+        current = [];
+        for (var i = 0; i < config.missionsPerDay; i++) {
+            var rnd = Math.rand(0, missions.length - 1);
+            var mis = new Mission(missions[rnd])
+            if (uniqMission(mis)) {
+                current.push(mis);
+            } else {
+                i--;
+            }
+        }
+        lastUpdate = Date.now();
+        saveToStore();
+        $(document).trigger('missions.new_missions');
+        
+        function uniqMission(mission) {
+            for (var i = 0; i < current.length; i++) {
+                var miss = current[i];
+                if (miss.raw.id === mission.raw.id) return false;
+            }
+            
+            return true;
+        }
+    }
+    function saveToStore() {
+        var store = {};
+        store.current = current;
+        store.lastUpdate = lastUpdate;
+        
+        saveStatistic('missions', store);
+    }
+    function updateInMenu() {
+        var $container = $('#menu-missions #missions-list');
+        $container.empty();
+        
+        var markup = "<li class='mission{{if currStep >= steps}} completed{{/if}}'>${description} <span class='mission-progress'>${parseInt(currStep * 100 / steps)}%</span></li>";
+        
+        $.template('missionsTemplate', markup);
+        var html = '<ul class="missions-list></ul>';
+        var $miss = $.tmpl('missionsTemplate', current);
+        $container.append($miss);
+    }
+        
+    // Mission Class
+    function Mission(mission) {
+        mission = mission || {};
+        
+        if (mission.raw) {
+            this.raw = mission.raw;
+        } else {
+            this.raw = mission;
+        }
+        
+        this.description = this.raw.description ? this.raw.description[Settings.language] || this.raw.description.EN : '';
+        
+        this.steps = mission.steps || mission.times || 1;
+        this.currStep = mission.currStep || 0;
+    }
+    Mission.prototype.step = function(step) {
+        step = step || 1;
+        
+        
+        this.currStep += step;
+        if (this.currStep > this.steps) this.currStep = this.steps;
+        $(document).trigger('missions.step', this.raw);
+        if (this.currStep === this.steps) this._complete();
+        saveToStore();
+        updateInMenu();
+    }
+    Mission.prototype.reset = function() {
+        this.currStep = 0;
+        $(document).trigger('missions.reset', this.raw);
+    }
+    Mission.prototype.getProgress = function() {
+        return this.currStep * 100 / this.steps;
+    }
+    Mission.prototype.isComplete = function() {
+        return this.currStep >= this.steps;
+    }
+    Mission.prototype.reset = function() {
+        this.currStep = 0;
+        saveToStore();
+        updateInMenu();
+        return;
+    }
+    Mission.prototype._complete = function() {
+        if (this.raw && this.raw.reward) {
+            var reward = this.raw.reward;
+            if (reward.exp) {
+                Level.addEXP(reward.exp);
+            }
+            if (reward.money) {
+                Player.doubleBalance += reward.money;
+                saveStatistic('doubleBalance', Player.doubleBalance);
+            }
+            $(document).trigger('missions.complete', this.raw);
+            
+            try {
+                $.notify({
+                    title: _t('other.mission_complete', 'Mission complete'),
+                    message: this.description
+                }, {
+                    type: 'success'
+                })
+            } catch (e) {}
+        }
+    }
+    
+    module.Mission = Mission;
+    return module;
+})();

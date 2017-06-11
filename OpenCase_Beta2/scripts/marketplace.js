@@ -263,6 +263,8 @@ $(document).on('click', '#buy-double', function() {
         price: price,
         balance: Player.doubleBalance
     })
+    
+    customEvent({ type: 'items', event: 'buy', item_id: weapon.item_id, count: count })
 
     checkInventoryForNotification();
 });

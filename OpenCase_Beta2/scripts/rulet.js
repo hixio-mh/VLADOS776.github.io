@@ -214,7 +214,11 @@ function startGame() {
             $(".win").show();
             var timerId2 = 0;
             $($('.casesCarusel').children('.playerAva')[winNumber]).addClass('winnerAnimation');
-            checkInventoryForNotification();
+            if (win.nick == Player.nickname) {
+                customEvent({ type: 'game', game: 'jackpot', event: 'win' });
+            } else if (PlayerInGame) {
+                customEvent({ type: 'game', game: 'jackpot', event: 'lose' });
+            }
             timerId2 = setTimeout(function() {
                 newGame();
             }, 7000);

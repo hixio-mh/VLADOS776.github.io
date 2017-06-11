@@ -161,6 +161,8 @@ var Jackpot = {
                     weapons: win.weapons,
                     room: Jackpot.roomID
                 })
+                
+                customEvent({ type: 'game', game: 'jackpotOnline', event: 'win', weapons: win.weapons, room: Jackpot.roomID })
             })
             
             Jackpot.socket.on('new_game', function(timer) {

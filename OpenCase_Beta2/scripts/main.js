@@ -360,7 +360,6 @@ function statisticPlusOne(cookieName) {
     if (isNaN(stat)) stat = 0;
     saveStatistic(cookieName, stat + 1);
 }
-
 function saveStatistic(key, value, type, crypt) {
     if (key == 'doubleBalance' && isNaN(value)) {
         $(document).trigger('saveNaNBalance');
@@ -397,7 +396,6 @@ function saveStatistic(key, value, type, crypt) {
     if (key == 'doubleBalance')
         $(document).trigger('doublechanged');
 }
-
 function getStatistic(key, defaultVal, crypt) {
     defaultVal = defaultVal || 0;
     crypt = crypt || true;
@@ -425,6 +423,17 @@ function getStatistic(key, defaultVal, crypt) {
     
     return value;
 }
+
+function customEvent(event) {
+    var trigger = event.type;
+    trigger += event.type === 'game' && event.game ? '.' + event.game : '';
+    trigger += event.event ? '.' + event.event : '';
+    
+    $(document).trigger(trigger, event);
+    
+    if (Missions) Missions.trigger(event);
+}
+
 function saveWeapon(weapon) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
@@ -483,7 +492,6 @@ function saveItem(item) {
         }
     })
 }
-
 function saveWeapons(weapons) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
@@ -525,7 +533,6 @@ function saveWeapons(weapons) {
         }
     })
 }
-
 function setHash(ids) {
     if (typeof ids == 'number')
         ids = [ids];
@@ -558,7 +565,6 @@ function setHash(ids) {
     
     this.replace();
 }
-
 function updateWeapon(weapon) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
@@ -587,7 +593,6 @@ function updateWeapon(weapon) {
         }
     })
 }
-
 function updateItem(item) {
     return new Promise(function(resolver, reject) {
         INVENTORY.changed = true;
@@ -638,7 +643,6 @@ function updateItem(item) {
         }
     })
 }
-
 function getWeapon(id) {
     return new Promise(function(resolver, reject) {
         if (isAndroid()) {
@@ -691,7 +695,7 @@ function getItem(id) {
 
                 var request = store.get(id);
                 request.onsuccess = function(event) {
-                    if (request.result == null) return null;
+                    if (request.result == null) return resolver(null);
                     var item = new Item(request.result);
                     item.id = id;
                     if (request.result.hash != 'undefined') {
@@ -1127,16 +1131,6 @@ function connectDB(f) {
             //connectDB(f);
         }
     };
-}
-
-function convertLocalStorageToIndexedDB() {
-    if (typeof inventory != 'undefined' && inventory.length != 0) {
-        connectDB(function(db) {
-            for (var i = 0; i < inventory.length; i++) {
-                saveWeapon(inventory[i]);
-            }
-        })
-    }
 }
 
 function changeLocation(url) {

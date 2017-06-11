@@ -246,3 +246,18 @@ sup.beta {
     font-family: LatoRegular;
     font-weight: 400;
 }
+
+.menu-missions .missions-list .mission {
+    color: #fff;
+    font-size: 14px;
+    font-family: LatoRegular;
+    padding: 2px 0;
+    display: flex;
+}
+.menu-missions .missions-list .mission.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.menu-missions .missions-list .mission .mission-progress {
+    margin-left: auto;
+}

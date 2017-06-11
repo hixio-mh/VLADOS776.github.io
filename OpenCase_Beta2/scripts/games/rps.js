@@ -231,10 +231,12 @@ function endGame(playerWin) {
         saveWeapons(winItems);
         Level.addEXP(2);
         statisticPlusOne('rps-wins');
+        customEvent({ type: 'game', game: 'rps', event: 'win' })
     } else {
         $('.battle-field').addClass('panel-danger');
         $('.status').text(Localization.getString('rps.status.lost'));
         statisticPlusOne('rps-loose');
+        customEvent({ type: 'game', game: 'rps', event: 'lose' })
     }
 
     winItems = [];

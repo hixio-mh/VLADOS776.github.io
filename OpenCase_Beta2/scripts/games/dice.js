@@ -176,7 +176,7 @@ var Dice = {
         
         $('#start_roll').html('<span class="odometer time-2000"></span>');
         
-        Dice.odometer = new Odometer({el: $('.odometer')[0], value: 0, duration: 2000, format: 'ddddd'})
+        Dice.odometer = new Odometer({el: $('.odometer')[0], value: 9999, duration: 2000, format: 'ddddd'})
         Dice.odometer.render();
         
         $('.odometer').html(number);
@@ -184,7 +184,7 @@ var Dice = {
         $('#start_roll').prop('disabled', true);
         
         setTimeout(function() {
-            $('#start_roll').html(Localization.getString('dice.game.end_roll', 'Rolled ${1}. Roll again?').replace('${1}', number));
+            $('#start_roll').html(_t('dice.game.end_roll', 'Rolled ${1}. Roll again?').replace('${1}', number));
 
             var profit = 0;
             if (playerWin) {
@@ -192,10 +192,13 @@ var Dice = {
                 Player.doubleBalance += profit;
                 
                 Level.addEXP(2);
+                customEvent({ type: 'game', game: 'dice', event: 'win', bet: bet, chance: parseFloat($('#oddsWinChance').text()) })
             } else {
                 profit = bet;
                 Player.doubleBalance -= bet;
                 profit *= -1;
+                
+                customEvent({ type: 'game', game: 'dice', event: 'lose', bet: bet, chance: parseFloat($('#oddsWinChance').text()) })
             }
             saveStatistic('doubleBalance', Player.doubleBalance);
             $('#balance').text(Player.doubleBalance);

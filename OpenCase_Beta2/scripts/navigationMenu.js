@@ -47,6 +47,9 @@ $(function () {
                 <span class="menu_rank__next-lvl-exp" data-loc="to_next_level" data-loc-var=\'' + JSON.stringify({1:(Level.nextLvlEXP() - Level.myEXP())}) + '\'></span> \
             </div> \
         </div> \
+        <div id="menu-missions" class="menu-missions">\
+            <ul id="missions-list" class="missions-list"></ul>\
+        </div>\
     </div>';
     
     menuHTML += '<ul> \
@@ -105,6 +108,7 @@ $(function () {
             $(".site-overlay").show();
         }
     })
+    customEvent({ type: 'loading', event: 'menu' })
     
     //More coins modal
     if (isAndroid()) {

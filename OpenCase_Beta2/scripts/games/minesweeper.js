@@ -123,6 +123,8 @@ var Minesweeper = (function() {
                 reward: config.total_reward,
                 balance: Player.doubleBalance
             })
+            
+            customEvent({ type: 'game', game: 'minesweeper', event: 'cashout', bet: config.bet, reward: config.total_reward, mines: config.mines, steps: config.steps })
         })
         
         $('#new_game').on('click', function() {

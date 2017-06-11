@@ -471,7 +471,6 @@ var openCase = {
         
         openCase.status = 'endScroll';
         
-        
         if (Player.doubleBalance < openCase.casePrice()) {
             $(".openCase").prop("disabled", true);
         }
@@ -494,6 +493,8 @@ var openCase = {
             },
             items: winItems
         })
+        
+        customEvent({ type: 'case', event: 'open', case: openCase.caseId, count: openCase.linesCount })
 
         //Statistic
         

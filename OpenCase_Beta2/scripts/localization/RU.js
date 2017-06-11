@@ -527,7 +527,8 @@ var Translation = {
 		"empty_inventory": "Инвентарь пуст. Чтобы пополнить его, <a href=\"cases.html\">откройте пару кейсов.</a>",
 		"ban": {
 			"wrong_ban": "Если вы считаете, что получили бан по ошибке, напишите на почту kurtukovvlad@gmail.com"
-		}
+		},
+        "mission_complete": "Задание выполнено"
 	}
 }
 

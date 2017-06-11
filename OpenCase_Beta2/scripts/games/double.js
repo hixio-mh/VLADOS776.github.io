@@ -136,8 +136,10 @@ function startGame() {
                                 color: playerBet[i].color,
                                 balance: Player.doubleBalance
                             })
+                            customEvent({ type: 'game', game: 'double', event: 'win', color: playerBet[i].color, bet: playerBet[i].bet })
                         } else {
                             statisticPlusOne('double-loose');
+                            customEvent({ type: 'game', game: 'double', event: 'lose', color: playerBet[i].color, bet: playerBet[i].bet })
                         }
 
                     saveStatistic('doubleBalance', Player.doubleBalance, 'Number');
