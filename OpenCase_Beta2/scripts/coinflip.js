@@ -287,6 +287,8 @@ var CoinFlip = {
             else
                 a = winSum > parseFloat(a) ? winSum : parseFloat(a);
             saveStatistic('coinflip-max-win', a.toFixed(2));
+            
+            customEvent({ type: 'game', game: 'coinflip', event: 'win' })
         }
         CoinFlip.Games[CoinFlip.PlayerInGame].winner = winner;
         CoinFlip.Games[CoinFlip.PlayerInGame].player.weapons = [];
@@ -294,8 +296,6 @@ var CoinFlip = {
 
         for (var i = 0; i < CoinFlip.PlayerBet.weapons.length; i++)
             CoinFlip.Games[CoinFlip.PlayerInGame].player.weapons.push(CoinFlip.PlayerBet.weapons[i]);
-
-        checkInventoryForNotification();
 
         CoinFlip.timerId = setTimeout(function() {
             CoinFlip.hideCoin();
