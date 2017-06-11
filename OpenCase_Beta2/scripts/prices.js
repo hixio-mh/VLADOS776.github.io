@@ -43303,7 +43303,6 @@ var Prices = {
             },
             "souvenir": {}
         }
-    }
 },
     "908": {
     "item_id": 908,
