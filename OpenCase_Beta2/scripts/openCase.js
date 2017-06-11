@@ -494,7 +494,9 @@ var openCase = {
             items: winItems
         })
         
-        customEvent({ type: 'case', event: 'open', case: openCase.caseId, count: openCase.linesCount })
+        for (var key in openCase.win) {
+            customEvent({ type: 'case', event: 'open', case: openCase.caseId, count: openCase.linesCount, item_id: openCase.win[key].item_id })
+        }
 
         //Statistic
         

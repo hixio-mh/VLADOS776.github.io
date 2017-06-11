@@ -420,11 +420,11 @@ var Missions = (function() {
             type: 'game',
             game: 'rps',
             event: 'win',
-            times: 5,
+            times: 3,
             inARow: true,
             description: {
-                RU: 'Выиграть в КНБ 5 раз подряд',
-                EN: 'Win in RPS 5 times in a row'
+                RU: 'Выиграть в КНБ 3 раза подряд',
+                EN: 'Win in RPS 3 times in a row'
             },
             reward: {
                 exp: 25,
@@ -555,7 +555,8 @@ var Missions = (function() {
         }, {
             id: 15,
             type: 'game',
-            event: 'coinflip',
+            game: 'coinflip',
+            event: 'win',
             times: 5,
             description: {
                 RU: 'Выиграть 5 раз в Монетке',
@@ -568,7 +569,8 @@ var Missions = (function() {
         }, {
             id: 16,
             type: 'game',
-            event: 'coinflip',
+            game: 'coinflip',
+            event: 'win',
             times: 2,
             inARow: true,
             description: {
@@ -582,7 +584,8 @@ var Missions = (function() {
         }, {
             id: 17,
             type: 'game',
-            event: 'minesweeper',
+            game: 'minesweeper',
+            event: 'win',
             times: 3,
             description: {
                 RU: 'Выиграть в Сапер 3 раза',
@@ -595,7 +598,8 @@ var Missions = (function() {
         }, {
             id: 18,
             type: 'game',
-            event: 'dice',
+            game: 'dice',
+            event: 'win',
             times: 5,
             description: {
                 RU: 'Выиграть в Кости 5 раз',
