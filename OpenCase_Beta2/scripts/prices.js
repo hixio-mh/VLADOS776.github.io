@@ -43263,42 +43263,46 @@ var Prices = {
     }
 },
     "907": {
-    "item_id": 907,
-    "type": "Gut Knife",
-    "skinName": "Black Laminate",
-    "prices": {
-        "default": {
-            "0": {
-                "market": 81
+        "item_id": 907,
+        "type": "★ Gut Knife",
+        "skinName": "Black Laminate",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 64.57
+                },
+                "1": {
+                    "market": 69.23
+                },
+                "2": {
+                    "market": 60.58
+                },
+                "3": {
+                    "market": 77.01
+                },
+                "4": {
+                    "market": 95.35
+                }
             },
-            "1": {
-                "market": 68.14
+            "stattrak": {
+                "0": {
+                    "market": 128.43
+                },
+                "1": {
+                    "market": 110.53
+                },
+                "2": {
+                    "market": 105
+                },
+                "3": {
+                    "market": 130.9
+                },
+                "4": {
+                    "market": 1121
+                }
             },
-            "2": {
-                "market": 72.56
-            },
-            "3": {
-                "market": 80.3
-            },
-            "4": {
-                "market": 128.43
-            }
-        },
-        "stattrak": {
-            "0": {
-                "market": 128.43
-            },
-            "1": {
-                "market": 110.53
-            },
-            "3": {
-                "market": 110.9
-            },
-            "4": {
-                "market": 1
-            }
-        },
-        "souvenir": {}
+            "souvenir": {}
+        }
     }
 },
     "908": {
