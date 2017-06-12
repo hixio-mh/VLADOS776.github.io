@@ -269,6 +269,8 @@ var CoinFlip = {
         if (winner == 'CT') {
             $('.game__bot__img').addClass('winner-img');
             statisticPlusOne('coinflip-loose');
+            
+            customEvent({ type: 'game', game: 'coinflip', event: 'lose' })
         } else {
             $('.game__player__img').addClass('winner-img');
             var allWP = CoinFlip.PlayerBet.weapons.concat(CoinFlip.Games[CoinFlip.PlayerInGame].bot.weapons);

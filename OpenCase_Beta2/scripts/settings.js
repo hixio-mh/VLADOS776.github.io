@@ -617,7 +617,7 @@ var Missions = (function() {
             times: 1,
             description: {
                 RU: 'Успеть забрать в Краш',
-                EN: 'Cachout in Crash'
+                EN: 'Cashout in Crash'
             },
             reward: {
                 exp: 2,
@@ -631,10 +631,15 @@ var Missions = (function() {
     try { 
         var storage = JSON.parse(getStatistic('missions', '{}'));
         
-        if (storage.current) current = storage.current;
+        if (storage.current) current = storage.current.map(function(miss) {
+            return new Mission({
+                steps: miss.steps,
+                currStep: miss.currStep,
+                raw: missions[miss.id]
+            })
+        });
         if (storage.lastUpdate) lastUpdate = storage.lastUpdate;
-            
-        current = current.map(function(miss) { return new Mission(miss) });
+
     } catch(e) {}
     
     if (current.length === 0 || new Date(lastUpdate).getDate() !== new Date().getDate()) {
@@ -646,7 +651,36 @@ var Missions = (function() {
     })
     
     $(document).on('click', 'li.mission', function() {
+        remove();
+        if ($(this).find(".mission-info").length !== 0){
+            return false;
+        }
         
+        var missID = $(this).data('missionid');
+        var miss = Missions.currentMissions().filter(function(itm) {
+            return itm.raw.id === missID
+        });
+        if (!miss) return false;
+        miss = miss[0];
+        
+        var missionInfoTemplate = '<div class="animated flipInX mission-info"><h6>' + _t('missions.info.progress', 'Progress') + '</h6> <div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=${progress} aria-valuemin=0 aria-valuemax=100 style="width:${progress}%">${progress}%</div></div>\
+            <h6>' + _t('missions.info.award', 'Award') + '</h6> <div class="text-center">${raw.reward.money}<i class="double-icon"></i> | ${raw.reward.exp} EXP</div></div>';
+        $.template('missionInfoTemplate', missionInfoTemplate);
+        
+        var progress = parseInt(miss.currStep / miss.steps * 100);
+        miss.progress = progress;
+        $(this).append($.tmpl('missionInfoTemplate', miss))
+        
+        function remove() {
+            if ($('.mission-info')) {
+                $('.mission-info').addClass('flipOutX');
+                $('.mission-info').slideUp('slow');
+
+                setTimeout(function() {
+                    $('.mission-info.flipOutX').remove();
+                }, 1000)
+            }
+        }
     })
     
     module.getMissions = function() {
@@ -716,7 +750,13 @@ var Missions = (function() {
     }
     function saveToStore() {
         var store = {};
-        store.current = current;
+        store.current = current.map(function(miss) {
+            return {
+                steps: miss.steps,
+                currStep: miss.currStep,
+                id: miss.raw.id
+            }
+        });
         store.lastUpdate = lastUpdate;
         
         saveStatistic('missions', store);
@@ -725,10 +765,9 @@ var Missions = (function() {
         var $container = $('#menu-missions #missions-list');
         $container.empty();
         
-        var markup = "<li class='mission{{if currStep >= steps}} completed{{/if}}'>${description} <span class='mission-progress'>${parseInt(currStep * 100 / steps)}%</span></li>";
+        var markup = "<li class='mission{{if currStep >= steps}} completed{{/if}}' data-missionid='${raw.id}'><span class='mission-description'>${description}</span><span class='mission-progress'>${parseInt(currStep * 100 / steps)}%</span></li>";
         
         $.template('missionsTemplate', markup);
-        var html = '<ul class="missions-list></ul>';
         var $miss = $.tmpl('missionsTemplate', current);
         $container.append($miss);
     }

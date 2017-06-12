@@ -20,7 +20,8 @@ var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedD
 var IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
 
 $(function () {
-    //if (!isAndroid()) inventory = getInventory();
+    // Dynamic modals closing by clicking on bg
+    bootbox.setDefaults({ backdrop: true });
     try {
         firebase.auth().onAuthStateChanged(function (user) {
             if (firebase.auth().currentUser != null) {

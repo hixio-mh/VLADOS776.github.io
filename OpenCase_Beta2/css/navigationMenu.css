@@ -253,11 +253,21 @@ sup.beta {
     font-family: LatoRegular;
     padding: 2px 0;
     display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
 }
-.menu-missions .missions-list .mission.completed {
+.menu-missions .missions-list .mission.completed span {
     text-decoration: line-through;
     opacity: 0.5;
 }
 .menu-missions .missions-list .mission .mission-progress {
     margin-left: auto;
+}
+div.mission-info {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.52);
+    padding: 0 10px 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    position: relative;
 }

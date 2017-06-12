@@ -529,7 +529,13 @@ var Translation = {
 			"wrong_ban": "Если вы считаете, что получили бан по ошибке, напишите на почту kurtukovvlad@gmail.com"
 		},
         "mission_complete": "Задание выполнено"
-	}
+	},
+    "missions": {
+        "info": {
+            "progress": "Прогресс",
+            "award": "Награда"
+        }
+    }
 }
 
 }
