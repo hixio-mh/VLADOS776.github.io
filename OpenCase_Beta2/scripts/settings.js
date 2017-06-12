@@ -575,7 +575,7 @@ var Missions = (function() {
             inARow: true,
             description: {
                 RU: 'Выиграть в Монетке 2 раза подряд',
-                EN: 'Win in Coinflip 5 times in a row'
+                EN: 'Win in Coinflip 2 times in a row'
             },
             reward: {
                 exp: 5,
@@ -609,6 +609,20 @@ var Missions = (function() {
                 exp: 5,
                 money: 10000
             }
+        }, {
+            id: 19,
+            type: 'game',
+            game: 'crash',
+            event: 'cashout',
+            times: 1,
+            description: {
+                RU: 'Успеть забрать в Краш',
+                EN: 'Cachout in Crash'
+            },
+            reward: {
+                exp: 2,
+                money: 1000
+            }
         }
     ]
     var current = [],
@@ -631,6 +645,9 @@ var Missions = (function() {
         updateInMenu();
     })
     
+    $(document).on('click', 'li.mission', function() {
+        
+    })
     
     module.getMissions = function() {
         return missions;
@@ -650,12 +667,14 @@ var Missions = (function() {
         for (var i = 0; i < current.length; i++) {
             var mission = current[i];
             if (!mission.isComplete() && mission.raw.type === act.type) {
-                if (act.type === 'game' && mission.raw.game === act.game) {
-                    if (act.event === mission.raw.event) {
-                        mission.step();
-                    } else {
-                        if (mission.raw.inARow && /lose|win/i.test(mission.raw.event) && /lose|win/i.test(act.event) ) {
-                            mission.reset();
+                if (act.type === 'game') {
+                    if (mission.raw.game === act.game) {
+                        if (act.event === mission.raw.event) {
+                            mission.step();
+                        } else {
+                            if (mission.raw.inARow && /lose|win/i.test(mission.raw.event) && /lose|win/i.test(act.event) ) {
+                                mission.reset();
+                            }
                         }
                     }
                 } else {
