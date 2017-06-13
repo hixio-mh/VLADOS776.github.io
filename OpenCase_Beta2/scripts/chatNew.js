@@ -512,7 +512,10 @@ var Chat = (function(module) {
         });
 
         var myMessage = false;
-        if (uid == firebase.auth().currentUser.uid) myMessage = true;
+        if (uid == firebase.auth().currentUser.uid) {
+            myMessage = true;
+            customEvent({ type: 'chat', event: type === 'msg' ? 'message' : type })
+        }
 
         text = text.replace(imgRegExp, '<img src="$1" class="message-img">');
 
