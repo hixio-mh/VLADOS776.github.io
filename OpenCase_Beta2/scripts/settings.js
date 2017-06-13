@@ -785,19 +785,19 @@ var Missions = (function() {
                                 if (act.multiply >= mission.raw.multiply) {
                                     return mission.step();
                                 } else {
-                                    return mission.fail();
+                                    return mission.fail(act);
                                 }
                             }
                             if (mission.raw.color) {
                                 if (act.color === mission.raw.color) {
                                     return mission.step();
                                 } else {
-                                    return mission.fail();
+                                    return mission.fail(act);
                                 }
                             }
                             return mission.step();
                         } else {
-                            mission.fail();
+                            mission.fail(act);
                         }
                     }
                 } else {
