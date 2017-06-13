@@ -461,6 +461,7 @@ var Chat = (function(module) {
         socket.emit('message', message);
         $('#chat__new-message').empty();
         
+        customEvent({ type: 'chat', event: 'message' })
     }
     module.deleteMsg = function(key, msgText, msgAuthor) {
         if (isModerator || isVip) {
