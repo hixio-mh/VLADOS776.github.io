@@ -153,6 +153,7 @@ li.chat__message a img[data-userid] {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
 }
 .message__info__from-time > * {
     margin: 0 2px;
