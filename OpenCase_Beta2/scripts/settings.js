@@ -338,7 +338,13 @@ var Rewards = (function() {
 var Missions = (function() {
     var module = {};
     var config = {
-        missionsPerDay: 5
+        missionsPerDay: 5,
+        allCompleteReward: {
+            money: 10000,
+            exp: 10
+        },
+        notify: true,
+        newMissionsAfterComplete: true
     }
     var missionsActive = getStatistic('missionsActive', 'false') === 'true';
     if (!missionsActive) {
@@ -382,7 +388,7 @@ var Missions = (function() {
                 RU: 'Скрафтить Dragon Lore',
                 EN: 'Craft Dragon Lore'
             },
-            item: { item_id: 695 },
+            item_id: 695,
             reward: {
                 exp: 20,
                 money: 100000
@@ -514,16 +520,18 @@ var Missions = (function() {
             }
         }, {
             id: 12,
-            type: 'items',
-            event: 'rename',
-            times: 3,
+            type: 'game',
+            game: 'crash',
+            event: 'cashout',
+            times: 1,
+            multiply: 10,
             description: {
-                RU: 'Переименовать 3 предмета',
-                EN: 'Rename 3 items'
+                RU: 'Забрать в Краше на 10x',
+                EN: 'Cashout in Crash on 10x'
             },
             reward: {
-                exp: 2,
-                money: 3000
+                exp: 10,
+                money: 50000
             }
         }, {
             id: 13,
@@ -615,13 +623,82 @@ var Missions = (function() {
             game: 'crash',
             event: 'cashout',
             times: 1,
+            multiply: 2,
             description: {
-                RU: 'Успеть забрать в Краш',
-                EN: 'Cashout in Crash'
+                RU: 'Забрать в Краше на 2x',
+                EN: 'Cashout in Crash on 2x'
             },
             reward: {
                 exp: 2,
                 money: 1000
+            }
+        }, {
+            id: 20,
+            type: 'case',
+            event: 'open',
+            times: 10,
+            caseId: [54,55,56,57],
+            description: {
+                RU: 'Открыть 10 кейсов из Мастерской',
+                EN: 'Open 10 Workshop cases'
+            },
+            reward: {
+                exp: 3,
+                money: 2000
+            }
+        }, {
+            id: 21,
+            type: 'customCase',
+            event: 'create',
+            times: 1,
+            description: {
+                RU: 'Создать свой кейс',
+                EN: 'Create custom case'
+            },
+            reward: {
+                exp: 5,
+                money: 5000
+            }
+        }, {
+            id: 22,
+            type: 'game',
+            game: 'double',
+            event: 'win',
+            times: 1,
+            color: 'green',
+            description: {
+                RU: 'Выиграть на зеленом в Дабл',
+                EN: 'Win on green in Double'
+            },
+            reward: {
+                exp: 5,
+                money: 8000
+            }
+        }, {
+            id: 23,
+            type: 'chat',
+            event: 'message',
+            times: 10,
+            description: {
+                RU: 'Написать в чат 10 сообщений',
+                EN: 'Write 10 messages in chat'
+            },
+            reward: {
+                exp: 3,
+                money: 2000
+            }
+        }, {
+            id: 24,
+            type: 'chat',
+            event: 'graffiti',
+            times: 3,
+            description: {
+                RU: 'Отправить в чате 3 граффити',
+                EN: 'Send 3 graffiti in chat'
+            },
+            reward: {
+                exp: 3,
+                money: 2000
             }
         }
     ]
@@ -704,11 +781,23 @@ var Missions = (function() {
                 if (act.type === 'game') {
                     if (mission.raw.game === act.game) {
                         if (act.event === mission.raw.event) {
-                            mission.step();
-                        } else {
-                            if (mission.raw.inARow && /lose|win/i.test(mission.raw.event) && /lose|win/i.test(act.event) ) {
-                                mission.reset();
+                            if (mission.raw.multiply) {
+                                if (act.multiply >= mission.raw.multiply) {
+                                    return mission.step();
+                                } else {
+                                    return mission.fail();
+                                }
                             }
+                            if (mission.raw.color) {
+                                if (act.color === mission.raw.color) {
+                                    return mission.step();
+                                } else {
+                                    return mission.fail();
+                                }
+                            }
+                            return mission.step();
+                        } else {
+                            mission.fail();
                         }
                     }
                 } else {
@@ -722,6 +811,28 @@ var Missions = (function() {
                 }
             }
         }
+    }
+    module.isAllComplete = function() {
+        for (var i = 0; i < current.length; i++) {
+            var miss = current[i];
+            if (!miss.isComplete()) return false;
+        }
+        return true;
+    }
+    module._changeConfig = function(newConfig) {
+        $.extend(config, newConfig);
+    }
+    module._setCurrent = function(ids) {
+        if (typeof ids === 'number') ids = [ids];
+        
+        current = [];
+        ids.forEach(function(id) {
+            current.push(module.getMission(id))
+        })
+        
+        saveToStore();
+        
+        return current;
     }
     
     function newMissions() {
@@ -770,6 +881,29 @@ var Missions = (function() {
         $.template('missionsTemplate', markup);
         var $miss = $.tmpl('missionsTemplate', current);
         $container.append($miss);
+        
+        if (Missions.isAllComplete() && config.notify) {
+            $.notify({
+                message: _t('missions.all_complete', 'All missions completed'),
+            }, {
+                status: 'success'
+            })
+            
+            if (config.newMissionsAfterComplete) {
+                newMissions();
+                updateInMenu();
+            }
+            
+            if (config.allCompleteReward) {
+                if (config.allCompleteReward.money) {
+                    Player.doubleBalance += config.allCompleteReward.money;
+                    saveStatistic('doubleBalance', Player.doubleBalance);
+                }
+                if (config.allCompleteReward.exp) {
+                    Level.addEXP(config.allCompleteReward.exp)
+                }
+            }
+        }
     }
         
     // Mission Class
@@ -789,7 +923,6 @@ var Missions = (function() {
     }
     Mission.prototype.step = function(step) {
         step = step || 1;
-        
         
         this.currStep += step;
         if (this.currStep > this.steps) this.currStep = this.steps;
@@ -814,6 +947,11 @@ var Missions = (function() {
         updateInMenu();
         return;
     }
+    Mission.prototype.fail = function(act) {
+        if (this.raw.inARow && /lose|win/i.test(this.raw.event) && /lose|win/i.test(act.event) ) {
+            mission.reset();
+        }
+    }
     Mission.prototype._complete = function() {
         if (this.raw && this.raw.reward) {
             var reward = this.raw.reward;
@@ -827,12 +965,14 @@ var Missions = (function() {
             $(document).trigger('missions.complete', this.raw);
             
             try {
-                $.notify({
-                    title: _t('other.mission_complete', 'Mission complete'),
-                    message: this.description
-                }, {
-                    type: 'success'
-                })
+                if (config.notify) {
+                    $.notify({
+                        title: _t('other.mission_complete', 'Mission complete'),
+                        message: this.description
+                    }, {
+                        type: 'success'
+                    })
+                }
             } catch (e) {}
         }
     }

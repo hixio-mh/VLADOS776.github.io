@@ -262,7 +262,7 @@ $(function() {
                 balance: Player.doubleBalance
             })
             
-            customEvent({ type: 'game', game: 'crash', event: 'cashout', bet: playerInfo.bet, profit: playerInfo.profit })
+            customEvent({ type: 'game', game: 'crash', event: 'cashout', multiply: message.multiply, bet: playerInfo.bet, profit: playerInfo.profit })
         }
         sortBetTable();
     }
