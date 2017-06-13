@@ -387,6 +387,8 @@ var Chat = (function(module) {
                 if (graffiti.spray() == 0) {
                     GraffitiList = [];
                 }
+                
+                customEvent({ type: 'chat', event: 'graffiti' })
             })
             graffitiPopover.popover('hide');
         })
@@ -458,6 +460,7 @@ var Chat = (function(module) {
         }
         socket.emit('message', message);
         $('#chat__new-message').empty();
+        
     }
     module.deleteMsg = function(key, msgText, msgAuthor) {
         if (isModerator || isVip) {
@@ -514,7 +517,6 @@ var Chat = (function(module) {
         var myMessage = false;
         if (uid == firebase.auth().currentUser.uid) {
             myMessage = true;
-            customEvent({ type: 'chat', event: type === 'msg' ? 'message' : type })
         }
 
         text = text.replace(imgRegExp, '<img src="$1" class="message-img">');
