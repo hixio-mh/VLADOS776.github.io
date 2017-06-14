@@ -1138,7 +1138,7 @@ var Missions = (function() {
     }
     Mission.prototype.fail = function(act) {
         if (this.raw.inARow && /lose|win/i.test(this.raw.event) && /lose|win/i.test(act.event) ) {
-            mission.reset();
+            this.reset();
         }
     }
     Mission.prototype._complete = function() {
