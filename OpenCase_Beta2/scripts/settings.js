@@ -1033,6 +1033,10 @@ var Missions = (function() {
                 
                 $container.append('<li class="mission timer" id="mission-update_timer" data-time='+(updateTime)+'></li>');
                 saveToStore();
+                
+                LOG.log({
+                    action: 'All missions complete',
+                })
             }
             
             if (config.allCompleteReward) {
@@ -1123,6 +1127,13 @@ var Missions = (function() {
         this.currStep = 0;
         saveToStore();
         updateInMenu();
+        LOG.log({
+            action: 'Mission reset',
+            mission: {
+                id: this.raw.id,
+                description: this.description
+            }
+        })
         return;
     }
     Mission.prototype.fail = function(act) {
@@ -1157,7 +1168,15 @@ var Missions = (function() {
                     completeCount[this.raw.id]++;
                 else
                     completeCount[this.raw.id] = 1;
-                saveStatistic('missions-completed', completeCount);                
+                saveStatistic('missions-completed', completeCount);
+                
+                LOG.log({
+                    action: 'Mission complete',
+                    mission: {
+                        id: this.raw.id,
+                        description: this.description
+                    }
+                })
             } catch (e) {}
         }
     }
