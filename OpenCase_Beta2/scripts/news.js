@@ -759,4 +759,12 @@ var news = [{
         "RU": ' - [Новое] <a href="open.html?graffitiId=1">Community Graffiti Box 1</a>',
         "EN": ' - [New] <a href="open.html?graffitiId=1">Community Graffiti Box 1</a>'
     }
+}, {
+    "day": 14,
+    "month": 6,
+    "year": 2017,
+    "update": {
+        "RU": ' - [Новое] Миссии! Откройте меню, чтобы увидить их.',
+        "EN": ' - [New] Missions! Open menu to see it'
+    }
 }, ];
