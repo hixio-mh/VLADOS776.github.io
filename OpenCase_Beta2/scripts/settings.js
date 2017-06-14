@@ -344,9 +344,11 @@ var Missions = (function() {
             exp: 10
         },
         notify: true,
-        newMissionsAfterComplete: true
+        newMissionsAfterComplete: true,
+        updateKD: 1000 * 60 * 30 // 30 минут
     }
-    var missionsActive = getStatistic('missionsActive', 'false') === 'true';
+    var missionsActive = getStatistic('missionsActive', 'true') === 'true';
+    
     if (!missionsActive) {
         module.trigger = function() {}
         return module;
@@ -360,7 +362,9 @@ var Missions = (function() {
                 RU: 'Открыть кейс 50 раз подряд',
                 EN: 'Open case 50 times in a row'
             },
-            caseId: 24,
+            check: {
+                caseId: 24
+            },
             times: 50,
             reward: {
                 exp: 10,
@@ -374,7 +378,9 @@ var Missions = (function() {
                 RU: 'Открыть специальный кейс',
                 EN: 'Open special case'
             },
-            caseId: [48, 49, 50, 51, 52, 53],
+            check: {
+                caseId: { inArray: [48, 49, 50, 51, 52, 53] }
+            },
             times: 1,
             reward: {
                 exp: 5,
@@ -388,7 +394,9 @@ var Missions = (function() {
                 RU: 'Скрафтить Dragon Lore',
                 EN: 'Craft Dragon Lore'
             },
-            item_id: 695,
+            check: {
+                item_id: 695,
+            },
             reward: {
                 exp: 20,
                 money: 100000
@@ -524,10 +532,12 @@ var Missions = (function() {
             game: 'crash',
             event: 'cashout',
             times: 1,
-            multiply: 10,
             description: {
                 RU: 'Забрать в Краше на 10x',
                 EN: 'Cashout in Crash on 10x'
+            },
+            check: {
+                multiply: { moreThen: 10 }
             },
             reward: {
                 exp: 10,
@@ -538,7 +548,9 @@ var Missions = (function() {
             type: 'case',
             event: 'open',
             times: 1,
-            item_id: [766,767,768,769,770,771,772,773,786,787,788,789,790,791,792,793,794,795,796],
+            check: {
+                item_id: { inArray: [766,767,768,769,770,771,772,773,786,787,788,789,790,791,792,793,794,795,796] }
+            },
             description: {
                 RU: 'Выбить перчатки из кейса',
                 EN: 'Get gloves from case'
@@ -599,6 +611,20 @@ var Missions = (function() {
                 RU: 'Выиграть в Сапер 3 раза',
                 EN: 'Win in Minesweeper 3 times'
             },
+            condition: {
+                RU: [
+                    'Количество ходов должно быть больше 5',
+                    'Количество мин должно быть больше 2'
+                ],
+                EN: [
+                    'Amount of opened tiles must be more than 5',
+                    'Amount of mines must be more than 2'
+                ]  
+            },
+            check: {
+                steps: { moreThen: 5 },
+                mines: { moreThen: 2 }
+            },
             reward: {
                 exp: 5,
                 money: 10000
@@ -613,6 +639,17 @@ var Missions = (function() {
                 RU: 'Выиграть в Кости 5 раз',
                 EN: 'Win in Dice 5 times'
             },
+            check: {
+                chance: { lessThen: 60 }
+            },
+            condition: {
+                RU: [
+                    'Шансы должены быть меньше 60%'
+                ],
+                EN: [
+                    'Chances must be less then 60%'
+                ]  
+            },
             reward: {
                 exp: 5,
                 money: 10000
@@ -623,7 +660,9 @@ var Missions = (function() {
             game: 'crash',
             event: 'cashout',
             times: 1,
-            multiply: 2,
+            check: {
+                multiply: { moreThen: 2 }
+            },
             description: {
                 RU: 'Забрать в Краше на 2x',
                 EN: 'Cashout in Crash on 2x'
@@ -637,7 +676,9 @@ var Missions = (function() {
             type: 'case',
             event: 'open',
             times: 10,
-            caseId: [54,55,56,57],
+            check: {
+                caseId: { inArray: [54,55,56,57] }
+            },
             description: {
                 RU: 'Открыть 10 кейсов из Мастерской',
                 EN: 'Open 10 Workshop cases'
@@ -665,10 +706,12 @@ var Missions = (function() {
             game: 'double',
             event: 'win',
             times: 1,
-            color: 'green',
             description: {
                 RU: 'Выиграть на зеленом в Дабл',
                 EN: 'Win on green in Double'
+            },
+            check: {
+                color: 'green'
             },
             reward: {
                 exp: 5,
@@ -700,10 +743,79 @@ var Missions = (function() {
                 exp: 3,
                 money: 2000
             }
+        }, {
+            id: 25,
+            type: 'game',
+            game: 'jackpotOnline',
+            event: 'win',
+            times: 1,
+            check: {
+                room: 4
+            },
+            description: {
+                RU: 'Выиграть в онлайн Джекпоте на легендарной сложности',
+                EN: 'Cashout in Crash on 20x'
+            },
+            reward: {
+                exp: 10,
+                money: 100000
+            }
+        }, {
+            id: 26,
+            type: 'game',
+            game: 'crash',
+            event: 'cashout',
+            times: 1,
+            check: {
+                multiply: { moreThen: 20 }
+            },
+            description: {
+                RU: 'Забрать в Краше на 20x',
+                EN: 'Cashout in Crash on 20x'
+            },
+            reward: {
+                exp: 15,
+                money: 1000000
+            }
+        }, {
+            id: 27,
+            type: 'game',
+            game: 'crash',
+            event: 'cashout',
+            times: 1,
+            check: {
+                multiply: { moreThen: 50 }
+            },
+            description: {
+                RU: 'Забрать в Краше на 50x',
+                EN: 'Cashout in Crash on 50x'
+            },
+            reward: {
+                exp: 20,
+                money: 5000000
+            }
+        }, {
+            id: 28,
+            type: 'game',
+            game: 'crash',
+            event: 'cashout',
+            times: 1,
+            check: {
+                multiply: { moreThen: 100 }
+            },
+            description: {
+                RU: 'Забрать в Краше на 100x',
+                EN: 'Cashout in Crash on 100x'
+            },
+            reward: {
+                exp: 30,
+                money: 100000000
+            }
         }
     ]
     var current = [],
-        lastUpdate = null;
+        lastUpdate = null,
+        updateTime = null;
     
     try { 
         var storage = JSON.parse(getStatistic('missions', '{}'));
@@ -716,10 +828,11 @@ var Missions = (function() {
             })
         });
         if (storage.lastUpdate) lastUpdate = storage.lastUpdate;
+        if (storage.updateTime) updateTime = storage.updateTime;
 
     } catch(e) {}
     
-    if (current.length === 0 || new Date(lastUpdate).getDate() !== new Date().getDate()) {
+    if (current.length === 0 || new Date(lastUpdate).getDate() !== new Date().getDate() || (updateTime && updateTime < Date.now())) {
         newMissions();
     }
     
@@ -740,22 +853,31 @@ var Missions = (function() {
         if (!miss) return false;
         miss = miss[0];
         
-        var missionInfoTemplate = '<div class="animated flipInX mission-info"><h6>' + _t('missions.info.progress', 'Progress') + '</h6> <div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=${progress} aria-valuemin=0 aria-valuemax=100 style="width:${progress}%">${progress}%</div></div>\
-            <h6>' + _t('missions.info.award', 'Award') + '</h6> <div class="text-center">${raw.reward.money}<i class="double-icon"></i> | ${raw.reward.exp} EXP</div></div>';
+        var missionInfoTemplate = '<div class="animated flipInX mission-info" style="display:none;">\
+            <h6>' + _t('missions.info.progress', 'Progress') + '</h6> <div class="progress"><div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow=${progress} aria-valuemin=0 aria-valuemax=100 style="width:${progress}%">${progress}%</div></div>\
+            {{if raw.condition}}\
+                <h6>' + _t('missions.info.condition', 'Conditions') + '</h6> <ul class="mission-conditions_list">{{each condition}}\
+                    <li class="mission-condition">${$value}</li>\
+                {{/each}}</ul>\
+            {{/if}}\
+            <h6>' + _t('missions.info.award', 'Award') + '</h6> <div class="text-center">${raw.reward.money}<i class="double-icon"></i> | ${raw.reward.exp} EXP</div>\
+        </div>';
+        
         $.template('missionInfoTemplate', missionInfoTemplate);
         
         var progress = parseInt(miss.currStep / miss.steps * 100);
         miss.progress = progress;
-        $(this).append($.tmpl('missionInfoTemplate', miss))
+        $.tmpl('missionInfoTemplate', miss).appendTo(this).slideDown('fast')
         
         function remove() {
             if ($('.mission-info')) {
                 $('.mission-info').addClass('flipOutX');
-                $('.mission-info').slideUp('slow');
-
+                $('.mission-info').slideUp('fast');
+                
+                var $that = $('.mission-info.flipOutX');
                 setTimeout(function() {
-                    $('.mission-info.flipOutX').remove();
-                }, 1000)
+                    $that.remove();
+                }, 500)
             }
         }
     })
@@ -778,36 +900,51 @@ var Missions = (function() {
         for (var i = 0; i < current.length; i++) {
             var mission = current[i];
             if (!mission.isComplete() && mission.raw.type === act.type) {
-                if (act.type === 'game') {
-                    if (mission.raw.game === act.game) {
-                        if (act.event === mission.raw.event) {
-                            if (mission.raw.multiply) {
-                                if (act.multiply >= mission.raw.multiply) {
-                                    return mission.step();
-                                } else {
-                                    return mission.fail(act);
+                if (act.type === 'game' && mission.raw.game !== act.game) continue;
+                
+                if (act.event === mission.raw.event) {
+                    var nextMiss = false;
+                    if (mission.raw.check) {
+                        for (var key in mission.raw.check) {
+                            if (!act[key]) {
+                                mission.fail(act);
+                                nextMiss = true;
+                                break;
+                            }
+
+                            if (typeof mission.raw.check[key] === 'object') {
+                                var checkObj = mission.raw.check[key];
+
+                                if (checkObj.moreThen && act[key] <= checkObj.moreThen) {
+                                    mission.fail(act);
+                                    nextMiss = true;
+                                    break;
+                                }
+                                if (checkObj.lessThen && act[key] >= checkObj.lessThen) {
+                                    mission.fail(act);
+                                    nextMiss = true;
+                                    break;
+                                }
+                                if (checkObj.inArray && checkObj.inArray.indexOf(act[key]) === -1) {
+                                    mission.fail(act);
+                                    nextMiss = true;
+                                    break;
+                                }
+                            } else {
+                                if (act[key] !== mission.raw.check[key]) {
+                                    mission.fail(act);
+                                    nextMiss = true;
+                                    break;
                                 }
                             }
-                            if (mission.raw.color) {
-                                if (act.color === mission.raw.color) {
-                                    return mission.step();
-                                } else {
-                                    return mission.fail(act);
-                                }
-                            }
-                            return mission.step();
-                        } else {
-                            mission.fail(act);
                         }
+                        if (nextMiss) continue;
+                        mission.step();
+                    } else {
+                        mission.step();
                     }
                 } else {
-                    if (act.event === mission.raw.event) {
-                        if (!act.caseId || (typeof mission.raw.caseId === 'number' && act.caseId === mission.raw.caseId) || (Array.isArray(mission.raw.caseId) && mission.raw.caseId.indexOf(act.caseId) !== -1)) {
-                            if (!mission.raw.item_id || (typeof mission.raw.item_id === 'number' && act.item_id === mission.raw.item_id) || (Array.isArray(mission.raw.item_id) && mission.raw.item_id.indexOf(act.item_id) !== -1)) {
-                                mission.step(act.count || 1);
-                            }
-                        }
-                    }
+                    mission.fail(act);
                 }
             }
         }
@@ -847,6 +984,7 @@ var Missions = (function() {
             }
         }
         lastUpdate = Date.now();
+        updateTime = null;
         saveToStore();
         $(document).trigger('missions.new_missions');
         
@@ -869,6 +1007,7 @@ var Missions = (function() {
             }
         });
         store.lastUpdate = lastUpdate;
+        store.updateTime = updateTime;
         
         saveStatistic('missions', store);
     }
@@ -876,13 +1015,13 @@ var Missions = (function() {
         var $container = $('#menu-missions #missions-list');
         $container.empty();
         
-        var markup = "<li class='mission{{if currStep >= steps}} completed{{/if}}' data-missionid='${raw.id}'><span class='mission-description'>${description}</span><span class='mission-progress'>${parseInt(currStep * 100 / steps)}%</span></li>";
+        var markup = "<li class='mission{{if currStep >= steps}} completed{{/if}}{{if raw.condition}} condition{{/if}}' data-missionid='${raw.id}'><span class='mission-description'>${description}</span><span class='mission-progress'>${parseInt(currStep * 100 / steps)}%</span></li>";
         
         $.template('missionsTemplate', markup);
         var $miss = $.tmpl('missionsTemplate', current);
         $container.append($miss);
         
-        if (Missions.isAllComplete() && config.notify) {
+        if (Missions.isAllComplete() && config.notify && !updateTime) {
             $.notify({
                 message: _t('missions.all_complete', 'All missions completed'),
             }, {
@@ -890,8 +1029,10 @@ var Missions = (function() {
             })
             
             if (config.newMissionsAfterComplete) {
-                newMissions();
-                updateInMenu();
+                updateTime = Date.now() + config.updateKD;
+                
+                $container.append('<li class="mission timer" id="mission-update_timer" data-time='+(updateTime)+'></li>');
+                saveToStore();
             }
             
             if (config.allCompleteReward) {
@@ -903,7 +1044,43 @@ var Missions = (function() {
                     Level.addEXP(config.allCompleteReward.exp)
                 }
             }
+        } else if (updateTime) {
+            $container.append('<li class="mission timer" id="mission-update_timer" data-time='+(updateTime)+'></li>');
+            updateTimer();
         }
+    }
+    function updateTimer() {
+        var $el = $('#mission-update_timer');
+        
+        if (parseInt($el.data('time')) > Date.now()) {
+            var ramaining = getTimeRemaining(parseInt($el.data('time')));
+            
+            $el.text(ramaining.minutes + ':' + ramaining.seconds);
+            
+            setTimeout(function() { updateTimer() }, 1000);
+        } else {
+            newMissions();
+            updateInMenu();
+        }
+    }
+    function getTimeRemaining(endtime) {
+        if (typeof endtime === 'number') {
+            var t = new Date(endtime) - Date.now();
+        }
+        else {
+            var t = Date.parse(endtime) - Date.parse(new Date());
+        }
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return {
+            'total': t
+            , 'days': days
+            , 'hours': hours
+            , 'minutes': minutes
+            , 'seconds': seconds
+        };
     }
         
     // Mission Class
@@ -917,6 +1094,7 @@ var Missions = (function() {
         }
         
         this.description = this.raw.description ? this.raw.description[Settings.language] || this.raw.description.EN : '';
+        this.condition = this.raw.condition ? this.raw.condition[Settings.language] || this.raw.condition.EN : '';
         
         this.steps = mission.steps || mission.times || 1;
         this.currStep = mission.currStep || 0;
@@ -973,6 +1151,13 @@ var Missions = (function() {
                         type: 'success'
                     })
                 }
+                
+                var completeCount = JSON.parse(getStatistic('missions-completed', '{}'));
+                if (completeCount[this.raw.id] != null) 
+                    completeCount[this.raw.id]++;
+                else
+                    completeCount[this.raw.id] = 1;
+                saveStatistic('missions-completed', completeCount);                
             } catch (e) {}
         }
     }

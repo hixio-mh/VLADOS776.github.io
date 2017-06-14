@@ -533,7 +533,8 @@ var Translation = {
     "missions": {
         "info": {
             "progress": "Прогресс",
-            "award": "Награда"
+            "award": "Награда",
+            "condition": "Условия"
         }
     }
 }

@@ -260,6 +260,9 @@ sup.beta {
     text-decoration: line-through;
     opacity: 0.5;
 }
+.mission.condition .mission-description:after {
+    content: ' *';
+}
 .menu-missions .missions-list .mission .mission-progress {
     margin-left: auto;
 }
@@ -270,4 +273,13 @@ div.mission-info {
     margin-bottom: 10px;
     border-radius: 4px;
     position: relative;
+}
+li.mission-condition {
+    font-size: 13px;
+    font-size: 0.8vw;
+    margin-bottom: 4px;
+}
+.mission.timer {
+    justify-content: center;
+    font-size: 17px !important;
 }

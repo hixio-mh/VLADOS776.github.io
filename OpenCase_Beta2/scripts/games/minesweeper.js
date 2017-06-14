@@ -51,6 +51,8 @@ var Minesweeper = (function() {
                         action: 'Lose',
                         balance: Player.doubleBalance
                     })
+                    
+                    customEvent({ type: 'game', game: 'minesweeper', event: 'lose', bet: config.bet, reward: config.total_reward, mines: config.mines, steps: config.steps })
                 }
                 $('#next_reward').text(calcReward(config.bet, config.mines, config.steps));
                 $('#total_reward').text(config.total_reward);
@@ -124,7 +126,7 @@ var Minesweeper = (function() {
                 balance: Player.doubleBalance
             })
             
-            customEvent({ type: 'game', game: 'minesweeper', event: 'cashout', bet: config.bet, reward: config.total_reward, mines: config.mines, steps: config.steps })
+            customEvent({ type: 'game', game: 'minesweeper', event: 'win', bet: config.bet, reward: config.total_reward, mines: config.mines, steps: config.steps })
         })
         
         $('#new_game').on('click', function() {
