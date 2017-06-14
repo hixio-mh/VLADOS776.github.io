@@ -390,9 +390,14 @@
                     else if ($(this).hasClass('capsule')) openCase.goToCapsule($(this).data('capsule-id'))
                     else if ($(this).hasClass('graffiti_box')) openCase.goToGraffiti($(this).data('case-id'))
                 })
-                $(document).on('click', '#closePopup', function () {
-                    $('.popup').css('display', 'none');
-                });
+                
+                // ==== Load last news ====
+                $('.news .container').text('');
+                for (var i = 0; i < SHOW_LAST_NEWS; i++) {
+                    var day = news[news.length - i - 1];
+                    var update = day.update[Settings.language] || day.update.EN;
+                    $('.news .container').append('<p>' + update + '</p>');
+                }
             });
             $(document).on('click', '#new-version__update', function () {
                 location = 'https://play.google.com/store/apps/details?id=csgo.opencase';
