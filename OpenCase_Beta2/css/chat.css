@@ -177,6 +177,10 @@ li.chat__message a img[data-userid] {
 }
 .message__text {
     color: #656565;
+    max-height: 300px;
+    display: block;
+    overflow: hidden;
+    overflow-y: auto;
 }
 .group {
     font-size: 0.65em;
