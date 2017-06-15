@@ -1034,7 +1034,7 @@ $(function () {
     function addPostToWall(post, key) {
         if (post == '' || post == null || typeof post == 'undefined') return false;
         var date = new Date(post.date);
-        post.text = fbProfile.XSSreplace(post.text);
+        post.text = XSSreplace(post.text);
         var currUid = ""
         if (fbProfile.ifAuth()) currUid = firebase.auth().currentUser.uid;
         var control = "<div class='post__control'><span class='post__control__delete'><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></span></div>";
