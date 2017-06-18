@@ -99,7 +99,7 @@
         <div class="chat__rooms-container">
             <div class="connection_status" style="display:none;"></div>
             <div class="chat__rooms"></div>
-            <div class="chat__rooms__info"><a href="chat.html">Back to old chat</a> | <a href="banlist.html" data-loc="banlist">Banlist</a></div>
+            <div class="chat__rooms__info"><a href="banlist.html" data-loc="banlist">Banlist</a></div>
         </div>
     
         <div id="chat">
@@ -136,21 +136,52 @@
             </div>
         </div>
     
-    <!-- Modal -->
-    <div id="moder_modal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-body">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc7d2U53Cdqk3zSB6OfNkewCKhwRdOObrwuf5DR1SIdM22dPg/viewform?embedded=true" width="100%" frameborder="0" marginheight="0" marginwidth="0" style='min-height:400px' id='moder_iframe'>Загрузка...</iframe>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+    <!-- Moder ban modal -->
+    <div id='moder-ban-modal' class='modal fade' role='dialog'>
+        <div class='modal-dialog modal-sm' data-loc-group='ban_reason'>
+            <div class='modal-content' data-loc-group='ban_modal'>
+                <div class='modal-header'>
+                    <span data-loc='title'>Ban reason</span>
+                    <button class='close' type='button' data-dismiss='modal'>&times;</button>
+                </div>
+                <div class='modal-body' data-loc-group='reasons'>
+                    <div class='checkbox'>
+                        <label><input type='checkbox'> <span data-loc='spam'>Spam</span></label>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox'> <span data-loc='cheats'>Cheats</span></label>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox'> <span data-loc='insults'>Insults</span></label>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox'> <span data-loc='scam'>Scam</span></label>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox'> <span data-loc='adult_img'>18+ pictures</span></label>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox' id='moder-ban-other_checkbox'> <span data-loc='other'>Other</span></label>
+                        <input type='text' class='form-control input-sm' id='moder-ban-other_input' disabled>
+                    </div>
+                    <div class='input-group'>
+                       <input type='number' id='moder-ban_time' class='form-control input-sm' value='1'>
+                        <span class="input-group-addon" style="width:0px; padding-left:0px; padding-right:0px; border:none;"></span>
+                        <select id='moder-ban_time-type' class='form-control input-sm'>
+                            <option mult='60000'>min</option>
+                            <option mult='3600000'>hour</option>
+                            <option mult='86400000'>day</option>
+                            <option mult='604800000'>week</option>
+                            <option mult='31536000000'>year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='modal-footer'>
+                    <button class='btn btn-danger' type='button' id='ban_user'>Confirm</button>
+                    <button class='btn btn-default' type='button' data-dismiss='modal'>Cancel</button>
+                </div>
+            </div>
         </div>
-
-      </div>
     </div>
 
     <script>
@@ -260,6 +291,7 @@
                 })
         })
     </script>
+    
     <script id='msgTemplate'>
         <li class="animated bounceIn chat__message ${extraClasses}" data-msgkey="${key}">
             <a href="profile.html?uid=${uid}">
@@ -276,6 +308,7 @@
                         <div class="dropup"> <i aria-hidden="true" class="fa fa-bars dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"></i>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 {{if isModer || isVip}}
+                                    {{if isModer}}<li><a href="#" data-action="chat-ban" data-loc="chat_ban">Chat ban</a></li>{{/if}}
                                     {{if isModer || (isVip && myMessage)}}<li><a href="#" data-action="delete-message" data-loc="delete">Delete</a></li>{{/if}}
                                     {{if isVip}}
                                         <li><a href="#" data-action="fake-vip" data-loc="fake_vip">Fake VIP</a></li>

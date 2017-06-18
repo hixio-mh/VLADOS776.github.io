@@ -42,10 +42,14 @@ $(function () {
     $(document).on('click', '.message__moderator li a', function() {
         var msgKey = $(this).closest('.chat__message').data('msgkey');
         var msgAuthor = $(this).closest('.message__info').find('.message__from').text();
+        var msgAuthorUid = $(this).closest('.message__info').prev().find('img[data-userid]').data('userid')
         var msgText = $(this).closest('.message__info').children('.message__text').text();
         
         var action = $(this).data('action');
         switch (action) {
+            case 'chat-ban':
+                Chat.chatBanModal(msgAuthorUid);
+                break;
             case 'delete-message':
                 Chat.deleteMsg(msgKey, msgText, msgAuthor);
                 break;
@@ -292,6 +296,72 @@ var Chat = (function(module) {
             history.pushState({room: $(this).data('room')}, "Chat Room", 'chatNew.html?room='+$(this).data('room'));
         })
         $(document).on('click', '#chat__send-new-message', module.sendMsg);
+        
+        $(document).on('click', '#ban_user', function() {
+            var banReason = (function(){
+                var reason = '';
+                $('#moder-ban-modal .modal-content input:checked').each(function(){
+                    var current = $(this).parent('label').text().trim();
+
+                    if ($(this).attr('id') == 'moder-ban-other_checkbox') {
+                        current = $('#moder-ban-other_input').val().trim();
+                    } 
+
+                    reason += current + ' ';
+                })
+                return reason.trim();
+            })();
+
+            var ban = 'chatban';
+
+            var banTime = (function() {
+                var time = parseInt($('#moder-ban_time').val());
+                if (isNaN(time) || time <= 0) {
+                    time = 1;
+                    $('#moder-ban_time').val(time);
+                } else if (time > 60) {
+                    time = 60;
+                    $('#moder-ban_time').val(time);
+                }
+                var multiply = parseInt($('#moder-ban_time-type option:selected').attr('mult'));
+                if (isNaN(multiply))
+                    multiply = 60000;
+
+                return time * multiply;
+            })()
+
+            if (banReason !== '') {
+                var banObj = {
+                    reason: banReason,
+                    to: banTime,
+                    from: firebase.database.ServerValue.TIMESTAMP,
+                    uid: $('#moder-ban-modal').data('uid')
+                }
+                
+                Chat.chatBan(banObj);
+
+                LOG.warn({
+                    action: 'Moderator blocked chat from chat',
+                    ban: {
+                        reason: banObj.reason,
+                        user: {
+                            uid: banObj.uid,
+                        },
+                        time: banObj.to
+                    }
+                })
+            }
+            $('#moder-ban-modal').modal('hide');
+        })
+        $('#moder-ban-other_checkbox').change(function() {
+            if ($('#moder-ban-other_checkbox').is(':checked') == true) {
+                $('#moder-ban-other_input').prop('disabled', false);
+            } else {
+                $('#moder-ban-other_input').prop('disabled', true);
+                $('#moder-ban-other_input').val('');
+            }
+        })
+        
         $("#chat__new-message").on('change', function (event, myEvent) {
             event = myEvent ? myEvent : event;
             if (event.shiftKey && event.keyCode == 13) {
@@ -306,6 +376,7 @@ var Chat = (function(module) {
                 socket.emit('typing', Player.nickname);
             }
         });
+        
         var graffitiPopover = $('.graffiti-attach[data-toggle="popover"]').popover({
             placement: 'top',
             html: 'true',
@@ -482,6 +553,13 @@ var Chat = (function(module) {
             key: key,
             class: clas
         })
+    }
+    module.chatBanModal = function(uid) {
+        $('#moder-ban-modal').modal();
+        $('#moder-ban-modal').data('uid', uid);
+    }
+    module.chatBan = function(banObj) {
+        socket.emit('chatBan', banObj);
     }
     
     function newMsg(key, message, edit) {
