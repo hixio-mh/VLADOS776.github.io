@@ -42866,7 +42866,7 @@ var Prices = {
                 "market": 180
             },
             "4": {
-                "market": 1
+                "market": 250
             }
         },
         "souvenir": {}
