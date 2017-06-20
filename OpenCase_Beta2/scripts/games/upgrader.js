@@ -6,7 +6,7 @@ var Upgrader = (function(module) {
     var config = {
         error: 1, // Погрешность в стоимости.
         errorHight: 10, // Погрешность, если цена больше 100
-        errorVeryHight: 100, // Погрешность, если цена больше 1000
+        errorVeryHight: 200, // Погрешность, если цена больше 1000
         timer: 3000,
         historyItems: 10
     }
@@ -88,7 +88,12 @@ var Upgrader = (function(module) {
             ['default', 'stattrak', 'souvenir'].forEach(function(type) {
                 if (item.prices[type]) {
                     for (var quality in item.prices[type]) {
-                        var price = item.prices[type][quality].market || item.prices[type][quality].analyst || item.prices[type][quality].opskins;
+                        var price = (function() {
+                            if (item.prices[type][quality].market > 0) return item.prices[type][quality].market;
+                            if (item.prices[type][quality].analyst > 0) return item.prices[type][quality].analyst;
+                            if (item.prices[type][quality].opskins > 0) return item.prices[type][quality].opskins;
+                            return 0;
+                        })()
                         
                         if (price >= possiblePrice && price <= possiblePrice + error && !br) {
                             newItem = new Item({ item_id: item.item_id, quality: parseInt(quality), stattrak: type === 'stattrak', souvenir: type === 'souvenir' })
