@@ -167,8 +167,8 @@ var Upgrader = (function(module) {
                         price: bet.item.price
                     },
                     new: {
-                        item_id: newItem.item.item_id,
-                        name: newItem.item.titleText(),
+                        item_id: newItem.item_id,
+                        name: newItem.titleText(),
                         price: newItem.price
                     }
                 })
