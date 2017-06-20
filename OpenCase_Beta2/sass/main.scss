@@ -815,6 +815,9 @@ body {
 .mb-5 {
     margin-bottom: 5px;
 }
+.mt-10 {
+    margin-top: 10px;
+}
 
 .modal-dialog {
     z-index: 1050;
@@ -1048,4 +1051,10 @@ i.double-icon {
         cursor: pointer;
         float: right;
     }
+}
+.text-bold {
+    font-weight: bold;
+}
+.text-white {
+    color: #fff;
 }

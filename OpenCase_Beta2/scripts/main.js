@@ -235,6 +235,9 @@ var Sounds = {
     spray: {
         shake: new Audio('../sound/spraycan_shake.wav'),
         spray: new Audio('../sound/spraycan_spray.wav'),
+    },
+    upgrader: {
+        success: new Audio('../sound/upgrader/success.wav')
     }
 }
 

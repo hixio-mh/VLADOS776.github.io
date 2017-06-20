@@ -245,6 +245,14 @@ var Translation = {
 		},
 		"history": "История"
 	},
+    "upgrader": {
+        "Select skin to upgrade": "Выберите скин на улучшение",
+        "Select skin": "Выбрать скин",
+        "Upgrade": "Улучшить",
+        "Percent": "Процент",
+        "Upgrade item": "Улучшить предмет",
+        "not_found": "Не найден подходящий предмет. Попробуйте изменить множитель или выберите другой скин."
+    },
 	"inventory": {
 		"page_name": "Инвентарь",
 		"weapon_info": {

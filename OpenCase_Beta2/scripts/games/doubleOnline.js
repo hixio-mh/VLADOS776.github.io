@@ -146,6 +146,7 @@ $(function() {
         var bet = parseInt(betStr.match(/(\d+)/g).toString().replace(/\,/g, ''));
         if (gameStart) return false;
         if (bet <= 0) return false;
+        if (bet > betLimit) bet = betLimit;
         if (Player.doubleBalance <= 0 || bet > Player.doubleBalance) {
             $('#balance').addClass('animated flash');
             setTimeout(function() {

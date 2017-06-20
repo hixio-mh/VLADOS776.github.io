@@ -613,6 +613,9 @@ body {
 .mb-5 {
   margin-bottom: 5px; }
 
+.mt-10 {
+  margin-top: 10px; }
+
 .modal-dialog {
   z-index: 1050; }
 
@@ -812,5 +815,11 @@ i.double-icon {
     display: inline-block;
     cursor: pointer;
     float: right; }
+
+.text-bold {
+  font-weight: bold; }
+
+.text-white {
+  color: #fff; }
 
 /*# sourceMappingURL=main.css.map */

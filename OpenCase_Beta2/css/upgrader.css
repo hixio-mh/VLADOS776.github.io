@@ -1,0 +1,221 @@
+.content {
+    display: flex;
+}
+.upgrader_item {
+    text-align: center;
+    text-transform: uppercase;
+    min-height: 150px;
+}
+
+.upgrader_item img {
+    max-width: 130px;
+}
+.upgrader_item.empty {
+    display: flex;
+    flex-direction: column;
+}
+.multiplies {
+    display: flex;
+    justify-content: space-around;
+}
+.multiplies .btn {
+    flex: 1;
+    margin: 0 5px;
+}
+
+.buttons {
+    display: flex;
+}
+.buttons .btn {
+    flex: 1;
+    margin: 0 5px;
+}
+svg.times {
+    width: 50px;
+    display: block;
+    margin: auto;
+}
+.times path {
+    fill: transparent;
+    stroke-width: 1px;
+    stroke: #fff;
+}
+ul.history {
+    padding: 0;
+}
+ul.history li {
+    list-style: none;
+    border-bottom: 1px solid;
+    padding: 10px 0;
+}
+ul.history li:last-child {
+    border: none;
+}
+.history-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.history-items > div {
+    text-align: center;
+    color: #fff;
+}
+.history-items img {
+    max-width: 100px;
+    margin: -15px 3px;
+    max-height: 100px;
+}
+.history-arrow {
+    width: 15px;
+    height: 25px;
+}
+.history-arrow path {
+    fill: transparent;
+    stroke-width: 2px;
+}
+.history-arrow.success path {
+    stroke: #0ed60e;
+    filter: drop-shadow(0 0 2px #16ff16);
+}
+.history-arrow.fail path {
+    stroke: red;
+    filter: drop-shadow(0 0 2px #ff0000);
+}
+
+.upgrader_animation.wait {
+    stroke: yellow;
+}
+.upgrader_animation.process {
+    stroke: white;
+}
+.upgrader_animation.upgrade_win {
+    stroke: #0ed60e;
+    filter: drop-shadow(0 0 2px #16ff16);
+}
+.upgrader_animation.upgrade_lose {
+    stroke: red;
+    filter: drop-shadow(0 0 2px #ff0000);
+}
+
+.upgrader_animation {
+    width: 40px;
+    margin: auto;
+    display: block;
+}
+.upgrader_animation svg {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+@media(max-width: 460px) {
+    .history-arrow {
+        width: 100%;
+        transform: rotate(90deg);
+    }
+}
+
+@media(max-width: 767px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+    .upgrader_animation svg {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+}
+
+.upgrader_animation path {
+    fill: transparent;
+    stroke-width: 1px;
+}
+
+/* === Инициализация === */
+.upgrader_animation.wait path {
+    -webkit-animation: upgrader-wait 3s infinite cubic-bezier(.4, 0, .2, 1);
+    animation: upgrader-wait 3s infinite cubic-bezier(.4, 0, .2, 1);
+}
+.upgrader_animation.process path {
+    -webkit-animation: upgrader-process 3s infinite cubic-bezier(.4, 0, .2, 1);
+    animation: upgrader-process 3s infinite cubic-bezier(.4, 0, .2, 1);
+}
+.upgrader_animation.upgrade_win path, .upgrader_animation.upgrade_lose path {
+    -webkit-animation: upgrader-win 1s infinite cubic-bezier(.4, 0, .2, 1);
+    animation: upgrader-win 1s infinite cubic-bezier(.4, 0, .2, 1);
+}
+.times path {
+    -webkit-animation: times 3s infinite cubic-bezier(.4, 0, .2, 1);
+    animation: times 3s infinite cubic-bezier(.4, 0, .2, 1);
+}
+
+/* === Задержки === */
+.upgrader_animation path.a2 {
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s;
+}
+.upgrader_animation path.a3 {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.upgrader_animation path.a4 {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1.5s;
+}
+
+.upgrader_animation.upgrade_win path.a2, .upgrader_animation.upgrade_lose path.a2 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+.upgrader_animation.upgrade_win path.a3, .upgrader_animation.upgrade_lose path.a3 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+.upgrader_animation.upgrade_win path.a4, .upgrader_animation.upgrade_lose path.a4 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+/* === Анимации === */
+@-webkit-keyframes upgrader-wait {
+    0% { opacity: 0 }
+    40% { opacity: 1 }
+    80% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@keyframes upgrader-wait {
+    0% { opacity: 0 }
+    40% { opacity: 1 }
+    80% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-webkit-keyframes upgrader-process {
+    0% { opacity: 0 }
+    10% { opacity: 1 }
+    40% { opacity: 0 }
+    80% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@keyframes upgrader-process {
+    0% { opacity: 0 }
+    10% { opacity: 1 }
+    40% { opacity: 0 }
+    80% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-webkit-keyframes upgrader-win {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }
+}
+@keyframes upgrader-win {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }
+}
+
+@keyframes times {
+    0% { stroke: #717100 }
+    50% { stroke: #ffff00 }
+    100% { stroke: #717100 }
+}

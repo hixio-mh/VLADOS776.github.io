@@ -16,6 +16,7 @@ function fillInventory(opt) {
 	inventory_loading = true;
     selector = opt.selector || ".inventory";
     action = opt.action || "";
+    maxItems = opt.maxItems || 1;
 	if ($('.js-loading-inventory').length == 0){
         if ($(selector+' .weapon').length != 0) {
             $(selector+" .weapon").remove();
