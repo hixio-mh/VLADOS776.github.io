@@ -5,7 +5,7 @@ var botMinDec = 700,
     botMaxDec = 3000,
     botMinBet = 1,
     botMaxBet = 1000,
-    betLimit = 1000000;
+    betLimit = 10000000;
 var timerBots,
     intervalCountdown,
     winNumber = 40,

@@ -56,6 +56,10 @@ var Minesweeper = (function() {
                 }
                 $('#next_reward').text(calcReward(config.bet, config.mines, config.steps));
                 $('#total_reward').text(config.total_reward);
+                
+                if (config.steps == (fieldConfig.row * fieldConfig.column - config.mines)) {
+                    $('#cashout').click();
+                }
             }
         })
         
