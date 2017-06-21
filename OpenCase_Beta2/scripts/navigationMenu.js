@@ -13,7 +13,7 @@ $(function () {
     var nextRank = getNextRank();
     var percent = ((Player.points - getRank().points) * 100) / (getNextRank().points - getRank().points);
     if (getNextRank().points - getRank().points == 0) percent = 100;
-    var link = "chat.html";
+    var link = "chatNew.html";
     try {
         firebase.auth().onAuthStateChanged(function (user) {
             if (firebase.auth().currentUser != null) {
