@@ -767,12 +767,12 @@ var news = [{
         "RU": ' - [Новое] Миссии! Откройте меню, чтобы увидить их.',
         "EN": ' - [New] Missions! Open menu to see it'
     }
-}, {
+},/* {
     "day": 21,
     "month": 6,
     "year": 2017,
     "update": {
         "RU": ' - [Новое] Новая игра <a href="https://vlados776.github.io/OpenCase_Beta2/RUS/upgrader.html">Upgrader</a>!',
         "EN": ' - [New] New mini game <a href="https://vlados776.github.io/OpenCase_Beta2/RUS/upgrader.html">Upgrader</a>!'
-    }
+    }*/
 }, ];
