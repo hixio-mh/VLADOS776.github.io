@@ -913,7 +913,7 @@ $(function () {
     $(document).on('click', '.sign-out', function () {
         fbProfile.logout();
         
-        window.location = 'chat.html';
+        window.location = 'chatNew.html';
     })
     $(document).on('click', '.edit-profile', function () {
         var editing = $('.save-profile').is(':visible');
