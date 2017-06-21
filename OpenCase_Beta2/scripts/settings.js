@@ -811,6 +811,82 @@ var Missions = (function() {
                 exp: 30,
                 money: 100000000
             }
+        }, {
+            id: 29,
+            type: 'game',
+            game: 'upgrader',
+            event: 'win',
+            times: 1,
+            check: {
+                multiply: 2,
+                oldItem_price: { moreThen: 4}
+            },
+            description: {
+                RU: 'Проапгрейдить скин на 2x',
+                EN: 'Upgrade skin on 2x'
+            },
+            condition: {
+                RU: [
+                    'Стоимость скина должна быть больше $4'
+                ],
+                EN: [
+                    'Skin price must be more than $4'
+                ]  
+            },
+            reward: {
+                exp: 3,
+                money: 5000
+            }
+        }, {
+            id: 30,
+            type: 'game',
+            game: 'upgrader',
+            event: 'win',
+            times: 5,
+            inARow: true,
+            description: {
+                RU: 'Проапгрейдить 5 скинов подряд',
+                EN: 'Upgrade 5 skins in a row'
+            },
+            reward: {
+                exp: 8,
+                money: 15000
+            }
+        }, {
+            id: 31,
+            type: 'game',
+            game: 'upgrader',
+            event: 'win',
+            times: 1,
+            check: {
+                multiply: 10
+            },
+            description: {
+                RU: 'Проапгрейдить скин на 10x',
+                EN: 'Upgrade skin on 10x'
+            },
+            reward: {
+                exp: 8,
+                money: 50000
+            }
+        }, {
+            id: 32,
+            type: 'game',
+            game: 'upgrader',
+            event: 'win',
+            times: 2,
+            check: {
+                multiply: 10
+            },
+            inARow: true,
+            description: {
+                RU: 'Проапгрейдить 2 скина на 10x подряд',
+                EN: 'Upgrade 2 skins on 10x in a row'
+            },
+            reward: {
+                exp: 20,
+                money: 5000000
+            }
         }
     ]
     var current = [],
@@ -1086,7 +1162,7 @@ var Missions = (function() {
             , 'seconds': seconds
         };
     }
-        
+    
     // Mission Class
     function Mission(mission) {
         mission = mission || {};
