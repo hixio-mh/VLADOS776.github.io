@@ -24,7 +24,8 @@
     <div class="site-overlay"></div>
     <div id="container">
         <div class="navigationBar">Upgrader</div>
-
+        <button id="how-to-play" class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#how-to-play-modal" data-loc='how_to_play'>How to play</button>
+        
         <div class='container mt-10'>
            <div class="content">
                
@@ -91,6 +92,31 @@
             <div class="closeInventory"></div>
             <ul class="inventory inv-price-counter"></ul>
             <button class="choseItems btn btn-success btn-block" data-loc='Upgrade item'>Upgrade item</button>
+        </div>
+    </div>
+    
+    <div class="modal fade" id='how-to-play-modal' role='dialog' data-loc-group='how_to_play_modal'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" data-loc='title'>How to play</h4>
+                </div>
+                <div class="modal-body" data-loc='body'>
+                    <p><b>Description</b></p>
+                    <p>You have some skin. You can replace this skin with another one, with a price higher in 1.5, 2, 5 or 10 times. The higher the price of a new skin, the lower the probability of success.
+                    <br>If the upgrade is successful, the old skin is replaced with a new one. If it fails, the old skin disappears.</p>
+                    <p></p>
+                    <ol>
+                        <li>Select a skin to upgrade</li>
+                        <li>Select a multiplier</li>
+                        <li>Upgrade</li>
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class='button btn btn-default' data-dismiss="modal" data-loc='close'>Close</button>
+                </div>
+            </div>
         </div>
     </div>
     

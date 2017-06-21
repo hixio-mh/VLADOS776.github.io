@@ -66,6 +66,7 @@ $(function () {
             <li class="pushy-link"><a href="double.html"><span class="icon icon-make-group"></span><span data-loc="double">Double</span></a></li> \
             <li class="pushy-link"><a href="Dice.html"><span class="icon icon-dice"></span><span data-loc="dice">Roll Dice</span></a></li> \
             <li class="pushy-link"><a href="minesweeper.html"><span class="icon fa fa-bomb"></span><span data-loc="minesweeper">Minesweeper</span></a></li> \
+            <li class="pushy-link"><a href="upgrader.html"><span class="icon fa fa-angle-double-up"></span><span data-loc="upgrader">Upgrader</span></a></li> \
         </ul></li> \
         <li class="submenu closed"><a href="#"><i class="icon icon-pacman"></i><span data-loc="online_games">Online games</span></a> \
         <ul data-loc-group="games_list"> \
