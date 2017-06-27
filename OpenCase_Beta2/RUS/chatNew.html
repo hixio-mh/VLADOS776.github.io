@@ -67,7 +67,7 @@
     </style>
 </head>
 
-<body data-localization="chat" data-inventory='no-load'>
+<body data-localization="chat" data-inventory='no-load' data-ad='no'>
     <div class="site-overlay"></div>
     <div id="container">
         <div class="navigationBar" data-menu-EN="Chat" data-menu-RU="Чат"></div>
@@ -267,9 +267,9 @@
                 $('.chat__messages').css('padding-bottom', '30px');
             })
             
-            
+             
             $('#attach_img').unsigned_cloudinary_upload('chat_images', 
-                { cloud_name: 'dknwecfwy' },
+                { cloud_name: 'dzkvnsdke' },
                 { multiply: true })
                 .bind('cloudinarydone', function(e, data) {
                     var url = data.result.secure_url;
