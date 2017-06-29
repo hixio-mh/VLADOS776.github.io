@@ -189,9 +189,17 @@ table#weaponInfoTable tr {
 	}
 	#weaponImg {
 		width: 150px;
-		float: left;
 		margin: 8px 0 8px 8px;
 	}
+    .img_container {
+        float: left;
+    }
+    #weaponStickers .dropup {
+        margin: 0px -5px;
+    }
+    img.sticker_small {
+        width: 40px;
+    }
 	#weaponInfoTable {
 		width: calc(100% - 160px);
 		margin-top: 5px;
