@@ -484,6 +484,7 @@ $(function () {
     })
     $(document).on('click', '#send-trade', function () {
         var ids = [];
+        $('#send-trade').prop('disabled', true);
         $('#summ-your-offer li').each(function () {
             var inventoryID = parseInt($(this).data('id'));
             ids.push(inventoryID);
@@ -497,6 +498,7 @@ $(function () {
                 console.log('Trade sended');
                 for (var i = 0; i < ids.length; i++) deleteWeapon(ids[i]);
                 $('#close-trade-window').click();
+                $('#send-trade').prop('disabled', false);
                 Lobibox.notify('success', {
                     pauseDelayOnHover: false
                     , continueDelayOnInactiveTab: false
