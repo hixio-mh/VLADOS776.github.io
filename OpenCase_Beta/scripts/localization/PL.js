@@ -584,7 +584,7 @@ var Translation = {
             },
             sort: {
                 special: {
-                    text: ["Wszystkie typy", "Nowy", "StatTrak", "Nie StatTrak", "Pamiątka", "Nie Pamiątka", "Normalna"],
+                    text: ["Wszystkie typy", "Nowy", "StatTrak", "Nie StatTrak", "Pamiątka", "Nie Pamiątka", "Normalna", "Graffiti"],
                     en: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal"]
                 },
                 types: {

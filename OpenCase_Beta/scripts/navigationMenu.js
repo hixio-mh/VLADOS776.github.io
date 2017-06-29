@@ -13,7 +13,7 @@ $(function () {
     var nextRank = getNextRank();
     var percent = ((Player.points - getRank().points) * 100) / (getNextRank().points - getRank().points);
     if (getNextRank().points - getRank().points == 0) percent = 100;
-    var link = "chat.html";
+    var link = "chatNew.html";
     try {
         firebase.auth().onAuthStateChanged(function (user) {
             if (firebase.auth().currentUser != null) {
@@ -47,6 +47,9 @@ $(function () {
                 <span class="menu_rank__next-lvl-exp" data-loc="to_next_level" data-loc-var=\'' + JSON.stringify({1:(Level.nextLvlEXP() - Level.myEXP())}) + '\'></span> \
             </div> \
         </div> \
+        <div id="menu-missions" class="menu-missions">\
+            <ul id="missions-list" class="missions-list"></ul>\
+        </div>\
     </div>';
     
     menuHTML += '<ul> \
@@ -63,6 +66,7 @@ $(function () {
             <li class="pushy-link"><a href="double.html"><span class="icon icon-make-group"></span><span data-loc="double">Double</span></a></li> \
             <li class="pushy-link"><a href="Dice.html"><span class="icon icon-dice"></span><span data-loc="dice">Roll Dice</span></a></li> \
             <li class="pushy-link"><a href="minesweeper.html"><span class="icon fa fa-bomb"></span><span data-loc="minesweeper">Minesweeper</span></a></li> \
+            <li class="pushy-link"><a href="upgrader.html"><span class="icon fa fa-angle-double-up"></span><span data-loc="upgrader">Upgrader</span></a></li> \
         </ul></li> \
         <li class="submenu closed"><a href="#"><i class="icon icon-pacman"></i><span data-loc="online_games">Online games</span></a> \
         <ul data-loc-group="games_list"> \
@@ -72,7 +76,7 @@ $(function () {
         </ul></li> \
         <li class="pushy-link"><a href="inventory.html"><span class="icon icon-list"></span><span data-loc="inventory">Inventory</span></a></li>\
         <li class="pushy-link"><a href="market.html"><span class="icon icon-cart"></span><span data-loc="market">Market</span></a></li> \
-        <li class="pushy-link"><a href="chat.html"><span class="icon icon-bubbles2"></span><span data-loc="chat">Chat</span></a></li> \
+        <li class="pushy-link"><a href="chatNew.html"><span class="icon icon-bubbles2"></span><span data-loc="chat">Chat</span></a></li> \
         <li class="pushy-link"><a href="statistic.html"><span class="icon icon-stats-bars"></span><span data-loc="statistic">Statistic</span></a></li> \
         <li class="pushy-link"><a href="faq.html"><span class="icon icon-question"></span><span data-loc="faq">FAQ</span></a></li> \
         <li class="pushy-link"><a href="news.html"><span class="icon icon-bullhorn"></span><span data-loc="updates">Updates</span></a></li> \
@@ -84,7 +88,7 @@ $(function () {
     if (!isAndroid()) {
         menuHTML += '<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>\
                     <!-- Open Case menu block -->\
-                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-9624392621060703" data-ad-slot="6439402276"></ins>\
+                    <ins class="adsbygoogle menu_ad" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-9624392621060703" data-ad-slot="6439402276"></ins>\
                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>'
     }        
     
@@ -105,6 +109,7 @@ $(function () {
             $(".site-overlay").show();
         }
     })
+    customEvent({ type: 'loading', event: 'menu' })
     
     //More coins modal
     if (isAndroid()) {
@@ -159,4 +164,9 @@ $(function () {
     $(document).on('doublechanged', function() {
         $('#menu_doubleBalance').text(getStatistic('doubleBalance'));
     })
+    
+    // Yandex Metrika
+    var code = '<!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter44978944 = new Ya.Metrika({ id:44978944, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, ut:"noindex" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/44978944?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->';
+    
+    $(document.body).append(code);
 })

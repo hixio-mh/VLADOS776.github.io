@@ -32,14 +32,35 @@ $(document).ready(function() {
 
     var autocompleteTags = [];
     for (var i = 0; i < Items.weapons.length; i++) {
-        var tp = Items.weapons[i].type;
-        var name = getSkinName(Items.weapons[i].skinName, Settings.language);
-        if ($.inArray(tp + ' | ' + name, autocompleteTags) == -1) autocompleteTags.push(tp + ' | ' + name);
+        var wp = new Weapon(Items.weapons[i].id);
+        var tp = wp.type;
+        var name = wp.name;
+        if ($.inArray(tp + ' | ' + name, autocompleteTags) == -1)
+            autocompleteTags.push({
+                type: wp.type,
+                name: wp.name,
+                nameOrig: wp.nameOrig
+            })
+            //autocompleteTags.push(tp + ' | ' + name);
     }
 
     $("#search_text").autocomplete({
-        source: autocompleteTags
-    })
+        source: function( request, response ) {
+            var matcher = new RegExp( $.ui.autocomplete.escapeRegex( request.term.replace(' | ', ' ') ), "i" );
+            response( $.grep( autocompleteTags, function( value ) {
+                return matcher.test( value.type + ' ' + value.name ) || matcher.test( value.type + ' ' + value.nameOrig );
+            }) );
+        },
+        select: function(event, ui) {
+            $("#search_text").val(ui.item.type + ' | ' + ui.item.name);
+            $('#search_button').click();
+            return false;
+        }
+    }).autocomplete('instance')._renderItem = function(ul, item) {
+        return $("<li>")
+            .append("<div>" + item.type + ' | ' + item.name + '</div>')
+            .appendTo(ul);
+    }
 
     var lastSalesUpdate = getStatistic('lastSalesUpdate', 0);
     var now = new Date();
@@ -62,7 +83,7 @@ $(document).ready(function() {
     } else {
         for (var i = 0; i < parseInt(getStatistic("market-sales-count")); i++) {
             var raw = JSON.parse(getStatistic("market-sales-weapon-" + i));
-            Sales.push(new Weapon(raw));
+            Sales.push(new Item(raw));
             Sales[i].soldOut = raw.soldOut;
         }
     }
@@ -83,7 +104,7 @@ $(document).on('click', '.item, .sales-weapon', function() {
     $("#buy-double").prop('disabled', false);
     if ($(this).hasClass('sold-out')) return false;
     var saleId = -1;
-    if (typeof $(this).data('weapon-info-json') != 'undefined') var weapon = new Weapon($(this).data("weapon-info-json"));
+    if (typeof $(this).data('weapon-info-json') != 'undefined') var weapon = new Item($(this).data("weapon-info-json"));
     if (typeof $(this).data('sales-id') != 'undefined') saleId = $(this).data("sales-id");
     if (typeof $(this).data('discount') != 'undefined') var discount = $(this).data("discount");
 
@@ -123,6 +144,14 @@ $(document).on('click', '.item, .sales-weapon', function() {
     $("#weaponName").html(weapon.specialText() + weapon.type + " | " + weapon.name);
     $("#weaponPrice").html(weapon.price);
     $("#weaponQuality").html(weapon.qualityText());
+    
+    $("#weaponImg").on('load', function() {
+        if ($('#weaponImg').height() < 360 && $(window).height() > 555) {
+            $('#weaponImg').css('padding', (360 - $('#weaponImg').height()) / 2 + 'px 0')
+        } else {
+            $('#weaponImg').css('padding', '0')
+        }
+    })
 
     $("#buy_count").val(1);
     $('#buy-double span').html((parseFloat(weapon.price) * 100).toFixed(0));
@@ -162,7 +191,7 @@ $(document).on('click', '#buy-double', function() {
         stattrak: $("#weaponInfoContainer").data('stattrak'),
         souvenir: $("#weaponInfoContainer").data('souvenir')
     }
-    var weapon = new Weapon(wp);
+    var weapon = new Item(wp);
     if (!weapon.can.buy) return;
     weapon.new = true;
     
@@ -234,6 +263,8 @@ $(document).on('click', '#buy-double', function() {
         price: price,
         balance: Player.doubleBalance
     })
+    
+    customEvent({ type: 'items', event: 'buy', item_id: weapon.item_id, count: count })
 
     checkInventoryForNotification();
 });
@@ -301,7 +332,7 @@ function getAllWeaponInfo(type, name, stattrak, souvenir) {
     souvenir = souvenir || false;
     var info = [];
     var item_id = getWeaponId(type, name);
-    var weapon = new Weapon(item_id);
+    var weapon = new Item(item_id);
     
     for (var i = 0; i < 5; i++) {
         info.push(new Weapon(item_id, i, false, false));

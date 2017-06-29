@@ -143,7 +143,7 @@
     .left-menu.closed {
         left: -270px;
     }
-    .adsbygoogle {
+    .menu_ad {
         display: none !important;
     }
 }
@@ -245,4 +245,41 @@ sup.beta {
     font-size: 0.65em;
     font-family: LatoRegular;
     font-weight: 400;
+}
+
+.menu-missions .missions-list .mission {
+    color: #fff;
+    font-size: 14px;
+    font-family: LatoRegular;
+    padding: 2px 0;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.menu-missions .missions-list .mission.completed span {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.mission.condition .mission-description:after {
+    content: ' *';
+}
+.menu-missions .missions-list .mission .mission-progress {
+    margin-left: auto;
+}
+div.mission-info {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.52);
+    padding: 0 10px 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    position: relative;
+}
+li.mission-condition {
+    font-size: 13px;
+    font-size: 0.8vw;
+    margin-bottom: 4px;
+}
+.mission.timer {
+    justify-content: center;
+    font-size: 17px !important;
 }

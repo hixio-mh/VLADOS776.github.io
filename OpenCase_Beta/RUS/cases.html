@@ -28,18 +28,50 @@
     <script src="../scripts/quality.js"></script>
     <script src="../scripts/openCase.js"></script>
     <script src="../scripts/navigationMenu.js"></script>
+    <script src="../scripts/news.js"></script>
     
     <link rel="stylesheet" href="../css/navigationMenu.css">
     <style>
         body {
             margin: 1px;
         }
-        
+        #container {
+            position: relative;
+        }
         .news {
             text-align: center;
             color: #fff;
             font-size: 1.1em;
             font-weight: bolder;
+            max-height: 80px;
+            overflow: hidden;
+            position: relative;
+            transition-duration: 0.5s;
+        }
+        .news-closed:before {
+            background-image: linear-gradient(transparent 64%, #000 100%);
+            content: '';
+            width: 100%;
+            position: absolute;
+            height: 50px;
+            bottom: 0;
+            left: 0;
+        }
+        .news-overflow {
+            position: absolute;
+            bottom: -5px;
+            background: #151515;
+            padding: 3px 10px;
+            border-radius: 5px;
+            border: 1px solid #656565;
+            cursor: pointer;
+            margin-left: -30px;
+            font-size: 12px;
+            font-weight: normal;
+            left: 0;
+            right: 0;
+            width: 60px;
+            margin: auto;
         }
     </style>
 </head>
@@ -50,15 +82,19 @@
         <div class="navigationBar"></div>
         <span class='js-secretField' style='display: none'></span>
         
-        <div class='news well well-sm'> <span data-loc='news'>
-            <p>Now bottom banner will hide till the end of the day after click.</p>
-            <p>Open up to 5 cases at a time (can lag).</p>
-        </span>
+        <div class='news well well-sm'> 
+           <div class="container" data-loc='news'>
+               <p>Open menu to see missions</p>
+            <p><a href="open.html?graffitiId=1">Community Graffiti Box 1</a>.
+            <p><a href="open.html?graffitiId=0">Graffiti</a>! You can use them in chat.</p>
+            </div>
         </div>
         
         <div class="cases">
             <div id="Default" class="casesBlock opened">
                 <h1 data-loc="cases">Кейсы</h1></div>
+            <div id="Graffiti_box_default" class="casesBlock closed">
+                <h1 data-loc="graffiti" >Graffiti</h1></div>
             <div id="eSports" class="casesBlock closed">
                 <h1 data-loc="esports">eSports</h1></div>
             <div id="Collection" class="casesBlock closed">
@@ -70,33 +106,9 @@
             <div id="Special" class="casesBlock closed">
                 <h1 data-loc="special">Особые</h1></div>
         </div>
-        <div class="capsules" style='display: none;'>
+        <div class="capsules">
             <div id="Capsules_default" class="casesBlock">
                 <h1>Капсулы</h1></div>
-        </div>
-        
-        <div id="awards_modal" class="modal fade" role="dialog" data-loc-group='awards_modal'>
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header" data-loc='head'>Awards</div>
-                    <div class="modal-body" data-loc='body'>
-                        <p>Now we have awards in the profile!</p>
-                        <p>However, so far the only for the custom cases. But in the future will be awards for the crash / double / jackpot.</p>
-                        <p>The list of currently available awards:</p>
-                        <ul class='list-unstyled'>
-                            <li><img src='../images/awards/1k.png' width='50px'> — 1000+ open of your case</li>
-                            <li><img src='../images/awards/2k.png' width='50px'> — 2000+ open of your case</li>
-                            <li><img src='../images/awards/3k.png' width='50px'> — 3000+ open of your case</li>
-                            <li><img src='../images/awards/4k.png' width='50px'> — 4000+ open of your case</li>
-                            <li><img src='../images/awards/5k.png' width='50px'> — 5000+ open of your case</li>
-                        </ul>
-                        <p>Current icons are temporary. Then they will be redrawn.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-default" data-dismiss="modal">OK</button>
-                    </div>
-                </div>
-            </div>
         </div>
         
         <div id="modal-rank" class="modal fade" role="dialog" data-loc-group='special_popup'>
@@ -107,6 +119,19 @@
                     </div>
                     <div class="modal-footer">
                         <a href="faq.html#js-local-question-rank" class="btn btn-primary" data-loc='lvl_up'>How to level up?</a>
+                        <button class="btn btn-default" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="modal-knives" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id='knives'></div>
+                    </div>
+                    <div class="modal-footer">
                         <button class="btn btn-default" data-dismiss="modal">OK</button>
                     </div>
                 </div>
@@ -127,6 +152,21 @@
             </div>
         </div>
         
+        <script id="caseTemplate">
+            <div class='${caseType}{{if collection}} collection{{/if}}' data-case-id="${caseId}" data-souvenir='${souvenir}'>
+                {{if deadline}}
+                    <span class='countdown' data-deadline='${deadline}'></span>
+                {{/if}}
+                <img class='case-card' src='../images/Cases/casecard2.png'>
+                {{if minLvl}}
+                    <span class="case-min_lvl">${minLvl}</span>
+                {{/if}}
+                <img class='case-img' src='../images/Cases/cases/${img}'>
+                <span class='case-price currency dollar'>${price}</span>
+                <span class='case-name{{if specialClass}} ${specialClass}{{/if}}'>${name}</span>
+            </div>
+        </script>
+        
         <script>
             $(function () {
                 for (var i = 0; i < cases.length; i++) {
@@ -136,20 +176,24 @@
                     if (Player.doubleBalance < parseFloat(casePrice) * 100 || (cases[i].minLvl && cases[i].minLvl > Level.calcLvl())) {
                         collection += ' disabled';
                     }
-                    var curCase = "<div class='case " + collection + "' data-case-id=" + i + " data-souvenir='false'>\
-            " + (cases[i].deadline ? "<span class='countdown' data-deadline='" + cases[i].deadline + "'></span>" : "") + "\
-            <img class='case-card' src='../images/Cases/casecard2.png'>\
-            " + (cases[i].minLvl ? '<span class="case-min_lvl">' + cases[i].minLvl + '</span>' : '') + "\
-            <img class='case-img' src='../images/Cases/cases/" + cases[i].img + "'>\
-            <span class='case-price currency dollar'>" + casePrice + "</span>\
-            <span class='case-name " + specialClass + "'>" + cases[i].name + "</span>\
-        </div>";
                     if (typeof cases[i].show != 'undefined' && cases[i].show === false) continue;
                     if (cases[i].deadline) {
                         var t = getTimeRemaining(cases[i].deadline);
                         if (t.total < 0) continue;
                     }
-                    var $curCase = $(curCase);
+                    var cas = {
+                        caseType: 'case',
+                        collection: collection,
+                        caseId: i,
+                        souvenir: false,
+                        deadline: cases[i].deadline,
+                        minLvl: cases[i].minLvl,
+                        img: cases[i].img,
+                        price: casePrice,
+                        specialClass: specialClass,
+                        name: cases[i].name
+                    }
+                    var $curCase = $('#caseTemplate').tmpl(cas);
                     switch (cases[i].type) {
                     case "Default":
                         $("#Default").append($curCase);
@@ -180,7 +224,18 @@
                 }
                 for (var i = 0; i < CAPSULES.length; i++) {
                     var specialClass = (typeof CAPSULES[i].specialClass == "undefined") ? "" : CAPSULES[i].specialClass;
-                    var curCase = "<div class='capsule " + collection + "' data-capsule-id=" + i + ">" + (CAPSULES[i].deadline ? "<span class='countdown' data-deadline='" + CAPSULES[i].deadline + "'></span>" : "") + "<img src='../images/Cases/cases/" + CAPSULES[i].img + "'><span class='name " + specialClass + "'>" + CAPSULES[i].name + "</span>";
+                    var cas = {
+                        caseType: 'capsule',
+                        collection: null,
+                        caseId: i,
+                        souvenir: false,
+                        deadline: CAPSULES[i].deadline,
+                        minLvl: CAPSULES[i].minLvl,
+                        img: CAPSULES[i].img,
+                        price: 5,
+                        name: CAPSULES[i].name
+                    }
+                    var curCase = $('#caseTemplate').tmpl(cas);
                     if (typeof CAPSULES[i].show != 'undefined' && CAPSULES[i].show === false) continue;
                     if (CAPSULES[i].deadline) {
                         var t = getTimeRemaining(CAPSULES[i].deadline);
@@ -195,6 +250,47 @@
                         break;
                     }
                 }
+                for (var i = 0; i < GRAFFITI_BOX.length; i++) {
+                    var specialClass = (typeof GRAFFITI_BOX[i].specialClass == "undefined") ? "" : GRAFFITI_BOX[i].specialClass;
+                    var casePrice = GRAFFITI_BOX[i].price ? (GRAFFITI_BOX[i].price / 100).toFixed(2) : getGraffitiBoxPrice(i);
+                    
+                    /*
+                    var curCase = "<div class='graffiti_box' data-case-id=" + i + " data-souvenir='false'>\
+                        " + (GRAFFITI_BOX[i].deadline ? "<span class='countdown' data-deadline='" + GRAFFITI_BOX[i].deadline + "'></span>" : "") + "\
+                        " + (GRAFFITI_BOX[i].minLvl ? '<span class="case-min_lvl">' + GRAFFITI_BOX[i].minLvl + '</span>' : '') + "\
+                        <img class='case-img' src='../images/Cases/cases/" + GRAFFITI_BOX[i].img + "'>\
+                        <span class='case-price currency dollar'>" + casePrice + "</span>\
+                        <span class='case-name " + specialClass + "'>" + GRAFFITI_BOX[i].name + "</span>\
+                    </div>";
+                    */
+                    var cas = {
+                        caseType: 'graffiti_box',
+                        specialClass: specialClass,
+                        collection: null,
+                        caseId: i,
+                        souvenir: false,
+                        deadline: GRAFFITI_BOX[i].deadline,
+                        minLvl: GRAFFITI_BOX[i].minLvl,
+                        img: GRAFFITI_BOX[i].img,
+                        price: casePrice,
+                        name: GRAFFITI_BOX[i].name
+                    }
+                    var curCase = $('#caseTemplate').tmpl(cas);
+                    if (typeof GRAFFITI_BOX[i].show != 'undefined' && GRAFFITI_BOX[i].show === false) continue;
+                    if (GRAFFITI_BOX[i].deadline) {
+                        var t = getTimeRemaining(GRAFFITI_BOX[i].deadline);
+                        if (t.total < 0) continue;
+                    }
+                    switch (GRAFFITI_BOX[i].type) {
+                    case "Default":
+                        $("#Graffiti_box_default").append(curCase);
+                        break;
+                    case "Workshop":
+                        $("#Graffiti_box_workshop").append(curCase);
+                        break;
+                    }
+                }
+                
                 var freeCaseTime = parseInt(getStatistic('free-case-timeout', 0));
                 var freeCase = "<div class='case disabled' data-case-id='free' data-souvenir='false'><span class='countdown' data-deadline='" + freeCaseTime + "'></span><img class='case-card' src='../images/Cases/casecard2.png'><img class='case-img' src='../images/Cases/case_blank.png'><span class='case-price currency dollar'>0.00</span><span class='case-name'>FREE</span></div>";
                 $('#Default h1').after(freeCase)
@@ -236,6 +332,22 @@
                             $parent.removeClass('disabled');
                         }
                     })
+                    
+                    if ($('.news')[0].scrollHeight >  $('.news').innerHeight()) {
+                        $('.news').append('<div class="news-overflow">↓ ↓ ↓</div>');
+                        $('.news').addClass('news-closed');
+                    }
+                })
+                
+                $(document).on('click', '.news-overflow', function() {
+                    $('.news').toggleClass('news-opened news-closed');
+                    if ($('.news').hasClass('news-opened')) {
+                        $('.news-overflow').text('↑ ↑ ↑');
+                        $('.news').css({ 'max-height': $('.news')[0].scrollHeight });
+                    } else {
+                        $('.news-overflow').text('↓ ↓ ↓');
+                        $('.news').removeAttr('style');
+                    }
                 })
                 
                 if (getURLParameter('start') && isAndroid() && client.getCurrentAppVersionCode() >= 12) {
@@ -253,6 +365,8 @@
                         }
                     })
                 }
+                
+                new SkinsCarusel({idFrom: 864, idTo: 891, style: "margin: auto;" }).carusel().appendTo('#knives');
 
                 function getTimeRemaining(endtime) {
                     if (typeof endtime === 'number') {
@@ -307,7 +421,7 @@
                         $(document).trigger('expchanged');
                     }
                 }
-                $(document).on('click', '.case, .capsule', function () {
+                $(document).on('click', '.case, .capsule, .graffiti_box', function () {
                     if ($(this).hasClass('disabled')) return false;
                     if ($(this).data('case-id') === 'free') {
                         var caseId = parseInt(getStatistic('free-case-opening', -1));
@@ -320,11 +434,17 @@
                         return;
                     }
                     if ($(this).hasClass('case')) openCase.goToCase($(this).data('case-id'), $(this).data('souvenir'))
-                    else if ($(this).hasClass('capsule')) openCase.goToCapsule($(this).data('capsule-id'))
+                    else if ($(this).hasClass('capsule')) openCase.goToCapsule($(this).data('case-id'))
+                    else if ($(this).hasClass('graffiti_box')) openCase.goToGraffiti($(this).data('case-id'))
                 })
-                $(document).on('click', '#closePopup', function () {
-                    $('.popup').css('display', 'none');
-                });
+                
+                // ==== Load last news ====
+                $('.news .container').text('');
+                for (var i = 0; i < SHOW_LAST_NEWS; i++) {
+                    var day = news[news.length - i - 1];
+                    var update = day.update[Settings.language] || day.update.EN;
+                    $('.news .container').append('<p>' + update + '</p>');
+                }
             });
             $(document).on('click', '#new-version__update', function () {
                 location = 'https://play.google.com/store/apps/details?id=csgo.opencase';

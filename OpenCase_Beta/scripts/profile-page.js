@@ -55,6 +55,17 @@ $(function () {
         var currentUID = firebase.auth().currentUser.uid;
         //if (!currentUID || uid === currentUID) return;
         
+        if (!firebase.auth().currentUser.emailVerified) {
+            
+            $.notify({
+                message: Localization.getString('other.verify-email', 'You must verify your email in settings first.')
+            }, {
+                type: 'danger'
+            })
+            
+            return false;
+        }
+        
         var setVar = true;
         
         if (isAndroid() && client.getCurrentAppVersionCode() >= 12) {
@@ -419,7 +430,7 @@ $(function () {
             $('.trade-back').hide();
             showMyTrades();
             LOG.log({
-                action: 'Check my trades',
+                action: 'Check my trades'
             })
         }
         else {
@@ -473,6 +484,7 @@ $(function () {
     })
     $(document).on('click', '#send-trade', function () {
         var ids = [];
+        $('#send-trade').prop('disabled', true);
         $('#summ-your-offer li').each(function () {
             var inventoryID = parseInt($(this).data('id'));
             ids.push(inventoryID);
@@ -486,6 +498,7 @@ $(function () {
                 console.log('Trade sended');
                 for (var i = 0; i < ids.length; i++) deleteWeapon(ids[i]);
                 $('#close-trade-window').click();
+                $('#send-trade').prop('disabled', false);
                 Lobibox.notify('success', {
                     pauseDelayOnHover: false
                     , continueDelayOnInactiveTab: false
@@ -610,6 +623,7 @@ $(function () {
         var otherAva = $(this).find('.trade__other img').attr('src');
         $('.other-user-profile-img').attr('src', otherAva);
         $('.user-profile-img').attr('src', avatarUrl(Player.avatar));
+        $('#cancel-trade').prop('disabled', false);
         
         fbProfile.currentTrade = {
             id: $(this).data('tradeid')
@@ -664,7 +678,7 @@ $(function () {
                     var weapon = myWeapons[i];
                     if (typeof weapon == 'undefined') continue;
                     if (typeof weapon == 'string') weapon = JSON.parse(weapon);
-                    weapon = new Weapon(weapon);
+                    weapon = new Item(weapon);
                     var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
                     $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi({price: true, nameTag: true, nameTagIcon: true})).data('weapon_obj', weaponJSON));
                 }
@@ -703,7 +717,7 @@ $(function () {
                     for (var i = 0; i < Trade_weapons.length; i++) {
                         var weapon = Trade_weapons[i];
                         if (typeof weapon == 'undefined') continue;
-                        weapon = new Weapon(weapon);
+                        weapon = new Item(weapon);
                         $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append(weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
                     }
                     $('#my-trades__other-offer').effect('highlight');
@@ -823,7 +837,7 @@ $(function () {
             var $parent = $('li[data-tradeid="' + $('#you-ready-to-trade').data('tradeid') + '"] .trade__info__hidden .trade__info__weapons.your');
             $($parent).empty();
             for (var i = 0; i < convertedWeapons.length; i++) {
-                var weapon = new Weapon(convertedWeapons[i]);
+                var weapon = new Item(convertedWeapons[i]);
                 var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
                 var $li = $(weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
                 $li.data('weapon_obj', weaponJSON);
@@ -837,6 +851,7 @@ $(function () {
     })
     $(document).on('click', '#cancel-trade', function () {
         var tradeID = $(this).data('tradeid');
+        $('#cancel-trade').prop('disabled', true);
         fbProfile.tradeStatus(tradeID, function (status) {
             if (status != 'done' && status != 'canceled') {
                 fbProfile.setTradeStatus(tradeID, 'canceled');
@@ -845,7 +860,7 @@ $(function () {
                     var convertedWeapons = [];
                     for (var i = 0; i < Trade_weapons.length; i++) {
                         //var wp = fbInventory.reverseConvert(weapons[i]);
-                        wp = new Weapon(Trade_weapons[i]);
+                        wp = new Item(Trade_weapons[i]);
                         wp.new = true;
                         convertedWeapons.push(wp);
                     }
@@ -875,7 +890,7 @@ $(function () {
                 var convertedWeapons = [];
                 for (var i = 0; i < Trade_weapons.length; i++) {
                     //var wp = fbInventory.reverseConvert(weapons[i]);
-                    wp = new Weapon(Trade_weapons[i]);
+                    wp = new Item(Trade_weapons[i]);
                     wp.new = true;
                     convertedWeapons.push(wp);
                 }
@@ -900,7 +915,7 @@ $(function () {
     $(document).on('click', '.sign-out', function () {
         fbProfile.logout();
         
-        window.location = 'chat.html';
+        window.location = 'chatNew.html';
     })
     $(document).on('click', '.edit-profile', function () {
         var editing = $('.save-profile').is(':visible');
@@ -964,6 +979,16 @@ $(function () {
     })
     $(document).on('click', '.rep', function () {
         var currRepRef = firebase.database().ref('users/' + uid + '/outside/rep');
+        if (!firebase.auth().currentUser.emailVerified) {
+            
+            $.notify({
+                message: Localization.getString('other.verify-email', 'You must verify your email in settings first.')
+            }, {
+                type: 'danger'
+            })
+            
+            return false;
+        }
         var val = 0;
         if ($(this).hasClass('rep-plus')) {
             val = 1;
@@ -980,7 +1005,11 @@ $(function () {
             fbProfile.setRep(uid, firebase.auth().currentUser.uid, (val > 0 ? '+' : '-'));
         }
         fbProfile.repVal(uid, function (rep, userRep) {
-            var $active = $('.active');
+            LOG.log({
+                action: 'Change rep',
+                old: $(".stats__rate__count").text(),
+                new: rep
+            })
             $(".stats__rate__count").text(rep);
             if (parseInt(rep) < 0) $(".stats__rate__count").addClass('bad-rep');
         });
@@ -1007,7 +1036,7 @@ $(function () {
     function addPostToWall(post, key) {
         if (post == '' || post == null || typeof post == 'undefined') return false;
         var date = new Date(post.date);
-        post.text = fbProfile.XSSreplace(post.text);
+        post.text = XSSreplace(post.text);
         var currUid = ""
         if (fbProfile.ifAuth()) currUid = firebase.auth().currentUser.uid;
         var control = "<div class='post__control'><span class='post__control__delete'><i class=\"fa fa-trash-o\" aria-hidden=\"true\"></i></span></div>";
@@ -1096,7 +1125,7 @@ $(function () {
                     var weapon = trade.you.items[i];
                     if (typeof weapon == 'undefined') continue;
                     if (typeof weapon == 'string') weapon = JSON.parse(weapon);
-                    weapon = new Weapon(weapon);
+                    weapon = new Item(weapon);
                     var weaponJSON = JSON.stringify(weapon.tradeObject()).replace(/'/g, "\\'");
                     $('#my-trades__your-offer').find(".trade__info__weapons.your").append($(weapon.toLi({price: true, nameTag: true, nameTagIcon: true})).data('weapon_obj', weaponJSON));
                 }
@@ -1136,7 +1165,7 @@ $(function () {
                         for (var i = 0; i < Trade_weapons.length; i++) {
                             var weapon = Trade_weapons[i];
                             if (typeof weapon == 'undefined') continue;
-                            weapon = new Weapon(weapon);
+                            weapon = new Item(weapon);
                             $('#my-trades__other-offer').find(".trade__info__weapons.to-you").append( weapon.toLi({price: true, nameTag: true, nameTagIcon: true}));
                         }
                         $('#my-trades__other-offer').effect('highlight');

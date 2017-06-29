@@ -149,7 +149,7 @@ var Jackpot = {
             Jackpot.socket.on('you_win', function(win) {
                 var weapons = win.weapons;
                 for (var i = 0; i < weapons.length; i++) {
-                    weapons[i] = new Weapon(weapons[i]);
+                    weapons[i] = new Item(weapons[i]);
                     weapons[i].new = true;
                 }
                 saveWeapons(weapons);
@@ -161,6 +161,8 @@ var Jackpot = {
                     weapons: win.weapons,
                     room: Jackpot.roomID
                 })
+                
+                customEvent({ type: 'game', game: 'jackpotOnline', event: 'win', weapons: win.weapons, room: Jackpot.roomID })
             })
             
             Jackpot.socket.on('new_game', function(timer) {
@@ -497,7 +499,7 @@ function itemsList(newBet/*fromName, fromImg, tickets, itemsCost, weaponsList*/)
     var bet = "<li class='game-bet animated zoomIn'><div class='game-bet__info'><div class='game-bet__player'><img src='" + XSSreplace(avatarUrl(newBet.avatar)) + "'>" + XSSreplace(newBet.nick) + "</div><div class='game-bet__tickets'><span class='game-bet__tickets__price'>$" + newBet.itemsCost.toFixed(2) + "</span><i class='fa fa-ticket'></i> " + ('' + parseInt(newBet.tickets.from)).replace(ticketsRegExp, '$1&#8198;') + " - " + ('' + parseInt(newBet.tickets.to)).replace(ticketsRegExp, '$1&#8198;') + "</div></div></div>" +
         "<div class='bet-items " + (newBet.weapons.length > 4 ? "hide-items" : "") + "'><div colspan=2>";
     for (var i = 0; i < newBet.weapons.length; i++) {
-        var weapon = new Weapon(newBet.weapons[i]);
+        var weapon = new Item(newBet.weapons[i]);
         var img = getImgUrl(weapon.img);
 
         var newItem = "<div class='bet-items__item'>\

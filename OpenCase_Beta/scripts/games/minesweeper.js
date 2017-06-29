@@ -51,9 +51,15 @@ var Minesweeper = (function() {
                         action: 'Lose',
                         balance: Player.doubleBalance
                     })
+                    
+                    customEvent({ type: 'game', game: 'minesweeper', event: 'lose', bet: config.bet, reward: config.total_reward, mines: config.mines, steps: config.steps })
                 }
                 $('#next_reward').text(calcReward(config.bet, config.mines, config.steps));
                 $('#total_reward').text(config.total_reward);
+                
+                if (config.steps == (fieldConfig.row * fieldConfig.column - config.mines)) {
+                    $('#cashout').click();
+                }
             }
         })
         
@@ -123,6 +129,8 @@ var Minesweeper = (function() {
                 reward: config.total_reward,
                 balance: Player.doubleBalance
             })
+            
+            customEvent({ type: 'game', game: 'minesweeper', event: 'win', bet: config.bet, reward: config.total_reward, mines: config.mines, steps: config.steps })
         })
         
         $('#new_game').on('click', function() {

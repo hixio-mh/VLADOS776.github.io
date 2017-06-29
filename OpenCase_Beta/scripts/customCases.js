@@ -1,7 +1,7 @@
 var CustomCases = {
     //socket: io('http://192.168.1.205/', {path: '/customcases/socket.io'}),
-    socket: io('http://192.168.1.205:8005/'),
-    //socket: io('https://kvmde40-10035.fornex.org/', {path: '/customcases/socket.io'}),
+    //socket: io('http://192.168.1.205:8005/'),
+    socket: io('https://kvmde40-10035.fornex.org/', {path: '/customcases/socket.io'}),
     caseOpening: false,
     caseId: 0,
     rareItemsRegExp: new RegExp('(rare|extraordinary)' ,'i'), // From OpenCase.js
@@ -130,7 +130,7 @@ var CustomCases = {
             CustomCases.a(caseInfo.price * 100);
             
             CustomCases.itemsInCase = caseInfo.weapons.map(function(item) {
-                return new Weapon(item);
+                return new Item(item);
             })
             
             var itemsInCaseText = '';
@@ -187,6 +187,7 @@ var CustomCases = {
                     action: 'Success Boost',
                     case_id: CustomCases.caseId
                 })
+                customEvent({ type: 'customCase', event: 'boost', case: CustomCases.caseId })
             }
         })
         
@@ -200,7 +201,8 @@ var CustomCases = {
         })
         
         CustomCases.socket.on('openCase', function(winItem) {
-            CustomCases.win = new Weapon(winItem.win);
+            CustomCases.win = new Item(winItem.win);
+            CustomCases.win.patternRandom();
             CustomCases.startRoll(CustomCases.win);
         })
         
@@ -214,6 +216,8 @@ var CustomCases = {
             if (creatingStatus.status === 'success') {
                 CustomCases.socket.emit('caseInfo', creatingStatus.id);
                 $('#caseName').text($('#case_name').val());
+                
+                customEvent({ type: 'customCase', event: 'create', case: creatingStatus.id })
             } else {
                 CustomCases.alert(creatingStatus.msg)
             }
@@ -422,7 +426,7 @@ var CustomCases = {
         
         var elem = '';
         for (var i = 0; i < Items.weapons.length; i++) {
-            var item = new Weapon(i);
+            var item = new Item(i);
             if (item.can && item.can.buy)
                 elem += item.toLi({lazy_load: true});
         }
@@ -660,9 +664,9 @@ var CustomCases = {
             }
         })
         
-        
         //Statistic
         Level.addEXP(1);
+        customEvent({ type: 'customCase', event: 'open', case: CustomCases.caseId, item_id: CustomCases.win.item_id })
         
         statisticPlusOne('weapon-' + CustomCases.win.rarity);
         if (CustomCases.win.stattrak)

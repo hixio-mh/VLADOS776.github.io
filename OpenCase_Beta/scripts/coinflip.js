@@ -238,7 +238,7 @@ var CoinFlip = {
             }
 
             if (price > CoinFlip.priceRange[difficulty].min && price < CoinFlip.priceRange[difficulty].max) {
-                weapon = new Weapon(weapon);
+                weapon = new Item(weapon);
                 if (weapon.can.bot) {
                     bot.weapons.push(weapon);
                     bot.items_cost += price;
@@ -269,6 +269,8 @@ var CoinFlip = {
         if (winner == 'CT') {
             $('.game__bot__img').addClass('winner-img');
             statisticPlusOne('coinflip-loose');
+            
+            customEvent({ type: 'game', game: 'coinflip', event: 'lose' })
         } else {
             $('.game__player__img').addClass('winner-img');
             var allWP = CoinFlip.PlayerBet.weapons.concat(CoinFlip.Games[CoinFlip.PlayerInGame].bot.weapons);
@@ -287,6 +289,8 @@ var CoinFlip = {
             else
                 a = winSum > parseFloat(a) ? winSum : parseFloat(a);
             saveStatistic('coinflip-max-win', a.toFixed(2));
+            
+            customEvent({ type: 'game', game: 'coinflip', event: 'win' })
         }
         CoinFlip.Games[CoinFlip.PlayerInGame].winner = winner;
         CoinFlip.Games[CoinFlip.PlayerInGame].player.weapons = [];
@@ -294,8 +298,6 @@ var CoinFlip = {
 
         for (var i = 0; i < CoinFlip.PlayerBet.weapons.length; i++)
             CoinFlip.Games[CoinFlip.PlayerInGame].player.weapons.push(CoinFlip.PlayerBet.weapons[i]);
-
-        checkInventoryForNotification();
 
         CoinFlip.timerId = setTimeout(function() {
             CoinFlip.hideCoin();

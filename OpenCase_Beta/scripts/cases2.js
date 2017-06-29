@@ -11,13 +11,11 @@ var cases = [{
     "name": "Alpha", 
     "img": "alpha.png",
     "type": "Collection",
-    
     weapons: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 }, {
     "name": "Assault",
     "img": "assault.png",
     "type": "Collection",
-    
     weapons: [16,17,18,20,19,22,21]
 }, {
     "name": "Aztec",
@@ -153,11 +151,17 @@ var cases = [{
     "type": "Collection",
     weapons: [268,269,270,271,272,273]
 }, {
+    "name": "Hydra",
+    "img": "hydra.png",
+    "type": "Default",
+    weapons:[847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863],
+    knives: [766, 767, 771, 773, 786, 788, 791, 792, 793, 794, 795]
+}, {
     "name": "Spectrum",
     "img": "spectrum.png",
     "type": "Default",
     weapons:[798,799,800,801,802,803,804,805,806,807,808,809,810,811,812,813,814],
-    knives: [815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835]
+    knives: [815,816,817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,892,893,894,923,924,925]
 }, {
     "name": "Glove",
     "img": "glove.png",
@@ -169,131 +173,127 @@ var cases = [{
     "img": "gamma2.png",
     "type": "Default",
     weapons:[274,275,276,277,278,279,280,281,282,283,284,285,286,287,288,289,290],
-    knives: [609,587,590,611,613,612,591,592]
+    knives: [609,587,590,611,613,612,591,592,907,908,909,910,911,912]
 }, {
     "name": "Gamma",
     "img": "gamma.png",
     "type": "Default",
     weapons: [291,292,293,294,295,296,297,298,299,300,301,302,303,304,305,306,307],
-    knives: [609,587,590,611,613,612,591,592]
+    knives: [609,587,590,611,613,612,591,592,907,908,909,910,911,912]
 }, {
     "name": "Chroma 3",
     "img": "chroma3.png",
     "type": "Default",
     weapons: [308,309,310,311,312,313,314,315,316,317,318,319,320,321,322,323,324],
-    knives: [380,381,382]
+    knives: [380,381,382,881,882,883,884,885,886,887,886,889,890,891,913,914,915,916]
 }, {
     "name": "Chroma 2",
     "img": "chroma2_case.png",
     "type": "Default",
-    
     weapons: [325,326,327,328,329,330,331,332,333,334,335,690,336,656,669],
-    knives: [586,337,338]
+    knives: [586,337,338, 864,865,866,867,868,869,870,871,872,873,885,886,887,886,889,890,891,913,914,915,916]
 }, {
     "name": "Chroma",
     "img": "chroma_case.png",
     "type": "Default",
     
     weapons: [342,341,343,340,339,345,344,347,346,676,677,687,675,348],
-    knives: [337,349,512]
+    knives: [337,349,512,874,875,876,877,878,879,880,881,882,883,913,914,915,916]
 }, {
     "name": "Revolver Case",
     "img": "revolver.png",
     "type": "Default",
-    
     weapons: [355,354,353,352,351,350,361,360,359,357,358,356,362,363,705,364,365],
-    knives: [525,366,367,368]
+    knives: [525,366,367,368,917,918,919,920,921,922]
 }, {
     "name": "Winter Offensive",
     "img": "winter_case.png",
     "type": "Default",
     
     weapons: [372,371,370,369,376,375,374,373,679,378,377,379,658],
-    knives: [380,381,382]
+    knives: [380,381,382,866,867,868,917,918,919,920,921,922]
 }, {
     "name": "Falchion Case",
     "img": "falchion_case.png",
     "type": "Default",
-    
     weapons: [383,384,385,386,387,388,389,390,391,392,393,394,395,396,657,672],
-    knives: [397,398,399]
+    knives: [397,398,399,818,820,823,826,830,831,898,899,900,901,902,903,904,905,906]
 }, {
     "name": "Operation Vanguard",
     "img": "avangard_case.png",
     "type": "Default",
     
     weapons: [404,402,401,400,403,408,407,406,405,411,410,409,668,670],
-    knives: [575,412,425]
+    knives: [575,412,425,917,918,919,920,921,922]
 }, {
     "name": "Operation Phoenix",
     "img": "fenix_case.png",
     "type": "Default",
     
     weapons: [416,415,414,413,420,419,418,417,421,689,682,422,674],
-    knives: [423,424,425]
+    knives: [423,424,425,917,918,919,920,921,922]
 }, {
     "name": "Huntsman Weapon",
     "img": "ohotnichiy_case.png",
     "type": "Default",
     
-    weapons: [428,427,426,431,430,429,434,433,432,435,436,680,437,664,438],
-    knives: [439,440,441]
+    weapons: [428,427,426,431,430,429,434,433,432,435,436,680,846,437,664,438],
+    knives: [366,382,439,440,441,492,504,647,648,649,815,824,832,843,923,924,925,926,927]
 }, {
     "name": "Operation Breakout",
     "img": "proriv_case.png",
     "type": "Default",
-    
     weapons: [444,446,445,443,442,448,447,450,449,686,452,451,661,659],
-    knives: [453,454,455]
+    knives: [453,454,455,895,896,897]
 }, {
     "name": "Shadow Case",
     "img": "shadow.png",
     "type": "Default",
     
     weapons: [457,459,460,458,461,456,462,466,465,463,464,468,467,704,469,699],
-    knives: [650,651,652,653,654,655]
+    knives: [650,651,652,653,654,655,928,929,930,931,932,933]
 }, {
     "name": "CS:GO Weapon",
     "img": "orujeiniy_case.png",
     "type": "Default",
     
     weapons: [470,472,471,475,474,473,685,684,673],
-    knives: [476,477,478]
+    knives: [476,477,478,917,918,919,920,921,922]
 }, {
     "name": "CS:GO Weapon #2",
     "img": "orujeiniy2_case.png",
     "type": "Default",
     
     weapons: [483,479,481,482,480,486,484,487,485,488,489,665],
-    knives: [490,491,492]
+    knives: [490,491,492,917,918,919,920,921,922]
 }, {
     "name": "CS:GO Weapon #3",
     "img": "orujeiniy3_case.png",
     "type": "Default",
     
     weapons: [497,496,495,494,493,501,500,499,498,503,502,666],
-    knives: [512,477,504]
+    knives: [512,477,504,917,918,919,920,921,922]
 }, {
     "name": "eSports 2013",
     "img": "esports2013_case.png",
     "type": "eSports",
     
     weapons: [505,507,506,509,510,508,678,511,663],
-    knives: [512,513,514]
+    knives: [512,513,514,917,918,919,920,921,922]
 }, {
     "name": "eSports 2013 Winter",
     "img": "esportsw2013_case.png",
     "type": "eSports",
     
     weapons: [516,520,519,518,517,515,522,521,688,523,524,662],
-    knives: [575,525,585]
+    knives: [575,525,585,917,918,919,920,921,922]
 }, {
     "name": "eSports 2014 Summer",
     "img": "esports2014_case.png",
     "type": "eSports",
     
     weapons: [526,527,528,529,530,531,533,532,534,535,536,683,537,538,691,540,539],
-    knives: [541,636,368]
+    knives: [541,636,368,917,918,919,920,921,922]
 }, {
     "name": "Operation Wildfire",
     "img": "wildfire.png",
@@ -307,7 +307,7 @@ var cases = [{
     "type": "Default",
     
     weapons: [563,562,565,561,564,566,570,568,569,567,571,572,681,573,660],
-    knives: [574,638,575]
+    knives: [574,638,575,917,918,919,920,921,922]
 }, {
     "name": "Knife Case",
     "img": "knife.png",
@@ -411,8 +411,20 @@ var cases = [{
 }, ]
 
 var CAPSULES = [{
-    "name": "Enfu Sticker Capsule",
-    "img": "Enfu_Sticker_Capsule.png",
+    "name": "Sticker Capsule",
+    "img": "Sticker_Capsule.png",
     "type": "Default",
-    "stickers": [0, 1, 2]
+    "stickers": [0, 1, 2,3,4,5,6,7,8,9,10,11,12,13,14]
+}]
+
+var GRAFFITI_BOX = [{
+    name: 'CS:GO Graffiti Box',
+    img: 'graffiti_box.png',
+    type: 'Default',
+    graffiti: [39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56]
+}, {
+    name: 'Community Graffiti Box 1',
+    img: 'community_graffiti_box.png',
+    type: 'Default',
+    graffiti: [57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74]
 }]

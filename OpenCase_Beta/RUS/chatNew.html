@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/chat.css">
+    <link rel="stylesheet" type="text/css" href="../css/chat-flags.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/buttons.css">
+    <link rel="stylesheet" type="text/css" href="../css/loading.css">
+    <link rel="stylesheet" type="text/css" href="../css/rarity.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/lobibox.min.css"/>
+    <link rel="stylesheet" href="../css/navigationMenu.css">
+    <link rel="stylesheet" href="../css/winter.css">
+    
+    <script src="../scripts/build/libs.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/winter.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/navigationMenu.js"></script>
+    <script src="../scripts/socket.io.js"></script>
+    <script src="../scripts/profile.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/skinNames.js"></script>
+    <script src="../scripts/chatNew.js"></script>
+    <script src="../scripts/weapons.js"></script>
+    <script src="../scripts/prices.js"></script>
+    <script src="../scripts/localization.js"></script>
+    
+    <!-- Upload images in chat -->
+    <script src="../scripts/cloudinary/jquery.ui.widget.js"></script>
+    <script src="../scripts/cloudinary/jquery.iframe-transport.js"></script>
+    <script src="../scripts/cloudinary/jquery.fileupload.js"></script>
+    <script src="../scripts/cloudinary/jquery.cloudinary.js"></script>
+    
+    <title>Chat</title>
+    <style>
+    .connection_status {
+        text-align: center;
+        padding: 5px;
+        margin-top: 10px;
+        font-size: 16px;
+        color: #616161;
+    }
+    .online {
+        position: fixed;
+        top: 9px;
+        right: 10px;
+        z-index: 50;
+        font-weight: bold;
+        color: #fff;
+    }
+    .online:after {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: #00dc44;
+        margin-left: 5px;
+        border-radius: 50px;
+    }
+    </style>
+</head>
+
+<body data-localization="chat" data-inventory='no-load' data-ad='no'>
+    <div class="site-overlay"></div>
+    <div id="container">
+        <div class="navigationBar" data-menu-EN="Chat" data-menu-RU="Чат"></div>
+        <div class='online' id='online'></div>
+        <div id="login" style='display: none;' data-loc-group="login">
+            <div class='input-group input-group-sm'>
+                <span class='input-group-addon'><i class='glyphicon glyphicon-envelope'></i></span>
+                <input type="text" class="form-control" placeholder="Email" id="email"></input>
+            </div>
+            <div class='input-group input-group-sm'>
+                <span class='input-group-addon'><i class='glyphicon glyphicon-lock'></i></span>
+                <input type="password" class="form-control" placeholder="Password" id="password"></input>
+            </div>
+            <div class='input-group input-group-sm' id='nickname-group' style='display: none;'>
+                <span class='input-group-addon'><i class='glyphicon glyphicon-user'></i></span>
+                <input type="text" placeholder="Nickname" id="nickname" class="form-control"></input>
+            </div>
+            <span id="login-status" class='text-danger'></span>
+            <div id="login__buttons">
+                <div id='login-buttons-container'><button class="btn btn-primary btn-sm" onclick="fbProfile.login();" id="loginButton" data-loc="sign_in">Sign in</button>
+                <button class="btn btn-primary btn-sm empty text-primary" id="registerButton" data-loc="register">Register</button>
+                </div>
+                <div>
+                    <a href="#" id="forgot-pass" data-loc="forgot_pass">Forgot password?</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat__rooms-container">
+            <div class="connection_status" style="display:none;"></div>
+            <div class="chat__rooms"></div>
+            <div class="chat__rooms__info"><a href="banlist.html" data-loc="banlist">Banlist</a></div>
+        </div>
+    
+        <div id="chat">
+            <ul class="chat__messages"> </ul>
+            <div class="chat__write panel-footer">
+                <div id='typing' class='typing'></div>
+                <div class='input-group input-group-sm'>
+                    <div type='text' class="form-control" contenteditable="true" id="chat__new-message" max="120" placeholder="Your message..."></div>
+                    
+                    <a href='#' class='msg-attach graffiti-attach' data-toggle='popover'>
+                        <i class='spray-icon'></i>
+                    </a>
+                    
+                    <div class='msg-attach img-attach'>
+                        <input name='file' type='file' accept='image/jpeg,image/png,image/gif' id='attach_img'>
+                        <i class='glyphicon glyphicon-camera'></i>
+                    </div>
+                    
+                    <div class='input-group-btn'>
+                        <button class="btn btn-primary" type="button" id="chat__send-new-message">
+                            <i class='glyphicon glyphicon-send'></i>
+                        </button>
+                    </div>
+                    
+                </div>
+                <div class="attach-preview hidden">
+                    <div class="attach-preview-wrap">
+                        <img id="preview_img" src='#'>
+                        <div id='attach-remove' class='attach-remove'>
+                            <i class='fa fa-times'></i>
+                        </div>
+                    </div>
+               </div>
+            </div>
+        </div>
+    
+    <!-- Moder ban modal -->
+    <div id='moder-ban-modal' class='modal fade' role='dialog'>
+        <div class='modal-dialog modal-sm' data-loc-group='ban_reason'>
+            <div class='modal-content' data-loc-group='ban_modal'>
+                <div class='modal-header'>
+                    <span data-loc='title'>Ban reason</span>
+                    <button class='close' type='button' data-dismiss='modal'>&times;</button>
+                </div>
+                <div class='modal-body' data-loc-group='reasons'>
+                    <div class='checkbox'>
+                        <label><input type='checkbox'> <span data-loc='spam'>Spam</span></label>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox'> <span data-loc='cheats'>Cheats</span></label>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox'> <span data-loc='insults'>Insults</span></label>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox'> <span data-loc='scam'>Scam</span></label>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox'> <span data-loc='adult_img'>18+ pictures</span></label>
+                    </div>
+                    <div class='checkbox'>
+                        <label><input type='checkbox' id='moder-ban-other_checkbox'> <span data-loc='other'>Other</span></label>
+                        <input type='text' class='form-control input-sm' id='moder-ban-other_input' disabled>
+                    </div>
+                    <div class='input-group'>
+                       <input type='number' id='moder-ban_time' class='form-control input-sm' value='1'>
+                        <span class="input-group-addon" style="width:0px; padding-left:0px; padding-right:0px; border:none;"></span>
+                        <select id='moder-ban_time-type' class='form-control input-sm'>
+                            <option mult='60000'>min</option>
+                            <option mult='3600000'>hour</option>
+                            <option mult='86400000'>day</option>
+                            <option mult='604800000'>week</option>
+                            <option mult='31536000000'>year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class='modal-footer'>
+                    <button class='btn btn-danger' type='button' id='ban_user'>Confirm</button>
+                    <button class='btn btn-default' type='button' data-dismiss='modal'>Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            Chat.init();
+            $(document).on('click', '.glyphicon-camera', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                $('attach_img').click();
+            })
+            
+            $('#attach_img').on('change', function(event) {
+                var files = event.target.files;
+                
+                if (files && files[0]) {
+                    $('.attach-preview').removeClass('hidden');
+                    
+                    var data = new FormData();
+                    $.each(files, function(key, val) {
+                        data.append(key, val);
+                    })
+                    
+                    // File preview
+                    var render = new FileReader();
+                    render.onload = function(e) {
+                        $('#preview_img').attr('src', e.target.result);
+                        setTimeout(function() {
+                            $('.chat__messages').css('padding-bottom', $('.chat__write').outerHeight() - 15);
+                            $("#container").animate({
+                                scrollTop: $('#chat').height()
+                            }, 200);
+                        }, 100)
+                    }
+                    
+                    render.readAsDataURL(files[0]);
+                    
+                    $('#preview_img').parent().addClass('m-progress');
+                    /*$.ajax({
+                        url: 'https://api.mobypicture.com/2.0/upload.format',
+                        type: 'POST',
+                        data: data,
+                        cache: false,
+                        dataType: 'json',
+                        processData: false,
+                        contentType: false,
+                        success: function(data, textStatus, jqXHR) {
+                            console.log(data);
+                            if (data.status_code === 200) {
+                                var url = data.data.img_url;
+                                var thumb = data.data.thumb_url;
+                                $('#preview_img').parent().removeClass('m-progress');
+                                
+                                $('#preview_img').data('url', url);
+                                $('#preview_img').data('thumb', thumb);
+                            } else {
+                                $.notify({
+                                    message: 'Can\'t load image to server'
+                                }, {
+                                    type: 'danger'
+                                })
+                            }
+                        },
+                        error: function(jqXHR, textStatus, error) {
+                            console.log('ERROR:', textStatus);
+                            $.notify({
+                                message: 'Can\'t load image to server'
+                            }, {
+                                type: 'danger'
+                            })
+                        }
+                    })*/
+                }
+            });
+            
+            $(document).on('click', '#attach-remove', function() {
+                $('#preview_img').data('url', '');
+                $('#preview_img').data('thumb', '');
+                $('#preview_img').attr('src', '#');
+                $('.attach-preview').addClass('hidden');
+                
+                $('#attach_img').val('');
+                $('.chat__messages').css('padding-bottom', '30px');
+            })
+            
+            $('#attach_img').unsigned_cloudinary_upload('chat_images', 
+                { cloud_name: 'dzkvnsdke' },
+                { multiply: true })
+                .bind('cloudinarydone', function(e, data) {
+                    var url = data.result.secure_url;
+                    //var thumb = url;
+                    $('#preview_img').parent().removeClass('m-progress');
+
+                    $('#preview_img').data('url', url);
+                    //$('#preview_img').data('thumb', thumb);
+                })
+                .bind('cloudinaryprogress', function(e, data) {
+                    console.log('load');
+                })
+                .bind('fileuploadfail', function() {
+                    $.notify({
+                        message: 'Can\'t load image to server'
+                    }, {
+                        type: 'danger'
+                    })
+                })
+        })
+    </script>
+    
+    <script id='msgTemplate'>
+        <li class="animated bounceIn chat__message ${extraClasses}" data-msgkey="${key}">
+            <a href="profile.html?uid=${uid}">
+                <img src="${img}" data-userid="${uid}">
+            </a>
+            <div class="message__info">
+                <div class="message__info__from-time">
+                    <span class="message__from">${username}</span>
+                    <img src="../images/none.png" class="flag flag-${flag}">
+                    {{if group}}<span class='group'>${group}</span>{{/if}}
+                    <span class="message__time">${time}</span>
+                    {{if isModer || isVip}}
+                    <div class="message__moderator" data-loc-group="message-menu">
+                        <div class="dropup"> <i aria-hidden="true" class="fa fa-bars dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"></i>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                {{if isModer || isVip}}
+                                    {{if isModer}}<li><a href="#" data-action="chat-ban" data-loc="chat_ban">Chat ban</a></li>{{/if}}
+                                    {{if isModer || (isVip && myMessage)}}<li><a href="#" data-action="delete-message" data-loc="delete">Delete</a></li>{{/if}}
+                                    {{if isVip}}
+                                        <li><a href="#" data-action="fake-vip" data-loc="fake_vip">Fake VIP</a></li>
+                                        <li><a href="#" data-action="blur" data-loc="Blur">Blur</a></li>
+                                    {{/if}}
+                                {{/if}}
+                            </ul>
+                        </div>
+                    </div>
+                    {{/if}}
+                </div> 
+                <span class="message__text">
+                     {{if type === 'graffiti'}}
+                         <img src="${attachments}">
+                    {{else}}
+                        {{html text}}
+                        {{if attachments}}
+                            <img class='message-img' src="${attachments}">
+                        {{/if}}
+                    {{/if}}
+                </span>
+            </div>
+        </li>
+    </script>
+    <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+</body>
+
+</html>

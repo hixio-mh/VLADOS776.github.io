@@ -146,6 +146,7 @@ $(function() {
         var bet = parseInt(betStr.match(/(\d+)/g).toString().replace(/\,/g, ''));
         if (gameStart) return false;
         if (bet <= 0) return false;
+        if (bet > betLimit) bet = betLimit;
         if (Player.doubleBalance <= 0 || bet > Player.doubleBalance) {
             $('#balance').addClass('animated flash');
             setTimeout(function() {
@@ -315,8 +316,11 @@ function startGame(win, duration) {
                                 color: playerBet[i].color,
                                 balance: Player.doubleBalance
                             })
+                            
+                            customEvent({ type: 'game', game: 'doubleOnline', event: 'win', bet: playerBet[i].bet, color: playerBet[i].color })
                         } else {
                             statisticPlusOne('double-loose');
+                            customEvent({ type: 'game', game: 'doubleOnline', event: 'lose', bet: playerBet[i].bet, color: playerBet[i].color })
                         }
 
                     saveStatistic('doubleBalance', Player.doubleBalance, 'Number');

@@ -5,7 +5,7 @@ var botMinDec = 700,
     botMaxDec = 3000,
     botMinBet = 1,
     botMaxBet = 1000,
-    betLimit = 1000000;
+    betLimit = 10000000;
 var timerBots,
     intervalCountdown,
     winNumber = 40,
@@ -136,8 +136,10 @@ function startGame() {
                                 color: playerBet[i].color,
                                 balance: Player.doubleBalance
                             })
+                            customEvent({ type: 'game', game: 'double', event: 'win', color: playerBet[i].color, bet: playerBet[i].bet })
                         } else {
                             statisticPlusOne('double-loose');
+                            customEvent({ type: 'game', game: 'double', event: 'lose', color: playerBet[i].color, bet: playerBet[i].bet })
                         }
 
                     saveStatistic('doubleBalance', Player.doubleBalance, 'Number');
@@ -221,6 +223,7 @@ $(document).on('click', '.bet-to-color', function() {
     var betStr = $('#bet').val();
     betStr = betStr == "" ? "0" : betStr;
     var bet = parseInt(betStr.match(/(\d+)/g).toString().replace(/\,/g, ''));
+    if (bet > betLimit) bet = betLimit;
     if (gameStart) return false;
     if (bet <= 0) return false;
     if (Player.doubleBalance <= 0 || bet > Player.doubleBalance) {

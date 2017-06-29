@@ -474,7 +474,7 @@ var fbProfile = (function (module) {
             var weapons = data.val();
             if (weapons != null) {
                 for (var i = 0; i < weapons.length; i++) {
-                    var wp = new Weapon(weapons[i]);
+                    var wp = new Item(weapons[i]);
                     wp.new = true;
                     saveWeapon(wp);
                 }

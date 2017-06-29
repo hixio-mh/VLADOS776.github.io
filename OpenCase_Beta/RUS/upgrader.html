@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Upgrader</title>
+    <!-- Стили -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../css/rarity.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../css/loading.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../css/upgrader.css">
+    <link rel="stylesheet" type="text/css" href="../css/inventory-portable.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/lobibox.min.css">
+
+    <link rel="stylesheet" href="../css/navigationMenu.css">
+</head>
+
+<body data-localization="upgrader" data-inventory='no-load'>
+    <div class="site-overlay"></div>
+    <div id="container">
+        <div class="navigationBar">Upgrader</div>
+        <button id="how-to-play" class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#how-to-play-modal" data-loc='how_to_play'>How to play</button>
+        
+        <div class='container mt-10'>
+           <div class="content">
+               
+            <div class="col-sm-5">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="upgrader_item empty" id='selectItem'>
+                            <span data-loc='Select skin to upgrade'>Select skin to upgrade</span>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="times" viewBox="0 0 30 30">
+                                <path class="a1" d="M0,0l30,30"></path>
+                                <path class="a2" d="M30,0l-30,30"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2" style='display:flex;'>
+                <div class="upgrader_animation wait" aria-label="scroll" aria-hidden="true">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 85">
+                        <path class="a1" d="M0,0l15,16L30,0"></path>
+                        <path class="a2" d="M0,20l15,16l15-16"></path>
+                        <path class="a3" d="M0,40l15,16l15-16"></path>
+                        <path class="a4" d="M0,60l15,16l15-16"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="upgrader_item empty" id='newItem'>
+                            <span data-loc='Select skin to upgrade'>Select skin to upgrade</span>
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="times" viewBox="0 0 30 30">
+                                <path class="a1" d="M0,0l30,30"></path>
+                                <path class="a2" d="M30,0l-30,30"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </div>
+            <div class="col-sm-12 buttons">
+                <button class="btn btn-primary text-uppercase" id='selectItem2' data-loc='Select skin'>Select skin</button>
+                <button class="btn btn-success text-uppercase" id='upgrade' data-loc='Upgrade'>Upgrade</button>
+            </div>
+            <div class="col-sm-12 mt-10">
+               <div class="col-sm-6">
+                   <div data-loc='Percent'>Percent</div>
+                   <div id='chance-percent' class='text-bold text-white'>55%</div>
+               </div>
+               <div class="col-sm-6">
+                    <div id="multiplies" class='multiplies'></div>
+               </div>
+            </div>
+            <div class="col-sm-12 mt-10">
+               <div class="well">
+                    <ul id="history" class='history'></ul>
+               </div>
+            </div>
+        </div>
+
+        <!-- Инвентарь -->
+        <div class="inventoryList" style="display: none;">
+            <span id="intentory-Player"></span>
+            <div class="closeInventory"></div>
+            <ul class="inventory inv-price-counter"></ul>
+            <button class="choseItems btn btn-success btn-block" data-loc='Upgrade item'>Upgrade item</button>
+        </div>
+    </div>
+    
+    <div class="modal fade" id='how-to-play-modal' role='dialog' data-loc-group='how_to_play_modal'>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" data-loc='title'>How to play</h4>
+                </div>
+                <div class="modal-body" data-loc='body'>
+                    <p><b>Description</b></p>
+                    <p>You have some skin. You can replace this skin with another one, with a price higher in 1.5, 2, 5 or 10 times. The higher the price of a new skin, the lower the probability of success.
+                    <br>If the upgrade is successful, the old skin is replaced with a new one. If it fails, the old skin disappears.</p>
+                    <p></p>
+                    <ol>
+                        <li>Select a skin to upgrade</li>
+                        <li>Select a multiplier</li>
+                        <li>Upgrade</li>
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class='button btn btn-default' data-dismiss="modal" data-loc='close'>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script id='tmpl-history'>
+        <li>
+            <div class='history-items'>
+                <div>
+                <span class="currency dollar">${item.price}</span><br>
+                    <img src="${item.img}">
+                </div>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" class='history-arrow ${status}' viewBox="0 0 18 30">
+                    <path d="M0,0l15,15L0,30"></path>
+                </svg>
+                <div>
+                    <span class="currency dollar">${item2.price}</span><br>
+                    <img src="${item2.img}">
+                </div>
+            </div>
+        </li>
+    </script>
+
+    <!-- Скрипты -->
+    <script src="../scripts/build/libs.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/localization.js"></script>
+    <script src="../scripts/settings.js"></script>
+    <script src="../scripts/weapons.js"></script>
+    <script src="../scripts/skinNames.js"></script>
+    <script src="../scripts/quality.js"></script>
+    <script src="../scripts/prices.js"></script>
+    <script src="../scripts/inventory.js"></script>
+    <script src="../scripts/games/upgrader.js"></script>
+    <script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+
+    <script src="../scripts/navigationMenu.js"></script>
+    <script>
+        $(function() {
+            Upgrader.init();
+        })
+
+    </script>
+</body>
+
+</html>

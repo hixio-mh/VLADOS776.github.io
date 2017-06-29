@@ -676,7 +676,103 @@ var news = [{
     "month": 4,
     "year": 2017,
     "update": {
-        "RU": " - [Новое] Открывайте до 5 кейсов за раз. Может лагать на слабых устройствах.",
-        "EN": " - [New] New skin M4A1-S | Froststorm"
+        "RU": " - [Новое] Открывайте до 5 кейсов за раз. Может лагать на слабых устройствах.<br> - [Изменено] Скины из Spectrum кейса теперь можно купить в магазине и использовать в Своих кейсах.",
+        "EN": " - [New] Open 5 cases at once!<br> - [Changed] Skins from Spectrum case available for buying and Custom cases."
+    }
+}, {
+    "day": 18,
+    "month": 4,
+    "year": 2017,
+    "update": {
+        "RU": " - [Исправлено] Исправлены ошибки связанные с открытием нескольких специальных кейсов одновременно.",
+        "EN": " - [Fixed] Fixed bugs with multiple opening special cases!"
+    }
+}, {
+    "day": 03,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Новый кейс Workshop 3!",
+        "EN": " - [New] Workshop 3 case!"
+    }
+}, {
+    "day": 09,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Возможность сменить Email в настройках.",
+        "EN": " - [New] You can change your email in settings."
+    }
+}, {
+    "day": 14,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Обновление инвентаря. Возможность выделять предметы долгим нажатием и продавать несколько предметов за раз",
+        "EN": " - [New] Inventory update. Now you can select items by long tap and sell selected skins."
+    }
+}, {
+    "day": 15,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Изменено] Улучшено прикрепление изображений в чате.",
+        "EN": " - [Changed] Improved attachment of images in the chat"
+    }
+}, {
+    "day": 24,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Добавлен кейс Hydra!",
+        "EN": " - [New] Hydra case!"
+    }
+}, {
+    "day": 25,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Добавлен USP | Orion<br> - [Изменено] Улучшен поиск в магазине.",
+        "EN": " - [New] Added USP | Orion.<br> - [Changed] Improved search in the market."
+    }
+}, {
+    "day": 26,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Добавлены ножи с фазами.<br> - [Новое] В инвентаре можно просматривать скины свайпом.",
+        "EN": " - [New] New knives & phases.<br> - [New] Swipe items in inventory."
+    }
+}, {
+    "day": 29,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": " - [Новое] Граффити! Можно использовать в чате.",
+        "EN": " - [New] Graffiti"
+    }
+}, {
+    "day": 30,
+    "month": 5,
+    "year": 2017,
+    "update": {
+        "RU": ' - [Новое] <a href="open.html?graffitiId=1">Community Graffiti Box 1</a>',
+        "EN": ' - [New] <a href="open.html?graffitiId=1">Community Graffiti Box 1</a>'
+    }
+}, {
+    "day": 14,
+    "month": 6,
+    "year": 2017,
+    "update": {
+        "RU": ' - [Новое] Миссии! Откройте меню, чтобы увидить их.',
+        "EN": ' - [New] Missions! Open menu to see it'
+    }
+}, {
+    "day": 21,
+    "month": 6,
+    "year": 2017,
+    "update": {
+        "RU": ' - [Новое] Новая игра <a href="https://vlados776.github.io/OpenCase_Beta2/RUS/upgrader.html">Upgrader</a>!',
+        "EN": ' - [New] New mini game <a href="https://vlados776.github.io/OpenCase_Beta2/RUS/upgrader.html">Upgrader</a>!'
     }
 }, ];
