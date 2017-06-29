@@ -50,7 +50,7 @@ var AdModule = (function(module) {
         
         var script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = 'http://pagead2.googlesyndication.com/pagead/show_ads.js';
+        script.src = '//pagead2.googlesyndication.com/pagead/show_ads.js';
         document.body.appendChild(script);
         
         var css = document.createElement('style');
