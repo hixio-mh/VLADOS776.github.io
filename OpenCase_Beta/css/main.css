@@ -330,6 +330,13 @@ body {
 .sticker_xs {
   width: 20px; }
 
+@media (max-width: 450px) {
+  .weapons_stickers {
+    top: 58px !important; }
+
+  .weapon .li_item_img {
+    width: 86px;
+    max-height: 91px; } }
 .graffiti {
   background: url(../images/Cases/graffitibg.jpg) #111;
   background-size: 100%; }
