@@ -675,6 +675,13 @@ Sticker.prototype.getExtra = function (isString) {
     extra.hash = this.hash();
     return isString ? JSON.stringify(extra) : extra;
 }
+Sticker.prototype.tradeObject = function () {
+    var trObj = {
+        item_id: this.item_id,
+        quality: 5
+    };
+    return trObj;
+}
 
 function getItemsByID(IDs, type) {
     var result = [];
