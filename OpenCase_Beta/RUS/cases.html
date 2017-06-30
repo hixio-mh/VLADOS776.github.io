@@ -224,6 +224,7 @@
                 }
                 for (var i = 0; i < CAPSULES.length; i++) {
                     var specialClass = (typeof CAPSULES[i].specialClass == "undefined") ? "" : CAPSULES[i].specialClass;
+                    var casePrice = cases[i].price ? (cases[i].price / 100).toFixed(2) : getCapsulePrice(i);
                     var cas = {
                         caseType: 'capsule',
                         collection: null,
@@ -232,7 +233,7 @@
                         deadline: CAPSULES[i].deadline,
                         minLvl: CAPSULES[i].minLvl,
                         img: CAPSULES[i].img,
-                        price: 5,
+                        price: casePrice,
                         name: CAPSULES[i].name
                     }
                     var curCase = $('#caseTemplate').tmpl(cas);
