@@ -21,7 +21,9 @@
             background: #19212b;
             margin: 0;
         }
-        
+        #container {
+            position: absolute;
+        }
         .option-block {
             font-size: 1em;
         }
@@ -160,7 +162,7 @@
     </style>
 </head>
 
-<body data-localization='settings'>
+<body data-localization='settings' data-ad='no'>
     <div class="site-overlay"></div>
     <div id="container">
         <div class="navigationBar"></div>
@@ -791,11 +793,11 @@
                     action: 'client.showSplashScreen();',
                     description: 'Go to local web server.'
                 }, {
-                    simpleCode: 'Upgrader',
+                    simpleCode: 'Beta',
                     code: '',
                     multiply: true,
-                    action: 'location="https://vlados776.github.io/OpenCase_Beta2/RUS/upgrader.html";',
-                    description: 'Fus ro dah'
+                    action: 'location="https://vlados776.github.io/OpenCase_Beta/RUS/cases.html?start=true";',
+                    description: 'Beta'
                 }];
                 var code = $('#code-input').val();
                 if (code == "") {
