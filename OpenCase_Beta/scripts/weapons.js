@@ -2255,7 +2255,7 @@ var Items = {
             type: "P250",
             skinName: "Nuclear Threat",
             rarity: "restricted",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-DjsjjNrnCqWdY781lteXA54vwxgG2rhFla2-hcYTGclBqYAnWrgXrx728hsC_up2fm3MyvnIl4nffnEGpwUYbLGuk_6Y"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhzw8zGZDZH_8iknZCOqPDmNr7fqWdY781lteXA54vwxgTt8hA5YGzxd9LGJA49YVzQqwDqxu_tjJC06J3PzyRhvCAm5naOnRepwUYbH0dTvU8"
     }, {
             id: 203,
             type: "Tec-9",
@@ -3649,7 +3649,7 @@ var Items = {
             type: "★ M9 Bayonet",
             skinName: "Slaughter",
             rarity: "rare",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957ODGcDZH_9e_mr-HnvD8J4Tdl3lW7Yt03OjF8Y733A21_ENuZz_7JIbEcQNtaA3Q8lC6wey-h8W0up7IyXBrpGB8sr1DtlQN"
+            img: "image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-KmsjuNrnDl1Rd4cJ5ntbN9J7yjRrh-BVlZW3ydoTHdABsZ13Y_Qe5xue6gMC-vp-amntr6yQq4XfUzhTin1gSOZHog2Kf"
     }, {
             id: 425,
             type: "★ Flip Knife",
