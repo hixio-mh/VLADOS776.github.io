@@ -92,11 +92,11 @@
 		</div>
 	</div>
 	
-	<div class="stickerScratch" style="display:none;">
-        <h5 class='text-black'>Sticker Scratch</h5>
+	<div class="stickerScratch" style="display:none;" data-loc-group='sticker_scratch'>
+        <h5 class='text-black' data-loc='title'>Sticker Scratch</h5>
 	    <canvas id='scratch' width="300" height="300"></canvas>
-	    <button class="btn btn-success" id='remove_sticker_window'>Remove sticker</button>
-	    <button class="btn btn-danger" id='calcel_remove_window'>Cancel</button>
+	    <button class="btn btn-success" id='remove_sticker_window' data-loc='remove'>Remove sticker</button>
+	    <button class="btn btn-danger" id='calcel_remove_window' data-loc='cancel'>Cancel</button>
 	</div>
 
 	<div class='bottomBar' id='tradeBar' style='display: none' data-loc-group="trade_up_contract">
@@ -111,8 +111,8 @@
 	</div>
 	
 	<div class='bottomBar' id='applyStickerBar' style='display: none' data-loc-group="stickerBar">
-		<span>Choose a Weapon to use with your Sticker</span><br>
-		<button class='btn btn-danger' id='cancelSticker' data-loc="cancelSticker">Cancel</button>
+		<span data-loc='descr'>Choose a Weapon to use with your Sticker</span><br>
+		<button class='btn btn-danger' id='cancelSticker' data-loc="cancel">Cancel</button>
 	</div>
 </div>
 	<div class="statistic" data-loc-group="statistic">
@@ -327,7 +327,7 @@
                                       <ul class="dropdown-menu' + (i >= 2 ? ' dropdown-menu-right' : '') + '">\
                                         <li class="dropdown-header">' + sticker.titleText() +'\
                                         <li class="divider">\
-                                        <li><a href="#" class="remove_sticker" data-index="'+i+'" data-item_id="'+sticker.item_id+'">Remove Sticker</a></li>\
+                                        <li><a href="#" class="remove_sticker" data-index="'+i+'" data-item_id="'+sticker.item_id+'">' + _t('inventory.weapon_info.remove_sticker', "Remove Sticker") + '</a></li>\
                                       </ul></span>'
                     })
                     $('#weaponStickers').show();
@@ -554,12 +554,21 @@
                     if (item.addSticker(Inventory.list.sticker.item_id)) {
                         deleteWeapon(Inventory.list.sticker.id);
                         $('.weapon[data-id="' + Inventory.list.sticker.id + '"]').remove();
-                        Inventory.list.sticker = {};
                         Inventory.list.status = 'default';
                         updateOpenedItem(item);
                         $('#applyStickerBar').hide();
                         $('.inventory').removeClass('bottomBar-active');
                         Sound('upgrader.success');
+                        
+                        LOG.log({
+                            action: 'Apply sticker',
+                            item_id: item.item_id,
+                            itemName: item.titleText(),
+                            stickerID: Inventory.list.sticker.item_id,
+                            stickerName: new Sticker(Inventory.list.sticker).titleText()
+                        })
+                        
+                        Inventory.list.sticker = {};
                     } else {
                         $.notify({
                             message: "Can't apply sticker to this item."
@@ -580,14 +589,23 @@
                     var stickerItem_id = $(this).data('item_id');
                     var stickerIndex = $(this).data('index');
                     showScratchWindow(stickerItem_id, stickerIndex);
-                    
+                    LOG.log({
+                        action: 'Open scratch sticker window',
+                        stickerID: stickerItem_id
+                    })
                 } else {
                     $('.stickerScratch').hide();
                     var stickerIndex = $(this).data('index');
                     getItem($("#weaponInfoContainer").data('id')).then(function(item) {
+                        LOG.log({
+                            action: 'Remove sticker',
+                            item_id: item.item_id,
+                            stickerID: item.stickers[stickerIndex].item_id
+                        })
                         item.stickers.splice(stickerIndex, 1);
                         Sound('interface.sticker_scratch');
                         updateOpenedItem(item);
+                        
                     })
                 }
             }
