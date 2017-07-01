@@ -353,7 +353,7 @@ Weapon.prototype.hash = function (id) {
         stattrak: this.stattrak,
         souvenir: this.souvenir
     }
-    if (this.stickers) hash_obj.stickers = this.stickers.map(function(sticker) { return sticker.item_id } );
+    if (this.stickers && this.stickers.length > 0) hash_obj.stickers = this.stickers.map(function(sticker) { return sticker.item_id } );
 
     return hex_md5(JSON.stringify(hash_obj))
 }
