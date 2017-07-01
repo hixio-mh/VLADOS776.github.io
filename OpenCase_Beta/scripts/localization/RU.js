@@ -276,7 +276,9 @@ var Translation = {
 			"trade_up_contract": "Контракт обмена",
 			"sell": "Продать",
 			"rename": "Переименовать ${1}",
-            "remove_sticker": "Соскрести наклейку"
+            "apply_sticker": "Наклеить наклейку",
+            "apply_sticker_to_item": "Наклеить на этот предмет",
+            "remove_sticker": "Соскрести наклейку",
 		},
 		"trade_up_contract": {
 			"close": "Закрыть контракт",
