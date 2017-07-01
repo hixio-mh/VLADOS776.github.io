@@ -754,7 +754,7 @@ var Missions = (function() {
             },
             description: {
                 RU: 'Выиграть в онлайн Джекпоте на легендарной сложности',
-                EN: 'Cashout in Crash on 20x'
+                EN: 'Win in Jackpot Online in Legendary room'
             },
             reward: {
                 exp: 10,
