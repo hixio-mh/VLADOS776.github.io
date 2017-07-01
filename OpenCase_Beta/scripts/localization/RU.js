@@ -275,7 +275,8 @@ var Translation = {
 			"phase": "Фаза",
 			"trade_up_contract": "Контракт обмена",
 			"sell": "Продать",
-			"rename": "Переименовать ${1}"
+			"rename": "Переименовать ${1}",
+            "remove_sticker": "Соскрести наклейку"
 		},
 		"trade_up_contract": {
 			"close": "Закрыть контракт",
@@ -290,6 +291,15 @@ var Translation = {
 			"select": "Выбрать всё",
 			"unselect": "Снять выделение"
 		},
+        "stickerBar": {
+            "descr": "Выберите скин для наклейки",
+            "cancel": "Отмена"
+        },
+        "sticker_scratch": {
+            "title": "Соскребите наклейку",
+            "remove": "Содрать наклейку",
+            "cancel": "Отмена"
+        },
 		"sell_error": "Что-то не так с ценой",
 		"statistic": {
 			"worth": "Сумма:",
@@ -483,11 +493,13 @@ var Translation = {
 		},
 		"beta": {
 			"group_title": "Экспериментальные функции",
-			"exchange": "Обмен оружием с игроками"
+			"exchange": "Обмен оружием с игроками",
+            "trade_notif": "Уведомление о новом трейде"
 		},
 		"interface": {
 			"group_title": "Интерфейс",
 			"language": "Язык",
+            "scroll": "Прокручивать имена, если не влезают",
 			"sound": "Звуки",
 			"fast_drop": "Быстрый дроп с кейсов"
 		},
