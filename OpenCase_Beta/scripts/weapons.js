@@ -231,11 +231,24 @@ Weapon.prototype.toOldObject = function (isNew) {
     return oldObj;
 }
 Weapon.prototype.getPrice = function () {
-    return getPrice(this.item_id, {
+    var pr = getPrice(this.item_id, {
         quality: this.quality,
         stattrak: this.stattrak,
         souvenir: this.souvenir
-    })
+    });
+    
+    // Change price if stickers
+    if (this.stickers && this.stickers.length > 0) {
+        var percent = 5;
+        var stickersPrice = 0;
+        this.stickers.forEach(function(sticker) {
+            stickersPrice += sticker.price;
+        })
+        
+        stickersPrice = stickersPrice * percent / 100;
+        pr += stickersPrice;
+    }
+    return parseFloat(pr.toFixed(2));
 }
 Weapon.prototype.stattrakRandom = function () {
     if (this.type.souvenir || this.can.stattrak == false || Object.keys(this.allPrices.stattrak).length == 0) {
