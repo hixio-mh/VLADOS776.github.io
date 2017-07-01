@@ -490,7 +490,7 @@ var openCase = {
         LOG.log({
             action: 'Open Case',
             case: {
-                name: cases[openCase.caseId].name,
+                name: openCase.caseType === 'capsules' ? CAPSULES[openCase.caseId].name : cases[openCase.caseId].name,
                 id: openCase.caseId,
                 free: openCase.isFree()
             },
