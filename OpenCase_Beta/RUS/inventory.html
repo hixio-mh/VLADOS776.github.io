@@ -97,6 +97,7 @@
 	    <canvas id='scratch' width="300" height="300"></canvas>
 	    <button class="btn btn-success" id='remove_sticker_window' data-loc='remove'>Remove sticker</button>
 	    <button class="btn btn-danger" id='calcel_remove_window' data-loc='cancel'>Cancel</button>
+	    <button class="btn btn-empty text-bold pull-right" id='scratch_help'>?</button>
 	</div>
 
 	<div class='bottomBar' id='tradeBar' style='display: none' data-loc-group="trade_up_contract">
@@ -194,6 +195,7 @@
                 $(document).on('click', '.remove_sticker', removeSticker);
                 $(document).on('click', '#remove_sticker_window', removeSticker);
                 $(document).on('click', '#calcel_remove_window', cancelRemoveWindow);
+                $(document).on('click', '#scratch_help', scratchHelp);
                 $('#cancelSticker').on('click', cancelSticker);
                 
                 $('#lock').on('click', lockToggle);
@@ -555,6 +557,7 @@
                         deleteWeapon(Inventory.list.sticker.id);
                         $('.weapon[data-id="' + Inventory.list.sticker.id + '"]').remove();
                         Inventory.list.status = 'default';
+                        item.price = item.getPrice();
                         updateOpenedItem(item);
                         $('#applyStickerBar').hide();
                         $('.inventory').removeClass('bottomBar-active');
@@ -604,6 +607,7 @@
                         })
                         item.stickers.splice(stickerIndex, 1);
                         Sound('interface.sticker_scratch');
+                        item.price = item.getPrice();
                         updateOpenedItem(item);
                         
                     })
@@ -724,6 +728,33 @@
             }
             function cancelRemoveWindow() {
                 $('.stickerScratch').hide();
+            }
+            function scratchHelp() {
+                if ($('#scratchFinger').length) return false;
+                
+                var finger = new Image;
+                finger.src = "data:image/svg+xml;base64,CjxzdmcgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDEwMDAgMTAwMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMTAwMCAxMDAwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPG1ldGFkYXRhPiBTdmcgVmVjdG9yIEljb25zIDogaHR0cDovL3d3dy5vbmxpbmV3ZWJmb250cy5jb20vaWNvbiA8L21ldGFkYXRhPgogIDxnPjxwYXRoIGQ9Ik00MDQuOCw2NTcuNWMtNy45LDAtMTQuMy02LjQtMTQuMy0xNC4zVjI2Mi4zYzAtMzQuMSwyNy44LTYxLjksNjEuOS02MS45czYxLjksMjcuOCw2MS45LDYxLjl2MzMzLjNjMCw3LjktNi40LDE0LjMtMTQuMywxNC4zYy03LjksMC0xNC4zLTYuNC0xNC4zLTE0LjNWMjYyLjNjMC0xOC40LTE1LTMzLjMtMzMuMy0zMy4zYy0xOC40LDAtMzMuMywxNS0zMy4zLDMzLjN2MzgwLjlDNDE5LjEsNjUxLjEsNDEyLjcsNjU3LjUsNDA0LjgsNjU3LjV6IiBzdHlsZT0iZmlsbDojMDBiYjljIj48L3BhdGg+PHBhdGggZD0iTTU5NS4yLDYwOS45Yy03LjksMC0xNC4zLTYuNC0xNC4zLTE0LjNWNDA1LjJjMC0xOC40LTE1LTMzLjMtMzMuMy0zMy4zYy0xOC40LDAtMzMuMywxNS0zMy4zLDMzLjN2MTkwLjRjMCw3LjktNi40LDE0LjMtMTQuMywxNC4zYy03LjksMC0xNC4zLTYuNC0xNC4zLTE0LjNWNDA1LjJjMC0zNC4xLDI3LjgtNjEuOSw2MS45LTYxLjljMzQuMSwwLDYxLjksMjcuOCw2MS45LDYxLjl2MTkwLjRDNjA5LjUsNjAzLjUsNjAzLjEsNjA5LjksNTk1LjIsNjA5Ljl6IiBzdHlsZT0iZmlsbDojMDBiYjljIj48L3BhdGg+PHBhdGggZD0iTTY5MC40LDYwOS45Yy03LjksMC0xNC4zLTYuNC0xNC4zLTE0LjNWNDUyLjhjMC0xOC40LTE1LTMzLjMtMzMuMy0zMy4zYy0xOC40LDAtMzMuMywxNS0zMy4zLDMzLjN2MTQyLjhjMCw3LjktNi40LDE0LjMtMTQuMywxNC4zYy03LjksMC0xNC4zLTYuNC0xNC4zLTE0LjNWNDUyLjhjMC0zNC4xLDI3LjgtNjEuOSw2MS45LTYxLjljMzQuMSwwLDYxLjksMjcuOCw2MS45LDYxLjl2MTQyLjhDNzA0LjcsNjAzLjUsNjk4LjMsNjA5LjksNjkwLjQsNjA5Ljl6IiBzdHlsZT0iZmlsbDojMDBiYjljIj48L3BhdGg+PHBhdGggZD0iTTU5NS4yLDk5MGMtNjEuMywwLTExOC44LTI3LjEtMTU3LjktNzQuNEwyMjMuNCw2MzkuM2MtMTAuNi05LTE3LjktMjQuMS0xOS00MC42Yy0xLTE2LjUsNC41LTMyLjQsMTUuNC00NC44YzEwLjktMTIuNCwyNi4xLTE5LjgsNDIuNi0yMC44YzE2LjQtMC45LDMyLjQsNC40LDQ0LjgsMTUuNGwxMDYuMyw4Mi44YzYuMiw0LjksNy4zLDEzLjgsMi41LDIwYy00LjksNi4yLTEzLjksNy4zLTIwLDIuNWwtMTA3LTgzLjNjLTcuMy02LjUtMTYuMS05LjUtMjQuOC04LjhjLTguOSwwLjUtMTcsNC41LTIyLjksMTEuMmMtMTIuMiwxMy44LTEwLjksMzQuOSwyLjksNDcuMWwyMTUuNSwyNzhjMzMuMyw0MC4zLDgyLjgsNjMuNywxMzUuNiw2My43Yzk3LjEsMCwxNzYuMi03OSwxNzYuMi0xNzYuMlY0OTkuNmMwLTE4LjQtMTUtMzMuMy0zMy4zLTMzLjNjLTE4LjQsMC0zMy4zLDE1LTMzLjMsMzMuM3Y5NS4yYzAsNy45LTYuNCwxNC4zLTE0LjMsMTQuM3MtMTQuMy02LjQtMTQuMy0xNC4zdi05NS4yYzAtMzQuMSwyNy44LTYxLjksNjEuOS02MS45czYxLjksMjcuOCw2MS45LDYxLjl2Mjg1LjdDNzk5LjksODk4LjIsNzA4LjEsOTkwLDU5NS4yLDk5MHoiIHN0eWxlPSJmaWxsOiMwMGJiOWMiPjwvcGF0aD48cGF0aCBkPSJNNTk1LjIsMjc2LjZjLTcuOSwwLTE0LjMtNi40LTE0LjMtMTQuM2MwLTcwLjktNTcuNy0xMjguNi0xMjguNi0xMjguNmMtNzAuOSwwLTEyOC42LDU3LjctMTI4LjYsMTI4LjZjMCw3LjktNi40LDE0LjMtMTQuMywxNC4zYy03LjksMC0xNC4zLTYuNC0xNC4zLTE0LjNjMC04Ni42LDcwLjUtMTU3LjEsMTU3LjEtMTU3LjFjODYuNiwwLDE1Ny4xLDcwLjUsMTU3LjEsMTU3LjFDNjA5LjUsMjcwLjIsNjAzLjEsMjc2LjYsNTk1LjIsMjc2LjZ6IiBzdHlsZT0iZmlsbDojMDBiYjljIj48L3BhdGg+PHBhdGggZD0iTTY5MC40LDI3Ni42Yy03LjksMC0xNC4zLTYuNC0xNC4zLTE0LjNjMC0xMjMuNC0xMDAuNC0yMjMuOC0yMjMuOC0yMjMuOGMtMTIzLjQsMC0yMjMuOCwxMDAuNC0yMjMuOCwyMjMuOGMwLDcuOS02LjQsMTQuMy0xNC4zLDE0LjNjLTcuOSwwLTE0LjMtNi40LTE0LjMtMTQuM0MyMDAuMSwxMjMuMiwzMTMuMywxMCw0NTIuNCwxMGMxMzkuMSwwLDI1Mi4zLDExMy4yLDI1Mi4zLDI1Mi4zQzcwNC43LDI3MC4yLDY5OC4zLDI3Ni42LDY5MC40LDI3Ni42eiIgc3R5bGU9ImZpbGw6IzAwYmI5YyI+PC9wYXRoPjwvZz48L3N2Zz4KICA=";
+                finger.width = 64;
+                finger.height = 64;
+                finger.setAttribute('id', 'scratchFinger');
+                finger.style = 'position: fixed; top: 50px; left: 50px';
+                
+                $('.stickerScratch').append(finger);
+                $('#scratchFinger').animate({
+                    left: 230,
+                    top: 100
+                }, 500)
+                $('#scratchFinger').animate({
+                    left: 50,
+                    top: 200
+                }, 500)
+                $('#scratchFinger').animate({
+                    left: 230,
+                    top: 300
+                }, 500, function() {
+                    $('#scratchFinger').remove();
+                    
+                })
             }
             
             function startContract() {
