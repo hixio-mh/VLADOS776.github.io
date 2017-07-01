@@ -327,9 +327,6 @@ body {
     top: 70px;
     text-align: center; }
 
-.sticker_xs {
-  width: 20px; }
-
 @media (max-width: 450px) {
   .weapons_stickers {
     top: 58px !important; }
@@ -843,5 +840,11 @@ i.double-icon {
 
 .text-black {
   color: #000; }
+
+.sticker_xs {
+  width: 20px; }
+
+.sticker_sm {
+  width: 60px; }
 
 /*# sourceMappingURL=main.css.map */

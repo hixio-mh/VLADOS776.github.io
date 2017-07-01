@@ -186,7 +186,7 @@ div#countdown-timer {
     position: relative;
 }
 
-.bet-items__item img {
+.bet-items__item__img {
     width: 100px;
     margin: 5px;
 }

@@ -60,6 +60,7 @@
 	.weapon {
 		height: 113px;
 		width: 98px;
+        background-size: 106px;
 	}
 	.wp-statTrak::before {
 		margin-top: 65px;

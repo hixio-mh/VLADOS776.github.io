@@ -1,61 +1,76 @@
-html, body {
-margin: 0;
-width: 100%;
-height: 100%;
-background-color: #333;
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
 }
+
 #container {
-	overflow-x:hidden;
-	background: #19212b;
+    overflow-x: hidden;
+    background: #19212b;
 }
+
 @media(max-width:390px) {
-	#container {
-		font-size:80%;
-	}
+    #container {
+        font-size: 80%;
+    }
 }
+
 @media(min-width:600px) {
-	#container {
-		font-size:120%;
-	}
+    #container {
+        font-size: 120%;
+    }
 }
+
 .games {
     width: 100%;
-	border-collapse: collapse;
-	color: #fff;
-	font-size: 1em;
+    border-collapse: collapse;
+    color: #fff;
+    font-size: 1em;
 }
-.games td, .games th {
+
+.games td,
+.games th {
     padding: 8px 3px;
 }
+
 .games td {
     border-bottom: 4px solid rgba(0, 0, 0, 0.3);
 }
-.games th:nth-child(1), .games td:nth-child(1) {
+
+.games th:nth-child(1),
+.games td:nth-child(1) {
     padding-left: 10px;
-	white-space: nowrap;
+    white-space: nowrap;
 }
+
 .games tr th {
     text-align: left;
     border-bottom: 1px solid #5f5f5f;
 }
+
 .join {
     /*background: #006E99;*/
-	padding: 8px;
+    padding: 8px;
     border-radius: 2px;
     text-transform: uppercase;
     font-size: 0.9em;
-	cursor: pointer;
-	font-weight: bold;
+    cursor: pointer;
+    font-weight: bold;
 }
+
 .table-name img {
     width: 35px;
     margin-right: 7px;
     vertical-align: middle;
 }
+
 ul.bot-inventory {
     padding: 0 10px;
     padding-top: 10px;
 }
+
 .blur {
     position: fixed;
     top: 0;
@@ -65,6 +80,7 @@ ul.bot-inventory {
     background: rgba(0, 0, 0, 0.5);
     z-index: 20;
 }
+
 .coin-blur {
     width: 100%;
     height: 100%;
@@ -72,14 +88,16 @@ ul.bot-inventory {
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.7);
+    z-index: 22;
 }
+
 .game {
     background: #181818;
     position: fixed;
     top: 40px;
     /*width: 100%;*/
     height: calc(100% - 40px);
-	text-align: left;
+    text-align: left;
     overflow-y: auto;
     max-width: 500px;
     margin: 0 auto;
@@ -89,53 +107,70 @@ ul.bot-inventory {
     padding: 4px;
     z-index: 21;
 }
+
 .close-game {
-	background-size: cover;
+    background-size: cover;
     width: 20px;
     height: 20px;
-	right: 5px;
+    right: 5px;
     top: 5px;
 }
+
 .game__table {
     text-align: center;
     width: 100%;
     color: #fff;
 }
+
 .game__table__td {
-	width: 50%;
+    width: 50%;
 }
+
 .game__table__win img {
-	width: 50px;
+    width: 50px;
 }
-.game__bot, .game__player {
+
+.game__bot,
+.game__player {
     color: #fff;
     width: 100%;
     display: inline-block;
-	text-align: center;
+    text-align: center;
 }
-.game__bot__nick, .game__player__nick {
+
+.game__bot__nick,
+.game__player__nick {
     display: block;
     text-align: center;
 }
-.game__bot__img, .game__player__img {
+
+.game__bot__img,
+.game__player__img {
     width: 50px;
     border-radius: 50%;
     vertical-align: middle;
     display: block;
     margin: 0 auto;
 }
-.game__bot__price, .game__player__price {
+
+.game__bot__price,
+.game__player__price {
     color: #00c723;
 }
-.game__bot__price:after, .game__player__price:after {
+
+.game__bot__price:after,
+.game__player__price:after {
     content: ' |';
-	color: #fff;
+    color: #fff;
 }
+
 .game__start {
     color: #fff;
     text-align: center;
 }
-.game__start__button:before, .game__start__button:after {
+
+.game__start__button:before,
+.game__start__button:after {
     content: '';
     display: inline-block;
     width: 45px;
@@ -145,141 +180,203 @@ ul.bot-inventory {
     z-index: -1;
     opacity: 0.5;
 }
-.game__start__button:before, .game__winner__CT {
+
+.game__start__button:before,
+.game__winner__CT {
     background: url(../images/coinflip/ct.png);
     background-size: cover;
     margin-left: -40px;
 }
-.game__start__button:after, .game__winner__T {
+
+.game__start__button:after,
+.game__winner__T {
     background: url(../images/coinflip/t.png);
     background-size: cover;
     margin-left: -4px;
 }
+
 .game__start__button {
     display: inline-block;
     background: #268207;
     padding: 8px 11px;
     margin: 10px 0;
 }
+
 .inventory-tables-holder {
     width: 100%;
 }
-.inventory-tables-holder > tbody > tr > td {
+
+.inventory-tables-holder>tbody>tr>td {
     width: 50%;
     vertical-align: top;
 }
-.inventory-tables-holder > tbody > tr > td:first-child {
+
+.inventory-tables-holder>tbody>tr>td:first-child {
     border-right: 10px solid #181818;
 }
-.bot-inventory, .player-inventory {
+
+.bot-inventory,
+.player-inventory {
     color: #fff;
     text-align: left;
     border-collapse: collapse;
-	font-size: 0.85em;
-	width: 100%;
+    font-size: 0.85em;
+    width: 100%;
 }
+
 .bot-inventory {
-	float: left;
+    float: left;
 }
+
 .player-inventory {
     float: right;
     text-align: right;
 }
+
 .player-inventory td:nth-child(1) {
     text-align: cenetr;
 }
-.bot-inventory td, .player-inventory td {
-	padding: 4px 10px;
+
+.bot-inventory td,
+.player-inventory td {
+    padding: 4px 10px;
     line-height: 1.3em;
     border-bottom: 6px solid #181818;
 }
+
 .inv_rarity {
     padding: 2px !important;
 }
+
 .inv_type {
     display: block;
 }
-.bot-inventory td:nth-child(2), .bot-inventory td:nth-child(3), .player-inventory td:nth-child(1), .player-inventory td:nth-child(2) {
+
+.bot-inventory td:nth-child(2),
+.bot-inventory td:nth-child(3),
+.player-inventory td:nth-child(1),
+.player-inventory td:nth-child(2) {
     background: rgba(255, 255, 255, 0.15);
 }
-.bot-inventory td:nth-child(2), .player-inventory td:nth-child(2) {
-	font-weight: lighter;
+
+.bot-inventory td:nth-child(2),
+.player-inventory td:nth-child(2) {
+    font-weight: lighter;
 }
+
 td.addWeapons {
     text-align: center;
     background: rgba(38, 132, 7, 0.98) !important;
     border-radius: 2px;
     border: none;
-	cursor: pointer;
+    cursor: pointer;
     text-transform: uppercase;
     font-size: 0.9em;
 }
+
 .winner-img {
-	box-shadow: rgb(0, 255, 55) 0px 0px 20px;
+    box-shadow: rgb(0, 255, 55) 0px 0px 20px;
 }
+
 #coin-flip-cont {
-width: 200px;
-height: 200px;
-position: fixed;
-top: calc(50% - 100px);
-left: calc(50% - 100px);
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    z-index: 23;
 }
 
 #coin {
-position: relative;
-width: 200px;
--webkit-transform-style: preserve-3d;
-		transform-style: preserve-3d;
+    position: relative;
+    width: 200px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
-#coin .t, #coin .ct {
-position: absolute;
-width: 200px;
-height: 200px;
+#coin .t,
+#coin .ct {
+    position: absolute;
+    width: 200px;
+    height: 200px;
 }
 
 #coin .t {
--webkit-transform: translateZ(1px);
-		transform: translateZ(1px);
-border-radius: 50%;
-background: url(../images/coinflip/t.png);
-background-size: cover;
+    -webkit-transform: translateZ(1px);
+    transform: translateZ(1px);
+    border-radius: 50%;
+    background: url(../images/coinflip/t.png);
+    background-size: cover;
 }
 
 #coin .ct {
--webkit-transform: translateZ(-1px) rotateY(180deg);
-		transform: translateZ(-1px) rotateY(180deg);
-border-radius: 50%;
-background: url(../images/coinflip/ct.png);
-background-size: cover;
+    -webkit-transform: translateZ(-1px) rotateY(180deg);
+    transform: translateZ(-1px) rotateY(180deg);
+    border-radius: 50%;
+    background: url(../images/coinflip/ct.png);
+    background-size: cover;
 }
 
 #coin.T {
--webkit-animation: rotate1800 5s linear forwards;
-animation: rotate1800 5s linear forwards;
+    -webkit-animation: rotate1800 5s linear forwards;
+    animation: rotate1800 5s linear forwards;
 }
 
 #coin.CT {
--webkit-animation: rotate1980 5.5s linear forwards;
-animation: rotate1980 5.5s linear forwards;
+    -webkit-animation: rotate1980 5.5s linear forwards;
+    animation: rotate1980 5.5s linear forwards;
 }
 
 @-webkit-keyframes rotate1800 {
-from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
-to { -webkit-transform: rotateY(/*1080deg*/1800deg); -moz-transform: rotateY(1800deg); transform: rotateY(1800deg); }
+    from {
+        -webkit-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    to {
+        -webkit-transform: rotateY(/*1080deg*/
+        1800deg);
+        -moz-transform: rotateY(1800deg);
+        transform: rotateY(1800deg);
+    }
 }
 
 @keyframes rotate1800 {
-from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
-to { -webkit-transform: rotateY(/*1080deg*/1800deg); -moz-transform: rotateY(1800deg); transform: rotateY(1800deg); }
+    from {
+        -webkit-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    to {
+        -webkit-transform: rotateY(/*1080deg*/
+        1800deg);
+        -moz-transform: rotateY(1800deg);
+        transform: rotateY(1800deg);
+    }
 }
 
 @-webkit-keyframes rotate1980 {
-from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
-to { -webkit-transform: rotateY(1980deg); -moz-transform: rotateY(1980deg); transform: rotateY(1980deg); }
+    from {
+        -webkit-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    to {
+        -webkit-transform: rotateY(1980deg);
+        -moz-transform: rotateY(1980deg);
+        transform: rotateY(1980deg);
+    }
 }
 
 @keyframes rotate1980 {
-from { -webkit-transform: rotateY(0); -moz-transform: rotateY(0); transform: rotateY(0); }
-to { -webkit-transform: rotateY(1980deg); -moz-transform: rotateY(1980deg); transform: rotateY(1980deg); }
+    from {
+        -webkit-transform: rotateY(0);
+        -moz-transform: rotateY(0);
+        transform: rotateY(0);
+    }
+    to {
+        -webkit-transform: rotateY(1980deg);
+        -moz-transform: rotateY(1980deg);
+        transform: rotateY(1980deg);
+    }
 }
