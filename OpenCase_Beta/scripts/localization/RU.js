@@ -48,11 +48,13 @@ var Translation = {
 	"cases": {
 		"page_name": "Открыть кейсы",
 		"cases": "Кейсы",
+        "graffiti": "Граффити",
 		"esports": "eSports",
 		"collections": "Коллекции",
 		"souvenir": "Сувенирные коллекции",
 		"workshop": "Мастерская",
 		"special": "Особые",
+        "capsules": "Капсулы",
 		"special_popup": {
 			"need_more_cases": "Чтобы открыть специальный кейс, откройте ещё <i>${1}</i> кейсов.<br>Или посмотрите рекламу.",
 			"ad_button": "Посмотреть рекламу",

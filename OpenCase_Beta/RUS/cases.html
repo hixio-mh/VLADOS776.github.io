@@ -73,6 +73,7 @@
             width: 60px;
             margin: auto;
         }
+        .center-pills { display: inline-block; }
     </style>
 </head>
 
@@ -90,25 +91,40 @@
             </div>
         </div>
         
-        <div class="cases">
-            <div id="Default" class="casesBlock opened">
-                <h1 data-loc="cases">Кейсы</h1></div>
-            <div id="Graffiti_box_default" class="casesBlock closed">
-                <h1 data-loc="graffiti" >Graffiti</h1></div>
-            <div id="eSports" class="casesBlock closed">
-                <h1 data-loc="esports">eSports</h1></div>
-            <div id="Collection" class="casesBlock closed">
-                <h1 data-loc="collections">Коллекции</h1></div>
-            <div id="Souvenir" class="casesBlock closed">
-                <h1 data-loc="souvenir">Сувенирные коллекции</h1></div>
-            <div id="Workshop" class="casesBlock closed">
-                <h1 data-loc="workshop">Мастерская</h1></div>
-            <div id="Special" class="casesBlock closed">
-                <h1 data-loc="special">Особые</h1></div>
+        <div class="container text-center">
+            <ul class="nav nav-pills center-pills">
+                <li class='active'><a href="#cases" data-toggle='tab' data-loc='cases'>Cases</a></li>
+                <li><a href="#graffiti" data-toggle='tab' data-loc='graffiti'>Graffiti</a></li>
+                <li><a href="#capsules" data-toggle='tab' data-loc='capsules'>Capsules</a></li>
+            </ul>
         </div>
-        <div class="capsules">
-            <div id="Capsules_default" class="casesBlock">
-                <h1>Капсулы</h1></div>
+        
+        <div class='tab-content clearfix'>
+            <div class="cases tab-pane active" id='cases'>
+                <div id="Default" class="casesBlock opened">
+                    <h1 data-loc="cases">Кейсы</h1></div>
+                <div id="eSports" class="casesBlock closed">
+                    <h1 data-loc="esports">eSports</h1></div>
+                <div id="Collection" class="casesBlock closed">
+                    <h1 data-loc="collections">Коллекции</h1></div>
+                <div id="Souvenir" class="casesBlock closed">
+                    <h1 data-loc="souvenir">Сувенирные коллекции</h1></div>
+                <div id="Workshop" class="casesBlock closed">
+                    <h1 data-loc="workshop">Мастерская</h1></div>
+                <div id="Special" class="casesBlock closed">
+                    <h1 data-loc="special">Особые</h1></div>
+            </div>
+            
+            <div class="cases tab-pane" id="graffiti">
+                <div id="Graffiti_box_default" class="casesBlock closed">
+                    <h1 data-loc="graffiti" >Graffiti</h1></div>
+            </div>
+
+            <div class="capsules tab-pane" id='capsules'>
+                <div id="Capsules_default" class="casesBlock">
+                    <h1 data-loc='capsules'>Capsules</h1>
+                </div>
+            </div>
         </div>
         
         <div id="modal-rank" class="modal fade" role="dialog" data-loc-group='special_popup'>

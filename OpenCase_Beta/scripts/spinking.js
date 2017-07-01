@@ -255,7 +255,7 @@ var SpinKing = (function (module) {
     }, {
         "name": {
             "RU": "Копейка",
-            "EN": "Better than nothing"
+            "EN": "1 Coin"
         },
         "description": {
             "RU": "+1$",
@@ -421,6 +421,36 @@ var SpinKing = (function (module) {
         "chance": 20
     }, {
         "name": {
+            "RU": "Перчатки",
+            "EN": "Gloves"
+        },
+        "description": {
+            "RU": "Случайные перчатки",
+            "EN": "Random glosves"
+        },
+        "img": "gloves.png",
+        "imgStyles": "height:70%;margin-top: 10px;",
+        "rarity": "restricted",
+        "code": "results.giveRandomKnive();",
+        "minBet": 10000,
+        "chance": 20
+    }, {
+        "name": {
+            "RU": "Джекпот",
+            "EN": "Jackpot"
+        },
+        "description": {
+            "RU": "Все скины, которых нет в магазине",
+            "EN": "AWP Dragon Lore"
+        },
+        "img": "jackpot.png",
+        "imgStyles": "height: 90%;margin-top: 8px;",
+        "rarity": "covert",
+        "code": "results.weapon(695)",
+        "minBet": 50000,
+        "chance": 1
+    }, {
+        "name": {
             "RU": "Дракон",
             "EN": "Dragon"
         },
@@ -433,7 +463,7 @@ var SpinKing = (function (module) {
         "rarity": "covert",
         "code": "results.weapon(695)",
         "minBet": 50000,
-        "chance": 1
+        "chance": 5
     }, ];
 
     return module;
@@ -482,7 +512,7 @@ var results = {
         floating_text('#balance', '+' + parseInt(coins), {color: 'green'});
     },
     weapon: function (opt) {
-        var weapon = new Weapon(opt);
+        var weapon = new Item(opt);
         
         saveWeapon(weapon);
         Lobibox.alert("success", {
