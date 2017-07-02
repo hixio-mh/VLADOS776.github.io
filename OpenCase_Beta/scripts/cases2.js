@@ -415,6 +415,11 @@ var CAPSULES = [{
     "img": "Sticker_Capsule.png",
     "type": "Default",
     "stickers": [0, 1, 2,3,4,5,6,7,8,9,10,11,12,13,14]
+}, {
+    "name": "Sticker Capsule 2",
+    "img": "Sticker_Capsule_2.png",
+    "type": "Default",
+    "stickers": [15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
 }]
 
 var GRAFFITI_BOX = [{

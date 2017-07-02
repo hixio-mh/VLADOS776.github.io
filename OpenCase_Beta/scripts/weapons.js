@@ -8586,6 +8586,86 @@ var Items = {
         name: 'Lucky 13 (Foil)',
         rarity: 'exotic',
         img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DHW1RmMQFSuIWjJA5s7P_JYzpHooizwIGKlfHyMLnTxmkGv5Yj2e_Fod_32wPl8kVlMmDxJYOXdlQ7Yg7Oug_pFU857D4'
+    }, {
+        item_id: 15,
+        name: 'Let\'s Roll-oll',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cX1hgNjtFubapFAhs38zEcC9F6ZLvzdbckvKkMuOHwDNVusAl076RoNqiiwXtr0tqZWr3LNKQdAU4ZQzX5BHglk6Jph6A'
+    }, {
+        item_id: 16,
+        name: 'Chicken Lover',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUFV9Jg9SuIWpJBFlwczEcC9F6ZLiwtjZk6T3YbqDxT1XvsYj27nH9I_w3VDkrhBrNj33do_GdQ9oNw7R5BHglshU0F8P'
+    }, {
+        item_id: 17,
+        name: 'Have Fun',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cW1xiIAJCuIWpKhVn1r3LIzgavtq1zIPSxa_yN7nVw24EusB33rCSo4ihiQ2y8kA5Y23zJtKcbEZgNsKCwLCw'
+    }, {
+        item_id: 18,
+        name: 'Good Luck',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cVFJ7IQhCtbGaJwZy1PaGcGkWtIq1w4GOlq6ia7rQlWlXvJAo0uyTrNukjVDi_UdlZmvzJ9KRJBh-Pw8gjvON8w'
+    }, {
+        item_id: 19,
+        name: 'Good Game',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cVFJ7IQNWu7-aJwZy1PaGdG0QuYWyxdSNwKX3Nb_Uwz9SucRz27mYrY2higTsqRBtNm30JoSdehh-Pw83yrKaaA'
+    }, {
+        item_id: 20,
+        name: 'Metal',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cXlhgJAhouru3LAIuhPLJc2xD7ojuxoTZlfOgN-2Jlz1Uu8Mp372TrNSgigbj_hFqY2z6IpjVLFFM2s3_sw'
+    }, {
+        item_id: 21,
+        name: 'Bomb Code',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUVJ5JztUub6gFAthwfTNPztEtIiyloTbwab3N-vVzjsFv5Jw0ruVo96j3wzs8kRvZGnxcYGXcwMgIQaHYUrKRCc'
+    }, {
+        item_id: 22,
+        name: 'Banana',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUVx6JApWibakOQBlnfCbI2UX6drmwYKNlaasN7mHkmoJsZNzjL6Y8I6h21W2r0FuZjjycoCLMlhpHkNrp5k'
+    }, {
+        item_id: 23,
+        name: 'Nice Shot',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cXVR3IDtEvrWxFAthwfTNP2lD6Njiw9bYx6emNe-Hwj4Iv50m37yXptqjjQLirRFtZT_3ctLHJwYgIQaHsZvpo9A'
+    }, {
+        item_id: 24,
+        name: 'Welcome to the Clutch',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cRFh4Jgtas4WmJxJ00Pv3fTxQ69n4wISNw6-gZbnTxWoA7sBwjrDCrdmjiVax_hJtYmmld9XDcw5sZAqD-E_-n7k5JSLG3w'
+    }, {
+        item_id: 25,
+        name: 'Let\'s Roll-oll (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cX1hgNjtFubapFAhs38zAfjFN09C3hoeO2a-tN-uGwDIIvZV307mV9Nus2wXn_UNoYjjzctPEJwVrMl6F_Ve9xu_xxcjriwnDrr4'
+    }, {
+        item_id: 26,
+        name: 'Bosh (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUVJnLTtfubaqFAthwfTNP2pEvN7gkNPdwPKiZbiAkjwDu8Ry3b2T9tytjlLi_UU_Nm_xJYTEJwcgIQaH5Zm2Szk'
+    }, {
+        item_id: 27,
+        name: 'Bish (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUVRnLTtfubaqFAthwfTNPztA6Y3nzNPewvStNbiGkD4JvcApjL2Tpo2j0QXk-0RqYzqhIdCRdFQgIQaHpPDrD6Q'
+    }, {
+        item_id: 28,
+        name: 'Bash (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUVxnLTtfubaqFAthwfTNP2gX6Nm3w9SNz_agZuOIkzhX7sZwi7CRodSgilHgqEA9MTugd4DBI1IgIQaHF1oF1Ao'
+    }, {
+        item_id: 29,
+        name: 'Stupid Banana (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cQElhNQ1TibikJQZu0szOfjRO09C3hoeO2fPwN-iAz2oCsMEpjryS8dv0jQPmrkdsYjj1ItPGIAE4YFiErwK2kunxxcjr2RWykww'
+    }, {
+        item_id: 30,
+        name: 'Crown (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUE97MgposLWsJzhs0uHPdHNHtITvwtbaxaHwZrjXkD1T7sEmi-2W9In2ilKy-UI-ZmGnd9THewdsfxiOrSe6AUNs'
     }],
     
     /* ===== GRAFFITI ===== */
