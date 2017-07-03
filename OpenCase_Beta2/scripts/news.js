@@ -772,7 +772,15 @@ var news = [{
     "month": 6,
     "year": 2017,
     "update": {
-        "RU": ' - [Новое] Новая игра <a href="https://vlados776.github.io/OpenCase_Beta2/RUS/upgrader.html">Upgrader</a>!',
-        "EN": ' - [New] New mini game <a href="https://vlados776.github.io/OpenCase_Beta2/RUS/upgrader.html">Upgrader</a>!'
+        "RU": ' - [Новое] Новая игра <a href="upgrader.html">Upgrader</a>!',
+        "EN": ' - [New] New mini game <a href="upgrader.html">Upgrader</a>!'
+    }
+}, {
+    "day": 1,
+    "month": 7,
+    "year": 2017,
+    "update": {
+        "RU": ' - [Новое] Добавлены Стикеры!<br> - [Новое] Добавлены капсулы <a href="open.html?capsuleId=0">Sticker Capsule</a> и <a href="open.html?capsuleId=1">Sticker Capsule 2</a>',
+        "EN": ' - [New] Stickers!<br> - [New] Capsules <a href="open.html?capsuleId=0">Sticker Capsule</a> & <a href="open.html?capsuleId=1">Sticker Capsule 2</a>'
     }
 }, ];

@@ -19,6 +19,17 @@ var DEBUG = false;
 var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 var IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
 
+// Need to migrate to this ->
+var Game = (function(module) {
+    module.sound = Sound;
+    module.getInventory = getInventory;
+    module.getItem = getItem;
+    module.getItems = getItems;
+    module.deleteItem = deleteWeapon;
+    
+    return module;
+})(Game || {})
+
 $(function () {
     // Dynamic modals closing by clicking on bg
     bootbox.setDefaults({ backdrop: true });
@@ -72,6 +83,12 @@ $(function () {
             // Detect adblock
         if (!isAndroid()) {
             $.ajax('../scripts/ads.js?file=showad.js')
+            .success(function() {
+                if (!canRunAds) return false;
+                if ($(document.body).data('ad') !== 'no') {
+                    AdModule.insertAd();
+                }
+            })
             .fail(function() {
                 console.log('Adblock detected');
                 $(document).trigger('adblock_detected');
@@ -225,7 +242,7 @@ if (!isAndroid()) {
 var Sounds = {
     interface: {
         wind: new Audio('../sound/interface/wind.wav'),
-        click: new Audio('../sound/interface/click.wav'),
+        click: new Audio('../sound/interface/click.wav')
     },
     minesweeper: {
         click: new Audio('../sound/minesweeper/click.wav'),
@@ -235,6 +252,13 @@ var Sounds = {
     spray: {
         shake: new Audio('../sound/spraycan_shake.wav'),
         spray: new Audio('../sound/spraycan_spray.wav'),
+    },
+    scratch: {
+        1: new Audio('../sound/scratch/sticker_scratch1.wav'),
+        2: new Audio('../sound/scratch/sticker_scratch2.wav'),
+        3: new Audio('../sound/scratch/sticker_scratch3.wav'),
+        4: new Audio('../sound/scratch/sticker_scratch4.wav'),
+        5: new Audio('../sound/scratch/sticker_scratch5.wav'),
     },
     upgrader: {
         success: new Audio('../sound/upgrader/success.wav')
@@ -1003,7 +1027,6 @@ function getCasePrice(caseId, souvenir) {
     }
     return price;
 }
-
 function getGraffitiBoxPrice(caseId) {
     var prSumm = 0;
 
@@ -1018,6 +1041,21 @@ function getGraffitiBoxPrice(caseId) {
     }
     return price;
 }
+function getCapsulePrice(caseId) {
+    var prSumm = 0;
+
+    if (typeof CAPSULES[caseId].stickers === 'undefined') return '0.00';
+    CAPSULES[caseId].stickers.forEach(function(item) {
+        prSumm += new Sticker(item).price;
+    })
+    var price = parseFloat((prSumm / CAPSULES[caseId].stickers.length).toFixed(2));
+    if (Global.caseDiscount > 0) {
+        price = price - (price * Global.caseDiscount / 100);
+        price = parseFloat(price.toFixed(2));
+    }
+    return price;
+}
+
 
 function middlePrice(item_id, souvenir) {
     souvenir = souvenir || false;

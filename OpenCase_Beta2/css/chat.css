@@ -3,6 +3,7 @@ body {
 }
 #container {
     height: 100%;
+    position: absolute;
 }
 
 #firechat-wrapper {
@@ -259,6 +260,7 @@ li.chat__message a img[data-userid] {
     min-height: 30px;
     max-height: 100px;
     overflow-y: auto;
+    padding-right: 55px;
 }
 #login-status {
     font-size: 0.9em;

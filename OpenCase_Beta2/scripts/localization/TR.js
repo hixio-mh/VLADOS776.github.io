@@ -793,7 +793,7 @@ var Translation = {
             },
             sort: {
                 special: {
-                    text: ["Hepsi", "Yeni", "StatTrak", "StatTrak değil", "Hatıra", "Hatıra değil", "Normal", "Graffiti"],
+                    text: ["Hepsi", "Yeni", "StatTrak", "StatTrak değil", "Hatıra", "Hatıra değil", "Normal", "Graffiti", "Stickers"],
                     en: ["All types", "New", "StatTrak", "Not StatTrak", "Souvenir", "Not Souvenir", "Normal", "Graffiti"]
                 },
                 types: {

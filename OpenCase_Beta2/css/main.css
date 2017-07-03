@@ -56,7 +56,7 @@ body {
   font-family: LatoRegular;
   overflow-x: hidden;
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0; }
 
@@ -148,6 +148,9 @@ body {
       -ms-transform: translate(0, -10px);
       -webkit-transform: translate(0, -10px);
       transform: translate(0, -10px); } }
+
+.graffiti_box .case-card {
+  display: none; }
 
 .case-price {
   color: #f6ed3c;
@@ -273,7 +276,7 @@ body {
   text-align: right;
   overflow: hidden;
   position: relative; }
-  .weapon img, .weapon.item img {
+  .weapon .li_item_img, .weapon.item .li_item_img {
     margin: 0 auto;
     width: 113px;
     max-height: 105px;
@@ -317,7 +320,20 @@ body {
     padding-left: 100%;
     display: inline-block;
     animation: marquee 7s linear infinite; }
+  .weapon .weapons_stickers, .weapon.item .weapons_stickers {
+    width: 100%;
+    white-space: nowrap;
+    position: absolute;
+    top: 70px;
+    text-align: center; }
 
+@media (max-width: 450px) {
+  .weapons_stickers {
+    top: 58px !important; }
+
+  .weapon .li_item_img {
+    width: 86px;
+    max-height: 91px; } }
 .graffiti {
   background: url(../images/Cases/graffitibg.jpg) #111;
   background-size: 100%; }
@@ -821,5 +837,14 @@ i.double-icon {
 
 .text-white {
   color: #fff; }
+
+.text-black {
+  color: #000; }
+
+.sticker_xs {
+  width: 20px; }
+
+.sticker_sm {
+  width: 60px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -71,7 +71,15 @@ var Upgrader = (function(module) {
     
     function addItem(item, n) {
         var selector = n ? '#newItem' : '#selectItem';
-        $(selector).html('<span class="text-bold text-white">' + item.name +'</span> <span class="currency dollar text-bold text-white">' + item.price +'</span><br>' + item.qualityText() + '<br><img src="' + item.getImgUrl() + '">');
+        
+        var stickers = '';
+        if (item.stickers) {
+            item.stickers.forEach(function(sticker) {
+                stickers += '<img src="' + sticker.getImgUrl() + '" class="sticker_sm">';
+            })
+        }
+        
+        $(selector).html('<span class="text-bold text-white">' + item.name +'</span> <span class="currency dollar text-bold text-white">' + item.price +'</span><br>' + item.qualityText() + '<br><img src="' + item.getImgUrl() + '">' + (stickers ? '<div>' + stickers + '</div>' : ''));
     }
     function findNewItem() {
         if (!bet.item || !multiply) return;
@@ -96,7 +104,10 @@ var Upgrader = (function(module) {
                         })()
                         
                         if (price >= possiblePrice && price <= possiblePrice + error && !br) {
-                            newItem = new Item({ item_id: item.item_id, quality: parseInt(quality), stattrak: type === 'stattrak', souvenir: type === 'souvenir' })
+                            newItem = new Item({ item_id: item.item_id, quality: parseInt(quality), stattrak: type === 'stattrak', souvenir: type === 'souvenir' });
+                            if (bet.item.stickers && newItem.can.stickers) {
+                                newItem.stickers = bet.item.stickers;
+                            }
                             br = true;
                             break;
                         }

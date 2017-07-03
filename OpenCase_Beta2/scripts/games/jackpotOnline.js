@@ -501,10 +501,21 @@ function itemsList(newBet/*fromName, fromImg, tickets, itemsCost, weaponsList*/)
     for (var i = 0; i < newBet.weapons.length; i++) {
         var weapon = new Item(newBet.weapons[i]);
         var img = getImgUrl(weapon.img);
+        
+        var stickers = '';
+        if (weapon.stickers) {
+            weapon.stickers.forEach(function(sticker) {
+                stickers += '<img class="bet-items__item__sticker sticker_xs" src="' + sticker.getImgUrl() + '">';
+            })
+        }
 
         var newItem = "<div class='bet-items__item'>\
-            " + (weapon.nameTag ? '<div class="weapon_nameTagIcon"></div>' : '') + "\
-            <img src='" + img + "'><div class='bet-items__item__rarity " + weapon.rarity + "'></div><span class='bet-items__item__price'>$" + weapon.price + "</span></div>";
+            " + (weapon.nameTag != null ? '<div class="weapon_nameTagIcon"></div>' : '') + "\
+            <img class='bet-items__item__img' src='" + img + "'>\
+            " + (stickers ? "<div class='bet-items__stickers'>"+stickers+"</div>" : "")+"\
+            <div class='bet-items__item__rarity " + weapon.rarity + "'></div>\
+            <span class='bet-items__item__price'>$" + weapon.price + "</span>\
+        </div>";
         bet += newItem;
     }
     bet += "</div></div>";

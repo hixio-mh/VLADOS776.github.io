@@ -60,6 +60,8 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
         var pattern = item_id.pattern != null ? item_id.pattern : item_id.extra != null ?
             item_id.extra.pattern : null;
         var locked = item_id.locked ? item_id.locked : item_id.extra && item_id.extra.locked ? item_id.extra.locked : false;
+        var stickers = item_id.stickers ? item_id.stickers : item_id.extra && item_id.extra.stickers ? item_id.extra.stickers : null;
+        
         item_id = typeof item_id.item_id == 'undefined' ? item_id.id || 0 : item_id.item_id;
     }
     if (item_id > Items.weapons.length)
@@ -78,6 +80,7 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     this.quality = quality || 0;
     this.stattrak = stattrak || false;
     this.souvenir = souvenir || false;
+    this.stickers = stickers ? stickers.map(function(id) { return new Sticker(id) }) : [];
     this.new = isNew || false;
     this.old = getWeaponById(this.item_id);
     if (this.old == null)
@@ -114,6 +117,8 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
             console.log('Cant find pattern for', this.type, ' | ', this.name, ' - ', this.pattern);
         }
     }
+    
+    this.maxStickers = this.old.maxStickers || 4;
 
     //this.can.inCase - 
     //Для оружия, которое удалили из коллекции. Например Howl в Huntsman.
@@ -133,7 +138,7 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
         rename: true
     }
     
-    this.can = $.extend(true, canDefault, this.old.can || {});;
+    this.can = $.extend(true, canDefault, this.old.can || {});
     this.rarity = this.old.rarity;
 
     if (this.rarity == 'rare' || this.rarity == 'extraordinary')
@@ -195,6 +200,7 @@ Weapon.prototype.saveObject = function (opt) {
     if (this.nameTag) saveObj.nameTag = this.nameTag;
     if (this.pattern != null) saveObj.pattern = this.pattern;
     if (this.locked) saveObj.locked = this.locked;
+    if (this.stickers) saveObj.stickers = this.stickers.map(function(sticker) { return sticker.item_id } );
     return saveObj;
 }
 Weapon.prototype.tradeObject = function () {
@@ -206,6 +212,7 @@ Weapon.prototype.tradeObject = function () {
     if (this.souvenir) trObj.souvenir = this.souvenir;
     if (this.nameTag) trObj.nameTag = this.nameTag;
     if (this.pattern != null) trObj.pattern = this.pattern;
+    if (this.stickers) trObj.stickers = this.stickers.map(function(sticker) { return sticker.item_id } );
     return trObj;
 }
 Weapon.prototype.toOldObject = function (isNew) {
@@ -224,11 +231,24 @@ Weapon.prototype.toOldObject = function (isNew) {
     return oldObj;
 }
 Weapon.prototype.getPrice = function () {
-    return getPrice(this.item_id, {
+    var pr = getPrice(this.item_id, {
         quality: this.quality,
         stattrak: this.stattrak,
         souvenir: this.souvenir
-    })
+    });
+    
+    // Change price if stickers
+    if (this.stickers && this.stickers.length > 0) {
+        var percent = 5;
+        var stickersPrice = 0;
+        this.stickers.forEach(function(sticker) {
+            stickersPrice += sticker.price;
+        })
+        
+        stickersPrice = stickersPrice * percent / 100;
+        pr += stickersPrice;
+    }
+    return parseFloat(pr.toFixed(2));
 }
 Weapon.prototype.stattrakRandom = function () {
     if (this.type.souvenir || this.can.stattrak == false || Object.keys(this.allPrices.stattrak).length == 0) {
@@ -346,6 +366,7 @@ Weapon.prototype.hash = function (id) {
         stattrak: this.stattrak,
         souvenir: this.souvenir
     }
+    if (this.stickers && this.stickers.length > 0) hash_obj.stickers = this.stickers.map(function(sticker) { return sticker.item_id } );
 
     return hex_md5(JSON.stringify(hash_obj))
 }
@@ -355,6 +376,7 @@ Weapon.prototype.getExtra = function (isString) {
     if (this.nameTag != null) extra.nameTag = this.nameTag;
     if (this.pattern != null) extra.pattern = this.pattern;
     if (this.locked) extra.locked = this.locked;
+    if (this.stickers) extra.stickers = this.stickers.map(function(sticker) { return sticker.item_id } );
     return isString ? JSON.stringify(extra) : extra;
 }
 Weapon.prototype.toLi = function (config) {
@@ -362,6 +384,7 @@ Weapon.prototype.toLi = function (config) {
     config.new = typeof config.new === 'undefined' ? true : config.new;
     config.nameTagIcon = typeof config.nameTagIcon === 'undefined' ? true : config.nameTagIcon;
     config.locked = typeof config.locked === 'undefined' ? false : config.locked;
+    config.stickers = typeof config.stickers === 'undefined' ? true : config.stickers;
 
     config.ticker = typeof config.ticker === 'undefined' ? true : config.ticker;
     var ticker_limit = config.ticker_limit || window.innerWidth <= 433 ? 16 : 20;
@@ -382,9 +405,16 @@ Weapon.prototype.toLi = function (config) {
         li += '<i class="currency dollar">' + this.price + '</i>';
     }
     if (config.lazy_load) {
-        li += '<img data-src="' + this.getImgUrl() + '" />';
+        li += '<img class="li_item_img" data-src="' + this.getImgUrl() + '" />';
     } else {
-        li += '<img src="' + this.getImgUrl() + '" />';
+        li += '<img class="li_item_img" src="' + this.getImgUrl() + '" />';
+    }
+    if (config.stickers && this.stickers) {
+        li += '<div class="weapons_stickers">';
+        this.stickers.forEach(function(sticker) {
+            li += '<img class="sticker_xs" src="'+sticker.getImgUrl()+'">';
+        })
+        li += '</div>';
     }
 
     var type = this.specialText() + this.type;
@@ -452,6 +482,21 @@ Weapon.prototype.phaseName = function(id) {
     }
     
     return phaseID + 1;
+}
+Weapon.prototype.addSticker = function(stickerID) {
+    if (!this.can.stickers || this.stickers.length >= this.maxStickers) return false;
+    
+    this.stickers.push(new Sticker(stickerID));
+    return this.stickers;
+}
+Weapon.prototype.removeSticker = function(stickerID) {
+    if (!this.stickers) return false;
+    
+    for (var i = 0; i < this.slickers.length; i++) {
+        if (this.stickers[i].item_id === stickerID) {
+            return this.stickers.splice(i, 1);
+        }
+    }
 }
 
 // === Functions ===
@@ -563,7 +608,7 @@ function Sticker(config) {
         contract: false,
         sell: true,
         bot: true,
-        game: true,
+        game: false,
         inCase: true,
         specialCase: false,
         rename: false
@@ -615,9 +660,9 @@ Sticker.prototype.toLi = function (config) {
         li += '<i class="currency dollar">' + this.price + '</i>';
     }
     if (config.lazy_load) {
-        li += '<img data-src="' + this.getImgUrl() + '" />';
+        li += '<img class="li_item_img" data-src="' + this.getImgUrl() + '" />';
     } else {
-        li += '<img src="' + this.getImgUrl() + '" />';
+        li += '<img class="li_item_img" src="' + this.getImgUrl() + '" />';
     }
 
     li += '<div class="weaponInfo ' + this.rarity + '">\
@@ -638,6 +683,18 @@ Sticker.prototype.titleText = function() {
     return _t('other.sticker', 'Sticker') + ' | ' + this.name;
 }
 Sticker.prototype.getName = function() { return this.name };
+Sticker.prototype.getExtra = function (isString) {
+    var extra = {};
+    extra.hash = this.hash();
+    return isString ? JSON.stringify(extra) : extra;
+}
+Sticker.prototype.tradeObject = function () {
+    var trObj = {
+        item_id: this.item_id,
+        quality: 5
+    };
+    return trObj;
+}
 
 function getItemsByID(IDs, type) {
     var result = [];
@@ -768,9 +825,9 @@ Graffiti.prototype.toLi = function(config) {
         li += '<i class="currency dollar">' + this.price + '</i>';
     }
     if (config.lazy_load) {
-        li += '<img data-src="' + this.getImgUrl() + '" />';
+        li += '<img class="li_item_img" data-src="' + this.getImgUrl() + '" />';
     } else {
-        li += '<img src="' + this.getImgUrl() + '" />';
+        li += '<img class="li_item_img" src="' + this.getImgUrl() + '" />';
     }
     if (config.limit) {
         li += '<i class="graffiti-limit">' + this.limit + '</i>';
@@ -1736,7 +1793,7 @@ var Items = {
             type: "AWP",
             skinName: "Sun in Leo",
             rarity: "industrial",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957OnHdTRD746JnIWKge66ZezUkjNX7Jwp2rnCpo2t2Qfk8xJpMTqld47DdlI_ZgqCqQLsxbvmgIj84sqMMdFayA"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957OnHdTRD746JmImMn-PLP7rDkW4fvpJ1i7ySod-n2gfi-kZqajunLYCWdQA2aQrX-lXsxOnthpS5vpSfmGwj5HcW608dkQ"
     }, {
             id: 126,
             type: "Tec-9",
@@ -1904,7 +1961,7 @@ var Items = {
             type: "AWP",
             skinName: "Pit Viper",
             rarity: "restricted",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957ODGcDZH_9e_mr-DkvbiKvWFxDhTvMMi3ryWrNyj0Qbi8kQ4Nz3xI9CWJgQ8Nw3Vr1i_wem5hJ-9ot2XnjzZQCBr"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957ODGcDZH_9e_mr-HnvD8J4Tdl3lW7Yt03OjF8Y733A21_ENuZz_7JIbEcQNtaA3Q8lC6wey-h8W0up7IyXBrpGB8sr1DtlQN"
     }, {
             id: 154,
             type: "G3SG1",
@@ -2198,13 +2255,13 @@ var Items = {
             type: "P250",
             skinName: "Nuclear Threat",
             rarity: "restricted",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhzw8zGZDZH_8iknZCOqPDmNr7fqWNU6dNoxLmQrdX031DhrRY5YGmgLNDBIQU5NFDT_gS-ybi5gp_uu5iayyc2uyM8pSGKb7DLmmE"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhzw8zGZDZH_8iknZCOqPDmNr7fqWdY781lteXA54vwxgTt8hA5YGzxd9LGJA49YVzQqwDqxu_tjJC06J3PzyRhvCAm5naOnRepwUYbH0dTvU8"
     }, {
             id: 203,
             type: "Tec-9",
             skinName: "Nuclear Threat",
             rarity: "restricted",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoor-mcjhzw8zGZDZH_8iknZCOqPDmNr7fqX9U65xOguzA45W7ilfm_EVqYWvyIdSRJ1Q_YVzT8lC6wu3vjZW-uc-YwHUwvHZ05Hvaygv330_9fYlOZg"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhzw8zGZDZH_8iknZCOqPDmNr7fqWdY781lteXA54vwxgTt8hA5YGzxd9LGJA49YVzQqwDqxu_tjJC06J3PzyRhvCAm5naOnRepwUYbH0dTvU8"
     }, {
             id: 204,
             type: "FAMAS",
@@ -3256,7 +3313,7 @@ var Items = {
             type: "★ M9 Bayonet",
             skinName: "Crimson Web",
             rarity: "rare",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-DjsjjNrnCqWZU7Mxkh6fF8Yqmiw3l_BdrZ2vzIo-QdQBsaA2B-lC3yb_v0JW_uc_JmHQ16yYh-z-DyKLv5rKC"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-KmsjuNrnDl1Rd4cJ5ntbN9J7yjRrh-BVlZW3ydoTHdABsZ13Y_Qe5xue6gMC-vp-amntr6yQq4XfUzhTin1gSOZHog2Kf"
     }, {
             id: 369,
             type: "Galil AR",
@@ -3592,7 +3649,7 @@ var Items = {
             type: "★ M9 Bayonet",
             skinName: "Slaughter",
             rarity: "rare",
-            img: "fWFc82js0fmoRAP-qOIPu5THSWqfSmTELLqcUywGkijVjZYMUrsm1j-9xgEObwgfEh_nvjlWhNzZCveCDfIBj98xqodQ2CZknz5wOuqzNQhqKzvAALlRUvAuywnhNj036tVia9qz87ITJGOz5cCRZq4rNotJSpTTXPeFZAD56UpshqULJ8GBoH681Su_ODwMCRft_mhQnLPTpPI11Y9Vd8RM"
+            img: "image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-KmsjuNrnDl1Rd4cJ5ntbN9J7yjRrh-BVlZW3ydoTHdABsZ13Y_Qe5xue6gMC-vp-amntr6yQq4XfUzhTin1gSOZHog2Kf"
     }, {
             id: 425,
             type: "★ Flip Knife",
@@ -4619,7 +4676,7 @@ var Items = {
             type: "★ M9 Bayonet",
             skinName: "Lore",
             rarity: "rare",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-Igsj5aoTTl3Ju5Mpjj9bJ8I3jkWu4qgE7NnfyIoDGdg4_YwrYqAS8xrvthcK6vMyfyXBnsiFzti2Pyxe0g0tKbeFrm7XAHjZ37Nzu"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-Igsj5aoTTl3Ju5Mpjj9bN_Iv9nGu4qgE7NnehINTDIwQ4NV3X-gW6xe660JLvvJnLzXZluiVz7X7dnBS-gREYP-c5m7XAHtWD61VD"
     }, {
             id: 591,
             type: "★ M9 Bayonet",
@@ -6050,7 +6107,7 @@ var Items = {
                 bot: false,
                 specialCase: false
             },
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DeXEl7NwdOtbagFABs3OXNYgJP48i5hoOSlPvxDLnQhWJS18d9i-rKyoHwjF2hpiwwMiukcZicegQ9NwmF-VfvkLvu08C9tJ7Lmidk73R2t3eLyUPigxBNOOY70fTPVxzAULnApTN1"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DeXEl7NwdOtbagFABs3OXNYgJP48i5hoOSlPvxDLbYmH9u_Nd4i-fG-YnKhF2zowdyNzvzJoXDJFc_Z1HX_lHolb2708PovZzLmyY37yMk5nnayRK0g0tNbPsv26LzvhLreA"
     }, {
             id: 787,
             type: "★ Hand Wraps",
@@ -8456,19 +8513,159 @@ var Items = {
     stickers: [
         {
         item_id: 0,
-        name: "Skull Troop",
+        name: "Luck Skill",
         rarity: 'high',
-        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7Ng9CurajPhNy3PzHYQJO7c6xkc7fwvagMr-DwTIB7Z0g3bjA9Nrz3ATj_RI6Y26hJI6RdQ82Zl2B_lC8366x0gyLUcSS'
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DfRl5_GghWpL2gZQJmgPGddW5H7oXlx9OKzqSiauOHwjkFu8Fz3uvH8NTx3gHsr0Y-YzztZNjCJ_L_vsQ'
     }, {
         item_id: 1,
-        name: 'Bombsquad',
+        name: 'Lucky 13',
         rarity: 'high',
-        img: 'https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7IApRo4WnJApiwOLdcDl94N2kk4XFkfKmNr-Izz4C68B1ieyS9NuijFGyr0s-ZjymJNfBIFA2NV6B_FLqlfCv28HBhzn9xA/360fx360f'
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DHW1RmMQFSuIWpKhVn1r3NdGpGuNqzwNDczqX2YbnVlzMJv8Yjj-jA8NXz0FK2_hZrZmj1ddPDbEZgNu11Z1K9'
     }, {
         item_id: 2,
-        name: 'Unicorn (Holo)',
+        name: 'Seek & Destroy',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DXVk5gNwtOibakOQBlnfaRIGhAv4rhwtCNwKOna-zVwWgA6pBz372R9I2l21Lm8hBlNjj0JtKLMlhpoj0fLLs'
+    }, {
+        item_id: 3,
+        name: 'I Conquered',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DQXFNlMAFFs76aJwZy1PaGdT9G6oXvkNaIxPahZuuElWpXvZMo2OuU8dv22gDm_EI4am-hJYaScBh-Pw85B7E0Aw'
+    }, {
+        item_id: 4,
+        name: 'Vigilance',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DFWlp9KQVZtb-aJwZy1PaGcGhD74m3xoLcx_KgML_QlW1UsJwn2r2Vp9_z0QO3rUJqNTvwLITEdRh-Pw_5RAZoRA'
+    }, {
+        item_id: 5,
+        name: 'Aces High',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DSUFhnGgxesbKaJwZy1PaGdG5Eu4-3kYHdz6StN-mGlD4B65Mo3bjFpo6t2wDt_UZsNmjwIIXEIxh-Pw-dPs3lZQ'
+    }, {
+        item_id: 6,
+        name: 'Cerberus',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DURlxmIQ1ZsYWtLgts7P_JYzpHot_uwdGNx_agMeuIkzIFu50j2uzH8Nrz31fg8xBrYGugJ9eVd1VrYAzOug_pMcD6YQI'
+    }, {
+        item_id: 7,
+        name: 'Black Dog',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DXWk5kJBBUvoWpKhVn1r2adztDtY6wxdTdz6ahauOCxW8C7pNziLGUrY2liw3trRdkY2jwdoHHbEZgNg1l-yPl'
+    }, {
+        item_id: 8,
+        name: 'Fearsome',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DVVlxmNgtas4WpKhVn1r2edT8Svd3gwNaOlvT3Nb-Jxz0J6cYhiOzArd7xigzsrkE6MmyhLNfEbEZgNkj-3b5_'
+    }, {
+        item_id: 9,
+        name: 'Easy Peasy',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DfVlB7Kztbt6iiLkkyhKGfIW4SuIrmlobckqT1YL6GkzlXscZzj-_D8dis21Ds_0VsY2vzOsbLJVzESiH2'
+    }, {
+        item_id: 10,
+        name: 'Vigilance (Holo)',
         rarity: 'remarkable',
-        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7MApetbW3JTho3P_HTjFD_tuz2oaNwK_3ZeqIwj0FusEn3OuX89-j0Q3lrkM-N2HzLYGVJgRqYwnRqwWggbC42qqHM58'
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DFWlp9KQVZtb-aIwhs3MzEcC9F6ZK3x9HbzvL1MrmCxTwAv5Ulj-iWrd2j2AXjrkA_YzuidY6QdVA8YAvV5BHglqtZxzuu'
+    }, {
+        item_id: 11,
+        name: 'Fearsome (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DVVlxmNgtas4WtJAtv7P_JYzpHotqyzNSNxqLyZu6ClG8IvMQo2ezC89in3Qa3rUc5YzunJoecew44Y17Oug_py5eije0'
+    }, {
+        item_id: 12,
+        name: 'Aces High (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DSUFhnGgxesbKaIwhs3MzEcC9F6ZLlxtGKwKSgNerQzm0G7Zxw0uuRpNSt3gft-Rc6Y2mgd9WXJw83NAzZ5BHglnGKuBwU'
+    }, {
+        item_id: 13,
+        name: 'Luck Skill (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DfRl5_GgJYv7aaJwZy1PaGIjgVvY-3l9eIxaP3Yu2IwD8Bu8B32ryT8dWj2wa3qEVua273JtORIxh-Pw_C74kPjA'
+    }, {
+        item_id: 14,
+        name: 'Lucky 13 (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWE3eQ-W_04DHW1RmMQFSuIWjJA5s7P_JYzpHooizwIGKlfHyMLnTxmkGv5Yj2e_Fod_32wPl8kVlMmDxJYOXdlQ7Yg7Oug_pFU857D4'
+    }, {
+        item_id: 15,
+        name: 'Let\'s Roll-oll',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cX1hgNjtFubapFAhs38zEcC9F6ZLvzdbckvKkMuOHwDNVusAl076RoNqiiwXtr0tqZWr3LNKQdAU4ZQzX5BHglk6Jph6A'
+    }, {
+        item_id: 16,
+        name: 'Chicken Lover',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUFV9Jg9SuIWpJBFlwczEcC9F6ZLiwtjZk6T3YbqDxT1XvsYj27nH9I_w3VDkrhBrNj33do_GdQ9oNw7R5BHglshU0F8P'
+    }, {
+        item_id: 17,
+        name: 'Have Fun',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cW1xiIAJCuIWpKhVn1r3LIzgavtq1zIPSxa_yN7nVw24EusB33rCSo4ihiQ2y8kA5Y23zJtKcbEZgNsKCwLCw'
+    }, {
+        item_id: 18,
+        name: 'Good Luck',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cVFJ7IQhCtbGaJwZy1PaGcGkWtIq1w4GOlq6ia7rQlWlXvJAo0uyTrNukjVDi_UdlZmvzJ9KRJBh-Pw8gjvON8w'
+    }, {
+        item_id: 19,
+        name: 'Good Game',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cVFJ7IQNWu7-aJwZy1PaGdG0QuYWyxdSNwKX3Nb_Uwz9SucRz27mYrY2higTsqRBtNm30JoSdehh-Pw83yrKaaA'
+    }, {
+        item_id: 20,
+        name: 'Metal',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cXlhgJAhouru3LAIuhPLJc2xD7ojuxoTZlfOgN-2Jlz1Uu8Mp372TrNSgigbj_hFqY2z6IpjVLFFM2s3_sw'
+    }, {
+        item_id: 21,
+        name: 'Bomb Code',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUVJ5JztUub6gFAthwfTNPztEtIiyloTbwab3N-vVzjsFv5Jw0ruVo96j3wzs8kRvZGnxcYGXcwMgIQaHYUrKRCc'
+    }, {
+        item_id: 22,
+        name: 'Banana',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUVx6JApWibakOQBlnfCbI2UX6drmwYKNlaasN7mHkmoJsZNzjL6Y8I6h21W2r0FuZjjycoCLMlhpHkNrp5k'
+    }, {
+        item_id: 23,
+        name: 'Nice Shot',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cXVR3IDtEvrWxFAthwfTNP2lD6Njiw9bYx6emNe-Hwj4Iv50m37yXptqjjQLirRFtZT_3ctLHJwYgIQaHsZvpo9A'
+    }, {
+        item_id: 24,
+        name: 'Welcome to the Clutch',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cRFh4Jgtas4WmJxJ00Pv3fTxQ69n4wISNw6-gZbnTxWoA7sBwjrDCrdmjiVax_hJtYmmld9XDcw5sZAqD-E_-n7k5JSLG3w'
+    }, {
+        item_id: 25,
+        name: 'Let\'s Roll-oll (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cX1hgNjtFubapFAhs38zAfjFN09C3hoeO2a-tN-uGwDIIvZV307mV9Nus2wXn_UNoYjjzctPEJwVrMl6F_Ve9xu_xxcjriwnDrr4'
+    }, {
+        item_id: 26,
+        name: 'Bosh (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUVJnLTtfubaqFAthwfTNP2pEvN7gkNPdwPKiZbiAkjwDu8Ry3b2T9tytjlLi_UU_Nm_xJYTEJwcgIQaH5Zm2Szk'
+    }, {
+        item_id: 27,
+        name: 'Bish (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUVRnLTtfubaqFAthwfTNPztA6Y3nzNPewvStNbiGkD4JvcApjL2Tpo2j0QXk-0RqYzqhIdCRdFQgIQaHpPDrD6Q'
+    }, {
+        item_id: 28,
+        name: 'Bash (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUVxnLTtfubaqFAthwfTNP2gX6Nm3w9SNz_agZuOIkzhX7sZwi7CRodSgilHgqEA9MTugd4DBI1IgIQaHF1oF1Ao'
+    }, {
+        item_id: 29,
+        name: 'Stupid Banana (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cQElhNQ1TibikJQZu0szOfjRO09C3hoeO2fPwN-iAz2oCsMEpjryS8dv0jQPmrkdsYjj1ItPGIAE4YFiErwK2kunxxcjr2RWykww'
+    }, {
+        item_id: 30,
+        name: 'Crown (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUE97MgposLWsJzhs0uHPdHNHtITvwtbaxaHwZrjXkD1T7sEmi-2W9In2ilKy-UI-ZmGnd9THewdsfxiOrSe6AUNs'
     }],
     
     /* ===== GRAFFITI ===== */

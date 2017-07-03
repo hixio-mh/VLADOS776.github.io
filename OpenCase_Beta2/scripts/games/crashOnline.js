@@ -32,7 +32,6 @@ $(function() {
     function connectToServer() {
         //socket = new WebSocket('ws://localhost:8001');
         socket = new WebSocket('wss://kvmde40-10035.fornex.org/crash');
-        //socket = new WebSocket('wss://crashserver.herokuapp.com/');
         
         socket.onopen = function(event) {
             if(reconnectTimer) {
@@ -426,6 +425,7 @@ $(function() {
             var bet = parseInt($('#bet').val());
             
             if (bet <= 0 || bet > Player.doubleBalance || isNaN(bet)) return;
+            if (bet > betLimit) bet = betLimit;
             
             if (socket && socket.readyState == 1)
                 socket.send(JSON.stringify({

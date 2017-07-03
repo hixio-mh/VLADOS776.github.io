@@ -19,8 +19,11 @@ var openCase = {
     casePrice: function() {
         if (openCase.caseType == 'weapons') {
             var casePrice = cases[this.caseId].price || parseFloat(getCasePrice(openCase.caseId, openCase.souvenir))*100;
-        } else if (openCase.caseType == 'graffiti')
+        } else if (openCase.caseType == 'graffiti') {
             var casePrice = GRAFFITI_BOX[this.caseId].price || parseFloat(getGraffitiBoxPrice(openCase.caseId))*100;
+        } else if (openCase.caseType == 'capsules') {
+            var casePrice = CAPSULES[this.caseId].price || parseFloat(getCapsulePrice(openCase.caseId))*100;
+        }
         casePrice *= this.linesCount;
         return casePrice;
     },
@@ -487,7 +490,7 @@ var openCase = {
         LOG.log({
             action: 'Open Case',
             case: {
-                name: cases[openCase.caseId].name,
+                name: openCase.caseType === 'capsules' ? CAPSULES[openCase.caseId].name : cases[openCase.caseId].name,
                 id: openCase.caseId,
                 free: openCase.isFree()
             },

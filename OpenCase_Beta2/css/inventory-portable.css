@@ -60,11 +60,12 @@
 	.weapon {
 		height: 113px;
 		width: 98px;
+        background-size: 106px;
 	}
 	.wp-statTrak::before {
 		margin-top: 65px;
 	}
-	.weapon img {
+	.weapon .li_item_img {
 		width: 86px;
 		height: 91px;
 	}
