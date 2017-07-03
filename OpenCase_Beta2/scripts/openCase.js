@@ -430,7 +430,7 @@ var openCase = {
                         statisticPlusOne('statTrak');
                     
                     Level.addEXP(1);
-                    statisticPlusOne('case-' + cases[openCase.caseId].name);
+                    statisticPlusOne('case-' + openCase.caseInfo.name);
                     
                     this.count++;
                     if (this.count < openCase.linesCount) 
