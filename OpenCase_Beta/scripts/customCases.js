@@ -548,10 +548,10 @@ var CustomCases = {
             }
             if (item.rarity == 'rare')
                 img = '../images/Weapons/rare.png';
-            el += '<li class="weapon">' +
+            el += item.toLi({ticker: false, limit: false});/*'<li class="weapon">' +
                 '<img src="' + img + '" />' +
                 '<div class="weaponInfo ' + item.rarity + '"><div class="type"><span>' + type + '</span></div><div class="name"><span>' + name + '</span></div></div></div>' +
-                '</li>'
+                '</li>'*/
         })
 
         $(".casesCarusel").html(el);
@@ -630,7 +630,7 @@ var CustomCases = {
                 sell: Localization.getString('open_case.sell', "Sell"),
                 name: CustomCases.win.titleText(),
                 quality: CustomCases.win.qualityText(),
-                img: CustomCases.win.getImgUrl(),
+                img: CustomCases.win.getImgUrl(true),
                 price: CustomCases.win.price,
                 price_coins: Math.round(CustomCases.win.price * 100),
                 inventory_id: result
