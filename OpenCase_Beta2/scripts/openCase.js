@@ -418,7 +418,7 @@ var openCase = {
                         sell: Localization.getString('open_case.sell', "Sell"),
                         name: currItem.titleText(),
                         quality: quality,
-                        img: currItem.getImgUrl(),
+                        img: currItem.getImgUrl(true),
                         price: currItem.price,
                         price_coins: Math.round(currItem.price * 100),
                         inventory_id: result,

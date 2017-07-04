@@ -776,11 +776,19 @@ var news = [{
         "EN": ' - [New] New mini game <a href="upgrader.html">Upgrader</a>!'
     }
 }, {
-    "day": 1,
+    "day": 3,
     "month": 7,
     "year": 2017,
     "update": {
         "RU": ' - [Новое] Добавлены Стикеры!<br> - [Новое] Добавлены капсулы <a href="open.html?capsuleId=0">Sticker Capsule</a> и <a href="open.html?capsuleId=1">Sticker Capsule 2</a>',
         "EN": ' - [New] Stickers!<br> - [New] Capsules <a href="open.html?capsuleId=0">Sticker Capsule</a> & <a href="open.html?capsuleId=1">Sticker Capsule 2</a>'
+    }
+}, {
+    "day": 4,
+    "month": 7,
+    "year": 2017,
+    "update": {
+        "RU": ' - [Новое] Добавлены капсулы <a href="open.html?capsuleId=2">Community Sticker Capsule 1</a>, <a href="open.html?capsuleId=3">Enfu Sticker Capsule</a>, <a href="open.html?capsuleId=4">Pinups Capsule</a>, <a href="open.html?capsuleId=5">Slid3 Capsule</a>, <a href="open.html?capsuleId=6">Katowice 2014 Challengers</a> и <a href="open.html?capsuleId=7">Katowice 2014 Legends</a>',
+        "EN": ' - [New] Capsules <a href="open.html?capsuleId=2">Community Sticker Capsule 1</a>, <a href="open.html?capsuleId=3">Enfu Sticker Capsule</a>, <a href="open.html?capsuleId=4">Pinups Capsule</a>, <a href="open.html?capsuleId=5">Slid3 Capsule</a>, <a href="open.html?capsuleId=6">Katowice 2014 Challengers</a> and <a href="open.html?capsuleId=7">Katowice 2014 Legends</a>'
     }
 }, ];

@@ -8511,7 +8511,7 @@ var Items = {
 
     /* ===== STICKERS ===== */
     stickers: [
-        {
+    {
         item_id: 0,
         name: "Luck Skill",
         rarity: 'high',
@@ -8666,6 +8666,538 @@ var Items = {
         name: 'Crown (Foil)',
         rarity: 'exotic',
         img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWEXTTOG_xJ2cUE97MgposLWsJzhs0uHPdHNHtITvwtbaxaHwZrjXkD1T7sEmi-2W9In2ilKy-UI-ZmGnd9THewdsfxiOrSe6AUNs'
+    }, {
+        item_id: 31,
+        name: 'Pocket BBQ',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJkKgdcs66aKQVx7P_JYzpHot7uxNLdlqetNe_UwjIB6pIiiOiZ94qk3QS2_0RrYzz7JIWSIVNvYFzOug_pT6ctE70'
+    }, {
+        item_id: 32,
+        name: 'Llama Cannon',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ4KQVat4WmKglu3P33fTxQ69n4wYHTwqTyZe6Dz29Uv8FyjO-Wp9z32A2x-EA9Z2rzcoSXcgI9Z17QrE_-n7m9Zh-_gg'
+    }, {
+        item_id: 33,
+        name: 'Burn Them All',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ2MBZZia6tLgpf0v_ETjFD_tuz2oPexqP3MujUxTgC650hi7DHoN_w2FbkrxU6Y23wJNWSelc2Y1-B-gSggbC42g8KA7Y'
+    }, {
+        item_id: 34,
+        name: 'To B or not to B',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJgKjtVibW3FAlvx8zcfgJA09C3hoeO2fGnNeqJxjgD68N12u2Wp42i2FXlqkI4MGmgJoLHe1doNA6D-Vm8l7rxxcjrA-8LDag'
+    }, {
+        item_id: 35,
+        name: 'Backstab',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ2JAdcpa6kKThs0uHPdHMRtN3gw9mNlvX1a7qGkj4AvJQkib2V8d323Azm8ko9Mj30d4DGcwBqfxiOra5IBjCj'
+    }, {
+        item_id: 36,
+        name: 'Shave Master',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJnLQVBs7ekOBNlwczEcC9F6ZKyltTZw66nYumIwW4DvcN02LuUpt6k2QXirktsNWH2cY7Heg89NA6C5BHglu_Bz9DC',
+    }, {
+        item_id: 37,
+        name: 'Rising Skull',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJnLhFbuoWpKhVn1r2bIGgU6Y3hl4XZlfKtZe-Ekm0EvsYl0rjFpI2iiQXkqRA-MG3zIoGcbEZgNvGAFXMZ',
+    }, {
+        item_id: 38,
+        name: 'Death Comes',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJwIAVDvoWmJAplwMzEcC9F6ZK0kYLfxqP3YLmGzmoFsJx3jrDFpo7w2wfiqhY9NTz1JtDHI1VsMAqF5BHglsoecr-O',
+    }, {
+        item_id: 39,
+        name: 'Sneaky Beaky Like',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJnKwFWvaOaKQJh2Or3fTxQ69n4kNSJwaX2Ze-AwT0D7ccg07mZ9Nn32QWxrktuZG2mIoSWelBtMFyEq0_-n7mTPJ8f1g',
+    }, {
+        item_id: 40,
+        name: 'My Other Awp',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ7MQxSpIWkPBdf3_LadjgM74rkwYWIw_OkZ-yFlGoHv5Qo3-qW89rxjAPtr0RoYjyictTEcgNsNEaQpAaV-N_-GA',
+    }, {
+        item_id: 41,
+        name: 'Bomb Doge',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ2KglVib6qLAJf3_LadjgMtIq1xNONkfHwZuKHkjxQucMj2biWpon23FLk-0dqNWymddLAJgZtZUaQpAYCpz5uxw',
+    }, {
+        item_id: 42,
+        name: 'Teamwork (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJgIAVaobW3IDho3P_HTjFD_tuz2tDclKTyZL6DwDsEvZJ03bGQ8N-gi1Hi-EpsNz_zdo7Hc1M4MlGGqwCggbC4uRmMFFg',
+    }, {
+        item_id: 43,
+        name: 'Rekt (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJmIA9DibakOQBlnaXOcGgTvo2ywIKNlPSjNuvXlzoAsZVy3bvFoY6j2QftrUQ9YGH2JdSLMlhpYmlez6E',
+    }, {
+        item_id: 44,
+        name: 'New Sheriff (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ6IBNopbKgOQ5m1czOfjRO09C3hoeO2fWnMb_Vxj0Dv5IliLmT9oitiwW38xJpZT31ItOUIw48Zg7Vq1W_xujxxcjrfJ0XzqE',
+    }, {
+        item_id: 45,
+        name: 'Swag (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJnMgVQibyqIgtf3_LadjgMvITvx4KKlKP3MerUzz0FuMN0j-vApNyn0Q23rRZsNmqiIYSTdlJqaUaQpAaWcOl7kA',
+    }, {
+        item_id: 46,
+        name: 'Headhunter (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJ8IAVTvq-rPwJy7PXHeDF94N2kk4XFk6WsMuyDw2pTusQhiLiR99yk2ADg8hZkazvzJNfHcAM2aF-F-wO4w_Cv28FPVLjZ4w',
+    }, {
+        item_id: 47,
+        name: 'Flammable (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0HdUuqkw9aDAhJyKQVau7unJwJf1fzBfQJO7c6xkc7bx_TxNrjSkD8AupAg2-yYpdyjjlaw-0M4Z2n0JNWUcAA_ZVrW_lG2366x0vyaY8Q7',
+    }, {
+        item_id: 48,
+        name: 'Skull Troop',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7Ng9CurajPhNy3PzHYQJO7c6xkc7fwvagMr-DwTIB7Z0g3bjA9Nrz3ATj_RI6Y26hJI6RdQ82Zl2B_lC8366x0gyLUcSS',
+    }, {
+        item_id: 49,
+        name: 'Skull Lil Boney',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7Ng9CurajPgtp3_HHfzhb09C3hoeO2fL1Nb3SkDMB6pdy0-2Z9oqg21Ky_xA4NWCnJ4ecJwBvNQnVrFS_k-nxxcjrVwaqASk',
+    }, {
+        item_id: 50,
+        name: 'Bombsquad',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7IApRo4WnJApiwOLdcDl94N2kk4XFkfKmNr-Izz4C68B1ieyS9NuijFGyr0s-ZjymJNfBIFA2NV6B_FLqlfCv28HBhzn9xA',
+    }, {
+        item_id: 51,
+        name: 'The Guru',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7IhFFo4WpKhVn1r2dd20avI7gw9WJxvGsMuqFlDoHvpUoiOvE89qh0VW1qEBrNWDxJ9KSbEZgNm-raCS2',
+    }, {
+        item_id: 52,
+        name: 'Silent Ninja',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7Kw1ZvLuaJwZy1PaGKW8T7d3hzdDSk6KtNuzVxm0H7Z1zjLqRrImh2wK1qkRoYj_7JIeUcxh-Pw9UxRlQ9w',
+    }, {
+        item_id: 53,
+        name: 'The Spartan',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7NhRWpK6kJThs0uHPdHNH7Y-1w9ndlKD1a-7SwGpTv8Qm3ezC89_32wblrkI_a26hcteRJ1JofxiOrSc9D-UW',
+    }, {
+        item_id: 54,
+        name: 'Salute!',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7NgtbsrOgOThs0uHPdHMbu4TuwtLaxPGkZ7rUlThTu8Yj37GY89_33wO38kA4NWD1IoeSJgM6fxiOrSv6dP7k',
+    }, {
+        item_id: 55,
+        name: 'The Samurai',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7NgVao6ikIjhs0uHPdHNDtd-0l9TYla-sMr2Hk2hQuJN1j--R8Nz22wPm8hY5MTj3ItOcdVNsfxiOrbFiGN3F',
+    }, {
+        item_id: 56,
+        name: 'The Zombie',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7PwtatLOgFAthwfTNP2sU6YTnxYPYwa_3MeOCkzhV6ccp2u-R84msigHl-xJsNm73LdeUc1UgIQaH9NhTlHs',
+    }, {
+        item_id: 57,
+        name: 'Skulltorgeist',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7Ng9CurajPhRrxv_EZTJQ69m_h5S0m_bmNL6flDlS7ZN30-uVod-i2APh-RI6MDr1ItCSdgU_NwvV8lW8wLrv0JK4v4OJlyXnO-aR3A',
+    }, {
+        item_id: 58,
+        name: 'Chabo',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7JgxetbGgJThs0uHPdHMT6Yy3kYKKzvKlauqFkG1V7MF0jrmXodv32VexqUBoYTz7LNPGdwBqfxiOra7DoYVe',
+    }, {
+        item_id: 59,
+        name: 'Unicorn',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7MApetbW3JThs0uHPdHNEvIvmkdnala7xMuOFkzNVvJF037uSo9-milay_0drYm6lJY-QcgA7fxiOrZ0cfKJQ',
+    }, {
+        item_id: 60,
+        name: 'Unicorn (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7MApetbW3JTho3P_HTjFD_tuz2oaNwK_3ZeqIwj0FusEn3OuX89-j0Q3lrkM-N2HzLYGVJgRqYwnRqwWggbC42qqHM58',
+    }, {
+        item_id: 61,
+        name: 'Bombsquad (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7IApRo4WnJApiwOLdcDl96tO_mL-HluXzNvWJlT5U65cnjr2ZotWsiQTgqhBqZ2z0JNWVcAY2NwqGq1G8yL3rhpbvot2Xnv6YjFcy',
+    }, {
+        item_id: 62,
+        name: 'Silent Ninja (Foil)',
+        rarity: 'exotic',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQkrFeOesx9zGX1g7Kw1ZvLuaLQhp38zEcC9F6ZLlxNbYw_Oja-uAwT8Cu5ImiOuXodzx3Qfg-xI4azigctTGclBvYlrR5BHglit_J0Ra',
+    }, {
+        item_id: 63,
+        name: 'Martha',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtat6ixIwZf3_LadjgMud_nlYWNzqagZ7iExjoC7Jwj37iSpY6s3lDm_0JrMD-gJoCXd1Q6Z0aQpAachP_64w',
+    }, {
+        item_id: 64,
+        name: 'Merietta',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtas6isLhN00szEcC9F6ZLux9ONzvP3Y-yJwTtX6pQj3-uWp9qs2A3n-kRkMjvxLNWcegNqYQ7Z5BHgliqAJ7zD',
+    }, {
+        item_id: 65,
+        name: 'Ivette',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEteoL-xPwJf3_LadjgMtIvizdHTkqSma73UwGgC6cYi3bvDpYnzjVbgrkdpZjr2cILDcA5sMkaQpAZo7yFi-g',
+    }, {
+        item_id: 66,
+        name: 'Sherry',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtEtbKgORV57P_JYzpHotrjkdWKxaX1Y-qHwD5Qu5132OiT89T2igfk80FlZmqlINKddgU9YF7Oug_pyGHU3O8',
+    }, {
+        item_id: 67,
+        name: 'Kimberly',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtcv7enLhVsyszEcC9F6ZLjxdTaz_WhN-rUlW1XuZYliLiZ9tSh3wLk_BZoZmymdtecJw8-Zg6C5BHglkHCEKG9',
+    }, {
+        item_id: 68,
+        name: 'Tamara',
+        rarity: 'high',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtDt7ekOQZf3_LadjgM79-yxtTflPOharjTzjMAvJV32uiVp9z03Vbt80Q6NTr3INeTcQA9M0aQpAYa2hT17Q',
+    }, {
+        item_id: 69,
+        name: 'Martha (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtat6ixIwZf2_zEfgJO7c6xkc7bx6amYe-BkGgBvpVz2-yQpYmi2APi-xI9MG_xdoORIAA4ZFrU_le2366x0p9zrShq',
+    }, {
+        item_id: 70,
+        name: 'Merietta (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtas6isLhN00szAfjFN09C3hoeO2aOlYb7VlToBvpQjj7uSoY30iQfk-RVlYD33cteQI1A2NFnY_QTvl7jxxcjreaBVKTY',
+    }, {
+        item_id: 71,
+        name: 'Ivette (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEteoL-xPwJf2_zEfgJO7c6xkc7TlvagYL3TxWkIvZdz2-ySrdWnjVWy-xY_Ym_2co7DelNsaQnTq1G3366x0hSnfomA',
+    }, {
+        item_id: 72,
+        name: 'Kimberly (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtcv7enLhVsyszAfjFN09C3hoeO2a6la-iGxzMB7Zx337_Aodmt3gbsqktpN236J4GcdAY9ZwzR_FK4xLvxxcjr18aTeY8',
+    }, {
+        item_id: 73,
+        name: 'Sherry (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtEtbKgORV57PvHfTJ94N2kk4XFxPHwMu_QxT8Bu5132O2Yp9yjilfiqEJrZ2HycdeVIVdrYlHW-Vm_kvCv28Ed_egOwQ',
+    }, {
+        item_id: 74,
+        name: 'Tamara (Holo)',
+        rarity: 'remarkable',
+        img: '-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRNRULFV_eS1M7DQEh4IEtDt7ekOQZf2_zEfgJO7c6xkc6Nla_3Y-uJzzgB68Ry2-yXrNj30VGxqUFuYmn1d9CddFVvYArW-gTv366x0hmYT3qS',
+    }, {
+        "item_id": 75,
+        "name": "Don't Worry",
+        "rarity": "milspec",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagBYuK6yJBVyyvrPfilB5N2JmIGZkPK6MeuFlzpQvZx12uqXo9Wl2lCw_BFoYm37LNOccgdsY17Wrla7wevn04j84soWs8Nv_Q"
+    }, {
+        "item_id": 76,
+        "name": "Hard Cluck Life",
+        "rarity": "milspec",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagxWpL6mJxJj2P_Bdzh94N2kk4XFk_PyYbjSwW8F65wk0-jHoNr3iwzirUI6Ym76JYXEelM-ZAzZ_QC9wvCv28Ebfn5QCw"
+    }, {
+        "item_id": 77,
+        "name": "Move It",
+        "rarity": "milspec",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxaglYoL-sPzhs0uHPdHMWtI7gkobTwKKiZ76GxGoA6ZRzjOuYo9il0QOy-EE9NTj3JtXGcAM9fxiOraaxQjPX"
+    }, {
+        "item_id": 78,
+        "name": "Countdown",
+        "rarity": "milspec",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagdYo7SxLwh33czEcC9F6ZLuldeOxfbwNuuBkm0C6pMh2rCYp9qi0Aaw8kZtZ276INSQc1M8ZVjZ5BHglp9d5QyV"
+    }, {
+        "item_id": 79,
+        "name": "Boom",
+        "rarity": "milspec",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagZYubeaJwZy1PaGcD9E7d_mwtiIxvSmZOvQkjwJ6sAp2OqTotX03gzi_kZpMjynItSRcxh-Pw_tET_gTg"
+    }, {
+        "item_id": 80,
+        "name": "Hard Cluck Life (Holo)",
+        "rarity": "restricted",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagxWpL6mJxJj2P_Bdzh95NO6m7-HluXzNvXTwT5X7sMj07qU8NysjlKw_RI4ZG-gddCRIAM2ZgvQ8lPqybrpgcW-ot2Xnr9W5QN9"
+    }, {
+        "item_id": 81,
+        "name": "Don't Worry (Holo)",
+        "rarity": "restricted",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagBYuK6yJBVyyvrPfilB5N2JnI-HmMj4MqnWkyUF7ZMliLCT8I_x2gKy-UFrMGuhLdCUc1A7MAzWrgO8xunq0ce06M_I1zI97aNJxbf4"
+    }, {
+        "item_id": 82,
+        "name": "Countdown (Holo)",
+        "rarity": "restricted",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagdYo7SxLwh33czAfjFN09C3hoeO2aCiY-qIkDNXupIii7rCo4-s3gKyrhc4az-hJ4OScQM8Z1zV-1Tvl-7xxcjriEJNrtg"
+    }, {
+        "item_id": 83,
+        "name": "Move It (Holo)",
+        "rarity": "restricted",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxaglYoL-sPzho3P_HTjFD_tuz2oTbkvGla-KBwzMHuZJz0r6U9Nmmi1Ls_xU-MG6iJNWSdVc8YV6FqVGggbC42hLkaNc"
+    }, {
+        "item_id": 84,
+        "name": "Boom (Holo)",
+        "rarity": "restricted",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagZYubeaIwhs3MzEcC9F6ZK0xIPdwKesMb2Bz2kFscR13u-T9Ij23wzm-BE6N22lddCXe1I5YVHY5BHglmVoitas"
+    }, {
+        "item_id": 85,
+        "name": "Hard Cluck Life (Foil)",
+        "rarity": "classified",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagxWpL6mJxJj2P_Bdzh96tO_mL-HluXzNvWJx2pU6sMh3eqUoYnw3Ffsqhc_NmymcIHGJAI8Y1yB-Vm4xri5gpW9ot2XnjgZyQVb"
+    }, {
+        "item_id": 86,
+        "name": "Don't Worry (Foil)",
+        "rarity": "classified",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagBYuK6yJBVyyvrPfilB5N2Jko-Cm8j4MqnWkyUF7JYnie2R9t3w0ATm-xFlZWCgLNWcIQBsZ1_YqFW2yL3o15Duu52a1zI97c5YTDUr"
+    }, {
+        "item_id": 87,
+        "name": "Countdown (Foil)",
+        "rarity": "classified",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagdYo7SxLwh33czOfjRO09C3hoeO2aanZr7TxGgJusQl0rzFrdz23wHtrUdkZ2ygItKWcg85MgqBqVO9xL3xxcjrpiwkcPY"
+    }, {
+        "item_id": 88,
+        "name": "Move It (Foil)",
+        "rarity": "classified",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxaglYoL-sPzhm3PrETjFD_tuz2tDflKGsa-jSxzMBuMEg2r6X8N-hjALk-kRpYmimcoSVJFM-YlCBrleggbC47sf6dFk"
+    }, {
+        "item_id": 89,
+        "name": "Boom (Foil)",
+        "rarity": "classified",
+        "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROQEXUFNuu1t_ARlFxagZYubeaLQhp38zEcC9F6ZLmwNPez6amZLrVl28HvscpjrGWrNr32wHjqEFrZ2jzJIbHdwc-YgyB5BHglt9sdP5u"
+    }, {
+            "item_id": 90,
+            "name": "Vox Eminor",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYoLW9Lgpp3fzaTjFD_tuz2tiOxKXwa77TxThUuZZ03OiRoIin3wTs_EBtN2n1cI6QdgRqYAnX81CggbC4EIPKjg4"
+        },
+        {
+            "item_id": 91,
+            "name": "Virtus.Pro",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYoLO3PxJzw-HHTjFD_tuz2oXYz_L2ZeuFxm9Tu5Mo37qQ99n231Dh-UU_YmugJNSXeg42ZwqG-geggbC4fww_K0o"
+        },
+        {
+            "item_id": 92,
+            "name": "Reason Gaming",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYpL-kOAhu7P_JYzpHooTkxoTawaOlMOiAwToE6pEh2LiYrduk3QCyrUBpa2n7JoGQdAA5Zl7Oug_p7g4ywBk"
+        },
+        {
+            "item_id": 93,
+            "name": "Natus Vincere",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYuLuzIjhs0uHPdHND7ovkzNjYx_SsMOPQkD0BuZwo2brF8dX2iwO3-kQ4MWygJYaScFVofxiOraECBLGs"
+        },
+        {
+            "item_id": 94,
+            "name": "Clan-Mystik",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYu6O2Pw5r7P_JYzpHoojjzITexq_wZuKJw28GsJUk37jE9Nqli1HmqEs_aj-lLYSdcQZrNw3Oug_plugATIQ"
+        },
+        {
+            "item_id": 95,
+            "name": "mousesports",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYu7WwOAJzw_zaZS594N2kk4XFw_OgYunQlGoD7ccn3LzH997zi1Hs-kFkMGyiJIHHdwBvaF7Vq1K8kvCv28FRtbwHJA"
+        },
+        {
+            "item_id": 96,
+            "name": "iBUYPOWER",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYv7iwMhdvxPbaTjFD_tuz2tGPzqesZbrQxT1Qv8QmieiYrY2jjAHl-BZoa26mdoLBdFBtaQqC-liggbC48DDwDfg"
+        },
+        {
+            "item_id": 97,
+            "name": "3DMAX",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAY5b6oKh9f3_LadjgM7oriwNnZz6f3auuIzzNXuMEmjr-U9N_x3A3j-kdoMWmgLNeWe1I4aUaQpAYdUSVEQg"
+        },
+        {
+            "item_id": 98,
+            "name": "Titan",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYorOxKglf3_LadjgM74rjzdSJxvGnZuKDk21U65N337uXpN6n0FLtrkY9ammiIIOSdAZvZ0aQpAb2gE--Jg"
+        },
+        {
+            "item_id": 99,
+            "name": "Ninjas in Pyjamas",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYuLOrIQZz2v3YaDdD4d2lq4yKhfDxfb3Xz25TupAg07CYrd3xiVbs-hVsN2_wJI_DcQ9sZ12F8lTryezr18Wi_MOe9RgIWTE"
+        },
+        {
+            "item_id": 100,
+            "name": "LGB eSports",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYur2nFAthwfTNP2tEvd3kxtbYzqHwZemJkzxT7cYoibyVoNSliwOwqRI_Y2_zIYWRcFAgIQaHY5vT4lA"
+        },
+        {
+            "item_id": 101,
+            "name": "Team LDLC.com",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYur6pKDhs0uHPdHNAtNqyzNeJx6-tMb6Fx2pU6cYj072So92kjAHgqkRlYGyiLNWRcQ5vfxiOrbOhtJFe"
+        },
+        {
+            "item_id": 102,
+            "name": "HellRaisers",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYvr-pJxVh2uDNYy594N2kk4XFz6WiNumBkGoH7Jwmj72To4nz2VLjqhZkMmD0ItSTelVoYFvY_Vnqk_Cv28HXR7DJvg"
+        },
+        {
+            "item_id": 103,
+            "name": "Fnatic",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYsLSkPw5j7P_JYzpHoo3gl9eJwPKiMu-BwD8AuMMj2-jH9tWl2Vex-BI6YWymJY-QdFc-Y1zOug_pq-0yPCk"
+        },
+        {
+            "item_id": 104,
+            "name": "Team Dignitas",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYsrOiJQ500uD3fTxQ69n4kdGPxqH2NuOExjoF6pF32r3H9NWmjgTiqkVuMm7zIo6XcQNoNV3WrE_-n7nICY4csg"
+        },
+        {
+            "item_id": 105,
+            "name": "compLexity Gaming",
+            "rarity": "milspec",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYtbWoOwtly_rcaAJO7c6xkc7SxqDxZuqBkz0A6pwojLyW8N_xjFaxqkU4MDqhd4aSdQQ6ZlvRrAW7366x0vI25aHi"
+        },
+        {
+            "item_id": 106,
+            "name": "Vox Eminor (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYoLW9Lgpp3fzaTjVN4NOJmIGZkPK6NuzTzm9TscZ32uzCotmn0Aa1_UZrMjygLY6QcwU9MA6F_li3xu_v1oj84srlNTvhug"
+        },
+        {
+            "item_id": 107,
+            "name": "Virtus.Pro (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYoLO3PxJzw-HHTjVN4NOJmIGZkPK6Y7rSkD9VsJV137qYptTziQLnrUZpZ2HzIdLBdwI4ZwqDqwXqlL3ohIj84spKcl65cQ"
+        },
+        {
+            "item_id": 108,
+            "name": "Reason Gaming (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYpL-kOAhu7PvHfTJ94N2kk4XFxPSnY-rXw28EuMF0j72Qpt2siQ3sqRJpNzr3d4XGJgE7Mw2C-1K9x_Cv28GjnGf3CQ"
+        },
+        {
+            "item_id": 109,
+            "name": "Natus Vincere (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYuLuzIjho3P_HTjFD_tuz2oLSxqSsYe6Hwj8IupFzjL-V9NyniQ3g-UtkZ2r7LNKQcAQ7NFiF_FGggbC43DmLxxM"
+        },
+        {
+            "item_id": 110,
+            "name": "Clan-Mystik (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYu6O2Pw5r7PvHfTJ94N2kk4XFz6byMujUwz9UvMQpib_F9t6h21bn_xdrNj_xddCRcgY6aQyF_lPvwPCv28FW6D4Bsg"
+        },
+        {
+            "item_id": 111,
+            "name": "mousesports (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYu7WwOAJzw_zaZS595NO6m7-HluXzNvXSwWhSusMk2evD8NmijQfi80BvNW-lItPEIA5oZA7Xrle4xb_ngsTvot2Xnuiici9a"
+        },
+        {
+            "item_id": 112,
+            "name": "iBUYPOWER (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYv7iwMhdvxPbaTjVN4NOJmIGZkPK6au7TxjgA68Ek3e2VpNvx3Qzh8hZvYWulLNLDIw8-Y1vSrwDrwrq71Ij84soXoqT41g"
+        },
+        {
+            "item_id": 113,
+            "name": "3DMAX (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAY5b6oKh9f2_zEfgJO7c6xkc7TlfSlarrUkD9U7cYniLnCrNmk0VWwrhBvMmuncY7EewBrMA2D_lTt366x0kMT1ZjM"
+        },
+        {
+            "item_id": 114,
+            "name": "Titan (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYorOxKglf2_zEfgJO7c6xkc6JkfL1YOuDwDgCvJcn3L_ApN2g2APtrhVpNjuiIYacdg9rM1uD-VG_366x0vI0nNfi"
+        },
+        {
+            "item_id": 115,
+            "name": "Ninjas in Pyjamas (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYuLOrIQZz2v3YaDdD4d2lq4iEm_jLP7rDkW4fu5Mn3eqX992jjQ3lrkE_Z2mgLYSXcwY6ZAvW81jole3shpDp7ZzAwWwj5HfT_s4WXQ"
+        },
+        {
+            "item_id": 116,
+            "name": "LGB eSports (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYur2nFA9v3_z3fTxQ69n4zYPbzqKtN7mHkD1Vu8Qnjr3Fp46g2w238kZrZW7xJ4fBcFM5YlDZ_E_-n7m71D5xOg"
+        },
+        {
+            "item_id": 117,
+            "name": "Team LDLC.com (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYur6pKDho3P_HTjFD_tuz2oXaz6TyYOmElWhQsJQojL2S9t-l3gbs_0A4Z2HycNTGdVQ3YQyB-VKggbC4Lv0VwTc"
+        },
+        {
+            "item_id": 118,
+            "name": "HellRaisers (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYvr-pJxVh2uDNYy595NO6m7-HluXzNvXTl28Hv5co3bnE99yg2gC3qUBtZ2qicoKTJw83ZgzY-QO-yOnngMC0ot2XnnFgsbSN"
+        },
+        {
+            "item_id": 119,
+            "name": "Fnatic (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYsLSkPw5j7PvHfTJ94N2kk4XFxfWgYO2Gx2oEuZR02bjA9NSn2gPi-UtpZjz1d4Kcdw85YFDS8wK-xfCv28GtAIQafQ"
+        },
+        {
+            "item_id": 120,
+            "name": "Team Dignitas (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYsrOiJQ500uD3eTJO4-O6lZKMkrn1Mr_QwDMFu5Ap2rnDoY6hi1K2-RY6YWD6ddTDdVA2YAmD_wLvwOzom9bi65HdQhdd"
+        },
+        {
+            "item_id": 121,
+            "name": "compLexity Gaming (Holo)",
+            "rarity": "restricted",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYtbWoOwtly_rcaAJK49C5q4yKhfDxfezXwGkC7Z0m3rDAotuk2gfg-0o9MG33JIHGJlNrZVGDrAXvkLjtjcCi_MOeg7M2uuw"
+        },
+        {
+            "item_id": 122,
+            "name": "ESL Wolf (Foil)",
+            "rarity": "classified",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYobWpLThlwP_3dzJL4OO6lZKMkrmgar-GkjkJ7pNw2LGX8Y3x3QWyqkFqZW6icIOWIQE-MgzW-lC3ybq7m9bi661nEL9o"
+        },
+        {
+            "item_id": 123,
+            "name": "ESL Skull (Foil)",
+            "rarity": "classified",
+            "tournament": "Katowice 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYobWpLThz2ObEfQJH_9CJko-Cm8j4MqnWkyVTu5An2ryQpdyijgzmqBBuYTvxIYbAc1RrN1CD_FPrwezpgpO56ZjM1zI97VCLs1zd"
     }],
     
     /* ===== GRAFFITI ===== */

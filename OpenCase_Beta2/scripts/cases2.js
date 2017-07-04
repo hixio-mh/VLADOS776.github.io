@@ -420,6 +420,36 @@ var CAPSULES = [{
     "img": "Sticker_Capsule_2.png",
     "type": "Default",
     "stickers": [15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+}, {
+    "name": "Community Sticker Capsule 1",
+    "img": "Community_Sticker_Capsule_1.png",
+    "type": "Default",
+    "stickers": [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47]
+}, {
+    "name": "Enfu Sticker Capsule",
+    "img": "Enfu_Sticker_Capsule.png",
+    "type": "Default",
+    "stickers": [48,49,50,51,52,53,54,55,56,57,58,59,60,61,62]
+}, {
+    "name": "Pinups Capsule",
+    "img": "Pinups_Capsule.png",
+    "type": "Default",
+    "stickers": [63,64,65,66,67,68,69,70,71,72,73,74]
+}, {
+    "name": "Slid3 Capsule",
+    "img": "Slid3_Capsule.png",
+    "type": "Default",
+    "stickers": [75,76,77,78,79,80,81,82,83,84,85,86,87,88,89]
+}, {
+    "name": "Katowice 2014 Challengers",
+    "img": "Katowice_2014.png",
+    "type": "Tournament",
+    "stickers": [90,91,92,93,94,95,96,97,106,107,108,109,110,111,112,113,122]
+}, {
+    "name": "Katowice 2014 Legends",
+    "img": "Katowice_2014.png",
+    "type": "Tournament",
+    "stickers": [98,99,100,101,102,103,104,105,114,115,116,117,118,119,120,121,123]
 }]
 
 var GRAFFITI_BOX = [{
