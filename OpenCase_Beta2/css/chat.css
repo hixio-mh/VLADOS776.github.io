@@ -413,6 +413,39 @@ i.spray-icon {
   -webkit-filter: grayscale(50%);
   filter: grayscale(50%);
 }
+.vip-explosion .message__info:after {
+    content: '';
+    display: block;
+    width:100px;
+    height:100px;
+    background-image: url(../images/chat/explosion.png);
+    animation: boomX .44445s steps(9) infinite, boomY 4s steps(9) infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+@keyframes boomX {
+   from { background-position-x:    0px; }
+     to { background-position-x: -900px; }
+}
+
+@keyframes boomY {
+   from { background-position-y:    0px; }
+     to { background-position-y: -900px; }
+}
+
+@-webkit-keyframes boomX {
+   from { background-position-x:    0px; }
+     to { background-position-x: -900px; }
+}
+
+@-webkit-keyframes boomY {
+   from { background-position-y:    0px; }
+     to { background-position-y: -900px; }
+}
 
 .message__graffiti .message__info {
     background: url(../images/Cases/graffitibg.jpg);

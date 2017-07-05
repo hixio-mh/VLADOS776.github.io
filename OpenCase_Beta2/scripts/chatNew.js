@@ -59,6 +59,12 @@ $(function () {
             case 'blur':
                 Chat.extraClasses(msgKey, 'vip-blur');
                 break;
+            case 'vip-explosion':
+                Chat.extraClasses(msgKey, 'vip-explosion');
+                setTimeout(function() {
+                    Chat.deleteMsg(msgKey, msgText, msgAuthor);
+                }, 4000);
+                break;
         }
         if (isAndroid()) {
             client.sendToAnalytics('Chat', 'Extra Classes', action, 'From ' + Player.nickname + ' to ' + msgAuthor);
@@ -98,9 +104,6 @@ $(function () {
     
     $(document).on('click', '#login button', function () {
         $(".chat__messages").append('<li id="js-loading-inventory" data-from="1"><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></li>');
-        setTimeout(function () {
-            //fbChat.initChat('.chat__messages');
-        }, 2000);
     });
     
     $(document).on('click', '#forgot-pass',function() {
@@ -257,6 +260,13 @@ var Chat = (function(module) {
         socket.on('extraClass', function(extra) {
             if (extra.key != null) {
                 $("li[data-msgkey='" + extra.key + "']").toggleClass(extra.class)
+            }
+            
+            if (extra.class === 'vip-explosion') {
+                Sound('chat.explosion', { volume: 0.5 });
+                setTimeout(function() {
+                    $("li[data-msgkey='" + extra.key + "']").remove();
+                }, 4000)
             }
         })
         
@@ -493,6 +503,8 @@ var Chat = (function(module) {
                 $('#typing').hide();
             }
         }
+        
+        loadSounds();
     }
     module.showRooms = function() {
         $("#login").hide();
@@ -560,6 +572,11 @@ var Chat = (function(module) {
     }
     module.chatBan = function(banObj) {
         socket.emit('chatBan', banObj);
+    }
+    
+    function loadSounds() {
+        Sounds.chat = Sounds.chat || {};
+        Sounds.chat.explosion = new Audio('../sound/chat/explosion.mp3');
     }
     
     function newMsg(key, message, edit) {
