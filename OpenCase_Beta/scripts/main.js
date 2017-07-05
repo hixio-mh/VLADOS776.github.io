@@ -322,6 +322,19 @@ function ifStatInFbDifferent(currStat, savedStat, fbPath, child) {
 
 function Sound(soundGet, action, priority, repeat, speed) {
     if (!Settings.sounds) return false;
+    
+    var config = {
+        action: 'play',
+        repeat: 0,
+        speed: 1,
+        volume: 1
+    };
+    
+    if (typeof action === 'object') {
+        config = $.extend(true, config, action);
+        action = action.action || null;
+    }
+    
     action = action || "play";
     priority = priority || 0;
     repeat = repeat || 0;
@@ -375,6 +388,7 @@ function Sound(soundGet, action, priority, repeat, speed) {
         try {
             sound.pause();
             sound.currentTime = 0;
+            sound.volume = config.volume;
             if (action == "play") sound.play();
         } catch (e) {
             console.log('Sound error', e);

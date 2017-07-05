@@ -809,7 +809,7 @@ var Missions = (function() {
             },
             reward: {
                 exp: 30,
-                money: 100000000
+                money: 50000000
             }
         }, {
             id: 29,
@@ -886,6 +886,23 @@ var Missions = (function() {
             reward: {
                 exp: 20,
                 money: 5000000
+            }
+        }, {
+            id: 33,
+            type: 'game',
+            game: 'crash',
+            event: 'cashout',
+            times: 1,
+            check: {
+                multiply: { moreThen: 200 }
+            },
+            description: {
+                RU: 'Забрать в Краше на 200x',
+                EN: 'Cashout in Crash on 200x'
+            },
+            reward: {
+                exp: 30,
+                money: 500000000
             }
         }
     ]
