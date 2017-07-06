@@ -309,7 +309,7 @@
                                 {{if isModer || isVip}}
                                     {{if isModer}}<li><a href="#" data-action="chat-ban" data-loc="chat_ban">Chat ban</a></li>{{/if}}
                                     {{if isModer || (isVip && myMessage)}}<li><a href="#" data-action="delete-message" data-loc="delete">Delete</a></li>{{/if}}
-                                    {{if isVip && myMessage}}<li><a href="#" data-action='vip-explosion' data-loc="explode">Explode</a></li>{{/if}}
+                                    {{if isVip && (myMessage || isModer)}}<li><a href="#" data-action='vip-explosion' data-loc="explode">Explode</a></li>{{/if}}
                                     {{if isVip}}
                                         <li><a href="#" data-action="fake-vip" data-loc="fake_vip">Fake VIP</a></li>
                                         <li><a href="#" data-action="blur" data-loc="Blur">Blur</a></li>
