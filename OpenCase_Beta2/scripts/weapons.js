@@ -2261,7 +2261,7 @@ var Items = {
             type: "Tec-9",
             skinName: "Nuclear Threat",
             rarity: "restricted",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhzw8zGZDZH_8iknZCOqPDmNr7fqWdY781lteXA54vwxgTt8hA5YGzxd9LGJA49YVzQqwDqxu_tjJC06J3PzyRhvCAm5naOnRepwUYbH0dTvU8"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoor-mcjhzw8zGZDZH_8iknZCOqPDmNr7fqX9U65xOhuDG_ZjKhFWmrBZyY2n1I4WWcQA8ZAqG-1Dol7_mhsK7vJidnSdmvyNw4S3fzUOx1xBOPfsv26K75-WM4g"
     }, {
             id: 204,
             type: "FAMAS",
