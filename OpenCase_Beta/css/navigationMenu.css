@@ -283,3 +283,6 @@ li.mission-condition {
     justify-content: center;
     font-size: 17px !important;
 }
+.mission-item_img {
+    width: 80px;
+}

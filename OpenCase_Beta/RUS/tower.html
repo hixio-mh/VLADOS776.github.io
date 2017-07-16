@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Tower</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.9, maximum-scale=1.0, user-scalable=no">
+<!-- Стили -->
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="../css/fonts.css">
+<link rel="stylesheet" type="text/css" href="../css/animate.css">
+<link rel="stylesheet" type="text/css" href="../css/winter.css">
+<link rel="stylesheet" type="text/css" href="../css/tower.css">
+<link rel="stylesheet" href="../css/navigationMenu.css">
+</head>
+    
+<body data-localization="tower" data-page_name="Tower" data-inventory='no-load'>
+	<div class="site-overlay"></div>
+<div id="container">
+    <div class="navigationBar" data-menu-EN="Tower">Tower</div>
+    <div class="panel panel-default">
+        <div class="panel-body panel-game" data-loc-group="game">
+            <div class="game_field" id='game_field'>Loading...</div>
+            <div class="form-group buttons">
+                <div class="difficulties">
+                    <div class='diff easy active' data-diff='easy' data-loc='Easy'>Easy</div>
+                    <div class='diff medium' data-diff='medium' data-loc='Medium'>Medium</div>
+                    <div class='diff hard' data-diff='hard' data-loc='Hard'>Hard</div>
+                </div>
+                <button class="btn btn-success btn-sm btn-block" id='start_game' data-loc='start_game'>Start game</button>
+                <div class="bet-containter">
+                    <button class="btn bet-change" id="bet-min">Min</button>
+                    <button class="bet-change btn-char" id="bet-minus">-</button>
+                    <input min='100' class='input-sm bet' placeholder='Bet' id='bet' data-loc='bet' value='100'>
+                    <button class="btn bet-change btn-char" id="bet-plus">+</button>
+                    <button class="btn bet-change" id="bet-max">Max</button>
+                </div>
+            </div>
+        </div>
+            
+    </div>
+</div>
+    
+<div class="modal fade" id='how-to-play-modal' role='dialog' data-loc-group='how_to_play_modal'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" data-loc='title'>How to play</h4>
+            </div>
+            <div class="modal-body" data-loc='body'>
+                <p>Before you start the game you can change roll determiner, payout and win chance.</p>
+                <p>Then you input a bet amount and tap on the "Roll dice" button.</p>
+                <p>When you click on "Roll dice" button it will generate a random number. And if this number is satisfies the condition you will get your bet multiply by payout.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class='button btn btn-default' data-dismiss="modal" data-loc='close'>Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Скрипты -->
+<script src="../scripts/build/libs.js"></script>
+<script src="../scripts/main.js"></script>
+<script src="../scripts/settings.js"></script>
+<script src="../scripts/bootstrap.min.js"></script>
+<script src="https://www.promisejs.org/polyfills/promise-7.0.4.min.js"></script>
+
+<script src="../scripts/navigationMenu.js"></script>
+
+<script src="../scripts/localization.js"></script>
+<!-- Скрипт игры -->
+<script src="../scripts/games/tower.js"></script>
+<script>
+    $(document).on('localizationloaded', function() {
+        Game.Tower.init();
+    })
+</script>
+</body>
+</html>

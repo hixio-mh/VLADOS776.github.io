@@ -1,0 +1,139 @@
+.game_field {
+  width: 310px;
+  padding: 5px;
+  margin: 0 auto;
+  background-color: #05141A;
+  margin-top: 30px;
+  position: relative; }
+
+.game_field:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -50px;
+  width: 100%;
+  height: 50px;
+  left: 0;
+  background-image: url(../images/tower-roof.png);
+  background-repeat: repeat-x;
+  background-position: bottom left;
+  background-size: 14px 19px; }
+
+.tower-line {
+  display: flex;
+  opacity: 0.6;
+  margin: 20px; }
+
+.tower-line.active {
+  opacity: 1; }
+
+.tower-line button {
+  height: 35px;
+  width: 33%;
+  border: none;
+  flex-grow: 1;
+  margin: 0 3px;
+  background-color: #bfaa62;
+  color: #fff; }
+
+.tower-line[data-line="1"] button {
+  background-color: #c2ae69; }
+
+.tower-line[data-line="2"] button {
+  background-color: #c5b270; }
+
+.tower-line[data-line="3"] button {
+  background-color: #c8b678; }
+
+.tower-line[data-line="4"] button {
+  background-color: #cbba7f; }
+
+.tower-line[data-line="5"] button {
+  background-color: #cebe86; }
+
+.tower-line[data-line="6"] button {
+  background-color: #d1c28d; }
+
+.tower-line[data-line="7"] button {
+  background-color: #d4c595; }
+
+.tower-line[data-line="8"] button {
+  background-color: #d7c99c; }
+
+.tower-line[data-line="9"] button {
+  background-color: #dacda3; }
+
+.tower-line[data-line="10"] button {
+  background-color: #ddd1aa; }
+
+.buttons {
+  width: 310px;
+  margin: 0 auto; }
+
+.bet-containter {
+  padding: 10px;
+  background: #d6bb8b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 10px 0; }
+
+.bet-containter > * {
+  flex: 1 1 auto;
+  margin: 0 4px; }
+
+button.bet-change {
+  background: #1d1f38;
+  border: none;
+  color: #ffefc1;
+  padding: 4px 9px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-size: 10px; }
+
+button.btn-char {
+  font-size: 15px;
+  padding: 1px 9px;
+  font-weight: bold; }
+
+input.bet {
+  background: transparent;
+  border: none;
+  text-align: center;
+  width: 100px;
+  color: #1d1f38;
+  font-weight: bold;
+  font-size: 16px; }
+
+button#start_game {
+  margin: 10px 0;
+  text-transform: uppercase;
+  height: 40px; }
+
+.panel-game {
+  background-image: url(http://68.media.tumblr.com/667aae89736c77b8d7420f874f04a9b8/tumblr_o5bmkjS7LN1tfav9mo1_500.gif);
+  background-size: auto 100%;
+  background-position: center top;
+  background-repeat: repeat-x; }
+
+.difficulties {
+  display: flex;
+  align-items: center;
+  background-color: #05141A;
+  color: #d6bb8b; }
+
+.difficulties .diff {
+  flex-grow: 1;
+  text-align: center;
+  color: #d6bb8b;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 5px;
+  cursor: pointer; }
+
+.difficulties .diff.active {
+  background: #d6bb8b;
+  color: #1d1f38; }
+
+/*# sourceMappingURL=tower.css.map */

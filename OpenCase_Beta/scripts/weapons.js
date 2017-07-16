@@ -2261,7 +2261,7 @@ var Items = {
             type: "Tec-9",
             skinName: "Nuclear Threat",
             rarity: "restricted",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhzw8zGZDZH_8iknZCOqPDmNr7fqWdY781lteXA54vwxgTt8hA5YGzxd9LGJA49YVzQqwDqxu_tjJC06J3PzyRhvCAm5naOnRepwUYbH0dTvU8"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoor-mcjhzw8zGZDZH_8iknZCOqPDmNr7fqX9U65xOhuDG_ZjKhFWmrBZyY2n1I4WWcQA8ZAqG-1Dol7_mhsK7vJidnSdmvyNw4S3fzUOx1xBOPfsv26K75-WM4g"
     }, {
             id: 204,
             type: "FAMAS",
@@ -9429,6 +9429,243 @@ var Items = {
             "name": "Phoenix Reborn (Foil)",
             "rarity": "classified",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-aqtJAJu2uv3dzJL4OO6lZKMkrnwZenVlGhQv50mjL2SoImiilDgqUI9YGj3d4XDcgI_YliB-lS3lezpm9bi69c_6CgP"
+        }, {
+            "item_id": 163,
+            "name": "Copenhagen Wolves",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ3KhRSuLKkLAJuxPzEZzhR09C3hoeO2fHxY-KIkzIJuZMn0-2W8Nmt3QXl_UZpMTr6IIWSIAZoaQzU-AS2l7_xxcjra08ur7M"
+        },
+        {
+            "item_id": 164,
+            "name": "dAT team",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJwJBBDs7uoFAthwfTNP2sR7djvxYPdwK6lZO-GwDIFuZcgib2R94_z2wfg8kRlZWrwLYWWdQ4gIQaHN9VooUQ"
+        },
+        {
+            "item_id": 165,
+            "name": "Epsilon eSports",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJxNRdeurWrLhRw3OHcYgJO7c6xkc6Nzq6sN7rXkDMBupRy2O3D9tzzjAXgrRc6Yz_yLILEIQE4YVuB-FO6366x0n3Kp9l6"
+        },
+        {
+            "item_id": 166,
+            "name": "iBUYPOWER",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ9JxFOprWyLhVf3_LadjgMtYm3wdDZlq6lN7rUxjgJ65Ry3eqVpo322AS2_xc6NTigJ4LBJFQ2YUaQpAa5Qg-WnQ"
+        },
+        {
+            "item_id": 167,
+            "name": "London Conspiracy",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ4KgpTubSmJAlzw_racD5b09C3hoeO2aShZOmIwjsF6cQh2r2Tp4mg2gTt_RFlMmHwI46Ud1VsMF_R-wXrwuvxxcjrLMOa9lA"
+        },
+        {
+            "item_id": 168,
+            "name": "Natus Vincere",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ6JBJeibakOQBlnfXMI2xGvo_gltiPxqagML_UxGkC7pJ32LyW9Nj3jQXl-kVkZT_ycdWLMlhpwoe1CxU"
+        },
+        {
+            "item_id": 169,
+            "name": "Titan",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgLBBWuIWpKhVn1r2YIWgbvIjmzNKJwqajZO2EwW8HsJYj3byVoNj03QLk_0E_MDz2I4-RbEZgNpEKe4c4"
+        },
+        {
+            "item_id": 170,
+            "name": "Vox Eminor",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJiKhxSu7OrJBVf3_LadjgMtdjlktaJkqGlN--AxW0G6sQk2OuRptmhiVfsrRJvZj_7I9TGJgNvYkaQpAYOyNHtXw"
+        },
+        {
+            "item_id": 171,
+            "name": "MTS GameGod Wolf",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJjKghRibakOQBlnfbNcG4Q7tm0kNbSlaT1Z-uGzjtQ7ZRyj73FrY7w0VLn8hFtazimcoKLMlhpfazSnH0"
+        },
+        {
+            "item_id": 172,
+            "name": "Cloud9",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ3KQtCsuOaJwZy1PaGIWoS6Y-1kYPax_KiZO-EwDMD7ccn2bqU9I2s3QC1rRFpMGnycIWUehh-Pw8N5kT_Hg"
+        },
+        {
+            "item_id": 173,
+            "name": "Fnatic",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJyKwVDv7maJwZy1PaGIWwWuou3wYKPzvamar6EwGlXsZckiOzA94mh3gTt_BZsMj_wctTBJxh-Pw-YdE0zDw"
+        },
+        {
+            "item_id": 174,
+            "name": "HellRaisers",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ8IAhbpLusOAJywMzEcC9F6ZKykNaNzqemNu-Fl20CupEi277Ap97x0FDh-0NvZDz3IITHcwI8YQuC5BHgllcAG2LZ"
+        },
+        {
+            "item_id": 175,
+            "name": "Ninjas in Pyjamas",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ6LApdt6msJRd52fLFcC594N2kk4XFz6OgMb2CkjkEsZF0276Y942giVbg-BFkN2_3cY7DJwFvNVqF_VXqwvCv28Fyj29OZA"
+        },
+        {
+            "item_id": 176,
+            "name": "Team Dignitas",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgIAVasrOiJQ500uD3fTxQ69n4lYbew6CtZL3Uz2kC7MNw2uqSrdT20AHmrhJsYDr0J4edJlNqZAvWqU_-n7khyWk_bQ"
+        },
+        {
+            "item_id": 177,
+            "name": "Team LDLC.com",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgIAVaur6pKDhs0uHPdHNDvojnw9fbzqWlNezSzj0AsZZzi7vEo932iQDtr0NtYGqmJ9XEIwU_fxiOrdUvMW_u"
+        },
+        {
+            "item_id": 178,
+            "name": "Virtus.Pro",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJiLBZDo6m1OQhf3_LadjgM7orukNWIlaSlN--HwjsEu8EmiLDH8d2i21fk-hI-MmyndYeRcQVtYEaQpAZBbUgrSQ"
+        },
+        {
+            "item_id": 179,
+            "name": "Copenhagen Wolves (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ3KhRSuLKkLAJuxPzEZzhR09S5mI-0m_bmNL6fxzhS7cAi3bmWrY6kjg3s-kRtMj33d4DDdQZoZw7YrFe4l---gpC_uYOJlyVmKJfI1Q"
+        },
+        {
+            "item_id": 180,
+            "name": "dAT team (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJwJBBDs7uoFA9v3_z3fTxQ69n4kdTYxqL2NujUxGgJ7pJ1i-_E94-kigC2-BU-MG32cIKQdFQ3NFmDq0_-n7lWY7qwWQ"
+        },
+        {
+            "item_id": 181,
+            "name": "Epsilon eSports (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJxNRdeurWrLhRw3OHcYgJK49C5q4yKhfDxfe6DzmgAsMMo27qTotqnjlXkrRJlZjz0LYScdVJrYwnV-Fa5le29h5Ki_MOeB_sNGPY"
+        },
+        {
+            "item_id": 182,
+            "name": "iBUYPOWER (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ9JxFOprWyLhVf2_zEfgJO7c6xkc6KzqGjauzXxDMJ7ZEn27nCpduljASyqBZqYjyhdYeVcVVoYQvZqAW7366x0tiFSyJG"
+        },
+        {
+            "item_id": 183,
+            "name": "London Conspiracy (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ4KgpTubSmJAlzw_racD5b09S5mI-0m_bmNL6fkz1VvJYm07GS99ig2Qbk8kVtNmj7cteUcwY3YQ7QqFW7wevuhJW6vIOJlyX8LlfhIg"
+        },
+        {
+            "item_id": 184,
+            "name": "Natus Vincere (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ6JBJeibKqJwhf3_LadjgMuIzmw9jTz6_wYuiJlTlSvZAk3-qUo9_w0QGy_BU6NWH6JdCWJg5qNEaQpAYgOATycQ"
+        },
+        {
+            "item_id": 185,
+            "name": "Titan (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgLBBWuIWtJAtv7P_JYzpHoonhzdbexa-mN-nQlG4HuZMojLCY842jiwXn_UY4N23xd4TDJABoZlDOug_phnvLMfs"
+        },
+        {
+            "item_id": 186,
+            "name": "Vox Eminor (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJiKhxSu7OrJBVf2_zEfgJO7c6xkc7bxvH3Mu-Gk25QsMF02OiV9or22FHkr0FuMm31doGRdAZoZ1nR-ADo366x0n3fab8k"
+        },
+        {
+            "item_id": 187,
+            "name": "MTS GameGod Wolf (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJjKghRibKqJwhf3_LadjgMvYTukYHdlfOmNemDlz4DucFzi73ErImtjlfn-RZsZWvyd9DGdgA8aUaQpAYDMLTcdg"
+        },
+        {
+            "item_id": 188,
+            "name": "Cloud9 (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ3KQtCsuOaIwhs3MzEcC9F6ZK0kYSNz6T1ZLrQlT0FuZN32LrEoNyh2AKxqBJkMWGmLYPEIFJvZ1uC5BHglrxdmHPj"
+        },
+        {
+            "item_id": 189,
+            "name": "Fnatic (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJyKwVDv7maIwhs3MzEcC9F6ZKzzdLZzq-gNu3VxjpXscZwi7yZ9o30igTi-RI-ZTyiJoCTdQA5NF3S5BHglkqMBI3F"
+        },
+        {
+            "item_id": 190,
+            "name": "HellRaisers (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ8IAhbpLusOAJywMzAfjFN09C3hoeO2a6iZ-2Fkm9QuZxw2ryRo96m0VWx80dqYGD7IYLHdlA3ZgnU_VfoxOvxxcjr7Se-ugE"
+        },
+        {
+            "item_id": 191,
+            "name": "Ninjas in Pyjamas (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ6LApdt6msJRd52fLFcC595NO6m7-HluXzNvWFxToHsZR0jOjCoI732w3j80tqazumIYDDJgY7YF-BqVm_lOfohcO6ot2Xngh5OFfi"
+        },
+        {
+            "item_id": 192,
+            "name": "Team Dignitas (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgIAVasrOiJQ500uD3eTJO4-O6lZKMkrmmMuyJwDJVupZ03LuWpYqh2A3nqRc9Yzz2LYbEcgU7NQuDrwS4wejnm9bi67k5kpUd"
+        },
+        {
+            "item_id": 193,
+            "name": "Team LDLC.com (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgIAVaur6pKDho3P_HTjFD_tuz2tWKxaKjYr_Xx2oFucEmjO_EoNyki1C2-RJrYzr6LIWcdlQ3NQyE_lmggbC4YvY8zG0"
+        },
+        {
+            "item_id": 194,
+            "name": "Virtus.Pro (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJiLBZDo6m1OQhf2_zEfgJO7c6xkc6OxKejY7-Dxz8BuJYk2bGZp9yj2QXs_xY4ZWH6IIedcg5raF3UqVXr366x0il2ShY1"
+        },
+        {
+            "item_id": 195,
+            "name": "ESL One (Red)",
+            "rarity": "classified",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJxNghotIWpKhVn1r2fcmhG74rjw9WNxa-kN7qCwm8DvJYijLCU8d322QG3r0A-MmChdYKRbEZgNskeyBKG"
+        },
+        {
+            "item_id": 196,
+            "name": "ESL One (Blue)",
+            "rarity": "classified",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJxNghot4WpKhVn1r2acG8VvYywwoGJlPL2Zb_Tl29XsZEmib2X9Nvw3AHgr0plYT33JITEbEZgNqL9cNLq"
     }],
     
     /* ===== GRAFFITI ===== */
