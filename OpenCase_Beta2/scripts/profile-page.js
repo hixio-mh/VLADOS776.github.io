@@ -489,7 +489,7 @@ $(function () {
             var inventoryID = parseInt($(this).data('id'));
             ids.push(inventoryID);
         })
-        getWeapons(ids).then(function (tradeWeapons) {
+        getItems(ids).then(function (tradeWeapons) {
             var accepted = $('#trade-its-gift').is(':checked');
             var convertedWeapons = tradeWeapons.map(function (item) {
                 return item.tradeObject();
