@@ -180,7 +180,7 @@ Game.Tower = (function(module) {
         
         if (bet > Player.doubleBalance) {
             $.notify({
-                message: _t('tower.wrong_bet', 'Not enough money')
+                message: _t('tower.not_enought_money', 'Not enough money')
             }, {
                 type: 'danger'
             })
@@ -232,6 +232,7 @@ Game.Tower = (function(module) {
         }
     }
     function btnClick() {
+        if (!currGame.started) return;
         var clickPos = $(this).data('pos'),
             fieldPos = field[clickPos];
         if (parseInt(clickPos.split(',')[0]) != currGame.line) return false;
@@ -252,18 +253,18 @@ Game.Tower = (function(module) {
     function cashout() {
         Player.doubleBalance += currGame.profit;
         
-        currGame.started = false;
-        $('#start_game').text(_t('tower.play', 'Start game'));
         
         openField();
+        currGame.started = false;
+        $('#start_game').text(_t('tower.play', 'Start game'));
     }
     function lose() {
-        currGame.started = false;
             
         $('#start_game').text(_t('tower.play', 'Start game'));
         $('.tower-line').addClass('active');
         
         openField();
+        currGame.started = false;
     }
     
     function nextLine() {
