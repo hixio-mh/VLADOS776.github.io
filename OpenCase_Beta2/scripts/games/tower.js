@@ -253,6 +253,7 @@ Game.Tower = (function(module) {
     function cashout() {
         Player.doubleBalance += currGame.profit;
         
+        saveStatistic('doubleBalance', Player.doubleBalance);
         
         openField();
         currGame.started = false;
