@@ -571,6 +571,8 @@
                             stickerName: new Sticker(Inventory.list.sticker).titleText()
                         })
                         
+                        customEvent({ type: 'items', event: 'apply sticker', sticker: new Sticker(Inventory.list.sticker), item: item })
+                        
                         Inventory.list.sticker = {};
                     } else {
                         $.notify({
@@ -605,6 +607,7 @@
                             item_id: item.item_id,
                             stickerID: item.stickers[stickerIndex].item_id
                         })
+                        customEvent({ type: 'items', event: 'remove sticker', sticker: new Sticker(item.stickers[stickerIndex].item_id), item: item })
                         item.stickers.splice(stickerIndex, 1);
                         Sound('interface.sticker_scratch');
                         item.price = item.getPrice();

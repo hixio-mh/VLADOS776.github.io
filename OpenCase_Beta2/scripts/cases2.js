@@ -450,6 +450,31 @@ var CAPSULES = [{
     "img": "Katowice_2014.png",
     "type": "Tournament",
     "stickers": [98,99,100,101,102,103,104,105,114,115,116,117,118,119,120,121,123]
+}, {
+    "name": "Team Roles Capsule",
+    "img": "Team_Roles_Capsule.png",
+    "type": "Default",
+    "stickers": [124,125,126,127,128,129,130,131,132,133,134]
+}, {
+    "name": "Sugarface Capsule",
+    "img": "Sugarface_Capsule.png",
+    "type": "Default",
+    "stickers": [135,136,137,138,139,140,141,142,143,144,145,146,147,148]
+}, {
+    "name": "Bestiary Capsule",
+    "img": "Bestiary_Capsule.png",
+    "type": "Default",
+    "stickers": [149,150,151,152,153,154,155,156,157,158,159,160,161,162]
+}, {
+    "name": "Cologne 2014 Challengers",
+    "img": "Cologne_2014.png",
+    "type": "Tournament",
+    "stickers": [163,164,165,166,167,168,169,170,171,179,180,181,182,183,184,185,186,187,195]
+}, {
+    "name": "Cologne 2014 Legends",
+    "img": "Cologne_2014.png",
+    "type": "Tournament",
+    "stickers": [172,173,174,175,176,177,178,188,189,190,191,192,193,194,196]
 }]
 
 var GRAFFITI_BOX = [{

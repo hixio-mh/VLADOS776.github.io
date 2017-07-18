@@ -362,9 +362,6 @@ var Missions = (function() {
                 RU: 'Открыть кейс 50 раз подряд',
                 EN: 'Open case 50 times in a row'
             },
-            check: {
-                caseId: 24
-            },
             times: 50,
             reward: {
                 exp: 10,
@@ -904,6 +901,76 @@ var Missions = (function() {
                 exp: 30,
                 money: 500000000
             }
+        }, {
+            id: 34,
+            type: 'items',
+            event: 'apply sticker',
+            times: 2,
+            description: {
+                RU: 'Наклеить 2 наклейки',
+                EN: 'Apply 2 stickers'
+            },
+            reward: {
+                exp: 2,
+                item: {
+                    item_id: 0,
+                    quality: 6,
+                    colorNum: Math.rand(0, 18)
+                }
+            }
+        }, {
+            id: 35,
+            type: 'items',
+            event: 'apply sticker',
+            times: 1,
+            description: {
+                RU: 'Наклеить 4 наклейки на скин',
+                EN: 'Apply 4 stickers to the skin'
+            },
+            check: {
+                'item.stickers': { length: 4 }
+            },
+            reward: {
+                exp: 4,
+                item: {
+                    item_id: 5,
+                    quality: 6,
+                    colorNum: Math.rand(0, 18)
+                }
+            }
+        }, {
+            id: 36,
+            type: 'case',
+            event: 'open',
+            times: 50,
+            description: {
+                RU: 'Открыть 50 капсул со стикерами',
+                EN: 'Open 50 sticker capsules'
+            },
+            check: {
+                'caseType': 'capsules'
+            },
+            reward: {
+                exp: 2,
+                item: {
+                    item_id: 7,
+                    quality: 6,
+                    colorNum: Math.rand(0, 18)
+                }
+            }
+        }, {
+            id: 37,
+            type: 'items',
+            event: 'remove sticker',
+            times: 1,
+            description: {
+                RU: 'Содрать 1 наклейку',
+                EN: 'Remove 1 sticker'
+            },
+            reward: {
+                exp: 2,
+                money: 1000
+            }
         }
     ]
     var current = [],
@@ -953,13 +1020,17 @@ var Missions = (function() {
                     <li class="mission-condition">${$value}</li>\
                 {{/each}}</ul>\
             {{/if}}\
-            <h6>' + _t('missions.info.award', 'Award') + '</h6> <div class="text-center">${raw.reward.money}<i class="double-icon"></i> | ${raw.reward.exp} EXP</div>\
+            <h6>' + _t('missions.info.award', 'Award') + '</h6> <div class="text-center">\
+            {{if raw.reward.money}}${raw.reward.money}<i class="double-icon"></i> | {{/if}}\
+            {{if raw.reward.exp}}${raw.reward.exp} EXP{{/if}}\
+            {{if raw.reward.item}}<br>${createItem(raw.reward.item).titleText()}<br><img class="mission-item_img" src="${createItem(raw.reward.item).getImgUrl()}">{{/if}}</div>\
         </div>';
         
         $.template('missionInfoTemplate', missionInfoTemplate);
         
         var progress = parseInt(miss.currStep / miss.steps * 100);
         miss.progress = progress;
+        miss.createItem = function(info) { return new Item(info) }
         $.tmpl('missionInfoTemplate', miss).appendTo(this).slideDown('fast')
         
         function remove() {
@@ -999,32 +1070,45 @@ var Missions = (function() {
                     var nextMiss = false;
                     if (mission.raw.check) {
                         for (var key in mission.raw.check) {
-                            if (!act[key]) {
-                                mission.fail(act);
-                                nextMiss = true;
-                                break;
-                            }
+                            var path = key.split('.'),
+                                actCheck = act;
+                            
+                            path.forEach(function(pathPart) {
+                                if (!actCheck[pathPart]) {
+                                    mission.fail(act);
+                                    nextMiss = true;
+                                } else {
+                                    actCheck = actCheck[pathPart];
+                                }
+                            })
+                            
+                            if (nextMiss) break;
 
                             if (typeof mission.raw.check[key] === 'object') {
                                 var checkObj = mission.raw.check[key];
 
-                                if (checkObj.moreThen && act[key] <= checkObj.moreThen) {
+                                if (checkObj.moreThen && actCheck <= checkObj.moreThen) {
                                     mission.fail(act);
                                     nextMiss = true;
                                     break;
                                 }
-                                if (checkObj.lessThen && act[key] >= checkObj.lessThen) {
+                                if (checkObj.lessThen && actCheck >= checkObj.lessThen) {
                                     mission.fail(act);
                                     nextMiss = true;
                                     break;
                                 }
-                                if (checkObj.inArray && checkObj.inArray.indexOf(act[key]) === -1) {
+                                if (checkObj.inArray && checkObj.inArray.indexOf(actCheck) === -1) {
+                                    mission.fail(act);
+                                    nextMiss = true;
+                                    break;
+                                }
+                                if (checkObj.length && actCheck.length !== checkObj.length) {
                                     mission.fail(act);
                                     nextMiss = true;
                                     break;
                                 }
                             } else {
-                                if (act[key] !== mission.raw.check[key]) {
+                                if (actCheck !== mission.raw.check[key]) {
                                     mission.fail(act);
                                     nextMiss = true;
                                     break;
@@ -1243,6 +1327,12 @@ var Missions = (function() {
             if (reward.money) {
                 Player.doubleBalance += reward.money;
                 saveStatistic('doubleBalance', Player.doubleBalance);
+            }
+            if (reward.item) {
+                var item = new Item(reward.item);
+                item.new = true;
+                
+                saveItem(item);
             }
             $(document).trigger('missions.complete', this.raw);
             

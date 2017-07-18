@@ -791,4 +791,12 @@ var news = [{
         "RU": ' - [Новое] Добавлены капсулы <a href="open.html?capsuleId=2">Community Sticker Capsule 1</a>, <a href="open.html?capsuleId=3">Enfu Sticker Capsule</a>, <a href="open.html?capsuleId=4">Pinups Capsule</a>, <a href="open.html?capsuleId=5">Slid3 Capsule</a>, <a href="open.html?capsuleId=6">Katowice 2014 Challengers</a> и <a href="open.html?capsuleId=7">Katowice 2014 Legends</a>',
         "EN": ' - [New] Capsules <a href="open.html?capsuleId=2">Community Sticker Capsule 1</a>, <a href="open.html?capsuleId=3">Enfu Sticker Capsule</a>, <a href="open.html?capsuleId=4">Pinups Capsule</a>, <a href="open.html?capsuleId=5">Slid3 Capsule</a>, <a href="open.html?capsuleId=6">Katowice 2014 Challengers</a> and <a href="open.html?capsuleId=7">Katowice 2014 Legends</a>'
     }
+}, {
+    "day": 18,
+    "month": 7,
+    "year": 2017,
+    "update": {
+        "RU": ' - [Новое] Добавлены капсулы <a href="open.html?capsuleId=8">Team Roles Capsule</a>, <a href="open.html?capsuleId=9">Sugarface Capsule</a>, <a href="open.html?capsuleId=10">Bestiary Capsule</a>, <a href="open.html?capsuleId=11">Cologne 2014 Challengers</a> и <a href="open.html?capsuleId=12">Cologne 2014 Legends</a><br> - [Новое] Новая мини игра <a href="tower.html">Tower</a>!<br> - [Новое] Добавлены новые миссии.',
+        "EN": ' - [New] Capsules <a href="open.html?capsuleId=8">Team Roles Capsule</a>, <a href="open.html?capsuleId=9">Sugarface Capsule</a>, <a href="open.html?capsuleId=10">Bestiary Capsule</a>, <a href="open.html?capsuleId=11">Cologne 2014 Challengers</a> and <a href="open.html?capsuleId=12">Cologne 2014 Legends</a><br> - [New] <a href="tower.html">Tower</a> game!<br> - [New] Added new missions.'
+    }
 }, ];

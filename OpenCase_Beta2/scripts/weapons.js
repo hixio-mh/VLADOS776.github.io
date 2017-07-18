@@ -9198,6 +9198,474 @@ var Items = {
             "rarity": "classified",
             "tournament": "Katowice 2014",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRYQV_bRvCiwMbQVg8kdFAYobWpLThz2ObEfQJH_9CJko-Cm8j4MqnWkyVTu5An2ryQpdyijgzmqBBuYTvxIYbAc1RrN1CD_FPrwezpgpO56ZjM1zI97VCLs1zd"
+        }, {
+            "item_id": 124,
+            "name": "The 'Nader",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qJQZk1uH3fTxQ69n4zdWNxKD3a-nXlDIH6p0h3-3Crdyk2ge28kI4YTqlIdPEIwJtYFHQrE_-n7lxQmZJDg"
+        },
+        {
+            "item_id": 125,
+            "name": "The Bomber",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qKQht0fbaTjFD_tuz2tnbxKOlYeOCkjNQucMi27iW84-h0A2wqRE-Mmz6ItWXcA5rMF6C-1iggbC4Eu4BV9w"
+        },
+        {
+            "item_id": 126,
+            "name": "Support",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qOBJww_zaZQJO7c6xkc7dkaOsYu_XxjoJu5N1j7_CrI3zi1KxqBZkMTyhIITBcVU8ZFyCrlS5366x0lkLS2aA"
+        },
+        {
+            "item_id": 127,
+            "name": "The Baiter",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qKQZpx_baTjFD_tuz2obex_SnNe6FxG0J7MQgibuR8N323wa2rxFoMWj2JoLBcVc3NVqG81eggbC4IvaHa-Q"
+        },
+        {
+            "item_id": 128,
+            "name": "The Leader",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qJwJh1_baTjFD_tuz2oXZlqXwauvSlTIDv5Qojr3DoN3wjQPmqBc5YD2mJIKQdAE7ZQ2G_1OggbC4bnHG0-8"
+        },
+        {
+            "item_id": 129,
+            "name": "The Lurker",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qJxJy2PbaTjFD_tuz2oPZwvSlMuqBkzoF65MmiOzHpN70iwzt-RE-MG_6ddCXIwdraV3Rr1mggbC4k9DKVUo"
+        },
+        {
+            "item_id": 130,
+            "name": "The Bot",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qKQh07P_JYzpHoouzl4XflfSkY-nVlW0BvJIk2b_D94ihjlHhqEE-NjiiddKQegJqMgzOug_pjG1a1gI"
+        },
+        {
+            "item_id": 131,
+            "name": "The Awper",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qKhBw1uH3fTxQ69n4woSOwPWkY7-CwTwEvJ0m0rjH84_22gLiqEdtYW70d9SWc1BtNwzVq0_-n7kTb9TIOQ"
+        },
+        {
+            "item_id": 132,
+            "name": "The Ninja",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qJQ5u2fL3fTxQ69n4xNTdk_WkMu_XxTkJ6sMm2bDHrdum2gy2rxdsYW3zIdWcd1A9aV7S_E_-n7k5Gm_4RQ"
+        },
+        {
+            "item_id": 133,
+            "name": "The Fragger",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qLRVh1PTNYwJO7c6xkc7YxqXyZ7iEwWkF7ZR32u_H9I6i2lDgqUs4ZGj0I4TGe1M2aFrU-Fbo366x0vxbluaU"
+        },
+        {
+            "item_id": 134,
+            "name": "The Pro (Foil)",
+            "rarity": "classified",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRJSU3dePai28rAbF51NRdCur_qOxVv7PXHeDF94N2kk4XFkfWna-OAkjwG7pIgjLjFpI2s2Ffh_EBkMT2hcIOXcFU9N1DQrwXryfCv28Fv4Pxlyg"
+        }, {
+            "item_id": 135,
+            "name": "Max",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_WoKh9f3_LadjgM6oXmzITfxKPwN7-Dw25V6ZNy2e3D892l3gKw-Bc4N2qid9fDdVM4YUaQpAbk3MU98g"
+        },
+        {
+            "item_id": 136,
+            "name": "Joan",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_WvJAZu7P_JYzpHot_kwNOIwKCga-mJxjoDuZF0jLyT9N-hjQLnqkplYDqnJteRegA_M1nOug_pwbxbBMM"
+        },
+        {
+            "item_id": 137,
+            "name": "Boris",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_WnJBVpwMzEcC9F6ZKzkIaNxfOiYePSxTMHvJ0o3rqV946iig23qRBvZWnzLI7GdAJoZV6F5BHglru0lgWs"
+        },
+        {
+            "item_id": 138,
+            "name": "Viggo",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_WzIgBn3MzEcC9F6ZLvzdTezqOjNeiExG1Xvp0k2LvCoNitjQLh-BduN2Hxd4KTcFI_YArY5BHglhBMoCDF"
+        },
+        {
+            "item_id": 139,
+            "name": "Jack",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_WvKgRr7P_JYzpHotq3wNeOwvGnMr2Ex20JsZ0h2b7H94mh3AHt-Udsaj33INPDcg9qZV3Oug_p9sdE5cs"
+        },
+        {
+            "item_id": 140,
+            "name": "Perry",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_W1LhVyyszEcC9F6ZLiltTSxqX3Zu7TkzoC7cYhieqQ99yk2VHg-hI5ZG-md9OTdgBqYlnW5BHglot4QEC9"
+        },
+        {
+            "item_id": 141,
+            "name": "Stan",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_W2PwZu7P_JYzpHooTjw9LSkfP2YurQwTsB6ZQk3--Votz22FflqhY5Mj2nJtTAegI4Z13Oug_pRbVu0es"
+        },
+        {
+            "item_id": 142,
+            "name": "Boris (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_WnJBVpwMzAfjFN09C3hoeO2fWsNuOBz2pUvsMo0uuWpYqj2wPlqENrNWnyINPHJw9rMlCD81XowOnxxcjr-jdEcgo"
+        },
+        {
+            "item_id": 143,
+            "name": "Joan (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_WvJAZu7PvHfTJ94N2kk4XFwKKnZL2GzjMB6cEn2LnEpt3w0Qbt-BI5YmigIoWXJFVraAqG81C5xfCv28EI1auSJQ"
+        },
+        {
+            "item_id": 144,
+            "name": "Max (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_WoKh9f2_zEfgJO7c6xkc7bx_GiZb7Ux24CuZ0k07jH84-i0Aa3_UM9NTv0JNWQclQ4Yw7Q-ATo366x0pVb2tQj"
+        },
+        {
+            "item_id": 145,
+            "name": "Viggo (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_WzIgBn3MzAfjFN09C3hoeO2fXwNb6GzzsE7cMp0rjFrY_22VW3qBc9ZW2mdYWVJwZvNVuF-Vi4kOrxxcjr2nhUz74"
+        },
+        {
+            "item_id": 146,
+            "name": "Jack (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_WvKgRr7PvHfTJ94N2kk4XFw6akNuPXl2kEvccm2uiQotmn2le2_RdvYT2iJoaRI1dsZguG_VnskvCv28GGXPzIYQ"
+        },
+        {
+            "item_id": 147,
+            "name": "Stan (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_W2PwZu7PvHfTJ94N2kk4XFkq-iZunQxWkH7JYh07vA8Y-iigbi_UNuYGvycYfHcVA_aV3U8lK-kPCv28Fj9nii1w"
+        },
+        {
+            "item_id": 148,
+            "name": "Perry (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulROWUvRVeKs1MrsUFxkNhFbs_W1LhVyyszAfjFN09C3hoeO2faiN-zXxjlQv5Yj2bqUpdmj3gay-hZkN2nxJ9CVdQVrMwqErFS5kOvxxcjrQv79csE"
+        }, {
+            "item_id": 149,
+            "name": "Hippocamp",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-bKsOxdv0PLFYQJO7c6xkc6OlKSiZ-iJxztQ7ZEn27yZpNyi0VW1rkVsZWr1cYGRJw5tY17V_gPq366x0jxpIZA_"
+        },
+        {
+            "item_id": 150,
+            "name": "Sphinx",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-am1Iw5uy8zEcC9F6ZKwzNKPlaSlNb_SkzwEsJUnibqWrduiiwW1-BVqMmj3dtSWdlBvaQ3X5BHglnRot4G_"
+        },
+        {
+            "item_id": 151,
+            "name": "Dragon",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-b63KgBv3czEcC9F6ZLvxYLbxqCiau3SxT5XsMMl2bjDo9T3jQ2w8kQ6NmygI9THeg43Z1iF5BHglm9L2_Nv"
+        },
+        {
+            "item_id": 152,
+            "name": "Basilisk",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-bikOA5s2uDDTjFD_tuz2oSJlfL2MLjSwzlQuJYhibvFod2m2FK18ks4MmDycY6Sdwc3ZlqCq1OggbC43snnncQ"
+        },
+        {
+            "item_id": 153,
+            "name": "Pegasus",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-aqgLAZzxuD3fTxQ69n4xNPewKPxauiIzzlUuMcg37vDpNSh3lbl-UNpMT-mdYaQIAA4N1HVr0_-n7mGqenSng"
+        },
+        {
+            "item_id": 154,
+            "name": "Manticore",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-bekJRNp0PzadAJO7c6xkc6Ow_aiZOuCzjwD6cZ32-2Wrdr32A3h-kM9YWz0LITAdVNtaVqF8wTq366x0kqJLlOg"
+        },
+        {
+            "item_id": 155,
+            "name": "Phoenix Reborn",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-aqtJAJu2uv3fTxQ69n4zdTbwqP3ZbqDlT5Qu5ck3rzA9I302gaw_BZkam2mdtWccQM7ZF-Brk_-n7lnc5WIeQ"
+        },
+        {
+            "item_id": 156,
+            "name": "Hippocamp (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-bKsOxdv0PLFYQJK49C5q4yKhfDxfbrQkG1S7ZAm37uS99WijFDmrUJtMm3zctDEIwU6ZwnU_wDql-3rjZWi_MOeXWwTmNM"
+        },
+        {
+            "item_id": 157,
+            "name": "Sphinx (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-am1Iw5uy8zAfjFN09C3hoeO2fTwNuyHkD4Bv5Qk3r2T9tqkjAHm-hVoYGqhItfEIQQ3YgvT_lK2wejxxcjr6ZuITMg"
+        },
+        {
+            "item_id": 158,
+            "name": "Manticore (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-bekJRNp0PzadAJK49C5q4yKhfDxfePXxDlXuJIg0rmXoN6j2Fbg8xdqa2D0coCdegY3M17TqVHqw7zr0JOi_MOe1zip1ys"
+        },
+        {
+            "item_id": 159,
+            "name": "Pegasus (Holo)",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-aqgLAZzxuD3eTJO4-O6lZKMkrmia-LSwz4E65wgjuySp96h2gLi_kRta2ChJICddg5oY17UrwPskujum9bi6xe_I9Ww"
+        },
+        {
+            "item_id": 160,
+            "name": "Dragon (Foil)",
+            "rarity": "classified",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-b63KgBv3czOfjRO09C3hoeO2aaiMLrTxmkBvcBw37_D9NSl0QSy_0dqZD_1ItDGdARtYwrZqwS8lOnxxcjraPhDJ7U"
+        },
+        {
+            "item_id": 161,
+            "name": "Basilisk (Foil)",
+            "rarity": "classified",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-bikOA5s2uDDTjtN5dCJmIGZkPK6ZeiIx25T7ZZz3rDF9I_zjQDi_BFkMmylcdCSewY6NQ2E_gTtyem914j84soASwFa8g"
+        },
+        {
+            "item_id": 162,
+            "name": "Phoenix Reborn (Foil)",
+            "rarity": "classified",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRfSV_ETuW_zvDQUk1nMAhS-aqtJAJu2uv3dzJL4OO6lZKMkrnwZenVlGhQv50mjL2SoImiilDgqUI9YGj3d4XDcgI_YliB-lS3lezpm9bi69c_6CgP"
+        }, {
+            "item_id": 163,
+            "name": "Copenhagen Wolves",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ3KhRSuLKkLAJuxPzEZzhR09C3hoeO2fHxY-KIkzIJuZMn0-2W8Nmt3QXl_UZpMTr6IIWSIAZoaQzU-AS2l7_xxcjra08ur7M"
+        },
+        {
+            "item_id": 164,
+            "name": "dAT team",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJwJBBDs7uoFAthwfTNP2sR7djvxYPdwK6lZO-GwDIFuZcgib2R94_z2wfg8kRlZWrwLYWWdQ4gIQaHN9VooUQ"
+        },
+        {
+            "item_id": 165,
+            "name": "Epsilon eSports",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJxNRdeurWrLhRw3OHcYgJO7c6xkc6Nzq6sN7rXkDMBupRy2O3D9tzzjAXgrRc6Yz_yLILEIQE4YVuB-FO6366x0n3Kp9l6"
+        },
+        {
+            "item_id": 166,
+            "name": "iBUYPOWER",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ9JxFOprWyLhVf3_LadjgMtYm3wdDZlq6lN7rUxjgJ65Ry3eqVpo322AS2_xc6NTigJ4LBJFQ2YUaQpAa5Qg-WnQ"
+        },
+        {
+            "item_id": 167,
+            "name": "London Conspiracy",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ4KgpTubSmJAlzw_racD5b09C3hoeO2aShZOmIwjsF6cQh2r2Tp4mg2gTt_RFlMmHwI46Ud1VsMF_R-wXrwuvxxcjrLMOa9lA"
+        },
+        {
+            "item_id": 168,
+            "name": "Natus Vincere",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ6JBJeibakOQBlnfXMI2xGvo_gltiPxqagML_UxGkC7pJ32LyW9Nj3jQXl-kVkZT_ycdWLMlhpwoe1CxU"
+        },
+        {
+            "item_id": 169,
+            "name": "Titan",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgLBBWuIWpKhVn1r2YIWgbvIjmzNKJwqajZO2EwW8HsJYj3byVoNj03QLk_0E_MDz2I4-RbEZgNpEKe4c4"
+        },
+        {
+            "item_id": 170,
+            "name": "Vox Eminor",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJiKhxSu7OrJBVf3_LadjgMtdjlktaJkqGlN--AxW0G6sQk2OuRptmhiVfsrRJvZj_7I9TGJgNvYkaQpAYOyNHtXw"
+        },
+        {
+            "item_id": 171,
+            "name": "MTS GameGod Wolf",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJjKghRibakOQBlnfbNcG4Q7tm0kNbSlaT1Z-uGzjtQ7ZRyj73FrY7w0VLn8hFtazimcoKLMlhpfazSnH0"
+        },
+        {
+            "item_id": 172,
+            "name": "Cloud9",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ3KQtCsuOaJwZy1PaGIWoS6Y-1kYPax_KiZO-EwDMD7ccn2bqU9I2s3QC1rRFpMGnycIWUehh-Pw8N5kT_Hg"
+        },
+        {
+            "item_id": 173,
+            "name": "Fnatic",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJyKwVDv7maJwZy1PaGIWwWuou3wYKPzvamar6EwGlXsZckiOzA94mh3gTt_BZsMj_wctTBJxh-Pw-YdE0zDw"
+        },
+        {
+            "item_id": 174,
+            "name": "HellRaisers",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ8IAhbpLusOAJywMzEcC9F6ZKykNaNzqemNu-Fl20CupEi277Ap97x0FDh-0NvZDz3IITHcwI8YQuC5BHgllcAG2LZ"
+        },
+        {
+            "item_id": 175,
+            "name": "Ninjas in Pyjamas",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ6LApdt6msJRd52fLFcC594N2kk4XFz6OgMb2CkjkEsZF0276Y942giVbg-BFkN2_3cY7DJwFvNVqF_VXqwvCv28Fyj29OZA"
+        },
+        {
+            "item_id": 176,
+            "name": "Team Dignitas",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgIAVasrOiJQ500uD3fTxQ69n4lYbew6CtZL3Uz2kC7MNw2uqSrdT20AHmrhJsYDr0J4edJlNqZAvWqU_-n7khyWk_bQ"
+        },
+        {
+            "item_id": 177,
+            "name": "Team LDLC.com",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgIAVaur6pKDhs0uHPdHNDvojnw9fbzqWlNezSzj0AsZZzi7vEo932iQDtr0NtYGqmJ9XEIwU_fxiOrdUvMW_u"
+        },
+        {
+            "item_id": 178,
+            "name": "Virtus.Pro",
+            "rarity": "milspec",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJiLBZDo6m1OQhf3_LadjgM7orukNWIlaSlN--HwjsEu8EmiLDH8d2i21fk-hI-MmyndYeRcQVtYEaQpAZBbUgrSQ"
+        },
+        {
+            "item_id": 179,
+            "name": "Copenhagen Wolves (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ3KhRSuLKkLAJuxPzEZzhR09S5mI-0m_bmNL6fxzhS7cAi3bmWrY6kjg3s-kRtMj33d4DDdQZoZw7YrFe4l---gpC_uYOJlyVmKJfI1Q"
+        },
+        {
+            "item_id": 180,
+            "name": "dAT team (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJwJBBDs7uoFA9v3_z3fTxQ69n4kdTYxqL2NujUxGgJ7pJ1i-_E94-kigC2-BU-MG32cIKQdFQ3NFmDq0_-n7lWY7qwWQ"
+        },
+        {
+            "item_id": 181,
+            "name": "Epsilon eSports (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJxNRdeurWrLhRw3OHcYgJK49C5q4yKhfDxfe6DzmgAsMMo27qTotqnjlXkrRJlZjz0LYScdVJrYwnV-Fa5le29h5Ki_MOeB_sNGPY"
+        },
+        {
+            "item_id": 182,
+            "name": "iBUYPOWER (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ9JxFOprWyLhVf2_zEfgJO7c6xkc6KzqGjauzXxDMJ7ZEn27nCpduljASyqBZqYjyhdYeVcVVoYQvZqAW7366x0tiFSyJG"
+        },
+        {
+            "item_id": 183,
+            "name": "London Conspiracy (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ4KgpTubSmJAlzw_racD5b09S5mI-0m_bmNL6fkz1VvJYm07GS99ig2Qbk8kVtNmj7cteUcwY3YQ7QqFW7wevuhJW6vIOJlyX8LlfhIg"
+        },
+        {
+            "item_id": 184,
+            "name": "Natus Vincere (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ6JBJeibKqJwhf3_LadjgMuIzmw9jTz6_wYuiJlTlSvZAk3-qUo9_w0QGy_BU6NWH6JdCWJg5qNEaQpAYgOATycQ"
+        },
+        {
+            "item_id": 185,
+            "name": "Titan (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgLBBWuIWtJAtv7P_JYzpHoonhzdbexa-mN-nQlG4HuZMojLCY842jiwXn_UY4N23xd4TDJABoZlDOug_phnvLMfs"
+        },
+        {
+            "item_id": 186,
+            "name": "Vox Eminor (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJiKhxSu7OrJBVf2_zEfgJO7c6xkc7bxvH3Mu-Gk25QsMF02OiV9or22FHkr0FuMm31doGRdAZoZ1nR-ADo366x0n3fab8k"
+        },
+        {
+            "item_id": 187,
+            "name": "MTS GameGod Wolf (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJjKghRibKqJwhf3_LadjgMvYTukYHdlfOmNemDlz4DucFzi73ErImtjlfn-RZsZWvyd9DGdgA8aUaQpAYDMLTcdg"
+        },
+        {
+            "item_id": 188,
+            "name": "Cloud9 (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ3KQtCsuOaIwhs3MzEcC9F6ZK0kYSNz6T1ZLrQlT0FuZN32LrEoNyh2AKxqBJkMWGmLYPEIFJvZ1uC5BHglrxdmHPj"
+        },
+        {
+            "item_id": 189,
+            "name": "Fnatic (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJyKwVDv7maIwhs3MzEcC9F6ZKzzdLZzq-gNu3VxjpXscZwi7yZ9o30igTi-RI-ZTyiJoCTdQA5NF3S5BHglkqMBI3F"
+        },
+        {
+            "item_id": 190,
+            "name": "HellRaisers (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ8IAhbpLusOAJywMzAfjFN09C3hoeO2a6iZ-2Fkm9QuZxw2ryRo96m0VWx80dqYGD7IYLHdlA3ZgnU_VfoxOvxxcjr7Se-ugE"
+        },
+        {
+            "item_id": 191,
+            "name": "Ninjas in Pyjamas (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJ6LApdt6msJRd52fLFcC595NO6m7-HluXzNvWFxToHsZR0jOjCoI732w3j80tqazumIYDDJgY7YF-BqVm_lOfohcO6ot2Xngh5OFfi"
+        },
+        {
+            "item_id": 192,
+            "name": "Team Dignitas (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgIAVasrOiJQ500uD3eTJO4-O6lZKMkrmmMuyJwDJVupZ03LuWpYqh2A3nqRc9Yzz2LYbEcgU7NQuDrwS4wejnm9bi67k5kpUd"
+        },
+        {
+            "item_id": 193,
+            "name": "Team LDLC.com (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJgIAVaur6pKDho3P_HTjFD_tuz2tWKxaKjYr_Xx2oFucEmjO_EoNyki1C2-RJrYzr6LIWcdlQ3NQyE_lmggbC4YvY8zG0"
+        },
+        {
+            "item_id": 194,
+            "name": "Virtus.Pro (Holo)",
+            "rarity": "restricted",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJiLBZDo6m1OQhf2_zEfgJO7c6xkc6OxKejY7-Dxz8BuJYk2bGZp9yj2QXs_xY4ZWH6IIedcg5raF3UqVXr366x0il2ShY1"
+        },
+        {
+            "item_id": 195,
+            "name": "ESL One (Red)",
+            "rarity": "classified",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJxNghotIWpKhVn1r2fcmhG74rjw9WNxa-kN7qCwm8DvJYijLCU8d322QG3r0A-MmChdYKRbEZgNskeyBKG"
+        },
+        {
+            "item_id": 196,
+            "name": "ESL One (Blue)",
+            "rarity": "classified",
+            "tournament": "Cologne 2014",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulReQ0DfQOqohZ-CBxJxNghot4WpKhVn1r2acG8VvYywwoGJlPL2Zb_Tl29XsZEmib2X9Nvw3AHgr0plYT33JITEbEZgNqL9cNLq"
     }],
     
     /* ===== GRAFFITI ===== */
