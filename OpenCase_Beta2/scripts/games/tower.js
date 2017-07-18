@@ -178,6 +178,15 @@ Game.Tower = (function(module) {
             return;
         }
         
+        if (bet > Player.doubleBalance) {
+            $.notify({
+                message: _t('tower.wrong_bet', 'Not enough money')
+            }, {
+                type: 'danger'
+            })
+            return;
+        }
+        
         currGame.bet = bet;
         currGame.started = true;
         currGame.line = 1;
