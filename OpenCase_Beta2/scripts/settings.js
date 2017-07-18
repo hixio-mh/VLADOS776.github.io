@@ -32,6 +32,8 @@ if (Player.nickname.length == 0) {
 if (isNaN(Player.doubleBalance)) Player.doubleBalance = 10000;
 if (isNaN(Player.points)) Player.points = 1;
 
+if (Player.doubleBalance < 0) Player.doubleBalance = 1000;
+
 
 Settings.language = getStatistic("settings_language", 'EN');
 Settings.sounds = getStatistic("settings_sounds", 'true') === 'true';
