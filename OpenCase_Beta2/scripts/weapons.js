@@ -230,7 +230,8 @@ Weapon.prototype.toOldObject = function (isNew) {
     };
     return oldObj;
 }
-Weapon.prototype.getPrice = function () {
+Weapon.prototype.getPrice = function (opt) {
+    opt = opt || { sticker: true };
     var pr = getPrice(this.item_id, {
         quality: this.quality,
         stattrak: this.stattrak,
@@ -238,17 +239,30 @@ Weapon.prototype.getPrice = function () {
     });
     
     // Change price if stickers
-    if (this.stickers && this.stickers.length > 0) {
-        var percent = 5;
-        var stickersPrice = 0;
-        this.stickers.forEach(function(sticker) {
-            stickersPrice += sticker.price;
-        })
-        
-        stickersPrice = stickersPrice * percent / 100;
-        pr += stickersPrice;
+    if (opt.sticker) {
+        if (this.stickers && this.stickers.length > 0) {
+            var percent = 5; // Same in getStickerPrice
+            var stickersPrice = 0;
+            this.stickers.forEach(function(sticker) {
+                stickersPrice += sticker.price;
+            })
+
+            stickersPrice = stickersPrice * percent / 100;
+            pr += stickersPrice;
+        }
     }
     return parseFloat(pr.toFixed(2));
+}
+Weapon.prototype.getStickersPrice = function () {
+    if (!this.stickers || !this.stickers.length) return 0;
+    
+    var percent = 5;
+    var stickersPrice = 0;
+    this.stickers.forEach(function(sticker) {
+        stickersPrice += sticker.price;
+    })
+    stickersPrice = stickersPrice * percent / 100;
+    return parseFloat(stickersPrice.toFixed(2));
 }
 Weapon.prototype.stattrakRandom = function () {
     if (this.type.souvenir || this.can.stattrak == false || Object.keys(this.allPrices.stattrak).length == 0) {
