@@ -429,7 +429,7 @@
             function sellItem(item) {
                 hideItem(true);
                 getItem(openedWeaponInfo().id).then(function(wp) {
-                    if (item.itemType == 'weapon' && !PricesBACKUP.checkPrice(wp)) {
+                    if (!PricesBACKUP.validPrice(wp)) {
                         $.notify({
                             message: 'Price has been modified!'
                         }, {
@@ -1024,7 +1024,7 @@
                             selectedID[i] = null;
                             weapons[i] = null;
                         }
-                        if (wp.itemType == 'weapon' && !PricesBACKUP.checkPrice(wp)) {
+                        if (wp.itemType == 'weapon' && !PricesBACKUP.validPrice(wp)) {
                             $.notify({
                                 message: 'Price has been modified!'
                             }, {

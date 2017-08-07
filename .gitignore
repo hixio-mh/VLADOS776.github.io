@@ -49,3 +49,5 @@ OpenCase/node_modules/**
 OpenCase_Beta/node_modules/**
 OpenCase/tests/**
 OpenCase_Beta/RUS/uploadImagesTest.html
+OpenCase_Beta2/scripts/unitTests.js
+OpenCase_Beta2/RUS/tests.html

@@ -195,7 +195,7 @@ $(document).on('click', '#buy-double', function() {
     if (!weapon.can.buy) return;
     weapon.new = true;
     
-    if (!PricesBACKUP.checkPrice(weapon)) {
+    if (!PricesBACKUP.validPrice(weapon)) {
         $.notify({
             message: 'Price has been modified!'
         }, {

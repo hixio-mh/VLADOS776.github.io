@@ -103,6 +103,30 @@ var PricesBACKUP = (function (module) {
 
         return true;
     }
+    
+    module.validPrice = function(item) {
+        if (!item.price || item.item_id == null) return false;
+        if (item.itemType !== 'weapon') return true;
+        
+        var priceMustBe = Prices2[item.item_id].prices[item.priceType][item.quality];
+        if (typeof priceMustBe === 'object') {
+            priceMustBe = typeof priceMustBe.market == 'string' ? priceMustBe.market :
+                          typeof priceMustBe.analyst == 'string' ? priceMustBe.analyst :
+                          typeof priceMustBe.opskins == 'string' ? priceMustBe.opskins :
+                          null;
+        }
+        if (!priceMustBe) return false;
+        
+        if (item.stickers && item.stickers.length) {
+            var itemRawPrice = item.getPrice({ sticker: false });
+            var stickersPrice = item.getStickersPrice();
+            
+            if (hex_md5(''+parseFloat((item.price - stickersPrice).toFixed(2))) == priceMustBe) return true;
+        } else {
+            if (hex_md5('' +item.price) === priceMustBe) return true;
+        }
+        return false
+    }
 
     return module;
 })(PricesBACKUP || {});
