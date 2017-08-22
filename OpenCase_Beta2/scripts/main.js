@@ -1057,12 +1057,21 @@ function getGraffitiBoxPrice(caseId) {
 }
 function getCapsulePrice(caseId) {
     var prSumm = 0;
+    
+    var stickers = CAPSULES[caseId].stickers
 
-    if (typeof CAPSULES[caseId].stickers === 'undefined') return '0.00';
-    CAPSULES[caseId].stickers.forEach(function(item) {
+    if (typeof stickers === 'undefined') return '0.00';
+    if (!Array.isArray(stickers) && stickers.start != null && stickers.end != null && stickers.start < stickers.end) {
+        var tmp = []
+        for (var i = stickers.start; i <= stickers.end; i++) {
+            tmp.push(i)
+        }
+        stickers = tmp;
+    }
+    stickers.forEach(function(item) {
         prSumm += new Sticker(item).price;
     })
-    var price = parseFloat((prSumm / CAPSULES[caseId].stickers.length).toFixed(2));
+    var price = parseFloat((prSumm / stickers.length).toFixed(2));
     if (Global.caseDiscount > 0) {
         price = price - (price * Global.caseDiscount / 100);
         price = parseFloat(price.toFixed(2));

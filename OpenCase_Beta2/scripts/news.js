@@ -799,4 +799,12 @@ var news = [{
         "RU": ' - [Новое] Добавлены капсулы <a href="open.html?capsuleId=8">Team Roles Capsule</a>, <a href="open.html?capsuleId=9">Sugarface Capsule</a>, <a href="open.html?capsuleId=10">Bestiary Capsule</a>, <a href="open.html?capsuleId=11">Cologne 2014 Challengers</a> и <a href="open.html?capsuleId=12">Cologne 2014 Legends</a><br> - [Новое] Новая мини игра <a href="tower.html">Tower</a>!<br> - [Новое] Добавлены новые миссии.',
         "EN": ' - [New] Capsules <a href="open.html?capsuleId=8">Team Roles Capsule</a>, <a href="open.html?capsuleId=9">Sugarface Capsule</a>, <a href="open.html?capsuleId=10">Bestiary Capsule</a>, <a href="open.html?capsuleId=11">Cologne 2014 Challengers</a> and <a href="open.html?capsuleId=12">Cologne 2014 Legends</a><br> - [New] <a href="tower.html">Tower</a> game!<br> - [New] Added new missions.'
     }
+}, {
+    "day": 22,
+    "month": 8,
+    "year": 2017,
+    "update": {
+        "RU": ' - [Новое] Добавлены капсулы <a href="open.html?capsuleId=13">DreamHack 2014 Legends</a>, <a href="open.html?capsuleId=14">ESL One Katowice 2015 Legends</a>, <a href="open.html?capsuleId=15">ESL One Katowice 2015 Challengers</a>, <a href="open.html?capsuleId=16">Krakow 2017 Challengers (Holo/Foil)</a>, <a href="open.html?capsuleId=17">Krakow 2017 Legends (Holo/Foil)</a>, <a href="open.html?capsuleId=18">Group C (Foil) | Cologne 2015</a>, <a href="open.html?capsuleId=19">Krakow 2017 Legends</a> и <a href="open.html?capsuleId=20">Krakow 2017 Challengers</a>',
+        "EN": ' - [New] Capsules <a href="open.html?capsuleId=13">DreamHack 2014 Legends</a>, <a href="open.html?capsuleId=14">ESL One Katowice 2015 Legends</a>, <a href="open.html?capsuleId=15">ESL One Katowice 2015 Challengers</a>, <a href="open.html?capsuleId=16">Krakow 2017 Challengers (Holo/Foil)</a>, <a href="open.html?capsuleId=17">Krakow 2017 Legends (Holo/Foil)</a>, <a href="open.html?capsuleId=18">Group C (Foil) | Cologne 2015</a>, <a href="open.html?capsuleId=19">Krakow 2017 Legends</a> and <a href="open.html?capsuleId=20">Krakow 2017 Challengers</a>'
+    }
 }, ];

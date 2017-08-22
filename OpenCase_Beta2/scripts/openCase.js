@@ -71,14 +71,33 @@ var openCase = {
                     }
                     
                     var itemArray = [];
-                    if (openCase.caseInfo.weapons)
+                    var wpTypes = ['weapons', 'knives', 'stickers', 'graffiti'];
+                    wpTypes.forEach(function(type) {
+                        var items = [];
+                        
+                        if (openCase.caseInfo[type] != null) {
+                            if (!Array.isArray(openCase.caseInfo[type]) && openCase.caseInfo[type].start != null && openCase.caseInfo[type].end != null && openCase.caseInfo[type].start < openCase.caseInfo[type].end) {
+                                var tmp = []
+                                for (var i = openCase.caseInfo[type].start; i <= openCase.caseInfo[type].end; i++) {
+                                    tmp.push(i)
+                                }
+                                items = tmp;
+                            } else if (Array.isArray(openCase.caseInfo[type])) {
+                                items = openCase.caseInfo[type]
+                            }
+                            
+                            itemArray = itemArray.concat(getItemsByID(items, type == 'stickers' ? 'sticker' : type == 'graffiti' ? 'graffiti' : null))
+                        }
+                    })
+                    
+                    /*if (openCase.caseInfo.weapons)
                         itemArray = getWeaponsById(openCase.caseInfo.weapons);
                     if (openCase.caseInfo.knives)
                         itemArray = itemArray.concat(getItemsByID(openCase.caseInfo.knives));
                     if (openCase.caseInfo.stickers)
                         itemArray = itemArray.concat(getItemsByID(openCase.caseInfo.stickers, 'sticker'));
                     if (openCase.caseInfo.graffiti)
-                        itemArray = itemArray.concat(getItemsByID(openCase.caseInfo.graffiti, 'graffiti'));
+                        itemArray = itemArray.concat(getItemsByID(openCase.caseInfo.graffiti, 'graffiti'));*/
 
                     if (itemArray.length == 0) {
                         if (openCase.caseInfo.regExp) {

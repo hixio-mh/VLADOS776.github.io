@@ -127,6 +127,9 @@
                 <div id="Capsules_tournament" class="casesBlock">
                     <h1 data-loc='tournament stickers'>Tournament Stickers</h1>
                 </div>
+                <div id="Capsules_autograph" class="casesBlock">
+                    <h1 data-loc='autograph stickers'>Autograph Capsule</h1>
+                </div>
             </div>
         </div>
         
@@ -267,6 +270,9 @@
                         break;
                     case "Tournament":
                         $('#Capsules_tournament').append(curCase);
+                        break;
+                    case "Autograph":
+                        $('#Capsules_autograph').append(curCase);
                         break;
                     case "Workshop":
                         $("#Capsules_workshop").append(curCase);

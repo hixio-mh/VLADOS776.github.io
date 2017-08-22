@@ -475,6 +475,58 @@ var CAPSULES = [{
     "img": "Cologne_2014.png",
     "type": "Tournament",
     "stickers": [172,173,174,175,176,177,178,188,189,190,191,192,193,194,196]
+}, {
+    "name": "DreamHack 2014 Legends",
+    "img": "DreamHack_2014.png",
+    "type": "Tournament",
+    "stickers": [197,198,199,200,201,202,203,204,205,206,207,208,209]
+}, {
+    "name": "ESL One Katowice 2015 Legends",
+    "img": "ESL_One_Katowice_2015_Legends.png",
+    "type": "Tournament",
+    "stickers": [210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226]
+}, {
+    "name": "ESL One Katowice 2015 Challengers",
+    "img": "ESL_One_Katowice_2015_Challengers.png",
+    "type": "Tournament",
+    "stickers": [227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242]
+}, {
+    "name": "Krakow 2017 Challengers (Holo/Foil)",
+    "img": "Krakow_2017_Challengers_(Holo-Foil).png",
+    "type": "Tournament",
+    "stickers": {
+        "start": 502,
+        "end": 517
+    }
+}, {
+    "name": "Krakow 2017 Legends (Holo/Foil)",
+    "img": "Krakow_2017_Legends_(Holo-Foil).png",
+    "type": "Tournament",
+    "stickers": {
+        "start": 518,
+        "end": 535
+    }
+}, {
+    "name": "Group C (Foil) | Cologne 2015",
+    "img": "Group_C_(Foil)_Cologne_2015.png",
+    "type": "Autograph",
+    "stickers": [243,244,245,246,247,248,249,250,251,252,253,254,255,256,257,258,259,260,261,262]
+}, {
+    "name": "Krakow 2017 Legends",
+    "img": "Krakow_2017_Legends.png",
+    "type": "Autograph",
+    "stickers": {
+        "start": 263,
+        "end": 381
+    }
+}, {
+    "name": "Krakow 2017 Challengers",
+    "img": "Krakow_2017_Challengers.png",
+    "type": "Autograph",
+    "stickers": {
+        "start": 382,
+        "end": 501
+    }
 }]
 
 var GRAFFITI_BOX = [{
