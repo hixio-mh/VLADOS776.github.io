@@ -51,16 +51,23 @@ function Item(config, type) {
 }
 
 function Weapon(item_id, quality, stattrak, souvenir, isNew) {
+    function getExtra(obj, key, def) {
+        def = def != null ? def : null;
+        if (obj[key]) return obj[key];
+        if (obj.extra && obj.extra[key]) return obj.extra[key];
+        
+        return def;
+    }
     if (typeof item_id == 'object') {
         var quality = item_id.quality || 0;
         var stattrak = item_id.stattrak || item_id.statTrak || false;
         var souvenir = item_id.souvenir || false;
         var isNew = item_id.new || false;
-        var nameTag = item_id.nameTag ? item_id.nameTag : item_id.extra ? item_id.extra.nameTag : null;
-        var pattern = item_id.pattern != null ? item_id.pattern : item_id.extra != null ?
-            item_id.extra.pattern : null;
-        var locked = item_id.locked ? item_id.locked : item_id.extra && item_id.extra.locked ? item_id.extra.locked : false;
-        var stickers = item_id.stickers ? item_id.stickers : item_id.extra && item_id.extra.stickers ? item_id.extra.stickers : null;
+        var nameTag = getExtra(item_id, 'nameTag');
+        var pattern = getExtra(item_id, 'pattern')
+        var locked = getExtra(item_id, 'locked', false)
+        var stickers = getExtra(item_id, 'stickers')
+        var history = getExtra(item_id, 'history')
 
         item_id = typeof item_id.item_id == 'undefined' ? item_id.id || 0 : item_id.item_id;
     }
@@ -80,6 +87,7 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     this.quality = quality || 0;
     this.stattrak = stattrak || false;
     this.souvenir = souvenir || false;
+    this.history = history || null;
     this.stickers = stickers ? stickers.map(function (id) {
         return new Sticker(id)
     }) : [];
@@ -205,6 +213,7 @@ Weapon.prototype.saveObject = function (opt) {
     if (this.stickers) saveObj.stickers = this.stickers.map(function (sticker) {
         return sticker.item_id
     });
+    if (this.history != null) saveObj.history = this.history;
     return saveObj;
 }
 Weapon.prototype.tradeObject = function () {
@@ -386,11 +395,12 @@ Weapon.prototype.hash = function (id) {
         item_id: this.item_id,
         quality: this.quality,
         stattrak: this.stattrak,
-        souvenir: this.souvenir
+        souvenir: this.souvenir,
     }
     if (this.stickers && this.stickers.length > 0) hash_obj.stickers = this.stickers.map(function (sticker) {
         return sticker.item_id
     });
+    if (this.history != null) hash_obj.history = this.history;
 
     return hex_md5(JSON.stringify(hash_obj))
 }
@@ -403,6 +413,7 @@ Weapon.prototype.getExtra = function (isString) {
     if (this.stickers) extra.stickers = this.stickers.map(function (sticker) {
         return sticker.item_id
     });
+    if (this.history != null) extra.history = this.history;
     return isString ? JSON.stringify(extra) : extra;
 }
 Weapon.prototype.toLi = function (config) {

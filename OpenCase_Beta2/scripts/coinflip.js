@@ -276,6 +276,7 @@ var CoinFlip = {
             var allWP = CoinFlip.PlayerBet.weapons.concat(CoinFlip.Games[CoinFlip.PlayerInGame].bot.weapons);
             for (var i = 0; i < CoinFlip.PlayerBet.weapons.length; i++) {
                 allWP[i].new = true;
+                allWP[i].history = { type: 'game', game: 'CoinFlip' }
             }
 
             saveWeapons(allWP);

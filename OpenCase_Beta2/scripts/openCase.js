@@ -429,6 +429,8 @@ var openCase = {
             this.next = function() {
                 var currItem = openCase.win[Object.keys(openCase.win)[this.count]];
                 
+                currItem.history = { type: 'case', name: openCase.caseInfo.name }
+                
                 currItem.new = true;
                 saveItem(currItem).then(function(result) {
                     var quality = currItem.itemType == 'weapon' ? currItem.qualityText() : '';

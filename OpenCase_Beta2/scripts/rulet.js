@@ -183,6 +183,10 @@ function startGame() {
             $(".win").html("<img src='" + avatarUrl(win.avatar) + "'><span class='win__title'>" + Localization.getString('jackpot.winner', 'The winner') + "</span><span class='win__nick'>" + win.nick + "</span><span class='win__chance'>" + win.chance + "%</span><span class='win__ticket'><i class='fa fa-ticket'></i> " + ('' + parseInt(winnerTicket)).replace(ticketsRegExp, '$1&#8198;') + "</span>");
 
             if (win.nick == Player.nickname) {
+                ItemsInGame = ItemsInGame.map(function (item) {
+                    item.history = { type: 'game', game: 'Jackpot' }
+                    return item
+                })
                 saveWeapons(ItemsInGame);
 
                 //Statistic

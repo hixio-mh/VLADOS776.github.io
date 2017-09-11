@@ -151,6 +151,7 @@ var Jackpot = {
                 for (var i = 0; i < weapons.length; i++) {
                     weapons[i] = new Item(weapons[i]);
                     weapons[i].new = true;
+                    weapons[i].history = { type: 'game', game: 'Jackpot Online' }
                 }
                 saveWeapons(weapons);
                 Level.addEXP(2);

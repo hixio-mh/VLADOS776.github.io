@@ -225,6 +225,7 @@ function endGame(playerWin) {
         $('.status').text(Localization.getString('rps.status.win'));
         for (var i = 0; i < winItems.length; i++) {
             winItems[i]['new'] = true;
+            winItems[i]['history'] = { type: 'game', game: 'RPS' }
         }
         
         $('.battle-field').addClass('panel-success');

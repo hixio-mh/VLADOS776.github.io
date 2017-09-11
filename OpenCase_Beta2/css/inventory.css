@@ -98,6 +98,9 @@
     background: #E9E9E9;
     color: #535353;
 }
+.fullWeaponInfo .weapon-infoBlock a {
+    color: #2a9fd6;
+}
 .fullWeaponInfo.graffiti .lock, .fullWeaponInfo.sticker .lock {
     display: none;
 }
@@ -106,6 +109,9 @@
 }
 .img_container {
     position: relative;
+    background: #5c5c5c;
+    background: -webkit-radial-gradient(at top, #86AEF6, #284271);
+    background: radial-gradient(at top, #86AEF6, #284271);
 }
 #weaponStickers {
     position: absolute;
@@ -132,11 +138,6 @@ img.sticker_small {
 }
 #weaponImg, #weaponLoadingImg {
     width: 100%;
-    background: #5c5c5c;
-    /*background: linear-gradient(45deg, #645981, #7074C9);
-    background: linear-gradient(45deg, #FFEBCE, #D49F35);*/
-    background: -webkit-radial-gradient(at top, #86AEF6, #284271);
-    background: radial-gradient(at top, #86AEF6, #284271);
 }
 .graffiti #weaponImg, .graffiti #weaponLoadingImg {
     background: url(../images/Cases/graffitibg.jpg);
@@ -180,6 +181,18 @@ table#weaponInfoTable tr {
     width: 70px;
     position: absolute;
     right: 0;
+}
+@media (max-height:625px) {
+    #weaponImg {
+        width: 290px;
+        margin: -20px;
+    }
+}
+@media (max-height:590px) {
+    #weaponImg {
+        width: 250px;
+        margin: -30px;
+    }
 }
 @media (max-height:555px) {
 	.fullWeaponInfo {

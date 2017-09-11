@@ -146,6 +146,7 @@ var Upgrader = (function(module) {
             
             if (isWin) {
                 $('.upgrader_animation').addClass('upgrade_win');
+                newItem.history = { type: 'game', game: 'Upgrader' };
                 saveItem(newItem);
                 Sound('upgrader.success');
                 

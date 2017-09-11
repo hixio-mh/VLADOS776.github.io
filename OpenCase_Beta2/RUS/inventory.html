@@ -78,6 +78,10 @@
                         <td id="weaponQuality"></td>
                     </tr>
                     <tr>
+                        <td data-loc='history'>History</td>
+                        <td id='weaponHistory'>???</td>
+                    </tr>
+                    <tr>
                         <td data-loc="phase">Phase</td>
                         <td id="weaponPhase"></td>
                     </tr>
@@ -318,6 +322,25 @@
                     if (config.applySticker) $('#apply_sticker').show();
                 } else {
                     $('#apply_sticker').hide();
+                }
+                
+                // Откуда предмет
+                if (item.history != null) {
+                    if (item.history.type == 'case') {
+                        $('#weaponHistory').text(item.history.name);
+                    }
+                    if (item.history.type == 'trade') {
+                        // Dangerous
+                        $('#weaponHistory').html('<i class="fa fa-exchange"></i> <a href="profile.html?uid=' + item.history.uid + '">' + item.history.name + '</a>')
+                    }
+                    if (item.history.type == 'game') {
+                        $('#weaponHistory').html(item.history.game);
+                    }
+                    if (item.history.type == 'text') {
+                        $('#weaponHistory').text(item.history.text);
+                    }
+                } else {
+                    $('#weaponHistory').text('???');
                 }
                 
                 // Stickers
@@ -826,6 +849,7 @@
                         newWeapon.qualityRandom();
 
                     newWeapon.new = true;
+                    newWeapon.history = { type: 'text', text: 'Contract' }
 
                     $("."+Inventory.list.selectedClass).each(function() {
                         deleteWeapon(parseInt($(this).data('id')));
