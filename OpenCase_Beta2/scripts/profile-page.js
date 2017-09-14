@@ -1054,7 +1054,7 @@ $(function () {
         
         // Check for errors
         var errors = check();
-        if (errors.length && newGroups.length) {
+        if (errors.length && newGroups.length && !oldGroups.match(/admin/)) {
             $.notify({
                 message: errors
             }, {
@@ -1069,6 +1069,19 @@ $(function () {
                 }, {
                     type: 'danger'
                 })
+            })
+            LOG.warn({ 
+                action: 'Change group',
+                moder: {
+                    uid: firebase.auth().currentUser.uid,
+                    name: Player.nickname
+                },
+                user: {
+                    uid: uid,
+                    name: $('.profile__name').text()
+                },
+                new: newGroups,
+                old: oldGroups
             })
         }
             
