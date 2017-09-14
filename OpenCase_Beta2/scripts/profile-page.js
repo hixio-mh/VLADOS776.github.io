@@ -168,6 +168,10 @@ $(function () {
         $(".stats__rank__rank").text(Level.calcLvl(userInfo.public.points));
         $('.user_uid').text(uid);
         
+        if (userInfo.moder && userInfo.moder.group) {
+            $('.profile__status').text(userInfo.moder.group)
+        }
+        
         if (uid != firebase.auth().currentUser.uid) {
             $(".posts__new-post").hide();
             $('.rep').show();
@@ -235,21 +239,20 @@ $(function () {
             var groups = snapshot.val() != null ? snapshot.val().group : null;
             if (!groups) return
             
+            window.user_group = groups;
             if (groups.match(/(moder|admin)/)) {
                 $(".moder-menu").show();
-                firebase.database().ref('users/' + uid + '/moder').once('value').then(function (snapshot) {
-                    var data = snapshot.val();
-                    if (data == null) return;
+                if (userInfo.moder) {
+                    var data = userInfo.moder;
                     if (typeof data.tradeban != 'undefined') {
                         $('#block-trade-reason').html(data.tradeban.reason + (data.tradeban.from ? '<br>' + banLength(data.tradeban.from, data.tradeban.to) : ''));
                     }
                     if (typeof data.chatban != 'undefined') {
                         $('#block-chat-reason').html(data.chatban.reason + (data.chatban.from ?'<br>' + banLength(data.chatban.from, data.chatban.to) : '' ));
                     }
-                }).then(function() {
-                    firebase.database().ref('users/' + uid + '/private').once('value').then(function(snapshot) {
-                        window.user_androidID = snapshot.val().androidID ? snapshot.val().androidID : false;
-                    })
+                }
+                firebase.database().ref('users/' + uid + '/private').once('value').then(function(snapshot) {
+                    window.user_androidID = snapshot.val().androidID ? snapshot.val().androidID : false;
                 })
             }
             
@@ -318,7 +321,6 @@ $(function () {
             
         }
     })
-    
     $('#moder-ban_time').on('change', function() {
         var time = parseInt($(this).val());
         if (isNaN(time) || time <= 0) {
@@ -332,7 +334,6 @@ $(function () {
         if (isNaN(multiply))
             multiply = 60000;
     })
-    
     $(document).on('click', '#ban_user', function() {
         var banReason = (function(){
             var reason = '';
@@ -414,6 +415,7 @@ $(function () {
         $('#moder-ban-modal').modal('hide');
     })
     // == End Moder menu ===
+    
     $(document).on('click', '.top__trade', function () {
         if ($('.trade-window').is(":visible") || $(this).hasClass('disabled')) return;
         $('#send-trade').hide();
@@ -581,6 +583,9 @@ $(function () {
         var trades = $(this).data('trades');
         var myAva = firebase.auth().currentUser.photoURL;
         var otherAva = $($(this).find('.tradeWith__img-container img')[0]).attr('src');
+        var nickname = $(this).find('.tradeWith__nickname').text();
+        fbProfile.currentTrade = { nickname: nickname }
+        
         console.log(trades);
         $('.my-trades-list').hide();
         $('.my-trades__trades-with-user').show();
@@ -630,6 +635,7 @@ $(function () {
             , otherUid: $(this).data('otherUid')
             , youAccepted: $(this).data('youAccepted')
             , otherAccepted: $(this).data('otherAccepted')
+            , nickname: fbProfile.currentTrade.nickname
         };
         $('#my-trades__your-offer').empty();
         $('#my-trades__other-offer').empty();
@@ -892,6 +898,7 @@ $(function () {
                     //var wp = fbInventory.reverseConvert(weapons[i]);
                     wp = new Item(Trade_weapons[i]);
                     wp.new = true;
+                    wp.history = { type: 'trade', name: fbProfile.currentTrade.nickname, uid: fbProfile.currentTrade.otherUid }
                     convertedWeapons.push(wp);
                 }
                 for (var i = 0; i < convertedWeapons.length; i++) {
@@ -1032,6 +1039,57 @@ $(function () {
         var uid = firebase.auth().currentUser.uid;
         sendPost(uid, uid, "" + date, text);
     })
+    
+    $('.profile__status').on('click', function() {
+        if (user_group && user_group.match(/admin|moder/)) {
+            $('#changeGroup-modal').modal('show');
+            $('#user-group').val($('.profile__status').text())
+        }
+    })
+    $('#changeGroup').on('click', function() {
+        $('#changeGroup-modal').modal('hide');
+        var newGroups = $('#user-group').val();
+        var oldGroups = $('.profile__status').text();
+        if (newGroups == 'User') return;
+        
+        // Check for errors
+        var errors = check();
+        if (errors.length && newGroups.length) {
+            $.notify({
+                message: errors
+            }, {
+                type: 'danger'
+            })
+            return
+        } else {
+            firebase.database().ref('users/' + uid + '/moder/group').set(newGroups)
+            .catch(function(err) {
+                $.notify({
+                    message: err.code
+                }, {
+                    type: 'danger'
+                })
+            })
+        }
+            
+        function check() {
+            var allowedGroups = /^(moder|tester)$/;
+            var errors = [];
+            
+            if (newGroups.indexOf(',') !== -1) {
+                errors.push('Wrong symbol ","')
+            }
+            newGroups.split(' ').forEach(function(g) {
+                if (!g.match(allowedGroups)) {
+                    errors.push('Wrong group "' + g + '"')
+                } 
+            })
+            if (oldGroups.match(/^(admin|main-moder)$/)) {
+                errors.push('Nope')
+            }
+            return errors.join('<br>')
+        }
+    })
 
     function addPostToWall(post, key) {
         if (post == '' || post == null || typeof post == 'undefined') return false;
@@ -1043,7 +1101,6 @@ $(function () {
         var HTMLpost = "<li class='user-posts__post animated flipInX' data-key=\"" + key + "\" id='" + key + "'>" + "<div class='post__header'>" + "<img src=\"" + avatarUrl(post.authorAvatar) + "\" class='post__header__img' data-uid='" + post.uidFrom + "'>" + "<div class='post__header__meta'>" + "<span class='post__meta__author' data-uid='" + post.uidFrom + "'>" + XSSreplace(post.author) + "</span>" + "<span class='post__meta__date'>" + moment(date).fromNow() + "</span>" + "</div>" + (currUid == post.uidFrom ? control : '') + "</div>" + "<div class='post__text'>" + post.text + "</div></li>";
         $(".posts__user-posts").prepend(HTMLpost);
     }
-
     function sendPost(uidFrom, uidTo, date, text) {
         var userPostsRef = firebase.database().ref('users/' + uidTo + '/posts');
         var author = Player.nickname;
@@ -1067,7 +1124,6 @@ $(function () {
             }
         })
     }
-    
     function showTrade(tradeID) {
         if (!$('.trade-window').is(':visible')) 
             $('.trade-window').show();
@@ -1183,7 +1239,6 @@ $(function () {
             };
         })
     }
-    
     function banLength(from, to) {
         var total = parseInt(from) + parseInt(to);
         return new Date(total).toLocaleString()

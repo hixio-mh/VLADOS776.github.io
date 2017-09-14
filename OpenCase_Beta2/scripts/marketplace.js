@@ -194,6 +194,7 @@ $(document).on('click', '#buy-double', function() {
     var weapon = new Item(wp);
     if (!weapon.can.buy) return;
     weapon.new = true;
+    weapon.history = { type: 'text', text: 'Marketplace' }
     
     if (!PricesBACKUP.validPrice(weapon)) {
         $.notify({

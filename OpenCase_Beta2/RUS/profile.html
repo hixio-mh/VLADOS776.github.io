@@ -53,7 +53,8 @@
         <div class="top">
             <div class="top__profile">
                 <h1 class="profile__name">Loading...</h1>
-                <!--<h3 class="profile__status">Test status</h3> --></div>
+                <h3 class="profile__status">User</h3>
+                </div>
             <div class="top_actions">
                 <div class="top__pm disabled"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
                 <img src="" class="profile__img">
@@ -256,7 +257,6 @@
                 </div>
             </div>
         </div>
-        
         <!-- Delete trade Modal -->
         <div id='delete-trade-modal' class='modal fade' role='dialog' data-loc-group='delete_trade_confirm'>
             <div class='modal-dialog modal-sm'>
@@ -272,7 +272,6 @@
                 </div>
             </div>
         </div>
-        
         <div id="followers-modal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -288,7 +287,6 @@
                 </div>
             </div>
         </div>
-        
         <div id="pm-modal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -296,6 +294,23 @@
                         <ul id="follow-list"></ul>
                     </div>
                     <div class="modal-footer"><button class="btn btn-default" data-dismiss='modal'>Close</button></div>
+                </div>
+            </div>
+        </div>
+        <div id="changeGroup-modal" class="modal fade">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <input class='form-control' id='user-group'>
+                        <p>
+                            Groups: moder, tester.<br>
+                            Example: 'moder', 'moder tester'
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" id="changeGroup">Change</button>
+                        <button class="btn btn-default" data-dismiss='modal'>Close</button>
+                        </div>
                 </div>
             </div>
         </div>
