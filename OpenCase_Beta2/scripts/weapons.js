@@ -55,7 +55,7 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
         def = def != null ? def : null;
         if (obj[key]) return obj[key];
         if (obj.extra && obj.extra[key]) return obj.extra[key];
-        
+
         return def;
     }
     if (typeof item_id == 'object') {
@@ -8556,7 +8556,126 @@ var Items = {
                     chance: 20
         },
     ]
-}
+},
+        {
+            "id": 935,
+            "type": "MAC-10",
+            "skinName": "Oceanic",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7umeldf0v73fDxBvYyJm4OOlvn9DLfYkWNFppVy2eyTotnz2g3i_xY9Y2zycISRegc5Yl2GqQXox7rugpLtvp-byCB9-n5110WGdRs",
+            "can": { "buy": false }
+        }, {
+            "id": 936,
+            "type": "SCAR-20",
+            "skinName": "Jungle Slipstream",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbmkOVUw7PvRTi5B7c7kxL-BgvnzP77uhWdY-NZlmOzA-LP5gVO8v104Z2ClLY_EIQ47ZQvRq1O7l73rg8To6ZidnXFh7CQh7S2JyxC_hk5NcKUx0mqrOQdE",
+            "can": { "buy": false }
+        }, {
+            "id": 937,
+            "type": "Sawed-Off",
+            "skinName": "Morris",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopbuyLgNv1fX3cCx9_92hkYTGmPHyDL3dmXxU-vp9g-7J4cKljA3sqUNkMDz7JISWJgI3NQmD-Ae5x7zuhcPqvsvKmiZk6yMh5nrdgVXp1lTx2r2f",
+            "can": { "buy": false }
+        }, {
+            "id": 938,
+            "type": "Tec-9",
+            "skinName": "Cracked Opal",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoor-mcjhjxszcdD4b09-klYOAkvPLPKvQmlRd4cJ5nqfFo4msi1flqEBtZmzzctfAI1U3Ml3V-VW_k7vugpbt7svJznBnv3Il-z-DyKmyxRUt",
+            "can": { "buy": false }
+        }, {
+            "id": 939,
+            "type": "AUG",
+            "skinName": "Triqua",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot6-iFAR17PLddgJN_t24k4W0g-X9MrXWmm5u5Mx2gv2PotWmjVbk_hY_a23yd4STdAJsaVzY-FS4xLvq0Za0vM7OynM3vHVxsWGdwULM0AciSg",
+            "can": { "buy": false }
+        }, {
+            "id": 940,
+            "type": "G3SG1",
+            "skinName": "Hunter",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposem2LFZf1OD3dm5R642Jl4WfmvLLIb7Vg3Nu5Mx2gv2PpNT0jAW1rRc-YGuld9eXcA45aAyDrgW8w7vqgp_vucyfmCc1vHF27WGdwUL26xPDqw",
+            "can": { "buy": false }
+        }, {
+            "id": 941,
+            "type": "Glock-18",
+            "skinName": "Off World",
+            "rarity": "milspec",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbaqKAxf0Ob3djFN79eJnY6PnvD7DLfYkWNFppYm0r_Coo-milHjr0NvNjzzIYWVdwZvN1qG_QC2xezogp6-u5nLnHN9-n516M620HI",
+            "can": { "buy": false }
+        }, {
+            "id": 942,
+            "type": "MP9",
+            "skinName": "Goo",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou6r8FAR17P7YKAJF49OJmImMn-O6YLjQlDNU68ci37_E8Nnz2gHg8hBtMWj3LNCQewA_NwyG_wW3krrog4j84socNYvhew"
+        }, {
+            "id": 943,
+            "type": "XM1014",
+            "skinName": "Ziggy",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgporrf0e1Y07PLZTiVPvYznwL-RnvDzKoTQmGpD681oteXI8oThxgPk_0FqZ2uhdYOVdgVsNF6F-wLsyey7g8TutczJzHRksiQi5yuIzhSpwUYb0YoGxag",
+            "can": { "buy": false }
+        }, {
+            "id": 944,
+            "type": "SG 553",
+            "skinName": "Phantom",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopb3wflFf1OD3YjoXuY-JhIiKmeP7PoTdn2xZ_Isk2-_CoduiiwXk-UdqYm2lItCQcAY2YQzTqFa8we7rhZ7vtcnLwXpipGB8snPKL3t3",
+            "can": { "buy": false }
+        }, {
+            "id": 945,
+            "type": "UMP-45",
+            "skinName": "Exposure",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo7e1f1Jf0Ob3ZDBSuImJjM2Zlu7LPrrSnmJf7fp9g-7J4cL03AHi-BZsYmylcIWWJgc2ZlyDqVO8werqjcLuvprMzSNiv3R25XeMgVXp1uyLuzoQ",
+            "can": { "buy": false }
+        }, {
+            "id": 946,
+            "type": "CZ75-Auto",
+            "skinName": "Tacticat",
+            "rarity": "restricted",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotaDyfgZf1OD3cicVueOilYOfnvT1J4Tdn2xZ_It0jrDD9N7z3le28xU4ZjzxdYTHdFVoM1mC8wC-k7_r1p6775TKnCFgpGB8stXRbcWP",
+            "can": { "buy": false }
+        }, {
+            "id": 947,
+            "type": "PP-Bizon",
+            "skinName": "High Roller",
+            "rarity": "classified",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpotLO_JAlf0Ob3czRY49KJlYyHqP76DLfYkWNFpsEi2-jErNvzjQDg8xFpZmmgctOVdFI4YF-EqwC9xOnq1pG76ZWayyN9-n51Ejfp6Vw",
+            "can": { "buy": false }
+        }, {
+            "id": 948,
+            "type": "M4A1-S",
+            "skinName": "Leaded Glass",
+            "rarity": "classified",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uOxh7-Gw_alDKjZl39F7ddOhuDG_Zi7jgCw_0trMDulLYOTJ1Q_YgnV-lTsyeftg8W06p2fz3Ew6CMk5XuPnAv330_ASVB-pQ",
+            "can": { "buy": false }
+        }, {
+            "id": 949,
+            "type": "R8 Revolver",
+            "skinName": "Llama Cannon",
+            "rarity": "classified",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopL-zJAt21uH3di59_oSJmIyKmvb3MrXfmWVu5Mx2gv2P9Imhi1Hs_0RqZzv3LI-XIwRrMFqE-Qe3l-6-08W5u53LyiRk6HRx7WGdwUJ7o0v99A",
+            "can": { "buy": false }
+        }, {
+            "id": 950,
+            "type": "P250",
+            "skinName": "See Ya Later",
+            "rarity": "covert",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhjxszYI2gS09-vloWZlOX7MITdn2xZ_Isi07_F8N3x3Qfj8kQ6a2H0IdKXdgRqYA2C-VLqxLznhMLv6Z-bm3o2pGB8sr9Yt3dq",
+            "can": { "buy": false }
+        }, {
+            "id": 951,
+            "type": "AK-47",
+            "skinName": "The Empress",
+            "rarity": "covert",
+            "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV09m7hJKOhOTLP7LWnn8f7p0gjrnDpdvxi1Xn80JqYGygLI_DdQJsMgyC_AO4xb_p0ce66ZXImmwj5Hei5N5mVw",
+            "can": { "buy": false }
+        }
     ],
 
     /* ===== STICKERS ===== */

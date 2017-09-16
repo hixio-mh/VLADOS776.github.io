@@ -44772,5 +44772,707 @@ var Prices = {
             },
             "souvenir": {}
         }
+    },
+    "935": {
+        "item_id": 935,
+        "type": "MAC-10",
+        "skinName": "Oceanic",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.29
+                },
+                "1": {
+                    "market": 0.48
+                },
+                "2": {
+                    "market": 0.31
+                },
+                "3": {
+                    "market": 0.39
+                },
+                "4": {
+                    "market": 0.72
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 0.80
+                },
+                "1": {
+                    "market": 2.37
+                },
+                "2": {
+                    "market": 0.78
+                },
+                "3": {
+                    "market": 1.05
+                },
+                "4": {
+                    "market": 2.19
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "936": {
+        "item_id": 936,
+        "type": "SCAR-20",
+        "skinName": "Jungle Slipstream",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.48
+                },
+                "1": {
+                    "market": 0.21
+                },
+                "2": {
+                    "market": 0.24
+                },
+                "3": {
+                    "market": 0.39
+                },
+                "4": {
+                    "market": 0.59
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 2.5
+                },
+                "1": {
+                    "market": 1.78
+                },
+                "2": {
+                    "market": 0.78
+                },
+                "3": {
+                    "market": 1.55
+                },
+                "4": {
+                    "market": 2.32
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "937": {
+        "item_id": "937",
+        "type": "Sawed-Off",
+        "skinName": "Morris",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.26
+                },
+                "1": {
+                    "market": 0.23
+                },
+                "2": {
+                    "market": 0.26
+                },
+                "3": {
+                    "market": 0.37
+                },
+                "4": {
+                    "market": 1.34
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 2.15
+                },
+                "1": {
+                    "market": 0.54
+                },
+                "2": {
+                    "market": 1.35
+                },
+                "3": {
+                    "market": 1.22
+                },
+                "4": {
+                    "market": 3.01
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "938": {
+        "item_id": 938,
+        "type": "Tec-9",
+        "skinName": "Cracked Opal",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.39
+                },
+                "1": {
+                    "market": 0.31
+                },
+                "2": {
+                    "market": 0.47
+                },
+                "3": {
+                    "market": 0.96
+                },
+                "4": {
+                    "market": 2.27
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 1.16
+                },
+                "1": {
+                    "market": 1.32
+                },
+                "2": {
+                    "market": 1.08
+                },
+                "3": {
+                    "market": 2.61
+                },
+                "4": {
+                    "market": 31.05
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "939": {
+        "item_id": 939,
+        "type": "AUG",
+        "skinName": "Triqua",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.23
+                },
+                "1": {
+                    "market": 0.39
+                },
+                "2": {
+                    "market": 0.48
+                },
+                "3": {
+                    "market": 0.7
+                },
+                "4": {
+                    "market": 2
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 1.2
+                },
+                "1": {
+                    "market": 1.52
+                },
+                "2": {
+                    "market": 2.02
+                },
+                "3": {
+                    "market": 2.64
+                },
+                "4": {
+                    "market": 11.73
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "940": {
+        "item_id": 940,
+        "type": "G3SG1",
+        "skinName": "Hunter",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 0.47
+                },
+                "1": {
+                    "market": 0.34
+                },
+                "2": {
+                    "market": 0.38
+                },
+                "3": {
+                    "market": 0.58
+                },
+                "4": {
+                    "market": 1.9
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 1.12
+                },
+                "1": {
+                    "market": 0.89
+                },
+                "2": {
+                    "market": 1.1
+                },
+                "3": {
+                    "market": 2.39
+                },
+                "4": {
+                    "market": 27.25
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "941": {
+        "item_id": 941,
+        "type": "Glock-18",
+        "skinName": "Off World",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 3.23
+                },
+                "1": {
+                    "market": 2.03
+                },
+                "2": {
+                    "market": 2.15
+                },
+                "3": {
+                    "market": 2.57
+                },
+                "4": {
+                    "market": 6.76
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 16.53
+                },
+                "1": {
+                    "market": 6.93
+                },
+                "2": {
+                    "market": 6.9
+                },
+                "3": {
+                    "market": 10.93
+                },
+                "4": {
+                    "market": 32.5
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "942": {
+        "item_id": 942,
+        "type": "MP9",
+        "skinName": "Goo",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 1.62
+                },
+                "1": {
+                    "market": 2.37
+                },
+                "2": {
+                    "market": 1.67
+                },
+                "3": {
+                    "market": 2.73
+                },
+                "4": {
+                    "market": 4.17
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 2.39
+                },
+                "1": {
+                    "market": 3.41
+                },
+                "2": {
+                    "market": 6
+                },
+                "3": {
+                    "market": 6.5
+                },
+                "4": {
+                    "market": 13.66
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "943": {
+        "item_id": 943,
+        "type": "XM1014",
+        "skinName": "Ziggy",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 2.11
+                },
+                "1": {
+                    "market": 2.07
+                },
+                "2": {
+                    "market": 1.2
+                },
+                "3": {
+                    "market": 2.26
+                },
+                "4": {
+                    "market": 3.39
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 3.59
+                },
+                "1": {
+                    "market": 9.2
+                },
+                "2": {
+                    "market": 7.31
+                },
+                "3": {
+                    "market": 13.66
+                },
+                "4": {
+                    "market": 19.03
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "944": {
+        "item_id": 944,
+        "type": "SG 553",
+        "skinName": "Phantom",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 1.84
+                },
+                "1": {
+                    "market": 1.64
+                },
+                "2": {
+                    "market": 1.43
+                },
+                "3": {
+                    "market": 2.68
+                },
+                "4": {
+                    "market": 2.99
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 6.3
+                },
+                "1": {
+                    "market": 5.24
+                },
+                "2": {
+                    "market": 4.55
+                },
+                "3": {
+                    "market": 9.9
+                },
+                "4": {
+                    "market": 19.45
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "945": {
+        "item_id": 945,
+        "type": "UMP-45",
+        "skinName": "Exposure",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 3.34
+                },
+                "1": {
+                    "market": 3
+                },
+                "2": {
+                    "market": 3.34
+                },
+                "3": {
+                    "market": 4.08
+                },
+                "4": {
+                    "market": 5.48
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 8.29
+                },
+                "1": {
+                    "market": 11.89
+                },
+                "2": {
+                    "market": 7.95
+                },
+                "3": {
+                    "market": 11.93
+                },
+                "4": {
+                    "market": 21.64
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "946": {
+        "id": 946,
+        "type": "CZ75-Auto",
+        "skinName": "Tacticat",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 3.46
+                },
+                "1": {
+                    "market": 3.07
+                },
+                "2": {
+                    "market": 2.15
+                },
+                "3": {
+                    "market": 3.5
+                },
+                "4": {
+                    "market": 7.86
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 10.82
+                },
+                "1": {
+                    "market": 26.16
+                },
+                "2": {
+                    "market": 7.6
+                },
+                "3": {
+                    "market": 16.99
+                },
+                "4": {
+                    "market": 33.41
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "947": {
+        "item_id": 947,
+        "type": "PP-Bizon",
+        "skinName": "High Roller",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 7.14
+                },
+                "1": {
+                    "market": 7.25
+                },
+                "2": {
+                    "market": 10.7
+                },
+                "3": {
+                    "market": 21.57
+                },
+                "4": {
+                    "market": 66.81
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 28.54
+                },
+                "1": {
+                    "market": 28.2
+                },
+                "2": {
+                    "market": 33.18
+                },
+                "3": {
+                    "market": 92.4
+                },
+                "4": {
+                    "market": 166.42
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "948": {
+        "item_id": 948,
+        "type": "M4A1-S",
+        "skinName": "Leaded Glass",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 16.65
+                },
+                "1": {
+                    "market": 16.65
+                },
+                "2": {
+                    "market": 14.87
+                },
+                "3": {
+                    "market": 21.92
+                },
+                "4": {
+                    "market": 34.79
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 38.41
+                },
+                "2": {
+                    "market": 44.69
+                },
+                "3": {
+                    "market": 75
+                },
+                "4": {
+                    "market": 154.52
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "949": {
+        "item_id": 949,
+        "type": "R8 Revolver",
+        "skinName": "Llama Cannon",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 7.86
+                },
+                "1": {
+                    "market": 9.39
+                },
+                "2": {
+                    "market": 6.83
+                },
+                "3": {
+                    "market": 13.92
+                },
+                "4": {
+                    "market": 21.41
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 35.67
+                },
+                "1": {
+                    "market": 195.5
+                },
+                "2": {
+                    "market": 21.57
+                },
+                "3": {
+                    "market": 41
+                },
+                "4": {
+                    "market": 117.67
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "950": {
+        "item_id": 950,
+        "type": "P250",
+        "skinName": "See Ya Later",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 13.08
+                },
+                "1": {
+                    "market": 27.25
+                },
+                "2": {
+                    "market": 25.39
+                },
+                "3": {
+                    "market": 44.4
+                },
+                "4": {
+                    "market": 61.87
+                }
+            },
+            "stattrak": {
+                "0": {
+                    "market": 68.35
+                },
+                "2": {
+                    "market": 190
+                },
+                "3": {
+                    "market": 175.05
+                },
+                "4": {
+                    "market": 381.54
+                }
+            },
+            "souvenir": {}
+        }
+    },
+    "951": {
+        "item_id": 951,
+        "type": "AK-47",
+        "skinName": "The Empress",
+        "prices": {
+            "default": {
+                "0": {
+                    "market": 83.21
+                },
+                "1": {
+                    "market": 101.04
+                },
+                "2": {
+                    "market": 141.51
+                },
+                "3": {
+                    "market": 210
+                },
+                "4": {
+                    "market": 461.18
+                }
+            },
+            "stattrak": {
+                "1": {
+                    "market": 297.16
+                },
+                "2": {
+                    "market": 439.6
+                },
+                "3": {
+                    "market": 489.99
+                }
+            },
+            "souvenir": {}
+        }
     }
 }

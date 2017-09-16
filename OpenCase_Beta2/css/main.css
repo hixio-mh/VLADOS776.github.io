@@ -105,6 +105,22 @@ body {
   opacity: 0.5; }
 .case.disabled .countdown, .capsule.disabled .countdown, .graffiti_box.disabled .countdown {
   opacity: 1; }
+.case.new:before, .capsule.new:before, .graffiti_box.new:before {
+  content: 'NEW';
+  display: block;
+  position: absolute;
+  color: #fff;
+  font-weight: bold;
+  padding: 2px 5px;
+  top: 0;
+  right: 0;
+  border-radius: 4px;
+  transition-duration: 4s;
+  -webkit-animation: new-anim 4s infinite;
+  animation: new-anim 4s infinite; }
+  @media (max-width: 433px) {
+    .case.new:before, .capsule.new:before, .graffiti_box.new:before {
+      font-size: 9px; } }
 .case .case-min_lvl, .capsule .case-min_lvl, .graffiti_box .case-min_lvl {
   position: absolute;
   top: 33px;
@@ -149,6 +165,13 @@ body {
       -webkit-transform: translate(0, -10px);
       transform: translate(0, -10px); } }
 
+@keyframes new-anim {
+  0% {
+    background: #0b901c; }
+  50% {
+    background: red; }
+  100% {
+    background: #0b901c; } }
 .graffiti_box .case-card {
   display: none; }
 

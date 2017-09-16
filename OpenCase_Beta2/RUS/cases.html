@@ -175,7 +175,7 @@
         </div>
         
         <script id="caseTemplate">
-            <div class='${caseType}{{if collection}} collection{{/if}}' data-case-id="${caseId}" data-souvenir='${souvenir}'>
+            <div class='${caseType}{{if collection}} collection{{/if}}{{if addDate != null && Date.now() - Date.parse(addDate) < 72800000000}} new{{/if}}' data-case-id="${caseId}" data-souvenir='${souvenir}'>
                 {{if deadline}}
                     <span class='countdown' data-deadline='${deadline}'></span>
                 {{/if}}
@@ -213,7 +213,8 @@
                         img: cases[i].img,
                         price: casePrice,
                         specialClass: specialClass,
-                        name: cases[i].name
+                        name: cases[i].name,
+                        addDate: cases[i].addDate
                     }
                     var $curCase = $('#caseTemplate').tmpl(cas);
                     switch (cases[i].type) {
@@ -256,7 +257,8 @@
                         minLvl: CAPSULES[i].minLvl,
                         img: CAPSULES[i].img,
                         price: casePrice,
-                        name: CAPSULES[i].name
+                        name: CAPSULES[i].name,
+                        addDate: CAPSULES[i].addDate
                     }
                     var curCase = $('#caseTemplate').tmpl(cas);
                     if (typeof CAPSULES[i].show != 'undefined' && CAPSULES[i].show === false) continue;
@@ -302,7 +304,8 @@
                         minLvl: GRAFFITI_BOX[i].minLvl,
                         img: GRAFFITI_BOX[i].img,
                         price: casePrice,
-                        name: GRAFFITI_BOX[i].name
+                        name: GRAFFITI_BOX[i].name,
+                        addDate: GRAFFITI_BOX[i].addDate
                     }
                     var curCase = $('#caseTemplate').tmpl(cas);
                     if (typeof GRAFFITI_BOX[i].show != 'undefined' && GRAFFITI_BOX[i].show === false) continue;
