@@ -1054,7 +1054,7 @@ $(function () {
         
         // Check for errors
         var errors = check();
-        if (errors.length && newGroups.length && !oldGroups.match(/admin/)) {
+        if (errors.length && newGroups.length && !user_group.match(/admin/)) {
             $.notify({
                 message: errors
             }, {
