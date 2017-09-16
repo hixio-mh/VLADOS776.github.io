@@ -6976,273 +6976,102 @@ var Items = {
             "skinName": "Aloha",
             "rarity": "milspec",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mac10_am_mac10_aloha_light_large.98a6a9d8e546d31e6ebdab0e40ff2aa248fb126a.png",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "souvenir": false,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 848,
             "type": "UMP-45",
             "skinName": "Metal Flowers",
             "rarity": "milspec",
             "img": "https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo7e1f1Jf0uL3ZDBSuImJkoyKmvLyP7TGk3lu5Mx2gv2PrI-giVGwqUFtMj31IICUJAY5Z1nT_VTtxO29gJbqvJ7JnyNj7yEitmGdwULd1U8dAw",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 849,
             "type": "FAMAS",
             "skinName": "Macabre",
             "rarity": "milspec",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLuoKhRfwOP3dzxP7c-JmYGIlvXmNoTdn2xZ_Ism37GTpNmljQbgqkVlamvxdo6UdlI4M13W-lG6wuzo0JS-vZTBwHI3pGB8svCrsedC",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 850,
             "type": "MAG-7",
             "skinName": "Hard Water",
             "rarity": "milspec",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou7uifDhh3szFcDoV09-3gZOfnvTLP7LWnn8fuZYiiOvH9NXz21ey80FuYz_7cdSQdwM4NVyE_1Xvxujp1sC975ScyWwj5HeAY-I7KQ",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 851,
             "type": "Tec-9",
             "skinName": "Cut Out",
             "rarity": "milspec",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoor-mcjhhwszcdD4b09--lYyAqOf1J6_UhGVu5Mx2gv2P8Nyh2gGw-xJpZTqiIdeXcAI-M1_R_li7kOu605Tu75mYn3I2syMh5GGdwULq_VC6dg",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 852,
             "type": "M4A1-S",
             "skinName": "Briefing",
             "rarity": "milspec",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhz2v_Nfz5H_uO1gb-Gw_alIITck39D4dF0mOj--YXygED6rhBlMGylLIDBdAE2aVzQ-FS_yLy6gsTouZybwXZquSUnsy2Llhbi1AYMMLKLissC3Q",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 853,
             "type": "USP-S",
             "skinName": "Blueprint",
             "rarity": "milspec",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpoo6m1FBRp3_bGcjhQ09-jq5WYh-TLMbfEk3tD4ctlteXI8oThxlHg-kppY2D7dtSWIwc-ZA3W_1W7le3t1pLou5_BwXo1vCchtyvamRSpwUYbl4sQs20",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 854,
             "type": "P2000",
             "skinName": "Woodsman",
             "rarity": "restricted",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovrG1eVcwg8zLZAJSvozmxL-DgvngNqnummJW4NE_377HoYn03Vax_xVlMTygcYDEcVQ5YF3S-wC9xu67jMfq7pmYmyBi7D5iuyhbjmQOcg",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 855,
             "type": "P90",
             "skinName": "Death Grip",
             "rarity": "restricted",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopuP1FA957OORIQJA7c6zlo-FkuTLMbfEk1Rd4cJ5nqfCrNytjAKyqEU4ZmqgdoTDdgc4aQnW_gO3kO3t0JLuus_MzXVq7HMq-z-DyDp1RLqf",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 856,
             "type": "SSG 08",
             "skinName": "Death's Head",
             "rarity": "restricted",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopamie19f0Ob3Yi5FvISJkIWKg__nO77QklRd4cJ5nqeWrdqi3la3_hU_Nm73ddCQcw9vMwyDqQDrxbruhJ-7vpqaynth7HF0-z-DyAzfVpYm",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 857,
             "type": "P250",
             "skinName": "Red Rock",
             "rarity": "restricted",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhjxszYI2gS092unY-GqPv9NLPF2GoI6pYlj7nArN_xilW18xU9ZWmnctLHcg4-aVrXqFi_yOfsjcK16pvXiSw0GYfq61U",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 858,
             "type": "AK-47",
             "skinName": "Orbit Mk01",
             "rarity": "restricted",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJegJB49C5mpnbxsjmNr_ummJW4NE_iL-ZrYj03wLl_hFqNm71cteWdlA5Zl2F-FG-yO_r0cW4uMnMynFl6T5iuyjnxSwaOw",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 859,
             "type": "Galil AR",
             "skinName": "Sugar Rush",
             "rarity": "classified",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbupIgthwczLZAJF7dC_mL-IlvnwKrjZl2RC18l4jeHVu9uliwWwqRJqMGuncY-cdFNtZ17Wq1O4wbzphZLvu5vJnHJi6HIg5SvD30vgL7LkLAY",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 860,
             "type": "Dual Berettas",
             "skinName": "Cobra Strike",
             "rarity": "classified",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpos7asPwJf1OD3dShD4N6zhoWfg_bnDLjelHlQ18l4jeHVu9z22gHj_UFvZz36IdXHcwQ-aVGE8wfqkLrrgsK96pqcnCZk7CUktnfD30vg2qddNKU",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 861,
             "type": "M4A4",
             "skinName": "Hellfire",
             "rarity": "classified",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpou-6kejhjxszFJTwW09SzmIyNnuXxDLfYkWNFpsEi3L6UrdiljFXlr0VsNmj6dteXdFBtYFnV-VjryO3qhMe86c7BwHB9-n51JK1M_qQ",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 862,
             "type": "Five-SeveN",
             "skinName": "Hyper Beast",
             "rarity": "covert",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposLOzLhRlxfbGTj5X09q_goWYkuHxPYTZj3tU-sd0i_rVyoD8j1yg5RduNj_yLNSQdVQ-M1DS-1e8xbvrh56_vMiczSFnvXUg4X6IyxGzhh5SLrs4rcs7-T4",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 863,
             "type": "AWP",
             "skinName": "Oni Taiji",
             "rarity": "covert",
             "img": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17PLfYQJK7dK4jYG0m_7zO6-fk28C65V0ibnEoon00AHj80Jla2qlI9fHIwNqYl3YqVO4wb3pgpK17oOJlyWSYujjQg",
-            "can": {
-                "buy": false,
-                "sell": true,
-                "trade": true,
-                "contract": true,
-                "bot": true,
-                "stattrak": true,
-                "inCase": true,
-                "specialCase": true
-            }
     }, {
             "id": 864,
             "type": "★ Bayonet",
