@@ -255,6 +255,10 @@ $(function () {
                     window.user_androidID = snapshot.val().androidID ? snapshot.val().androidID : false;
                 })
             }
+
+            if (groups.match(/(main-moder|admin)/)) {
+                $('.main-moder').show();
+            }
             
             if (groups.match(/(beta|admin)/)) {
                 //$('.beta_only').show();
@@ -1086,14 +1090,19 @@ $(function () {
         }
             
         function check() {
-            var allowedGroups = /^(moder|tester)$/;
+            var allowedGroups = ['moder', 'tester'];///^(moder|tester)$/;
             var errors = [];
+            
+            if (/vip/.test(oldGroups))  allowedGroups.push('vip');
+            if (/donor/.test(oldGroups))  allowedGroups.push('donor');
+            
+            var groupsRegexp = new RegExp('^('+ allowedGroups.join('|') + ')$');
             
             if (newGroups.indexOf(',') !== -1) {
                 errors.push('Wrong symbol ","')
             }
             newGroups.split(' ').forEach(function(g) {
-                if (!g.match(allowedGroups)) {
+                if (!g.match(groupsRegexp)) {
                     errors.push('Wrong group "' + g + '"')
                 } 
             })
@@ -1102,6 +1111,21 @@ $(function () {
             }
             return errors.join('<br>')
         }
+    })
+    $('#reset_balance').on('click', function() {
+        firebase.database().ref('users/' + uid + '/extra/reset_balance').set(true);
+
+        LOG.warn({
+            action: 'Moder reset balance',
+            user: {
+                uid: uid,
+                nickname: $(".profile__name").text()
+            },
+            moder: {
+                uid: firebase.auth().currentUser.uid,
+                nickname: Player.nickname
+            }
+        })
     })
 
     function addPostToWall(post, key) {

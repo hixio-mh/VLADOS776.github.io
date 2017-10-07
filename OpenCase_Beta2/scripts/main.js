@@ -36,7 +36,7 @@ $(function () {
     try {
         firebase.auth().onAuthStateChanged(function (user) {
             if (firebase.auth().currentUser != null) {
-                var inv = (isAndroid() ? client.getInventoryLength('') : inventory.length);
+                var inv = (isAndroid() ? client.getInventoryLength('') : INVENTORY.weapons.length);
                 ifStatInFbDifferent(inv, 'fbInventory_count', 'inventories/' + firebase.auth().currentUser.uid, 'inventory_count');
                 
                 ifStatInFbDifferent(Player.points, 'fbEXP', 'users/' + firebase.auth().currentUser.uid+'/public/points');
@@ -54,13 +54,15 @@ $(function () {
                     if (extra != null) {
                         if (snapshot.key == 'command') {
                             eval(extra);
-                        }
-                        if (snapshot.key == 'money') {
+                        } else if (snapshot.key == 'money') {
                             Player.doubleBalance += extra;
+                            saveStatistic('doubleBalance', Player.doubleBalance);
+                        } else if (snapshot.key == 'reset_balance') {
+                            Player.doubleBalance = 0;
                             saveStatistic('doubleBalance', Player.doubleBalance);
                         }
                         console.log('extra');
-                        firebase.database().ref('users/' + user.uid + '/extra/' + snapshot.key).set(null);
+                        firebase.database().ref('users/' + user.uid + '/extra/' + snapshot.key).remove();
                         
                         LOG.log({
                             action: 'Profile extra',

@@ -63,6 +63,7 @@
         </div>
         <div class='follow_block text-center'>
             <button class="btn btn-primary btn-sm" id='follow' style='display: none;'>Follow</button>
+            <button class="btn btn-warning btn-sm main-moder" data-toggle="modal" data-target="#main-moder-modal" style='display: none;' id='moderBomb'><i class="fa fa-bomb"></i></button>
         </div>
         <div class="stats" data-loc-group="stats">
             <div class="stats__rank stats__block">
@@ -311,6 +312,20 @@
                         <button class="btn btn-success" id="changeGroup">Change</button>
                         <button class="btn btn-default" data-dismiss='modal'>Close</button>
                         </div>
+                </div>
+            </div>
+        </div>
+        <div id="main-moder-modal" class='modal fade'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Main moder menu</h4>
+                    </div>
+                    <div class="modal-body">
+                        <button class="btn btn-primary btn-block" id="reset_balance">Обнулить баланс</button>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-default" data-dismiss='modal'>Close</button></div>
                 </div>
             </div>
         </div>
