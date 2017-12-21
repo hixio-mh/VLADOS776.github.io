@@ -1046,7 +1046,7 @@
                     items.forEach(function(wp, i) {
                         if (!wp.can.sell) {
                             selectedID[i] = null;
-                            weapons[i] = null;
+                            items[i] = null;
                         }
                         if (wp.itemType == 'weapon' && !PricesBACKUP.validPrice(wp)) {
                             $.notify({
