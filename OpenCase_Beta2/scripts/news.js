@@ -807,4 +807,12 @@ var news = [{
         "RU": ' - [Новое] Добавлены капсулы <a href="open.html?capsuleId=13">DreamHack 2014 Legends</a>, <a href="open.html?capsuleId=14">ESL One Katowice 2015 Legends</a>, <a href="open.html?capsuleId=15">ESL One Katowice 2015 Challengers</a>, <a href="open.html?capsuleId=16">Krakow 2017 Challengers (Holo/Foil)</a>, <a href="open.html?capsuleId=17">Krakow 2017 Legends (Holo/Foil)</a>, <a href="open.html?capsuleId=18">Group C (Foil) | Cologne 2015</a>, <a href="open.html?capsuleId=19">Krakow 2017 Legends</a> и <a href="open.html?capsuleId=20">Krakow 2017 Challengers</a>',
         "EN": ' - [New] Capsules <a href="open.html?capsuleId=13">DreamHack 2014 Legends</a>, <a href="open.html?capsuleId=14">ESL One Katowice 2015 Legends</a>, <a href="open.html?capsuleId=15">ESL One Katowice 2015 Challengers</a>, <a href="open.html?capsuleId=16">Krakow 2017 Challengers (Holo/Foil)</a>, <a href="open.html?capsuleId=17">Krakow 2017 Legends (Holo/Foil)</a>, <a href="open.html?capsuleId=18">Group C (Foil) | Cologne 2015</a>, <a href="open.html?capsuleId=19">Krakow 2017 Legends</a> and <a href="open.html?capsuleId=20">Krakow 2017 Challengers</a>'
     }
+}, {
+    "day": 14,
+    "month": 1,
+    "year": 2018,
+    "update": {
+        "RU": " - [Новое] Новый кейс Workshop 4!<br> - [Новое] Просмотр моделей оружия в 3D (только для Workshop 4). Может лагать на слабых устройствах.",
+        "EN": " - [New] Workshop 4 case!<br> - [New] View weapon models in 3D (Workshop 4 only). Can lag on weak devices."
+    }
 }, ];

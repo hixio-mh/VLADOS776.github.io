@@ -420,9 +420,8 @@ var cases = [{
     "img": "Workshop4.png",
     "type": "Workshop",
     "specialClass": "workshop-text",
-    show: false,
     weapons: [953,954,955,956,957,958,959,960,961,962,963,964,965],
-    knives: [966]
+    knives: [966, 967]
 }, ]
 
 var CAPSULES = [{
