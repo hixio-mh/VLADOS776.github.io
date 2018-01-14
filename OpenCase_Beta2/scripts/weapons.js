@@ -8659,11 +8659,11 @@ var Items = {
             patterns: [
                 {
                     img: 'Workshop4/Bayonet-Lazarat-(phase-2).png',
-                    chance: 50,
+                    chance: 20,
                     textures: ['Lazarat (phase 2)']
                 }, {
                     img: 'Workshop4/Bayonet-Lazarat-(phase-3).png',
-                    chance: 50,
+                    chance: 10,
                     textures: ['Lazarat (phase 3)']
                 }, {
                     img: 'Workshop4/Bayonet-Lazarat-(red-phase).png',
