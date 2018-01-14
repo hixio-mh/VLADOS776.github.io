@@ -4,7 +4,8 @@ var cases = [{
     "img": "none.png",
     "type": "Default",
     "specialClass": "workshop-text christmas",
-    deadline: '2018-01-08',
+    show: false,
+    //deadline: '2018-01-08',
     weapons: [779,783,784,785,775,776,780,777,778,782,774,781]
 }, {
     "name": "Alpha", 
@@ -414,6 +415,14 @@ var cases = [{
     "specialClass": "workshop-text",
     weapons: [735,736,737,738,739,740,741,742,743,744,745,746],
     knives: [747,748]
+}, {
+    "name": "Workshop 4",
+    "img": "Workshop4.png",
+    "type": "Workshop",
+    "specialClass": "workshop-text",
+    show: false,
+    weapons: [953,954,955,956,957,958,959,960,961,962,963,964,965],
+    knives: [966]
 }, ]
 
 var CAPSULES = [{

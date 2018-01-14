@@ -24,6 +24,8 @@ function getPrice(item_id, opt) {
     var prices = item.prices[cat] ? item.prices[cat][quality] : 0;
     var price = 0;
     if (typeof prices == 'undefined') return price;
+    if (typeof prices === 'number') return prices
+
     if (prices.market != -1) price = prices.market;
     else if (prices.analyst != -1) price = prices.analyst;
     else if (prices.opskins != -1) price = prices.opskins
@@ -49,12 +51,16 @@ var PricesBACKUP = (function (module) {
                     if (item.prices[pricesType] && Object.keys(item.prices[pricesType]).length > 0) {
                         var pr = item.prices[pricesType];
                         for (var qual in pr) {
-                            if (pr[qual].market > 0) {
-                                pr[qual].market = hex_md5('' + pr[qual].market);
-                            } else if (pr[qual].analyst > 0) {
-                                pr[qual].analyst = hex_md5('' + pr[qual].analyst);
-                            } else if (pr[qual].opskins > 0) {
-                                pr[qual].opskins = hex_md5('' + pr[qual].opskins);
+                            if (typeof pr[qual] === 'object') {
+                                if (pr[qual].market > 0) {
+                                    pr[qual].market = hex_md5('' + pr[qual].market);
+                                } else if (pr[qual].analyst > 0) {
+                                    pr[qual].analyst = hex_md5('' + pr[qual].analyst);
+                                } else if (pr[qual].opskins > 0) {
+                                    pr[qual].opskins = hex_md5('' + pr[qual].opskins);
+                                }
+                            } else {
+                                pr[qual] = hex_md5('' + pr[qual])
                             }
                         }
                     }
@@ -72,33 +78,45 @@ var PricesBACKUP = (function (module) {
             var pricesEnc = itemEnc.prices[pricesType];
 
             for (var qual in pricesNormal) {
-                if (pricesNormal[qual].market > 0 && hex_md5('' + pricesNormal[qual].market) === pricesEnc[qual].market) {
-                    continue;
-                } else if (pricesNormal[qual].analyst > 0 && hex_md5('' + pricesNormal[qual].analyst) === pricesEnc[qual].analyst) {
-                    continue;
-                } else if (pricesNormal[qual].opskins > 0 && hex_md5('' + pricesNormal[qual].opskins) === pricesEnc[qual].opskins) {
-                    continue;
-                } else if (pricesNormal[qual].market === -1 && ((pricesNormal[qual].analyst === -1 && pricesNormal[qual].opskins === -1) || (!pricesNormal[qual].analyst && !pricesNormal[qual].opskins))) {
-                    continue;
+                if (typeof pricesNormal[qual] === 'object') {
+                    if (pricesNormal[qual].market > 0 && hex_md5('' + pricesNormal[qual].market) === pricesEnc[qual].market) {
+                        continue;
+                    } else if (pricesNormal[qual].analyst > 0 && hex_md5('' + pricesNormal[qual].analyst) === pricesEnc[qual].analyst) {
+                        continue;
+                    } else if (pricesNormal[qual].opskins > 0 && hex_md5('' + pricesNormal[qual].opskins) === pricesEnc[qual].opskins) {
+                        continue;
+                    } else if (pricesNormal[qual].market === -1 && ((pricesNormal[qual].analyst === -1 && pricesNormal[qual].opskins === -1) || (!pricesNormal[qual].analyst && !pricesNormal[qual].opskins))) {
+                        continue;
+                    } else {
+                        return false;
+                    }
                 } else {
-                    return false;
+                    if (hex_md5('' + pricesNormal[qual]) !== pricesEnc[qual]) {
+                        return false;
+                    }
                 }
             }
         }
 
-        var priceSource = 'market';
-        if (item.price === item.allPrices[item.priceType][item.quality].market) {
-
-        } else if (item.price === item.allPrices[item.priceType][item.quality].analyst) {
-            priceSource = 'analyst';
-        } else if (item.price === item.allPrices[item.priceType][item.quality].opskins) {
-            priceSource = 'opskins';
+        if (typeof item.allPrices[item.priceType][item.quality] === 'object') {
+            var priceSource = 'market';
+            if (item.price === item.allPrices[item.priceType][item.quality].market) {
+    
+            } else if (item.price === item.allPrices[item.priceType][item.quality].analyst) {
+                priceSource = 'analyst';
+            } else if (item.price === item.allPrices[item.priceType][item.quality].opskins) {
+                priceSource = 'opskins';
+            } else {
+                return false;
+            }
+    
+            if (hex_md5('' + item.price) !== itemEnc.prices[item.priceType][item.quality][priceSource]) {
+                return false;
+            }
         } else {
-            return false;
-        }
-
-        if (hex_md5('' + item.price) !== itemEnc.prices[item.priceType][item.quality][priceSource]) {
-            return false;
+            if (hex_md5('' + item.price) !== itemEnc.prices[item.priceType][item.quality]) {
+                return false;
+            }
         }
 
         return true;
@@ -45471,6 +45489,323 @@ var Prices = {
                 "3": {
                     "market": 489.99
                 }
+            },
+            "souvenir": {}
+        }
+    },
+    "952": {
+        "item_id": 952,
+        "type": "Tec-9",
+        "skinName": "White Fang",
+        "prices": {
+            "default": {
+                0: {
+                    "market": 4.15
+                },
+                1: {
+                    "market": 5.20
+                },
+                2: {
+                    "market": 5.80
+                },
+                3: {
+                    "market": 6.33
+                },
+                4: {
+                    "market": 7.54
+                },
+            },
+            "stattrak": {
+                0: 5.75,
+                1: 6.52,
+                2: 7.87,
+                3: 9.23,
+                4: 12.22
+            },
+            "souvenir": {}
+        }
+    },
+    "953": {
+        item_id: 953,
+        type: "Nova",
+        skinName: "White Fang",
+        prices: {
+            default: {
+                0: 2.12,
+                1: 2.67,
+                2: 2.97,
+                3: 3.53,
+                4: 4.12
+            },
+            stattrak: {
+                0: 3.23,
+                1: 3.46,
+                2: 3.88,
+                3: 4.22,
+                4: 4.97
+            },
+            souvenir: {}
+        }
+    },
+    "954": {
+        item_id: 954,
+        prices: {
+            "default": {
+                "0": 0.48,
+                "1": 1.25,
+                "2": 0.74,
+                "3": 1.17,
+                "4": 1.43
+            },
+            "stattrak": {},
+            "souvenir": {
+                "0": 1.5,
+                "1": 2.5,
+                "2": 1.72,
+                "3": 3.85,
+                "4": 8.97
+            }
+        }
+    },
+    "955": {
+        item_id: 955,
+        prices: {
+            default: {
+                0: 5.51,
+                1: 5.97,
+                2: 6.23,
+                3: 6.78,
+                4: 7.21,
+            },
+            stattrak: {
+                0: 6.21,
+                1: 6.74,
+                2: 7.63,
+                3: 9.32,
+                4: 15.04,
+            },
+            souvenir: {}
+        }
+    },
+    "956": {
+        item_id: 956,
+        prices: {
+            default: {
+                0: 4.23,
+                1: 4.89,
+                2: 7.51,
+                3: 13.43,
+                4: 19.98,
+            },
+            stattrak: {
+                0: 8.55,
+                1: 9.23,
+                2: 13.1,
+                3: 21.23,
+                4: 32.54,
+            },
+            souvenir: {}
+        }
+    },
+    "957": {
+        item_id: 957,
+        prices: {
+            default:{
+                0: 14.88,
+                1: 18.14,
+                2: 24,
+                3: 26.54,
+                4: 31.4
+            },
+            stattrak: {
+                0: 6.20,
+                1: 7.92,
+                2: 9.36,
+                3: 13.04,
+                4: 21.23
+            },
+            souvenir: {}
+        }
+    },
+    "958": {
+        item_id: 958,
+        prices: {
+            default: {0: 4.8, 1: 7.31, 2: 5.47, 3: 8.33, 4: 14.74},
+            stattrak:{0: 21.09, 1: 27.6, 2: 24.6, 3: 37.79, 4: 70.76},
+            souvenir:{}
+        }
+    },
+    "959": {
+        item_id: 959,
+        prices: {
+            "default": {
+                "0": 13.98,
+                "1": 17.33,
+                "2": 22.11,
+                "3": 29.82,
+                "4": 49.79
+            },
+            "stattrak": {
+                "0": 14.43,
+                "1": 18.5,
+                "2": 23.8,
+                "3": 31.29,
+                "4": 55.6
+            },
+            "souvenir": {}
+        }
+    },
+    "960": {
+        item_id: 960,
+        prices: {
+            "default": {
+                "0": 13.98,
+                "1": 17.33,
+                "2": 22.11,
+                "3": 29.82,
+                "4": 49.79
+            },
+            "stattrak": {
+                "0": 14.43,
+                "1": 18.5,
+                "2": 23.8,
+                "3": 31.29,
+                "4": 55.6
+            },
+            "souvenir": {}
+        }
+    },
+    "961": {
+        item_id: 961,
+        prices: {
+            "default": {
+                "0": 7.42,
+                "1": 12.64,
+                "2": 9,
+                "3": 23.62,
+                "4": 75.26
+            },
+            "stattrak": {
+                "0": 33.97,
+                "1": 46.64,
+                "2": 40.76,
+                "3": 111.53,
+                "4": 258.26
+            },
+            "souvenir": {}
+        }
+    },
+    "962": {
+        item_id: 962,
+        prices: {
+            "default": {
+                "0": 20.9,
+                "1": 24.2,
+                "2": 30.8,
+                "3": 40.7,
+                "4": 80.3
+            },
+            "stattrak": {
+                "0": 37.4,
+                "1": 58.3,
+                "2": 81.4,
+                "3": 117.7,
+                "4": 227.7
+            },
+            "souvenir": {}
+        }
+    },
+    "963": {
+        item_id: 963,
+        prices: {
+            "default": {
+                "2": 20.35,
+                "3": 20.79,
+                "4": 28.7
+            },
+            "stattrak": {
+                "2": 71.83,
+                "3": 84.84,
+                "4": 200.93
+            },
+            "souvenir": {}
+        }
+    },
+    "964": {
+        item_id: 964,
+        prices: {
+            "default": {
+                "0": 28.46,
+                "1": 32.49,
+                "2": 37.4,
+                "3": 50.42,
+                "4": 91.61
+            },
+            "stattrak": {
+                "0": 78.86,
+                "1": 93.67,
+                "2": 121.01,
+                "3": 182.27,
+                "4": 338.65
+            },
+            "souvenir": {}
+        }
+    },
+    "965": {
+        item_id: 965,
+        prices: {
+            "default": {
+                "0": 13.55,
+                "1": 23.72,
+                "2": 29.11,
+                "3": 48.25,
+                "4": 75.99
+            },
+            "stattrak": {
+                "0": 37.35,
+                "1": 72.92,
+                "2": 98.18,
+                "3": 206.44,
+                "4": 410.2
+            },
+            "souvenir": {}
+        }
+    },
+    "966": {
+        item_id: 966,
+        prices: {
+            "default": {
+                "0": 209.28,
+                "1": 214.57,
+                "2": 235.33,
+                "3": 263.91,
+                "4": 407
+            },
+            "stattrak": {
+                "0": 335.56,
+                "1": 332.81,
+                "2": 343.92,
+                "3": 357.89,
+                "4": 770
+            },
+            "souvenir": {}
+        }
+    },
+    "967": {
+        item_id: 967,
+        prices: {
+            "default": {
+                "0": 215.9,
+                "1": 210.6,
+                "2": 243.53,
+                "3": 301.21,
+                "4": 336.04
+            },
+            "stattrak": {
+                "1": 253.1,
+                "2": 217.48,
+                "3": 309.19,
+                "4": 494.29
             },
             "souvenir": {}
         }

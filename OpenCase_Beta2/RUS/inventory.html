@@ -61,9 +61,14 @@
 			<div class="img_container">
                 <img src="../images/stattrak.png" id="statTrakImg">
                 <img src="" id="weaponImg">
-                <button class="btn btn-primary lock" id='lock'>
-                    <i class="fa fa-unlock" aria-hidden="true"></i>
-                </button>
+                <div class="top_bar">
+                    <button class="btn btn-primary lock" id='lock'>
+                        <i class="fa fa-unlock" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-primary 3d" id='3d'>
+                        <i class="fa fa-cube"></i>
+                    </button>
+                </div>
                 <div id='weaponStickers'></div>
                 <div id="weaponLoadingImg"><i class="fa fa-refresh fa-spin" aria-hidden="true"></i></div>
 			</div>
@@ -203,6 +208,7 @@
                 $('#cancelSticker').on('click', cancelSticker);
                 
                 $('#lock').on('click', lockToggle);
+                $('#3d').on('click', modelToggle);
                 $(".glassBlur, .fullWeaponInfo-close").on("click", function() { hideItem(true) });
                 
                 $('#startContract').on('click', startContract);
@@ -302,6 +308,7 @@
                 $('#rename_button').hide();
                 $('#startContract').hide();
                 $('#apply_sticker_to_item').hide();
+                $('#3d').hide();
                 
                 if (item.pattern != null) {
                     $('#weaponPhase').parent().show();
@@ -322,6 +329,10 @@
                     if (config.applySticker) $('#apply_sticker').show();
                 } else {
                     $('#apply_sticker').hide();
+                }
+
+                if (item.old && item.old['3d'] != null) {
+                    $('#3d').show();
                 }
                 
                 // Откуда предмет
@@ -407,9 +418,11 @@
                     $(".fullWeaponInfo").addClass("info-closed");
                     setTimeout(function() {
                         $("#weaponInfoContainer").css("display", "none");
+                        $('.img_container iframe').remove();
                     }, 400);
                 } else {
                     $("#weaponInfoContainer").css("display", "none");
+                    $('.img_container iframe').remove();
                 }
             }
             function swipeItem(direction) {
@@ -564,6 +577,26 @@
                     $('.weapon[data-id=' + wp.id + '] .lock-li').remove()
                     
                     customEvent({ type: 'items', event: 'unlock', item_id: wp.item_id })
+                }
+            }
+            // 3D model
+            function modelToggle() {
+                var wp = openedWeaponInfo();
+                if ($('iframe#3d_iframe').length) {
+                    $('iframe#3d_iframe').remove();
+                    $('#weaponImg').show();
+                } else {
+                    var w = $('#weaponImg').width();
+                    var h = $('#weaponImg').height();
+
+                    var textures = wp.old['3d'].textures.join(',');
+
+                    if (wp.pattern != null) {
+                        textures = wp.old.patterns[wp.pattern].textures.join(',');
+                    }
+
+                    $("#weaponImg").after('<iframe src="https://vlados776.bitbucket.io/skin-creator/embed.html?model=' + wp.old['3d'].model + '&textures=' + textures + '" width="' + w + 'px" height="' + h + 'px" id="3d_iframe">')
+                    $('#weaponImg').hide();
                 }
             }
             
