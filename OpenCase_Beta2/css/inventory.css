@@ -324,6 +324,7 @@ table#weaponInfoTable tr {
     padding: 5px 10px;
 }
 .lock-li {
+    position: absolute;
     top:0;
     padding: 2px 5px;
 }
