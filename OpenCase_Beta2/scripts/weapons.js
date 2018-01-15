@@ -54,7 +54,7 @@ function Weapon(item_id, quality, stattrak, souvenir, isNew) {
     function getExtra(obj, key, def) {
         def = def != null ? def : null;
         if (obj[key] != null) return obj[key];
-        if (obj.extra && obj.extra[key]) return obj.extra[key];
+        if (obj.extra && obj.extra[key] != null) return obj.extra[key];
 
         return def;
     }
