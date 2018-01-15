@@ -415,7 +415,7 @@ var openCase = {
         var duration = (Settings.drop) ? 5 : 10,
             marginLeft = -1 * Math.rand(a - 50, a + 60);
 
-        $('.casesCarusel').css({
+        $('#aCanvas .carusel_wrap').css({
             'transition': 'all ' + duration + 's cubic-bezier(0.07, 0.49, 0.39, 1)',
             'margin-left': marginLeft + 'px'
             })
