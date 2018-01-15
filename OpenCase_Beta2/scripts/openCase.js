@@ -471,7 +471,7 @@ var openCase = {
             saveStatistic('free-case-timeout', Date.now() + FREE_CASE_INTERVAL_MS);
         }
 
-        var anim = document.getElementById('casesCarusel');
+        var anim = document.getElementById('carusel_wrap');
         anim.addEventListener("transitionend", openCase.endScroll, false);
         anim.addEventListener("webkitTransitionEnd", openCase.endScroll, false);
     },
