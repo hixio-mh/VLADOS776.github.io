@@ -65,8 +65,8 @@
                     <button class="btn btn-primary lock" id='lock'>
                         <i class="fa fa-unlock" aria-hidden="true"></i>
                     </button>
-                    <button class="btn btn-primary 3d" id='3d'>
-                        <i class="fa fa-cube"></i>
+                    <button class="btn btn-primary model3D" id='model3D'>
+                        3D
                     </button>
                 </div>
                 <div id='weaponStickers'></div>
@@ -208,7 +208,7 @@
                 $('#cancelSticker').on('click', cancelSticker);
                 
                 $('#lock').on('click', lockToggle);
-                $('#3d').on('click', modelToggle);
+                $('#model3D').on('click', modelToggle);
                 $(".glassBlur, .fullWeaponInfo-close").on("click", function() { hideItem(true) });
                 
                 $('#startContract').on('click', startContract);
