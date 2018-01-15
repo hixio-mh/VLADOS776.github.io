@@ -350,6 +350,7 @@ var openCase = {
         if (caseItems.all[winNumber].itemType === 'weapon') {
             caseItems.all[winNumber].qualityRandom();
             caseItems.all[winNumber].patternRandom();
+            caseItems.all[winNumber].stattrakRandom();
         }
         caseItems.all.forEach(function(item, index) {
             
@@ -551,7 +552,7 @@ var openCase = {
         open = typeof open == 'undefined' ? true : open;
         openCase.status = 'scrollBack';
         $(".casesCarusel").children(".weapon").addClass("animated fadeOutDown");
-        $('.casesCarusel').css({
+        $('#aCanvas .carusel_wrap').css({
             'transition': 'all 0.9s cubic-bezier(0.07, 0.49, 0.39, 1)',
             'margin-left': '0px'
         });
@@ -613,7 +614,7 @@ var openCase = {
             $newLine.attr('id', 'casesCarusel-'+i);
             $newLine.addClass("animated fadeIn");
             
-            $('#aCanvas').append($newLine);
+            $('#aCanvas .carusel_wrap').append($newLine);
             this.fillCarusel(false, '#casesCarusel-'+i);
         }
         $('#caruselOver').css('height', 137*count + 3 * count);
