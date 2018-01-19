@@ -421,7 +421,7 @@ var cases = [{
     "type": "Workshop",
     "specialClass": "workshop-text",
     weapons: [953,954,955,956,957,958,959,960,961,962,963,964,965],
-    knives: [966, 967]
+    knives: [966, 967, 968]
 }, ]
 
 var CAPSULES = [{

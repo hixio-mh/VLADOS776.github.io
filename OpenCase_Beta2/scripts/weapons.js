@@ -8684,6 +8684,17 @@ var Items = {
             rarity: "rare",
             img: "Workshop4/Karambit-Howl.png",
             can: { buy: false }
+        }, {
+            id: 968,
+            type: "★ M9 Bayonet",
+            skinName: "Medusa",
+            rarity: "rare",
+            img: "Workshop4/M9-Bayonet-Medusa.png",
+            can: { buy: false },
+            '3d': {
+                model: 'm9-bayonet',
+                textures: ["Medusa"]
+            }
         }
     ],
 
