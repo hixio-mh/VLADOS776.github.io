@@ -815,4 +815,12 @@ var news = [{
         "RU": " - [Новое] Новый кейс Workshop 4!<br> - [Новое] Просмотр моделей оружия в 3D (только для Workshop 4). Может лагать на слабых устройствах.",
         "EN": " - [New] Workshop 4 case!<br> - [New] View weapon models in 3D (Workshop 4 only). Can lag on weak devices."
     }
+}, {
+    "day": 22,
+    "month": 1,
+    "year": 2018,
+    "update": {
+        "RU": " - [Новое] Добавлены 3D модели для AWP | Dragon Lore, Karambit | Lore, Bayonet | Lore, M9 Bayonet | Lore, Gut Knife | Lore",
+        "EN": " - [New] Added 3D model view for AWP | Dragon Lore, Karambit | Lore, Bayonet | Lore, M9 Bayonet | Lore, Gut Knife | Lore"
+    }
 }, ];

@@ -4726,7 +4726,11 @@ var Items = {
             type: "★ M9 Bayonet",
             skinName: "Lore",
             rarity: "rare",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-Igsj5aoTTl3Ju5Mpjj9bN_Iv9nGu4qgE7NnehINTDIwQ4NV3X-gW6xe660JLvvJnLzXZluiVz7X7dnBS-gREYP-c5m7XAHtWD61VD"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf3qr3czxb49KzgL-Igsj5aoTTl3Ju5Mpjj9bN_Iv9nGu4qgE7NnehINTDIwQ4NV3X-gW6xe660JLvvJnLzXZluiVz7X7dnBS-gREYP-c5m7XAHtWD61VD",
+            '3d': {
+                model: 'm9-bayonet',
+                textures: ['Lore']
+            }
         }, {
             id: 591,
             type: "★ M9 Bayonet",
@@ -4906,7 +4910,11 @@ var Items = {
             type: "★ Karambit",
             skinName: "Lore",
             rarity: "rare",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJl5W0nPbmMrbummRD7fp9g-7J4bP5iUazrl1rY2DzddPEdwFsYgnSqwPqyey6hZ_qvM6dm3pnunFx4n2LmxTj1x9PcKUx0uHhTF2B"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJf2PLacDBA5ciJl5W0nPbmMrbummRD7fp9g-7J4bP5iUazrl1rY2DzddPEdwFsYgnSqwPqyey6hZ_qvM6dm3pnunFx4n2LmxTj1x9PcKUx0uHhTF2B",
+            '3d': {
+                model: 'karam',
+                textures: ["Lore"]
+            }
         }, {
             id: 612,
             type: "★ Karambit",
@@ -5480,6 +5488,10 @@ var Items = {
             img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FAR17P7NdTRH-t26q4SZlvD7PYTQgXtu5cB1g_zMu9zw3g2yrkVtZ2r6IoSVdAU-ZVrY_lS6lb_ogsDqu57NmCQ27iJx53nD30vgUTXWscs",
             can: {
                 buy: false
+            },
+            '3d': {
+                model: "awp",
+                textures: ['Dragon Lore', '']
             }
         }, {
             id: 696,
@@ -7105,6 +7117,10 @@ var Items = {
                 "souvenir": false,
                 "inCase": true,
                 "specialCase": true
+            },
+            "3d": {
+                model: 'bayonet',
+                textures: ["Lore"]
             }
         }, {
             "id": 866,
@@ -7896,6 +7912,10 @@ var Items = {
                 "souvenir": false,
                 "inCase": true,
                 "specialCase": true
+            },
+            '3d': {
+                model: 'gut',
+                textures: ["Lore"]
             }
         }, {
             "id": 910,
