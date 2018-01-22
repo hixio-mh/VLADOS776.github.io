@@ -495,6 +495,12 @@ $(function () {
             var inventoryID = parseInt($(this).data('id'));
             ids.push(inventoryID);
         })
+
+        // Remove duplicates
+        ids = ids.filter(function(item, pos) {
+            return ids.indexOf(item) == pos
+        })
+
         getItems(ids).then(function (tradeWeapons) {
             var accepted = $('#trade-its-gift').is(':checked');
             var convertedWeapons = tradeWeapons.map(function (item) {
