@@ -194,7 +194,8 @@ var CoinFlip = {
     },
     startGame: function() {
         $('#coin').removeClass();
-        var win = getRandomItem(['CT', 'T'], [CoinFlip.Games[CoinFlip.PlayerInGame].bot.items_cost, CoinFlip.PlayerBet.items_cost]);
+        // First CT chance, second T chance
+        var win = getRandomItem(CoinFlip.Games[CoinFlip.PlayerInGame].bot.chance, CoinFlip.Games[CoinFlip.PlayerInGame].player.chance);
         animation = win;
 
         $('.game__start').css('display', 'none');
@@ -218,36 +219,41 @@ var CoinFlip = {
         bot.weapons = [];
         bot.items_cost = 0.0;
         var weaponCount = Math.rand(3, CoinFlip.maxWeapons);
-        for (var q = 0; q < weaponCount; q++) {
-            var weapon = null;
 
-            while (typeof weapon == 'undefined' || weapon == null) {
-                var rnd = Math.rand(0, Object.keys(Prices).length - 1);
-                weapon = Prices[rnd];
-            }
+        while (bot.weapons.length < weaponCount) {
+            var rndItemID = Math.rand(0, Object.keys(Prices).length - 1);
+            var rndPrices = Prices[rndItemID].prices;
+            var wpFound = false;
 
-            var price = 0;
-            for (var i = 4; i > 0; i--) {
-                if (price != 0 && (price > CoinFlip.priceRange[difficulty].min && price < CoinFlip.priceRange[difficulty].max)) {
-                    weapon.quality = i;
-                    break;
-                }
+            Object.keys(rndPrices).some(function(priceType) {
+                Object.keys(rndPrices[priceType]).some(function(quality) {
+                    if (wpFound) return true;
+                    var qualityPrice = rndPrices[priceType][quality];
+                    var price = null;
 
-                if (weapon.prices.default[i])
-                    price = weapon.prices.default[i].market != -1 ? weapon.prices.default[i].market : weapon.prices.default[i].analyst != -1 ? weapon.prices.default[i].analyst : weapon.prices.default[i].opskins;
-            }
+                    if (typeof qualityPrice === 'object') {
+                        price = qualityPrice.market > 0 ? qualityPrice.market :
+                                qualityPrice.analyst > 0 ? qualityPrice.analyst :
+                                qualityPrice.opskins > 0 ? qualityPrice.opskins :
+                                0;
+                    } else {
+                        price = qualityPrice;
+                    }
 
-            if (price > CoinFlip.priceRange[difficulty].min && price < CoinFlip.priceRange[difficulty].max) {
-                weapon = new Item(weapon);
-                if (weapon.can.bot) {
-                    bot.weapons.push(weapon);
-                    bot.items_cost += price;
-                } else {
-                    weaponCount++;
-                }
-            } else {
-                weaponCount++;
-            }
+                    if (price >= CoinFlip.priceRange[difficulty].min && price <= CoinFlip.priceRange[difficulty].max) {
+                        var wp = new Weapon({
+                            item_id: rndItemID,
+                            quality: parseInt(quality),
+                            stattrak: priceType === 'stattrak',
+                            souvenir: priceType === 'souvenir'
+                        });
+                        bot.weapons.push(wp);
+                        bot.items_cost += wp.price;
+                        wpFound = true;
+                    }
+                })
+                if (wpFound) return true;
+            })
         }
         var color = '';
         if (bot.items_cost < 100) color = 'consumer-color';
@@ -256,11 +262,11 @@ var CoinFlip = {
         if (bot.items_cost > 1000 && bot.items_cost < 3000) color = 'classified-color';
         if (bot.items_cost > 3000 && bot.items_cost < 8000) color = 'covert-color';
         if (bot.items_cost > 8000) color = 'rare-color';
-        var Temp = {};
-        Temp.color = color;
-        Temp.bot = bot;
-        Temp.player = {};
-        return Temp;
+        return {
+            color: color,
+            bot: bot,
+            player: {}
+        };
     },
     coinStoped: function() {
         if (!isAndroid()) Sound("coinflip", "pause");
@@ -320,20 +326,15 @@ var CoinFlip = {
 
 var maxItems = CoinFlip.maxPlayerWeapons;
 
-var getRandomItem = function(list, weight) {
-    var total_weight = 0;
-    for (var i = 0; i < weight.length; i++)
-        total_weight += weight[i] * 100;
+var getRandomItem = function(CT, T) {
+    var total_weight = CT + T;
 
     var random_num = Math.rand(0, total_weight);
     var weight_sum = 0;
 
-    for (var i = 0; i < list.length; i++) {
-        weight_sum += weight[i] * 100;
-        weight_sum = +weight_sum.toFixed(2);
-
-        if (random_num <= weight_sum) {
-            return list[i];
-        }
+    if (weight_sum < T) {
+        return 'T';
+    } else {
+        return 'CT';
     }
 };
