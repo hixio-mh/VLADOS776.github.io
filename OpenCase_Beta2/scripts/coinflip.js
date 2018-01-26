@@ -330,9 +330,8 @@ var getRandomItem = function(CT, T) {
     var total_weight = CT + T;
 
     var random_num = Math.rand(0, total_weight);
-    var weight_sum = 0;
 
-    if (weight_sum < T) {
+    if (random_num < T) {
         return 'T';
     } else {
         return 'CT';
