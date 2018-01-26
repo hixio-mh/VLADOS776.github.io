@@ -823,4 +823,12 @@ var news = [{
         "RU": " - [Новое] Добавлены 3D модели для AWP | Dragon Lore, Karambit | Lore, Bayonet | Lore, M9 Bayonet | Lore, Gut Knife | Lore",
         "EN": " - [New] Added 3D model view for AWP | Dragon Lore, Karambit | Lore, Bayonet | Lore, M9 Bayonet | Lore, Gut Knife | Lore"
     }
+}, {
+    "day": 26,
+    "month": 1,
+    "year": 2018,
+    "update": {
+        "RU": " - [Исправлено] Исправлены шансы на победу в Монетке<br> - [Исправлено] Исправлены скины с 0 стоимостью в Монетке",
+        "EN": " - [Fixed] Win chances in the CoinFlip<br> - [Fixed] $0 skins in the CoinFlip"
+    }
 }, ];
