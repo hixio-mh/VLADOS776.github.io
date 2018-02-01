@@ -195,7 +195,9 @@
                     <div id="caruselLine"></div>
                 </div>
                 <div id="aCanvas">
-                    <div class="casesCarusel" id="casesCarusel"></div>
+                    <div class="carusel_wrap" id="carusel_wrap">
+                        <div class="casesCarusel" id="casesCarusel"></div>
+                    </div>
                 </div>
             </div>
             <div class="win" style="display: none;"> <span id='win_youWon' data-loc="you_won">You won</span> <span class="win_name"></span> <span class="win_quality"></span> <span class="win_price currency dollar"></span> <img src="" class="win_img">
@@ -204,6 +206,13 @@
                     <button class="btn btn-primary" id="double_sell_button"></button>
                 </div>
             </div>
+            <select id='linesCount' class='form-control' style='display: inline-block; width: 55px;'>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+            </select>
             <button class="openCase btn btn-success" data-loc="open_case">Open Case</button>
             <button class="btn btn-primary" data-loc='boost_to_popular' data-toggle='modal' data-target='#modal-boost' style='display: none;' id='boost'>Boost to popular</button>
             <div><span id="opened-text" data-loc="opened">Opened:</span> <span id="opened">0</span></div>

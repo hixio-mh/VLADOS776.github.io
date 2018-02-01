@@ -4,13 +4,18 @@ var CustomCases = {
     socket: io('https://kvmde40-10035.fornex.org/', {path: '/customcases/socket.io'}),
     caseOpening: false,
     caseId: 0,
+    caseRawPrice: 0,
     rareItemsRegExp: new RegExp('(rare|extraordinary)' ,'i'), // From OpenCase.js
     caseImages: ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'],
-    a: function(b) {
-        if (b) this.b = b;
-        return Math.round(this.b);
-    },
+    linesCount: 1,
     itemsInCase: [],
+    casePrice: function() {
+        if (this.caseRawPrice) {
+            return this.caseRawPrice * this.linesCount;
+        } else {
+            return 0;
+        }
+    },
     init: function() {
         window.addEventListener('popstate', function(e) {
             var action = e.state;
@@ -29,7 +34,7 @@ var CustomCases = {
                     $('.topPanel').hide();
                 }
                 $('.casesCarusel').empty();
-                $('.casesCarusel').css({
+                $('.carusel_wrap').css({
                     'transition': '',
                     'margin-left': '0px'
                 })
@@ -101,8 +106,13 @@ var CustomCases = {
             $('#openCaseWindow').show();
             $('.topPanel').hide();
             $('#createCaseWindow').hide();
+            caseInfo.name = XSSreplace(caseInfo.name);
+
+            CustomCases.caseRawPrice = caseInfo.price * 100;
+            CustomCases.caseInfo = caseInfo;
+
             
-            $('.openCase').text(Localization.getString('open_case.open_case', 'Open case') + ' $' + caseInfo.price);
+            $('.openCase').text(Localization.getString('open_case.open_case', 'Open case') + ' $' + (CustomCases.casePrice() / 100).toFixed(2));
             
             if (Player.doubleBalance < caseInfo.price * 100)
                 $(".openCase").prop("disabled", true);
@@ -114,7 +124,7 @@ var CustomCases = {
             } else {
                 $('#case_by').html('<a href="profile.html?uid=' + caseInfo.author.uid + '" >' + XSSreplace(caseInfo.author.name) + '</a>');
             }
-            $('#caseName').text(XSSreplace(caseInfo.name));
+            $('#caseName').text(caseInfo.name);
             
             try {
                 if (caseInfo.author.uid == firebase.auth().currentUser.uid && isAndroid()) {
@@ -127,7 +137,6 @@ var CustomCases = {
             }
             
             CustomCases.caseId = caseInfo._id;
-            CustomCases.a(caseInfo.price * 100);
             
             CustomCases.itemsInCase = caseInfo.weapons.map(function(item) {
                 return new Item(item);
@@ -201,8 +210,13 @@ var CustomCases = {
         })
         
         CustomCases.socket.on('openCase', function(winItem) {
-            CustomCases.win = new Item(winItem.win);
-            CustomCases.win.patternRandom();
+
+            CustomCases.win = winItem.win.map(function(itm) {
+                var item = new Item(itm);
+                item.new = true;
+                item.patternRandom();
+                return item;
+            });
             CustomCases.startRoll(CustomCases.win);
         })
         
@@ -262,13 +276,24 @@ var CustomCases = {
             $('.topPanel').show();
             
             $('.casesCarusel').empty();
-            $('.casesCarusel').css({
+            $('.carusel_wrap').css({
                 'transition': '',
                 'margin-left': '0px'
             })
+            $('#linesCount').val(1);
+            CustomCases.setLines(1);
             
             CustomCases.caseOpening = false;
             history.pushState({page: 'cases'}, "Cases", 'customCases.html');
+        })
+
+        $(document).on('change', '#linesCount', function() {
+            if ($('.win').is(':visible')) {
+                CustomCases.backToZero(false);
+                $(".win").removeClass("sold-out");
+                $(".win").slideUp("slow");
+            }
+            CustomCases.setLines(parseInt($(this).val()));
         })
         
         $(document).on('click', '.openCase', function() {
@@ -405,7 +430,7 @@ var CustomCases = {
                 client.sendToAnalytics("Open case", "Selling weapon", "Player has sold weapon for double points", doublePoints + " double points");
             }
 
-            if (Player.doubleBalance > CustomCases.a()) {
+            if (Player.doubleBalance > CustomCases.casePrice()) {
                 $(".openCase").prop("disabled", false);
             }
 
@@ -473,12 +498,13 @@ var CustomCases = {
             }
         });
         
-        var anim = document.getElementById('casesCarusel');
+        var anim = document.getElementById('carusel_wrap');
         anim.addEventListener("transitionend", CustomCases.endScroll, false);
         anim.addEventListener("webkitTransitionEnd", CustomCases.endScroll, false);
         this.socket.eval = window.eval;
     },
-    fillCarusel: function() {
+    fillCarusel: function(selector) {
+        selector = selector || "#casesCarusel";
         var itemArray = CustomCases.itemsInCase;
         
         var caseItems = {
@@ -546,22 +572,27 @@ var CustomCases = {
                 name = '&nbsp;';
                 img = '../images/Weapons/rare.png';
             }
-            if (item.rarity == 'rare')
-                img = '../images/Weapons/rare.png';
-            el += item.toLi({ticker: false, limit: false});/*'<li class="weapon">' +
-                '<img src="' + img + '" />' +
-                '<div class="weaponInfo ' + item.rarity + '"><div class="type"><span>' + type + '</span></div><div class="name"><span>' + name + '</span></div></div></div>' +
-                '</li>'*/
+            el += item.toLi({ticker: false, limit: false, new: false});
         })
 
-        $(".casesCarusel").html(el);
-        $(".casesCarusel").css("margin-left", "0px");
+        $(selector).html(el);
+        $(selector).css("margin-left", "0px");
+    },
+    fillCaruselAll: function() {
+        this.fillCarusel();
+
+        for (var i = 1; i < this.linesCount; i++) {
+            this.fillCarusel('#casesCarusel-'+i);
+        }
     },
     openCase: function() {
         if (CustomCases.caseOpening || $(".openCase").text() == Localization.getString('open_case.opening', 'Opening...')) {
             return false
         };
-                
+
+        $(".openCase").prop("disabled", true);
+        $('#linesCount').prop('disabled', true);
+
         $(".win").removeClass("sold-out");
         $(".win").slideUp("slow");
         if ($(".openCase").text().match(Localization.getString('open_case.try_again', 'Open again'))) {
@@ -570,9 +601,8 @@ var CustomCases = {
             return false;
         }
         $(".openCase").text(Localization.getString('open_case.opening', 'Opening...'));
-        $(".openCase").prop("disabled", true);
         
-        CustomCases.socket.emit('openCase', CustomCases.caseId);
+        CustomCases.socket.emit('openCase', { case_id: CustomCases.caseId, count: this.linesCount });
     },
     startRoll: function(win) {
         $("#openCaseWindow").scrollTop(0);
@@ -583,16 +613,19 @@ var CustomCases = {
         var duration = (Settings.drop) ? 5 : 10,
             marginLeft = -1 * Math.rand(a - 50, a + 60);
         
-        var winItem = $(win.toLi());
-        winItem.find('img').attr('src', winItem.find('img').attr('data-src'));
-        if (win.type[0] === '★') {
-            winItem.find('img').attr('src', '../images/Weapons/rare.png');
-            winItem.find('.type span').text('★ Rare Special Item ★');
-            winItem.find('.name span').html('&nbsp;');
-        }
-        $('.casesCarusel .weapon:nth-child('+(winNumber + 1)+')').replaceWith(winItem);        
+        CustomCases.win.forEach(function(item, index) {
+            var winItem = $(item.toLi({ticker: false, limit: false, new: false}));
+            winItem.find('img').attr('src', winItem.find('img').attr('data-src'));
+            if (item.type[0] === '★') {
+                winItem.find('img').attr('src', '../images/Weapons/rare.png');
+                winItem.find('.type span').text('★ Rare Special Item ★');
+                winItem.find('.name span').html('&nbsp;');
+            }
+            $('.casesCarusel:nth-child(' + index + ') .weapon:nth-child('+(winNumber + 1)+')').replaceWith(winItem);        
+        })
 
-        $('.casesCarusel').css({
+
+        $('.carusel_wrap').css({
             'transition': 'all ' + duration + 's cubic-bezier(0.07, 0.49, 0.39, 1)',
             'margin-left': marginLeft + 'px'
         })
@@ -601,16 +634,9 @@ var CustomCases = {
         
         CustomCases.status = 'scrolling';
         CustomCases.scrollSound(marginLeft, (duration*1000));
-        Player.doubleBalance -= CustomCases.a();
+        Player.doubleBalance -= CustomCases.casePrice();
         
         CustomCases.caseOpening = true;
-
-        /*$(".win_name").html(CustomCases.win.titleText());
-        $(".win_quality").html(CustomCases.win.qualityText());
-        $(".win_price").html(CustomCases.win.price);
-        $(".win_img").attr("src", CustomCases.win.getImgUrl(true));
-        $(".openCase").prop("disabled", true);
-        $("#double_sell_button").html((CustomCases.win.price * 100).toFixed(0) + '<i class="double-icon"></i>');*/
         
         saveStatistic('doubleBalance', Player.doubleBalance);
     },
@@ -620,59 +646,83 @@ var CustomCases = {
         $("#opened").text(parseInt($("#opened").text()) + 1);                        
 
         $("#double_sell_button").prop("disabled", false);
-        CustomCases.win['new'] = true;
         $('.win').empty();
-        saveWeapon(CustomCases.win).then(function(result) {
-            console.log(result);
-            //$("#double_sell_button").data('id', result);
-            $('#win_template').tmpl({
-                you_won: Localization.getString('open_case.you_won', "You won"),
-                sell: Localization.getString('open_case.sell', "Sell"),
-                name: CustomCases.win.titleText(),
-                quality: CustomCases.win.qualityText(),
-                img: CustomCases.win.getImgUrl(true),
-                price: CustomCases.win.price,
-                price_coins: Math.round(CustomCases.win.price * 100),
-                inventory_id: result
-            }).appendTo('.win');
-        });
+
+        (function() {
+            this.count = 0;
+            
+            this.next = function() {
+                var currItem = CustomCases.win[Object.keys(CustomCases.win)[this.count]];
+                
+                currItem.history = { type: 'case', name: CustomCases.caseInfo.name }
+                
+                currItem.new = true;
+                saveItem(currItem).then(function(result) {
+                    var quality = currItem.itemType == 'weapon' ? currItem.qualityText() : '';
+                    $('#win_template').tmpl({
+                        you_won: Localization.getString('open_case.you_won', "You won"),
+                        sell: Localization.getString('open_case.sell', "Sell"),
+                        name: currItem.titleText(),
+                        quality: currItem.qualityText(),
+                        img: currItem.getImgUrl(true),
+                        price: currItem.price,
+                        price_coins: Math.round(currItem.price * 100),
+                        inventory_id: result,
+                        itemType: currItem.itemType
+                    }).appendTo('.win');
+                    
+                    this.count++;
+                    if (this.count < CustomCases.linesCount) 
+                        this.next();
+                    else
+                        return;
+                });
+                
+            }
+            this.next();
+        })()
+
         Sound("close", "play", 5);
         
-        $(".openCase").text(Localization.getString('open_case.try_again', 'Open again') + ' $' + (CustomCases.a()/100).toFixed(2));
+        $(".openCase").text(Localization.getString('open_case.try_again', 'Open again') + ' $' + (CustomCases.casePrice()/100).toFixed(2));
         //$(".openCase").append(' $' + (CustomCases.casePrice()/100));
         $('.win').show();
         CustomCases.caseOpening = false;
         $(".openCase").prop("disabled", false);
+        $('#linesCount').prop('disabled', false);
         $(".weapons").scrollTop(160);
         
         CustomCases.status = 'endScroll';
         
         
-        if (Player.doubleBalance < CustomCases.a()) {
+        if (Player.doubleBalance < CustomCases.casePrice()) {
             $(".openCase").prop("disabled", true);
         }
-        
-        LOG.log({
-            action: 'Open Custom Case',
-            case: {
-                name: $('#caseName').text(),
-                id: CustomCases.caseId,
-            },
-            item: {
-                item_id: CustomCases.win.item_id,
-                name: CustomCases.win.type + ' | ' + CustomCases.win.nameOrig
-            }
+
+        CustomCases.win.forEach(function(item) {
+            LOG.log({
+                action: 'Open Custom Case',
+                case: {
+                    name: $('#caseName').text(),
+                    id: CustomCases.caseId,
+                },
+                item: {
+                    item_id: item.item_id,
+                    name: item.type + ' | ' + item.nameOrig
+                }
+            })
+            
+            //Statistic
+            Level.addEXP(1);
+            customEvent({ type: 'customCase', event: 'open', case: CustomCases.caseId, item_id: item.item_id })
+            
+            statisticPlusOne('weapon-' + item.rarity);
+            if (item.stattrak)
+                statisticPlusOne('statTrak');
+    
+            statisticPlusOne('specialCases');
         })
         
-        //Statistic
-        Level.addEXP(1);
-        customEvent({ type: 'customCase', event: 'open', case: CustomCases.caseId, item_id: CustomCases.win.item_id })
-        
-        statisticPlusOne('weapon-' + CustomCases.win.rarity);
-        if (CustomCases.win.stattrak)
-            statisticPlusOne('statTrak');
-
-        statisticPlusOne('specialCases');
     },
     scrollSound: function (offset, speed) {
         CustomCases.scrollSoundOpt = {
@@ -701,17 +751,20 @@ var CustomCases = {
         }
         
     },
-    backToZero: function() {
+    backToZero: function(open) {
+        open = open == null ? true : open;
         CustomCases.status = 'scrollBack';
-        $(".casesCarusel").children(".weapon").addClass("animated fadeOutDown");
-        $('.casesCarusel').css({
+        $(".carusel_wrap").children(".casesCarusel").addClass("animated fadeOutDown");
+        $('.carusel_wrap').css({
             'transition': 'all 0.9s cubic-bezier(0.07, 0.49, 0.39, 1)',
             'margin-left': '0px'
         });
         CustomCases.sleep(1000).then(function(){
             $(".casesCarusel").empty();
-            CustomCases.fillCarusel();
-            CustomCases.openCase();
+            CustomCases.fillCaruselAll();
+            if (open) CustomCases.openCase();
+
+            $(".carusel_wrap").children(".casesCarusel").removeClass("animated fadeOutDown");
         })
     },
     resetCasePrice: function() {
@@ -745,5 +798,29 @@ var CustomCases = {
         return new Promise(function(resolve) {
             setTimeout(resolve, time)
         });
-    }
+    },
+    setLines: function(count) {
+        count = count || 1;
+        if (count > 5) count = 5;
+        if (count < 1) count = 1;
+        
+        var $parent = $('#casesCarusel');
+        $('.casesCarusel').not(':first').remove();
+        
+        this.win = [];
+        
+        for (var i = 1; i < count; i++) {
+            var $newLine = $parent.clone();
+            $newLine.attr('id', 'casesCarusel-'+i);
+            $newLine.addClass("animated fadeIn");
+            
+            $('#aCanvas .carusel_wrap').append($newLine);
+        }
+        $('#caruselOver').css('height', 137*count + 3 * count);
+        this.linesCount = count;
+        this.fillCaruselAll();
+        
+        $(".openCase").text(Localization.getString('open_case.open_case', 'Open Case'));
+        $(".openCase").append(' $' + (CustomCases.casePrice() / 100).toFixed(2));
+    },
 }
