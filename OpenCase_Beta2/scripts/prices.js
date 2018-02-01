@@ -35409,6 +35409,7 @@ var Prices = {
         }
     },
     "677": {
+        "item_id": 677,
         "prices": {
             "default": {
                 "0": {
