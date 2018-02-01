@@ -831,4 +831,12 @@ var news = [{
         "RU": " - [Исправлено] Исправлены шансы на победу в Монетке<br> - [Исправлено] Исправлены скины с 0 стоимостью в Монетке",
         "EN": " - [Fixed] Win chances in the CoinFlip<br> - [Fixed] $0 skins in the CoinFlip"
     }
+}, {
+    "day": 1,
+    "month": 2,
+    "year": 2018,
+    "update": {
+        "RU": " - [Новое] Добавлено множественное открытие Кейсов игроков.",
+        "EN": " - [New] Custom cases multiply opening."
+    }
 }, ];
