@@ -621,7 +621,7 @@ var CustomCases = {
                 winItem.find('.type span').text('★ Rare Special Item ★');
                 winItem.find('.name span').html('&nbsp;');
             }
-            $('.casesCarusel:nth-child(' + index + ') .weapon:nth-child('+(winNumber + 1)+')').replaceWith(winItem);        
+            $('.casesCarusel:nth-child(' + (index + 1) + ') .weapon:nth-child('+(winNumber + 1)+')').replaceWith(winItem);        
         })
 
 
@@ -643,7 +643,7 @@ var CustomCases = {
     endScroll: function() {
         if (CustomCases.status == 'scrollBack')
             return false;
-        $("#opened").text(parseInt($("#opened").text()) + 1);                        
+        $("#opened").text(parseInt($("#opened").text()) + CustomCases.linesCount);                        
 
         $("#double_sell_button").prop("disabled", false);
         $('.win').empty();
