@@ -6828,95 +6828,48 @@ var Items = {
             "skinName": "Froststorm",
             "rarity": "covert",
             "img": "Other/M4A4-S-Froststorm.png",
-            "can": {
-                "buy": false,
-                "souvenir": false,
-                "specialCase": false,
-            }
         }, {
             "id": 837,
             "type": "P250",
             "skinName": "Zipper",
             "rarity": "milspec",
             "img": "Workshop3/P250-Zipper.png",
-            "can": {
-                "buy": false,
-                "souvenir": false,
-                "specialCase": false,
-                "bot": false
-            }
         }, {
             "id": 838,
             "type": "Sawed-Off",
             "skinName": "Purple Maniac",
             "rarity": "restricted",
             "img": "Workshop3/Sawed-Off-Purple-Maniac.png",
-            "can": {
-                "buy": false,
-                "souvenir": false,
-                "specialCase": false,
-                "bot": false
-            }
         }, {
             "id": 839,
             "type": "M4A4",
             "skinName": "Demon Attack",
             "rarity": "restricted",
             "img": "Workshop3/M4A4-Demon-Attack.png",
-            "can": {
-                "buy": false,
-                "souvenir": false,
-                "specialCase": false,
-                "bot": false
-            }
         }, {
             "id": 840,
             "type": "Five-SeveN",
             "skinName": "Bad Queen",
             "rarity": "milspec",
             "img": "Workshop3/Five-seven-Bad-Queen.png",
-            "can": {
-                "buy": false,
-                "souvenir": false,
-                "specialCase": false,
-                "bot": false
-            }
         }, {
             "id": 841,
             "type": "Desert-Eagle",
             "skinName": "Trigger Happy",
             "rarity": "classified",
             "img": "Workshop3/Desert-Eagle-Trigger-Happy.png",
-            "can": {
-                "buy": false,
-                "souvenir": false,
-                "specialCase": false,
-                "bot": false
-            }
         }, {
             "id": 842,
             "type": "AWP",
             "skinName": "White Boom",
             "rarity": "covert",
             "img": "Workshop3/AWP-White-Boom.png",
-            "can": {
-                "buy": false,
-                "souvenir": false,
-                "specialCase": false,
-                "bot": false
-            }
         }, {
             "id": 843,
             "type": "★ Huntsman Knife",
             "skinName": "PurpNYellow",
             "rarity": "rare",
             "img": "Workshop3/Huntsman-PurpNYellow.png",
-            "can": {
-                "buy": false,
-                "souvenir": false,
-                "specialCase": false,
-                "bot": false
-            },
             chances: {
                 default: {
                     4: 20
@@ -6931,12 +6884,6 @@ var Items = {
             "skinName": "Soul",
             "rarity": "rare",
             "img": "Workshop3/Karambit-Soul.png",
-            "can": {
-                "buy": false,
-                "souvenir": false,
-                "specialCase": false,
-                "bot": false
-            },
             chances: {
                 default: {
                     4: 20
