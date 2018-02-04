@@ -243,6 +243,12 @@ li.award {
 .award_10k {
     background-image: url(../images/awards/10k.png);
 }
+.award_15k {
+    background-image: url(../images/awards/15k.png);
+}
+.award_20k {
+    background-image: url(../images/awards/20k.png);
+}
 
 .user_cases > .well {
     text-align: center;
