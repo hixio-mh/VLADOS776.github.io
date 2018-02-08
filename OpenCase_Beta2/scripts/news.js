@@ -839,4 +839,12 @@ var news = [{
         "RU": " - [Новое] Добавлено множественное открытие Кейсов игроков.",
         "EN": " - [New] Custom cases multiply opening."
     }
+}, {
+    "day": 8,
+    "month": 2,
+    "year": 2018,
+    "update": {
+        "RU": " - [Новое] Добавлены перчатки \"Bloodhound\" в кейс Glove",
+        "EN": " - [New] Added \"Bloodhound Gloves\" into \"Glove\" case."
+    }
 }, ];

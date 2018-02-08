@@ -8662,6 +8662,34 @@ var Items = {
                 model: 'm9-bayonet',
                 textures: ["Medusa"]
             }
+        }, {
+            id: 969,
+            type: "★ Bloodhound Gloves",
+            skinName: "Bronzed",
+            rarity: "extraordinary",
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DAR0hwIQFTibipJAhk2_zdfzl969C5goWYqPX4PLTVnmRE5sFOh-zV9ID5gVeLpxo7Oy3tIdeVe1A9ZV-E8wPrwrrsgJO-7snKnSZl63JwtHfcmUCy005NPOZrjOveFwtFxVxX6g",
+            can: { buy: false },
+        }, {
+            id: 970,
+            type: "★ Bloodhound Gloves",
+            skinName: "Charred",
+            rarity: "extraordinary",
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DAR0hwIQFTibipJAhk2_zdfzl969C5goWYqPX4PLTVnmRE5sFOiOXA9ofKm124vRYuDDWqc97RbAU4MFmG-QO_yb3tgZa4tJqYnHQy6HEl5nrZnRywhBwfaeVp1KbPTlyAR_seqlMyB4c",
+            can: { buy: false },
+        }, {
+            id: 971,
+            type: "★ Bloodhound Gloves",
+            skinName: "Snakebite",
+            rarity: "extraordinary",
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DAR0hwIQFTibipJAhk2_zdfzl969C5goWYqPX4PLTVnmRE5sFOmefA_onmg126lBEuMiqwS9rMJV56f1-F_la2lbi808O075XAmiRn7CQk4H6IyhCzhkoeb7dv0KGeH1ybUaxXXP7VcR0sUUo",
+            can: { buy: false },
+        }, {
+            id: 972,
+            type: "★ Bloodhound Gloves",
+            skinName: "Guerrilla",
+            rarity: "extraordinary",
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DAR0hwIQFTibipJAhk2_zdfzl969C5goWYqPX4PLTVnmRE5sFOjfzE5578hFi1lB81NDG3OoXEJFNvNAuE_1XvwubvhJXvvsifnXA17CMi7XmMzkGx0x1OP7Y61_GACQLJ73mnFtE",
+            can: { buy: false },
         }
     ],
 
