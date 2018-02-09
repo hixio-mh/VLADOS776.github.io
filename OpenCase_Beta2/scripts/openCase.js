@@ -441,8 +441,8 @@ var openCase = {
                         name: currItem.titleText(),
                         quality: quality,
                         img: currItem.getImgUrl(true),
-                        price: currItem.price,
-                        price_coins: Math.round(currItem.price * 100),
+                        price: currItem.getPrice(),
+                        price_coins: Math.round(currItem.getPrice() * 100),
                         inventory_id: result,
                         itemType: currItem.itemType
                     }).appendTo('.win');
@@ -505,7 +505,7 @@ var openCase = {
             var obj = itm.saveObject();
             delete obj.new;
             obj.name = itm.titleText();
-            obj.price = itm.price;
+            obj.price = itm.getPrice();
             return obj;
         })
         
