@@ -1567,7 +1567,7 @@ var Items = {
             type: "P250",
             skinName: "Whiteout",
             rarity: "milspec",
-            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhz3MzfeTRW6dOjgL-DkvbiKvWElTII6ZIhj--Sp433jgXj-UduMGr2JIbBJ1dsaQ6DrwC8xL_n0Jbuot2XnjwhZrR8"
+            img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopujwezhz3MzfeTRW6dOjgL-HnvD8J_XXkG8H7ZMg3uuXpoimiVLm_xJsZzj6coGScwZsZF3S-1Hvxrrvh5-6ot2Xnkz6GCrE"
         }, {
             id: 80,
             type: "CZ75-Auto",
