@@ -847,4 +847,12 @@ var news = [{
         "RU": " - [Новое] Добавлены перчатки \"Bloodhound\" в кейс Glove",
         "EN": " - [New] Added \"Bloodhound Gloves\" into \"Glove\" case."
     }
+}, {
+    "day": 16,
+    "month": 2,
+    "year": 2018,
+    "update": {
+        "RU": " - [Новое] Добавлен Clutch Case.",
+        "EN": " - [New] Added Clutch Case."
+    }
 }, ];
