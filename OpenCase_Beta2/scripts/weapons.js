@@ -8690,6 +8690,332 @@ var Items = {
             rarity: "extraordinary",
             img: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DAR0hwIQFTibipJAhk2_zdfzl969C5goWYqPX4PLTVnmRE5sFOjfzE5578hFi1lB81NDG3OoXEJFNvNAuE_1XvwubvhJXvvsifnXA17CMi7XmMzkGx0x1OP7Y61_GACQLJ73mnFtE",
             can: { buy: false },
+        },
+        {
+            "id": 973,
+            "type": "SG 553",
+            "skinName": "Aloha",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_sp_sg533_aloha_light_large.03aa863680ab2223924ae9cbe8b7662a84fb162c.png",
+            "rarity": "milspec",
+            "can": {
+                "buy": false
+            }
+        },
+        {
+            "id": 974,
+            "type": "MP9",
+            "skinName": "Black Sand",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_cu_mp9_black_sand_light_large.37dce08f403ec73c1e16b3dc46068b22293e9514.png",
+            "rarity": "milspec",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'mp9',
+                textures: ["Black Sand"]
+            }
+        },
+        {
+            "id": 975,
+            "type": "XM1014",
+            "skinName": "Oxide Blaze",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_cu_xm1014_oxide_blaze_light_large.691be80b706e1ea4faf9b5c9bec40b3611b1d440.png",
+            "rarity": "milspec",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'xm1014',
+                textures: ["Oxide Blaze"]
+            }
+        },
+        {
+            "id": 976,
+            "type": "P2000",
+            "skinName": "Urban Hazard",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_hkp2000_cu_p2000_urban_hazard_light_large.17657c4e9c3379f634c78e4d02ca9e9facbe9edb.png",
+            "rarity": "milspec",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'p2000',
+                textures: ["Urban Hazard"]
+            }
+        },
+        {
+            "id": 977,
+            "type": "R8 Revolver",
+            "skinName": "Grip",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_revolver_gs_revolver_tread_light_large.7c3bd1302f62853e5694aec2d70cf1c7140b3fc0.png",
+            "rarity": "milspec",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'revolver',
+                textures: ["Grip"]
+            }
+        },
+        {
+            "id": 978,
+            "type": "Five-SeveN",
+            "skinName": "Flame Test",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_gs_fiveseven_hot_rod_violet_light_large.66cb3d6336f4ea07a7f4ebbd3192c59f0afca3fc.png",
+            "rarity": "milspec",
+            "can": {
+                "buy": false
+            }
+        },
+        {
+            "id": 979,
+            "type": "PP-Bizon",
+            "skinName": "Night Riot",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bizon_cu_bizon_riot_light_large.2f0848b27a917287062306f49870cf9ec06bbbbe.png",
+            "rarity": "milspec",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'bizon',
+                textures: ["Night Riot"]
+            }
+        },
+        {
+            "id": 980,
+            "type": "Nova",
+            "skinName": "Wild Six",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_nova_gs_nova_anchorite_light_large.419b869b5316b67a6ed673edafd088a9d16c066c.png",
+            "rarity": "restricted",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'nova',
+                textures: ["Wild Six"]
+            }
+        },
+        {
+            "id": 981,
+            "type": "Negev",
+            "skinName": "Lionfish",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_sp_negev_lionfish_light_large.f8326a67617c5138ab8b6f6afc81375fbd091033.png",
+            "rarity": "restricted",
+            "can": {
+                "buy": false
+            }
+        },
+        {
+            "id": 982,
+            "type": "MAG-7",
+            "skinName": "SWAG-7",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_aq_mag7_swag7_light_large.20341e396db88a5ecde84f8b803a500f4aec3b55.png",
+            "rarity": "restricted",
+            "can": {
+                "buy": false
+            }
+        },
+        {
+            "id": 983,
+            "type": "UMP-45",
+            "skinName": "Arctic Wolf",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_cu_ump45_white_fang_light_large.f63a10d5ee18e3045adfdcf963b9067b3b0a6b48.png",
+            "rarity": "restricted",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'ump-45',
+                textures: ["Arctic Wolf"]
+            }
+        },
+        {
+            "id": 984,
+            "type": "Glock-18",
+            "skinName": "Moonrise",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_aa_glock_18_urban_moon_fever_light_large.a0227f81e44dba68abbe595d427d62f9f90da99d.png",
+            "rarity": "restricted",
+            "can": {
+                "buy": false
+            }
+        },
+        {
+            "id": 985,
+            "type": "USP-S",
+            "skinName": "Cortex",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_usp_silencer_cu_usp_cut_light_large.573fc8c594667e378f3ed9890ce48bbb586e8de0.png",
+            "rarity": "classified",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'usp-s',
+                textures: ["Cortex", "Cortex"]
+            }
+        },
+        {
+            "id": 986,
+            "type": "AUG",
+            "skinName": "Stymphalian",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_gs_aug_stymphalian_birds_light_large.0840c45db138a07275c2250a0881fe752f27c601.png",
+            "rarity": "classified",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'aug',
+                textures: ["Stymphalian", "", "Aristocrat Scope"]
+            }
+        },
+        {
+            "id": 987,
+            "type": "AWP",
+            "skinName": "Mortis",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_awp_gs_awp_death_light_large.19bdee04e6a0b4a3b8f832fd8ea18fea1e558f2e.png",
+            "rarity": "classified",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'awp',
+                textures: ["Mortis", ""]
+            }
+        },
+        {
+            "id": 988,
+            "type": "MP7",
+            "skinName": "Bloodsport",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp7_gs_mp7_bloodsport_light_large.ab5c304901ceb320482742b041815e7b5e3ccb95.png",
+            "rarity": "covert",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'mp7',
+                textures: ["Bloodsport"]
+            }
+        },
+        {
+            "id": 989,
+            "type": "M4A4",
+            "skinName": "Neo-Noir",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_m4a1_cu_m4a4_neo_noir_light_large.b03bd6902c1d714af0bd4795dce8e653dd12dcc9.png",
+            "rarity": "covert",
+            "can": {
+                "buy": false
+            },
+            "3d": {
+                model: 'm4a4',
+                textures: ["Neo-Noir"]
+            }
+        },
+        {
+            "id": 990,
+            "type": "★ Sport Gloves",
+            "skinName": "Bronze Morph",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/sporty_gloves_sporty_poison_frog_red_green_light_large.12893b922fb8f2dc1d1eecf01bf628642874e937.png",
+            "rarity": "extraordinary",
+            "can": {
+                "buy": false,
+                "bot": false,
+                "specialCase": false
+            }
+        },
+        {
+            "id": 991,
+            "type": "★ Sport Gloves",
+            "skinName": "Amphibious",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/sporty_gloves_sporty_poison_frog_blue_white_light_large.cc4489cbac59f82ddb18c9a331a98bfd40627ee2.png",
+            "rarity": "extraordinary",
+            "can": {
+                "buy": false,
+                "bot": false,
+                "specialCase": false
+            }
+        },
+        {
+            "id": 992,
+            "type": "★ Driver Gloves",
+            "skinName": "Racing Green",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/slick_gloves_slick_stitched_green_grey_light_large.808fca3933fe16b20eb0cc26bd78fbbc47988dad.png",
+            "rarity": "extraordinary",
+            "can": {
+                "buy": false,
+                "bot": false,
+                "specialCase": false
+            }
+        },
+        {
+            "id": 993,
+            "type": "★ Driver Gloves",
+            "skinName": "Overtake",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/slick_gloves_slick_stitched_black_orange_light_large.6cd14c51b9f239f57cf20603a13a8f9b7efb42ed.png",
+            "rarity": "extraordinary",
+            "can": {
+                "buy": false,
+                "bot": false,
+                "specialCase": false
+            }
+        },
+        {
+            "id": 994,
+            "type": "★ Driver Gloves",
+            "skinName": "Imperial Plaid",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/slick_gloves_slick_plaid_purple_light_large.0315b76daffb839e03a9e543dc0d4a3abe716922.png",
+            "rarity": "extraordinary",
+            "can": {
+                "buy": false,
+                "bot": false,
+                "specialCase": false
+            }
+        },
+        {
+            "id": 995,
+            "type": "★ Moto Gloves",
+            "skinName": "Transport",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/motorcycle_gloves_motorcycle_yellow_camo_light_large.7ed261be20f42153198256faa761bb0b820b2ef9.png",
+            "rarity": "extraordinary",
+            "can": {
+                "buy": false,
+                "bot": false,
+                "specialCase": false
+            }
+        },
+        {
+            "id": 996,
+            "type": "★ Moto Gloves",
+            "skinName": "POW!",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/motorcycle_gloves_motorcycle_choco_boom_light_large.37abd7be1296fa17815f7b41a7d063e45b343cab.png",
+            "rarity": "extraordinary",
+            "can": {
+                "buy": false,
+                "bot": false,
+                "specialCase": false
+            }
+        },
+        {
+            "id": 997,
+            "type": "★ Specialist Gloves",
+            "skinName": "Mogul",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/specialist_gloves_specialist_winterhex_light_large.2b5d5ec0b5388beef874b932a8f9c053360ae7dc.png",
+            "rarity": "extraordinary",
+            "can": {
+                "buy": false,
+                "bot": false,
+                "specialCase": false
+            }
+        },
+        {
+            "id": 998,
+            "type": "★ Specialist Gloves",
+            "skinName": "Crimson Web",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/specialist_gloves_specialist_webs_red_light_large.f98d18b4fe7ad7e5dec69a61f2c82631a44e4c52.png",
+            "rarity": "extraordinary",
+            "can": {
+                "buy": false,
+                "bot": false,
+                "specialCase": false
+            }
         }
     ],
 

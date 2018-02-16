@@ -149,7 +149,15 @@ var cases = [{
     "canBeSouvenir": false,
     "canBeStatTrak": false,
     "type": "Collection",
-    weapons: [268,269,270,271,272,273]
+    weapons: [268,269,270,271,272,273],
+}, {
+    "name": "Clutch Case",
+    "img": "clutch.png",
+    "type": "Default",
+    weapons:[973,976,975,976,977,978,979,980,981,982,983,984,985,986,987,988,989],
+    knives: [990,991,992,993,994,995,996,997,998],
+    "addDate": '2018-02-16T16:00:00.000Z',
+    show: false
 }, {
     "name": "Spectrum 2",
     "img": "spectrum2.png",
