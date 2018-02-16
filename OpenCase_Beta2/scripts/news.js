@@ -852,7 +852,7 @@ var news = [{
     "month": 2,
     "year": 2018,
     "update": {
-        "RU": " - [Новое] Добавлен Clutch Case.",
-        "EN": " - [New] Added Clutch Case."
+        "RU": ' - [Новое] Добавлен <a href="open.html?caseId=24">Clutch Case</a>.',
+        "EN": ' - [New] Added <a href="open.html?caseId=24">Clutch Case</a>.'
     }
 }, ];
