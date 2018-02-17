@@ -46369,7 +46369,7 @@ var Prices = {
             "souvenir": {}
         }
     },
-    "1004": {
+    "1005": {
         "item_id": 1004,
         "prices": {
             "default": {
@@ -46379,7 +46379,7 @@ var Prices = {
             "souvenir": {}
         }
     },
-    "1005": {
+    "1006": {
         "item_id": 1005,
         "prices": {
             "default": {
@@ -46389,7 +46389,7 @@ var Prices = {
             "souvenir": {}
         }
     },
-    "1006": {
+    "1007": {
         "item_id": 1006,
         "prices": {
             "default": {
@@ -46400,7 +46400,7 @@ var Prices = {
             "souvenir": {}
         }
     },
-    "1007": {
+    "1008": {
         "item_id": 1007,
         "prices": {
             "default": {
@@ -46412,7 +46412,7 @@ var Prices = {
             "souvenir": {}
         }
     },
-    "1008": {
+    "1009": {
         "item_id": 1008,
         "prices": {
             "default": {
@@ -46425,7 +46425,7 @@ var Prices = {
             "souvenir": {}
         }
     },
-    "1009": {
+    "1010": {
         "item_id": 1009,
         "prices": {
             "default": {
@@ -46437,7 +46437,7 @@ var Prices = {
             "souvenir": {}
         }
     },
-    "1010": {
+    "1011": {
         "item_id": 1010,
         "prices": {
             "default": {
@@ -46449,7 +46449,7 @@ var Prices = {
             "souvenir": {}
         }
     },
-    "1011": {
+    "1012": {
         "item_id": 1011,
         "prices": {
             "default": {

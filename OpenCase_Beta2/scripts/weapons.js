@@ -9090,7 +9090,7 @@ var Items = {
             }
         },
         {
-            "id": 1004,
+            "id": 1005,
             "type": "★ Sport Gloves",
             "skinName": "Omega",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/sporty_gloves_sporty_black_webbing_yellow_light_large.5d7b101eb7875c41cff58e0fa0c08a49f7303b50.png",
@@ -9102,7 +9102,7 @@ var Items = {
             }
         },
         {
-            "id": 1005,
+            "id": 1006,
             "type": "★ Hand Wraps",
             "skinName": "Cobalt Skulls",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/leather_handwraps_handwrap_leathery_fabric_blue_skulls_light_large.51e28cc44ce70fd4ed719326a06f4cb0ef3808b5.png",
@@ -9114,7 +9114,7 @@ var Items = {
             }
         },
         {
-            "id": 1006,
+            "id": 1007,
             "type": "★ Hand Wraps",
             "skinName": "Overprint",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/leather_handwraps_handwrap_leathery_fabric_geometric_blue_light_large.a353dde9306d9be1eafd84331b0bf120142b692f.png",
@@ -9126,7 +9126,7 @@ var Items = {
             }
         },
         {
-            "id": 1007,
+            "id": 1008,
             "type": "★ Hand Wraps",
             "skinName": "Duct Tape",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/leather_handwraps_handwrap_leathery_ducttape_light_large.b18975cd28aee7645dbfd86009884358664e1aa5.png",
@@ -9138,7 +9138,7 @@ var Items = {
             }
         },
         {
-            "id": 1008,
+            "id": 1009,
             "type": "★ Hand Wraps",
             "skinName": "Arboreal",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/leather_handwraps_handwrap_leathery_fabric_green_camo_light_large.2b510ab7fcfd5837f239f378b03216cc3bcf6e3c.png",
@@ -9150,7 +9150,7 @@ var Items = {
             }
         },
         {
-            "id": 1009,
+            "id": 1010,
             "type": "★ Moto Gloves",
             "skinName": "Turtle",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/motorcycle_gloves_motorcycle_basic_green_orange_light_large.3e58353974e92bb56f218bb93b4fa77b0639e498.png",
@@ -9162,7 +9162,7 @@ var Items = {
             }
         },
         {
-            "id": 1010,
+            "id": 1011,
             "type": "★ Moto Gloves",
             "skinName": "Polygon",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/motorcycle_gloves_motorcycle_trigrid_blue_light_large.5e8f353a222f45406ab0b60e0d68d669953f0e20.png",
@@ -9174,7 +9174,7 @@ var Items = {
             }
         },
         {
-            "id": 1011,
+            "id": 1012,
             "type": "★ Driver Gloves",
             "skinName": "King Snake",
             "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/slick_gloves_slick_snakeskin_white_light_large.f6a54c7a3cf91ecbe0a712bb2126bfe77f86825e.png",
