@@ -46205,8 +46205,8 @@ var Prices = {
         "item_id": 990,
         "prices": {
             "default": {
-                "2": 903.82,
-                "4": 719.99
+                "1": 511.68,
+                "2": 569.99
             },
             "stattrak": {},
             "souvenir": {}
@@ -46216,7 +46216,8 @@ var Prices = {
         "item_id": 991,
         "prices": {
             "default": {
-                "3": 1800.00
+                "2": 844.48,
+                "3": 1640.63
             },
             "stattrak": {},
             "souvenir": {}
@@ -46226,7 +46227,9 @@ var Prices = {
         "item_id": 992,
         "prices": {
             "default": {
-                "0": 1415.26
+                "0": 161.73,
+                "2": 229.15,
+                "3": 646.93
             },
             "stattrak": {},
             "souvenir": {}
@@ -46236,7 +46239,8 @@ var Prices = {
         "item_id": 993,
         "prices": {
             "default": {
-                "1": 575
+                "1": 575,
+                "3": 949.99
             },
             "stattrak": {},
             "souvenir": {}
@@ -46246,7 +46250,8 @@ var Prices = {
         "item_id": 994,
         "prices": {
             "default": {
-                "0": 750
+                "0": 750,
+                "1": 1023.62
             },
             "stattrak": {},
             "souvenir": {}
@@ -46256,7 +46261,9 @@ var Prices = {
         "item_id": 995,
         "prices": {
             "default": {
-                "2": 575
+                "0": 230,
+                "2": 350,
+                "3": 871.7
             },
             "stattrak": {},
             "souvenir": {}
@@ -46266,7 +46273,8 @@ var Prices = {
         "item_id": 996,
         "prices": {
             "default": {
-                "2": 460
+                "2": 710.83,
+                "3": 2020.23
             },
             "stattrak": {},
             "souvenir": {}
@@ -46276,7 +46284,8 @@ var Prices = {
         "item_id": 997,
         "prices": {
             "default": {
-                "2": 1353.74
+                "0": 534.7,
+                "2": 1800
             },
             "stattrak": {},
             "souvenir": {}
@@ -46286,7 +46295,165 @@ var Prices = {
         "item_id": 998,
         "prices": {
             "default": {
-                "2": 1150.00
+                "2": 899
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "999": {
+        "item_id": 999,
+        "prices": {
+            "default": {
+                "0": 1000,
+                "2": 1003.87
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1000": {
+        "item_id": 1000,
+        "prices": {
+            "default": {
+                "1": 1495
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1001": {
+        "item_id": 1001,
+        "prices": {
+            "default": {
+                "0": 598.84,
+                "2": 1380,
+                "3": 1195.45
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1002": {
+        "item_id": 1002,
+        "prices": {
+            "default": {
+                "0": 423.63,
+                "2": 672,
+                "3": 527.41
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1003": {
+        "item_id": 1003,
+        "prices": {
+            "default": {
+                "1": 789.79,
+                "2": 864.93
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1004": {
+        "item_id": 1004,
+        "prices": {
+            "default": {
+                "2": 304.48,
+                "3": 1122.34
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1004": {
+        "item_id": 1004,
+        "prices": {
+            "default": {
+                "0": 436.48
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1005": {
+        "item_id": 1005,
+        "prices": {
+            "default": {
+                "2": 716.53
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1006": {
+        "item_id": 1006,
+        "prices": {
+            "default": {
+                "0": 645,
+                "2": 748.24
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1007": {
+        "item_id": 1007,
+        "prices": {
+            "default": {
+                "1": 316.43,
+                "2": 241.5,
+                "3": 399.99
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1008": {
+        "item_id": 1008,
+        "prices": {
+            "default": {
+                "0": 230,
+                "1": 309.41,
+                "2": 339.91,
+                "3": 473.88
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1009": {
+        "item_id": 1009,
+        "prices": {
+            "default": {
+                "1": 618.82,
+                "2": 575,
+                "3": 1665.57
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1010": {
+        "item_id": 1010,
+        "prices": {
+            "default": {
+                "1": 654.71,
+                "2": 748.24,
+                "3": 1222.13
+            },
+            "stattrak": {},
+            "souvenir": {}
+        }
+    },
+    "1011": {
+        "item_id": 1011,
+        "prices": {
+            "default": {
+                "0": 1104.03,
+                "2": 2020.23
             },
             "stattrak": {},
             "souvenir": {}

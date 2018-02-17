@@ -855,4 +855,12 @@ var news = [{
         "RU": ' - [Новое] Добавлен <a href="open.html?caseId=24">Clutch Case</a>.',
         "EN": ' - [New] Added <a href="open.html?caseId=24">Clutch Case</a>.'
     }
+}, {
+    "day": 17,
+    "month": 2,
+    "year": 2018,
+    "update": {
+        "RU": ' - [Новое] В Clutch Case добавлены все перчатки, кроме Sport Gloves | Vice.',
+        "EN": ' - [New] Added all gloves into the Clutch Case except Sport Gloves | Vice.'
+    }
 }, ];
