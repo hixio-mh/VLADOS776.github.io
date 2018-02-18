@@ -9185,6 +9185,18 @@ var Items = {
                 "specialCase": false
             }
         },
+        {
+            "id": 1013,
+            "type": "★ Sport Gloves",
+            "skinName": "Vice",
+            "img": "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/sporty_gloves_sporty_blue_pink_light_large.0da7dccfde04268a4289ad4b6c00a23a124a624e.png",
+            "rarity": "extraordinary",
+            "can": {
+                "buy": false,
+                "bot": false,
+                "specialCase": false
+            }
+        },
 
     ],
 

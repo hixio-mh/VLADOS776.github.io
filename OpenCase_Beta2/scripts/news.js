@@ -863,4 +863,12 @@ var news = [{
         "RU": ' - [Новое] В Clutch Case добавлены все перчатки, кроме Sport Gloves | Vice.',
         "EN": ' - [New] Added all gloves into the Clutch Case except Sport Gloves | Vice.'
     }
+}, {
+    "day": 18,
+    "month": 2,
+    "year": 2018,
+    "update": {
+        "RU": ' - [Новое] В Clutch Case добавлены перчатки Sport Gloves | Vice.',
+        "EN": ' - [New] Added Sport Gloves | Vice into the Clutch Case'
+    }
 }, ];
