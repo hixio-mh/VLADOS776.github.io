@@ -8472,7 +8472,6 @@ var Items = {
             skinName: "Tread",
             rarity: "milspec",
             img: "Workshop4/Nova-Tread.png",
-            can: { "buy": false },
             '3d': {
                 model: 'nova',
                 textures: ['Tread']
@@ -8483,7 +8482,6 @@ var Items = {
             skinName: "Aristocrat Gold",
             rarity: "milspec",
             img: "Workshop4/AUG-Aristocrat.png",
-            can: { buy: false },
             '3d': {
                 model: 'aug',
                 textures: ['Aristocrat', '', 'Aristocrat Scope']
@@ -8494,7 +8492,6 @@ var Items = {
             skinName: "Unicorn Power",
             rarity: "restricted",
             img: "Workshop4/Nova-Unicorn-Power.png",
-            can: { buy: false },
             '3d': {
                 model: 'nova',
                 textures: ['Unicorn Power']
@@ -8505,7 +8502,6 @@ var Items = {
             skinName: "Acid",
             rarity: "restricted",
             img: "Workshop4/P250-Acid.png",
-            can: { buy: false },
             '3d': {
                 model: 'p250',
                 textures: ['Acid']
@@ -8516,7 +8512,6 @@ var Items = {
             skinName: "Steel Dragon",
             rarity: "restricted",
             img: "Workshop4/MAC-10-Steel-Dragon.png",
-            can: { buy: false },
             '3d': {
                 model: 'mac-10',
                 textures: ['Steel Dragon']
@@ -8527,7 +8522,6 @@ var Items = {
             skinName: "Guardman",
             rarity: "classified",
             img: "Workshop4/SG-553-Guardman.png",
-            can: { buy: false },
             '3d': {
                 model :'sg_553',
                 textures: ['Guardman', '']
@@ -8538,7 +8532,6 @@ var Items = {
             skinName: "Anarchy",
             rarity: "classified",
             img: "Workshop4/MAC-10-Anarchy.png",
-            can: { buy: false },
             '3d': {
                 model: 'mac-10',
                 textures: ['Anarchy']
@@ -8549,7 +8542,6 @@ var Items = {
             skinName: "Lavale",
             rarity: "classified",
             img: "Workshop4/M4A4-Lavale.png",
-            can: { buy: false },
             '3d': {
                 model: 'm4a4',
                 textures: ['Lavale']
@@ -8560,7 +8552,6 @@ var Items = {
             skinName: "Coldeath",
             rarity: "covert",
             img: "Workshop4/M4A4-Coldeath.png",
-            can: { buy: false },
             '3d': {
                 model: 'm4a4',
                 textures: ['Coldeath']
@@ -8571,7 +8562,6 @@ var Items = {
             skinName: "Ghost",
             rarity: "covert",
             img: "Workshop4/M4A4-Ghost.png",
-            can: { buy: false },
             '3d': {
                 model: 'm4a4',
                 textures: ['Ghost']
@@ -8582,7 +8572,6 @@ var Items = {
             skinName: "Titan",
             rarity: "covert",
             img: "Workshop4/M4A4-Titan.png",
-            can: { buy: false },
             '3d': {
                 model: 'm4a4',
                 textures: ['Titan']
@@ -8593,7 +8582,6 @@ var Items = {
             skinName: "Rampage",
             rarity: "covert",
             img: "Workshop4/AK-47-Rampage.png",
-            can: { buy: false },
             '3d': {
                 model: 'ak-47',
                 textures: ['Rampage']
@@ -8604,7 +8592,6 @@ var Items = {
             skinName: "Octacles",
             rarity: "covert",
             img: "Workshop4/AWP-Octacles.png",
-            can: { buy: false },
             '3d': {
                 model: 'awp',
                 textures: ['Octacles', '']
@@ -8615,9 +8602,6 @@ var Items = {
             "skinName": "Lazarat",
             "rarity": "rare",
             "img": "Workshop4/Bayonet-Lazarat.png",
-            "can": {
-                "buy": false,
-            },
             '3d': {
                 model: 'bayonet',
                 textures: ['Lazarat']
@@ -8649,15 +8633,13 @@ var Items = {
             type: "★ Karambit",
             skinName: "Howl",
             rarity: "rare",
-            img: "Workshop4/Karambit-Howl.png",
-            can: { buy: false }
+            img: "Workshop4/Karambit-Howl.png"
         }, {
             id: 968,
             type: "★ M9 Bayonet",
             skinName: "Medusa",
             rarity: "rare",
             img: "Workshop4/M9-Bayonet-Medusa.png",
-            can: { buy: false },
             '3d': {
                 model: 'm9-bayonet',
                 textures: ["Medusa"]
