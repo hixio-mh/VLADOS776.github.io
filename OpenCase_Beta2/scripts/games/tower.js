@@ -244,7 +244,7 @@ Game.Tower = (function(module) {
         } else if (fieldPos == 0) {
             $(this).html(config.good);
             
-            currGame.profit += getCellPoints(currGame.line);
+            currGame.profit = getCellPoints(currGame.line);
             
             $('#start_game').text(_t('tower.take', 'Take ${coins} coins').replace('${coins}', currGame.profit))
             nextLine();
