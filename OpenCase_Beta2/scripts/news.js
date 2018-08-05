@@ -871,4 +871,12 @@ var news = [{
         "RU": ' - [Новое] В Clutch Case добавлены перчатки Sport Gloves | Vice.',
         "EN": ' - [New] Added Sport Gloves | Vice into the Clutch Case'
     }
+}, {
+    "day": 5,
+    "month": 8,
+    "year": 2018,
+    "update": {
+        "RU": ' - [Beta] Попробуйте <a href="https://kvmde40-10035.fornex.org/">бета версию Open Case 2</a>. Horizon кейс уже там.',
+        "EN": ' - [Beta] <a href="https://kvmde40-10035.fornex.org/">Try Open Case 2 beta</a>. Horizon case already there.'
+    }
 }, ];
